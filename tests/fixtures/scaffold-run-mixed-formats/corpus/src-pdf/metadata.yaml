@@ -1,0 +1,20 @@
+source_id: src-pdf
+schema_version: 1.0.0
+bibliographic:
+  source_type: other
+  title: Synthetic PDF Extraction Fixture
+  authors:
+  - Evidence Bundler Test Fixture
+  publication_date: '2026-05-11'
+  pmid: null
+  doi: null
+  url: https://example.test/synthetic-pdf-extraction-fixture
+  access_date_utc: '2026-05-11T10:15:00Z'
+trust_level: background
+content_hash: sha256:257e50d4b63b199377f742c16d266ca00b1f4eb762027047b87f5d81ec5a0345
+retrieval:
+  retrieved_for:
+  - clm-pdf
+  retrieval_query: pdf extraction preserve source text downstream chunking
+  retrieval_rank: 4
+notes: Synthetic generated PDF source for Phase 1 Unit 3 extraction tests.

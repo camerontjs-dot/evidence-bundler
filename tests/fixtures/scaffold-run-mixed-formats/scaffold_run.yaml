@@ -1,0 +1,31 @@
+run_id: 660e8400-e29b-41d4-a716-446655440001
+task_id: phase-1-loader-fixture
+workflow_condition: full_scaffold
+timestamp_utc: '2026-05-10T21:30:00Z'
+scaffold:
+  version: 0.3.1
+  prompt_template_id: scaffold-v3-full
+  prompt_template_hash: sha256:0000000000000000000000000000000000000000000000000000000000000011
+  config_hash: sha256:0000000000000000000000000000000000000000000000000000000000000012
+model:
+  model_id: gpt-4o
+  model_version: '2024-11-20'
+  api_endpoint: https://api.openai.com/v1
+  temperature: 0.2
+  max_tokens: 8192
+task:
+  research_question: Can the loader and chunker preserve Markdown, text, PDF, table,
+    and empty scaffold sources?
+  domain: pharma_regulatory
+  expert_checkable: true
+  ground_truth_ref: null
+corpus:
+  total_sources: 4
+  corpus_hash: sha256:65cedc98458dc1aece2424821d4bff2d36ab35f10b540f62e0f1f454d790a3d8
+  retrieval_strategy: synthetic_fixture
+  retrieval_timestamp_utc: '2026-05-10T21:28:00Z'
+intermediates_present: false
+run_metadata:
+  operator: cameron
+  environment: local-dev
+  notes: Synthetic C-A fixture for Evidence Bundler Phase 1 ingest tests.

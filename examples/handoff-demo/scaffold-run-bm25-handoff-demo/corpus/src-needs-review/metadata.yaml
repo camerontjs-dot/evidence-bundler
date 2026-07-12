@@ -1,0 +1,20 @@
+source_id: src-needs-review
+schema_version: 1.0.0
+bibliographic:
+  source_type: other
+  title: FICTIONAL DEMO CONTENT - Needs Review Source
+  authors:
+  - Evidence Bundler Synthetic Fixture
+  publication_date: '2026-05-13'
+  pmid: null
+  doi: null
+  url: https://example.test/fictional-handoff-demo/needs-review
+  access_date_utc: '2026-05-13T14:00:00Z'
+trust_level: primary
+content_hash: sha256:47b466cdbd64b5149f3bf6b7d7039fbf9bf265934badd716694fa4a7948eb2b8
+retrieval:
+  retrieved_for:
+  - clm-needs-review
+  retrieval_query: demo observation memo reviewer sign-off required needs-review
+  retrieval_rank: 2
+notes: Synthetic source for the needs-review claim.

@@ -1,0 +1,38 @@
+# macOS / local editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Python and tooling caches
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local virtual environments
+.venv/
+venv/
+
+# Build and package outputs
+build/
+dist/
+*.egg-info/
+
+# Node / frontend dependency output
+node_modules/
+
+# Generated local asset outputs
+bundles/
+.chroma/
+chroma/
+data/raw-local/
+
+# Local planning and handoff notes
+planning/
+
+# Heavy source downloads stay local through build/ or data/raw-local/.
+.aider*

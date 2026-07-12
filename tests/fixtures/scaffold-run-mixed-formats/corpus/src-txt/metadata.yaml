@@ -1,0 +1,20 @@
+source_id: src-txt
+schema_version: 1.0.0
+bibliographic:
+  source_type: other
+  title: Plain Text Loader Fixture
+  authors:
+  - Evidence Bundler Test Fixture
+  publication_date: '2026-05-10'
+  pmid: null
+  doi: null
+  url: https://example.test/plain-text-loader-fixture
+  access_date_utc: '2026-05-10T21:28:02Z'
+trust_level: background
+content_hash: sha256:0a206504a5c6936df538cb81d6ce2b153e183eac0449446fdc2a14703b5d82d0
+retrieval:
+  retrieved_for:
+  - clm-txt
+  retrieval_query: retain exact line breaks downstream chunking
+  retrieval_rank: 2
+notes: Synthetic plain-text source for Phase 1 Unit 1 loader tests.

@@ -1,0 +1,95 @@
+# Canonical controlled vocabulary — Research Apparatus Handoff Contracts
+# Schema version: 1.0.0
+# Status: LOCKED — 2026-05-08
+# Governance: ../../../planning/handoff-contracts-plan.md
+# Spec: ../handoff-contract-v1.0.0.md
+#
+# Every consumer (Claim Audit Lab, Evidence Builder, Research Scaffold Harness)
+# embeds a byte-identical copy of this file at its own schema/vocabulary.yaml,
+# along with a schema/.contract-version file pinning the contract version.
+#
+# Any change to this file requires:
+#   1. A decisions.md entry in the portfolio root
+#   2. A semver bump per the contracts plan's Schema Version Control section
+#   3. Updated copies in every consumer
+
+contract_version: "1.1.0"
+locked_at_utc: "2026-05-15T00:00:00Z"
+
+vocabularies:
+
+  workflow_condition:
+    description: "Experimental treatment label assigned in scaffold_run.yaml. Locked before execution; never reassigned after seeing results."
+    values:
+      - baseline
+      - format_only           # v1.1.0 addition — visible structure without provenance/disconfirmation/audit discipline
+      - provenance_scaffold
+      - full_scaffold
+
+  claim_type:
+    description: "Distinguishes retrieval seeds (input topics) from extracted claim instances (scaffold-produced statements)."
+    values:
+      - retrieval_seed
+      - extracted_claim
+
+  support_status:
+    description: "Scaffold-assigned label per claim, captured in C-A claims.yaml. The scaffold's own labeling, not the audit verdict."
+    values:
+      - sourced
+      - inferred
+      - uncertain
+      - unsupported
+
+  audit_support_verdict:
+    description: "Audit-assigned verdict per claim, populated by Claim Audit Lab on C-B claims/{claim_id}.yaml. Six values; preserves failure modes the research proposal enumerates."
+    values:
+      - supported
+      - partially_supported
+      - unsupported
+      - overstated         # claim is stronger than evidence supports — overconfident conclusions failure mode
+      - needs_source       # claim is stateable but no citation attached — missing source provenance failure mode
+      - not_checkable      # claim too vague/malformed to audit — instrument limitation
+
+  source_type:
+    description: "Bibliographic class of a corpus source."
+    values:
+      - journal_article
+      - regulatory_guidance
+      - preprint
+      - web_page
+      - book
+      - other
+
+  trust_level:
+    description: "Source trust classification, set by scaffold or Evidence Builder."
+    values:
+      - primary
+      - secondary
+      - background
+
+  extraction_method:
+    description: "How a passage entered the corpus."
+    values:
+      - scaffold_cited
+      - scaffold_inferred
+      - auto_retrieved
+
+  deviation_type:
+    description: "Classification on deviations/intake-{artifact_id}.yaml. Drives downstream handling."
+    values:
+      - intake_hash_mismatch
+      - schema_validation_failure
+      - vocabulary_drift
+      - missing_required_field
+      - other
+
+# Cross-vocabulary notes (informational; do not affect parsing):
+#
+# - support_status (scaffold) and audit_support_verdict (audit) are intentionally separate vocabularies.
+#   The scaffold says what it thinks it produced; the audit says what the evidence actually supports.
+#   The disagreement between them — encoded in deviation_flag and false_caution_flag fields on
+#   claims/{claim_id}.yaml — is the apparatus's primary measurement signal.
+#
+# - audit_support_verdict was expanded from the seed-draft 4-value vocabulary
+#   (supported, partially_supported, unsupported, not_checkable) to six values at v1.0.0 LOCK
+#   to preserve the failure modes the research proposal explicitly enumerates.

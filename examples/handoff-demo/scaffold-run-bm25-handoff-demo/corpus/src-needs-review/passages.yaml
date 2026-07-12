@@ -1,0 +1,12 @@
+source_id: "src-needs-review"
+schema_version: "1.0.0"
+passages:
+  - passage_id: "pass-needs-review"
+    section: "FICTIONAL DEMO CONTENT - Needs Review Source"
+    paragraph_index: 2
+    char_start: 120
+    char_end: 242
+    text_preview: "The demo observation memo states reviewer sign-off remains required when a candidate passage is still marked needs-review."
+    used_for_claims:
+      - "clm-needs-review"
+    extraction_method: "scaffold_cited"

@@ -1,0 +1,13 @@
+source_id: src-md
+schema_version: 1.0.0
+passages:
+- passage_id: pass-md
+  section: Methods
+  paragraph_index: 1
+  char_start: 70
+  char_end: 147
+  text_preview: The sponsor should retain the submission checklist before final audit
+    review.
+  used_for_claims:
+  - clm-md
+  extraction_method: scaffold_cited

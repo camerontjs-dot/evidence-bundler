@@ -1,0 +1,20 @@
+source_id: src-md
+schema_version: 1.0.0
+bibliographic:
+  source_type: regulatory_guidance
+  title: Markdown Loader Fixture
+  authors:
+  - Evidence Bundler Test Fixture
+  publication_date: '2026-05-10'
+  pmid: null
+  doi: null
+  url: https://example.test/markdown-loader-fixture
+  access_date_utc: '2026-05-10T21:28:01Z'
+trust_level: primary
+content_hash: sha256:66b2953506c3b18cab77e6729b69cfe4f4053f16f5f52f5b9d93e03cee282970
+retrieval:
+  retrieved_for:
+  - clm-md
+  retrieval_query: submission checklist audit review
+  retrieval_rank: 1
+notes: Synthetic Markdown source for Phase 1 Unit 1 loader tests.

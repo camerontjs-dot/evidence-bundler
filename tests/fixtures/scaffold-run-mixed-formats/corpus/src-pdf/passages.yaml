@@ -1,0 +1,12 @@
+source_id: src-pdf
+schema_version: 1.0.0
+passages:
+- passage_id: pass-pdf
+  section: 4.3 PDF Extraction Controls
+  paragraph_index: 2
+  char_start: 70
+  char_end: 137
+  text_preview: PDF extraction should preserve source text for downstream chunking.
+  used_for_claims:
+  - clm-pdf
+  extraction_method: scaffold_cited

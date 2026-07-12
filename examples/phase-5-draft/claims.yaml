@@ -1,0 +1,121 @@
+schema_version: "1.0.0"
+run_id: "880e8400-e29b-41d4-a716-446655440051"
+generated_at_utc: "2026-05-13T20:00:00Z"
+claims:
+  - claim_id: "clm-qms-coverage"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer's quality management system covers all production stages from incoming raw material acceptance through final product release and distribution, consistent with FDA's quality systems framework for pharmaceutical CGMP."
+    support_status: "sourced"
+    claim_strength: 0.88
+    extraction_fidelity: 0.92
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-qms-framework"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to find strong hybrid retrieval support in FDA CGMP quality systems guidance."
+
+  - claim_id: "clm-validation-exemption"
+    claim_type: "extracted_claim"
+    claim_text: "Process validation is not required for legacy manufacturing processes that have operated without significant deviation for more than five consecutive years."
+    support_status: "sourced"
+    claim_strength: 0.72
+    extraction_fidelity: 0.85
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-process-validation"
+    counterevidence_checked: true
+    counterevidence_found: true
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to be contradicted by FDA CGMP guidance. The 'not required' framing should trigger disconfirming text-gate patterns in counter-candidate passages."
+
+  - claim_id: "clm-apr-scope"
+    claim_type: "extracted_claim"
+    claim_text: "Annual product reviews are required only when the facility produces more than fifty commercial batches of a given product per calendar year."
+    support_status: "inferred"
+    claim_strength: 0.62
+    extraction_fidelity: 0.78
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-annual-review"
+    counterevidence_checked: true
+    counterevidence_found: true
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to trigger conditional text-gate patterns. FDA guidance requires annual reviews regardless of batch count; the 'only when' scope narrowing should surface conditional counter-candidates."
+
+  - claim_id: "clm-capa-risk"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer's corrective and preventive action system uses a risk-based approach to prioritize investigations, allocating resources to deviations that pose the highest potential impact on product quality and patient safety."
+    support_status: "sourced"
+    claim_strength: 0.85
+    extraction_fidelity: 0.90
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-capa-system"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to find hybrid retrieval support. Multiple FDA CGMP passages discuss CAPA and risk-based quality systems, providing reranker exercise across overlapping candidates."
+
+  - claim_id: "clm-equipment-requalification"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer requalifies critical process equipment on a fixed three-year cycle regardless of process changes, maintenance history, or deviation trends."
+    support_status: "inferred"
+    claim_strength: 0.58
+    extraction_fidelity: 0.75
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-equipment-qualification"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to produce ambiguous retrieval. FDA guidance covers equipment qualification but emphasizes risk-based scheduling over fixed intervals. The 'regardless of' framing partially conflicts with guidance but is not a clean contradiction."
+
+  - claim_id: "clm-clinical-endpoint"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer claims a 34% improvement in primary clinical endpoint response rates following a reformulation of the active ingredient delivery mechanism in Q3 2024."
+    support_status: "unsupported"
+    claim_strength: 0.40
+    extraction_fidelity: 0.65
+    source_refs: []
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: true
+    downgrade_reason: "No FDA CGMP guidance source addresses clinical endpoint response rates. This claim is outside the scope of quality systems documentation."
+    scaffold_notes: "Fictional claim expected to produce no viable retrieval candidates. FDA CGMP guidance does not cover clinical efficacy data."
+
+  - claim_id: "clm-supplier-qualification"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer requires supplier qualification audits before approving alternative raw material sources, and documents all supplier changes through the site change control system with impact assessments reviewed by the quality unit."
+    support_status: "sourced"
+    claim_strength: 0.82
+    extraction_fidelity: 0.88
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-supplier-controls"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to find hybrid retrieval support. Overlaps thematically with clm-qms-coverage and clm-capa-risk, providing dedup and reranker exercise."
+
+  - claim_id: "clm-stability-extension"
+    claim_type: "extracted_claim"
+    claim_text: "The manufacturer extended the labeled shelf life of three product lines from 24 months to 36 months based on accelerated stability data alone, without confirmatory long-term stability studies."
+    support_status: "sourced"
+    claim_strength: 0.68
+    extraction_fidelity: 0.80
+    source_refs:
+      - source_id: "src-cgmp-quality-systems"
+        passage_id: "pass-stability-requirements"
+    counterevidence_checked: true
+    counterevidence_found: true
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Fictional claim expected to be contradicted by FDA guidance. Stability guidance requires long-term data to support shelf-life extensions; the 'without' and 'alone' framing should trigger disconfirming text-gate patterns."

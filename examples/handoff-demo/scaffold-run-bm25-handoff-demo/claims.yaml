@@ -1,0 +1,44 @@
+schema_version: "1.0.0"
+run_id: "770e8400-e29b-41d4-a716-446655440041"
+generated_at_utc: "2026-05-13T14:00:00Z"
+claims:
+  - claim_id: "clm-supported"
+    claim_type: "extracted_claim"
+    claim_text: "The demo intake ledger records 42 reconciled packets before the archive handoff."
+    support_status: "sourced"
+    claim_strength: 0.90
+    extraction_fidelity: 0.95
+    source_refs:
+      - source_id: "src-supported"
+        passage_id: "pass-supported"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Synthetic supported claim for the BM25 handoff demo."
+  - claim_id: "clm-weak"
+    claim_type: "extracted_claim"
+    claim_text: "The cerulean checksum expires on 2099-12-31."
+    support_status: "unsupported"
+    claim_strength: 0.45
+    extraction_fidelity: 0.60
+    source_refs: []
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: true
+    downgrade_reason: "No synthetic source passage was supplied for the checksum date."
+    scaffold_notes: "Synthetic weak claim expected to produce weak or no BM25 candidates."
+  - claim_id: "clm-needs-review"
+    claim_type: "extracted_claim"
+    claim_text: "The demo observation memo states reviewer sign-off remains required when a candidate passage is still marked needs-review."
+    support_status: "sourced"
+    claim_strength: 0.76
+    extraction_fidelity: 0.82
+    source_refs:
+      - source_id: "src-needs-review"
+        passage_id: "pass-needs-review"
+    counterevidence_checked: true
+    counterevidence_found: false
+    downgraded: false
+    downgrade_reason: null
+    scaffold_notes: "Synthetic claim intentionally left needs-review during finalization."
