@@ -1,5 +1,7 @@
 # Evidence Bundler
 
+![Evidence Bundler — Traceable Evidence Preparation](assets/social-preview.jpg)
+
 Evidence Bundler is a local evidence-preparation tool for research corpora. It takes a scaffolded research run, loads the bounded source set, nominates candidate passages for each claim, and writes a traceable evidence bundle that can be reviewed before it goes downstream.
 
 I built it around a traceability rule from my pharmaceutical QA background: every claim, source, passage, review decision, and output file should be recoverable from the artifacts on disk. Retrieval is useful, but a retrieval score is not a support verdict. Evidence Bundler keeps that boundary visible.
