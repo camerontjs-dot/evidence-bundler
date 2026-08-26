@@ -1,0 +1,326 @@
+prototype_schema: evidence-bundle-shape-v2-spike-0
+status: exploratory_not_contract
+prototype_only: true
+
+bundle:
+  bundle_id: annex22-shape-spike-001
+  purpose: claim_support_audit
+  created_at_utc: "2026-08-26T23:50:00Z"
+  scope:
+    closed_world: true
+    source_selection_basis: supplied_corpus
+    source_ids: [src-annex22-draft]
+  generator:
+    name: evidence-bundler
+    mode: schema_spike
+  integrity:
+    source_set_hash: sha256:pending
+    bundle_hash: sha256:pending
+  review_state: partial
+
+sources:
+  - source_id: src-annex22-draft
+    title: "Annex 22: Artificial Intelligence"
+    source_type: regulatory_guidance
+    publisher: European Commission
+    document_status: draft_consultation
+    status_date: "2025-07-07"
+    jurisdiction: EU
+    version_label: consultation_draft_2025
+    url: "https://health.ec.europa.eu/document/download/5f38a92d-bb8e-4264-8898-ea076e926db6_en?filename=mp_vol4_chap4_annex22_consultation_guideline_en.pdf"
+    access_date_utc: "2026-08-26"
+    content_hash: sha256:pending
+    extraction:
+      representation_id: annex22-draft-extracted-text
+      extractor: not_captured_in_schema_spike
+      extractor_version: null
+      extracted_text_hash: sha256:pending
+    source_assessments: []
+
+claims:
+  - claim_id: clm-A
+    claim_text: "The draft limits critical GMP use for some non-static model classes."
+    claim_form: scope
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: section, value: Scope}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-B
+    claim_text: "Intended use must define tasks, operating space, limitations, responsibility, and approval timing."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "3"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-C
+    claim_text: "Acceptance criteria depend on intended use and may require subgroup-specific evaluation and a baseline."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "4"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-D
+    claim_text: "Test evidence requires both representative data and independence controls."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: multi_source_derived
+      source_ids: [src-annex22-draft]
+      anchors:
+        - {type: clause, value: "5"}
+        - {type: clause, value: "6"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-E
+    claim_text: "Test-data independence can use a procedural fallback when personnel separation is impractical."
+    claim_form: normative
+    atomicity: atomic
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "6"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-F
+    claim_text: "Explainability requires both feature-attribution information and review of relevant features."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "8"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-G
+    claim_text: "Where confidence applies, it is recorded and low confidence can produce an undecided outcome."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "9"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-H
+    claim_text: "Operation spans controlled change, configuration, performance monitoring, drift monitoring, and human review records."
+    claim_form: normative
+    atomicity: composite
+    origin:
+      kind: source_derived
+      source_id: src-annex22-draft
+      anchors:
+        - {type: clause, value: "10"}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-N1
+    claim_text: "The draft mandates one specific neural-network architecture."
+    claim_form: assertion
+    atomicity: atomic
+    origin: {kind: external}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-N2
+    claim_text: "All AI models must be retrained every month."
+    claim_form: assertion
+    atomicity: atomic
+    origin: {kind: external}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-N3
+    claim_text: "Every AI output requires two-person review."
+    claim_form: assertion
+    atomicity: atomic
+    origin: {kind: external}
+    parent_claim_id: null
+    child_claim_ids: []
+
+  - claim_id: clm-N4
+    claim_text: "Annex 22 is an effective final GMP annex."
+    claim_form: assertion
+    atomicity: atomic
+    origin: {kind: external}
+    parent_claim_id: null
+    child_claim_ids: []
+
+passages:
+  - passage_id: psg-scope
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: scope limits some model classes."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: section, value: Scope}]
+    parent_passage_id: null
+
+  - passage_id: psg-intended-use
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: intended use carries several linked controls."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "3"}]
+    parent_passage_id: null
+
+  - passage_id: psg-acceptance
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: acceptance criteria are context dependent."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "4"}]
+    parent_passage_id: null
+
+  - passage_id: psg-test-data
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: test data must cover the intended space."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "5"}]
+    parent_passage_id: null
+
+  - passage_id: psg-independence
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: independence has technical and procedural controls."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "6"}]
+    parent_passage_id: null
+
+  - passage_id: psg-explainability
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: explainability includes feature review."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "8"}]
+    parent_passage_id: null
+
+  - passage_id: psg-confidence
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: confidence can gate an undecided result."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "9"}]
+    parent_passage_id: null
+
+  - passage_id: psg-operation
+    source_id: src-annex22-draft
+    text: "Schema-spike paraphrase: operation requires lifecycle controls and monitoring."
+    text_kind: paraphrase_for_schema_test
+    passage_hash: sha256:pending
+    anchors: [{type: clause, value: "10"}]
+    parent_passage_id: null
+
+links:
+  - link_id: lnk-A-scope
+    claim_id: clm-A
+    passage_id: psg-scope
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.91}}
+    review: {decision: accepted, relation: scopes, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-B-intended
+    claim_id: clm-B
+    passage_id: psg-intended-use
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.89}}
+    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-C-acceptance
+    claim_id: clm-C
+    passage_id: psg-acceptance
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.87}}
+    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-D-data
+    claim_id: clm-D
+    passage_id: psg-test-data
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.86}}
+    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-D-independence
+    claim_id: clm-D
+    passage_id: psg-independence
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.81}}
+    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-E-independence
+    claim_id: clm-E
+    passage_id: psg-independence
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.88}}
+    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Fallback qualifies the general independence rule."}
+
+  - link_id: lnk-F-explainability
+    claim_id: clm-F
+    passage_id: psg-explainability
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.90}}
+    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-G-confidence
+    claim_id: clm-G
+    passage_id: psg-confidence
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.92}}
+    review: {decision: accepted, relation: conditional, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Applicability is conditional."}
+
+  - link_id: lnk-H-operation
+    claim_id: clm-H
+    passage_id: psg-operation
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.93}}
+    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+
+  - link_id: lnk-N2-rejected
+    claim_id: clm-N2
+    passage_id: psg-operation
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 4, scores: {fusion: 0.42}}
+    review: {decision: rejected, relation: null, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Candidate does not establish the claim."}
+
+  - link_id: lnk-N3-reviewed
+    claim_id: clm-N3
+    passage_id: psg-intended-use
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.64}}
+    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Narrowly relevant; another candidate remains unreviewed."}
+
+  - link_id: lnk-N3-pending
+    claim_id: clm-N3
+    passage_id: psg-operation
+    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 3, scores: {fusion: 0.55}}
+    review: {decision: needs-review, relation: null, reviewed_by: null, reviewed_at_utc: null, notes: ""}
+
+  - link_id: lnk-N4-status
+    claim_id: clm-N4
+    passage_id: psg-scope
+    nomination: {method: metadata_plus_hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.95}}
+    review: {decision: accepted, relation: contradicts, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Source profile records draft consultation status."}
+
+coverage:
+  - {claim_id: clm-A, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
+  - {claim_id: clm-B, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
+  - {claim_id: clm-C, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
+  - {claim_id: clm-D, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 2, reviewed_count: 2, admitted_count: 2, outcome: admitted, limitations: []}
+  - {claim_id: clm-E, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
+  - {claim_id: clm-F, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
+  - {claim_id: clm-G, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: ["Applicability condition must survive downstream audit."]}
+  - {claim_id: clm-H, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: ["Composite lifecycle claim may need decomposition."]}
+  - {claim_id: clm-N1, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 0, reviewed_count: 0, admitted_count: 0, outcome: no_candidates, limitations: []}
+  - {claim_id: clm-N2, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 0, outcome: all_rejected, limitations: []}
+  - {claim_id: clm-N3, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 2, reviewed_count: 1, admitted_count: 1, outcome: partial_review, limitations: ["One nominated candidate is unresolved."]}
+  - {claim_id: clm-N4, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: ["The in-scope source is a consultation draft, not evidence of final effective status."]}
