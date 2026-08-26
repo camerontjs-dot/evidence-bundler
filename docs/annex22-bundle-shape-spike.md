@@ -2,31 +2,31 @@
 
 **Status:** exploratory design spike, not an accepted contract decision  
 **Branch:** `annex22-bundle-shape-spike`  
-**Purpose:** use the European Commission draft GMP Annex 22 as a demanding regulatory corpus to discover what a general evidence bundle must be able to represent before changing C-B or downstream CAL interfaces.
+**Purpose:** use the European Commission draft GMP Annex 22 as a demanding regulatory corpus to discover what a general evidence bundle must represent before changing C-B or downstream CAL interfaces.
 
 ## Source status
 
-The source used for this spike is the European Commission consultation draft **Annex 22: Artificial Intelligence**, opened for consultation on 7 July 2025 and closed on 7 October 2025.
+The source used for this spike is the European Commission consultation draft **Annex 22: Artificial Intelligence**. The consultation opened on 7 July 2025 and closed on 7 October 2025.
 
 Official consultation page: https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en
 
 Official draft PDF: https://health.ec.europa.eu/document/download/5f38a92d-bb8e-4264-8898-ea076e926db6_en?filename=mp_vol4_chap4_annex22_consultation_guideline_en.pdf
 
-This is a **draft consultation document**, not a final Annex currently listed in EudraLex Volume 4. It is being used here as a schema stressor, not as a claim that these provisions are presently binding GMP.
+This is a **draft consultation document**, not a final Annex currently listed in EudraLex Volume 4. It is being used as a schema stressor, not as a claim that its provisions are presently binding GMP.
 
 ## What we are trying to learn
 
-The question is not "can Evidence Bundler retrieve Annex 22?" The question is:
+The question is not "can Evidence Bundler retrieve Annex 22?" It is:
 
-> Can the bundle faithfully preserve the information CAL or a human auditor would need to evaluate a claim without silently collapsing source identity, claim origin, evidentiary relationship, review state, retrieval history, or coverage state?
+> Can a bundle faithfully preserve everything CAL or a human auditor needs to evaluate a claim without silently collapsing source identity, claim origin, candidate selection, human admission, coverage state, or downstream audit judgment?
 
-If Annex 22 exposes a representational gap, the first hypothesis should be that the bundle shape is incomplete, not that CAL should infer the missing structure downstream.
+If Annex 22 exposes a representational gap, first test whether the bundle shape is incomplete before teaching CAL to infer missing structure.
 
 ## Current C-B is carrying three different things
 
-The current C-B contract was designed as an apparatus handoff from Scaffold Harness -> Evidence Bundler -> Claim Audit Lab. That history is visible in `models/cb.py`.
+The current C-B contract was designed as an apparatus handoff from Scaffold Harness -> Evidence Bundler -> Claim Audit Lab.
 
-Today a `ClaimAuditUnit` contains:
+Today a `ClaimAuditUnit` carries:
 
 1. **Upstream experiment state**: scaffold support status, claim strength, extraction fidelity, counterevidence flags, workflow condition, task id.
 2. **Evidence**: passage text, source id, offsets, trust level.
@@ -34,133 +34,156 @@ Today a `ClaimAuditUnit` contains:
 
 The bundle manifest also carries CAL audit-config and validation-set pins.
 
-That is coherent for the original evaluation apparatus, but it is not a clean domain-level evidence package. It makes the persisted evidence shape depend on who produced the claim and which auditor will consume it.
+That is coherent for the original evaluation apparatus. It is not a clean domain-level evidence package because evidence identity depends on both who produced the claim and which auditor will consume it.
 
 ### Working separation
 
-A general evidence bundle should separate three artifacts conceptually:
+A general workflow should distinguish:
 
-- **Evidence bundle**: claims, sources, passages, claim-passage relationships, coverage, provenance, integrity.
-- **Audit invocation**: CAL engine/rules/config selected for a particular audit run.
-- **Audit result**: verdicts, traces, confidence/signals, reviewer disposition.
+- **Evidence bundle**: claims, sources, passages, candidate links, admission/review state, coverage, provenance, integrity.
+- **Audit invocation**: CAL engine/rules/config selected for one audit run.
+- **Audit result**: verdicts, traces, signals, and reviewer disposition.
 
-The evidence bundle should not need CAL fields in order to exist, and CAL should not need scaffold judgments in order to audit it.
+The evidence bundle should not need CAL result fields to exist, and CAL should not need scaffold judgments to audit it.
+
+## A second problem: semantic leakage into the auditor
+
+The original spike assumed a reviewed claim-passage link should carry an authoritative relation such as `supports`, `contradicts`, or `qualifies`. Inspecting CAL shows that is unsafe as a default boundary.
+
+CAL's C-B adapter constructs explicit `support_excerpt_ids` and `counter_excerpt_ids` from the two C-B passage containers. The scoped matcher then searches those lanes differently. That means the current C-B shape is not merely describing provenance; it can tell the auditor which semantic lane a passage belongs to before CAL measures the relationship itself.
+
+That may be legitimate for replaying the original apparatus, but it is a poor default for an independent evidence audit.
+
+### Revised boundary
+
+A claim-passage link may preserve a retriever's **hypothesized role** as provenance, but that hypothesis is not an evidence verdict.
+
+Human review should answer a narrower admission question such as:
+
+> Is this passage relevant enough, and is the excerpt sufficient enough, to place in front of the auditor?
+
+It should not have to pre-decide whether the passage entails or contradicts the claim. A CAL-facing view should ignore retrieval role labels and provide the admitted passages without support/counterevidence preclassification.
+
+This gives us four epistemic layers instead of two:
+
+`retrieved candidate -> review-admitted passage -> CAL semantic relation -> CAL verdict`
+
+Those must not silently collapse into one field.
 
 ## Annex 22 stress cases
 
-These cases are intentionally selected because they exercise different representational pressures. The wording below is a compact paraphrase for testing, not a substitute for the source document.
+The wording below is compact paraphrase for schema testing, not a substitute for the source document.
 
 | Case | Annex area | Schema pressure |
 |---|---|---|
-| A | Scope | A source can be authoritative-looking while still being draft, scoped, and inapplicable to some model classes. |
-| B | Intended use | One numbered clause can contain several linked obligations, limitations, responsible roles, and a timing condition. |
-| C | Acceptance criteria | A requirement can depend on subgroup-specific criteria and comparison with the process being replaced. |
-| D | Test data | Support for one conclusion may require several clauses rather than one passage. |
-| E | Data independence | A general rule can have an explicit procedural fallback or exception that qualifies it. |
-| F | Explainability | One passage can establish a required record while another establishes the required review of that record. |
-| G | Confidence | Requirements may be conditional (for example, applicability-dependent logging) and may define an abstention-like outcome. |
-| H | Operation | Evidence can describe lifecycle obligations spanning change control, configuration control, monitoring, drift, and human review. |
+| A | Scope | A source can be primary yet still draft, scoped, and inapplicable to some model classes. |
+| B | Intended use | One clause can contain several linked obligations, limitations, roles, and timing conditions. |
+| C | Acceptance criteria | A requirement can depend on subgroup-specific criteria and comparison with a baseline process. |
+| D | Test data | One conclusion may require several source locations rather than one passage. |
+| E | Data independence | A general rule can have a procedural fallback that changes its interpretation. |
+| F | Explainability | A requirement and the required review of that requirement can be distinct facts. |
+| G | Confidence | Requirements may be conditional and may define an explicit undecided outcome. |
+| H | Operation | One lifecycle claim can span change control, configuration, monitoring, drift, and human review. |
 
-These cases imply that "supporting passages" versus "counterevidence passages" is too narrow as the only relationship vocabulary.
+The fixture also contains four negative controls: no candidates, all candidates rejected, partial review, and a draft-status limitation.
 
 ## Representational requirements exposed by Annex 22
 
-### R1. Source status is evidence metadata, not a note
+### R1. Source status is structured metadata
 
 A consumer must be able to distinguish at least:
 
 - draft / consultation / final / superseded / unknown status
-- publication or issue date
+- publication or issue date when known
 - version or edition when known
-- jurisdiction / issuing authority when relevant
+- jurisdiction and issuing authority when relevant
 - access time and immutable content hash
 
-`source_type=regulatory_guidance` and `trust_level=primary` are not enough. A primary draft and a primary effective requirement are materially different evidence objects.
+`source_type=regulatory_guidance` plus `trust_level=primary` cannot distinguish a primary consultation draft from a primary effective requirement.
 
-### R2. Anchors must be typed and multi-modal
+Source quality or authority judgments should be separately attributed assessments, not smuggled into identity fields.
 
-Character offsets alone are fragile for PDFs because offsets are against extracted text, not the original page artifact.
+### R2. Anchors are typed and can be multi-modal
 
-A passage should be able to carry multiple anchors, for example:
+Character offsets alone are fragile for PDFs because an offset is against an extracted representation, not the original page artifact.
 
-- clause / section id (`6.5`, `10.1`)
+A passage should be able to carry several anchors, for example:
+
+- clause / section id
 - page number
 - heading path
 - paragraph index
-- character span against a named extracted-text representation
+- character span against a named and hashed extracted-text representation
 
-The bundle should also record which extraction representation an offset is relative to.
+The bundle must say which representation an offset refers to.
 
-### R3. Claim origin and evidence support are different relationships
+### R3. Claim origin is different from audit evidence
 
-For a requirement extracted from Annex 22, the source passage that **generated the claim** is not automatically evidence that a separate target system complies with the claim.
+For a requirement extracted from Annex 22, the source location that **generated the claim** is not automatically proof that a separate target system complies with that claim.
 
-The bundle therefore needs an explicit claim-origin link, distinct from claim-evidence links.
+Claim origin therefore needs its own lineage:
 
-Examples of claim origins:
+- external assertion
+- source-derived / normalized claim
+- multi-location derived claim
+- generated audit question
 
-- external assertion supplied by a user
-- extracted/normalized from a source clause
-- derived from multiple source clauses
-- generated as an audit question
+Origin provenance must not be mistaken for support evidence.
 
-### R4. Claim-passage relationship belongs on the link
+### R4. Claim-passage links record selection provenance, not CAL's answer
 
-The current final C-B routes passages into `evidence_passages` and `counterevidence_passages`. Annex 22 exposes at least these useful relations:
+A passage's relationship to a claim is claim-relative, so claim-passage links are still useful. But the durable link should distinguish:
 
-- supports
-- contradicts
-- qualifies
-- scopes
-- defines
-- contextual
+- **nomination state**: how and why retrieval surfaced the passage
+- **admission state**: whether review allowed it into the audit aperture
+- **audit semantics**: entail / contradict / qualify / neutral, determined downstream
 
-A passage is not inherently "supporting". Its role exists **relative to a claim**, so the relationship should be stored on a claim-passage link.
+The first two belong in Evidence Bundler. The third belongs to CAL's trace/result unless a separately-attributed human semantic annotation is intentionally being stored for research.
 
-### R5. Retrieval nomination and review judgment must remain distinct
+### R5. Retrieval nomination and human admission remain distinct
 
-Retrieval metadata should survive without becoming evidence semantics.
+A link can contain:
 
-A claim-passage link can therefore have two separate blocks:
+- `nomination`: method, query/run, rank, scores, matched child, `hypothesized_role`
+- `review`: accepted/rejected/needs-review/insufficient-excerpt, review basis, reviewer, timestamp, notes
 
-- `nomination`: method, query/run, rank, scores, matched child
-- `review`: accepted/rejected/needs-review/insufficient-excerpt plus reviewed relation and notes
+The review basis should be explicit, for example `audit_relevance_and_excerpt_sufficiency`.
 
-This preserves ADR-001: retrieval nominates; review admits.
+A CAL-facing adapter should ignore `hypothesized_role`. Retrieval nominates; review admits; CAL judges semantic support.
 
 ### R6. Coverage state is first-class evidence about the evidence process
 
-CAL now distinguishes several abstention mechanisms. The bundle should make it possible to tell whether:
+The bundle should distinguish:
 
-- no candidates were retrieved
-- candidates were retrieved but all rejected
-- review is incomplete
-- admitted evidence exists but is partial
-- the source/search scope itself was limited
+- no candidates retrieved
+- candidates retrieved but all rejected
+- review incomplete
+- admitted evidence exists but may be partial
+- source/search scope limited
 
-An empty `evidence_passages` array cannot distinguish these cases.
+An empty `evidence_passages` array cannot tell those histories apart.
 
-### R7. Composite claims need an explicit escape hatch
+### R7. Composite claims need an escape hatch
 
 Annex 22 clauses often combine actor, action, condition, timing, exception, and documentation requirements.
 
-We should not prematurely build a regulatory ontology, but the schema should at minimum be able to say:
+Do not build a full regulatory ontology prematurely. The schema should at minimum preserve:
 
-- this claim is atomic or composite/unknown
-- this claim was derived from one or more origin anchors
-- this claim has child claims when decomposition is performed
+- `atomic | composite | unknown`
+- one or more origin anchors
+- parent/child claim lineage if decomposition occurs
 
-That lets extraction improve later without changing passage identity.
+This lets extraction improve later without changing passage identity.
 
-### R8. Audit configuration is not evidence
+### R8. Audit configuration and results are not evidence identity
 
-`audit_config.yaml`, `validation_set_ref.yaml`, and mutable/null `audit.*` result fields should not be required members of a general evidence bundle.
+`audit_config.yaml`, `validation_set_ref.yaml`, and mutable/null `audit.*` fields should not be required members of a general evidence bundle.
 
-They belong to an audit-run package or audit-result package that references an immutable evidence-bundle hash.
+An audit-run package can reference the immutable evidence-bundle hash and add the selected CAL configuration. An audit-result package can reference both.
 
 ## Draft v2 conceptual shape
 
-This is deliberately conceptual. Field names are not yet an accepted contract.
+Field names are not accepted contract yet.
 
 ```text
 evidence-bundle-{bundle_id}/
@@ -226,19 +249,18 @@ title: ...
 source_type: regulatory_guidance
 publisher: European Commission
 document_status: draft_consultation
-publication_date: "2025-07-01"
-version: null
+publication_date: null
+version_label: consultation_draft_2025
 jurisdiction: EU
 url: ...
 accessed_at_utc: ...
 content_hash: sha256:...
 extraction:
+  representation_id: ...
   extractor: ...
   extractor_version: ...
   extracted_text_hash: sha256:...
 ```
-
-Any source-quality assessment should be a separate assessment block with attribution, not silently collapsed into source identity.
 
 ### `passages/{passage_id}.yaml`
 
@@ -271,15 +293,16 @@ nomination:
   retrieval_run_id: ...
   rank: ...
   scores: {...}
+  hypothesized_role: qualifier_candidate
 review:
   decision: accepted
-  relation: qualifies
+  review_basis: audit_relevance_and_excerpt_sufficiency
   reviewed_by: ...
   reviewed_at_utc: ...
   notes: ...
 ```
 
-The important boundary is that `nomination.method/rank/scores` do not determine `review.relation`.
+`hypothesized_role` is provenance from the nomination process. It is not a support label and should be blinded from CAL's semantic decision path.
 
 ### `coverage/{claim_id}.yaml`
 
@@ -295,46 +318,50 @@ outcome: admitted | no_candidates | all_rejected | partial_review
 limitations: [...]
 ```
 
-This is the minimum information needed to avoid interpreting every empty evidence set the same way.
+This is the minimum state needed to avoid interpreting every empty evidence set the same way.
 
-## What this would supersede if accepted
+## v1.x extension or v2 boundary?
 
-A real v2 contract would need an explicit ADR superseding the parts of ADR-002 that say C-B is both the Bundler's internal schema and the CAL handoff shape.
+Several gaps could technically be patched into v1.x as optional fields. The problem is cumulative:
 
-It would also require coordinated changes in:
+- source identity needs status/version fields
+- passage identity needs typed representation-aware anchors
+- claim identity needs origin and atomicity
+- finalization needs to preserve candidate/admission history
+- coverage must travel with the bundle
+- support/counterevidence preclassification should not control an independent CAL audit
+- CAL config and result placeholders are still mandatory apparatus baggage
 
-1. `apparatus-contracts` canonical C-B specification and validators
-2. Evidence Bundler models/writer/finalizer/tests
-3. Claim Audit Lab C-B reader and `audit-bundle` path
-4. demo/round-trip fixtures
+A backward-compatible v1.x extension can add the missing information, but it cannot remove the old semantic coupling. That would leave two competing interpretations in one contract.
 
-The v1.0/v1.1 apparatus contract should remain readable for reproducibility. A v2 reader can be additive; old sealed bundles should not be rewritten.
+**Provisional inference:** if the goal is a reusable Evidence Bundler product boundary rather than only apparatus replay, this is semantically a major-version change. Preserve a v1 reader/adapter for old sealed bundles rather than rewriting them.
 
-## Gates before changing the schema
+That conclusion is still a hypothesis until the gates below are tested.
 
-We should not accept the v2 shape merely because it looks cleaner. The smallest useful proof is to build several Annex 22 claim packets and ask whether the shape can represent them without hidden assumptions.
+## Gates before changing production models
 
 ### Gate 1: representation
 
-For each stress case A-H, can we encode:
+For stress cases A-H and controls N1-N4, can the proposed shape encode:
 
 - source status
 - claim origin
 - exact source anchor(s)
-- all admitted passages
-- relation of each passage to the claim
-- nomination versus review state
+- every nominated and admitted passage
+- nomination hypothesis separately from human admission
 - coverage/search outcome
 
 without free-text notes carrying structurally essential meaning?
 
 ### Gate 2: audit sufficiency
 
-Can CAL receive only the proposed bundle plus an audit config and determine what evidence is in scope without reading the original PDF or the scaffold run?
+Can CAL receive only a **blinded view** of the proposed bundle plus an audit config and determine what evidence is in scope without reading the source PDF or scaffold run?
+
+The blinded view should include admitted passage content/provenance and coverage state, but exclude scaffold support labels, nomination scores, and hypothesized semantic roles from the decision path unless a specific experiment intentionally exposes them.
 
 ### Gate 3: provenance reconstruction
 
-Can a reviewer start from one CAL verdict and reconstruct:
+Can a reviewer reconstruct:
 
 `verdict -> claim -> admitted link -> passage -> source/extraction representation -> original source hash`
 
@@ -342,19 +369,32 @@ without an ambiguous hop?
 
 ### Gate 4: negative controls
 
-Construct at least four deliberately difficult packets:
+The downstream reader must distinguish:
 
-- empty because retrieval found nothing
-- empty because review rejected all candidates
-- partially reviewed
-- source is a draft whose status materially limits the claim
+- no candidates
+- all candidates rejected
+- partial review
+- admitted evidence constrained by draft source status
 
-If the downstream reader cannot tell these apart, the shape is still underspecified.
+If these collapse to the same state, the shape is underspecified.
+
+### Gate 5: blinding invariance
+
+Create two otherwise byte-equivalent audit inputs from the same admitted passages:
+
+1. nomination metadata says `support_candidate`
+2. nomination metadata says `counter_candidate` or is removed
+
+After conversion to the CAL-facing blinded view, the audit request and verdict must be identical.
+
+If changing a Bundler retrieval-role label changes CAL's result while passage content is unchanged, the handoff is leaking an upstream hypothesis into the measurement.
 
 ## Current hypothesis
 
-**Hypothesis:** the durable Evidence Bundler product boundary is not "C-B as originally specified." It is a reusable evidence package whose job ends after provenance-preserving nomination, review, and coverage accounting. CAL configuration and CAL results should sit outside that package and reference it by hash.
+**Hypothesis:** the durable Evidence Bundler boundary is a reusable, audit-neutral evidence package whose job ends after provenance-preserving nomination, admission, and coverage accounting. CAL configuration and CAL results sit outside it and reference it by hash.
 
-**What would falsify this:** if the Annex 22 stress packets and current CAL use cases can be represented cleanly in C-B v1.x with only small optional additions, a full v2 separation would be unnecessary churn.
+**Strongest assumption:** human admission can be defined narrowly enough as relevance/excerpt sufficiency without becoming a disguised support judgment.
 
-The next step is therefore not to rename fields. It is to encode the Annex 22 stress packets and compare the smallest v1.x extension against the cleaner v2 boundary above.
+**What would falsify the redesign:** if the Annex 22 stress packet, the negative controls, and a blinded CAL round trip can all be represented cleanly with small optional v1.x additions while preserving audit independence, a new major contract is unnecessary churn.
+
+The next evidence-producing step is to implement a tiny prototype loader/blinder for `examples/annex22-shape/prototype-bundle.yaml`, then test the four coverage controls and the blinding-invariance pair before touching canonical models.
