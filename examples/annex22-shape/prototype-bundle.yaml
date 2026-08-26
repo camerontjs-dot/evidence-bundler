@@ -1,4 +1,4 @@
-prototype_schema: evidence-bundle-shape-v2-spike-0
+prototype_schema: evidence-bundle-shape-v2-spike-1
 status: exploratory_not_contract
 prototype_only: true
 
@@ -232,84 +232,88 @@ passages:
     anchors: [{type: clause, value: "10"}]
     parent_passage_id: null
 
+# A link records how a passage entered the case. The nomination role is a search
+# hypothesis, not an evidence judgment. The review admits/rejects for relevance
+# and excerpt sufficiency only. A CAL-facing view must not use hypothesized_role
+# as an entailment/contradiction label.
 links:
   - link_id: lnk-A-scope
     claim_id: clm-A
     passage_id: psg-scope
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.91}}
-    review: {decision: accepted, relation: scopes, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: scope_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.91}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-B-intended
     claim_id: clm-B
     passage_id: psg-intended-use
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.89}}
-    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.89}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-C-acceptance
     claim_id: clm-C
     passage_id: psg-acceptance
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.87}}
-    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: qualifier_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.87}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-D-data
     claim_id: clm-D
     passage_id: psg-test-data
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.86}}
-    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.86}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-D-independence
     claim_id: clm-D
     passage_id: psg-independence
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.81}}
-    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.81}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-E-independence
     claim_id: clm-E
     passage_id: psg-independence
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.88}}
-    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Fallback qualifies the general independence rule."}
+    nomination: {method: hybrid, hypothesized_role: qualifier_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.88}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Relevant passage includes the fallback context."}
 
   - link_id: lnk-F-explainability
     claim_id: clm-F
     passage_id: psg-explainability
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.90}}
-    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.90}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-G-confidence
     claim_id: clm-G
     passage_id: psg-confidence
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.92}}
-    review: {decision: accepted, relation: conditional, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Applicability is conditional."}
+    nomination: {method: hybrid, hypothesized_role: qualifier_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.92}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Passage preserves applicability context."}
 
   - link_id: lnk-H-operation
     claim_id: clm-H
     passage_id: psg-operation
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.93}}
-    review: {decision: accepted, relation: supports, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.93}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: ""}
 
   - link_id: lnk-N2-rejected
     claim_id: clm-N2
     passage_id: psg-operation
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 4, scores: {fusion: 0.42}}
-    review: {decision: rejected, relation: null, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Candidate does not establish the claim."}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 4, scores: {fusion: 0.42}}
+    review: {decision: rejected, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Candidate is not relevant enough to audit the claim."}
 
   - link_id: lnk-N3-reviewed
     claim_id: clm-N3
     passage_id: psg-intended-use
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.64}}
-    review: {decision: accepted, relation: qualifies, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Narrowly relevant; another candidate remains unreviewed."}
+    nomination: {method: hybrid, hypothesized_role: qualifier_candidate, retrieval_run_id: fixture-run-001, rank: 2, scores: {fusion: 0.64}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Narrowly relevant; another candidate remains unreviewed."}
 
   - link_id: lnk-N3-pending
     claim_id: clm-N3
     passage_id: psg-operation
-    nomination: {method: hybrid, retrieval_run_id: fixture-run-001, rank: 3, scores: {fusion: 0.55}}
-    review: {decision: needs-review, relation: null, reviewed_by: null, reviewed_at_utc: null, notes: ""}
+    nomination: {method: hybrid, hypothesized_role: support_candidate, retrieval_run_id: fixture-run-001, rank: 3, scores: {fusion: 0.55}}
+    review: {decision: needs-review, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: null, reviewed_at_utc: null, notes: ""}
 
   - link_id: lnk-N4-status
     claim_id: clm-N4
     passage_id: psg-scope
-    nomination: {method: metadata_plus_hybrid, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.95}}
-    review: {decision: accepted, relation: contradicts, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Source profile records draft consultation status."}
+    nomination: {method: metadata_plus_hybrid, hypothesized_role: counter_candidate, retrieval_run_id: fixture-run-001, rank: 1, scores: {fusion: 0.95}}
+    review: {decision: accepted, review_basis: audit_relevance_and_excerpt_sufficiency, reviewed_by: schema-spike, reviewed_at_utc: "2026-08-26T23:50:00Z", notes: "Source profile records consultation-draft status; downstream eligibility handling remains an open operator question."}
 
 coverage:
   - {claim_id: clm-A, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: []}
@@ -323,4 +327,4 @@ coverage:
   - {claim_id: clm-N1, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 0, reviewed_count: 0, admitted_count: 0, outcome: no_candidates, limitations: []}
   - {claim_id: clm-N2, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 0, outcome: all_rejected, limitations: []}
   - {claim_id: clm-N3, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 2, reviewed_count: 1, admitted_count: 1, outcome: partial_review, limitations: ["One nominated candidate is unresolved."]}
-  - {claim_id: clm-N4, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: ["The in-scope source is a consultation draft, not evidence of final effective status."]}
+  - {claim_id: clm-N4, search_scope: {source_ids: [src-annex22-draft], closed_world: true}, candidate_count: 1, reviewed_count: 1, admitted_count: 1, outcome: admitted, limitations: ["The in-scope source is a consultation draft; source status is an eligibility constraint, not a CAL verdict embedded in the bundle."]}
