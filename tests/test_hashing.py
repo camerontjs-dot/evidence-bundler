@@ -21,7 +21,7 @@ def test_fixture_corpus_hash_matches_manifest(fixture_scaffold_run_dir: Path) ->
 def test_embedded_contract_version_pin() -> None:
     asset_root = Path(__file__).resolve().parents[1]
     version_pin = (asset_root / "schema" / ".contract-version").read_text(encoding="utf-8")
-    assert version_pin.strip() == "1.1.0"
+    assert version_pin.strip() == "1.2.0"
 
 
 def test_embedded_vocabulary_is_byte_identical() -> None:
