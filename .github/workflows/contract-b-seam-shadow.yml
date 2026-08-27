@@ -17,15 +17,25 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install shadow dependencies
-        run: python -m pip install "PyYAML>=6,<7" "pytest>=8,<10" "ruff>=0.15,<1"
+        run: >-
+          python -m pip install
+          "PyYAML>=6,<7"
+          "pydantic>=2.7,<3"
+          "pytest>=8,<10"
+          "ruff>=0.15,<1"
       - name: Contract B seam tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q tests/test_contract_b_seam_probe.py tests/test_annex22_shape_probe.py
+        run: >-
+          python -m pytest -q
+          tests/test_contract_b_seam_probe.py
+          tests/test_contract_b_current_surface_gap.py
+          tests/test_annex22_shape_probe.py
       - name: Lint research probe
         run: >-
           python -m ruff check
           src/evidence_bundler/experiments/contract_b_seam_probe.py
           src/evidence_bundler/experiments/annex22_shape_probe.py
           tests/test_contract_b_seam_probe.py
+          tests/test_contract_b_current_surface_gap.py
           tests/test_annex22_shape_probe.py
