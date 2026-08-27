@@ -6,9 +6,9 @@ from typing import Annotated, Literal, TypeAlias
 
 from pydantic import BaseModel, ConfigDict, Field
 
-ContractVersion: TypeAlias = Literal["1.0.0", "1.1.0"]
-CONTRACT_VERSION: ContractVersion = "1.1.0"
-SUPPORTED_CONTRACT_VERSIONS: frozenset[str] = frozenset({"1.0.0", "1.1.0"})
+ContractVersion: TypeAlias = Literal["1.0.0", "1.1.0", "1.2.0"]
+CONTRACT_VERSION: ContractVersion = "1.2.0"
+SUPPORTED_CONTRACT_VERSIONS: frozenset[str] = frozenset({"1.0.0", "1.1.0", "1.2.0"})
 PENDING_HASH = "sha256:pending"
 
 NonBlankStr: TypeAlias = Annotated[str, Field(min_length=1)]
@@ -56,4 +56,3 @@ class StrictBaseModel(BaseModel):
     """Base model that rejects schema drift and normalizes surrounding whitespace."""
 
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
-
