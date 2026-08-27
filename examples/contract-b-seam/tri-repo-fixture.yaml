@@ -1,0 +1,276 @@
+fixture_schema: contract-b-seam-shadow-v1
+status: research_only
+prototype_only: true
+
+bundle:
+  bundle_id: seam-shadow-001
+  purpose: current_state_validation_audit
+  created_at_utc: "2026-08-27T01:15:00Z"
+  claim_id: clm-current-validation
+
+claim:
+  claim_id: clm-current-validation
+  claim_text: "The currently deployed v2 model is adequately validated for release under the audited policy."
+  claim_form: assertion
+  atomicity: composite
+  origin:
+    kind: external
+
+required_mechanical_fact_ids:
+  - fact-old-validation-version
+  - fact-old-validation-date
+  - fact-incident-version
+  - fact-incident-date
+  - fact-supplier-identity
+  - fact-supplier-qualification-status
+  - fact-current-validation-version
+  - fact-current-validation-date
+  - fact-current-validation-status
+
+sources:
+  - source_id: src-validation-old
+    title: "Validation report v1"
+    source_type: validation_report
+    content_hash: sha256:old-validation
+    source_trust_level: primary
+    context_facts:
+      - fact_id: fact-old-validation-version
+        predicate: system_version
+        value: "1.0"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-validation-old}
+      - fact_id: fact-old-validation-date
+        predicate: validation_date
+        value: "2026-01-10"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-validation-old}
+
+  - source_id: src-incident
+    title: "Post-change incident record"
+    source_type: incident_record
+    content_hash: sha256:incident
+    source_trust_level: primary
+    context_facts:
+      - fact_id: fact-incident-version
+        predicate: system_version
+        value: "2.0"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-incident}
+      - fact_id: fact-incident-date
+        predicate: incident_date
+        value: "2026-06-15"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-incident}
+
+  - source_id: src-supplier-qualification
+    title: "Supplier qualification record"
+    source_type: supplier_record
+    content_hash: sha256:supplier
+    source_trust_level: primary
+    context_facts:
+      - fact_id: fact-supplier-identity
+        predicate: supplier_identity
+        value: "Acme Models Ltd"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-supplier}
+      - fact_id: fact-supplier-qualification-status
+        predicate: supplier_qualification_status
+        value: qualified
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-supplier}
+
+  - source_id: src-validation-current
+    title: "Current-state validation report v2"
+    source_type: validation_report
+    content_hash: sha256:current-validation
+    source_trust_level: primary
+    context_facts:
+      - fact_id: fact-current-validation-version
+        predicate: system_version
+        value: "2.0"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-validation-current}
+      - fact_id: fact-current-validation-date
+        predicate: validation_date
+        value: "2026-07-01"
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-validation-current}
+      - fact_id: fact-current-validation-status
+        predicate: validation_status
+        value: passed
+        assertion_mode: source_declared
+        provenance: {passage_id: psg-validation-current}
+
+  - source_id: src-marketing
+    title: "Product marketing page"
+    source_type: marketing_material
+    content_hash: sha256:marketing
+    source_trust_level: secondary
+    context_facts: []
+
+passages:
+  - passage_id: psg-validation-old
+    source_id: src-validation-old
+    text: "The v1 model completed the recorded validation protocol on 2026-01-10."
+    passage_hash: sha256:psg-old
+    anchors: [{type: section, value: validation-summary}]
+
+  - passage_id: psg-incident
+    source_id: src-incident
+    text: "An incident was recorded for deployed model version 2.0 on 2026-06-15."
+    passage_hash: sha256:psg-incident
+    anchors: [{type: record_id, value: INC-204}]
+
+  - passage_id: psg-supplier
+    source_id: src-supplier-qualification
+    text: "Acme Models Ltd is recorded as qualified in the supplier record."
+    passage_hash: sha256:psg-supplier
+    anchors: [{type: record_id, value: SUP-17}]
+
+  - passage_id: psg-validation-current
+    source_id: src-validation-current
+    text: "Model version 2.0 passed the current-state validation protocol on 2026-07-01."
+    passage_hash: sha256:psg-current
+    anchors: [{type: section, value: approval-summary}]
+
+  - passage_id: psg-marketing
+    source_id: src-marketing
+    text: "The product is fully validated and enterprise ready."
+    passage_hash: sha256:psg-marketing
+    anchors: [{type: heading, value: Overview}]
+
+links:
+  - link_id: lnk-old-validation
+    claim_id: clm-current-validation
+    passage_id: psg-validation-old
+    nomination:
+      method: hybrid
+      retrieval_run_id: seam-run-001
+      rank: 1
+      scores: {fusion: 0.91}
+      hypothesized_role: support_candidate
+    review:
+      decision: accepted
+      review_basis: audit_relevance_and_excerpt_sufficiency
+      reviewed_by: seam-shadow
+      reviewed_at_utc: "2026-08-27T01:15:00Z"
+      notes: "Historically relevant validation evidence; downstream decides current-state applicability."
+
+  - link_id: lnk-incident
+    claim_id: clm-current-validation
+    passage_id: psg-incident
+    nomination:
+      method: hybrid
+      retrieval_run_id: seam-run-001
+      rank: 2
+      scores: {fusion: 0.88}
+      hypothesized_role: counter_candidate
+    review:
+      decision: accepted
+      review_basis: audit_relevance_and_excerpt_sufficiency
+      reviewed_by: seam-shadow
+      reviewed_at_utc: "2026-08-27T01:15:00Z"
+      notes: "Relevant event record; no semantic relation decided upstream."
+
+  - link_id: lnk-supplier
+    claim_id: clm-current-validation
+    passage_id: psg-supplier
+    nomination:
+      method: hybrid
+      retrieval_run_id: seam-run-001
+      rank: 3
+      scores: {fusion: 0.83}
+      hypothesized_role: qualifier_candidate
+    review:
+      decision: accepted
+      review_basis: audit_relevance_and_excerpt_sufficiency
+      reviewed_by: seam-shadow
+      reviewed_at_utc: "2026-08-27T01:15:00Z"
+      notes: "Qualification record admitted as factual context."
+
+  - link_id: lnk-current-validation
+    claim_id: clm-current-validation
+    passage_id: psg-validation-current
+    nomination:
+      method: hybrid
+      retrieval_run_id: seam-run-001
+      rank: 4
+      scores: {fusion: 0.81}
+      hypothesized_role: support_candidate
+    review:
+      decision: accepted
+      review_basis: audit_relevance_and_excerpt_sufficiency
+      reviewed_by: seam-shadow
+      reviewed_at_utc: "2026-08-27T01:15:00Z"
+      notes: "Current validation evidence admitted; CAL decides decision weight."
+
+  - link_id: lnk-marketing
+    claim_id: clm-current-validation
+    passage_id: psg-marketing
+    nomination:
+      method: lexical
+      retrieval_run_id: seam-run-001
+      rank: 5
+      scores: {bm25: 7.1}
+      hypothesized_role: support_candidate
+    review:
+      decision: rejected
+      review_basis: audit_relevance_and_excerpt_sufficiency
+      reviewed_by: seam-shadow
+      reviewed_at_utc: "2026-08-27T01:15:00Z"
+      notes: "Insufficiently specific evidence for this audit aperture."
+
+coverage:
+  claim_id: clm-current-validation
+  search_scope:
+    source_ids:
+      - src-validation-old
+      - src-incident
+      - src-supplier-qualification
+      - src-validation-current
+      - src-marketing
+    closed_world: true
+    source_selection_basis: supplied_fixture
+  candidate_count: 5
+  reviewed_count: 5
+  admitted_count: 4
+  outcome: admitted
+  limitations:
+    - "Fixture scope is synthetic and does not establish real-world retrieval completeness."
+
+# CAL-only research state. This block is deliberately downstream of the proposed
+# EB/Contract-B seam. Tests mutate it to prove the minimal handoff is invariant.
+cal_research_sidecar:
+  assessments:
+    - passage_id: psg-validation-old
+      proposition_specific_relation: support
+      semantic_validity: valid
+      temporal_applicability: stale_for_current_state
+      authority_applicability: applicable
+      decision_participation: false
+
+    - passage_id: psg-incident
+      proposition_specific_relation: refute
+      semantic_validity: valid
+      temporal_applicability: historical_relevant
+      authority_applicability: applicable
+      decision_participation: false
+
+    - passage_id: psg-supplier
+      proposition_specific_relation: conditional
+      semantic_validity: valid
+      temporal_applicability: current
+      authority_applicability: applicable
+      decision_participation: true
+
+    - passage_id: psg-validation-current
+      proposition_specific_relation: support
+      semantic_validity: valid
+      temporal_applicability: current
+      authority_applicability: applicable
+      decision_participation: true
+
+  aperture_assessment:
+    completeness_conclusion: sufficient_for_fixture_only
+
+  verdict: supported_for_fixture_only
