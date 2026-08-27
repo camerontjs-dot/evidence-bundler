@@ -13,8 +13,8 @@
 #   2. A semver bump per the contracts plan's Schema Version Control section
 #   3. Updated copies in every consumer
 
-contract_version: "1.1.0"
-locked_at_utc: "2026-05-15T00:00:00Z"
+contract_version: "1.2.0"
+locked_at_utc: "2026-08-27T00:00:00Z"
 
 vocabularies:
 
@@ -89,6 +89,10 @@ vocabularies:
 #   The scaffold says what it thinks it produced; the audit says what the evidence actually supports.
 #   The disagreement between them — encoded in deviation_flag and false_caution_flag fields on
 #   claims/{claim_id}.yaml — is the apparatus's primary measurement signal.
+#
+# - Contract B v1.2.0 adds an optional factual-context extension without adding or changing
+#   controlled-vocabulary values in this file. The version pin advances so consumers can prove
+#   coordinated contract capability support while legacy 1.0.0/1.1.0 artifacts remain accepted.
 #
 # - audit_support_verdict was expanded from the seed-draft 4-value vocabulary
 #   (supported, partially_supported, unsupported, not_checkable) to six values at v1.0.0 LOCK
