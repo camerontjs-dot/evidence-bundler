@@ -1,8 +1,8 @@
 """Probe the Annex 22 schema-spike fixture without changing the production contract.
 
-The central experiment is blinding: retrieval nomination metadata may be preserved for
-provenance, but it must not appear in the CAL-facing decision view. Human review controls
-admission only; CAL remains responsible for semantic entailment/contradiction judgments.
+Retrieval nomination metadata is retained in the prototype for provenance, but it must
+not appear in the CAL-facing view. Human review controls admission only; CAL remains
+responsible for semantic entailment/contradiction judgments.
 """
 
 from __future__ import annotations
@@ -81,19 +81,12 @@ def validate_prototype(bundle: Mapping[str, Any]) -> None:
     for claim_id, record in coverage.items():
         candidate_links = links_by_claim[claim_id]
         reviewed_links = [
-            link
-            for link in candidate_links
-            if _review_decision(link) not in {"needs-review"}
+            link for link in candidate_links if _review_decision(link) != "needs-review"
         ]
         admitted_links = [
             link for link in candidate_links if _review_decision(link) == "accepted"
         ]
-
-        expected = (
-            len(candidate_links),
-            len(reviewed_links),
-            len(admitted_links),
-        )
+        expected = (len(candidate_links), len(reviewed_links), len(admitted_links))
         observed = (
             _required_int(record, "candidate_count", f"coverage {claim_id}"),
             _required_int(record, "reviewed_count", f"coverage {claim_id}"),
@@ -110,16 +103,16 @@ def validate_prototype(bundle: Mapping[str, Any]) -> None:
 
 
 def build_blinded_cal_view(bundle: Mapping[str, Any]) -> dict[str, Any]:
-    """Return the audit-facing view with nomination hypotheses mechanically removed.
+    """Return an audit-facing view with nomination hypotheses mechanically removed.
 
-    The view intentionally contains no retrieval scores/ranks, hypothesized roles, review
-    notes, scaffold labels, or CAL result placeholders. Review affects only which passages
-    are admitted. Coverage survives because it describes the evidence aperture rather than
-    a semantic verdict.
+    Source identity/status survives because it constrains evidence eligibility and provenance.
+    Retrieval scores/ranks/roles, review notes, scaffold labels, and CAL result placeholders do
+    not survive. Human review affects only which passages are admitted.
     """
     validate_prototype(bundle)
     claims = _index_records(_records(bundle, "claims"), "claim_id")
     passages = _index_records(_records(bundle, "passages"), "passage_id")
+    sources = _index_records(_records(bundle, "sources"), "source_id")
     coverage = _index_records(_records(bundle, "coverage"), "claim_id")
 
     admitted_by_claim: dict[str, list[str]] = {claim_id: [] for claim_id in claims}
@@ -148,12 +141,13 @@ def build_blinded_cal_view(bundle: Mapping[str, Any]) -> dict[str, Any]:
     bundle_meta = _required_mapping(bundle, "bundle", "prototype")
     return {
         "bundle_id": _required_str(bundle_meta, "bundle_id", "bundle"),
+        "sources": [_cal_source_view(sources[source_id]) for source_id in sorted(sources)],
         "claims": cal_claims,
     }
 
 
 def cal_view_hash(bundle: Mapping[str, Any]) -> str:
-    """Hash the canonical JSON representation of the blinded CAL-facing view."""
+    """Hash the canonical JSON representation of the blinded audit-facing view."""
     payload = json.dumps(
         build_blinded_cal_view(bundle),
         sort_keys=True,
@@ -166,8 +160,15 @@ def cal_view_hash(bundle: Mapping[str, Any]) -> str:
 def mutate_nomination_hypotheses(bundle: Mapping[str, Any]) -> dict[str, Any]:
     """Return a copy with nomination roles, ranks, and scores deliberately perturbed."""
     mutated: dict[str, Any] = deepcopy(dict(bundle))
-    for index, link in enumerate(_records(mutated, "links"), start=1):
-        nomination = _required_mapping(link, "nomination", "link")
+    raw_links = mutated.get("links")
+    if not isinstance(raw_links, list):
+        raise ShapeProbeError("Prototype field 'links' must be a list.")
+    for index, raw_link in enumerate(raw_links, start=1):
+        if not isinstance(raw_link, dict):
+            raise ShapeProbeError("Every link must be a mutable mapping in the probe copy.")
+        nomination = raw_link.get("nomination")
+        if not isinstance(nomination, dict):
+            raise ShapeProbeError("Every link must have mutable nomination metadata.")
         nomination["hypothesized_role"] = f"deliberately_changed_role_{index}"
         nomination["rank"] = 10_000 + index
         nomination["scores"] = {"fusion": round(index / 1000, 6)}
@@ -212,7 +213,9 @@ def reconstruct_provenance(
         "link": {"link_id": _required_str(matching_links[0], "link_id", "link")},
         "passage": {
             "passage_id": passage_id,
-            "passage_hash": _required_str(passage, "passage_hash", f"passage {passage_id}"),
+            "passage_hash": _required_str(
+                passage, "passage_hash", f"passage {passage_id}"
+            ),
             "anchors": deepcopy(passage.get("anchors", [])),
         },
         "source": {
@@ -222,6 +225,21 @@ def reconstruct_provenance(
             "representation_id": extraction.get("representation_id"),
             "extracted_text_hash": extraction.get("extracted_text_hash"),
         },
+    }
+
+
+def _cal_source_view(source: Mapping[str, Any]) -> dict[str, Any]:
+    source_id = _required_str(source, "source_id", "source")
+    return {
+        "source_id": source_id,
+        "title": source.get("title"),
+        "source_type": source.get("source_type"),
+        "publisher": source.get("publisher"),
+        "document_status": source.get("document_status"),
+        "status_date": source.get("status_date"),
+        "jurisdiction": source.get("jurisdiction"),
+        "version_label": source.get("version_label"),
+        "content_hash": source.get("content_hash"),
     }
 
 
