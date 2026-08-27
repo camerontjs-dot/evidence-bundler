@@ -1,0 +1,24 @@
+name: Annex 22 shape spike
+
+on:
+  push:
+    branches:
+      - annex22-bundle-shape-spike
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Targeted shape tests
+        run: python -m pytest -q tests/test_annex22_shape_probe.py
+      - name: Lint probe
+        run: python -m ruff check src/evidence_bundler/experiments tests/test_annex22_shape_probe.py
