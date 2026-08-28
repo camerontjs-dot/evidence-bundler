@@ -47,7 +47,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifacts/eb-retrieval-evaluator-rc1
+          mkdir -p artifacts/eb-retrieval-evaluator-rc1/sources
+          cp research/eb_retrieval_evaluator_rc1/evaluator.py artifacts/eb-retrieval-evaluator-rc1/sources/evaluator.py
+          cp research/eb_retrieval_evaluator_rc1/retrieval_result.schema.json artifacts/eb-retrieval-evaluator-rc1/sources/retrieval_result.schema.json
+          cp research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py artifacts/eb-retrieval-evaluator-rc1/sources/diagnose_gold_semantics.py
+          cp docs/research/brief-07-eb-retrieval-evaluator-assurance-rc1.md artifacts/eb-retrieval-evaluator-rc1/sources/preregistration.md
+          cp docs/research/deviation-07a-eb-retrieval-evaluator-gold-summary-semantics.md artifacts/eb-retrieval-evaluator-rc1/sources/deviation-07a.md
           python research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py \
             --benchmark-root benchmarks/eb-challenge-corpus-v1 \
             --output artifacts/eb-retrieval-evaluator-rc1/gold-semantics-diagnostic.json \
