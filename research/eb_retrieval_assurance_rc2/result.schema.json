@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/eb-retrieval-assurance-rc2-result.schema.json",
+  "title": "EB Retrieval Assurance RC2 generic retrieval result",
+  "type": "object",
+  "required": ["schema_version", "case_id", "hits", "search_scope", "completeness_claim", "answerability_claim", "run_identity"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "hits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rank", "source_id", "passage_id", "score", "text"],
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1},
+          "source_id": {"type": "string", "minLength": 1},
+          "passage_id": {"type": "string", "minLength": 1},
+          "score": {"type": "number"},
+          "text": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "search_scope": {
+      "type": "object",
+      "required": ["actual_searchable_subset_id", "observed_scope"],
+      "properties": {
+        "actual_searchable_subset_id": {"type": "string"},
+        "observed_scope": {
+          "type": "object",
+          "required": ["subset_id"],
+          "properties": {"subset_id": {"type": "string"}},
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "completeness_claim": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["unknown", "not_established", "bounded_only", "full_corpus", "comprehensive"]}
+      },
+      "additionalProperties": true
+    },
+    "answerability_claim": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["unknown", "not_established", "answer_present", "no_answer"]}
+      },
+      "additionalProperties": true
+    },
+    "run_identity": {
+      "type": "object",
+      "required": ["retriever_id", "configuration_id", "run_id"],
+      "properties": {
+        "retriever_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "run_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
