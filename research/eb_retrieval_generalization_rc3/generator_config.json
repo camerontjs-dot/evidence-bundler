@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "eb-retrieval-low-overlap-rc3-v1",
+  "generator_seed": 141421,
+  "sealed_case_count": 64,
+  "families": {
+    "L01": 16,
+    "L02": 16,
+    "L03": 16,
+    "C01": 16
+  },
+  "maximum_passages": 5,
+  "passages_per_case": 9,
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "production_bm25_blob": "f8d7dd7e56710453edbca7c51aeea6da949ff903",
+  "rc2_benchmark": "benchmarks/eb-retrieval-assurance-rc2-v1",
+  "hybrid_sealed_exposed": false,
+  "semantic_sealed_exposed": false
+}

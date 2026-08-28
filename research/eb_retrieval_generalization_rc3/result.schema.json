@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/eb-rc3-retrieval-result.schema.json",
+  "title": "EB RC3 bounded retrieval result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "hits", "search_scope", "completeness_claim", "answerability_claim", "run_identity"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "hits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rank", "source_id", "passage_id", "score", "text"],
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1},
+          "source_id": {"type": "string", "minLength": 1},
+          "passage_id": {"type": "string", "minLength": 1},
+          "score": {"type": "number"},
+          "text": {"type": "string"}
+        }
+      }
+    },
+    "search_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actual_searchable_subset_id"],
+      "properties": {
+        "actual_searchable_subset_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "completeness_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {"status": {"enum": ["not_established", "comprehensive", "full_corpus"]}}
+    },
+    "answerability_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {"status": {"enum": ["not_established", "answer_present", "no_answer"]}}
+    },
+    "run_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["retriever_id", "configuration_id", "run_id"],
+      "properties": {
+        "retriever_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "run_id": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "benchmark_tree_file_count": 9,
+  "benchmark_tree_sha256": "f83bdbec6fd89864ee512ff4557ce51eb53164917bec32b03fb5560e01a71c1e",
+  "freeze_order_note": "The source/config bytes and exact expected generated benchmark bytes are frozen before any sealed BM25 or lexical weak-control execution. CI must regenerate the benchmark, verify every expected byte hash and the complete benchmark-tree hash, then and only then execute controls.",
+  "freeze_state": "FROZEN_BEFORE_FIRST_SEALED_CONTROL",
+  "generated_benchmark_file_sha256": {
+    "README.md": "6274afc75f194ea8a7ad8b539f62d951db2c9ad3ef26180f1d0971ba41b06a64",
+    "SHA256SUMS": "694621ea5243680f3e456f70c069ec528081111182418b74f8a874054f285d54",
+    "evaluator_only/sealed_gold.jsonl": "3eff2e6b4fc8df492e7e66ac4cdf033df7a67713c7083b5dc788c78ec1427455",
+    "manifest.json": "2ed42360b46b16c47c8a48a1acb4f59bdc196eac4351f0fc44201d223e072b5b",
+    "provenance/generator_receipt.json": "9547fda2c960148b159267e88a8d9e663109375d9615f23119f5c75f777f50e1",
+    "runtime/passages.jsonl": "94b509ef3438010ec2ad1ae2a67f4645f2ef354345ac95a4efc0074b47b9c464",
+    "runtime/scopes.json": "af6b6efda9bbcc2e7c6699195e9d4d6aa9228106907f7d94346a38c23ede9f20",
+    "runtime/sealed_cases.jsonl": "fbbb4b5b9687628bd54b03431d2cf7fe7ad9d023aea59d6b8fe4250dfb775d9b",
+    "runtime/sources.jsonl": "56e2c69c2905e52ecd8fe716bb891273eff82c3b243cefbc5f547527a462b213"
+  },
+  "hybrid_sealed_exposed": false,
+  "infrastructure_file_sha256": {
+    ".github/workflows/research-eb-retrieval-rc3-apparatus.yml": "be47cd839c74ad246d0809402535dbaf286980a6dddb0ad42e2b35dc45ee696c"
+  },
+  "production_bm25_git_blob": "f8d7dd7e56710453edbca7c51aeea6da949ff903",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "record": "eb-rc3-apparatus-pre-control-freeze",
+  "semantic_sealed_exposed": false,
+  "source_file_sha256": {
+    "research/eb_retrieval_generalization_rc3/bm25_adapter.py": "c5a8ba0cc83fdfcbe5007bdf58b2105064662637da5d82e8890e54f6e0b2a5f3",
+    "research/eb_retrieval_generalization_rc3/control_runner.py": "4661da6fc67195ff00d07663424b52d24f2428787ff01c6ae198df60dfa5cb85",
+    "research/eb_retrieval_generalization_rc3/evaluator.py": "d73619c3707046fc6372a2f69e684a0d417fbdfb43def03446943f6584b1e230",
+    "research/eb_retrieval_generalization_rc3/generate_challenge.py": "bf8dcb5197096a8d76b583e259528430949220c282e9d895916266204bfd6fc1",
+    "research/eb_retrieval_generalization_rc3/generator_config.json": "66cb190cee2c20d747cb4c3ed926bac4fe4a7ddbf383abbc035a708baf4d2a2c",
+    "research/eb_retrieval_generalization_rc3/mutation_plan.json": "a86c25a0c5ba1c9a777fa16da99788abea068248d94d92af043c9edb4e01418b",
+    "research/eb_retrieval_generalization_rc3/result.schema.json": "6af3d20043b1a7d74316c04cd056074a52fb015942e70887dc319585083532da",
+    "research/eb_retrieval_generalization_rc3/thresholds.json": "18e1ff5beb4b825586e80f5dfcff4745ca32c538baa408b06014503b13ca8b40",
+    "research/eb_retrieval_generalization_rc3/validate_challenge.py": "bc898da4ad3d4bb869dcf06c8a476009286e70b3f8c1ec7f31d5604c2fcf96aa"
+  },
+  "target_pr": 15,
+  "target_pr_head_sha": "b2650e2a64c96f2d13500e4be27a8eb41d085c1d",
+  "target_preregistration_git_blobs": {
+    "docs/research/prereg-eb-retrieval-low-overlap-rc3.json": "bc275fb60b4202958c0f359eff1d9ce3c3a903d6",
+    "docs/research/prereg-eb-retrieval-low-overlap-rc3.md": "61dcf3ab3986dbdca54aeb12da6788e3b8a23c58"
+  }
+}
