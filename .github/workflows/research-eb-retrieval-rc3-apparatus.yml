@@ -1,0 +1,139 @@
+name: Research EB retrieval RC3 apparatus assurance
+
+on:
+  push:
+    branches:
+      - research-infra/eb-retrieval-low-overlap-rc3-apparatus
+    paths:
+      - 'research/eb_retrieval_generalization_rc3/**'
+      - '.github/workflows/research-eb-retrieval-rc3-apparatus.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  assure-rc3-apparatus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exact BM25 runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'pydantic>=2.6,<3' 'rank-bm25==0.2.2'
+
+      - name: Verify pre-control source freeze and target preregistration identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          manifest_path=Path('research/eb_retrieval_generalization_rc3/apparatus_freeze_manifest.json')
+          m=json.loads(manifest_path.read_text())
+          for section in ('source_file_sha256', 'infrastructure_file_sha256'):
+              for rel, expected in m[section].items():
+                  actual=hashlib.sha256(Path(rel).read_bytes()).hexdigest()
+                  if actual != expected:
+                      raise SystemExit(f'freeze mismatch {rel}: {actual} != {expected}')
+          if m['hybrid_sealed_exposed'] or m['semantic_sealed_exposed']:
+              raise SystemExit('contamination flag is not false at freeze')
+          print('source freeze manifest verified', hashlib.sha256(manifest_path.read_bytes()).hexdigest())
+          PY
+          git fetch --no-tags origin research/eb-retrieval-low-overlap-rc3
+          test "$(git rev-parse origin/research/eb-retrieval-low-overlap-rc3)" = "b2650e2a64c96f2d13500e4be27a8eb41d085c1d"
+          test "$(git rev-parse origin/research/eb-retrieval-low-overlap-rc3:docs/research/prereg-eb-retrieval-low-overlap-rc3.md)" = "61dcf3ab3986dbdca54aeb12da6788e3b8a23c58"
+          test "$(git rev-parse origin/research/eb-retrieval-low-overlap-rc3:docs/research/prereg-eb-retrieval-low-overlap-rc3.json)" = "bc275fb60b4202958c0f359eff1d9ce3c3a903d6"
+
+      - name: Materialize and verify exact frozen benchmark bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='artifacts/rc3-apparatus/frozen-benchmark'
+          rm -rf "$root"
+          python research/eb_retrieval_generalization_rc3/generate_challenge.py --output-root "$root"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          m=json.loads(Path('research/eb_retrieval_generalization_rc3/apparatus_freeze_manifest.json').read_text())
+          root=Path('artifacts/rc3-apparatus/frozen-benchmark')
+          expected=m['generated_benchmark_file_sha256']
+          observed={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(root.rglob('*')) if p.is_file()}
+          if set(observed) != set(expected):
+              raise SystemExit(f'generated benchmark file-set mismatch: observed={sorted(observed)} expected={sorted(expected)}')
+          for rel, digest in expected.items():
+              if observed[rel] != digest:
+                  raise SystemExit(f'generated benchmark byte mismatch {rel}: {observed[rel]} != {digest}')
+          payload=''.join(f'{observed[rel]}  {rel}\n' for rel in sorted(observed)).encode()
+          tree=hashlib.sha256(payload).hexdigest()
+          if tree != m['benchmark_tree_sha256']:
+              raise SystemExit(f'benchmark tree mismatch: {tree} != {m["benchmark_tree_sha256"]}')
+          print('frozen benchmark verified', tree)
+          PY
+          tmp="$(mktemp -d)"
+          python research/eb_retrieval_generalization_rc3/generate_challenge.py --output-root "$tmp/replay"
+          diff -ru "$root" "$tmp/replay"
+          python research/eb_retrieval_generalization_rc3/validate_challenge.py \
+            --benchmark-root "$root" \
+            --rc2-root benchmarks/eb-retrieval-assurance-rc2-v1 \
+            --output artifacts/rc3-apparatus/validator-result.json
+
+      - name: First legitimate sealed apparatus control
+        id: first_control
+        shell: bash
+        env:
+          PYTHONPATH: src:research/eb_retrieval_generalization_rc3
+        run: |
+          set +e
+          python research/eb_retrieval_generalization_rc3/control_runner.py \
+            --benchmark-root artifacts/rc3-apparatus/frozen-benchmark \
+            --thresholds research/eb_retrieval_generalization_rc3/thresholds.json \
+            --repo-root . \
+            --output artifacts/rc3-apparatus/first-sealed-control.json
+          rc=$?
+          sha256sum artifacts/rc3-apparatus/first-sealed-control.json > artifacts/rc3-apparatus/first-sealed-control.sha256
+          printf '%s\n' "$rc" > artifacts/rc3-apparatus/control-exit-code.txt
+          exit "$rc"
+
+      - name: Build run receipt
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          out=Path('artifacts/rc3-apparatus')
+          out.mkdir(parents=True, exist_ok=True)
+          def h(p):
+              p=Path(p)
+              return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
+          receipt={
+            'record':'eb-rc3-apparatus-run-receipt',
+            'commit_sha':os.environ['GITHUB_SHA'],
+            'run_id':os.environ['GITHUB_RUN_ID'],
+            'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+            'freeze_manifest_sha256':h('research/eb_retrieval_generalization_rc3/apparatus_freeze_manifest.json'),
+            'validator_result_sha256':h(out/'validator-result.json'),
+            'first_sealed_control_sha256':h(out/'first-sealed-control.json'),
+            'frozen_benchmark_tree_sha256':json.loads(Path('research/eb_retrieval_generalization_rc3/apparatus_freeze_manifest.json').read_text())['benchmark_tree_sha256'],
+            'hybrid_sealed_exposed':False,
+            'semantic_sealed_exposed':False
+          }
+          (out/'run-receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          PY
+
+      - name: Preserve first sealed object and control artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-rc3-first-sealed-apparatus-control
+          path: artifacts/rc3-apparatus/
+          if-no-files-found: error
+          retention-days: 90
