@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/cal-pipeline/eb-retrieval-result-rc1.schema.json",
+  "title": "Generic Retrieval Result RC1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "hits",
+    "search_scope",
+    "completeness_claim",
+    "run_identity"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "hits": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/hit"}
+    },
+    "search_scope": {"$ref": "#/$defs/searchScope"},
+    "completeness_claim": {"$ref": "#/$defs/completenessClaim"},
+    "run_identity": {"$ref": "#/$defs/runIdentity"}
+  },
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_offset", "end_offset", "offset_unit"],
+      "properties": {
+        "start_offset": {"type": "integer", "minimum": 0},
+        "end_offset": {"type": "integer", "minimum": 1},
+        "offset_unit": {"type": "string", "minLength": 1},
+        "transform_id": {"type": ["string", "null"]}
+      }
+    },
+    "hit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "rank"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "passage_id": {"type": ["string", "null"]},
+        "anchor": {"oneOf": [{"$ref": "#/$defs/anchor"}, {"type": "null"}]},
+        "rank": {"type": "integer", "minimum": 1},
+        "score": {"type": ["number", "null"]},
+        "text": {"type": ["string", "null"]}
+      },
+      "anyOf": [
+        {"required": ["passage_id"], "properties": {"passage_id": {"type": "string", "minLength": 1}}},
+        {"required": ["anchor"], "properties": {"anchor": {"$ref": "#/$defs/anchor"}}}
+      ]
+    },
+    "searchScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actual_searchable_subset_id", "observed_scope"],
+      "properties": {
+        "actual_searchable_subset_id": {"type": "string", "minLength": 1},
+        "observed_scope": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["subset_id"],
+          "properties": {
+            "subset_id": {"type": "string", "minLength": 1},
+            "source_count": {"type": ["integer", "null"], "minimum": 0},
+            "source_ids_sha256": {"type": ["string", "null"]}
+          }
+        }
+      }
+    },
+    "completenessClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "enum": [
+            "unknown",
+            "not_established",
+            "bounded_only",
+            "full_corpus",
+            "comprehensive"
+          ]
+        },
+        "basis": {"type": ["string", "null"]}
+      }
+    },
+    "runIdentity": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["retriever_id", "configuration_id", "run_id"],
+      "properties": {
+        "retriever_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "run_id": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
