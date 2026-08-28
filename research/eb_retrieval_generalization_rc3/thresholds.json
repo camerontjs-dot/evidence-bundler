@@ -1,0 +1,22 @@
+{
+  "combined_low_overlap_case_hit_at_5_min": 0.85,
+  "combined_low_overlap_decisive_recall_at_5_min": 0.80,
+  "combined_low_overlap_first_decisive_mrr_min": 0.60,
+  "per_low_overlap_family_case_hit_at_5_min": 0.75,
+  "per_low_overlap_family_decisive_recall_at_5_min": 0.70,
+  "hybrid_minus_bm25_case_hit_absolute_min": 0.25,
+  "hybrid_minus_bm25_decisive_recall_absolute_min": 0.25,
+  "c01_counterevidence_case_hit_at_5_min": 0.90,
+  "c01_counterevidence_recall_at_5_min": 0.90,
+  "c01_hybrid_counterevidence_recall_max_regression_vs_bm25": 0.05,
+  "max_budget_violations": 0,
+  "max_invalid_provenance_hits": 0,
+  "max_out_of_scope_hits": 0,
+  "max_scope_mismatches": 0,
+  "max_false_completeness_claims": 0,
+  "max_answerability_overclaims": 0,
+  "max_shape_errors": 0,
+  "max_coverage_errors": 0,
+  "score_invariance_absolute_tolerance": 1e-12,
+  "weak_control_min_distinct_failure_categories": 2
+}
