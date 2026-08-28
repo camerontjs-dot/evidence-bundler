@@ -1,0 +1,90 @@
+{
+  "record": "eb-retrieval-low-overlap-rc3-preregistration",
+  "state": "PREREGISTERED_NO_FRESH_SEALED_TARGET_EXPOSURE",
+  "decision": "Determine whether the frozen existing hybrid retrieval path materially improves fresh low-overlap retrieval over frozen production BM25 without materially degrading counterevidence retrieval.",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "source_blobs": {
+    "retrieval_config_model": "27796662f76c506fcafde32719b40c42aae5dc8d",
+    "semantic_retriever": "ab5bbf938d894f5111ff434918115a8a84a88add",
+    "hybrid_rrf": "761e010da2976d03dc69808ab8d488375869bdb9"
+  },
+  "methods": {
+    "baseline": "bm25",
+    "primary_candidate": "hybrid",
+    "diagnostic": "semantic"
+  },
+  "hybrid_config": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "normalize_embeddings": true,
+    "semantic_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "semantic_child_top_k": 50,
+    "rrf_candidate_pool": 50,
+    "rrf_k_constant": 60,
+    "rerank_enabled": false,
+    "contradiction_enabled": false,
+    "maximum_passages": 5
+  },
+  "fresh_apparatus": {
+    "name": "eb-retrieval-low-overlap-rc3-v1",
+    "generator_seed": 141421,
+    "sealed_cases": 64,
+    "families": {
+      "L01_terminology_substitution": 16,
+      "L02_compositional_paraphrase": 16,
+      "L03_lexical_decoy_low_overlap": 16,
+      "C01_counterevidence_retention": 16
+    },
+    "reuse_rc2_case_or_passage_text": false,
+    "hybrid_sealed_exposed_before_apparatus_authorization": false,
+    "semantic_sealed_exposed_before_apparatus_authorization": false
+  },
+  "apparatus_authorization_requirements": {
+    "oracle_qualifies": true,
+    "bm25_fails_at_least_one_primary_low_overlap_gate": true,
+    "token_overlap_fails": true,
+    "tfidf_cosine_fails": true,
+    "char_trigram_fails": true,
+    "deterministic_replay": true,
+    "source_order_invariance": true,
+    "mutation_sensitivity": true,
+    "benchmark_evaluator_threshold_schema_bytes_frozen": true
+  },
+  "target_gates": {
+    "low_overlap_case_hit_at_5_min": 0.85,
+    "low_overlap_decisive_recall_at_5_min": 0.80,
+    "low_overlap_first_decisive_mrr_min": 0.60,
+    "per_low_overlap_family_case_hit_at_5_min": 0.75,
+    "per_low_overlap_family_decisive_recall_at_5_min": 0.70,
+    "hybrid_minus_bm25_case_hit_absolute_min": 0.25,
+    "hybrid_minus_bm25_decisive_recall_absolute_min": 0.25,
+    "counterevidence_case_hit_at_5_min": 0.90,
+    "counterevidence_recall_at_5_min": 0.90,
+    "counterevidence_recall_max_regression_vs_bm25": 0.05,
+    "max_budget_violations": 0,
+    "max_invalid_provenance_hits": 0,
+    "max_out_of_scope_hits": 0,
+    "max_scope_mismatches": 0,
+    "max_false_completeness_claims": 0,
+    "max_answerability_overclaims": 0,
+    "max_shape_errors": 0,
+    "score_invariance_absolute_tolerance": 1e-12
+  },
+  "nonclaims": [
+    "production chunking/extraction",
+    "native aperture/completeness receipts",
+    "semantic entailment/support/refutation",
+    "semantic answerability/no-answer",
+    "Contract-A decomposition",
+    "Contract-B or Contract-C change",
+    "CAL change",
+    "production authorization"
+  ],
+  "allowed_terminal_dispositions": [
+    "SUPPORTED FOR PROMOTION",
+    "FALSIFIED",
+    "INCONCLUSIVE",
+    "SUPERSEDED"
+  ],
+  "stop_rule": "No semantic or hybrid fresh sealed exposure until a separate apparatus-assurance task freezes and authorizes the exact apparatus. After first legitimate target exposure, no scientific apparatus/candidate changes and no tuning against sealed RC3 cases."
+}
