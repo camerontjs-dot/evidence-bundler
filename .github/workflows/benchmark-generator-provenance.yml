@@ -1,0 +1,81 @@
+name: Benchmark generator provenance
+
+on:
+  pull_request:
+    paths:
+      - "benchmarks/eb-challenge-corpus-v1/**"
+      - "benchmarks/eb-challenge-corpus-v1-generator/**"
+      - ".github/workflows/benchmark-generator-provenance.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "benchmarks/eb-challenge-corpus-v1/**"
+      - "benchmarks/eb-challenge-corpus-v1-generator/**"
+      - ".github/workflows/benchmark-generator-provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-frozen-v1:
+    name: reproduce frozen v1 (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify recovered source identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "8f957bfa9aaa4ee95b108b36ab1659b45c495c96445f909a2ab7c3ec8c30edca  benchmarks/eb-challenge-corpus-v1-generator/scripts/generate_eb_challenge_corpus.py" | sha256sum -c -
+          echo "873972bae79034792bfd1931fa4e69fb9393de2c50996161c1fa344cf6e1beb9  benchmarks/eb-challenge-corpus-v1-generator/scripts/validate_eb_challenge_corpus.py" | sha256sum -c -
+
+      - name: Regenerate into isolated temporary directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp_root="$(mktemp -d)"
+          trap 'rm -rf "$tmp_root"' EXIT
+          generated="$tmp_root/eb-challenge-corpus-v1"
+          python -B benchmarks/eb-challenge-corpus-v1-generator/scripts/generate_eb_challenge_corpus.py \
+            --output "$generated" \
+            --seed 271828 \
+            --as-of 2026-08-27
+
+          python - "$generated" <<'PY'
+          import json
+          import pathlib
+          import sys
+
+          generated = pathlib.Path(sys.argv[1])
+          receipt = json.loads((generated / "validation/freeze_receipt.json").read_text())
+          expected = {
+              "overall_corpus_tree_sha256": "eee87cff5e86a3d0a3cdaaa762837ca90ae60f62939309c1dc335a19884c78a8",
+              "generator_source_sha256": "8f957bfa9aaa4ee95b108b36ab1659b45c495c96445f909a2ab7c3ec8c30edca",
+              "generator_config_hash": "0854e140752132530618af61f82efa2db20dec8460512c65aebbf9d616b3d1e5",
+              "validation_report_sha256": "1c3db5529f14b18035c11aae0d3454c28914bcd822b41ec3bc6b85fd1deeec2a",
+          }
+          for key, value in expected.items():
+              observed = receipt.get(key)
+              if observed != value:
+                  raise SystemExit(f"{key}: expected {value}, observed {observed}")
+          if receipt.get("generator_source_commit") is not None:
+              raise SystemExit(f"expected historical generator_source_commit null, observed {receipt.get('generator_source_commit')}")
+          print(json.dumps({key: receipt.get(key) for key in [*expected, "generator_source_commit"]}, indent=2))
+          PY
+
+          diff -qr benchmarks/eb-challenge-corpus-v1 "$generated"
+
+      - name: Confirm frozen benchmark working tree remained untouched
+        shell: bash
+        run: git diff --exit-code -- benchmarks/eb-challenge-corpus-v1

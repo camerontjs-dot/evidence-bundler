@@ -38,3 +38,12 @@ under test. The package README contains the full runtime/evaluator boundary.
 Do not edit or regenerate this directory in place. A correction requires a
 new corpus version or an explicit deviation record that identifies the
 invalidated results.
+
+## Generator provenance companion
+
+[`eb-challenge-corpus-v1-generator/`](eb-challenge-corpus-v1-generator/) holds
+the exact historical generator and its local validation companion. It is
+intentionally adjacent to, rather than inside, the frozen corpus so the
+corpus tree hash remains unchanged. Use only a new output directory when
+running it; the companion README records the dependency closure and observed
+provenance regeneration.
