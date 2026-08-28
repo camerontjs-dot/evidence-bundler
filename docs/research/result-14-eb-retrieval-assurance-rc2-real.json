@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "research_pr": 14,
+  "disposition": "FALSIFIED",
+  "claim": "The exact frozen production EB BM25 retriever satisfies the full RC2 bounded presegmented retrieval gate.",
+  "sut_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "apparatus_storage_sha": "2643385c998dd3b08af84eb37f3f089fea7d5e73",
+  "frozen_apparatus_commit": "82ec006e888e22c5e5cde600546c05cc6e0b5e33",
+  "workflow_sha": "846ff956dfb5875b6df16a30ed3fb06bb9b96c8d",
+  "workflow_run_id": 33208065906,
+  "workflow_job_id": 98974129431,
+  "artifact_id": 9700464509,
+  "artifact_digest": "sha256:24369b37c225f28d972074dbceb1f96b14f7062ccc3418fba4c42be1bec84b72",
+  "adapter_sha256": "a2b03b9c2a192124e60e355cb673c7fbf6015d6b1ddd681cd594e02fe75021d6",
+  "raw_result_sha256": "05d141abf11eddf90e6f3e1cbbb6f341a9dd495150d0a9f515784fb36722b5ae",
+  "evaluation_sha256": "8d7c7b22216126510989c4fb084968de8b67f83451e22ed9461c570e6ba28916",
+  "qualified": false,
+  "metrics": {
+    "case_hit_at_k": 0.5892857142857143,
+    "decisive_annotation_recall_at_k": 0.4659090909090909,
+    "counterevidence_recall_at_k": 1.0,
+    "qualifier_exception_recall_at_k": 0.0,
+    "complete_joint_group_coverage_at_k": 0.0,
+    "first_decisive_mrr": 0.30357142857142855,
+    "budget_violations": 0,
+    "invalid_provenance_hits": 0,
+    "out_of_scope_hits": 0,
+    "scope_mismatches": 0,
+    "false_completeness_claims": 0,
+    "answerability_overclaims": 0
+  },
+  "families": {
+    "R01": {"case_hit_at_k": 0.125, "decisive_annotation_recall_at_k": 0.125},
+    "R02": {"case_hit_at_k": 1.0, "decisive_annotation_recall_at_k": 1.0, "counterevidence_recall_at_k": 1.0},
+    "R03": {"case_hit_at_k": 1.0, "decisive_annotation_recall_at_k": 0.5, "qualifier_exception_recall_at_k": 0.0, "complete_joint_group_coverage_at_k": 0.0},
+    "R04": {"case_hit_at_k": 1.0, "decisive_annotation_recall_at_k": 0.5, "qualifier_exception_recall_at_k": 0.0, "complete_joint_group_coverage_at_k": 0.0},
+    "R05": {"case_hit_at_k": 1.0, "decisive_annotation_recall_at_k": 0.6666666666666666, "complete_joint_group_coverage_at_k": 0.0},
+    "R06": {"case_hit_at_k": 0.0, "decisive_annotation_recall_at_k": 0.0},
+    "R08": {"case_hit_at_k": 0.0, "decisive_annotation_recall_at_k": 0.0}
+  },
+  "controls": {
+    "deterministic_replay_byte_identical": true,
+    "source_order_identity_rank_invariant": true,
+    "source_order_changed_cases": 0,
+    "source_order_max_aligned_score_delta": 1.1102230246251565e-16,
+    "frozen_control_reproduction_match": true
+  },
+  "bounds": {
+    "presegmented_passage_retrieval_measured": true,
+    "production_chunking_extraction_measured": false,
+    "native_aperture_receipts_measured": false,
+    "semantic_relevance_entailment_measured": false,
+    "semantic_answerability_measured": false
+  }
+}
