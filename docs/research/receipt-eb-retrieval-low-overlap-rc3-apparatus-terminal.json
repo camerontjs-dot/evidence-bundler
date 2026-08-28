@@ -1,0 +1,125 @@
+{
+  "record": "eb-retrieval-low-overlap-rc3-v1-apparatus-terminal-receipt",
+  "disposition": "FALSIFIED",
+  "apparatus_pr": 16,
+  "dependent_target_pr": 15,
+  "terminal_predecessor_pr": 14,
+  "pre_control_freeze_commit": "36ec382c3cd94b6dd1a6be652e49a80469e6b1a4",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "target_preregistration_head_sha": "b2650e2a64c96f2d13500e4be27a8eb41d085c1d",
+  "target_preregistration_git_blobs": {
+    "docs/research/prereg-eb-retrieval-low-overlap-rc3.md": "61dcf3ab3986dbdca54aeb12da6788e3b8a23c58",
+    "docs/research/prereg-eb-retrieval-low-overlap-rc3.json": "bc275fb60b4202958c0f359eff1d9ce3c3a903d6"
+  },
+  "freeze_manifest_sha256": "3f8efeaab3e814c146da937f7824ae62ba8506320dd3ddb7149454f9a063bed7",
+  "benchmark_tree_sha256": "f83bdbec6fd89864ee512ff4557ce51eb53164917bec32b03fb5560e01a71c1e",
+  "frozen_scientific_source_sha256": {
+    "generator": "bf8dcb5197096a8d76b583e259528430949220c282e9d895916266204bfd6fc1",
+    "generator_config": "66cb190cee2c20d747cb4c3ed926bac4fe4a7ddbf383abbc035a708baf4d2a2c",
+    "validator": "bc898da4ad3d4bb869dcf06c8a476009286e70b3f8c1ec7f31d5604c2fcf96aa",
+    "evaluator": "d73619c3707046fc6372a2f69e684a0d417fbdfb43def03446943f6584b1e230",
+    "thresholds": "18e1ff5beb4b825586e80f5dfcff4745ca32c538baa408b06014503b13ca8b40",
+    "result_schema": "6af3d20043b1a7d74316c04cd056074a52fb015942e70887dc319585083532da",
+    "control_runner": "4661da6fc67195ff00d07663424b52d24f2428787ff01c6ae198df60dfa5cb85",
+    "bm25_adapter": "c5a8ba0cc83fdfcbe5007bdf58b2105064662637da5d82e8890e54f6e0b2a5f3",
+    "mutation_plan": "a86c25a0c5ba1c9a777fa16da99788abea068248d94d92af043c9edb4e01418b"
+  },
+  "generated_benchmark_file_sha256": {
+    "README.md": "6274afc75f194ea8a7ad8b539f62d951db2c9ad3ef26180f1d0971ba41b06a64",
+    "SHA256SUMS": "694621ea5243680f3e456f70c069ec528081111182418b74f8a874054f285d54",
+    "evaluator_only/sealed_gold.jsonl": "3eff2e6b4fc8df492e7e66ac4cdf033df7a67713c7083b5dc788c78ec1427455",
+    "manifest.json": "2ed42360b46b16c47c8a48a1acb4f59bdc196eac4351f0fc44201d223e072b5b",
+    "provenance/generator_receipt.json": "9547fda2c960148b159267e88a8d9e663109375d9615f23119f5c75f777f50e1",
+    "runtime/passages.jsonl": "94b509ef3438010ec2ad1ae2a67f4645f2ef354345ac95a4efc0074b47b9c464",
+    "runtime/scopes.json": "af6b6efda9bbcc2e7c6699195e9d4d6aa9228106907f7d94346a38c23ede9f20",
+    "runtime/sealed_cases.jsonl": "fbbb4b5b9687628bd54b03431d2cf7fe7ad9d023aea59d6b8fe4250dfb775d9b",
+    "runtime/sources.jsonl": "56e2c69c2905e52ecd8fe716bb891273eff82c3b243cefbc5f547527a462b213"
+  },
+  "production_bm25_identity": {
+    "bm25_retriever_git_blob": "f8d7dd7e56710453edbca7c51aeea6da949ff903",
+    "indexable_git_blob": "c7da32bd54e6948ab992a1374d0e524947418b60",
+    "hits_git_blob": "032f319d982236e613b766a88b29119b9e49a4be",
+    "document_model_git_blob": "29751aa7420d4b22f44b9548be36e6a038ca4a57",
+    "rank_bm25_0_2_2_git_blob": "d1b5ab9fc0d4f301f2ec995789d41051e65cfa9e"
+  },
+  "first_sealed_control": {
+    "sha256": "b3769f79de6687c4f07f5cb9b65ef759576bef337b5b351d496a9c5b894ac6b7",
+    "exit_code": 0,
+    "encoded_gate_pass": true,
+    "oracle": {
+      "low_overlap_case_hit_at_5": 1.0,
+      "decisive_recall_at_5": 1.0,
+      "counterevidence_recall_at_5": 1.0,
+      "technical_violations": 0
+    },
+    "exact_bm25": {
+      "low_overlap_case_hit_at_5": 0.0,
+      "decisive_recall_at_5": 0.0,
+      "first_decisive_mrr": 0.0,
+      "counterevidence_case_hit_at_5": 0.3125,
+      "counterevidence_recall_at_5": 0.3125,
+      "technical_violations": 0
+    },
+    "lexical_weak_controls": {
+      "token_overlap_qualified": false,
+      "tfidf_cosine_qualified": false,
+      "char_trigram_qualified": false,
+      "failure_categories": ["combined_coverage", "counterevidence", "family_floor", "ranking_quality"]
+    },
+    "other_controls": {
+      "null_failed": true,
+      "first_n_failed": true,
+      "return_all_budget_failed": true,
+      "provenance_corrupt_failed": true,
+      "hard_negative_biased_underperformed_oracle": true,
+      "completeness_liar_failed": true,
+      "answerability_liar_failed": true
+    },
+    "evaluator_assurance": {
+      "deterministic_replay": true,
+      "source_enumeration_invariance": true,
+      "maximum_observed_bm25_reversal_score_delta": 3.552713678800501e-15,
+      "score_tolerance": 1e-12,
+      "decisive_identity_mutation": true,
+      "hard_negative_identity_mutation": true,
+      "provenance_text_mutation": true,
+      "family_label_mutation": true,
+      "result_coverage_fail_closed": true,
+      "k_budget_enforcement": true
+    }
+  },
+  "post_freeze_gaming_diagnostic": {
+    "name": "runtime_meta_cue_gamer",
+    "sha256": "efe412966f073ec38f417e320df72d3b55b4e936d5959a8397085cef80ad0ca9",
+    "ranking_reads_only_runtime": true,
+    "ranking_reads_evaluator_gold": false,
+    "ranking_reads_family_labels": false,
+    "qualified_absolute_target": true,
+    "combined_low_overlap_case_hit_at_5": 0.9791666666666666,
+    "combined_decisive_recall_at_5": 0.9791666666666666,
+    "combined_first_decisive_mrr": 0.9791666666666666,
+    "L01_case_hit_at_5": 1.0,
+    "L02_case_hit_at_5": 1.0,
+    "L03_case_hit_at_5": 0.9375,
+    "C01_counterevidence_case_hit_at_5": 1.0,
+    "C01_counterevidence_recall_at_5": 1.0,
+    "technical_violations": 0,
+    "falsified_property": "decision discrimination against a plausible non-semantic benchmark-construction gaming strategy"
+  },
+  "execution_deviations": [
+    "16a: GitHub connector branch writes did not emit an Actions push event; no GitHub-hosted run was created.",
+    "16b: first sealed control executed on Python 3.13.5 local surface rather than frozen workflow Python 3.12; exact scientific/source bytes were verified before execution.",
+    "16b: automated exact RC2 text/entity non-reuse check was not completed on the local execution surface (validator performed=false)."
+  ],
+  "apparatus_blockers": [
+    "A runtime-only non-semantic meta-document-cue gamer clears every absolute target gate, so the benchmark does not validly discriminate meaning-preserving semantic retrieval from a weak construction-aware heuristic.",
+    "Fresh C01 exact-BM25 counterevidence recall is only 0.3125, so the BM25-relative regression term does not reproduce the strong counterevidence baseline observed in RC2.",
+    "No GitHub-hosted Python 3.12 decisive run receipt exists because available GitHub write surfaces did not emit the workflow trigger.",
+    "Exact RC2 non-reuse validation remains unexecuted in the local receipt."
+  ],
+  "scientific_blocker": "benchmark-specific construction cues provide a cheap non-semantic route to qualification",
+  "hybrid_sealed_exposed": false,
+  "semantic_sealed_exposed": false,
+  "target_exposure_authorized": false,
+  "smallest_justified_successor": "Construct a new versioned fresh apparatus in a separate research-infrastructure task with heterogeneous decoy/document styles and a preregistered runtime-only construction-cue gaming control that must fail before any Hybrid/Semantic exposure. Do not repair eb-retrieval-low-overlap-rc3-v1 in place."
+}
