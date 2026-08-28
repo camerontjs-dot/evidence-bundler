@@ -1,0 +1,116 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "5bb477fb0cc2e84cb6ec9c66c797ba20cdf11a5b3e8e7a2c962a36e813b0038d",
+  "content_path": "content.txt",
+  "document_code": "CDW-POL-267",
+  "document_type": "faq",
+  "effective_date": "2026-07-15",
+  "logical_document_key": "transform::src-cinderwell-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 12,
+  "passages": [
+    {
+      "end_offset": 117,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-221678ab7149-000",
+      "start_offset": 0,
+      "text_sha256": "79517a84f2edcab30b273139add9893c7a3d8a30e582dcb68ea86e0e9bb4e112"
+    },
+    {
+      "end_offset": 245,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-221678ab7149-001",
+      "start_offset": 119,
+      "text_sha256": "ffcdc2afa0d5eca398a9e84cd7cfa3e4e07746c5a1a107a1ae46299eb037e056"
+    },
+    {
+      "end_offset": 380,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-221678ab7149-006",
+      "start_offset": 247,
+      "text_sha256": "b41c470f3b495285236c0061ab24176377a71358dfc9141b08a77e0642286ca3"
+    },
+    {
+      "end_offset": 483,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-221678ab7149-011",
+      "start_offset": 382,
+      "text_sha256": "af511513389622645ad56917d10e28d03b4efc9694326a47bf8099d5b378812c"
+    },
+    {
+      "end_offset": 638,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-221678ab7149-003",
+      "start_offset": 485,
+      "text_sha256": "e1edbe02205f04700e4ddd2a464b2a8686844948dea2e44b7e89d6783b2bafa1"
+    },
+    {
+      "end_offset": 758,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-221678ab7149-010",
+      "start_offset": 640,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 887,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-221678ab7149-009",
+      "start_offset": 760,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1015,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-221678ab7149-004",
+      "start_offset": 889,
+      "text_sha256": "54189aeb7a709566d92bab839c23b4b514b7536b92f3cc6ff6e999dc67a05913"
+    },
+    {
+      "end_offset": 1157,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-221678ab7149-008",
+      "start_offset": 1017,
+      "text_sha256": "8a091534d22e689870fd9ba98dbc1c0a83656941b437aa3380343ca8f009af4c"
+    },
+    {
+      "end_offset": 1286,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-221678ab7149-007",
+      "start_offset": 1159,
+      "text_sha256": "b45273955671fdd1f423b43a59d269d94acc028ec939d1deebff807edae817a6"
+    },
+    {
+      "end_offset": 1401,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-221678ab7149-005",
+      "start_offset": 1288,
+      "text_sha256": "846afd6df5e2916909ddab2ec3c52b1368fec74ef22e0dc4c3f735befbc2771c"
+    },
+    {
+      "end_offset": 1515,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-221678ab7149-002",
+      "start_offset": 1403,
+      "text_sha256": "e862f7238f1f4a035b62e7b0d82780cd14cd9e31e5d7cd11027bbbfc9a2fab4b"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-cinderwell-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Cinderwell thermal hold faq",
+  "version": "1.0"
+}

@@ -1,0 +1,27 @@
+Mica sensor array deviation report. Document code MCA-POL-403. Controlled internal record for the fictional Neralis Compact.
+
+Quick answer. The Mica sensor array questions below use plain language but defer to the controlled record for live work.
+
+The quick guide says a completed witness scan starts preparation; it omits the second-sample prerequisite for release review.
+
+The FAQ says a bypass can be requested during maintenance; it does not state the prerequisite or the expiry window.
+
+The procedure covers records opened by the assigned owner unless the tamper flag is raised; that exception requires a deviation record.
+
+Purpose. This deviation report defines the internal control for Mica sensor array at Loam House. It is limited to the named asset and is not a universal rule.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Ownership. Supplier Liaison owns the operational decision, while Instrument Services performs the independent review.
+
+Identification. Asset MCA-836, product Blue Thistle probe, and record series MCA-REC-654 are used to keep the local records distinct.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Instrument Services.
+
+Records. Entries are made in the controlled register using lot reference MCA-LOT-871; free-form personal copies are not the official record.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under MCA-REC-654.

@@ -1,0 +1,140 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "f2b013af3ab97ee224850a040cf97fb3aa0fecaa1e8fe42c8aa75d8ffd6f8711",
+  "content_path": "content.txt",
+  "document_code": "VLM-POL-415",
+  "document_type": "meeting_record",
+  "effective_date": "2026-05-25",
+  "logical_document_key": "transform::src-vellumcal-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 15,
+  "passages": [
+    {
+      "end_offset": 129,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-fe7ffde3fcd6-000",
+      "start_offset": 0,
+      "text_sha256": "1e20893a45a3a356cb4ad747dbc749c3eb25c8438b7af3ad0a972f2469302811"
+    },
+    {
+      "end_offset": 258,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-fe7ffde3fcd6-001",
+      "start_offset": 131,
+      "text_sha256": "cd5d8e9bb2f469a8caa7e0ca449a1907306f88e64c3c59ffb3d3a121fe682f23"
+    },
+    {
+      "end_offset": 429,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-fe7ffde3fcd6-006",
+      "start_offset": 260,
+      "text_sha256": "623df47986faa199014b6d0a0b342342713182c6782353f6682bf57c3347e1f7"
+    },
+    {
+      "end_offset": 558,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-fe7ffde3fcd6-012",
+      "start_offset": 431,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 700,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-fe7ffde3fcd6-011",
+      "start_offset": 560,
+      "text_sha256": "993f2d393a672c7390342bb530d31fda0663c7fc2c2b1d4849ef640b1f063b1d"
+    },
+    {
+      "end_offset": 811,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-fe7ffde3fcd6-007",
+      "start_offset": 702,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 885,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-fe7ffde3fcd6-005",
+      "start_offset": 813,
+      "text_sha256": "49ca4a653defeef798849f9a066b264bc8a6d8d63439d23153b693f1531a192e"
+    },
+    {
+      "end_offset": 1005,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-fe7ffde3fcd6-013",
+      "start_offset": 887,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1123,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-fe7ffde3fcd6-008",
+      "start_offset": 1007,
+      "text_sha256": "1d9829b6310c474f04e9fd992c57995788741319ebbe75a2650ba65131242ef9"
+    },
+    {
+      "end_offset": 1189,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-fe7ffde3fcd6-002",
+      "start_offset": 1125,
+      "text_sha256": "5ad78c62965be2db64cc3d942b8c11976f3b9b80622d81ea3286eb40a48fd92f"
+    },
+    {
+      "end_offset": 1258,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-fe7ffde3fcd6-003",
+      "start_offset": 1191,
+      "text_sha256": "2cf743320d64902c50e5b824f91df3f53c8b7201ed6bb92cbfbaf785a22e1c29"
+    },
+    {
+      "end_offset": 1361,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-fe7ffde3fcd6-014",
+      "start_offset": 1260,
+      "text_sha256": "40b124be4486d302dad7cb25cdcbfc751e70aaff022f36c1e36c5b04f7875251"
+    },
+    {
+      "end_offset": 1487,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-fe7ffde3fcd6-010",
+      "start_offset": 1363,
+      "text_sha256": "41da14e230ebd6a0eb3f4a04f62ce50704f0742919e76cb4bfbb6b4054037203"
+    },
+    {
+      "end_offset": 1602,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-fe7ffde3fcd6-004",
+      "start_offset": 1489,
+      "text_sha256": "bb365972784196ee4bc6246c1e22ac12d7aa55f31a1911a366f5d72dfecc9b04"
+    },
+    {
+      "end_offset": 1743,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-fe7ffde3fcd6-009",
+      "start_offset": 1604,
+      "text_sha256": "bdb0ee06e82040ea49c4ac296db85bc9d2f0058f2653dd2fd77ca8704ecd3239"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-vellumcal-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Vellum calibration bench meeting record",
+  "version": "1.0"
+}

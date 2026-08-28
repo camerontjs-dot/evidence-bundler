@@ -1,0 +1,31 @@
+Blueglass supplier lot incident report. Document code BLG-SOP-737. Controlled internal record for the fictional Neralis Compact.
+
+Event note. This simulated record describes an observation on 2026-07-17 and separates observation from disposition.
+
+A Blueglass spool with undamaged packaging was held at receipt because its certificate was missing; packaging condition did not waive the certificate check.
+
+A resolved receipt incident mentions a quarantine shelf after inspection; the sequence is opposite to the incoming-material rule.
+
+A supplier bulletin proposes a new material grade; the bulletin is not a local acceptance authorization.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Purpose. This incident report defines the internal control for Blueglass supplier lot at West Lantern. It is limited to the named asset and is not a universal rule.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Identification. Asset BLG-600, product Slate filament spool, and record series BLG-REC-651 are used to keep the local records distinct.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+Review. The document owner reviews this incident report on 2026-10-04 or sooner if the asset, supplier, or record path changes.
+
+Records. Entries are made in the controlled register using lot reference BLG-LOT-628; free-form personal copies are not the official record.
+
+References. Cross-references point to internal document code BLG-H94 and remain subordinate to the effective instruction.
+
+Ownership. Release Coordination owns the operational decision, while Supplier Liaison performs the independent review.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under BLG-REC-651.

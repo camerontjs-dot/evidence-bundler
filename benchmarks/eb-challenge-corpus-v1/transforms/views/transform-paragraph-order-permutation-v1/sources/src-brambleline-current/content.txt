@@ -1,0 +1,33 @@
+Bramble line clearance sop. Document code BRM-REC-185. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Bramble line clearance sop identifies the local setting, owner, and record path before describing the routine.
+
+Identification. Asset BRM-172, product Juniper assembly, and record series BRM-REC-831 are used to keep the local records distinct.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Records. Entries are made in the controlled register using lot reference BRM-LOT-443; free-form personal copies are not the official record.
+
+Review. The document owner reviews this sop on 2026-09-28 or sooner if the asset, supplier, or record path changes.
+
+Ownership. Cell Operations owns the operational decision, while Records Stewardship performs the independent review.
+
+Procedure. The operator confirms the asset identity, performs the named step, and records the result before moving to the next step.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under BRM-REC-831.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Records Stewardship.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Scope. The control applies to units carrying the current work order; unrelated assets use their own controlled instructions.
+
+References. Cross-references point to internal document code BRM-H46 and remain subordinate to the effective instruction.
+
+The short SOP checklist displays 3 zones on its training card; the guidance document governs the full clearance count.
+
+Acceptance. The result is accepted only when the stated parameter, record entry, and required review are all present.
+
+Purpose. This sop defines the internal control for Bramble line clearance at Briar Hall. It is limited to the named asset and is not a universal rule.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.

@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "source_id": "src-morrowquay-record",
+  "source_identity_basis": "stable-semantic-document-key",
+  "logical_document_key": "transform::src-morrowquay-record",
+  "title": "Morrow quarantine rack faq",
+  "document_type": "faq",
+  "version": "1.0",
+  "publication_date": "2026-07-26",
+  "effective_date": null,
+  "status": "final",
+  "document_code": "MRQ-POL-633",
+  "content_path": "content.txt",
+  "content_encoding": "utf-8",
+  "offset_unit": "utf8_byte",
+  "content_hash": "f76e3ea7f4558714ea03e37421dff3c6407ff2651ca29a4410591f843399e902",
+  "passage_count": 14,
+  "passages": [
+    {
+      "passage_id": "pas-a3d26e3dc56d-000",
+      "paragraph_index": 0,
+      "start_offset": 0,
+      "end_offset": 116,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "928ec1ae4c8a514600dd9849b83d207c5c636f8ed3df1ced076e57280ee88473"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-001",
+      "paragraph_index": 1,
+      "start_offset": 118,
+      "end_offset": 245,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "4a80ce49859a5a5530d85977bf06e7b04460d836ae9b6a16abe9ec5d6daffe05"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-002",
+      "paragraph_index": 2,
+      "start_offset": 247,
+      "end_offset": 354,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ec350af7e600d713a82da7910f52f8b00e83678b5f5cb4cac68b7c767a77798b"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-003",
+      "paragraph_index": 3,
+      "start_offset": 356,
+      "end_offset": 429,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "7495e18e522f843694bc01f7b6e607bd1ca95e5f13a12aca2898f84b0f0235d3"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-004",
+      "paragraph_index": 4,
+      "start_offset": 431,
+      "end_offset": 582,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "8a76ee8afa8172abc4448599757f5ce7f072e18b851538d5d7b061cc1e329864"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-005",
+      "paragraph_index": 5,
+      "start_offset": 584,
+      "end_offset": 705,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "2a850f1d3f0020a76c33b983f755796b0fa4d441c53df93b6e2a61b7659c91ad"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-006",
+      "paragraph_index": 6,
+      "start_offset": 707,
+      "end_offset": 864,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-007",
+      "paragraph_index": 7,
+      "start_offset": 866,
+      "end_offset": 975,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-008",
+      "paragraph_index": 8,
+      "start_offset": 977,
+      "end_offset": 1105,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "5b8a0d054bb3813d03d19ad440426f60cd266590d974bc9d53002422d51205c9"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-009",
+      "paragraph_index": 9,
+      "start_offset": 1107,
+      "end_offset": 1222,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "6ec3059e0286977f50928795f1e854ff2fe114ca96581ec20e9703910c8f25ee"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-010",
+      "paragraph_index": 10,
+      "start_offset": 1224,
+      "end_offset": 1341,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "27f5486c194906d98ea4a024692c3af1b3168b5afbb7575ba89f38580035b515"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-011",
+      "paragraph_index": 11,
+      "start_offset": 1343,
+      "end_offset": 1483,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "e8dbb17f79a75233c57ac348065977920b33e39448abe6e20f27366a40308380"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-012",
+      "paragraph_index": 12,
+      "start_offset": 1485,
+      "end_offset": 1612,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "passage_id": "pas-a3d26e3dc56d-013",
+      "paragraph_index": 13,
+      "start_offset": 1614,
+      "end_offset": 1715,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "b3d7675124f3ef66f430b2a6cf1e715c5af9f0aa2e8c8d9f74c7bf64fb87fef3"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Wick archive retrieval technical specification. Document code WCK-SOP-561. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Wick archive retrieval technical specification identifies the local setting, owner, and record path before describing the routine.
+
+Review. The document owner reviews this technical specification on 2026-11-01 or sooner if the asset, supplier, or record path changes.
+
+Interface. The system sends a record identifier to the controlled register after the operator confirms the step.
+
+Purpose. This technical specification defines the internal control for Wick archive retrieval at Quiet Stack. It is limited to the named asset and is not a universal rule.
+
+Design intent. The Wick-9 archive relay separates control settings from advisory indicators so a near-match value cannot be mistaken for an acceptance limit.
+
+Scope. The control applies to sealed lots on the second shift; unrelated assets use their own controlled instructions.
+
+The gateway training card warns after 4 failed attempts and displays a 20-minute reminder; neither is the enforced lockout rule.
+
+References. Cross-references point to internal document code WCK-H43 and remain subordinate to the effective instruction.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under WCK-REC-744.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Ownership. Archive Services owns the operational decision, while Release Coordination performs the independent review.
+
+Identification. Asset WCK-965, product Cairn record bundle, and record series WCK-REC-744 are used to keep the local records distinct.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Records. Entries are made in the controlled register using lot reference WCK-LOT-738; free-form personal copies are not the official record.
+
+Routine. The the release desk checks the visible condition, records the observation, and routes exceptions to Release Coordination.

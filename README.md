@@ -57,6 +57,16 @@ The mixed-format fixture is the smallest useful path through intake, ingest, ret
 
 The generated files go under `build/`, which is intentionally ignored.
 
+## Frozen retrieval/decomposition benchmark
+
+[`benchmarks/eb-challenge-corpus-v1/`](benchmarks/eb-challenge-corpus-v1/) is
+a separately frozen synthetic benchmark for retrieval, aperture-boundary, and
+claim-decomposition experiments. It is not a Contract-A/Contract-B fixture or
+a production behavior change. Keep its evaluator-only `gold/` and
+`decompositions/` directories outside the runtime corpus; see
+[`benchmarks/README.md`](benchmarks/README.md) for the mounting boundary and
+freeze receipt.
+
 ## Retrieval modes
 
 `build-bundle --method bm25` is the default baseline. It indexes child or leaf chunks and returns parent context through max-score parent aggregation.

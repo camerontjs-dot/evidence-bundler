@@ -1,0 +1,25 @@
+Larkspur label sleeve meeting record. Document code LSP-TSP-369. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Larkspur label sleeve meeting record identifies the local setting, owner, and record path before describing the routine.
+
+The meeting note records a 36-day planning cadence for staffing; planning cadence is not calibration interval.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+References. Cross-references point to internal document code LSP-H82 and remain subordinate to the effective instruction.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+Review. The document owner reviews this meeting record on 2026-10-02 or sooner if the asset, supplier, or record path changes.
+
+Purpose. This meeting record defines the internal control for Larkspur label sleeve at Mica Court. It is limited to the named asset and is not a universal rule.
+
+Records. Entries are made in the controlled register using lot reference LSP-LOT-182; free-form personal copies are not the official record.
+
+Ownership. Cell Operations owns the operational decision, while Archive Services performs the independent review.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under LSP-REC-733.

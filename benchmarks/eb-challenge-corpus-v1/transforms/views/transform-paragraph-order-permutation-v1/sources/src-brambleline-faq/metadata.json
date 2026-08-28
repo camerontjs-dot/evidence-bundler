@@ -1,0 +1,116 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "1a3713a3abe3d87e5b785adc0befbcdbdcf664a7269472a95faaeb89620e424d",
+  "content_path": "content.txt",
+  "document_code": "BRM-TSP-855",
+  "document_type": "faq",
+  "effective_date": "2026-07-12",
+  "logical_document_key": "transform::src-brambleline-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 12,
+  "passages": [
+    {
+      "end_offset": 116,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-c13582a63ab0-000",
+      "start_offset": 0,
+      "text_sha256": "6bf15e711e71c6477130c1bf2c867c3dcbc563c8366e57f6d6bcbddc408056fa"
+    },
+    {
+      "end_offset": 243,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-c13582a63ab0-001",
+      "start_offset": 118,
+      "text_sha256": "9c2d001e229d692a728e41c75e8ae5158a0860bf8b9fc7881c23b36dd9ff149b"
+    },
+    {
+      "end_offset": 359,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-c13582a63ab0-002",
+      "start_offset": 245,
+      "text_sha256": "21f02ec54c29625ba113091e1e1f8d7854c9618e8473af5e7a12d154eb43e45c"
+    },
+    {
+      "end_offset": 511,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-c13582a63ab0-003",
+      "start_offset": 361,
+      "text_sha256": "28252a3accf6462899fb1e9af5e9d08de9ebf04063fe0d6463c8b3ce8ea1ccab"
+    },
+    {
+      "end_offset": 631,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-c13582a63ab0-010",
+      "start_offset": 513,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 760,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-c13582a63ab0-009",
+      "start_offset": 633,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 863,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-c13582a63ab0-011",
+      "start_offset": 762,
+      "text_sha256": "e4fafa9676faf1317aa48810fab7fdb8b211ea163af89c5ebd999af89d731fdb"
+    },
+    {
+      "end_offset": 989,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-c13582a63ab0-004",
+      "start_offset": 865,
+      "text_sha256": "15d69b309129db7332608c38cc968a244718a70469fe8a18d20d70a5ebf257b0"
+    },
+    {
+      "end_offset": 1131,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-c13582a63ab0-008",
+      "start_offset": 991,
+      "text_sha256": "c9b662a0c712a687db3210bb1c39ea1bed8a678781ea4f7d18afcc28de62f134"
+    },
+    {
+      "end_offset": 1261,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-c13582a63ab0-007",
+      "start_offset": 1133,
+      "text_sha256": "c356d72c0554545ac2aa723edb1ad9e31cbbb214ace2339b498880f84c1a14f5"
+    },
+    {
+      "end_offset": 1394,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-c13582a63ab0-006",
+      "start_offset": 1263,
+      "text_sha256": "6f1adc24ce121d8c04f72b1e41f5f587d65041406e2d664ccbb278e2be9e22c0"
+    },
+    {
+      "end_offset": 1512,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-c13582a63ab0-005",
+      "start_offset": 1396,
+      "text_sha256": "75fa49565893b89ef95c78c49d321720bef7b195525f3b8dcb7aa23f93896555"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-brambleline-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Bramble line clearance faq",
+  "version": "1.0"
+}

@@ -1,0 +1,29 @@
+Vellum calibration bench meeting record. Document code VLM-POL-415. Controlled internal record for the fictional Neralis Compact.
+
+Quick answer. The Vellum calibration bench questions below use plain language but defer to the controlled record for live work.
+
+Before a Vellum run, let the reference plate settle for 8 hours.
+
+Keep the instrument sealed to preserve a Vellum result for 14 days.
+
+The FAQ calls the second check an additional assurance step; assurance language does not grant release authority.
+
+The technician FAQ repeats the plus or minus 0.8-millimetre drift limit.
+
+Purpose. This meeting record defines the internal control for Vellum calibration bench at Reed Observatory. It is limited to the named asset and is not a universal rule.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Ownership. Instrument Services owns the operational decision, while Cell Operations performs the independent review.
+
+Identification. Asset VLM-171, product Gossamer reference plate, and record series VLM-REC-143 are used to keep the local records distinct.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Cell Operations.
+
+Records. Entries are made in the controlled register using lot reference VLM-LOT-280; free-form personal copies are not the official record.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under VLM-REC-143.

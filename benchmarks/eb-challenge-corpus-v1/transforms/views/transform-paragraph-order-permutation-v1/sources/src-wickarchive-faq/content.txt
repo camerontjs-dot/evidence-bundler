@@ -1,0 +1,23 @@
+Wick archive retrieval faq. Document code WCK-REC-844. Controlled internal record for the fictional Neralis Compact.
+
+Quick answer. The Wick archive retrieval questions below use plain language but defer to the controlled record for live work.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Records. Entries are made in the controlled register using lot reference WCK-LOT-738; free-form personal copies are not the official record.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under WCK-REC-744.
+
+Scope. The control applies to sealed lots on the second shift; unrelated assets use their own controlled instructions.
+
+Purpose. This faq defines the internal control for Wick archive retrieval at Quiet Stack. It is limited to the named asset and is not a universal rule.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Routine. The the release desk checks the visible condition, records the observation, and routes exceptions to Release Coordination.
+
+Ownership. Archive Services owns the operational decision, while Release Coordination performs the independent review.
+
+Identification. Asset WCK-965, product Cairn record bundle, and record series WCK-REC-744 are used to keep the local records distinct.
+
+The archive FAQ permits a preview from any workstation but says nothing about executing an export or recording the operator token.

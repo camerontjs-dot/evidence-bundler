@@ -1,0 +1,35 @@
+Morrow quarantine rack technical specification. Document code MRQ-VAL-215. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Morrow quarantine rack technical specification identifies the local setting, owner, and record path before describing the routine.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Movement is permitted only after the lot identity is matched and signed by the assigned reviewer.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under MRQ-REC-890.
+
+Ownership. Instrument Services owns the operational decision, while Supplier Liaison performs the independent review.
+
+References. Cross-references point to internal document code MRQ-H18 and remain subordinate to the effective instruction.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+The technical note permits a repeat measurement during troubleshooting; a repeat measurement is not a completed second release check.
+
+Interface. The system sends a record identifier to the controlled register after the operator confirms the step.
+
+Review. The document owner reviews this technical specification on 2026-10-28 or sooner if the asset, supplier, or record path changes.
+
+Routine. The the east cell checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+Purpose. This technical specification defines the internal control for Morrow quarantine rack at Morrow Gate. It is limited to the named asset and is not a universal rule.
+
+Identification. Asset MRQ-869, product Siltstone lot, and record series MRQ-REC-890 are used to keep the local records distinct.
+
+Records. Entries are made in the controlled register using lot reference MRQ-LOT-786; free-form personal copies are not the official record.
+
+Design intent. The Morrow-2 quarantine rack separates control settings from advisory indicators so a near-match value cannot be mistaken for an acceptance limit.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.

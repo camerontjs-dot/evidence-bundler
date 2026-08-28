@@ -1,0 +1,23 @@
+Oriole batch gate meeting record. Document code ORL-TSP-654. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Oriole batch gate meeting record identifies the local setting, owner, and record path before describing the routine.
+
+Identification. Asset ORL-846, product Cobalt reed batch, and record series ORL-REC-667 are used to keep the local records distinct.
+
+Routine. The the east cell checks the visible condition, records the observation, and routes exceptions to Release Coordination.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+References. Cross-references point to internal document code ORL-H74 and remain subordinate to the effective instruction.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Review. The document owner reviews this meeting record on 2026-11-06 or sooner if the asset, supplier, or record path changes.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Purpose. This meeting record defines the internal control for Oriole batch gate at Oriole Yard. It is limited to the named asset and is not a universal rule.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under ORL-REC-667.

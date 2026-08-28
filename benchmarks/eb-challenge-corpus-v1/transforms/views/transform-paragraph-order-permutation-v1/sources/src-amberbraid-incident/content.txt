@@ -1,0 +1,25 @@
+Amberbraid supplier lot incident report revision 1.0. Document code AMB-TSP-802. Controlled internal record for the fictional Neralis Compact.
+
+Event note. This simulated record describes an observation on 2026-07-17 and separates observation from disposition.
+
+References. Cross-references point to internal document code AMB-H81 and remain subordinate to the effective instruction.
+
+Review. The document owner reviews this incident report on 2026-10-18 or sooner if the asset, supplier, or record path changes.
+
+Purpose. This incident report defines the internal control for Amberbraid supplier lot at Copper Gate. It is limited to the named asset and is not a universal rule.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Ownership. Instrument Services owns the operational decision, while Archive Services performs the independent review.
+
+Routine. The the east cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+Records. Entries are made in the controlled register using lot reference AMB-LOT-881; free-form personal copies are not the official record.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under AMB-REC-182.
+
+Identification. Asset AMB-786, product Ochre filament spool, and record series AMB-REC-182 are used to keep the local records distinct.

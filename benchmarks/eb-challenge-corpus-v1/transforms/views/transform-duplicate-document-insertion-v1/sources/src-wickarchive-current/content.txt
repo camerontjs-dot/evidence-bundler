@@ -1,0 +1,39 @@
+Wick archive retrieval sop. Document code WCK-SOP-836. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Wick archive retrieval sop identifies the local setting, owner, and record path before describing the routine.
+
+The Wick gateway disables a badge after 5 failed attempts and holds the lockout for 15 minutes.
+
+Archive export is permitted only from Quiet Stack; the export record includes the operator token.
+
+The Wick gateway rotates its session key every 15 minutes unless a maintenance exemption is active.
+
+Wick audit snapshots remain in the controlled archive for 60 days and are not copied to personal storage.
+
+Purpose. This sop defines the internal control for Wick archive retrieval at Quiet Stack. It is limited to the named asset and is not a universal rule.
+
+Scope. The control applies to sealed lots on the second shift; unrelated assets use their own controlled instructions.
+
+Ownership. Archive Services owns the operational decision, while Release Coordination performs the independent review.
+
+Identification. Asset WCK-965, product Cairn record bundle, and record series WCK-REC-744 are used to keep the local records distinct.
+
+Routine. The the release desk checks the visible condition, records the observation, and routes exceptions to Release Coordination.
+
+Records. Entries are made in the controlled register using lot reference WCK-LOT-738; free-form personal copies are not the official record.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Review. The document owner reviews this sop on 2026-11-01 or sooner if the asset, supplier, or record path changes.
+
+References. Cross-references point to internal document code WCK-H43 and remain subordinate to the effective instruction.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Procedure. The operator confirms the asset identity, performs the named step, and records the result before moving to the next step.
+
+Acceptance. The result is accepted only when the stated parameter, record entry, and required review are all present.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under WCK-REC-744.

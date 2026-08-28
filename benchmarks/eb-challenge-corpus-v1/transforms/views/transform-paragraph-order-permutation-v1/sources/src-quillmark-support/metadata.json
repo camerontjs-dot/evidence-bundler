@@ -1,0 +1,164 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "9e06397d20dfa7a8a0a41c5e57c0a10338410346e2f93fa07d7d19546eefa9ba",
+  "content_path": "content.txt",
+  "document_code": "QMK-TSP-662",
+  "document_type": "work_instruction",
+  "effective_date": "2026-06-30",
+  "logical_document_key": "transform::src-quillmark-support",
+  "offset_unit": "utf8_byte",
+  "passage_count": 18,
+  "passages": [
+    {
+      "end_offset": 128,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-d8b8763d878c-000",
+      "start_offset": 0,
+      "text_sha256": "577a36e5547fb4d909ffbaec2284125274bc379eb38e93bf5d949d67f1069aa4"
+    },
+    {
+      "end_offset": 269,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-d8b8763d878c-001",
+      "start_offset": 130,
+      "text_sha256": "ccd4f7fa4f692bca176b5ae6e9247340b1c3a89d385442f5577adb9ad34b7896"
+    },
+    {
+      "end_offset": 392,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-d8b8763d878c-013",
+      "start_offset": 271,
+      "text_sha256": "54cb054556c81005f8079a238a048491db0aa60959f4a1c1174df0449776690c"
+    },
+    {
+      "end_offset": 522,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-d8b8763d878c-012",
+      "start_offset": 394,
+      "text_sha256": "9e1d38f3486265d41378438b708b3d7c26c45c537e9b2c72347f344d0ba1031f"
+    },
+    {
+      "end_offset": 664,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-d8b8763d878c-009",
+      "start_offset": 524,
+      "text_sha256": "f2e33175953d7a9f3a80b276a62237ec7c98e8e7101c9fd0872543016b69612c"
+    },
+    {
+      "end_offset": 767,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-d8b8763d878c-017",
+      "start_offset": 666,
+      "text_sha256": "d6c6f63ebb1713433297f9aafcc51fc776ae17846ce90a46346661e3eceb5b0f"
+    },
+    {
+      "end_offset": 878,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-d8b8763d878c-005",
+      "start_offset": 769,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 1005,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-d8b8763d878c-008",
+      "start_offset": 880,
+      "text_sha256": "f84d11ae0a00a42a8565e9cf563aa65a8aee0bee2f896392d1b7effd89bf699f"
+    },
+    {
+      "end_offset": 1124,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-d8b8763d878c-003",
+      "start_offset": 1007,
+      "text_sha256": "f213b0849e8c83fc244a65b3681aa4fb747ee785516b8a71e51550ab6d1d55dc"
+    },
+    {
+      "end_offset": 1289,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-d8b8763d878c-004",
+      "start_offset": 1126,
+      "text_sha256": "1445182f8551054bb0789fb89774e9cdf41c584edb3490da46b6d63fc9f49139"
+    },
+    {
+      "end_offset": 1409,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-d8b8763d878c-011",
+      "start_offset": 1291,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1529,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-d8b8763d878c-006",
+      "start_offset": 1411,
+      "text_sha256": "c9ba31ae2b63a7644a0ae678edf275cb2bf38d67a513e0b1f2c9a26ee4ed7c74"
+    },
+    {
+      "end_offset": 1660,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-d8b8763d878c-002",
+      "start_offset": 1531,
+      "text_sha256": "d9af71ae6b8d9c4942fee61ce24b60b4ed1911c8e6a473c3157574374a71bb75"
+    },
+    {
+      "end_offset": 1792,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-d8b8763d878c-007",
+      "start_offset": 1662,
+      "text_sha256": "bc4305882272ba995d00fd83355f9e9493b2c137c37d6aa97fef6189eed24f71"
+    },
+    {
+      "end_offset": 1930,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-d8b8763d878c-015",
+      "start_offset": 1794,
+      "text_sha256": "7a27c2f5b88dbd2ee53879a3a51bb6343c9f1e794012877d2a740842a8815047"
+    },
+    {
+      "end_offset": 2059,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 15,
+      "passage_id": "pas-d8b8763d878c-010",
+      "start_offset": 1932,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 2218,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 16,
+      "passage_id": "pas-d8b8763d878c-014",
+      "start_offset": 2061,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 2325,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 17,
+      "passage_id": "pas-d8b8763d878c-016",
+      "start_offset": 2220,
+      "text_sha256": "3a09821d6497664e78b9c593855e72176fabf03ccab3ce65ee046bc32433343a"
+    }
+  ],
+  "publication_date": "2026-07-23",
+  "schema_version": "1.0",
+  "source_id": "src-quillmark-support",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Quillmark seal ledger work instruction",
+  "version": "1.0"
+}

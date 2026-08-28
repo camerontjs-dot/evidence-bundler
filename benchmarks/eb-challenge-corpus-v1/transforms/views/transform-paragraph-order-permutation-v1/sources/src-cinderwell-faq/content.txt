@@ -1,0 +1,23 @@
+Cinderwell thermal hold faq. Document code CDW-POL-267. Controlled internal record for the fictional Neralis Compact.
+
+Quick answer. The Cinderwell thermal hold questions below use plain language but defer to the controlled record for live work.
+
+Identification. Asset CDW-804, product Emberleaf cassette, and record series CDW-REC-447 are used to keep the local records distinct.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under CDW-REC-447.
+
+Purpose. This faq defines the internal control for Cinderwell thermal hold at Hearth Annex. It is limited to the named asset and is not a universal rule.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Scope. The control applies to the named product in the named facility; unrelated assets use their own controlled instructions.
+
+Records. Entries are made in the controlled register using lot reference CDW-LOT-833; free-form personal copies are not the official record.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+Ownership. Cell Operations owns the operational decision, while Supplier Liaison performs the independent review.
+
+The FAQ states that a witness token permits an override; it does not say that token absence blocks local review.

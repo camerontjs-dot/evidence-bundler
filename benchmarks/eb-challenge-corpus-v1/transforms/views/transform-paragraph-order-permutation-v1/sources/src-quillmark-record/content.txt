@@ -1,0 +1,25 @@
+Quillmark seal ledger meeting record. Document code QMK-POL-878. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Quillmark seal ledger meeting record identifies the local setting, owner, and record path before describing the routine.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Identification. Asset QMK-600, product Tansy fold pack, and record series QMK-REC-266 are used to keep the local records distinct.
+
+Review. The document owner reviews this meeting record on 2026-10-01 or sooner if the asset, supplier, or record path changes.
+
+Purpose. This meeting record defines the internal control for Quillmark seal ledger at Nettle Quay. It is limited to the named asset and is not a universal rule.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Records. Entries are made in the controlled register using lot reference QMK-LOT-716; free-form personal copies are not the official record.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Offline viewing is permitted after the local mirror reports synchronization; unsynchronized mirrors remain read-blocked.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under QMK-REC-266.
+
+References. Cross-references point to internal document code QMK-H43 and remain subordinate to the effective instruction.

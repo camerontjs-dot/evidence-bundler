@@ -1,0 +1,108 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "64edb8df85750f8bff0489ac10db58d1d9bd610762016f727f08a8b641282407",
+  "content_path": "content.txt",
+  "document_code": "BLG-POL-826",
+  "document_type": "knowledge_base_article",
+  "effective_date": "2026-07-17",
+  "logical_document_key": "transform::src-blueglass-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 11,
+  "passages": [
+    {
+      "end_offset": 135,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-22238adec92e-000",
+      "start_offset": 0,
+      "text_sha256": "3058bbd1b52e6bc4ce707f8d63a255cc5b59793755b5833729c72f2460d34046"
+    },
+    {
+      "end_offset": 262,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-22238adec92e-001",
+      "start_offset": 137,
+      "text_sha256": "47f87118dd30f152f19ca2b86ad02d0e1c78a9bb8b71c281e4cd23ed696fc5ab"
+    },
+    {
+      "end_offset": 382,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-22238adec92e-004",
+      "start_offset": 264,
+      "text_sha256": "9ee4fbe0bdf68ce44ad8eae113a5907516d7ced03f8b12b014bce231800daa26"
+    },
+    {
+      "end_offset": 524,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-22238adec92e-007",
+      "start_offset": 384,
+      "text_sha256": "7cb87b932c81e85b2627a990a4f6e86524e1a2bbe420b718dc3cb2e873e6c052"
+    },
+    {
+      "end_offset": 627,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-22238adec92e-010",
+      "start_offset": 526,
+      "text_sha256": "a9807331e7df55a10dd3befc462639fb01b8891663aad2e9296dd2f9c2cb2e11"
+    },
+    {
+      "end_offset": 756,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-22238adec92e-006",
+      "start_offset": 629,
+      "text_sha256": "b45273955671fdd1f423b43a59d269d94acc028ec939d1deebff807edae817a6"
+    },
+    {
+      "end_offset": 885,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-22238adec92e-008",
+      "start_offset": 758,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1010,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-22238adec92e-003",
+      "start_offset": 887,
+      "text_sha256": "584a7febca26cbaa4775563c4ed1dae8e1f69ba8b3a92a33794332c34b455e26"
+    },
+    {
+      "end_offset": 1130,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-22238adec92e-009",
+      "start_offset": 1012,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1267,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-22238adec92e-005",
+      "start_offset": 1132,
+      "text_sha256": "3239923582e761c1ce4642a5c71f4f67ce7add7f9e976437e4cf2aa35fb2df92"
+    },
+    {
+      "end_offset": 1440,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-22238adec92e-002",
+      "start_offset": 1269,
+      "text_sha256": "777e3138e27c8a1bf762c50a92bd7c8f4d0913dee4a514543474e788b3f90510"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-blueglass-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Blueglass supplier lot knowledge base article",
+  "version": "1.0"
+}

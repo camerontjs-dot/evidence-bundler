@@ -1,0 +1,140 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "bce20d24ac54ba457ad7c351d82ae246937e045176aab505c82b6fff0325503a",
+  "content_path": "content.txt",
+  "document_code": "MRQ-POL-668",
+  "document_type": "meeting_record",
+  "effective_date": null,
+  "logical_document_key": "transform::src-morrowquay-incident",
+  "offset_unit": "utf8_byte",
+  "passage_count": 15,
+  "passages": [
+    {
+      "end_offset": 127,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-aef9cf53f13e-000",
+      "start_offset": 0,
+      "text_sha256": "cf8f62ae01b6761048d7291b596ed1de1912a4c7975e676cea4e7d777156b58d"
+    },
+    {
+      "end_offset": 245,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-aef9cf53f13e-001",
+      "start_offset": 129,
+      "text_sha256": "ac5e37693c12e7155b11962580557f548d6978035e71d6584cee9965b48791b4"
+    },
+    {
+      "end_offset": 319,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-aef9cf53f13e-003",
+      "start_offset": 247,
+      "text_sha256": "3b7443c81f6bcf7a8bdbcd0fa37e3f5a392bc01fe6cabd8adf75e5a7cf65013b"
+    },
+    {
+      "end_offset": 461,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-aef9cf53f13e-007",
+      "start_offset": 321,
+      "text_sha256": "e8dbb17f79a75233c57ac348065977920b33e39448abe6e20f27366a40308380"
+    },
+    {
+      "end_offset": 589,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-aef9cf53f13e-004",
+      "start_offset": 463,
+      "text_sha256": "36f07baab553d8a2eaf414d3a822eadd4179ed3cf0006ee0a92b3e06a6fa8141"
+    },
+    {
+      "end_offset": 715,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-aef9cf53f13e-005",
+      "start_offset": 591,
+      "text_sha256": "9570c0597fb1344ab38e370b3db179f156265d1cb852842ac445cda980f29802"
+    },
+    {
+      "end_offset": 818,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-aef9cf53f13e-014",
+      "start_offset": 717,
+      "text_sha256": "b3d7675124f3ef66f430b2a6cf1e715c5af9f0aa2e8c8d9f74c7bf64fb87fef3"
+    },
+    {
+      "end_offset": 947,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-aef9cf53f13e-012",
+      "start_offset": 820,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1106,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-aef9cf53f13e-013",
+      "start_offset": 949,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1217,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-aef9cf53f13e-010",
+      "start_offset": 1108,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 1336,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-aef9cf53f13e-011",
+      "start_offset": 1219,
+      "text_sha256": "27f5486c194906d98ea4a024692c3af1b3168b5afbb7575ba89f38580035b515"
+    },
+    {
+      "end_offset": 1459,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-aef9cf53f13e-008",
+      "start_offset": 1338,
+      "text_sha256": "2a850f1d3f0020a76c33b983f755796b0fa4d441c53df93b6e2a61b7659c91ad"
+    },
+    {
+      "end_offset": 1589,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-aef9cf53f13e-006",
+      "start_offset": 1461,
+      "text_sha256": "5b8a0d054bb3813d03d19ad440426f60cd266590d974bc9d53002422d51205c9"
+    },
+    {
+      "end_offset": 1660,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-aef9cf53f13e-002",
+      "start_offset": 1591,
+      "text_sha256": "44a7c186345dbab40fb74be57cf8f5a2b16e56c11221632f1aaf1f7f2ef4a6a1"
+    },
+    {
+      "end_offset": 1780,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-aef9cf53f13e-009",
+      "start_offset": 1662,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    }
+  ],
+  "publication_date": "2026-07-20",
+  "schema_version": "1.0",
+  "source_id": "src-morrowquay-incident",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Morrow quarantine rack meeting record",
+  "version": "1.0"
+}

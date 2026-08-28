@@ -1,0 +1,39 @@
+Rimebridge rinse train sop. Document code RBR-SOP-742. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Rimebridge rinse train sop identifies the local setting, owner, and record path before describing the routine.
+
+References. Cross-references point to internal document code RBR-H95 and remain subordinate to the effective instruction.
+
+Asset RBR-653 is assigned to Archive Services; that group owns the release decision for the Rimebridge lane.
+
+Purpose. This sop defines the internal control for Rimebridge rinse train at Sable Yard. It is limited to the named asset and is not a universal rule.
+
+Scope. The control applies to sealed lots on the second shift; unrelated assets use their own controlled instructions.
+
+For every Rimebridge rinse train run, operators perform a 25-minute pre-use inspection and obtain a second-operator signature before start.
+
+Acceptance. The result is accepted only when the stated parameter, record entry, and required review are all present.
+
+Ownership. Archive Services owns the operational decision, while Release Coordination performs the independent review.
+
+Identification. Asset RBR-653, product Morrowglass cartridge, and record series RBR-REC-505 are used to keep the local records distinct.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Release Coordination.
+
+Rimebridge scan history remains available in the controlled register for 42 days after the run closes.
+
+Review. The document owner reviews this sop on 2026-11-02 or sooner if the asset, supplier, or record path changes.
+
+Procedure. The operator confirms the asset identity, performs the named step, and records the result before moving to the next step.
+
+The release latch on Rimebridge-7 rinse controller remains closed until a witness token is attached to record RBR-REC-505.
+
+Records. Entries are made in the controlled register using lot reference RBR-LOT-807; free-form personal copies are not the official record.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under RBR-REC-505.

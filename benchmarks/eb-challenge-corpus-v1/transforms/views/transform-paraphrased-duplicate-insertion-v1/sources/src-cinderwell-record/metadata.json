@@ -1,0 +1,124 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "68d84544af4baf91864cd6885e44dc8eac2df25083667e82e910c0c2e1de7903",
+  "content_path": "content.txt",
+  "document_code": "CDW-REC-291",
+  "document_type": "change_control_notice",
+  "effective_date": null,
+  "logical_document_key": "transform::src-cinderwell-record",
+  "offset_unit": "utf8_byte",
+  "passage_count": 13,
+  "passages": [
+    {
+      "end_offset": 135,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-3f673b2dd78b-000",
+      "start_offset": 0,
+      "text_sha256": "d8c7b3c71c565f21283d32212c5dab810754386498d4ef5c18a90fb427e9e552"
+    },
+    {
+      "end_offset": 283,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-3f673b2dd78b-001",
+      "start_offset": 137,
+      "text_sha256": "034645e67ca7bbbf7a0a085e9cd14395b2ab16d05e81fa76311ec251df7381d1"
+    },
+    {
+      "end_offset": 412,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-3f673b2dd78b-002",
+      "start_offset": 285,
+      "text_sha256": "ec6c2cc6c5eb6aa6762b770a2ae6034757342df2cfcfa25d075b1a0a72c5492f"
+    },
+    {
+      "end_offset": 541,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-3f673b2dd78b-003",
+      "start_offset": 414,
+      "text_sha256": "b45273955671fdd1f423b43a59d269d94acc028ec939d1deebff807edae817a6"
+    },
+    {
+      "end_offset": 664,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-3f673b2dd78b-004",
+      "start_offset": 543,
+      "text_sha256": "5c7fd5387408055aea281e664d65ca3dfc705d3d00c37244c1b88e5ef75ff28e"
+    },
+    {
+      "end_offset": 799,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-3f673b2dd78b-005",
+      "start_offset": 666,
+      "text_sha256": "3730f93c482d1d7fd153ae5e30c3105a292e406a922816106dd47611579b5d6e"
+    },
+    {
+      "end_offset": 941,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-3f673b2dd78b-006",
+      "start_offset": 801,
+      "text_sha256": "8a091534d22e689870fd9ba98dbc1c0a83656941b437aa3380343ca8f009af4c"
+    },
+    {
+      "end_offset": 1070,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-3f673b2dd78b-007",
+      "start_offset": 943,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1190,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-3f673b2dd78b-008",
+      "start_offset": 1072,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1318,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-3f673b2dd78b-009",
+      "start_offset": 1192,
+      "text_sha256": "54189aeb7a709566d92bab839c23b4b514b7536b92f3cc6ff6e999dc67a05913"
+    },
+    {
+      "end_offset": 1453,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-3f673b2dd78b-010",
+      "start_offset": 1320,
+      "text_sha256": "b41c470f3b495285236c0061ab24176377a71358dfc9141b08a77e0642286ca3"
+    },
+    {
+      "end_offset": 1568,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-3f673b2dd78b-011",
+      "start_offset": 1455,
+      "text_sha256": "846afd6df5e2916909ddab2ec3c52b1368fec74ef22e0dc4c3f735befbc2771c"
+    },
+    {
+      "end_offset": 1671,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-3f673b2dd78b-012",
+      "start_offset": 1570,
+      "text_sha256": "af511513389622645ad56917d10e28d03b4efc9694326a47bf8099d5b378812c"
+    }
+  ],
+  "publication_date": "2026-07-26",
+  "schema_version": "1.0",
+  "source_id": "src-cinderwell-record",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Cinderwell thermal hold change control notice",
+  "version": "1.0"
+}

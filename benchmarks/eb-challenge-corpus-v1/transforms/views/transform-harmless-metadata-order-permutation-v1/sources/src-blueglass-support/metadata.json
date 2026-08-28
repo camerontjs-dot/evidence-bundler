@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "source_id": "src-blueglass-support",
+  "source_identity_basis": "stable-semantic-document-key",
+  "logical_document_key": "transform::src-blueglass-support",
+  "title": "Blueglass supplier lot technical specification",
+  "document_type": "technical_specification",
+  "version": "1.0",
+  "publication_date": "2026-07-23",
+  "effective_date": "2026-07-17",
+  "status": "current",
+  "document_code": "BLG-SOP-586",
+  "content_path": "content.txt",
+  "content_encoding": "utf-8",
+  "offset_unit": "utf8_byte",
+  "content_hash": "c55c9dc0cf6eca7331aff69af2ca27cfc6ed15171f29a906db201e967908aad2",
+  "passage_count": 18,
+  "passages": [
+    {
+      "passage_id": "pas-021dfab5353f-000",
+      "paragraph_index": 0,
+      "start_offset": 0,
+      "end_offset": 136,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d769c943b816b250820710cb04ec6c1fa2935d75af59484b8a4669466013baa1"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-001",
+      "paragraph_index": 1,
+      "start_offset": 138,
+      "end_offset": 285,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "62e7dd7069da41e2ded3bbd26ab511e37468d89ac2f82115b9594b9fa07af46c"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-002",
+      "paragraph_index": 2,
+      "start_offset": 287,
+      "end_offset": 410,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "b90df5552a8bdc598936670a81563a5a6fd7a69e08beacf0ed7524f0b1791f45"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-003",
+      "paragraph_index": 3,
+      "start_offset": 412,
+      "end_offset": 526,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3025ba91edd62110eec8692cded0596b556c1621d8015841a3485d6b257efa8b"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-004",
+      "paragraph_index": 4,
+      "start_offset": 528,
+      "end_offset": 700,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "fe42f3836e48de947a6ddf94ced2455257262becaac924f9a7848006aa00eba8"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-005",
+      "paragraph_index": 5,
+      "start_offset": 702,
+      "end_offset": 825,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "584a7febca26cbaa4775563c4ed1dae8e1f69ba8b3a92a33794332c34b455e26"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-006",
+      "paragraph_index": 6,
+      "start_offset": 827,
+      "end_offset": 945,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "9ee4fbe0bdf68ce44ad8eae113a5907516d7ced03f8b12b014bce231800daa26"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-007",
+      "paragraph_index": 7,
+      "start_offset": 947,
+      "end_offset": 1082,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3239923582e761c1ce4642a5c71f4f67ce7add7f9e976437e4cf2aa35fb2df92"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-008",
+      "paragraph_index": 8,
+      "start_offset": 1084,
+      "end_offset": 1211,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "b45273955671fdd1f423b43a59d269d94acc028ec939d1deebff807edae817a6"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-009",
+      "paragraph_index": 9,
+      "start_offset": 1213,
+      "end_offset": 1353,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "7cb87b932c81e85b2627a990a4f6e86524e1a2bbe420b718dc3cb2e873e6c052"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-010",
+      "paragraph_index": 10,
+      "start_offset": 1355,
+      "end_offset": 1482,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-011",
+      "paragraph_index": 11,
+      "start_offset": 1484,
+      "end_offset": 1602,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-012",
+      "paragraph_index": 12,
+      "start_offset": 1604,
+      "end_offset": 1739,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "c37042a730f26f4c2680994ea4d8c1ac3d3c21293593b9260f65d30bf65871f8"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-013",
+      "paragraph_index": 13,
+      "start_offset": 1741,
+      "end_offset": 1862,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "0ed9dd51241ed13fef52c4288b7fb729787a4d326531a32fa1d4b93a121b3c59"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-014",
+      "paragraph_index": 14,
+      "start_offset": 1864,
+      "end_offset": 2021,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-015",
+      "paragraph_index": 15,
+      "start_offset": 2023,
+      "end_offset": 2184,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "c1844a393c153ee1e30935e537368bd42a7701253bf1b7915e30bad06dc30c93"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-016",
+      "paragraph_index": 16,
+      "start_offset": 2186,
+      "end_offset": 2298,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "4c91470a93316073101fb018f14c2b0242186ddd9361331ffb28238baabe21af"
+    },
+    {
+      "passage_id": "pas-021dfab5353f-017",
+      "paragraph_index": 17,
+      "start_offset": 2300,
+      "end_offset": 2401,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "a9807331e7df55a10dd3befc462639fb01b8891663aad2e9296dd2f9c2cb2e11"
+    }
+  ]
+}

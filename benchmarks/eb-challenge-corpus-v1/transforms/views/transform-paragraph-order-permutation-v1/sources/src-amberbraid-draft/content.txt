@@ -1,0 +1,37 @@
+Amberbraid supplier lot sop revision 4.0. Document code AMB-REC-726. Controlled internal record for the fictional Neralis Compact.
+
+Proposal note. Amberbraid supplier lot sop revision 4.0 has no effective date and is not an operating instruction.
+
+References. Cross-references point to internal document code AMB-H81 and remain subordinate to the effective instruction.
+
+The draft receiving instruction is not for release use and is planned for review after 2026-10-18.
+
+Records. Entries are made in the controlled register using lot reference AMB-LOT-881; free-form personal copies are not the official record.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Revision 4.0 is a proposal dated 2026-10-18; it has no effective date and is not an operating instruction.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under AMB-REC-182.
+
+Purpose. This sop defines the internal control for Amberbraid supplier lot at Copper Gate. It is limited to the named asset and is not a universal rule.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Routine. The the east cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+Ownership. Instrument Services owns the operational decision, while Archive Services performs the independent review.
+
+Review. The document owner reviews this sop on 2026-10-18 or sooner if the asset, supplier, or record path changes.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Acceptance. The result is accepted only when the stated parameter, record entry, and required review are all present.
+
+Draft control. Revision 4.0 is a proposal only; it cannot authorize the receiving operation before an effective decision.
+
+Identification. Asset AMB-786, product Ochre filament spool, and record series AMB-REC-182 are used to keep the local records distinct.
+
+Procedure. The operator confirms the asset identity, performs the named step, and records the result before moving to the next step.

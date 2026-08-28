@@ -1,0 +1,27 @@
+Morrow quarantine rack faq. Document code MRQ-POL-633. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Morrow quarantine rack faq identifies the local setting, owner, and record path before describing the routine.
+
+The rack review note uses a 12-hour planning reminder from shift start; it is not the sample-receipt clock.
+
+Records. Entries are made in the controlled register using lot reference MRQ-LOT-786; free-form personal copies are not the official record.
+
+Review. The document owner reviews this faq on 2026-10-28 or sooner if the asset, supplier, or record path changes.
+
+Ownership. Instrument Services owns the operational decision, while Supplier Liaison performs the independent review.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Identification. Asset MRQ-869, product Siltstone lot, and record series MRQ-REC-890 are used to keep the local records distinct.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under MRQ-REC-890.
+
+References. Cross-references point to internal document code MRQ-H18 and remain subordinate to the effective instruction.
+
+Purpose. This faq defines the internal control for Morrow quarantine rack at Morrow Gate. It is limited to the named asset and is not a universal rule.
+
+The archive entry for a released Morrow lot carries handoff code MRQ-H18.

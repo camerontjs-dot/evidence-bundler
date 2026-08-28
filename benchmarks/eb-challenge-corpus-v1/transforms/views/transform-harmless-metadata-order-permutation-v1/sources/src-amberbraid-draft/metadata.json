@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "source_id": "src-amberbraid-draft",
+  "source_identity_basis": "stable-semantic-document-key",
+  "logical_document_key": "transform::src-amberbraid-draft",
+  "title": "Amberbraid supplier lot sop revision 4.0",
+  "document_type": "sop",
+  "version": "4.0",
+  "publication_date": "2026-10-18",
+  "effective_date": null,
+  "status": "draft",
+  "document_code": "AMB-REC-726",
+  "content_path": "content.txt",
+  "content_encoding": "utf-8",
+  "offset_unit": "utf8_byte",
+  "content_hash": "b1d5474e0418a8b76d717380f322cefffbbaf70e3327c7e358eb7c46746c8301",
+  "passage_count": 19,
+  "passages": [
+    {
+      "passage_id": "pas-cd5c571b24b7-000",
+      "paragraph_index": 0,
+      "start_offset": 0,
+      "end_offset": 130,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "7234b45de456eaf2374064aae5871d985c8f2ff8ae27c73a69f304c637446139"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-001",
+      "paragraph_index": 1,
+      "start_offset": 132,
+      "end_offset": 246,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "db998de26157fa2bfd6b921bbc31e8c8716e7d960b10cccde5aec8e2cc82aed4"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-002",
+      "paragraph_index": 2,
+      "start_offset": 248,
+      "end_offset": 369,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "2074aa899317f9369ce8cb101b8c644b787fa3e06fb554aaa78bd476846048f7"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-003",
+      "paragraph_index": 3,
+      "start_offset": 371,
+      "end_offset": 477,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "16f67c7c1241ba617e4e070e811268afda80020c970955773fb8350d276c4f4d"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-004",
+      "paragraph_index": 4,
+      "start_offset": 479,
+      "end_offset": 577,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "a0659de05d9bf7917f7fdc042f04b5aefa014d882c0214ade8f20b513152e189"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-005",
+      "paragraph_index": 5,
+      "start_offset": 579,
+      "end_offset": 731,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "9f9a4cf709df11877796f843366323260d9355dfc87a7702160727bfe40da6a1"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-006",
+      "paragraph_index": 6,
+      "start_offset": 733,
+      "end_offset": 856,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "584a7febca26cbaa4775563c4ed1dae8e1f69ba8b3a92a33794332c34b455e26"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-007",
+      "paragraph_index": 7,
+      "start_offset": 858,
+      "end_offset": 975,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "9b6f69b95beff76ed7d4317a5e598fca348959c62c3accc730c636155d3c2836"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-008",
+      "paragraph_index": 8,
+      "start_offset": 977,
+      "end_offset": 1112,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d99e5e55bb2354b9f4ef865381344e74b166a46aa4b051d4f51f4dfb433e27bd"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-009",
+      "paragraph_index": 9,
+      "start_offset": 1114,
+      "end_offset": 1238,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "4aca2533472f16182b347f7132205f7b0d90388c66f966951f275920937847bb"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-010",
+      "paragraph_index": 10,
+      "start_offset": 1240,
+      "end_offset": 1380,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "f2ddc203ac13c06dfae62b48e23c8b69fe104bc7cb74c9d38b6d2cb3d3019ca4"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-011",
+      "paragraph_index": 11,
+      "start_offset": 1382,
+      "end_offset": 1509,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-012",
+      "paragraph_index": 12,
+      "start_offset": 1511,
+      "end_offset": 1629,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-013",
+      "paragraph_index": 13,
+      "start_offset": 1631,
+      "end_offset": 1746,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "e7605ef898b147c7ce6cc309fcbe2d3088526caee6c56d57f5b5d2f6c6221dbf"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-014",
+      "paragraph_index": 14,
+      "start_offset": 1748,
+      "end_offset": 1869,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "7e6486b3690fd3a8be937ed63de887818eff5600a0ca6d03a3ba0ca58c6667ae"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-015",
+      "paragraph_index": 15,
+      "start_offset": 1871,
+      "end_offset": 2028,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-016",
+      "paragraph_index": 16,
+      "start_offset": 2030,
+      "end_offset": 2162,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "f3854ad4017b42038f3ac6b6ecee957f07c4061f7f07db0b6c0bbf0da058b6cd"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-017",
+      "paragraph_index": 17,
+      "start_offset": 2164,
+      "end_offset": 2281,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "841d63fc499b27e3b1b746415266986bafdbf1c1c04174010282e9b0a4812475"
+    },
+    {
+      "passage_id": "pas-cd5c571b24b7-018",
+      "paragraph_index": 18,
+      "start_offset": 2283,
+      "end_offset": 2384,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "e5547c7fea48c565a3627e722b87070d44a888c02c8ebd642049b8aa58c2e467"
+    }
+  ]
+}

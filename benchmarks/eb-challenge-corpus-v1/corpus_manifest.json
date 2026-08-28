@@ -1,0 +1,795 @@
+{
+  "aperture_subset_ids": [
+    "bounded_missing_decisive",
+    "distractor_heavy",
+    "full",
+    "ordinary_window",
+    "stale_only"
+  ],
+  "challenge_family_base_claim_counts": {
+    "F01": 4,
+    "F02": 4,
+    "F03": 4,
+    "F04": 4,
+    "F05": 4,
+    "F06": 4,
+    "F07": 4,
+    "F08": 4,
+    "F09": 4,
+    "F10": 4,
+    "F11": 8,
+    "F12": 4
+  },
+  "challenge_family_case_counts": {
+    "F01": 4,
+    "F02": 4,
+    "F03": 20,
+    "F04": 20,
+    "F05": 20,
+    "F06": 20,
+    "F07": 4,
+    "F08": 4,
+    "F09": 4,
+    "F10": 20,
+    "F11": 8,
+    "F12": 20
+  },
+  "challenge_family_names": {
+    "F01": "LEXICALLY_OBVIOUS",
+    "F02": "SYNONYM_PARAPHRASE",
+    "F03": "NEGATION_POLARITY",
+    "F04": "NUMERIC_THRESHOLD",
+    "F05": "TEMPORAL_SUPERSESSION",
+    "F06": "CONDITION_EXCEPTION",
+    "F07": "HARD_LEXICAL_DISTRACTOR",
+    "F08": "DUPLICATE_PARAPHRASE",
+    "F09": "LONG_DOCUMENT_BURIED",
+    "F10": "MULTI_PASSAGE_COMPOSITION",
+    "F11": "NO_ANSWER",
+    "F12": "APERTURE_BOUNDARY"
+  },
+  "corpus_name": "eb-challenge-corpus-v1",
+  "corpus_version": "1.0.0",
+  "counts": {
+    "answerable_base_claims": 44,
+    "aperture_boundary_cases": 20,
+    "aperture_boundary_decisive_annotation_count": 16,
+    "base_claims": 52,
+    "cases": 148,
+    "decomposition_records": 120,
+    "decomposition_sensitive_base_claims": 24,
+    "passages": 946,
+    "source_documents": 60,
+    "unanswerable_base_claims": 8
+  },
+  "decomposition_file_hashes": {
+    "decompositions/dev_decompositions.jsonl": "2120228c81466471214ca8b56a6eba2fa5bc498cd0b0243ff3b8fe24c9da2144",
+    "decompositions/test_decompositions.jsonl": "27242142ed9e1d89d497d27d24964317e35ab5df57ed7a31ad697375c51c294b"
+  },
+  "decomposition_ids": [
+    "dec-claim-009-a0",
+    "dec-claim-009-a1",
+    "dec-claim-009-a2",
+    "dec-claim-009-a3",
+    "dec-claim-009-a4",
+    "dec-claim-010-a0",
+    "dec-claim-010-a1",
+    "dec-claim-010-a2",
+    "dec-claim-010-a3",
+    "dec-claim-010-a4",
+    "dec-claim-011-a0",
+    "dec-claim-011-a1",
+    "dec-claim-011-a2",
+    "dec-claim-011-a3",
+    "dec-claim-011-a4",
+    "dec-claim-012-a0",
+    "dec-claim-012-a1",
+    "dec-claim-012-a2",
+    "dec-claim-012-a3",
+    "dec-claim-012-a4",
+    "dec-claim-013-a0",
+    "dec-claim-013-a1",
+    "dec-claim-013-a2",
+    "dec-claim-013-a3",
+    "dec-claim-013-a4",
+    "dec-claim-014-a0",
+    "dec-claim-014-a1",
+    "dec-claim-014-a2",
+    "dec-claim-014-a3",
+    "dec-claim-014-a4",
+    "dec-claim-015-a0",
+    "dec-claim-015-a1",
+    "dec-claim-015-a2",
+    "dec-claim-015-a3",
+    "dec-claim-015-a4",
+    "dec-claim-016-a0",
+    "dec-claim-016-a1",
+    "dec-claim-016-a2",
+    "dec-claim-016-a3",
+    "dec-claim-016-a4",
+    "dec-claim-017-a0",
+    "dec-claim-017-a1",
+    "dec-claim-017-a2",
+    "dec-claim-017-a3",
+    "dec-claim-017-a4",
+    "dec-claim-018-a0",
+    "dec-claim-018-a1",
+    "dec-claim-018-a2",
+    "dec-claim-018-a3",
+    "dec-claim-018-a4",
+    "dec-claim-019-a0",
+    "dec-claim-019-a1",
+    "dec-claim-019-a2",
+    "dec-claim-019-a3",
+    "dec-claim-019-a4",
+    "dec-claim-020-a0",
+    "dec-claim-020-a1",
+    "dec-claim-020-a2",
+    "dec-claim-020-a3",
+    "dec-claim-020-a4",
+    "dec-claim-021-a0",
+    "dec-claim-021-a1",
+    "dec-claim-021-a2",
+    "dec-claim-021-a3",
+    "dec-claim-021-a4",
+    "dec-claim-022-a0",
+    "dec-claim-022-a1",
+    "dec-claim-022-a2",
+    "dec-claim-022-a3",
+    "dec-claim-022-a4",
+    "dec-claim-023-a0",
+    "dec-claim-023-a1",
+    "dec-claim-023-a2",
+    "dec-claim-023-a3",
+    "dec-claim-023-a4",
+    "dec-claim-024-a0",
+    "dec-claim-024-a1",
+    "dec-claim-024-a2",
+    "dec-claim-024-a3",
+    "dec-claim-024-a4",
+    "dec-claim-037-a0",
+    "dec-claim-037-a1",
+    "dec-claim-037-a2",
+    "dec-claim-037-a3",
+    "dec-claim-037-a4",
+    "dec-claim-038-a0",
+    "dec-claim-038-a1",
+    "dec-claim-038-a2",
+    "dec-claim-038-a3",
+    "dec-claim-038-a4",
+    "dec-claim-039-a0",
+    "dec-claim-039-a1",
+    "dec-claim-039-a2",
+    "dec-claim-039-a3",
+    "dec-claim-039-a4",
+    "dec-claim-040-a0",
+    "dec-claim-040-a1",
+    "dec-claim-040-a2",
+    "dec-claim-040-a3",
+    "dec-claim-040-a4",
+    "dec-claim-049-a0",
+    "dec-claim-049-a1",
+    "dec-claim-049-a2",
+    "dec-claim-049-a3",
+    "dec-claim-049-a4",
+    "dec-claim-050-a0",
+    "dec-claim-050-a1",
+    "dec-claim-050-a2",
+    "dec-claim-050-a3",
+    "dec-claim-050-a4",
+    "dec-claim-051-a0",
+    "dec-claim-051-a1",
+    "dec-claim-051-a2",
+    "dec-claim-051-a3",
+    "dec-claim-051-a4",
+    "dec-claim-052-a0",
+    "dec-claim-052-a1",
+    "dec-claim-052-a2",
+    "dec-claim-052-a3",
+    "dec-claim-052-a4"
+  ],
+  "document_type_counts": {
+    "background_note": 2,
+    "change_control_notice": 3,
+    "decision_record": 3,
+    "deviation_report": 2,
+    "faq": 7,
+    "guidance_note": 2,
+    "incident_report": 4,
+    "knowledge_base_article": 3,
+    "meeting_record": 5,
+    "policy": 5,
+    "sop": 13,
+    "supplier_bulletin": 2,
+    "technical_specification": 5,
+    "validation_report": 3,
+    "work_instruction": 1
+  },
+  "evaluator_only_roots": [
+    "gold/**",
+    "decompositions/**"
+  ],
+  "freeze_receipt_sha256": "7dfc12432f23853ddb3ba5eee5b54ac551cc7609a2fd0a52c93c449bd1da1fc6",
+  "generation_timestamp": "2026-08-27T00:00:00Z",
+  "generation_timestamp_policy": "Fixed canonical timestamp for byte reproducibility; the final freeze receipt records the same canonical build timestamp.",
+  "generator": {
+    "generator_config_hash": "0854e140752132530618af61f82efa2db20dec8460512c65aebbf9d616b3d1e5",
+    "generator_prompt_hash": null,
+    "name": "eb-challenge-corpus-generator",
+    "observed_retrieval_output_dependency": false,
+    "source_commit": null,
+    "source_sha256": "8f957bfa9aaa4ee95b108b36ab1659b45c495c96445f909a2ab7c3ec8c30edca",
+    "uses_llm": false,
+    "version": "1.0.0"
+  },
+  "generator_configuration": {
+    "as_of": "2026-08-27",
+    "corpus_name": "eb-challenge-corpus-v1",
+    "corpus_version": "1.0.0",
+    "decomposition_families": [
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F10",
+      "F12"
+    ],
+    "family_minimum_base_claims": 4,
+    "fixed_generation_timestamp": "2026-08-27T00:00:00Z",
+    "generator_name": "eb-challenge-corpus-generator",
+    "generator_version": "1.0.0",
+    "observed_retrieval_output_dependency": false,
+    "seed": 271828,
+    "source_count": 60,
+    "split_rule": "first local claim in each family plus F11 local claim five are dev; all variants follow parent split",
+    "target_base_claims": 52,
+    "target_decomposition_sensitive_base_claims": 24,
+    "tree_hash_exclusions": [
+      "SHA256SUMS",
+      "corpus_manifest.json",
+      "validation/corpus_validation_report.json",
+      "validation/freeze_receipt.json"
+    ],
+    "uses_llm": false
+  },
+  "generator_configuration_hash": "0854e140752132530618af61f82efa2db20dec8460512c65aebbf9d616b3d1e5",
+  "gold_file_hashes": {
+    "gold/dev_relevance.jsonl": "da5b06d78060897f85dc78a8ff45c9622c697a10fe43942ea74a688115c7fac3",
+    "gold/gold_manifest.json": "e20863a107335b36f795b6f6441d489a8faa7264cc4705522af17753fb6c363c",
+    "gold/test_relevance.jsonl": "86c3c32e7ec3969c3573a9715c4b301ac04e2204a4c964edf0787d0eebb2faff"
+  },
+  "overall_corpus_tree_sha256": "eee87cff5e86a3d0a3cdaaa762837ca90ae60f62939309c1dc335a19884c78a8",
+  "purpose": "Independent synthetic benchmark for retrieval and claim-decomposition experiments.",
+  "runtime_allowlist": [
+    "sources/**",
+    "cases/dev_cases.jsonl",
+    "cases/test_cases.jsonl",
+    "aperture/subsets.json"
+  ],
+  "schema_version": "1.0",
+  "seeds": {
+    "derivation": "sha256(master_seed + ':' + labeled_stream)[:16] interpreted as an integer",
+    "labeled_streams": [
+      "topic",
+      "source-code",
+      "source-body",
+      "transform"
+    ],
+    "master": 271828
+  },
+  "sources": [
+    {
+      "content_hash": "c1bc6cd50a525b5209fa351e43dc073bf41675ac63602132b3046d9541057abe",
+      "document_type": "sop",
+      "source_id": "src-amberbraid-current",
+      "status": "current",
+      "title": "Amberbraid supplier lot sop revision 3.0",
+      "version": "3.0"
+    },
+    {
+      "content_hash": "b1d5474e0418a8b76d717380f322cefffbbaf70e3327c7e358eb7c46746c8301",
+      "document_type": "sop",
+      "source_id": "src-amberbraid-draft",
+      "status": "draft",
+      "title": "Amberbraid supplier lot sop revision 4.0",
+      "version": "4.0"
+    },
+    {
+      "content_hash": "40999e6ac497a040aa388fb5473445309fab588a140a14de16e16650e91e6999",
+      "document_type": "faq",
+      "source_id": "src-amberbraid-faq",
+      "status": "current",
+      "title": "Amberbraid supplier lot faq revision 1.0",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "3e04d4d2132a91775b11d99d906e53f73b423da862eb7aac680e5bea8264d302",
+      "document_type": "incident_report",
+      "source_id": "src-amberbraid-incident",
+      "status": "final",
+      "title": "Amberbraid supplier lot incident report revision 1.0",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "77e371d7f4a81f37f3123eae959ec5f6f93f2b5844006247b0ac2838753a5386",
+      "document_type": "sop",
+      "source_id": "src-amberbraid-prior",
+      "status": "superseded",
+      "title": "Amberbraid supplier lot sop revision 2.0",
+      "version": "2.0"
+    },
+    {
+      "content_hash": "cff921a22e0ddaa81bf37a91e88b9e503e285ef618145b2a8d91c49be9a168c7",
+      "document_type": "sop",
+      "source_id": "src-blueglass-current",
+      "status": "current",
+      "title": "Blueglass supplier lot sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "4409abc24bf9e6a56b026da3eb392887cf534cd4ec7f3a8d9ef0c911bd8c0e79",
+      "document_type": "knowledge_base_article",
+      "source_id": "src-blueglass-faq",
+      "status": "current",
+      "title": "Blueglass supplier lot knowledge base article",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "e7027c8836323a3ddb6b1ac079abc633a8493e7e38b4db100d5ce8400f402698",
+      "document_type": "incident_report",
+      "source_id": "src-blueglass-incident",
+      "status": "final",
+      "title": "Blueglass supplier lot incident report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "d9d4512b4bd0824e247cff89e4c3143b1ddb5c38982e19255b359f43823b580f",
+      "document_type": "change_control_notice",
+      "source_id": "src-blueglass-record",
+      "status": "final",
+      "title": "Blueglass supplier lot change control notice",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "c55c9dc0cf6eca7331aff69af2ca27cfc6ed15171f29a906db201e967908aad2",
+      "document_type": "technical_specification",
+      "source_id": "src-blueglass-support",
+      "status": "current",
+      "title": "Blueglass supplier lot technical specification",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "686a6871bf892dc630879d150a985a69bc77fb3eab5cc2421a47d21e8d288324",
+      "document_type": "sop",
+      "source_id": "src-brambleline-current",
+      "status": "current",
+      "title": "Bramble line clearance sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "2a2fe7eff234f9cb1a9b15479be39d4a9f837b31507441014f14c9e504da22d2",
+      "document_type": "faq",
+      "source_id": "src-brambleline-faq",
+      "status": "current",
+      "title": "Bramble line clearance faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "ab6aa3c3e2c632471301bcdf3cd0d3a139c9d9767f543c70ccc7298582a1fef3",
+      "document_type": "guidance_note",
+      "source_id": "src-brambleline-guide",
+      "status": "current",
+      "title": "Bramble line clearance guidance note",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "35254cd6b7cced5f6d6d626d07455264f553eb0095d7dc9ad74435d08315ecb6",
+      "document_type": "validation_report",
+      "source_id": "src-brambleline-incident",
+      "status": "final",
+      "title": "Bramble line clearance validation report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "d6dced0c8e77a270a212ca0ed8d1332e1cf4995584efee0148637e49fdbb77cf",
+      "document_type": "background_note",
+      "source_id": "src-brambleline-record",
+      "status": "final",
+      "title": "Bramble line clearance background note",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "810b0f7ce67ba6a41595d9d8fceecd34d9c9584969613dadb8e091ae1b300a96",
+      "document_type": "sop",
+      "source_id": "src-cinderwell-current",
+      "status": "current",
+      "title": "Cinderwell thermal hold sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "1eaa2f52b339817727619d367283c60f4b711138af6f98bf5b889ee1b1146684",
+      "document_type": "faq",
+      "source_id": "src-cinderwell-faq",
+      "status": "current",
+      "title": "Cinderwell thermal hold faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "e1cec5c494f231ac64ab953484694d840d8d82084c28f3a29cd6bcc839ff0c45",
+      "document_type": "incident_report",
+      "source_id": "src-cinderwell-incident",
+      "status": "final",
+      "title": "Cinderwell thermal hold incident report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "68d84544af4baf91864cd6885e44dc8eac2df25083667e82e910c0c2e1de7903",
+      "document_type": "change_control_notice",
+      "source_id": "src-cinderwell-record",
+      "status": "final",
+      "title": "Cinderwell thermal hold change control notice",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "02e0a74a30a07f97fa1303b5857f189893cfd6125aa6262489f9ef65b7757e25",
+      "document_type": "policy",
+      "source_id": "src-cinderwell-support",
+      "status": "current",
+      "title": "Cinderwell thermal hold policy",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "c17b7454261ba7d35c51524dfdc1a99edf9a61606252a1c18dc954d71a2c1a7d",
+      "document_type": "technical_specification",
+      "source_id": "src-larkspur-current",
+      "status": "current",
+      "title": "Larkspur label sleeve technical specification",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "874360e6021157507fbb5e85b87c0c571370ff9a989670d6e020dac0fb581877",
+      "document_type": "supplier_bulletin",
+      "source_id": "src-larkspur-faq",
+      "status": "current",
+      "title": "Larkspur label sleeve supplier bulletin",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "ac3c9bbe3da32f29acae0be2f7abb5d2966e4180a528397e7f6b87415680f7d1",
+      "document_type": "validation_report",
+      "source_id": "src-larkspur-incident",
+      "status": "final",
+      "title": "Larkspur label sleeve validation report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "c7649778d68ea6fa6c7596f1c6423a5c27df3c53dc6025ceb4d2ad26b85c22ec",
+      "document_type": "meeting_record",
+      "source_id": "src-larkspur-record",
+      "status": "final",
+      "title": "Larkspur label sleeve meeting record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "2cd02258c1b7e3abf0fda61d586675f84f4082da03322e95f44214ebe5141fdf",
+      "document_type": "sop",
+      "source_id": "src-larkspur-support",
+      "status": "current",
+      "title": "Larkspur label sleeve sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "1fd783bcf2b9696e6add4b3afd5f60eacb444fe5cbb65524a2d2ed83577c40e5",
+      "document_type": "policy",
+      "source_id": "src-micaarray-current",
+      "status": "current",
+      "title": "Mica sensor array policy",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "73f52eb11a68890633d411a886217d824aad02e6f82cbaad66b5ca45a4a93b06",
+      "document_type": "deviation_report",
+      "source_id": "src-micaarray-faq",
+      "status": "current",
+      "title": "Mica sensor array deviation report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "426c489f16728ffeb0ce20c8fd6296847e519126bb32773a8e0ac9f109ee4ff5",
+      "document_type": "guidance_note",
+      "source_id": "src-micaarray-incident",
+      "status": "final",
+      "title": "Mica sensor array guidance note",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "542ea9beaa7ae6f514d45408061af9f5ae30a2c56ed1adc8e62ae37a6fda2aad",
+      "document_type": "decision_record",
+      "source_id": "src-micaarray-record",
+      "status": "final",
+      "title": "Mica sensor array decision record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "5ce0986efb2412bba6db6a949fc654e9ef3fcb546a84c381f7179e171157971a",
+      "document_type": "sop",
+      "source_id": "src-micaarray-support",
+      "status": "current",
+      "title": "Mica sensor array sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "c7a2fb980955be442da7dfff93e2df5c2459d54dda93248364d3b03cf42780fd",
+      "document_type": "sop",
+      "source_id": "src-morrowquay-current",
+      "status": "current",
+      "title": "Morrow quarantine rack sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "53ed5ecfa9d04354daaf8a00cbb7f3b45ab579bfdc438da57d6c00c7e2716d9b",
+      "document_type": "validation_report",
+      "source_id": "src-morrowquay-faq",
+      "status": "current",
+      "title": "Morrow quarantine rack validation report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "adf6e2483e6c3ad82794e5944d8eb4ff1fbe3e0e8b16923a1e4253d12b5dd396",
+      "document_type": "meeting_record",
+      "source_id": "src-morrowquay-incident",
+      "status": "final",
+      "title": "Morrow quarantine rack meeting record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "f76e3ea7f4558714ea03e37421dff3c6407ff2651ca29a4410591f843399e902",
+      "document_type": "faq",
+      "source_id": "src-morrowquay-record",
+      "status": "final",
+      "title": "Morrow quarantine rack faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "c97bb2208b69a7e4de70efb6bdae4837285901f5544fb993734c9b8ecdec491d",
+      "document_type": "technical_specification",
+      "source_id": "src-morrowquay-support",
+      "status": "current",
+      "title": "Morrow quarantine rack technical specification",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "2b04d124bcae902fc39e81b4bddd8efb47baeb20e18f90df0352c8f9102425d4",
+      "document_type": "policy",
+      "source_id": "src-oriolegate-current",
+      "status": "current",
+      "title": "Oriole batch gate policy",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "99dc6e472ac85fac82e40826d4db6db84ae41ac3b41ac25f03731f473da37003",
+      "document_type": "incident_report",
+      "source_id": "src-oriolegate-faq",
+      "status": "current",
+      "title": "Oriole batch gate incident report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "7f35ddd44cfd9c2f5be64f0930d77698d1ff4081af2aa204513da1dfed475df7",
+      "document_type": "knowledge_base_article",
+      "source_id": "src-oriolegate-incident",
+      "status": "final",
+      "title": "Oriole batch gate knowledge base article",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "4c9b546633e00625f8746f9fc6278aa1c7c56d0f2a9f0e48f0de042a2fb1ec71",
+      "document_type": "meeting_record",
+      "source_id": "src-oriolegate-record",
+      "status": "final",
+      "title": "Oriole batch gate meeting record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "5d936cd44fc568199f13e6ab0e4b8688bd725f136ea8580d2958efc5693a3717",
+      "document_type": "sop",
+      "source_id": "src-oriolegate-support",
+      "status": "current",
+      "title": "Oriole batch gate sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "49f013ebc48a7ce501f31cd8439c7dfeba19ef09bf085c417bca5e186688d91d",
+      "document_type": "technical_specification",
+      "source_id": "src-quillmark-current",
+      "status": "current",
+      "title": "Quillmark seal ledger technical specification",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "837028e43cbbc65da10791838c986d279cb6897d19aa6b5c4298dc5d4b84b44e",
+      "document_type": "knowledge_base_article",
+      "source_id": "src-quillmark-faq",
+      "status": "current",
+      "title": "Quillmark seal ledger knowledge base article",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "0d66522bd9cfd1f6afe5327852240880a2040bb762e18a6c8d8fefdfb09ec603",
+      "document_type": "supplier_bulletin",
+      "source_id": "src-quillmark-incident",
+      "status": "final",
+      "title": "Quillmark seal ledger supplier bulletin",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "9b7cf50231090aa4df26b0dcb938576166319c0e47f208f8a30b7452cc51a975",
+      "document_type": "meeting_record",
+      "source_id": "src-quillmark-record",
+      "status": "final",
+      "title": "Quillmark seal ledger meeting record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "bd609475edd3d40889cae5707359637a300741bd832a218fcb928240baaac982",
+      "document_type": "work_instruction",
+      "source_id": "src-quillmark-support",
+      "status": "current",
+      "title": "Quillmark seal ledger work instruction",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "3702aa18c60da69b13057cbefc607f05b97d90742aab6bfc338811eb9027122f",
+      "document_type": "sop",
+      "source_id": "src-rimebridge-current",
+      "status": "current",
+      "title": "Rimebridge rinse train sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "7903a0388919d477b17f06ea78829199ce3c048c11bce5026baf6dca91816571",
+      "document_type": "faq",
+      "source_id": "src-rimebridge-faq",
+      "status": "current",
+      "title": "Rimebridge rinse train faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "ba1d7830d90881089a99b62b80a410669d2322c3d3d2f9013906aaab98f5874b",
+      "document_type": "deviation_report",
+      "source_id": "src-rimebridge-incident",
+      "status": "final",
+      "title": "Rimebridge rinse train deviation report",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "26d581ee7d7438d4553e9f5ccbd30f1a79031f8fa01c1fe759be7c412379047e",
+      "document_type": "decision_record",
+      "source_id": "src-rimebridge-record",
+      "status": "final",
+      "title": "Rimebridge rinse train decision record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "05321176f53cb893ef4f933015a68f120a6fc704167c9d3d0dadee5c62f0eb45",
+      "document_type": "policy",
+      "source_id": "src-rimebridge-support",
+      "status": "current",
+      "title": "Rimebridge rinse train policy",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "997747018120ea3efca5e7a53770a278f30ab5658fef16f99036474d01277638",
+      "document_type": "sop",
+      "source_id": "src-vellumcal-current",
+      "status": "current",
+      "title": "Vellum calibration bench sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "85ad9797f2b48e3244ed20208d3aac5233773110150b00f8fe0a3fc4bedfe62e",
+      "document_type": "meeting_record",
+      "source_id": "src-vellumcal-faq",
+      "status": "current",
+      "title": "Vellum calibration bench meeting record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "4fa6532dbaca8032d5887c9f8aa79382467b303b31cddb1d1b2380e65b94d3b3",
+      "document_type": "faq",
+      "source_id": "src-vellumcal-incident",
+      "status": "final",
+      "title": "Vellum calibration bench faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "a22097d7d481ec7f1d77c922ab64e390803d58938a18cb17228f28b87587245a",
+      "document_type": "background_note",
+      "source_id": "src-vellumcal-record",
+      "status": "final",
+      "title": "Vellum calibration bench background note",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "5ce892b4d6cbc708fce89f5dcac703e555a88318bc1ee060a65e86933937a44c",
+      "document_type": "policy",
+      "source_id": "src-vellumcal-support",
+      "status": "current",
+      "title": "Vellum calibration bench policy",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "b424f7d2d82c4594d46859ebda0cfae8a16ba626860b746aeac2518e2f908f97",
+      "document_type": "sop",
+      "source_id": "src-wickarchive-current",
+      "status": "current",
+      "title": "Wick archive retrieval sop",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "467acf818e3cb6b6fc9c1cd28a07da533f99db98a074aff034c900d6b143e26a",
+      "document_type": "faq",
+      "source_id": "src-wickarchive-faq",
+      "status": "current",
+      "title": "Wick archive retrieval faq",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "160a3e62ca498345fc483652fd234cfde523cda383e8db01b25446af581fa881",
+      "document_type": "change_control_notice",
+      "source_id": "src-wickarchive-incident",
+      "status": "final",
+      "title": "Wick archive retrieval change control notice",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "af59b1df94ac29065956e0da2555956b8ecd76a2cb5bf451faf2120b9e3bf66c",
+      "document_type": "decision_record",
+      "source_id": "src-wickarchive-record",
+      "status": "final",
+      "title": "Wick archive retrieval decision record",
+      "version": "1.0"
+    },
+    {
+      "content_hash": "9de7895eeafaf732d6b11826ba1892e4fd2a28d598c0ddba08d8cd43548c9e7c",
+      "document_type": "technical_specification",
+      "source_id": "src-wickarchive-support",
+      "status": "current",
+      "title": "Wick archive retrieval technical specification",
+      "version": "1.0"
+    }
+  ],
+  "split_base_claim_counts": {
+    "dev": 13,
+    "test": 39
+  },
+  "split_case_counts": {
+    "dev": 37,
+    "test": 111
+  },
+  "synthetic_world": {
+    "fictional": true,
+    "name": "Neralis Compact",
+    "real_organization_data_used": false,
+    "real_regulatory_requirement_claimed": false
+  },
+  "transformation_ids": [
+    "transform-duplicate-document-insertion-v1",
+    "transform-harmless-metadata-order-permutation-v1",
+    "transform-paragraph-order-permutation-v1",
+    "transform-paraphrased-duplicate-insertion-v1",
+    "transform-source-enumeration-permutation-v1"
+  ],
+  "tree_hash_definition": {
+    "algorithm": "sha256",
+    "excluded_control_files": [
+      "SHA256SUMS",
+      "corpus_manifest.json",
+      "validation/corpus_validation_report.json",
+      "validation/freeze_receipt.json"
+    ],
+    "input": "sorted relative path + tab + file sha256, one row per file",
+    "purpose": "Avoid recursive self-hashing while keeping every payload, source, case, gold, and transform file covered."
+  },
+  "validation_report_sha256": "1c3db5529f14b18035c11aae0d3454c28914bcd822b41ec3bc6b85fd1deeec2a"
+}
