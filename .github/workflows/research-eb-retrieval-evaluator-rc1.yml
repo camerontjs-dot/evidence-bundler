@@ -10,6 +10,7 @@ on:
     paths:
       - 'research/eb_retrieval_evaluator_rc1/**'
       - 'docs/research/brief-07-eb-retrieval-evaluator-assurance-rc1.md'
+      - 'docs/research/deviation-07a-eb-retrieval-evaluator-gold-summary-semantics.md'
       - 'benchmarks/eb-challenge-corpus-v1/**'
       - '.github/workflows/research-eb-retrieval-evaluator-rc1.yml'
 
@@ -19,6 +20,8 @@ permissions:
 jobs:
   evaluator-assurance:
     runs-on: ubuntu-latest
+    env:
+      EVALUATOR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
       - name: Checkout exact branch state
         uses: actions/checkout@v4
@@ -40,6 +43,18 @@ jobs:
           test -f benchmarks/eb-challenge-corpus-v1/transforms/views/transform-paraphrased-duplicate-insertion-v1/view_manifest.json
           test -f benchmarks/eb-challenge-corpus-v1/transforms/views/transform-paragraph-order-permutation-v1/semantic_anchor_mapping.json
 
+      - name: Diagnose frozen gold summary semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/eb-retrieval-evaluator-rc1
+          python research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py \
+            --benchmark-root benchmarks/eb-challenge-corpus-v1 \
+            --output artifacts/eb-retrieval-evaluator-rc1/gold-semantics-diagnostic.json \
+            | tee artifacts/eb-retrieval-evaluator-rc1/gold-semantics-diagnostic.log
+          sha256sum artifacts/eb-retrieval-evaluator-rc1/gold-semantics-diagnostic.json \
+            | tee artifacts/eb-retrieval-evaluator-rc1/gold-semantics-diagnostic.sha256
+
       - name: Run preregistered evaluator controls
         id: assurance
         shell: bash
@@ -50,11 +65,13 @@ jobs:
           python research/eb_retrieval_evaluator_rc1/evaluator.py \
             --benchmark-root benchmarks/eb-challenge-corpus-v1 \
             --output artifacts/eb-retrieval-evaluator-rc1/assurance.json \
-            | tee artifacts/eb-retrieval-evaluator-rc1/stdout.jsonl
+            2>&1 | tee artifacts/eb-retrieval-evaluator-rc1/evaluator.log
           status=${PIPESTATUS[0]}
           set -e
-          sha256sum artifacts/eb-retrieval-evaluator-rc1/assurance.json \
-            | tee artifacts/eb-retrieval-evaluator-rc1/assurance.sha256
+          if [[ -f artifacts/eb-retrieval-evaluator-rc1/assurance.json ]]; then
+            sha256sum artifacts/eb-retrieval-evaluator-rc1/assurance.json \
+              | tee artifacts/eb-retrieval-evaluator-rc1/assurance.sha256
+          fi
           python - <<'PY'
           import hashlib
           import json
@@ -66,6 +83,8 @@ jobs:
           evaluator = Path('research/eb_retrieval_evaluator_rc1/evaluator.py')
           schema = Path('research/eb_retrieval_evaluator_rc1/retrieval_result.schema.json')
           prereg = Path('docs/research/brief-07-eb-retrieval-evaluator-assurance-rc1.md')
+          diagnostic = Path('research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py')
+          deviation = Path('docs/research/deviation-07a-eb-retrieval-evaluator-gold-summary-semantics.md')
           output = Path('artifacts/eb-retrieval-evaluator-rc1/run_receipt.json')
 
           def digest(path: Path) -> str:
@@ -73,7 +92,8 @@ jobs:
 
           receipt = {
               'schema_version': '1.0',
-              'github_sha': os.environ.get('GITHUB_SHA'),
+              'evaluator_head_sha': os.environ.get('EVALUATOR_HEAD_SHA'),
+              'github_sha_observed_by_workflow': os.environ.get('GITHUB_SHA'),
               'github_ref': os.environ.get('GITHUB_REF'),
               'github_run_id': os.environ.get('GITHUB_RUN_ID'),
               'python': sys.version,
@@ -81,6 +101,8 @@ jobs:
               'evaluator_source_sha256': digest(evaluator),
               'result_schema_sha256': digest(schema),
               'preregistration_sha256': digest(prereg),
+              'gold_diagnostic_source_sha256': digest(diagnostic),
+              'deviation_record_sha256': digest(deviation),
           }
           output.write_text(json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
           print(json.dumps(receipt, sort_keys=True))
@@ -92,7 +114,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eb-retrieval-evaluator-assurance-rc1-${{ github.sha }}
+          name: eb-retrieval-evaluator-assurance-rc1-${{ github.event.pull_request.head.sha || github.sha }}
           path: artifacts/eb-retrieval-evaluator-rc1/
           if-no-files-found: error
           retention-days: 90
