@@ -1,0 +1,38 @@
+{
+  "decisive_identity_mutation": {
+    "changed": "one evaluator-only decisive passage identity",
+    "held_fixed": ["runtime case", "runtime passages", "retriever result", "thresholds", "all other gold"],
+    "expected_direction": "case hit and decisive recall decrease",
+    "why": "retrieval credit must depend on the frozen decisive identity rather than text plausibility"
+  },
+  "hard_negative_identity_mutation": {
+    "changed": "one evaluator-only hard-negative passage identity",
+    "held_fixed": ["runtime case", "runtime passages", "retriever result", "decisive identity", "thresholds"],
+    "expected_direction": "hard-negative hit accounting changes",
+    "why": "the evaluator must actually consume the hard-negative identity used for adversarial diagnostics"
+  },
+  "provenance_text_mutation": {
+    "changed": "returned hit text for one otherwise valid passage identity",
+    "held_fixed": ["case", "gold", "scope", "rank", "passage identity"],
+    "expected_direction": "invalid provenance count increases and qualification fails",
+    "why": "exact text/provenance integrity is a promotion-critical technical gate"
+  },
+  "family_label_mutation": {
+    "changed": "one evaluator-only L01 family label to L02",
+    "held_fixed": ["runtime bytes", "result bytes", "decisive identities", "thresholds"],
+    "expected_direction": "per-family aggregate counts/rates change while combined low-overlap totals remain fixed",
+    "why": "family floors are part of the target gate and must depend on evaluator-only family assignment"
+  },
+  "result_coverage_mutation": {
+    "changed": "remove one case result",
+    "held_fixed": ["benchmark", "gold", "remaining result bytes", "thresholds"],
+    "expected_direction": "coverage error increases and qualification fails closed",
+    "why": "missing results must not silently disappear from denominators"
+  },
+  "source_enumeration_reversal": {
+    "changed": "candidate passage enumeration order only",
+    "held_fixed": ["passage identities", "passage_order", "texts", "scope", "query", "retriever configuration"],
+    "expected_direction": "hit identity/rank unchanged and scores within 1e-12 for invariant systems",
+    "why": "enumeration order is not part of the intended retrieval semantics"
+  }
+}
