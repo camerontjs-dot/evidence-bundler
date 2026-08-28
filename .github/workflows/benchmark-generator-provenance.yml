@@ -8,7 +8,11 @@ on:
       - ".github/workflows/benchmark-generator-provenance.yml"
   push:
     branches:
-      - feat/add-eb-benchmark-generator-provenance
+      - main
+    paths:
+      - "benchmarks/eb-challenge-corpus-v1/**"
+      - "benchmarks/eb-challenge-corpus-v1-generator/**"
+      - ".github/workflows/benchmark-generator-provenance.yml"
   workflow_dispatch:
 
 permissions:
@@ -49,7 +53,6 @@ jobs:
             --as-of 2026-08-27
 
           python - "$generated" <<'PY'
-          import hashlib
           import json
           import pathlib
           import sys
