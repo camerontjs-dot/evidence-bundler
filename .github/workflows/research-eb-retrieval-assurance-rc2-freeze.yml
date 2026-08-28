@@ -47,6 +47,7 @@ jobs:
         run: |
           set -euo pipefail
           test ! -e "$BENCHMARK_ROOT"
+          mkdir -p work
           python "$APPARATUS_ROOT/generate_challenge.py" \
             --output work/candidate --splits all \
             --generator-source-commit "$FROZEN_APPARATUS_COMMIT" \
