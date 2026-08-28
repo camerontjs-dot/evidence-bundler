@@ -1,4 +1,4 @@
-name: Research - PR8 frozen benchmark base-head differential
+name: Research - PR8 frozen benchmark reconciliation assays
 
 on:
   push:
@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  ordinary-eb-test-differential:
-    name: ordinary EB suite (${{ matrix.label }})
+  standalone-eb-test-differential:
+    name: standalone EB suite (${{ matrix.label }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -40,28 +40,23 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifacts/pr8-differential
-          python --version | tee artifacts/pr8-differential/python-version.txt
-          python -m pip --version | tee artifacts/pr8-differential/pip-version.txt
-          python -m pip freeze | sort | tee artifacts/pr8-differential/pip-freeze.txt
-          sha256sum pyproject.toml | tee artifacts/pr8-differential/pyproject.sha256
-          git rev-parse HEAD | tee artifacts/pr8-differential/observed-head.txt
+          mkdir -p artifacts/pr8-standalone
+          python --version | tee artifacts/pr8-standalone/python-version.txt
+          python -m pip --version | tee artifacts/pr8-standalone/pip-version.txt
+          python -m pip freeze | sort | tee artifacts/pr8-standalone/pip-freeze.txt
+          sha256sum pyproject.toml | tee artifacts/pr8-standalone/pyproject.sha256
+          git rev-parse HEAD | tee artifacts/pr8-standalone/observed-head.txt
 
       - name: Run ordinary EB suite without repairing failures
-        id: pytest
         shell: bash
         run: |
           set -uo pipefail
-          mkdir -p artifacts/pr8-differential
           set +e
-          python -m pytest -q --junitxml=artifacts/pr8-differential/pytest.xml \
-            2>&1 | tee artifacts/pr8-differential/pytest.log
+          python -m pytest -q --junitxml=artifacts/pr8-standalone/pytest.xml \
+            2>&1 | tee artifacts/pr8-standalone/pytest.log
           status=${PIPESTATUS[0]}
           set -e
-          echo "$status" | tee artifacts/pr8-differential/pytest-exit-code.txt
-          grep '^FAILED ' artifacts/pr8-differential/pytest.log \
-            | sed -E 's/^FAILED ([^ ]+).*/\1/' \
-            > artifacts/pr8-differential/failed-nodeids-from-log.txt || true
+          echo "$status" > artifacts/pr8-standalone/pytest-exit-code.txt
           exit 0
 
       - name: Build machine-readable receipt
@@ -72,49 +67,268 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import hashlib
-          import json
-          import os
-          import platform
-          import subprocess
-          import xml.etree.ElementTree as ET
+          import hashlib, json, os, platform, subprocess, xml.etree.ElementTree as ET
           from pathlib import Path
-
-          root = Path('artifacts/pr8-differential')
+          root = Path('artifacts/pr8-standalone')
           xml_root = ET.parse(root / 'pytest.xml').getroot()
           suites = [xml_root] if xml_root.tag == 'testsuite' else list(xml_root.findall('testsuite'))
-          counts = {key: sum(int(s.attrib.get(key, 0)) for s in suites) for key in ('tests', 'failures', 'errors', 'skipped')}
-          failures = []
+          counts = {k: sum(int(s.attrib.get(k, 0)) for s in suites) for k in ('tests','failures','errors','skipped')}
+          failures, skips = [], []
           for suite in suites:
               for case in suite.findall('testcase'):
+                  classname, name = case.attrib.get('classname',''), case.attrib.get('name','')
+                  node = f'{classname}::{name}' if classname else name
                   if case.find('failure') is not None or case.find('error') is not None:
-                      classname = case.attrib.get('classname', '')
-                      name = case.attrib.get('name', '')
-                      failures.append(f'{classname}::{name}' if classname else name)
-          freeze = (root / 'pip-freeze.txt').read_bytes()
-          pyproject = Path('pyproject.toml').read_bytes()
+                      failures.append(node)
+                  skipped = case.find('skipped')
+                  if skipped is not None:
+                      skips.append({'test': node, 'reason': skipped.attrib.get('message','')})
+          freeze = (root / 'pip-freeze.txt').read_text(encoding='utf-8').splitlines()
+          normalized_freeze = '\n'.join(line for line in freeze if not line.startswith('-e git+')) + '\n'
           receipt = {
-              'schema_version': '1.0',
-              'assay': 'ordinary-eb-base-head-differential',
-              'target_label': os.environ['TARGET_LABEL'],
-              'target_ref': os.environ['TARGET_REF'],
-              'observed_git_head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
-              'python': platform.python_version(),
-              'platform': platform.platform(),
-              'pyproject_sha256': hashlib.sha256(pyproject).hexdigest(),
-              'pip_freeze_sha256': hashlib.sha256(freeze).hexdigest(),
-              'pytest_exit_code': int((root / 'pytest-exit-code.txt').read_text().strip()),
-              'pytest_counts': counts,
-              'failing_tests': sorted(failures),
+              'schema_version':'1.0','assay':'standalone-eb-base-head-differential',
+              'target_label':os.environ['TARGET_LABEL'],'target_ref':os.environ['TARGET_REF'],
+              'observed_git_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'python':platform.python_version(),'platform':platform.platform(),
+              'pyproject_sha256':hashlib.sha256(Path('pyproject.toml').read_bytes()).hexdigest(),
+              'normalized_dependency_set_sha256':hashlib.sha256(normalized_freeze.encode()).hexdigest(),
+              'pytest_exit_code':int((root/'pytest-exit-code.txt').read_text().strip()),
+              'pytest_counts':counts,'failing_tests':sorted(failures),'skipped_tests':skips,
           }
-          (root / 'receipt.json').write_text(json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
-          print(json.dumps(receipt, sort_keys=True))
+          (root/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          print(json.dumps(receipt,sort_keys=True))
           PY
 
-      - name: Upload differential receipt
+      - name: Upload standalone receipt
         uses: actions/upload-artifact@v4
         with:
-          name: pr8-base-head-differential-${{ matrix.label }}-${{ matrix.ref }}
-          path: artifacts/pr8-differential/
+          name: pr8-standalone-${{ matrix.label }}-${{ matrix.ref }}
+          path: artifacts/pr8-standalone/
+          if-no-files-found: error
+          retention-days: 90
+
+  cross-repo-eb-test-differential:
+    name: mounted production seam suite (${{ matrix.label }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: exact-base
+            ref: c8189c31adbab11729c31430c2070126224a2d42
+          - label: frozen-head
+            ref: 22b227ec2c34a085efc79267bc007ff78607aeed
+    env:
+      APPARATUS_CONTRACTS_ROOT: ${{ github.workspace }}/apparatus-contracts
+      CLAIM_AUDIT_LAB_ROOT: ${{ github.workspace }}/claim-audit-lab
+
+    steps:
+      - name: Checkout exact EB target
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.ref }}
+          path: evidence-bundler
+          fetch-depth: 1
+
+      - name: Checkout locked Apparatus production
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: c314e53bd91c0736aa4370a364673b069aceb43e
+          path: apparatus-contracts
+          fetch-depth: 1
+
+      - name: Checkout locked CAL production
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: 33a928db97316a3652d57df9cafb8ca240305233
+          path: claim-audit-lab
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Create project-local virtual environments
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv evidence-bundler/.venv
+          evidence-bundler/.venv/bin/python -m pip install -e './evidence-bundler[dev]'
+          python -m venv claim-audit-lab/.venv
+          claim-audit-lab/.venv/bin/python -m pip install -e './claim-audit-lab[dev]'
+
+      - name: Capture mounted dependency/config state
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence-bundler/artifacts/pr8-mounted
+          (
+            cd evidence-bundler
+            git rev-parse HEAD
+            .venv/bin/python --version
+            .venv/bin/python -m pip freeze | sort
+          ) > evidence-bundler/artifacts/pr8-mounted/eb-environment.txt
+          git -C apparatus-contracts rev-parse HEAD > evidence-bundler/artifacts/pr8-mounted/apparatus-head.txt
+          git -C claim-audit-lab rev-parse HEAD > evidence-bundler/artifacts/pr8-mounted/cal-head.txt
+          claim-audit-lab/.venv/bin/python -m pip freeze | sort > evidence-bundler/artifacts/pr8-mounted/cal-pip-freeze.txt
+
+      - name: Run ordinary EB suite with production seam mounted
+        shell: bash
+        run: |
+          set -uo pipefail
+          cd evidence-bundler
+          set +e
+          .venv/bin/python -m pytest -q --junitxml=artifacts/pr8-mounted/pytest.xml \
+            2>&1 | tee artifacts/pr8-mounted/pytest.log
+          status=${PIPESTATUS[0]}
+          set -e
+          echo "$status" > artifacts/pr8-mounted/pytest-exit-code.txt
+          exit 0
+
+      - name: Build mounted machine-readable receipt
+        env:
+          TARGET_LABEL: ${{ matrix.label }}
+          TARGET_REF: ${{ matrix.ref }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd evidence-bundler
+          .venv/bin/python - <<'PY'
+          import hashlib, json, os, platform, subprocess, xml.etree.ElementTree as ET
+          from pathlib import Path
+          root = Path('artifacts/pr8-mounted')
+          xml_root = ET.parse(root/'pytest.xml').getroot()
+          suites = [xml_root] if xml_root.tag == 'testsuite' else list(xml_root.findall('testsuite'))
+          counts = {k: sum(int(s.attrib.get(k,0)) for s in suites) for k in ('tests','failures','errors','skipped')}
+          failures, skips = [], []
+          for suite in suites:
+              for case in suite.findall('testcase'):
+                  classname, name = case.attrib.get('classname',''), case.attrib.get('name','')
+                  node = f'{classname}::{name}' if classname else name
+                  if case.find('failure') is not None or case.find('error') is not None:
+                      failures.append(node)
+                  skipped = case.find('skipped')
+                  if skipped is not None:
+                      skips.append({'test':node,'reason':skipped.attrib.get('message','')})
+          receipt = {
+              'schema_version':'1.0','assay':'mounted-production-seam-eb-base-head-differential',
+              'target_label':os.environ['TARGET_LABEL'],'target_ref':os.environ['TARGET_REF'],
+              'observed_git_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'apparatus_contracts_head':(root/'apparatus-head.txt').read_text().strip(),
+              'claim_audit_lab_head':(root/'cal-head.txt').read_text().strip(),
+              'python':platform.python_version(),
+              'pyproject_sha256':hashlib.sha256(Path('pyproject.toml').read_bytes()).hexdigest(),
+              'pytest_exit_code':int((root/'pytest-exit-code.txt').read_text().strip()),
+              'pytest_counts':counts,'failing_tests':sorted(failures),'skipped_tests':skips,
+          }
+          (root/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          print(json.dumps(receipt,sort_keys=True))
+          PY
+
+      - name: Upload mounted differential receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr8-mounted-${{ matrix.label }}-${{ matrix.ref }}
+          path: evidence-bundler/artifacts/pr8-mounted/
+          if-no-files-found: error
+          retention-days: 90
+
+  frozen-byte-assurance:
+    name: frozen benchmark deterministic byte checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact frozen head with original base
+        uses: actions/checkout@v4
+        with:
+          ref: 22b227ec2c34a085efc79267bc007ff78607aeed
+          fetch-depth: 2
+
+      - name: Verify immutable receipts and structural boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='benchmarks/eb-challenge-corpus-v1'
+          mkdir -p artifacts/pr8-byte-assurance
+          git rev-parse HEAD | tee artifacts/pr8-byte-assurance/observed-head.txt
+          (cd "$ROOT" && sha256sum -c SHA256SUMS) > artifacts/pr8-byte-assurance/sha256sum-check.txt
+          sha256sum "$ROOT/validation/corpus_validation_report.json" | tee artifacts/pr8-byte-assurance/validation-report.sha256
+          sha256sum "$ROOT/validation/freeze_receipt.json" | tee artifacts/pr8-byte-assurance/freeze-receipt.sha256
+          git diff --name-only c8189c31adbab11729c31430c2070126224a2d42..HEAD > artifacts/pr8-byte-assurance/changed-paths.txt
+
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+          root = Path('benchmarks/eb-challenge-corpus-v1')
+          expected = {
+              'tree':'eee87cff5e86a3d0a3cdaaa762837ca90ae60f62939309c1dc335a19884c78a8',
+              'validation':'1c3db5529f14b18035c11aae0d3454c28914bcd822b41ec3bc6b85fd1deeec2a',
+              'generator_config':'0854e140752132530618af61f82efa2db20dec8460512c65aebbf9d616b3d1e5',
+          }
+          manifest = json.loads((root/'corpus_manifest.json').read_text())
+          receipt = json.loads((root/'validation/freeze_receipt.json').read_text())
+          report = json.loads((root/'validation/corpus_validation_report.json').read_text())
+          assert receipt['overall_corpus_tree_sha256'] == expected['tree']
+          assert manifest['overall_corpus_tree_sha256'] == expected['tree']
+          assert report['overall_corpus_tree_sha256'] == expected['tree']
+          assert receipt['validation_report_sha256'] == expected['validation']
+          assert receipt['generator_config_hash'] == expected['generator_config']
+          assert receipt['seeds']['master'] == 271828
+          assert receipt['generator_source_commit'] is None
+          assert receipt['source_count'] == 60 and receipt['passage_count'] == 946
+          assert receipt['development_case_count'] == 37 and receipt['sealed_test_case_count'] == 111
+          assert report['validation_summary'] == {'check_count':16,'failed_checks':0,'passed_checks':16}
+          assert report['warnings'] == [] and report['errors'] == []
+          assert sum(1 for line in (root/'cases/dev_cases.jsonl').read_text().splitlines() if line.strip()) == 37
+          assert sum(1 for line in (root/'cases/test_cases.jsonl').read_text().splitlines() if line.strip()) == 111
+          assert sum(1 for line in (root/'gold/dev_relevance.jsonl').read_text().splitlines() if line.strip()) == 76
+          assert sum(1 for line in (root/'gold/test_relevance.jsonl').read_text().splitlines() if line.strip()) == 221
+          assert sum(1 for line in (root/'decompositions/dev_decompositions.jsonl').read_text().splitlines() if line.strip()) == 30
+          assert sum(1 for line in (root/'decompositions/test_decompositions.jsonl').read_text().splitlines() if line.strip()) == 90
+          source_dirs = [p for p in (root/'sources').iterdir() if p.is_dir()]
+          assert len(source_dirs) == 60
+          passage_count = 0
+          for source in source_dirs:
+              metadata = json.loads((source/'metadata.json').read_text())
+              passage_count += len(metadata['passages'])
+          assert passage_count == 946
+          changed = Path('artifacts/pr8-byte-assurance/changed-paths.txt').read_text().splitlines()
+          assert changed and all(p == 'README.md' or p.startswith('benchmarks/') for p in changed)
+          assert not any(p.startswith(('src/','tests/','schema/','scripts/')) for p in changed)
+          machine_patterns = [re.compile(r'/Users/[^\s/]+'), re.compile(r'/home/[^\s/]+'), re.compile(r'[A-Za-z]:\\\\Users\\\\')]
+          leaks = []
+          for path in root.rglob('*'):
+              if not path.is_file():
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              for pat in machine_patterns:
+                  if pat.search(text): leaks.append(str(path))
+          assert not leaks, leaks
+          assert not list(root.rglob('.env')) and not list(root.rglob('.env.*'))
+          summary = {
+              'head':'22b227ec2c34a085efc79267bc007ff78607aeed',
+              'tree_sha256':expected['tree'],'seed':271828,'sources':60,'passages':946,
+              'dev_cases':37,'sealed_test_cases':111,'gold_rows':297,'decomposition_records':120,
+              'validation_checks':'16/16 PASS','generator_source_commit':None,
+              'diff_runtime_code_paths':0,'machine_local_path_matches':0,
+          }
+          Path('artifacts/pr8-byte-assurance/structural-receipt.json').write_text(json.dumps(summary,sort_keys=True,indent=2)+'\n')
+          print(json.dumps(summary,sort_keys=True))
+          PY
+
+          runtime_refs=$(git grep -n -E 'eb-challenge-corpus-v1/(gold|decompositions)|benchmarks/eb-challenge-corpus-v1/(gold|decompositions)' -- src || true)
+          printf '%s\n' "$runtime_refs" > artifacts/pr8-byte-assurance/runtime-evaluator-only-references.txt
+          test -z "$runtime_refs"
+
+      - name: Upload frozen-byte assurance receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr8-frozen-byte-assurance-22b227ec2c34a085efc79267bc007ff78607aeed
+          path: artifacts/pr8-byte-assurance/
           if-no-files-found: error
           retention-days: 90
