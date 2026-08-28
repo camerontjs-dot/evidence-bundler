@@ -1,0 +1,343 @@
+name: Research - EB retrieval assurance RC2 real production measurement
+
+on:
+  push:
+    branches:
+      - research/eb-retrieval-assurance-rc2-real
+    paths:
+      - 'research/eb_retrieval_assurance_rc2_real/**'
+      - 'docs/research/brief-14-eb-retrieval-assurance-rc2-real.md'
+      - '.github/workflows/research-eb-retrieval-assurance-rc2-real.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'research/eb_retrieval_assurance_rc2_real/**'
+      - 'docs/research/brief-14-eb-retrieval-assurance-rc2-real.md'
+      - '.github/workflows/research-eb-retrieval-assurance-rc2-real.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-real-eb-rc2:
+    runs-on: ubuntu-latest
+    env:
+      SUT_SHA: c8189c31adbab11729c31430c2070126224a2d42
+      APPARATUS_STORAGE_SHA: 2643385c998dd3b08af84eb37f3f089fea7d5e73
+      FROZEN_APPARATUS_COMMIT: 82ec006e888e22c5e5cde600546c05cc6e0b5e33
+      BENCHMARK_ROOT: apparatus/benchmarks/eb-retrieval-assurance-rc2-v1
+      RUNTIME_ROOT: apparatus/benchmarks/eb-retrieval-assurance-rc2-v1/runtime
+      APPARATUS_ROOT: apparatus/research/eb_retrieval_assurance_rc2
+      OUT: work/eb-retrieval-assurance-rc2-real
+      EXPECTED_BENCHMARK_TREE_SHA256: 0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad
+      EXPECTED_RUNTIME_PASSAGES_SHA256: 352ce375a9b2e987f5a7fc686c4560d018646e56a13743027b0b06602cf66dbd
+      EXPECTED_RUNTIME_APERTURES_SHA256: 9f11111aee7bc9b0b0c798184b09efb0d2502c8463d63fef3ed2d08d598ad236
+      EXPECTED_RUNTIME_SEALED_CASES_SHA256: b5f15e7ec52e34846d26e15f530daf242264862ccf56950f5151735c55ce8120
+      EXPECTED_SEALED_GOLD_SHA256: 4c114dd2f00e70f26581f0287058ce68ad40ef5b8d28fcaae582a6b4e719915c
+      EXPECTED_EVALUATOR_SHA256: c443a64a2c2dfe8c9b0decd8c0414c1e7bb1069d86d3355dd0202fa9725aff08
+      EXPECTED_CONTROL_RUNNER_SHA256: 7735fd74dc46dc0ddb46f031cfb2fa9a24578e3c47b406243811be1cdfbe709d
+      EXPECTED_THRESHOLDS_SHA256: 9df75b448ff5090d9bd2821f624e327d47ba5ea9848460cf69518bb6b04ea05a
+      EXPECTED_SCHEMA_SHA256: 26a56b08c90277f6d13434d5bb5db4a0f71edc925ff78db6de285b6a4b992dd0
+      EXPECTED_FIRST_CONTROL_SHA256: d3cdc3ac7c356cc4ec0edc06b6d149bc80082e861b078e8ef94a2df9ad8dfb74
+
+    steps:
+      - name: Checkout preregistered research branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout exact production SUT
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SUT_SHA }}
+          path: sut
+          fetch-depth: 1
+
+      - name: Checkout exact durable frozen apparatus
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.APPARATUS_STORAGE_SHA }}
+          path: apparatus
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact minimal SUT runtime dependencies
+        run: |
+          python -m pip install --disable-pip-version-check \
+            'pydantic>=2.6,<3' 'rank-bm25>=0.2.2,<0.3' 'PyYAML>=6.0,<7'
+
+      - name: Verify immutable SUT and apparatus identities before real sealed output
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT"
+          test "$(git -C sut rev-parse HEAD)" = "$SUT_SHA"
+          test "$(git -C apparatus rev-parse HEAD)" = "$APPARATUS_STORAGE_SHA"
+          git -C apparatus cat-file -e "${FROZEN_APPARATUS_COMMIT}^{commit}"
+
+          git -C apparatus diff --exit-code "$SUT_SHA" "$APPARATUS_STORAGE_SHA" -- src pyproject.toml
+
+          echo "$EXPECTED_RUNTIME_PASSAGES_SHA256  $BENCHMARK_ROOT/runtime/passages.jsonl" | sha256sum -c -
+          echo "$EXPECTED_RUNTIME_APERTURES_SHA256  $BENCHMARK_ROOT/runtime/apertures.json" | sha256sum -c -
+          echo "$EXPECTED_RUNTIME_SEALED_CASES_SHA256  $BENCHMARK_ROOT/runtime/sealed_cases.jsonl" | sha256sum -c -
+          echo "$EXPECTED_SEALED_GOLD_SHA256  $BENCHMARK_ROOT/evaluator_only/sealed_gold.jsonl" | sha256sum -c -
+          echo "$EXPECTED_EVALUATOR_SHA256  $APPARATUS_ROOT/evaluator.py" | sha256sum -c -
+          echo "$EXPECTED_CONTROL_RUNNER_SHA256  $APPARATUS_ROOT/control_runner.py" | sha256sum -c -
+          echo "$EXPECTED_THRESHOLDS_SHA256  $APPARATUS_ROOT/thresholds.json" | sha256sum -c -
+          echo "$EXPECTED_SCHEMA_SHA256  $APPARATUS_ROOT/result.schema.json" | sha256sum -c -
+
+          observed_tree="$(sha256sum "$BENCHMARK_ROOT/SHA256SUMS" | cut -d' ' -f1)"
+          test "$observed_tree" = "$EXPECTED_BENCHMARK_TREE_SHA256"
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a = json.loads(Path('apparatus/docs/research/assurance-13-eb-retrieval-assurance-rc2.json').read_text())
+          first = a['first_decisive_run']
+          assert first['apparatus_commit'] == '82ec006e888e22c5e5cde600546c05cc6e0b5e33'
+          assert first['sealed_control_output_sha256'] == 'd3cdc3ac7c356cc4ec0edc06b6d149bc80082e861b078e8ef94a2df9ad8dfb74'
+          assert first['real_eb_executed'] is False
+          assert first['sealed_runtime_exposed_to_eb'] is False
+          assert a['handoff'] == 'REAL EB RC2 EXPERIMENT AUTHORIZED AGAINST THIS EXACT FROZEN APPARATUS'
+          PY
+
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          receipt = {
+              'sut_sha': os.environ['SUT_SHA'],
+              'apparatus_storage_sha': os.environ['APPARATUS_STORAGE_SHA'],
+              'frozen_apparatus_commit': os.environ['FROZEN_APPARATUS_COMMIT'],
+              'benchmark_tree_sha256': os.environ['EXPECTED_BENCHMARK_TREE_SHA256'],
+              'evaluator_sha256': os.environ['EXPECTED_EVALUATOR_SHA256'],
+              'thresholds_sha256': os.environ['EXPECTED_THRESHOLDS_SHA256'],
+              'result_schema_sha256': os.environ['EXPECTED_SCHEMA_SHA256'],
+              'adapter_sha256': hashlib.sha256(Path('research/eb_retrieval_assurance_rc2_real/runtime_runner.py').read_bytes()).hexdigest(),
+              'sealed_exposure_occurred': False,
+          }
+          Path(os.environ['OUT'], 'preflight-identity.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: Reproduce exact frozen sealed-control receipt before SUT exposure
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$APPARATUS_ROOT" python "$APPARATUS_ROOT/control_runner.py" \
+            --benchmark-root "$BENCHMARK_ROOT" \
+            --split sealed \
+            --thresholds "$APPARATUS_ROOT/thresholds.json" \
+            --output "$OUT/frozen-sealed-controls.json" \
+            > "$OUT/frozen-sealed-controls.log"
+          observed="$(sha256sum "$OUT/frozen-sealed-controls.json" | cut -d' ' -f1)"
+          test "$observed" = "$EXPECTED_FIRST_CONTROL_SHA256"
+          printf '{"expected":"%s","observed":"%s","match":true}\n' \
+            "$EXPECTED_FIRST_CONTROL_SHA256" "$observed" \
+            > "$OUT/frozen-control-reproduction.json"
+
+      - name: Development-only adapter transport smoke
+        shell: bash
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          set -euo pipefail
+          python research/eb_retrieval_assurance_rc2_real/runtime_runner.py \
+            --runtime-root "$RUNTIME_ROOT" \
+            --split dev \
+            --output "$OUT/dev-transport-smoke.jsonl" \
+            > "$OUT/dev-transport-smoke-receipt.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path(os.environ['OUT'], 'dev-transport-smoke.jsonl')
+          rows = [json.loads(x) for x in p.read_text().splitlines() if x.strip()]
+          assert len(rows) == 18
+          required = {'schema_version','case_id','hits','search_scope','completeness_claim','answerability_claim','run_identity'}
+          assert all(required <= set(r) for r in rows)
+          assert all(r['completeness_claim']['status'] == 'not_established' for r in rows)
+          assert all(r['answerability_claim']['status'] == 'not_established' for r in rows)
+          Path(os.environ['OUT'], 'dev-transport-shape.json').write_text(json.dumps({'case_count': len(rows), 'shape_ok': True}, indent=2) + '\n')
+          PY
+
+      - name: Mark sealed exposure point
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          receipt = {
+              'event': 'SEALED_REAL_EB_EXPOSURE_START',
+              'workflow_sha': os.environ['GITHUB_SHA'],
+              'github_run_id': os.environ['GITHUB_RUN_ID'],
+              'sut_sha': os.environ['SUT_SHA'],
+              'apparatus_storage_sha': os.environ['APPARATUS_STORAGE_SHA'],
+              'adapter_sha256': hashlib.sha256(Path('research/eb_retrieval_assurance_rc2_real/runtime_runner.py').read_bytes()).hexdigest(),
+              'runtime_sealed_cases_sha256': os.environ['EXPECTED_RUNTIME_SEALED_CASES_SHA256'],
+          }
+          Path(os.environ['OUT'], 'sealed-exposure.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: First legitimate decisive sealed SUT measurement
+        shell: bash
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          set -euo pipefail
+          python research/eb_retrieval_assurance_rc2_real/runtime_runner.py \
+            --runtime-root "$RUNTIME_ROOT" \
+            --split sealed \
+            --output "$OUT/sealed-real-eb-first.jsonl" \
+            > "$OUT/sealed-real-eb-first-receipt.json"
+          sha256sum "$OUT/sealed-real-eb-first.jsonl" \
+            > "$OUT/sealed-real-eb-first.sha256"
+
+      - name: Evaluate first sealed SUT output with exact frozen evaluator
+        shell: bash
+        run: |
+          set -euo pipefail
+          python "$APPARATUS_ROOT/evaluator.py" \
+            --benchmark-root "$BENCHMARK_ROOT" \
+            --split sealed \
+            --results "$OUT/sealed-real-eb-first.jsonl" \
+            --thresholds "$APPARATUS_ROOT/thresholds.json" \
+            --output "$OUT/sealed-real-eb-first-evaluation.json" \
+            > "$OUT/sealed-real-eb-first-evaluation.log"
+          sha256sum "$OUT/sealed-real-eb-first-evaluation.json" \
+            > "$OUT/sealed-real-eb-first-evaluation.sha256"
+
+      - name: Deterministic replay control
+        shell: bash
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          set -euo pipefail
+          python research/eb_retrieval_assurance_rc2_real/runtime_runner.py \
+            --runtime-root "$RUNTIME_ROOT" \
+            --split sealed \
+            --output "$OUT/sealed-real-eb-replay.jsonl" \
+            > "$OUT/sealed-real-eb-replay-receipt.json"
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          out = Path(os.environ['OUT'])
+          a = (out / 'sealed-real-eb-first.jsonl').read_bytes()
+          b = (out / 'sealed-real-eb-replay.jsonl').read_bytes()
+          receipt = {
+              'byte_identical': a == b,
+              'first_sha256': hashlib.sha256(a).hexdigest(),
+              'replay_sha256': hashlib.sha256(b).hexdigest(),
+          }
+          (out / 'determinism-control.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: Source-order control
+        shell: bash
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          set -euo pipefail
+          python research/eb_retrieval_assurance_rc2_real/runtime_runner.py \
+            --runtime-root "$RUNTIME_ROOT" \
+            --split sealed \
+            --reverse-source-order \
+            --output "$OUT/sealed-real-eb-reverse-source-order.jsonl" \
+            > "$OUT/sealed-real-eb-reverse-source-order-receipt.json"
+          python "$APPARATUS_ROOT/evaluator.py" \
+            --benchmark-root "$BENCHMARK_ROOT" \
+            --split sealed \
+            --results "$OUT/sealed-real-eb-reverse-source-order.jsonl" \
+            --thresholds "$APPARATUS_ROOT/thresholds.json" \
+            --output "$OUT/sealed-real-eb-reverse-source-order-evaluation.json" \
+            > "$OUT/sealed-real-eb-reverse-source-order-evaluation.log"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          out = Path(os.environ['OUT'])
+          def rows(name):
+              return [json.loads(x) for x in (out / name).read_text().splitlines() if x.strip()]
+          a = {r['case_id']: r for r in rows('sealed-real-eb-first.jsonl')}
+          b = {r['case_id']: r for r in rows('sealed-real-eb-reverse-source-order.jsonl')}
+          exact_identity_rank = 0
+          same_hit_set = 0
+          max_score_delta = 0.0
+          changed_cases = []
+          for cid in sorted(a):
+              ah = a[cid]['hits']; bh = b[cid]['hits']
+              ai = [(h['rank'],h['source_id'],h['passage_id'],h['text']) for h in ah]
+              bi = [(h['rank'],h['source_id'],h['passage_id'],h['text']) for h in bh]
+              if ai == bi:
+                  exact_identity_rank += 1
+              else:
+                  changed_cases.append(cid)
+              aset = {(h['source_id'],h['passage_id']) for h in ah}
+              bset = {(h['source_id'],h['passage_id']) for h in bh}
+              if aset == bset:
+                  same_hit_set += 1
+              for x,y in zip(ah,bh):
+                  if x['source_id'] == y['source_id'] and x['passage_id'] == y['passage_id']:
+                      max_score_delta = max(max_score_delta, abs(float(x['score'])-float(y['score'])))
+          receipt = {
+              'case_count': len(a),
+              'exact_identity_and_rank_cases': exact_identity_rank,
+              'same_hit_set_cases': same_hit_set,
+              'max_aligned_score_delta': max_score_delta,
+              'changed_cases': changed_cases,
+              'identity_rank_invariant': exact_identity_rank == len(a),
+          }
+          (out / 'source-order-control.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: Freeze measurement receipt and explicit claim boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          out = Path(os.environ['OUT'])
+          evaluation = json.loads((out / 'sealed-real-eb-first-evaluation.json').read_text())
+          controls = json.loads((out / 'frozen-sealed-controls.json').read_text())
+          determinism = json.loads((out / 'determinism-control.json').read_text())
+          order = json.loads((out / 'source-order-control.json').read_text())
+          raw = (out / 'sealed-real-eb-first.jsonl').read_bytes()
+          evaluated = (out / 'sealed-real-eb-first-evaluation.json').read_bytes()
+          receipt = {
+              'sut_sha': os.environ['SUT_SHA'],
+              'workflow_sha': os.environ['GITHUB_SHA'],
+              'github_run_id': os.environ['GITHUB_RUN_ID'],
+              'apparatus_storage_sha': os.environ['APPARATUS_STORAGE_SHA'],
+              'frozen_apparatus_commit': os.environ['FROZEN_APPARATUS_COMMIT'],
+              'first_raw_sha256': hashlib.sha256(raw).hexdigest(),
+              'first_evaluation_sha256': hashlib.sha256(evaluated).hexdigest(),
+              'qualified': evaluation['summary']['qualified'],
+              'summary': evaluation['summary'],
+              'determinism': determinism,
+              'source_order': order,
+              'frozen_oracle_summary': controls['controls']['oracle']['summary'],
+              'frozen_weak_control_summaries': {
+                  k: controls['controls'][k]['summary']
+                  for k in ('token_overlap','tfidf_cosine','char_trigram')
+              },
+              'claim_boundaries': {
+                  'presegmented_passage_retrieval_measured': True,
+                  'production_chunking_extraction_measured': False,
+                  'native_aperture_receipts_measured': False,
+                  'semantic_relevance_entailment_measured': False,
+                  'semantic_answerability_measured': False,
+                  'search_scope_receipt_owner': 'research_adapter',
+              },
+          }
+          (out / 'measurement-receipt.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          PY
+
+      - name: Upload immutable research receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-retrieval-assurance-rc2-real-${{ github.sha }}
+          path: work/eb-retrieval-assurance-rc2-real/
+          if-no-files-found: error
