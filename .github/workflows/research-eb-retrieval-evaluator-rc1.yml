@@ -49,6 +49,7 @@ jobs:
           set -euo pipefail
           mkdir -p artifacts/eb-retrieval-evaluator-rc1/sources
           cp research/eb_retrieval_evaluator_rc1/evaluator.py artifacts/eb-retrieval-evaluator-rc1/sources/evaluator.py
+          cp research/eb_retrieval_evaluator_rc1/corrected_runner.py artifacts/eb-retrieval-evaluator-rc1/sources/corrected_runner.py
           cp research/eb_retrieval_evaluator_rc1/retrieval_result.schema.json artifacts/eb-retrieval-evaluator-rc1/sources/retrieval_result.schema.json
           cp research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py artifacts/eb-retrieval-evaluator-rc1/sources/diagnose_gold_semantics.py
           cp docs/research/brief-07-eb-retrieval-evaluator-assurance-rc1.md artifacts/eb-retrieval-evaluator-rc1/sources/preregistration.md
@@ -67,7 +68,7 @@ jobs:
           set -uo pipefail
           mkdir -p artifacts/eb-retrieval-evaluator-rc1
           set +e
-          python research/eb_retrieval_evaluator_rc1/evaluator.py \
+          python research/eb_retrieval_evaluator_rc1/corrected_runner.py \
             --benchmark-root benchmarks/eb-challenge-corpus-v1 \
             --output artifacts/eb-retrieval-evaluator-rc1/assurance.json \
             2>&1 | tee artifacts/eb-retrieval-evaluator-rc1/evaluator.log
@@ -86,6 +87,7 @@ jobs:
           from pathlib import Path
 
           evaluator = Path('research/eb_retrieval_evaluator_rc1/evaluator.py')
+          correction = Path('research/eb_retrieval_evaluator_rc1/corrected_runner.py')
           schema = Path('research/eb_retrieval_evaluator_rc1/retrieval_result.schema.json')
           prereg = Path('docs/research/brief-07-eb-retrieval-evaluator-assurance-rc1.md')
           diagnostic = Path('research/eb_retrieval_evaluator_rc1/diagnose_gold_semantics.py')
@@ -104,6 +106,10 @@ jobs:
               'python': sys.version,
               'platform': platform.platform(),
               'evaluator_source_sha256': digest(evaluator),
+              'correction_source_sha256': digest(correction),
+              'evaluator_composite_source_sha256': hashlib.sha256(
+                  evaluator.read_bytes() + b'\0' + correction.read_bytes()
+              ).hexdigest(),
               'result_schema_sha256': digest(schema),
               'preregistration_sha256': digest(prereg),
               'gold_diagnostic_source_sha256': digest(diagnostic),
