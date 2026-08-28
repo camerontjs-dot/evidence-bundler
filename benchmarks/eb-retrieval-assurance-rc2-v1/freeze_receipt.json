@@ -1,0 +1,10 @@
+{
+  "benchmark_name": "eb-retrieval-assurance-rc2-v1",
+  "benchmark_version": "1.0.0",
+  "generated_at": "2026-08-28T00:00:00Z",
+  "generator_source_commit": "82ec006e888e22c5e5cde600546c05cc6e0b5e33",
+  "generator_source_sha256": "eccb586d8366ba6f878ffb323315b81251017153a5ef892d407594818cba7086",
+  "seed": 161803,
+  "sha256sums_sha256": "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad",
+  "tree_sha256": "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad"
+}
