@@ -1,0 +1,299 @@
+name: Research - EB retrieval aperture assurance RC1 decisive
+
+on:
+  push:
+    branches:
+      - research/eb-retrieval-aperture-assurance-rc1
+    paths:
+      - 'research/eb_retrieval_aperture_rc1/**'
+      - 'docs/research/brief-06b-eb-retrieval-decisive-run.md'
+      - '.github/workflows/research-eb-retrieval-aperture-rc1.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-frozen-run:
+    runs-on: ubuntu-latest
+    env:
+      SUT_SHA: c8189c31adbab11729c31430c2070126224a2d42
+      BENCHMARK_SHA: 22b227ec2c34a085efc79267bc007ff78607aeed
+      EVALUATOR_SHA: acfa232c0a6d1708f249b71606cbdc96755bc4d9
+      BENCHMARK_TREE_SHA256: eee87cff5e86a3d0a3cdaaa762837ca90ae60f62939309c1dc335a19884c78a8
+      VALIDATION_REPORT_SHA256: 1c3db5529f14b18035c11aae0d3454c28914bcd822b41ec3bc6b85fd1deeec2a
+      EVALUATOR_COMPOSITE_SHA256: 48ccebbd81f43ddd951e83c2a2c4b9c1fae7a6a24ec7c3bf3fdea47b1b936f14
+      RESULT_SCHEMA_SHA256: 2cfb4dc6cd746f55b690300aafe9a0d19678fcb09bd8e01b0dd5d15043fbf40b
+      THRESHOLD_CONFIG_SHA256: 066e99719168a366f03476fa779398f790cce7653bc3928470486d6bbb805461
+
+    steps:
+      - name: Checkout research execution harness
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Checkout exact production SUT
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SUT_SHA }}
+          path: sut
+          fetch-depth: 1
+
+      - name: Checkout exact frozen evaluator apparatus
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.EVALUATOR_SHA }}
+          path: apparatus
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal SUT runtime dependencies
+        run: |
+          python -m pip install --disable-pip-version-check \
+            'pydantic>=2.6,<3' 'rank-bm25>=0.2.2,<0.3'
+
+      - name: Verify immutable identities before real output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C sut rev-parse HEAD)" = "$SUT_SHA"
+          test "$(git -C apparatus rev-parse HEAD)" = "$EVALUATOR_SHA"
+          git -C apparatus cat-file -e "${BENCHMARK_SHA}^{commit}"
+          git -C apparatus diff --exit-code "$BENCHMARK_SHA" "$EVALUATOR_SHA" -- \
+            benchmarks/eb-challenge-corpus-v1
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import ast
+
+          root = Path("apparatus")
+          benchmark = root / "benchmarks/eb-challenge-corpus-v1"
+          evaluator = root / "research/eb_retrieval_evaluator_rc1/evaluator.py"
+          correction = root / "research/eb_retrieval_evaluator_rc1/corrected_runner.py"
+          schema = root / "research/eb_retrieval_evaluator_rc1/retrieval_result.schema.json"
+          validation = benchmark / "validation/corpus_validation_report.json"
+          freeze = json.loads(
+              (benchmark / "validation/freeze_receipt.json").read_text(encoding="utf-8")
+          )
+
+          def digest(path: Path) -> str:
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+          composite = hashlib.sha256(
+              evaluator.read_bytes() + b"\0" + correction.read_bytes()
+          ).hexdigest()
+          if composite != os.environ["EVALUATOR_COMPOSITE_SHA256"]:
+              raise SystemExit(f"evaluator composite mismatch: {composite}")
+          if digest(schema) != os.environ["RESULT_SCHEMA_SHA256"]:
+              raise SystemExit(f"schema mismatch: {digest(schema)}")
+          if digest(validation) != os.environ["VALIDATION_REPORT_SHA256"]:
+              raise SystemExit(f"validation report mismatch: {digest(validation)}")
+          if freeze.get("overall_corpus_tree_sha256") != os.environ["BENCHMARK_TREE_SHA256"]:
+              raise SystemExit(
+                  "benchmark tree mismatch: "
+                  + str(freeze.get("overall_corpus_tree_sha256"))
+              )
+
+          module = ast.parse(evaluator.read_text(encoding="utf-8"))
+          threshold_node = next(
+              node for node in module.body
+              if isinstance(node, ast.Assign)
+              and any(
+                  isinstance(target, ast.Name) and target.id == "THRESHOLDS"
+                  for target in node.targets
+              )
+          )
+          thresholds = ast.literal_eval(threshold_node.value)
+          threshold_bytes = (
+              json.dumps(
+                  thresholds,
+                  sort_keys=True,
+                  separators=(",", ":"),
+                  ensure_ascii=False,
+              )
+              + "\n"
+          ).encode("utf-8")
+          threshold_digest = hashlib.sha256(threshold_bytes).hexdigest()
+          if threshold_digest != os.environ["THRESHOLD_CONFIG_SHA256"]:
+              raise SystemExit(f"threshold config mismatch: {threshold_digest}")
+
+          identity = {
+              "sut_sha": os.environ["SUT_SHA"],
+              "benchmark_sha": os.environ["BENCHMARK_SHA"],
+              "benchmark_tree_sha256": freeze["overall_corpus_tree_sha256"],
+              "validation_report_sha256": digest(validation),
+              "evaluator_sha": os.environ["EVALUATOR_SHA"],
+              "evaluator_composite_source_sha256": composite,
+              "result_schema_sha256": digest(schema),
+              "threshold_config_sha256": threshold_digest,
+          }
+          Path("artifacts/eb-retrieval-aperture-rc1").mkdir(parents=True, exist_ok=True)
+          Path("artifacts/eb-retrieval-aperture-rc1/identity.json").write_text(
+              json.dumps(identity, sort_keys=True, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(identity, sort_keys=True))
+          PY
+
+          (
+            cd apparatus/benchmarks/eb-challenge-corpus-v1
+            sha256sum -c SHA256SUMS \
+              > ../../../artifacts/eb-retrieval-aperture-rc1/benchmark-sha256-check.log
+          )
+
+      - name: Stage clean runtime mount
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/runtime/aperture
+          cp -a apparatus/benchmarks/eb-challenge-corpus-v1/sources work/runtime/
+          cp -a apparatus/benchmarks/eb-challenge-corpus-v1/cases work/runtime/
+          cp apparatus/benchmarks/eb-challenge-corpus-v1/aperture/subsets.json \
+            work/runtime/aperture/subsets.json
+          test ! -e work/runtime/gold
+          test ! -e work/runtime/decompositions
+          test ! -e work/runtime/corpus_manifest.json
+          find work/runtime -maxdepth 2 -type d -o -type f | sort \
+            > artifacts/eb-retrieval-aperture-rc1/runtime-mount-manifest.txt
+
+      - name: Record production chunker alignment diagnostic
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          python research/eb_retrieval_aperture_rc1/chunk_alignment_diagnostic.py \
+            --runtime-root work/runtime \
+            --output artifacts/eb-retrieval-aperture-rc1/chunker-alignment.json
+
+      - name: Development plumbing run
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          python research/eb_retrieval_aperture_rc1/runtime_runner.py \
+            --runtime-root work/runtime \
+            --split dev \
+            --output artifacts/eb-retrieval-aperture-rc1/dev-results.jsonl
+          python research/eb_retrieval_aperture_rc1/evaluate_split.py \
+            --benchmark-root apparatus/benchmarks/eb-challenge-corpus-v1 \
+            --evaluator-root apparatus/research/eb_retrieval_evaluator_rc1 \
+            --split dev \
+            --results artifacts/eb-retrieval-aperture-rc1/dev-results.jsonl \
+            --output artifacts/eb-retrieval-aperture-rc1/dev-evaluation.json
+
+      - name: First decisive sealed-test output
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          python research/eb_retrieval_aperture_rc1/runtime_runner.py \
+            --runtime-root work/runtime \
+            --split test \
+            --output artifacts/eb-retrieval-aperture-rc1/test-results-FIRST-DECISIVE.jsonl
+          sha256sum artifacts/eb-retrieval-aperture-rc1/test-results-FIRST-DECISIVE.jsonl \
+            | tee artifacts/eb-retrieval-aperture-rc1/test-results-FIRST-DECISIVE.sha256
+
+      - name: Deterministic replay and source-order falsifier
+        env:
+          PYTHONPATH: sut/src
+        run: |
+          python research/eb_retrieval_aperture_rc1/runtime_runner.py \
+            --runtime-root work/runtime \
+            --split test \
+            --output artifacts/eb-retrieval-aperture-rc1/test-results-replay.jsonl
+          python research/eb_retrieval_aperture_rc1/runtime_runner.py \
+            --runtime-root work/runtime \
+            --split test \
+            --reverse-source-order \
+            --output artifacts/eb-retrieval-aperture-rc1/test-results-reverse-source-order.jsonl
+
+      - name: Score first decisive output with frozen evaluator
+        run: |
+          python research/eb_retrieval_aperture_rc1/evaluate_split.py \
+            --benchmark-root apparatus/benchmarks/eb-challenge-corpus-v1 \
+            --evaluator-root apparatus/research/eb_retrieval_evaluator_rc1 \
+            --split test \
+            --results artifacts/eb-retrieval-aperture-rc1/test-results-FIRST-DECISIVE.jsonl \
+            --replay-results artifacts/eb-retrieval-aperture-rc1/test-results-replay.jsonl \
+            --reverse-results artifacts/eb-retrieval-aperture-rc1/test-results-reverse-source-order.jsonl \
+            --output artifacts/eb-retrieval-aperture-rc1/test-evaluation-FIRST-DECISIVE.json
+          sha256sum artifacts/eb-retrieval-aperture-rc1/test-evaluation-FIRST-DECISIVE.json \
+            | tee artifacts/eb-retrieval-aperture-rc1/test-evaluation-FIRST-DECISIVE.sha256
+
+      - name: Write immutable run receipt
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import platform
+          import sys
+          from pathlib import Path
+
+          root = Path("artifacts/eb-retrieval-aperture-rc1")
+          root.mkdir(parents=True, exist_ok=True)
+
+          def maybe_digest(path: Path):
+              return hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
+
+          files = [
+              "identity.json",
+              "benchmark-sha256-check.log",
+              "runtime-mount-manifest.txt",
+              "chunker-alignment.json",
+              "dev-results.jsonl",
+              "dev-evaluation.json",
+              "test-results-FIRST-DECISIVE.jsonl",
+              "test-results-replay.jsonl",
+              "test-results-reverse-source-order.jsonl",
+              "test-evaluation-FIRST-DECISIVE.json",
+          ]
+          receipt = {
+              "schema_version": "1.0",
+              "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "github_sha": os.environ.get("GITHUB_SHA"),
+              "github_ref": os.environ.get("GITHUB_REF"),
+              "sut_sha": os.environ.get("SUT_SHA"),
+              "benchmark_sha": os.environ.get("BENCHMARK_SHA"),
+              "evaluator_sha": os.environ.get("EVALUATOR_SHA"),
+              "python": sys.version,
+              "platform": platform.platform(),
+              "artifact_sha256": {
+                  name: maybe_digest(root / name)
+                  for name in files
+              },
+              "harness_sha256": {
+                  "runtime_runner.py": maybe_digest(
+                      Path("research/eb_retrieval_aperture_rc1/runtime_runner.py")
+                  ),
+                  "evaluate_split.py": maybe_digest(
+                      Path("research/eb_retrieval_aperture_rc1/evaluate_split.py")
+                  ),
+                  "chunk_alignment_diagnostic.py": maybe_digest(
+                      Path("research/eb_retrieval_aperture_rc1/chunk_alignment_diagnostic.py")
+                  ),
+                  "run_freeze.md": maybe_digest(
+                      Path("docs/research/brief-06b-eb-retrieval-decisive-run.md")
+                  ),
+              },
+          }
+          (root / "run-receipt.json").write_text(
+              json.dumps(receipt, sort_keys=True, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(receipt, sort_keys=True))
+          PY
+
+      - name: Upload decisive research receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-retrieval-aperture-rc1-${{ github.run_id }}
+          path: artifacts/eb-retrieval-aperture-rc1/
+          if-no-files-found: error
+          retention-days: 90
