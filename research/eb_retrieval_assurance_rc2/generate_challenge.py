@@ -117,7 +117,7 @@ def gold_row(case_id: str, n: int, source_id: str, passage_id: str, cls: str, de
 def make_case(family: str, split: str, ordinal: int, global_index: int, rng: random.Random) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     case_id = f"RC2-{split.upper()}-{family}-{ordinal:03d}"
     topic = topic_name(global_index)
-    q_phrase, d_phrase = QUERY_DECISIVE_PAIRS[global_index % len(QUERY_DECISIVE_PAIRS)]
+    q_phrase, d_phrase = QUERY_DECISIVE_PAIRS[rng.randrange(len(QUERY_DECISIVE_PAIRS))]
     token = f"protocol {100 + global_index}"
     passages: list[dict[str, Any]] = []
     gold: list[dict[str, Any]] = []
@@ -131,6 +131,8 @@ def make_case(family: str, split: str, ordinal: int, global_index: int, rng: ran
             source_ids.append(sid)
         return sid
 
+    # Capability-first templates. High-overlap distractors deliberately use query surface
+    # language while decisive passages use ordinary paraphrase or complementary context.
     if family == "R01":
         s1, s2 = src("A"), src("B")
         add_passage(passages, s1, f"{case_id}-P01", f"Current instruction for the {topic}: technicians must perform {d_phrase}. This requirement is effective for routine operation.", 2, 1)
@@ -193,6 +195,7 @@ def make_case(family: str, split: str, ordinal: int, global_index: int, rng: ran
         add_passage(passages, s2, f"{case_id}-P02", f"Bounded archive note: {q_phrase} appears in an obsolete proposal for the {topic} under {token}.", 1, 1)
         add_passage(passages, s3, f"{case_id}-P03", f"Bounded archive glossary for {token} lists the phrase {q_phrase} for the {topic}.", 2, 1)
         gold += [gold_row(case_id, 1, s1, f"{case_id}-P01", "decisive_support", True), gold_row(case_id, 2, s2, f"{case_id}-P02", "hard_negative", False), gold_row(case_id, 3, s3, f"{case_id}-P03", "hard_negative", False)]
+        # The runtime aperture intentionally excludes the decisive source.
         source_ids = [s2, s3]
         expected_answerability = "not_answerable_within_aperture"
         k = 2
@@ -203,6 +206,7 @@ def make_case(family: str, split: str, ordinal: int, global_index: int, rng: ran
         claim = f"For {twin_a}, {q_phrase} applies under {token}."
         decisive = f"At {twin_a}, the controlling instruction requires {d_phrase} under {token}."
         decoy = f"At {twin_b}, the controlling instruction requires {d_phrase} under {token}."
+        # Put the wrong twin first to make source-order shortcuts fail.
         add_passage(passages, s2, f"{case_id}-P02", decoy, 1, 1)
         add_passage(passages, s1, f"{case_id}-P01", decisive, 2, 1)
         gold += [gold_row(case_id, 1, s1, f"{case_id}-P01", "decisive_support", True), gold_row(case_id, 2, s2, f"{case_id}-P02", "hard_negative", False)]
@@ -261,6 +265,7 @@ def generate(output: Path, seed: int, splits: set[str], generator_source_commit:
                 all_passages.extend(passages)
                 all_subsets.append(subset)
 
+    # Stable but non-family-grouped passage ordering prevents accidental family position cues.
     all_passages.sort(key=lambda p: (p["source_id"], p["passage_order"], p["passage_id"]))
     dump_jsonl(output / "runtime" / "passages.jsonl", all_passages)
     dump_json(output / "runtime" / "apertures.json", {"subsets": sorted(all_subsets, key=lambda x: x["subset_id"])})
@@ -293,6 +298,7 @@ def generate(output: Path, seed: int, splits: set[str], generator_source_commit:
     }
     dump_json(output / "manifest.json", manifest)
 
+    # Hash all benchmark content except the self-referential receipt files.
     exclusions = {"SHA256SUMS", "freeze_receipt.json"}
     rows = []
     for path in sorted(p for p in output.rglob("*") if p.is_file()):
