@@ -1,0 +1,27 @@
+Quillmark seal ledger supplier bulletin. Document code QMK-SOP-367. Controlled internal record for the fictional Neralis Compact.
+
+Event note. This simulated record describes an observation on 2026-08-03 and separates observation from disposition.
+
+Purpose. This supplier bulletin defines the internal control for Quillmark seal ledger at Nettle Quay. It is limited to the named asset and is not a universal rule.
+
+Identification. Asset QMK-600, product Tansy fold pack, and record series QMK-REC-266 are used to keep the local records distinct.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+The supplier note describes a 43-day local display cache for Quillmark scans, not the retained register history.
+
+Ownership. Release Coordination owns the operational decision, while Archive Services performs the independent review.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under QMK-REC-266.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+References. Cross-references point to internal document code QMK-H43 and remain subordinate to the effective instruction.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Records. Entries are made in the controlled register using lot reference QMK-LOT-716; free-form personal copies are not the official record.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.

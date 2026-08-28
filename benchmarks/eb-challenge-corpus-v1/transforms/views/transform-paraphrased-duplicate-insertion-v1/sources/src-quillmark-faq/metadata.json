@@ -1,0 +1,124 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "837028e43cbbc65da10791838c986d279cb6897d19aa6b5c4298dc5d4b84b44e",
+  "content_path": "content.txt",
+  "document_code": "QMK-SOP-712",
+  "document_type": "knowledge_base_article",
+  "effective_date": "2026-06-30",
+  "logical_document_key": "transform::src-quillmark-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 13,
+  "passages": [
+    {
+      "end_offset": 134,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-9e03b54408e7-000",
+      "start_offset": 0,
+      "text_sha256": "df81869e7856e877c02888c587e1d15d3aef858ca4886c7454679f4a8f9ad75a"
+    },
+    {
+      "end_offset": 260,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-9e03b54408e7-001",
+      "start_offset": 136,
+      "text_sha256": "f5fc36e995c0ffd35c866ae5dbba57e4336fb29c5abea2c52642ca270d4d70ff"
+    },
+    {
+      "end_offset": 342,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-9e03b54408e7-002",
+      "start_offset": 262,
+      "text_sha256": "a7b402489e62eb960c10b664714aaba5af5389cdabeffa3163dccaa961f3694a"
+    },
+    {
+      "end_offset": 454,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-9e03b54408e7-003",
+      "start_offset": 344,
+      "text_sha256": "56eb71c647f4e98c0901c7931542ec4dad21f052e691ccb78b29729d70c71dfa"
+    },
+    {
+      "end_offset": 625,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-9e03b54408e7-004",
+      "start_offset": 456,
+      "text_sha256": "21cd57f448809dcbda4dea38a54ae02ce5bb803a184382b2d11ef46729f2dde1"
+    },
+    {
+      "end_offset": 736,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-9e03b54408e7-005",
+      "start_offset": 627,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 856,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-9e03b54408e7-006",
+      "start_offset": 738,
+      "text_sha256": "c9ba31ae2b63a7644a0ae678edf275cb2bf38d67a513e0b1f2c9a26ee4ed7c74"
+    },
+    {
+      "end_offset": 988,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-9e03b54408e7-007",
+      "start_offset": 858,
+      "text_sha256": "bc4305882272ba995d00fd83355f9e9493b2c137c37d6aa97fef6189eed24f71"
+    },
+    {
+      "end_offset": 1115,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-9e03b54408e7-008",
+      "start_offset": 990,
+      "text_sha256": "f84d11ae0a00a42a8565e9cf563aa65a8aee0bee2f896392d1b7effd89bf699f"
+    },
+    {
+      "end_offset": 1257,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-9e03b54408e7-009",
+      "start_offset": 1117,
+      "text_sha256": "f2e33175953d7a9f3a80b276a62237ec7c98e8e7101c9fd0872543016b69612c"
+    },
+    {
+      "end_offset": 1386,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-9e03b54408e7-010",
+      "start_offset": 1259,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1506,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-9e03b54408e7-011",
+      "start_offset": 1388,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1609,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-9e03b54408e7-012",
+      "start_offset": 1508,
+      "text_sha256": "d6c6f63ebb1713433297f9aafcc51fc776ae17846ce90a46346661e3eceb5b0f"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-quillmark-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Quillmark seal ledger knowledge base article",
+  "version": "1.0"
+}

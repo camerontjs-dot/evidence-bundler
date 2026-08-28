@@ -1,0 +1,25 @@
+Cinderwell thermal hold change control notice. Document code CDW-REC-291. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Cinderwell thermal hold change control notice identifies the local setting, owner, and record path before describing the routine.
+
+A training record may be archived after correction; that administrative archive is not erasure of a rejected production record.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+References. Cross-references point to internal document code CDW-H56 and remain subordinate to the effective instruction.
+
+Review. The document owner reviews this change control notice on 2026-11-02 or sooner if the asset, supplier, or record path changes.
+
+Records. Entries are made in the controlled register using lot reference CDW-LOT-833; free-form personal copies are not the official record.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Scope. The control applies to the named product in the named facility; unrelated assets use their own controlled instructions.
+
+Identification. Asset CDW-804, product Emberleaf cassette, and record series CDW-REC-447 are used to keep the local records distinct.
+
+Ownership. Cell Operations owns the operational decision, while Supplier Liaison performs the independent review.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under CDW-REC-447.

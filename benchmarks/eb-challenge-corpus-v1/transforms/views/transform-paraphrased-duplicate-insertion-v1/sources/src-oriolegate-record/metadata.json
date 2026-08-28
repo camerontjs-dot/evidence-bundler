@@ -1,0 +1,116 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "4c9b546633e00625f8746f9fc6278aa1c7c56d0f2a9f0e48f0de042a2fb1ec71",
+  "content_path": "content.txt",
+  "document_code": "ORL-TSP-654",
+  "document_type": "meeting_record",
+  "effective_date": null,
+  "logical_document_key": "transform::src-oriolegate-record",
+  "offset_unit": "utf8_byte",
+  "passage_count": 12,
+  "passages": [
+    {
+      "end_offset": 122,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-4c1259023cdb-000",
+      "start_offset": 0,
+      "text_sha256": "21a25224e8d749af4d11aef69e447bdfbd4e8d21235d146a4b1f11a29f4305cf"
+    },
+    {
+      "end_offset": 257,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-4c1259023cdb-001",
+      "start_offset": 124,
+      "text_sha256": "3246152140293fa1d6c4ec330405ec7d02a3b4305513f2f56083bad2d8c57059"
+    },
+    {
+      "end_offset": 391,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-4c1259023cdb-002",
+      "start_offset": 259,
+      "text_sha256": "1b366d8647e69f161845e56c5808cb7dd782148b73b9c88660da7f8d54c0bff0"
+    },
+    {
+      "end_offset": 521,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-4c1259023cdb-003",
+      "start_offset": 393,
+      "text_sha256": "d9305de3ae22c27927baaed6e8017bab9b8867839b5bc6c5aed71c613b3b329b"
+    },
+    {
+      "end_offset": 632,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-4c1259023cdb-004",
+      "start_offset": 523,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 755,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-4c1259023cdb-005",
+      "start_offset": 634,
+      "text_sha256": "443ca7e4dff8573b57eb4e61d96a1204017639517fd2c5cf7c54ea43a6c92a32"
+    },
+    {
+      "end_offset": 875,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-4c1259023cdb-006",
+      "start_offset": 757,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1003,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-4c1259023cdb-007",
+      "start_offset": 877,
+      "text_sha256": "e44803c5f566928b943c9bf27de0a6457035b67b285dabc3213bf458bb325d9c"
+    },
+    {
+      "end_offset": 1162,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-4c1259023cdb-008",
+      "start_offset": 1005,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1321,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-4c1259023cdb-009",
+      "start_offset": 1164,
+      "text_sha256": "f6e7a7363a6ecf11554fe4007e50c6d41883dc5f72f49aaea63bf7c38fd8a4aa"
+    },
+    {
+      "end_offset": 1450,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-4c1259023cdb-010",
+      "start_offset": 1323,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1553,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-4c1259023cdb-011",
+      "start_offset": 1452,
+      "text_sha256": "ad8f05f8f39ca39c7f1638266fce1dcf9f0c6efb1034140b7c3d99fb722d3e3c"
+    }
+  ],
+  "publication_date": "2026-07-26",
+  "schema_version": "1.0",
+  "source_id": "src-oriolegate-record",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Oriole batch gate meeting record",
+  "version": "1.0"
+}

@@ -1,0 +1,116 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "26d581ee7d7438d4553e9f5ccbd30f1a79031f8fa01c1fe759be7c412379047e",
+  "content_path": "content.txt",
+  "document_code": "RBR-SOP-144",
+  "document_type": "decision_record",
+  "effective_date": null,
+  "logical_document_key": "transform::src-rimebridge-record",
+  "offset_unit": "utf8_byte",
+  "passage_count": 12,
+  "passages": [
+    {
+      "end_offset": 128,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-f44d2da7f901-000",
+      "start_offset": 0,
+      "text_sha256": "de00d9cf60caca256c9272522f98b7d0e4188731997556f3ee3bbf67d3b78a36"
+    },
+    {
+      "end_offset": 269,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-f44d2da7f901-001",
+      "start_offset": 130,
+      "text_sha256": "1181d60e7815dac58d98764d5a4be1e841a93552678c3033c8754aebe294526a"
+    },
+    {
+      "end_offset": 407,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-f44d2da7f901-002",
+      "start_offset": 271,
+      "text_sha256": "3299cc2bd66b7f3452cf2ed13c6a1184f4862f2f144fa5f171309aa502460170"
+    },
+    {
+      "end_offset": 549,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-f44d2da7f901-003",
+      "start_offset": 409,
+      "text_sha256": "07e0cab37b29fecbfa6b1ef0e0aa54fbb903f2765a8be708bb3ae4dbfbbd2200"
+    },
+    {
+      "end_offset": 678,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-f44d2da7f901-004",
+      "start_offset": 551,
+      "text_sha256": "b9e7976281112510e05aaa2f8104dce036060f6d0915875f694e6743fa60dbc8"
+    },
+    {
+      "end_offset": 837,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-f44d2da7f901-005",
+      "start_offset": 680,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 970,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-f44d2da7f901-006",
+      "start_offset": 839,
+      "text_sha256": "b58b287e29eef229bc6cba5a3922123838b375b600df005d0c2faa4b499df89a"
+    },
+    {
+      "end_offset": 1090,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-f44d2da7f901-007",
+      "start_offset": 972,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1219,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-f44d2da7f901-008",
+      "start_offset": 1092,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1342,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-f44d2da7f901-009",
+      "start_offset": 1221,
+      "text_sha256": "313547b5adfee4728904d48e9cca6781c0a14fc03554495b870072b1918204c8"
+    },
+    {
+      "end_offset": 1506,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-f44d2da7f901-010",
+      "start_offset": 1344,
+      "text_sha256": "7838ceb909146bcc19346bcb13a96549eabde20a47f14c6ac2d247ade017de53"
+    },
+    {
+      "end_offset": 1609,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-f44d2da7f901-011",
+      "start_offset": 1508,
+      "text_sha256": "3d6b1ea53b433d43926c4b6973e7249ab72af3f424a7efbbde5113b5fef6d5eb"
+    }
+  ],
+  "publication_date": "2026-07-26",
+  "schema_version": "1.0",
+  "source_id": "src-rimebridge-record",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Rimebridge rinse train decision record",
+  "version": "1.0"
+}

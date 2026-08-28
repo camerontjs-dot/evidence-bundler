@@ -1,0 +1,124 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "af59b1df94ac29065956e0da2555956b8ecd76a2cb5bf451faf2120b9e3bf66c",
+  "content_path": "content.txt",
+  "document_code": "WCK-TSP-165",
+  "document_type": "decision_record",
+  "effective_date": null,
+  "logical_document_key": "wickarchive::record",
+  "offset_unit": "utf8_byte",
+  "passage_count": 13,
+  "passages": [
+    {
+      "end_offset": 128,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-f8e04f0ce13c-000",
+      "start_offset": 0,
+      "text_sha256": "86482388242b860d5469ed1c520a46133ebd366d5332215e7c9696185786d38b"
+    },
+    {
+      "end_offset": 269,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-f8e04f0ce13c-001",
+      "start_offset": 130,
+      "text_sha256": "5b252b724a598e4c3cf3da5063592d8bc8e469e645aa65196a3631933b73b228"
+    },
+    {
+      "end_offset": 378,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-f8e04f0ce13c-002",
+      "start_offset": 271,
+      "text_sha256": "1ac0201f48ab9ce62269a85de848c4fc250b986208ea95ea5f70536e26d7e315"
+    },
+    {
+      "end_offset": 507,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-f8e04f0ce13c-003",
+      "start_offset": 380,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 636,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-f8e04f0ce13c-004",
+      "start_offset": 509,
+      "text_sha256": "3bf4af347acdd6408e0f65d988d7af0f8adc12510b9ac24e64875241cc8a968d"
+    },
+    {
+      "end_offset": 778,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-f8e04f0ce13c-005",
+      "start_offset": 638,
+      "text_sha256": "55fd0fbed262dc77ff02cecf54cc34587a7fffc128d39a0b74199e15be956fbf"
+    },
+    {
+      "end_offset": 898,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-f8e04f0ce13c-006",
+      "start_offset": 780,
+      "text_sha256": "b127a61fbac5ffb14c738e2226f175c8da793fc6ea660782ab60a1fbd7c29abe"
+    },
+    {
+      "end_offset": 1063,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-f8e04f0ce13c-007",
+      "start_offset": 900,
+      "text_sha256": "261fb3876c7a74f87213880416f1db7bd857371c3e70eed9d3ca167f903f4e16"
+    },
+    {
+      "end_offset": 1186,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-f8e04f0ce13c-008",
+      "start_offset": 1065,
+      "text_sha256": "a3811971f0f5187d44aab1ab26ccb2bb431f5d6be25ac036c2a9d672112b500d"
+    },
+    {
+      "end_offset": 1306,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-f8e04f0ce13c-009",
+      "start_offset": 1188,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1465,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-f8e04f0ce13c-010",
+      "start_offset": 1308,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1598,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-f8e04f0ce13c-011",
+      "start_offset": 1467,
+      "text_sha256": "0aec94de8e02cc88203099674e2afd57afd4c1d58bc21cce04879f02fabc8f04"
+    },
+    {
+      "end_offset": 1701,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-f8e04f0ce13c-012",
+      "start_offset": 1600,
+      "text_sha256": "dacf845b09ca45b1714bedae40125496c3b19945354306bf3ed78ccfc941c6d5"
+    }
+  ],
+  "publication_date": "2026-07-26",
+  "schema_version": "1.0",
+  "source_id": "src-wickarchive-record",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Wick archive retrieval decision record",
+  "version": "1.0"
+}

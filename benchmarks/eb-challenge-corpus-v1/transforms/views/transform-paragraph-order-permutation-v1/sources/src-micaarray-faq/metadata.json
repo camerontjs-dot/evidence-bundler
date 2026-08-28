@@ -1,0 +1,132 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "c59a4bcb899ede98b9ff9f7fe9564cbe93d9fa724ec07c352bec7562c0ae02ba",
+  "content_path": "content.txt",
+  "document_code": "MCA-POL-403",
+  "document_type": "deviation_report",
+  "effective_date": "2026-07-16",
+  "logical_document_key": "transform::src-micaarray-faq",
+  "offset_unit": "utf8_byte",
+  "passage_count": 14,
+  "passages": [
+    {
+      "end_offset": 124,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-f1fcf5574861-000",
+      "start_offset": 0,
+      "text_sha256": "a85d0c9ef81eac5899e34930d6a4fd8648fef497c6d7b2bd7b02445beb0199ef"
+    },
+    {
+      "end_offset": 246,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-f1fcf5574861-001",
+      "start_offset": 126,
+      "text_sha256": "0c774cbed1d631d75cd5292c0395db341d8ee3738da0d1b79616db975811dba1"
+    },
+    {
+      "end_offset": 381,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-f1fcf5574861-008",
+      "start_offset": 248,
+      "text_sha256": "6411136e58f3fb0f3470fb84a640679a34fccdd3765318d5f01bf3cfce430ae1"
+    },
+    {
+      "end_offset": 501,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-f1fcf5574861-012",
+      "start_offset": 383,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 626,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-f1fcf5574861-006",
+      "start_offset": 503,
+      "text_sha256": "584a7febca26cbaa4775563c4ed1dae8e1f69ba8b3a92a33794332c34b455e26"
+    },
+    {
+      "end_offset": 743,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-f1fcf5574861-003",
+      "start_offset": 628,
+      "text_sha256": "b92f3e3da1180d1336f95fcebfb45fc45756c54c442c34a4122c9d50e220a48c"
+    },
+    {
+      "end_offset": 872,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-f1fcf5574861-011",
+      "start_offset": 745,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 975,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-f1fcf5574861-013",
+      "start_offset": 874,
+      "text_sha256": "3223e42340408474a6cae87fa32081f3edd7527ac3af04c8141251d17a4acd19"
+    },
+    {
+      "end_offset": 1094,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-f1fcf5574861-007",
+      "start_offset": 977,
+      "text_sha256": "2a8ad5ed4e54d51c58d0523feb7f25b0286815724549e8d9c2568843b0a1a14a"
+    },
+    {
+      "end_offset": 1236,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-f1fcf5574861-010",
+      "start_offset": 1096,
+      "text_sha256": "7508a82b529a86066878b3dceea31cb309eb9e34041c85960da56ff6fde280df"
+    },
+    {
+      "end_offset": 1373,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-f1fcf5574861-004",
+      "start_offset": 1238,
+      "text_sha256": "80ae63ec3d30adc9ad8d12b08f7a63f8048f7991a143085a5297f08f762c94d0"
+    },
+    {
+      "end_offset": 1500,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-f1fcf5574861-002",
+      "start_offset": 1375,
+      "text_sha256": "b9960c3cba7d7df06da845143cc483116c3c15ad7f217194d1b6a34444fed0aa"
+    },
+    {
+      "end_offset": 1632,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-f1fcf5574861-009",
+      "start_offset": 1502,
+      "text_sha256": "690782c6673a0db5afa01736fc01f2f46705f66cbca2fe10be4d34e71bb89a7d"
+    },
+    {
+      "end_offset": 1792,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-f1fcf5574861-005",
+      "start_offset": 1634,
+      "text_sha256": "6a5285a216c572a560987e01ef4b20da9289cb48a4413b1eb1572c9b790cbb1c"
+    }
+  ],
+  "publication_date": "2026-08-04",
+  "schema_version": "1.0",
+  "source_id": "src-micaarray-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Mica sensor array deviation report",
+  "version": "1.0"
+}

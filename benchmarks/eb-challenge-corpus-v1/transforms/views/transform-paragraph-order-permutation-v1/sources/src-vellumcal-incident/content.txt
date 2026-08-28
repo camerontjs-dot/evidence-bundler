@@ -1,0 +1,29 @@
+Vellum calibration bench faq. Document code VLM-VAL-752. Controlled internal record for the fictional Neralis Compact.
+
+Event note. This simulated record describes an observation on 2026-08-18 and separates observation from disposition.
+
+Purpose. This faq defines the internal control for Vellum calibration bench at Reed Observatory. It is limited to the named asset and is not a universal rule.
+
+Records. Entries are made in the controlled register using lot reference VLM-LOT-280; free-form personal copies are not the official record.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Cell Operations.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Review. The document owner reviews this faq on 2026-09-14 or sooner if the asset, supplier, or record path changes.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+A diagnostic note records a 7.0-unit alert for a different sensor; it is not the Vellum reference-plate drift limit.
+
+Identification. Asset VLM-171, product Gossamer reference plate, and record series VLM-REC-143 are used to keep the local records distinct.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+A diagnostic run used a 7-hour wait while troubleshooting; the diagnostic wait is not the standing reference-plate rule.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under VLM-REC-143.
+
+References. Cross-references point to internal document code VLM-H45 and remain subordinate to the effective instruction.

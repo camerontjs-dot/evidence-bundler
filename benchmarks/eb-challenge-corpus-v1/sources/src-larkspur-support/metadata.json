@@ -1,0 +1,164 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "2cd02258c1b7e3abf0fda61d586675f84f4082da03322e95f44214ebe5141fdf",
+  "content_path": "content.txt",
+  "document_code": "LSP-REC-589",
+  "document_type": "sop",
+  "effective_date": "2026-07-03",
+  "logical_document_key": "larkspur::support",
+  "offset_unit": "utf8_byte",
+  "passage_count": 18,
+  "passages": [
+    {
+      "end_offset": 115,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-0f403db1f8b5-000",
+      "start_offset": 0,
+      "text_sha256": "06046f33fc73e81f89fa0c08857423478afd1df63f69f1107591c00c12d5c402"
+    },
+    {
+      "end_offset": 243,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-0f403db1f8b5-001",
+      "start_offset": 117,
+      "text_sha256": "ae70f6a99ac91794ffa4d92f50960d054e75a237df84877d89722e80360d30ef"
+    },
+    {
+      "end_offset": 384,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-0f403db1f8b5-002",
+      "start_offset": 245,
+      "text_sha256": "99d805553deea234abb1ca58d344109cddf106e1779122410e4a41aff303e268"
+    },
+    {
+      "end_offset": 495,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-0f403db1f8b5-003",
+      "start_offset": 386,
+      "text_sha256": "ea41e6a3aaea8c39474fa535c071e0fb694cf7e54e47c8bea83b155df09b2bac"
+    },
+    {
+      "end_offset": 646,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-0f403db1f8b5-004",
+      "start_offset": 497,
+      "text_sha256": "1f97e9b6bd4ddbc6f913578b6c2be99f9dcb38f31f93461b3aaca6abc0cc23f2"
+    },
+    {
+      "end_offset": 772,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-0f403db1f8b5-005",
+      "start_offset": 648,
+      "text_sha256": "15d69b309129db7332608c38cc968a244718a70469fe8a18d20d70a5ebf257b0"
+    },
+    {
+      "end_offset": 887,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-0f403db1f8b5-006",
+      "start_offset": 774,
+      "text_sha256": "31c9d8a085903adaa96b3ad83eab0fdb637403a2b6dc86ad738d972c8ff1027e"
+    },
+    {
+      "end_offset": 1026,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-0f403db1f8b5-007",
+      "start_offset": 889,
+      "text_sha256": "2d0aaa3445b705d84e698fd05a9df9e68c36eb2411ae7eee9d8d94b08b8a697f"
+    },
+    {
+      "end_offset": 1153,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-0f403db1f8b5-008",
+      "start_offset": 1028,
+      "text_sha256": "f84d11ae0a00a42a8565e9cf563aa65a8aee0bee2f896392d1b7effd89bf699f"
+    },
+    {
+      "end_offset": 1295,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-0f403db1f8b5-009",
+      "start_offset": 1155,
+      "text_sha256": "65dc957daf2fc4a5880d90512863eec0ce1cb2f519885ca48bf3b5bdaf898268"
+    },
+    {
+      "end_offset": 1424,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-0f403db1f8b5-010",
+      "start_offset": 1297,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1544,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-0f403db1f8b5-011",
+      "start_offset": 1426,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1661,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-0f403db1f8b5-012",
+      "start_offset": 1546,
+      "text_sha256": "9f671c27b7ef5a672c34385e9128378878ee2c1e54293ea448120fc4e4c3277f"
+    },
+    {
+      "end_offset": 1784,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-0f403db1f8b5-013",
+      "start_offset": 1663,
+      "text_sha256": "a9b492049f34c3b28638b82f1b4431e6ca5b1715418579ebd1b54c23adef287c"
+    },
+    {
+      "end_offset": 1943,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-0f403db1f8b5-014",
+      "start_offset": 1786,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 2077,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 15,
+      "passage_id": "pas-0f403db1f8b5-015",
+      "start_offset": 1945,
+      "text_sha256": "f3854ad4017b42038f3ac6b6ecee957f07c4061f7f07db0b6c0bbf0da058b6cd"
+    },
+    {
+      "end_offset": 2196,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 16,
+      "passage_id": "pas-0f403db1f8b5-016",
+      "start_offset": 2079,
+      "text_sha256": "841d63fc499b27e3b1b746415266986bafdbf1c1c04174010282e9b0a4812475"
+    },
+    {
+      "end_offset": 2299,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 17,
+      "passage_id": "pas-0f403db1f8b5-017",
+      "start_offset": 2198,
+      "text_sha256": "50d507f24dcebd103ccb918e78279ad849e6492aef63236a251d7873069ceaf1"
+    }
+  ],
+  "publication_date": "2026-07-23",
+  "schema_version": "1.0",
+  "source_id": "src-larkspur-support",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Larkspur label sleeve sop",
+  "version": "1.0"
+}

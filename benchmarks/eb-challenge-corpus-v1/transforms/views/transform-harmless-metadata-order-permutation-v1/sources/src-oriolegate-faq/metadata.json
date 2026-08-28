@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "source_id": "src-oriolegate-faq",
+  "source_identity_basis": "stable-semantic-document-key",
+  "logical_document_key": "transform::src-oriolegate-faq",
+  "title": "Oriole batch gate incident report",
+  "document_type": "incident_report",
+  "version": "1.0",
+  "publication_date": "2026-08-04",
+  "effective_date": "2026-05-28",
+  "status": "current",
+  "document_code": "ORL-TSP-365",
+  "content_path": "content.txt",
+  "content_encoding": "utf-8",
+  "offset_unit": "utf8_byte",
+  "content_hash": "99dc6e472ac85fac82e40826d4db6db84ae41ac3b41ac25f03731f473da37003",
+  "passage_count": 19,
+  "passages": [
+    {
+      "passage_id": "pas-799796c85794-000",
+      "paragraph_index": 0,
+      "start_offset": 0,
+      "end_offset": 123,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "4cbaa30b8f433f9b4229581296c91a6c40a3af6183b6082547909e5af21080d4"
+    },
+    {
+      "passage_id": "pas-799796c85794-001",
+      "paragraph_index": 1,
+      "start_offset": 125,
+      "end_offset": 245,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "390bd0cbe5aecad9d0207d2444bebf1708eada9346b2b9fe091506bd0706f251"
+    },
+    {
+      "passage_id": "pas-799796c85794-002",
+      "paragraph_index": 2,
+      "start_offset": 247,
+      "end_offset": 377,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "b626b457e5b6c378ee5739b2205eb23f0a0a56fbe52d5c9f22b5022cae5e074c"
+    },
+    {
+      "passage_id": "pas-799796c85794-003",
+      "paragraph_index": 3,
+      "start_offset": 379,
+      "end_offset": 499,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "f3ed26402be5582e27bb6d1e0a45744cc035917bff373d8f7dc0eeecc74c983f"
+    },
+    {
+      "passage_id": "pas-799796c85794-004",
+      "paragraph_index": 4,
+      "start_offset": 501,
+      "end_offset": 590,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "9cfa103da974943dadf9920822496b3ddcdb4932e06a8db739c76fa9a26c4359"
+    },
+    {
+      "passage_id": "pas-799796c85794-005",
+      "paragraph_index": 5,
+      "start_offset": 592,
+      "end_offset": 705,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "6fcdbb396430942d2137cad18fa801715d8b92928776e01d084465a3d8290c61"
+    },
+    {
+      "passage_id": "pas-799796c85794-006",
+      "paragraph_index": 6,
+      "start_offset": 707,
+      "end_offset": 797,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ada867bcf963f1739061f53bff1fdddfdd449096d07b18ef7c1d40b4eb40b1b5"
+    },
+    {
+      "passage_id": "pas-799796c85794-007",
+      "paragraph_index": 7,
+      "start_offset": 799,
+      "end_offset": 894,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ca8124ad29ca0fdeaf28d89ef605572d600462ae4875522c938adc12f6855048"
+    },
+    {
+      "passage_id": "pas-799796c85794-008",
+      "paragraph_index": 8,
+      "start_offset": 896,
+      "end_offset": 993,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "e688ab2648e7c03a97092f1b2aa651e17ae35e15fffcb49da670b4be360b7170"
+    },
+    {
+      "passage_id": "pas-799796c85794-009",
+      "paragraph_index": 9,
+      "start_offset": 995,
+      "end_offset": 1099,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "7c4671e5f7afa1d009dddb1823f29548047adc1243791f67a988a2b6537c0667"
+    },
+    {
+      "passage_id": "pas-799796c85794-010",
+      "paragraph_index": 10,
+      "start_offset": 1101,
+      "end_offset": 1259,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "c6c82d109ec723d57eefe2ba50776c9d397f05fd58977c7bf0d154b367d2c06a"
+    },
+    {
+      "passage_id": "pas-799796c85794-011",
+      "paragraph_index": 11,
+      "start_offset": 1261,
+      "end_offset": 1370,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "passage_id": "pas-799796c85794-012",
+      "paragraph_index": 12,
+      "start_offset": 1372,
+      "end_offset": 1490,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "cbe50b4c5d208c7f44683823adf30a172af77f81c5905bb16a8114bd965d584e"
+    },
+    {
+      "passage_id": "pas-799796c85794-013",
+      "paragraph_index": 13,
+      "start_offset": 1492,
+      "end_offset": 1624,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "1b366d8647e69f161845e56c5808cb7dd782148b73b9c88660da7f8d54c0bff0"
+    },
+    {
+      "passage_id": "pas-799796c85794-014",
+      "paragraph_index": 14,
+      "start_offset": 1626,
+      "end_offset": 1754,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d9305de3ae22c27927baaed6e8017bab9b8867839b5bc6c5aed71c613b3b329b"
+    },
+    {
+      "passage_id": "pas-799796c85794-015",
+      "paragraph_index": 15,
+      "start_offset": 1756,
+      "end_offset": 1896,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "58d97887c15dc1c6022db7a581220f7195c05643c7f122d3e48fd7960d75c783"
+    },
+    {
+      "passage_id": "pas-799796c85794-016",
+      "paragraph_index": 16,
+      "start_offset": 1898,
+      "end_offset": 2025,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "passage_id": "pas-799796c85794-017",
+      "paragraph_index": 17,
+      "start_offset": 2027,
+      "end_offset": 2145,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "passage_id": "pas-799796c85794-018",
+      "paragraph_index": 18,
+      "start_offset": 2147,
+      "end_offset": 2248,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ad8f05f8f39ca39c7f1638266fce1dcf9f0c6efb1034140b7c3d99fb722d3e3c"
+    }
+  ]
+}

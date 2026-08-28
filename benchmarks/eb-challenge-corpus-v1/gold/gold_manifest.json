@@ -1,0 +1,26 @@
+{
+  "adjudicator_identity": "synthetic-adjudicator-rulebook-1.0",
+  "annotation_row_counts": {
+    "dev": 76,
+    "test": 221
+  },
+  "case_annotation_counts": {
+    "dev": 37,
+    "test": 111
+  },
+  "corpus_name": "eb-challenge-corpus-v1",
+  "evaluator_only": true,
+  "files": {
+    "decompositions/dev_decompositions.jsonl": "2120228c81466471214ca8b56a6eba2fa5bc498cd0b0243ff3b8fe24c9da2144",
+    "decompositions/test_decompositions.jsonl": "27242142ed9e1d89d497d27d24964317e35ab5df57ed7a31ad697375c51c294b",
+    "gold/dev_relevance.jsonl": "da5b06d78060897f85dc78a8ff45c9622c697a10fe43942ea74a688115c7fac3",
+    "gold/test_relevance.jsonl": "86c3c32e7ec3969c3573a9715c4b301ac04e2204a4c964edf0787d0eebb2faff"
+  },
+  "gold_record_version": "1.0",
+  "notes": [
+    "Gold source and passage identifiers are evaluator-only.",
+    "A3 is an evaluator-only meaning-drift negative control and is not a parent-preserving decomposition.",
+    "F12 full-corpus decisive annotations may be outside the case's accessible subset."
+  ],
+  "schema_version": "1.0"
+}

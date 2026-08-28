@@ -1,0 +1,33 @@
+Vellum calibration bench policy. Document code VLM-VAL-360. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Vellum calibration bench policy identifies the local setting, owner, and record path before describing the routine.
+
+Records. Entries are made in the controlled register using lot reference VLM-LOT-280; free-form personal copies are not the official record.
+
+Purpose. This policy defines the internal control for Vellum calibration bench at Reed Observatory. It is limited to the named asset and is not a universal rule.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Cell Operations.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Ownership. Instrument Services owns the operational decision, while Cell Operations performs the independent review.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Exception rule. A local exception must state its reason, duration, and approving role.
+
+The policy's 15-day reminder is sent before calibration expiry; it is not the result lifetime.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under VLM-REC-143.
+
+References. Cross-references point to internal document code VLM-H45 and remain subordinate to the effective instruction.
+
+Identification. Asset VLM-171, product Gossamer reference plate, and record series VLM-REC-143 are used to keep the local records distinct.
+
+Decision rule. A request is admitted only when its scope and owner are visible in the register.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Review. The document owner reviews this policy on 2026-09-14 or sooner if the asset, supplier, or record path changes.

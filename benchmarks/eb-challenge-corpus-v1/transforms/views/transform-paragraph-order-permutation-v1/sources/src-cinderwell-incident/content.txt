@@ -1,0 +1,29 @@
+Cinderwell thermal hold incident report. Document code CDW-SOP-132. Controlled internal record for the fictional Neralis Compact.
+
+Event note. This simulated record describes an observation on 2026-08-03 and separates observation from disposition.
+
+Ownership. Cell Operations owns the operational decision, while Supplier Liaison performs the independent review.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under CDW-REC-447.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Scope. The control applies to the named product in the named facility; unrelated assets use their own controlled instructions.
+
+References. Cross-references point to internal document code CDW-H56 and remain subordinate to the effective instruction.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+Records. Entries are made in the controlled register using lot reference CDW-LOT-833; free-form personal copies are not the official record.
+
+Identification. Asset CDW-804, product Emberleaf cassette, and record series CDW-REC-447 are used to keep the local records distinct.
+
+Purpose. This incident report defines the internal control for Cinderwell thermal hold at Hearth Annex. It is limited to the named asset and is not a universal rule.
+
+The remote override was refused when the witness token was absent, while local review remained available without that token.
+
+A sensor alert was cleared by a technician during a diagnostic run; the note does not authorize clearing a release-blocking tamper alert.

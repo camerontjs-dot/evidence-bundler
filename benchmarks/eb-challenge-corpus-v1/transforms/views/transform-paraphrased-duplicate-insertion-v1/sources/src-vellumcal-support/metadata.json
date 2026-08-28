@@ -1,0 +1,156 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "5ce892b4d6cbc708fce89f5dcac703e555a88318bc1ee060a65e86933937a44c",
+  "content_path": "content.txt",
+  "document_code": "VLM-VAL-360",
+  "document_type": "policy",
+  "effective_date": "2026-05-25",
+  "logical_document_key": "transform::src-vellumcal-support",
+  "offset_unit": "utf8_byte",
+  "passage_count": 17,
+  "passages": [
+    {
+      "end_offset": 121,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-1b96dbfe59b3-000",
+      "start_offset": 0,
+      "text_sha256": "eb2e109b4788c7497c39688520d45586fe202afd40ad0fb359f269286181da1f"
+    },
+    {
+      "end_offset": 255,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-1b96dbfe59b3-001",
+      "start_offset": 123,
+      "text_sha256": "0ed0c998d2f059cfd0e7791057cf98697e1dbad56f0644b4e9a0119fb974a677"
+    },
+    {
+      "end_offset": 351,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-1b96dbfe59b3-002",
+      "start_offset": 257,
+      "text_sha256": "57698326e2d9dc63e353698efcb2f397a54ff109dd68fba16ee673b6d5715c4b"
+    },
+    {
+      "end_offset": 514,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-1b96dbfe59b3-003",
+      "start_offset": 353,
+      "text_sha256": "5c4aa11b744879c64b177755bf919812a545034572ad0d0b6be597b3b6dcc686"
+    },
+    {
+      "end_offset": 625,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-1b96dbfe59b3-004",
+      "start_offset": 516,
+      "text_sha256": "d69779d6c584d9fd7097bc67cfce416bc7ee0cccc9847e742ade6a3ebc87e209"
+    },
+    {
+      "end_offset": 743,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-1b96dbfe59b3-005",
+      "start_offset": 627,
+      "text_sha256": "1d9829b6310c474f04e9fd992c57995788741319ebbe75a2650ba65131242ef9"
+    },
+    {
+      "end_offset": 884,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-1b96dbfe59b3-006",
+      "start_offset": 745,
+      "text_sha256": "bdb0ee06e82040ea49c4ac296db85bc9d2f0058f2653dd2fd77ca8704ecd3239"
+    },
+    {
+      "end_offset": 1010,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-1b96dbfe59b3-007",
+      "start_offset": 886,
+      "text_sha256": "41da14e230ebd6a0eb3f4a04f62ce50704f0742919e76cb4bfbb6b4054037203"
+    },
+    {
+      "end_offset": 1152,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-1b96dbfe59b3-008",
+      "start_offset": 1012,
+      "text_sha256": "993f2d393a672c7390342bb530d31fda0663c7fc2c2b1d4849ef640b1f063b1d"
+    },
+    {
+      "end_offset": 1281,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-1b96dbfe59b3-009",
+      "start_offset": 1154,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1401,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-1b96dbfe59b3-010",
+      "start_offset": 1283,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1521,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-1b96dbfe59b3-011",
+      "start_offset": 1403,
+      "text_sha256": "b9296802d9655a1bdb1b16e7d9ed81ee2fd990c610dc6026370fa242811efddf"
+    },
+    {
+      "end_offset": 1644,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-1b96dbfe59b3-012",
+      "start_offset": 1523,
+      "text_sha256": "df74ac154982277155565a6a2904e90799a89d973e7ce25999ba77c06c7cbe51"
+    },
+    {
+      "end_offset": 1803,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-1b96dbfe59b3-013",
+      "start_offset": 1646,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1900,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-1b96dbfe59b3-014",
+      "start_offset": 1805,
+      "text_sha256": "7e3522f9ceb36a6329df51b824c6a2d6d56cbd62a5aaf546e818e4a61dc9e083"
+    },
+    {
+      "end_offset": 1988,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 15,
+      "passage_id": "pas-1b96dbfe59b3-015",
+      "start_offset": 1902,
+      "text_sha256": "659e5d04ba7d77dc7894428e075e2f8e5e20e234c40ea745bd3ec1669e78e7e7"
+    },
+    {
+      "end_offset": 2091,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 16,
+      "passage_id": "pas-1b96dbfe59b3-016",
+      "start_offset": 1990,
+      "text_sha256": "40b124be4486d302dad7cb25cdcbfc751e70aaff022f36c1e36c5b04f7875251"
+    }
+  ],
+  "publication_date": "2026-07-23",
+  "schema_version": "1.0",
+  "source_id": "src-vellumcal-support",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Vellum calibration bench policy",
+  "version": "1.0"
+}

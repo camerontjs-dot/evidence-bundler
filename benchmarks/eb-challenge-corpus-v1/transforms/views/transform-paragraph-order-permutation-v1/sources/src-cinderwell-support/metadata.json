@@ -1,0 +1,164 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "496d13f789bd940825badfe0ee4382669d4a4e4351e299ed7a932eb025d133bf",
+  "content_path": "content.txt",
+  "document_code": "CDW-REC-458",
+  "document_type": "policy",
+  "effective_date": "2026-07-15",
+  "logical_document_key": "transform::src-cinderwell-support",
+  "offset_unit": "utf8_byte",
+  "passage_count": 18,
+  "passages": [
+    {
+      "end_offset": 120,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-dbfc76c8ba36-000",
+      "start_offset": 0,
+      "text_sha256": "98ab50056a963cf2a96e6c4f8fb71c37fa9b3579fc9bad45f3a41e9b408492f3"
+    },
+    {
+      "end_offset": 253,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-dbfc76c8ba36-001",
+      "start_offset": 122,
+      "text_sha256": "960fd94a22be29be56c5bcdbe529893b48d439a28dfa93660639c0b8d902e3ac"
+    },
+    {
+      "end_offset": 388,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-dbfc76c8ba36-007",
+      "start_offset": 255,
+      "text_sha256": "b41c470f3b495285236c0061ab24176377a71358dfc9141b08a77e0642286ca3"
+    },
+    {
+      "end_offset": 476,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-dbfc76c8ba36-016",
+      "start_offset": 390,
+      "text_sha256": "659e5d04ba7d77dc7894428e075e2f8e5e20e234c40ea745bd3ec1669e78e7e7"
+    },
+    {
+      "end_offset": 585,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-dbfc76c8ba36-003",
+      "start_offset": 478,
+      "text_sha256": "7060ce6164ab1565b0b9abf63c1a21800363832ef7871d6c97891e05369070b5"
+    },
+    {
+      "end_offset": 688,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-dbfc76c8ba36-017",
+      "start_offset": 587,
+      "text_sha256": "af511513389622645ad56917d10e28d03b4efc9694326a47bf8099d5b378812c"
+    },
+    {
+      "end_offset": 820,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-dbfc76c8ba36-002",
+      "start_offset": 690,
+      "text_sha256": "2b44ecb5246731cb7262605abcf8d40f44d910e0e7fb02d3b2078e287b495438"
+    },
+    {
+      "end_offset": 943,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-dbfc76c8ba36-013",
+      "start_offset": 822,
+      "text_sha256": "5c7fd5387408055aea281e664d65ca3dfc705d3d00c37244c1b88e5ef75ff28e"
+    },
+    {
+      "end_offset": 1072,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-dbfc76c8ba36-010",
+      "start_offset": 945,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1230,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-dbfc76c8ba36-004",
+      "start_offset": 1074,
+      "text_sha256": "dc470f7dd4b864ee9b60c628bf7089a9eedd6a718eda1d96001cc6eaf7102d40"
+    },
+    {
+      "end_offset": 1350,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-dbfc76c8ba36-011",
+      "start_offset": 1232,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 1509,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-dbfc76c8ba36-014",
+      "start_offset": 1352,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1624,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-dbfc76c8ba36-006",
+      "start_offset": 1511,
+      "text_sha256": "846afd6df5e2916909ddab2ec3c52b1368fec74ef22e0dc4c3f735befbc2771c"
+    },
+    {
+      "end_offset": 1752,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-dbfc76c8ba36-005",
+      "start_offset": 1626,
+      "text_sha256": "54189aeb7a709566d92bab839c23b4b514b7536b92f3cc6ff6e999dc67a05913"
+    },
+    {
+      "end_offset": 1872,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-dbfc76c8ba36-012",
+      "start_offset": 1754,
+      "text_sha256": "11046341e36f7909e4548206054341a9e85bfa8f6ac5dc73de2e61e0a02724e1"
+    },
+    {
+      "end_offset": 2001,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 15,
+      "passage_id": "pas-dbfc76c8ba36-008",
+      "start_offset": 1874,
+      "text_sha256": "b45273955671fdd1f423b43a59d269d94acc028ec939d1deebff807edae817a6"
+    },
+    {
+      "end_offset": 2143,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 16,
+      "passage_id": "pas-dbfc76c8ba36-009",
+      "start_offset": 2003,
+      "text_sha256": "8a091534d22e689870fd9ba98dbc1c0a83656941b437aa3380343ca8f009af4c"
+    },
+    {
+      "end_offset": 2240,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 17,
+      "passage_id": "pas-dbfc76c8ba36-015",
+      "start_offset": 2145,
+      "text_sha256": "7e3522f9ceb36a6329df51b824c6a2d6d56cbd62a5aaf546e818e4a61dc9e083"
+    }
+  ],
+  "publication_date": "2026-07-23",
+  "schema_version": "1.0",
+  "source_id": "src-cinderwell-support",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Cinderwell thermal hold policy",
+  "version": "1.0"
+}

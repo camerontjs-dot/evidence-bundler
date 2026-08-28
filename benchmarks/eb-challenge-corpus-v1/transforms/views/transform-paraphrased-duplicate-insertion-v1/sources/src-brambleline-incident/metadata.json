@@ -1,0 +1,132 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "35254cd6b7cced5f6d6d626d07455264f553eb0095d7dc9ad74435d08315ecb6",
+  "content_path": "content.txt",
+  "document_code": "BRM-POL-632",
+  "document_type": "validation_report",
+  "effective_date": null,
+  "logical_document_key": "transform::src-brambleline-incident",
+  "offset_unit": "utf8_byte",
+  "passage_count": 14,
+  "passages": [
+    {
+      "end_offset": 130,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-e611550d5a3a-000",
+      "start_offset": 0,
+      "text_sha256": "6ebcc76b7d74aeba26e49a765c55e7ab3fe4966bfc50974ac02b81dd5673d98d"
+    },
+    {
+      "end_offset": 248,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-e611550d5a3a-001",
+      "start_offset": 132,
+      "text_sha256": "5a518edb40c618b17788af151571a29253ff5aebd7699e4e8036605e56022bb6"
+    },
+    {
+      "end_offset": 372,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-e611550d5a3a-002",
+      "start_offset": 250,
+      "text_sha256": "6b853c13cb5c0b3a5e286e10d8bf5d5bbac0a0ec4868bc2cea434fa95579ee37"
+    },
+    {
+      "end_offset": 492,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-e611550d5a3a-003",
+      "start_offset": 374,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 618,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-e611550d5a3a-004",
+      "start_offset": 494,
+      "text_sha256": "15d69b309129db7332608c38cc968a244718a70469fe8a18d20d70a5ebf257b0"
+    },
+    {
+      "end_offset": 741,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-e611550d5a3a-005",
+      "start_offset": 620,
+      "text_sha256": "e61c49f276a7666be91726df9633861eaa76e5353b1a08b8c0e4f9258a954232"
+    },
+    {
+      "end_offset": 872,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-e611550d5a3a-006",
+      "start_offset": 743,
+      "text_sha256": "7c3b0cd125a7b3492bb62bd95cbad7538dde91f03e240c2ee3d5b54d119a0078"
+    },
+    {
+      "end_offset": 1001,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-e611550d5a3a-007",
+      "start_offset": 874,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1167,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-e611550d5a3a-008",
+      "start_offset": 1003,
+      "text_sha256": "d71f379b8a48805fddca406f12784fcaded2918b907e8d542c1ffe3fd34947fe"
+    },
+    {
+      "end_offset": 1309,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-e611550d5a3a-009",
+      "start_offset": 1169,
+      "text_sha256": "c9b662a0c712a687db3210bb1c39ea1bed8a678781ea4f7d18afcc28de62f134"
+    },
+    {
+      "end_offset": 1442,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-e611550d5a3a-010",
+      "start_offset": 1311,
+      "text_sha256": "6f1adc24ce121d8c04f72b1e41f5f587d65041406e2d664ccbb278e2be9e22c0"
+    },
+    {
+      "end_offset": 1572,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-e611550d5a3a-011",
+      "start_offset": 1444,
+      "text_sha256": "c356d72c0554545ac2aa723edb1ad9e31cbbb214ace2339b498880f84c1a14f5"
+    },
+    {
+      "end_offset": 1731,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-e611550d5a3a-012",
+      "start_offset": 1574,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1834,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-e611550d5a3a-013",
+      "start_offset": 1733,
+      "text_sha256": "e4fafa9676faf1317aa48810fab7fdb8b211ea163af89c5ebd999af89d731fdb"
+    }
+  ],
+  "publication_date": "2026-07-20",
+  "schema_version": "1.0",
+  "source_id": "src-brambleline-incident",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "final",
+  "title": "Bramble line clearance validation report",
+  "version": "1.0"
+}

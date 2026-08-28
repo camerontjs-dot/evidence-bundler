@@ -1,0 +1,35 @@
+Mica sensor array policy. Document code MCA-REC-258. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Mica sensor array policy identifies the local setting, owner, and record path before describing the routine.
+
+Release review for Mica-4 sensor array opens only when the witness scan is complete and sample 2 is logged.
+
+Only records opened by the assigned owner may use the short Mica hold; all other lots retain the extended hold.
+
+Purpose. This policy defines the internal control for Mica sensor array at Loam House. It is limited to the named asset and is not a universal rule.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Ownership. Supplier Liaison owns the operational decision, while Instrument Services performs the independent review.
+
+Identification. Asset MCA-836, product Blue Thistle probe, and record series MCA-REC-654 are used to keep the local records distinct.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Instrument Services.
+
+Records. Entries are made in the controlled register using lot reference MCA-LOT-871; free-form personal copies are not the official record.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Review. The document owner reviews this policy on 2026-09-20 or sooner if the asset, supplier, or record path changes.
+
+References. Cross-references point to internal document code MCA-H41 and remain subordinate to the effective instruction.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Decision rule. A request is admitted only when its scope and owner are visible in the register.
+
+Exception rule. A local exception must state its reason, duration, and approving role.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under MCA-REC-654.

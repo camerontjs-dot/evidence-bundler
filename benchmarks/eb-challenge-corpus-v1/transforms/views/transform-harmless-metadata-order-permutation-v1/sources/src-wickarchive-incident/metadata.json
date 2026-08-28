@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "source_id": "src-wickarchive-incident",
+  "source_identity_basis": "stable-semantic-document-key",
+  "logical_document_key": "transform::src-wickarchive-incident",
+  "title": "Wick archive retrieval change control notice",
+  "document_type": "change_control_notice",
+  "version": "1.0",
+  "publication_date": "2026-07-20",
+  "effective_date": null,
+  "status": "final",
+  "document_code": "WCK-REC-765",
+  "content_path": "content.txt",
+  "content_encoding": "utf-8",
+  "offset_unit": "utf8_byte",
+  "content_hash": "160a3e62ca498345fc483652fd234cfde523cda383e8db01b25446af581fa881",
+  "passage_count": 14,
+  "passages": [
+    {
+      "passage_id": "pas-eef302d10c21-000",
+      "paragraph_index": 0,
+      "start_offset": 0,
+      "end_offset": 134,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "62eaf7fbd48c0ba160344db45ac2081ffae3acf8b86ff0d99e07d336a07f12a6"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-001",
+      "paragraph_index": 1,
+      "start_offset": 136,
+      "end_offset": 252,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ed143b963979d9df6dcb3efe3e5ea16a86b0357abc919de128714313837f77ba"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-002",
+      "paragraph_index": 2,
+      "start_offset": 254,
+      "end_offset": 356,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d06eff012668599654f81104ed4d454f73bc8f22821768db433b8fc244c9a1ff"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-003",
+      "paragraph_index": 3,
+      "start_offset": 358,
+      "end_offset": 515,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-004",
+      "paragraph_index": 4,
+      "start_offset": 517,
+      "end_offset": 648,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "0aec94de8e02cc88203099674e2afd57afd4c1d58bc21cce04879f02fabc8f04"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-005",
+      "paragraph_index": 5,
+      "start_offset": 650,
+      "end_offset": 771,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "a3811971f0f5187d44aab1ab26ccb2bb431f5d6be25ac036c2a9d672112b500d"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-006",
+      "paragraph_index": 6,
+      "start_offset": 773,
+      "end_offset": 891,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "b127a61fbac5ffb14c738e2226f175c8da793fc6ea660782ab60a1fbd7c29abe"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-007",
+      "paragraph_index": 7,
+      "start_offset": 893,
+      "end_offset": 1011,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-008",
+      "paragraph_index": 8,
+      "start_offset": 1013,
+      "end_offset": 1153,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "55fd0fbed262dc77ff02cecf54cc34587a7fffc128d39a0b74199e15be956fbf"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-009",
+      "paragraph_index": 9,
+      "start_offset": 1155,
+      "end_offset": 1282,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-010",
+      "paragraph_index": 10,
+      "start_offset": 1284,
+      "end_offset": 1402,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "d039415670f2a9a65e10498891d3272ac69f41d302c49013e32796ad45712d54"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-011",
+      "paragraph_index": 11,
+      "start_offset": 1404,
+      "end_offset": 1538,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "dd1b9b1dfa6e2bc43ed0bf7057d0c05065d04079f2427a3dca3944843322a282"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-012",
+      "paragraph_index": 12,
+      "start_offset": 1540,
+      "end_offset": 1709,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "591336e256fc95b84283b958c39e04a476b9f97e95ab08902eb6d08776225e71"
+    },
+    {
+      "passage_id": "pas-eef302d10c21-013",
+      "paragraph_index": 13,
+      "start_offset": 1711,
+      "end_offset": 1812,
+      "offset_unit": "utf8_byte",
+      "text_sha256": "dacf845b09ca45b1714bedae40125496c3b19945354306bf3ed78ccfc941c6d5"
+    }
+  ]
+}

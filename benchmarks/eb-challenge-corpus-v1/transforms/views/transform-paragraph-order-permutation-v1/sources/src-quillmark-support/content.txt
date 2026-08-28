@@ -1,0 +1,35 @@
+Quillmark seal ledger work instruction. Document code QMK-TSP-662. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Quillmark seal ledger work instruction identifies the local setting, owner, and record path before describing the routine.
+
+References. Cross-references point to internal document code QMK-H43 and remain subordinate to the effective instruction.
+
+Review. The document owner reviews this work instruction on 2026-10-01 or sooner if the asset, supplier, or record path changes.
+
+Records. Entries are made in the controlled register using lot reference QMK-LOT-716; free-form personal copies are not the official record.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under QMK-REC-266.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Routine. The the night cell checks the visible condition, records the observation, and routes exceptions to Archive Services.
+
+A readable seal keeps the existing package identity during a routine second look; this does not govern a broken seal.
+
+Purpose. This work instruction defines the internal control for Quillmark seal ledger at Nettle Quay. It is limited to the named asset and is not a universal rule.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Ownership. Release Coordination owns the operational decision, while Archive Services performs the independent review.
+
+The second-look interval for a Quillmark seal is 28 minutes from the first reading; the reviewer enters the result in the ledger.
+
+Identification. Asset QMK-600, product Tansy fold pack, and record series QMK-REC-266 are used to keep the local records distinct.
+
+Operator sequence. The operator reads the asset identifier, checks the condition, and commits the result before closing the work screen.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Operator caution. Similar-looking fields belong to different steps and must not be copied across records.

@@ -1,0 +1,35 @@
+Blueglass supplier lot technical specification. Document code BLG-SOP-586. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Blueglass supplier lot technical specification identifies the local setting, owner, and record path before describing the routine.
+
+References. Cross-references point to internal document code BLG-H94 and remain subordinate to the effective instruction.
+
+Interface. The system sends a record identifier to the controlled register after the operator confirms the step.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Purpose. This technical specification defines the internal control for Blueglass supplier lot at West Lantern. It is limited to the named asset and is not a universal rule.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Design intent. The Blueglass receiving cell separates control settings from advisory indicators so a near-match value cannot be mistaken for an acceptance limit.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under BLG-REC-651.
+
+The receiving cell admits a Blueglass spool only after the chain-of-custody ledger has been reconciled to the supplier lot.
+
+Records. Entries are made in the controlled register using lot reference BLG-LOT-628; free-form personal copies are not the official record.
+
+Scope. The control applies to records opened by the assigned owner; unrelated assets use their own controlled instructions.
+
+Routine. The the records desk checks the visible condition, records the observation, and routes exceptions to Supplier Liaison.
+
+Identification. Asset BLG-600, product Slate filament spool, and record series BLG-REC-651 are used to keep the local records distinct.
+
+Review. The document owner reviews this technical specification on 2026-10-04 or sooner if the asset, supplier, or record path changes.
+
+A supplier bulletin says intact packaging reduces visual inspection time; it does not waive the certificate check.
+
+Ownership. Release Coordination owns the operational decision, while Supplier Liaison performs the independent review.

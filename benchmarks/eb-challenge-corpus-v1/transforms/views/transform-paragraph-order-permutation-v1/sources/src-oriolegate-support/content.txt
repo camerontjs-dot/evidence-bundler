@@ -1,0 +1,31 @@
+Oriole batch gate sop. Document code ORL-REC-211. Controlled internal record for the fictional Neralis Compact.
+
+Control summary. Oriole batch gate sop identifies the local setting, owner, and record path before describing the routine.
+
+Administrative note. The Neralis Compact keeps this synthetic record for controlled-workflow exercises; it does not assert an external regulatory obligation.
+
+Ownership. Supplier Liaison owns the operational decision, while Release Coordination performs the independent review.
+
+Records. Entries are made in the controlled register using lot reference ORL-LOT-302; free-form personal copies are not the official record.
+
+Purpose. This sop defines the internal control for Oriole batch gate at Oriole Yard. It is limited to the named asset and is not a universal rule.
+
+References. Cross-references point to internal document code ORL-H74 and remain subordinate to the effective instruction.
+
+Procedure. The operator confirms the asset identity, performs the named step, and records the result before moving to the next step.
+
+Acceptance. The result is accepted only when the stated parameter, record entry, and required review are all present.
+
+Review. The document owner reviews this sop on 2026-11-06 or sooner if the asset, supplier, or record path changes.
+
+Training. A trained operator may perform the routine step only after the local work instruction has been read and acknowledged.
+
+Deviation. A result outside the stated control is held for review and is not silently corrected in the original entry.
+
+Identification. Asset ORL-846, product Cobalt reed batch, and record series ORL-REC-667 are used to keep the local records distinct.
+
+Scope. The control applies to the local release lane; unrelated assets use their own controlled instructions.
+
+Closeout. The record owner signs the review outcome and preserves the source entry under ORL-REC-667.
+
+Routine. The the east cell checks the visible condition, records the observation, and routes exceptions to Release Coordination.

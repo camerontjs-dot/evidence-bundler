@@ -1,0 +1,164 @@
+{
+  "content_encoding": "utf-8",
+  "content_hash": "95000cd39222a8721ae54fcd9a8cc96f3f181c3db428b564c45696ca8493decf",
+  "content_path": "content.txt",
+  "document_code": "MCA-REC-258",
+  "document_type": "policy",
+  "effective_date": "2026-07-16",
+  "logical_document_key": "transform::src-micaarray-current",
+  "offset_unit": "utf8_byte",
+  "passage_count": 18,
+  "passages": [
+    {
+      "end_offset": 114,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 0,
+      "passage_id": "pas-151ed7526261-000",
+      "start_offset": 0,
+      "text_sha256": "5144ecea361f999a364fabcdf5c47bb191b54d57eb4fa17f3cefbfdd95a23800"
+    },
+    {
+      "end_offset": 241,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 1,
+      "passage_id": "pas-151ed7526261-001",
+      "start_offset": 116,
+      "text_sha256": "01ab250187ec78cd1010d66be3d62a3e42b0de4d97380571811dd93eabcf9843"
+    },
+    {
+      "end_offset": 361,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 2,
+      "passage_id": "pas-151ed7526261-011",
+      "start_offset": 243,
+      "text_sha256": "832a867e7b3137d8166931ed0c68de4ae0743099c30d9e7c78178cdba7f43bf4"
+    },
+    {
+      "end_offset": 474,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 3,
+      "passage_id": "pas-151ed7526261-003",
+      "start_offset": 363,
+      "text_sha256": "af774aba769d76f3641cf102e2098217344eb6ab388f8fc26f6e78fbb19947aa"
+    },
+    {
+      "end_offset": 599,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 4,
+      "passage_id": "pas-151ed7526261-005",
+      "start_offset": 476,
+      "text_sha256": "584a7febca26cbaa4775563c4ed1dae8e1f69ba8b3a92a33794332c34b455e26"
+    },
+    {
+      "end_offset": 718,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 5,
+      "passage_id": "pas-151ed7526261-006",
+      "start_offset": 601,
+      "text_sha256": "2a8ad5ed4e54d51c58d0523feb7f25b0286815724549e8d9c2568843b0a1a14a"
+    },
+    {
+      "end_offset": 806,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 6,
+      "passage_id": "pas-151ed7526261-016",
+      "start_offset": 720,
+      "text_sha256": "659e5d04ba7d77dc7894428e075e2f8e5e20e234c40ea745bd3ec1669e78e7e7"
+    },
+    {
+      "end_offset": 941,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 7,
+      "passage_id": "pas-151ed7526261-007",
+      "start_offset": 808,
+      "text_sha256": "6411136e58f3fb0f3470fb84a640679a34fccdd3765318d5f01bf3cfce430ae1"
+    },
+    {
+      "end_offset": 1064,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 8,
+      "passage_id": "pas-151ed7526261-013",
+      "start_offset": 943,
+      "text_sha256": "9da9fc3c8adf3144d1c9369ef65dfb4947907ceccf106b6a0b3fac5db13e5c2b"
+    },
+    {
+      "end_offset": 1173,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 9,
+      "passage_id": "pas-151ed7526261-002",
+      "start_offset": 1066,
+      "text_sha256": "4238dcc4880f65e961ced7b2c959f38cea40d5410e74c72075faea998399630a"
+    },
+    {
+      "end_offset": 1276,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 10,
+      "passage_id": "pas-151ed7526261-017",
+      "start_offset": 1175,
+      "text_sha256": "3223e42340408474a6cae87fa32081f3edd7527ac3af04c8141251d17a4acd19"
+    },
+    {
+      "end_offset": 1426,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 11,
+      "passage_id": "pas-151ed7526261-004",
+      "start_offset": 1278,
+      "text_sha256": "41be3035ea36f619e5dea9d88cc6d1e5a4c5460a4f2afa9160992b7bc2db647c"
+    },
+    {
+      "end_offset": 1555,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 12,
+      "passage_id": "pas-151ed7526261-010",
+      "start_offset": 1428,
+      "text_sha256": "3bed9fb69458a2ac494f62c9b9b3705fc3d93ba86a67c3d3e846fba040857fac"
+    },
+    {
+      "end_offset": 1652,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 13,
+      "passage_id": "pas-151ed7526261-015",
+      "start_offset": 1557,
+      "text_sha256": "7e3522f9ceb36a6329df51b824c6a2d6d56cbd62a5aaf546e818e4a61dc9e083"
+    },
+    {
+      "end_offset": 1811,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 14,
+      "passage_id": "pas-151ed7526261-014",
+      "start_offset": 1654,
+      "text_sha256": "ef9c1783912f9a672f3ea3c562347cc38381fa6fc1db85fac70705ebbc51b854"
+    },
+    {
+      "end_offset": 1931,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 15,
+      "passage_id": "pas-151ed7526261-012",
+      "start_offset": 1813,
+      "text_sha256": "8bd7e2c3fc06f8c1179561518764c69585e4ed4db4b182611a978786490a65ec"
+    },
+    {
+      "end_offset": 2063,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 16,
+      "passage_id": "pas-151ed7526261-008",
+      "start_offset": 1933,
+      "text_sha256": "690782c6673a0db5afa01736fc01f2f46705f66cbca2fe10be4d34e71bb89a7d"
+    },
+    {
+      "end_offset": 2205,
+      "offset_unit": "utf8_byte",
+      "paragraph_index": 17,
+      "passage_id": "pas-151ed7526261-009",
+      "start_offset": 2065,
+      "text_sha256": "7508a82b529a86066878b3dceea31cb309eb9e34041c85960da56ff6fde280df"
+    }
+  ],
+  "publication_date": "2026-07-16",
+  "schema_version": "1.0",
+  "source_id": "src-micaarray-current",
+  "source_identity_basis": "stable-semantic-document-key",
+  "status": "current",
+  "title": "Mica sensor array policy",
+  "version": "1.0"
+}
