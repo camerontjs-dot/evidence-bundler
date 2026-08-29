@@ -1,10 +1,11 @@
 {
+  "scientific_status": "POST_EXPOSURE_DIAGNOSTIC_HASHES_ONLY",
+  "warning": "Except for pinned Git source blob identities obtained before the Actions acquisition, hashes and row-count observations produced by Actions runs 33253126024/33253265218 occurred after the FreshStack query reader had admitted qrel-bearing columns into process memory. Preserve for provenance/debugging only; do not cite as clean gate evidence.",
   "freshstack": {
     "query_dataset": {
       "id": "freshstack/queries-oct-2024-unfiltered",
       "revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
-      "reconstruction_status": "FALSIFIED_FOR_FROZEN_SAMPLE",
-      "observed_test_rows": {
+      "diagnostic_observed_test_rows": {
         "langchain": 318,
         "yolo": 94,
         "laravel": 310,
@@ -23,7 +24,7 @@
         "godot/train-00000-of-00001.parquet": "2e3f700c033c3f5dc6cdc4dd05c7e402baca1b7c4f9ed87a274ce73f4b6ffa41"
       }
     },
-    "construction_code": {
+    "construction_code_pre_exposure": {
       "repo": "fresh-stack/freshstack",
       "commit": "f1c4ec96477f5100f10c83798d33b3101db727fa",
       "chunk_corpus_git_blob_sha1": "2c0ffa210d5505f0abde9df4c7ab5cc1b61dda20",
@@ -31,36 +32,29 @@
       "data_loader_git_blob_sha1": "342b871e7295bff241039bf1554a701e9f0b3706"
     }
   },
-  "scifact": {
+  "scifact_post_exposure": {
     "canonical_repo_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
-    "license_git_blob_sha1": "18a738e109d7e3b28935a75d2134c5ccd602f403",
-    "download_script_git_blob_sha1": "ddce40f922bc93b8960c8b93405bc7572b094092",
+    "license_git_blob_sha1_pre_exposure": "18a738e109d7e3b28935a75d2134c5ccd602f403",
+    "download_script_git_blob_sha1_pre_exposure": "ddce40f922bc93b8960c8b93405bc7572b094092",
     "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
     "archive_bytes": 3115079,
     "claims_dev_jsonl_sha256": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
-    "claims_dev_jsonl_bytes": 65007,
-    "corpus_jsonl_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
-    "corpus_jsonl_bytes": 8307875,
-    "selected_parent_abstract_sha256": {
-      "11254556": "a123d94c4e63b4503a7d66b1336d20e722e355f76d1e6d0c7515eb88bc084b76",
-      "20310709": "0babb504b8713067a65d1d81497ac0f9af1e3939e7167c140d8c5d9c1f5437c5",
-      "11718220": "6c903fd8cd15e5e0433ab6a3055d9524130630143cc4fe1e50c33eb3629c6a07",
-      "16056514": "25962cb734a6d5c130a1b5b87b6120e69260e481e00a500d689c110a269a621d",
-      "23460562": "771f83f37f3b4e8bc3328ff828894c3891470ba2d25cf6d1b69775b79d96b8bc"
-    }
+    "corpus_jsonl_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
   },
-  "source_only_acquisition": {
+  "source_acquisition_artifacts": {
     "run_1": {
       "run_id": 33253126024,
       "head_sha": "2b1cbb7e00a67138384e15ce547b9be87630380a",
       "artifact_id": 9714980732,
-      "artifact_digest": "sha256:f99d9cd54fdd47844d8b357a00c790233f8c6bd9254174c72db73e30b94fc51c"
+      "artifact_digest": "sha256:f99d9cd54fdd47844d8b357a00c790233f8c6bd9254174c72db73e30b94fc51c",
+      "contaminated": true
     },
     "run_2": {
       "run_id": 33253265218,
       "head_sha": "ede95664a581e7958307143a800b416e0bb544e2",
       "artifact_id": 9715023795,
-      "artifact_digest": "sha256:e50d7a74872de095726a194b2757097e0c6414f29b636d723fb6f6a7b29090a9"
+      "artifact_digest": "sha256:e50d7a74872de095726a194b2757097e0c6414f29b636d723fb6f6a7b29090a9",
+      "contaminated": true
     }
   }
 }
