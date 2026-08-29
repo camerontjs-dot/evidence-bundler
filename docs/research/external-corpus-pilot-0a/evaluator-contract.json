@@ -1,0 +1,32 @@
+{
+  "contract_version": "pilot0a-evaluator-dummy-v1",
+  "evidence_groups": {"modes": ["JOINTLY_REQUIRED", "ALTERNATIVE_SUFFICIENT"]},
+  "fail_closed": [
+    "invalid K",
+    "more than K hits",
+    "rank gaps/reorder",
+    "duplicate returned passage",
+    "unknown passage identity",
+    "source provenance mismatch",
+    "duplicate judgments",
+    "UNKNOWN carrying a grade",
+    "invalid evidence-group member/mode"
+  ],
+  "hit_required": ["rank", "passage_id"],
+  "judgment": {
+    "grade": "non-negative integer for JUDGED; null for UNKNOWN",
+    "role": ["SUPPORT", "COUNTEREVIDENCE", "NEUTRAL_OR_NOT_APPLICABLE", "UNKNOWN"],
+    "status": ["JUDGED", "UNKNOWN"]
+  },
+  "metrics": [
+    "hit@K",
+    "evidence_recall@K",
+    "nDCG@K when graded labels exist",
+    "counterevidence_recall@K",
+    "evidence_group_coverage@K"
+  ],
+  "passage_required": ["passage_id", "source_id"],
+  "required_top_level": ["query_id", "K", "passages", "judgments"],
+  "run_required": ["query_id", "hits"],
+  "unknown_unjudged": "not relevance-positive; excluded from relevant denominators; zero gain if returned"
+}

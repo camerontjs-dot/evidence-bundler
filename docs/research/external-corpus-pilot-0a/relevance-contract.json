@@ -1,0 +1,22 @@
+{
+  "artifact": "relevance-contract",
+  "degree_semantics": {
+    "DECISIVE": "Contains evidence necessary or independently sufficient to resolve a material part of the information need within the permitted source world.",
+    "IRRELEVANT": "No material relation.",
+    "PARTIAL": "Materially advances resolution but is insufficient alone and is not merely topical.",
+    "TOPICAL": "Same subject/entity but does not materially answer or verify the information need.",
+    "UNKNOWN": "Cannot be responsibly determined from permitted context."
+  },
+  "degrees": {
+    "DECISIVE": 2,
+    "IRRELEVANT": 0,
+    "PARTIAL": 1,
+    "TOPICAL": 0,
+    "UNKNOWN": null
+  },
+  "group_modes": ["JOINTLY_REQUIRED", "ALTERNATIVE_SUFFICIENT"],
+  "published_qrels_initially_withheld": true,
+  "roles": ["SUPPORT", "COUNTEREVIDENCE", "NEUTRAL_OR_NOT_APPLICABLE", "UNKNOWN"],
+  "unknown_policy": "UNKNOWN/unjudged is not equivalent to IRRELEVANT and receives no relevance credit.",
+  "version": "pilot0a-relevance-v1"
+}

@@ -1,0 +1,14 @@
+{
+  "artifact": "passage-correspondence-manifest",
+  "pilot": "external-corpus-methodology-pilot-0a",
+  "reason": "Pinned selected source bytes were not available in the execution environment; no passage records were fabricated.",
+  "representation_1": "external/native boundaries",
+  "representation_2": "deterministic <=1200 Unicode-scalar segmentation frozen in preregistration",
+  "retrieval_exposure": {
+    "hybrid": false,
+    "production_bm25": false,
+    "semantic_only": false
+  },
+  "scientific_records": [],
+  "status": "NOT_EXECUTED"
+}

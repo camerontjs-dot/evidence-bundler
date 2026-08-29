@@ -1,0 +1,36 @@
+{
+  "run": {
+    "hits": [
+      {"passage_id": "p3", "rank": 1, "source_id": "s2"},
+      {"passage_id": "p1", "rank": 2, "source_id": "s1"},
+      {"passage_id": "p4", "rank": 3, "source_id": "s2"}
+    ],
+    "query_id": "q-dummy-1"
+  },
+  "spec": {
+    "K": 3,
+    "contract_version": "pilot0a-evaluator-dummy-v1",
+    "evidence_groups": [
+      {"group_id": "g-joint", "mode": "JOINTLY_REQUIRED", "passage_ids": ["p1", "p2"]},
+      {"group_id": "g-alt", "mode": "ALTERNATIVE_SUFFICIENT", "passage_ids": ["p2", "p3"]}
+    ],
+    "judgments": [
+      {"grade": 2, "passage_id": "p1", "role": "SUPPORT", "status": "JUDGED"},
+      {"grade": 1, "passage_id": "p2", "role": "SUPPORT", "status": "JUDGED"},
+      {"grade": 2, "passage_id": "p3", "role": "COUNTEREVIDENCE", "status": "JUDGED"},
+      {"grade": null, "passage_id": "p4", "role": "UNKNOWN", "status": "UNKNOWN"}
+    ],
+    "passages": [
+      {"passage_hash": "sha256:dummy-p1", "passage_id": "p1", "source_id": "s1"},
+      {"passage_hash": "sha256:dummy-p2", "passage_id": "p2", "source_id": "s1"},
+      {"passage_hash": "sha256:dummy-p3", "passage_id": "p3", "source_id": "s2"},
+      {"passage_hash": "sha256:dummy-p4", "passage_id": "p4", "source_id": "s2"}
+    ],
+    "query_id": "q-dummy-1",
+    "query_text": "Does Widget X remain supported after version 4?",
+    "sources": [
+      {"source_hash": "sha256:dummy-s1", "source_id": "s1"},
+      {"source_hash": "sha256:dummy-s2", "source_id": "s2"}
+    ]
+  }
+}

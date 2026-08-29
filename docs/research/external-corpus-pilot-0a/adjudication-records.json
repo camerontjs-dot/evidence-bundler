@@ -1,0 +1,26 @@
+{
+  "artifact": "independent-adjudication-records",
+  "comparison_status": "NOT_EXECUTED",
+  "disagreement_counts": {},
+  "pilot": "external-corpus-methodology-pilot-0a",
+  "records": [
+    {
+      "adjudicator_id": "A",
+      "independence_claim": false,
+      "reason": "Pinned scientific source/passages were not materialized and the intended isolated-agent surface was unavailable.",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "adjudicator_id": "B",
+      "independence_claim": false,
+      "reason": "A second genuinely independent adjudication was not available; duplicating the same supervisory context was explicitly rejected.",
+      "status": "NOT_EXECUTED"
+    }
+  ],
+  "retrieval_exposure": {
+    "hybrid": false,
+    "production_bm25": false,
+    "semantic_only": false
+  },
+  "unresolved_cases": []
+}

@@ -1,0 +1,40 @@
+{
+  "artifact": "blind-handoff-rehearsal",
+  "commitment_matches_reveal": true,
+  "execution_packet": {
+    "benchmark_id": "pilot0a-handoff-dummy-v1",
+    "evaluator_contract": "pilot0a-evaluator-dummy-v1",
+    "hidden_gold_commitment_sha256": "43854ac4ae6d804ae7682252dcc35fa31cad7477cce7210bd7b9cc280891a21d",
+    "passages": [
+      {"passage_id": "dp1", "source_id": "ds1", "text": "Widget mode is available only when flag A is enabled."},
+      {"passage_id": "dp2", "source_id": "ds1", "text": "Unrelated dummy setup material."}
+    ],
+    "public_manifest_sha256": "350d785a41b8d46e6e244c76f03de503d643e206d2819e8e5cad147dbe9bd4e4",
+    "queries": [{"query_id": "dq1", "text": "Which dummy passage states the support condition?"}],
+    "sources": [{"sha256": "sha256:dummy-source", "source_id": "ds1"}]
+  },
+  "hidden_gold": {
+    "benchmark_id": "pilot0a-handoff-dummy-v1",
+    "judgments": [
+      {"grade": 2, "passage_id": "dp1", "query_id": "dq1", "role": "SUPPORT", "status": "JUDGED"},
+      {"grade": 0, "passage_id": "dp2", "query_id": "dq1", "role": "NEUTRAL_OR_NOT_APPLICABLE", "status": "JUDGED"}
+    ]
+  },
+  "hidden_gold_commitment_sha256": "43854ac4ae6d804ae7682252dcc35fa31cad7477cce7210bd7b9cc280891a21d",
+  "non_claim": "This does not establish scientific benchmark validity or production isolation.",
+  "pre_reveal_leak_checks": {"contains_grade_key": false, "contains_judgments_key": false, "contains_role_key": false},
+  "public_manifest": {
+    "benchmark_id": "pilot0a-handoff-dummy-v1",
+    "evaluator_contract": "pilot0a-evaluator-dummy-v1",
+    "passages": [
+      {"passage_id": "dp1", "source_id": "ds1", "text": "Widget mode is available only when flag A is enabled."},
+      {"passage_id": "dp2", "source_id": "ds1", "text": "Unrelated dummy setup material."}
+    ],
+    "queries": [{"query_id": "dq1", "text": "Which dummy passage states the support condition?"}],
+    "sources": [{"sha256": "sha256:dummy-source", "source_id": "ds1"}]
+  },
+  "public_manifest_sha256": "350d785a41b8d46e6e244c76f03de503d643e206d2819e8e5cad147dbe9bd4e4",
+  "reveal_sha256": "43854ac4ae6d804ae7682252dcc35fa31cad7477cce7210bd7b9cc280891a21d",
+  "scientific_claim": false,
+  "status": "PASS FOR DUMMY MECHANICS"
+}

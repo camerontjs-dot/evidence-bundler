@@ -1,0 +1,46 @@
+{
+  "artifact": "evaluator-contract-preparation-results",
+  "base_result": {
+    "K": 3,
+    "counterevidence_recall_at_K": 1.0,
+    "evidence_recall_at_K": 0.6666666666666666,
+    "group_coverage_at_K": 0.5,
+    "group_results": [
+      {"covered": false, "group_id": "g-joint"},
+      {"covered": true, "group_id": "g-alt"}
+    ],
+    "hit_at_K": 1,
+    "ndcg_at_K": 0.9072836011519267,
+    "query_id": "q-dummy-1",
+    "retrieved_passage_ids": ["p3", "p1", "p4"]
+  },
+  "implementations": {
+    "A": "research/external_corpus_pilot0a/evaluator_a.py",
+    "B": "research/external_corpus_pilot0a/evaluator_b.py",
+    "independence_claim": "NO. Both were authored in the same supervisory context; agreement is a differential cross-check, not E4 independent reproduction."
+  },
+  "preserved_non_discriminating_control": {
+    "name": "initial counterevidence role-flip control",
+    "reason": "It flipped p1, which was already retrieved alongside the existing counterevidence p3, leaving counterevidence recall at 1.0. The corrected dummy-only control flips unretrieved p2 and changes recall from 1.0 to 0.5.",
+    "result": "NON-DISCRIMINATING",
+    "scientific_effect": "none; occurred only in P2 dummy fixtures before any scientific gold existed"
+  },
+  "scientific_gold_exposed": false,
+  "status": "SUPPORTED AS DUMMY INFRASTRUCTURE ONLY",
+  "tests": [
+    {"name": "implementations_match_base", "result": "PASS"},
+    {"implementations": 2, "name": "source_passage_registry_order_invariant", "result": "PASS"},
+    {"implementations": 2, "name": "stable_id_renaming_invariant", "result": "PASS"},
+    {"implementations": 2, "name": "unknown_not_credited", "result": "PASS"},
+    {"implementations": 2, "name": "unknown_not_recall_denominator", "result": "PASS"},
+    {"implementations": 2, "name": "grade_mutation_sensitivity", "result": "PASS"},
+    {"after": 0.5, "before": 1.0, "implementations": 2, "name": "counterevidence_role_flip_sensitivity_corrected", "result": "PASS"},
+    {"implementations": 2, "name": "K_exceeded_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "unknown_identity_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "provenance_mismatch_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "rank_gap_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "duplicate_hit_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "unknown_with_grade_fails_closed", "result": "PASS"},
+    {"implementations": 2, "name": "group_unknown_member_fails_closed", "result": "PASS"}
+  ]
+}

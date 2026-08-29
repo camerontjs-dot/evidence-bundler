@@ -1,0 +1,82 @@
+{
+  "artifact": "source-corpus-manifest",
+  "corpora": [
+    {
+      "construction_code": {
+        "commit": "f1c4ec96477f5100f10c83798d33b3101db727fa",
+        "repo": "fresh-stack/freshstack"
+      },
+      "corpus_dataset": {
+        "id": "freshstack/corpus-oct-2024",
+        "license": "CC-BY-SA-4.0",
+        "revision": "069f66dc323e163b48b10d08408d282733d4393b",
+        "rows": 271842
+      },
+      "eligibility": "INCONCLUSIVE",
+      "family": "FreshStack",
+      "query_dataset": {
+        "id": "freshstack/queries-oct-2024-unfiltered",
+        "license": "CC-BY-SA-4.0",
+        "revision": "00150066ff2959688ad03ce7148ffb652f2fee38"
+      },
+      "query_provenance": "Stack Overflow questions; accepted answers external. FreshStack nuggets and nugget-document relevance labels are GPT-4o generated.",
+      "sampling": {
+        "method": "int(SHA256('pilot0a:'+topic),16) mod physical_unfiltered_topic_row_count",
+        "scientific_row_bytes_acquired": false,
+        "selected": [
+          {"index": 271, "row_count": 318, "topic": "langchain"},
+          {"index": 42, "row_count": 94, "topic": "yolo"},
+          {"index": 121, "row_count": 230, "topic": "laravel"},
+          {"index": 248, "row_count": 310, "topic": "angular"},
+          {"index": 36, "row_count": 197, "topic": "godot"}
+        ]
+      },
+      "source_aperture_status": "UNRESOLVED",
+      "blocking_reason": "No qrel-independent, non-retrieval query-specific source aperture was established. Using FreshStack candidate-document lists would import retrieval-generated construction state into source selection.",
+      "upstream_source_identity": {
+        "commit_id_in_official_schema": false,
+        "historical_nthakur_mirror_commit_id_observed": true,
+        "note": "A deterministic official<->historical provenance join has not been executed in this runtime.",
+        "published_official_metadata": ["url", "start_byte", "end_byte"],
+        "reconstruction_status": "PARTIALLY_ESTABLISHED"
+      }
+    },
+    {
+      "archive": {
+        "bytes": 3115079,
+        "scientific_archive_bytes_acquired": false,
+        "sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+        "url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+        "url_mutability": "latest"
+      },
+      "blocking_reason": "Pinned bytes could not be acquired in this execution environment, so selected claims/documents and reconstruction hashes were not materialized.",
+      "canonical_repo": {
+        "commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+        "id": "allenai/scifact"
+      },
+      "eligibility": "PARTIALLY_ESTABLISHED",
+      "family": "SciFact",
+      "license": {
+        "abstracts": "ODC-By-1.0 via S2ORC",
+        "claims_evidence_annotations": "CC-BY-4.0",
+        "code": "Apache-2.0",
+        "hf_dataset_label_conflict": "CC-BY-NC-2.0 mirror metadata; unresolved discrepancy, official upstream LICENSE.md preferred for this audit"
+      },
+      "sampling": {
+        "method": "first five unique int(SHA256('pilot0a:scifact:'+str(i)),16) mod 300",
+        "physical_claim_rows": 300,
+        "scientific_row_bytes_acquired": false,
+        "selected_indices": [199, 66, 278, 114, 123],
+        "source_file": "data/claims_dev.jsonl"
+      },
+      "source_aperture": "cited_doc_ids only, explicitly not evidence/rationale fields"
+    }
+  ],
+  "evidence_bundler_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "pilot": "external-corpus-methodology-pilot-0a",
+  "retrieval_exposure": {
+    "hybrid": false,
+    "production_bm25": false,
+    "semantic_only": false
+  }
+}
