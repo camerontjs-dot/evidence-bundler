@@ -8,7 +8,7 @@ A web search was issued with source-only intent to locate pinned FreshStack Hugg
 
 The returned result for `fresh-stack/freshstack` rendered README content that included a published FreshStack leaderboard snapshot and retrieval metrics. This was not intentionally opened as a leaderboard or paper result page, but the task firewall makes exposure itself disqualifying.
 
-### Exact result surface exposed
+### Exact FreshStack result surface exposed
 
 The rendered README result included:
 
@@ -40,9 +40,15 @@ Values visibly exposed in that result included:
 
 These values were not used to select cases, set source aperture, match provenance, judge relevance, define negatives, change passage boundaries, or make any scientific-methodology claim.
 
+## Additional predecessor-record exposure
+
+The task required live inspection of predecessor PRs #17 and #18. Their GitHub PR bodies rendered historical production-BM25 result values while establishing the predecessor dispositions. Under the literal firewall, that also counts as production-BM25 output exposure even though the values were not sought for this experiment and were not used in any Pilot 0A construction, provenance, aperture, relevance, or gold decision.
+
+No Hybrid or Semantic-only target output was rendered from those predecessor records; both predecessor records explicitly preserve non-execution of those targets.
+
 ## Required exposure state
 
-- production BM25 exposed: `false`
+- production BM25 exposed: `true` — historical predecessor-result values rendered incidentally during required live PR #17/#18 inspection; not run or used in this Pilot 0A execution
 - Hybrid exposed: `false`
 - Semantic-only exposed: `false`
 - Evidence Bundler dense retrieval exposed: `false`
@@ -56,11 +62,11 @@ These values were not used to select cases, set source aperture, match provenanc
 
 ## Isolation surface event
 
-Before the retrieval-result contamination event, the MainFrame/Conduit project-list call was attempted to establish whether genuine isolated evaluator/adjudicator sessions were available. It returned HTTP 429 and no project list. No isolated session was created.
+Before the FreshStack retrieval-result contamination event, the MainFrame/Conduit project-list call was attempted to establish whether genuine isolated evaluator/adjudicator sessions were available. It returned HTTP 429 and no project list. No isolated session was created.
 
 ## Stop action
 
-Immediately after recognizing the published retrieval-result exposure:
+Immediately after recognizing the FreshStack published retrieval-result exposure:
 
 - FreshStack provenance reconstruction stopped;
 - FreshStack aperture confirmation stopped;
@@ -71,4 +77,4 @@ Immediately after recognizing the published retrieval-result exposure:
 - published-qrel comparison was not begun;
 - segmentation/gold stability was not begun.
 
-The exposure is preserved as a terminal isolation falsifier. It is not being rationalized as harmless.
+The exposures are preserved rather than rationalized as harmless. The FreshStack published-result exposure independently satisfies the preregistered clean-room falsifier; the predecessor production-BM25 rendering provides an additional literal-firewall exposure.
