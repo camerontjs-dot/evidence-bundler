@@ -8,7 +8,7 @@
     "FreshStack_candidate_list_exposed": false,
     "FreshStack_published_retrieval_result_exposed": false,
     "historical_predecessor_retrieval_result_exposed": false,
-    "published_FreshStack_qrel_exposed_before_gold_freeze": false,
+    "published_FreshStack_qrel_exposed_before_gold_freeze": true,
     "published_SciFact_evidence_exposed_before_gold_freeze": false,
     "scientific_gold_creation_state": "NOT_STARTED"
   },
@@ -17,7 +17,7 @@
       "stage": "pre-receipt GitHub metadata inspection",
       "event": "An overbroad pull-request search rendered bodies for PR #20, #21, #22, #23 and unrelated PR #5.",
       "scientific_effect": "NO_PROHIBITED_RETRIEVAL_RESULT_EXPOSED",
-      "details": "No retrieval metric value, FreshStack candidate list, FreshStack qrel, SciFact evidence label, or predecessor retrieval result table/value was rendered. The surface was excluded from all later predecessor inspection."
+      "details": "No retrieval metric value, FreshStack candidate list, FreshStack qrel value, SciFact evidence label, or predecessor retrieval result table/value was rendered. The surface was excluded from all later predecessor inspection."
     },
     {
       "stage": "evaluator isolation preflight",
@@ -25,20 +25,24 @@
       "scientific_effect": "NO_EXPOSURE; INDEPENDENCE_NOT_ESTABLISHED"
     },
     {
-      "stage": "source-only acquisition",
-      "event": "GitHub Actions direct pinned-artifact acquisition runs 33253126024 and 33253265218 completed successfully.",
-      "scientific_effect": "NO_PROHIBITED_EXPOSURE",
-      "firewall_receipt": {
-        "general_web_search_used": false,
-        "FreshStack_README_opened": false,
-        "FreshStack_qrels_opened": false,
-        "FreshStack_candidate_lists_opened": false,
-        "FreshStack_retrieval_results_opened": false,
-        "SciFact_published_evidence_output": false,
-        "retriever_executed": false
-      }
+      "stage": "source-only acquisition run 33253126024",
+      "event": "The FreshStack query parquet iterator called ParquetFile.iter_batches() without a column projection and converted complete query rows to Python objects before selecting query_id/title/text.",
+      "scientific_effect": "TERMINAL_PROHIBITED_PRE_GOLD_QREL_ACCESS",
+      "details": "Pinned FreshStack DataLoader code establishes that the query dataset contains the `nuggets` field used to construct qrels, including relevant_corpus_ids. The acquisition harness therefore admitted qrel-bearing columns into process memory even though those values were never printed, persisted, used for matching, or rendered to the model. Under the mechanically isolated clean-room contract, machine-level access itself violates the firewall.",
+      "first_affected_run_id": 33253126024,
+      "first_affected_head_sha": "2b1cbb7e00a67138384e15ce547b9be87630380a"
+    },
+    {
+      "stage": "source-only acquisition run 33253265218 and later analysis",
+      "event": "Execution continued before the machine-level qrel access was recognized.",
+      "scientific_effect": "CONTAMINATED_POST_EXPOSURE_MATERIAL_ONLY",
+      "details": "FreshStack partition-count/provenance diagnostics and SciFact archive reconstruction produced after the first exposure are retained only as procedural/diagnostic records and are not characterized as clean scientific gate evidence."
     }
   ],
-  "terminal_contamination": false,
-  "terminal_decision_basis": "source/query reconstruction falsifier, not contamination"
+  "terminal_contamination": true,
+  "terminal_disposition": "FALSIFIED",
+  "terminal_decision_basis": "information-acquisition machinery violated the absolute retrieval/qrel firewall before scientific gold freeze",
+  "qrel_values_rendered_to_model_or_user": false,
+  "qrel_values_used_for_scientific_decisions": false,
+  "note": "The contract treats exposure/access itself as the falsifier; non-use and non-rendering do not restore clean-room status."
 }
