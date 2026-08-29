@@ -1,0 +1,56 @@
+{
+  "benchmark": "eb-retrieval-low-overlap-rc4-v1",
+  "benchmark_tree_file_count": 9,
+  "benchmark_tree_sha256": "f2b2c31614a78d30c424eb6646f6143a496fe916b446d801a9463cc4184a9457",
+  "candidate_output_used": false,
+  "freeze_order_note": "Source/config/evaluator/control/metamorphic bytes and exact expected generated benchmark bytes are frozen before exact production BM25 or any sealed weak/gaming control. CI regenerates and verifies the object before execution.",
+  "freeze_state": "FROZEN_BEFORE_FIRST_SEALED_CONTROL",
+  "generated_benchmark_file_sha256": {
+    "README.md": "fd3bb1b9012e61755b027739ee1e04840252af1ab3cd6e7b9e4d8b274716db5b",
+    "SHA256SUMS": "9edef5da1a658f901d695ea1843071e47022e585915dcc027957aeb2bbf0595b",
+    "evaluator_only/family_membership.json": "6664c8dac9685dd0f7d5cb8b7c378c21f50d3e16c328179b57e41ee961e4cc41",
+    "evaluator_only/sealed_gold.jsonl": "a63025d8e063582ab51ad8d4030d64f94b4050607a0b2a1391c430000f3f6895",
+    "manifest.json": "8ba2a1386b04a2f5265de085b30583ae61eb1c96dd9d23b3420699572835df0a",
+    "provenance/generator_receipt.json": "66093c952c76e06be0780b31ac6687582b2a3f0ee4ee1a67f3a9c54e0fe2e32c",
+    "runtime/passages.jsonl": "04b857307dcf895aafd7a5ae3d6152669d561aef122930584d78c6f144db0d50",
+    "runtime/scopes.json": "a09fb5298320056eacf4be9b199834cd3e71a1a2be9f3588b31de96e2773fec5",
+    "runtime/sealed_cases.jsonl": "178ed020484ed610fc8198dbd06836a37008a6fb3ced777409de5018b96e0bea"
+  },
+  "generator_seed": 173205,
+  "hybrid_sealed_exposed": false,
+  "infrastructure_file_sha256": {
+    ".github/workflows/research-eb-retrieval-rc4-apparatus.yml": "fb2268fa9dde10c0fe5e39243822ecc3f73103144e6b0a99cbc2eb59a6c0f318"
+  },
+  "preregistration_git_blobs": {
+    "research/eb_retrieval_generalization_rc4/control_plan.json": "43478f4b0c92e915dc14c65257c9241b4c9a5f53",
+    "research/eb_retrieval_generalization_rc4/generator_config.json": "d7ee1093fa3d517ad4b529eb62f9320ed3524045",
+    "research/eb_retrieval_generalization_rc4/metamorphic_plan.json": "afc60a698efdc5a60b40fee158639b8f0a59298c",
+    "research/eb_retrieval_generalization_rc4/thresholds.json": "88e3ad4a976acc36e54cc2c064664240d4050b87"
+  },
+  "production_bm25_git_blob": "f8d7dd7e56710453edbca7c51aeea6da949ff903",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "rc3_terminal_head_sha": "00a30dfcb4b0db83e5158725c47d8edb97a26edd",
+  "record": "eb-rc4-apparatus-pre-control-freeze",
+  "semantic_sealed_exposed": false,
+  "source_file_sha256": {
+    "research/eb_retrieval_generalization_rc4/additional_control_plan.json": "38c3e57942d84ce2db5ae7f41c0c5c5b94cdf3e33afe702d7187417aaab65211",
+    "research/eb_retrieval_generalization_rc4/anti_gaming_runner.py": "8affd36507aa9bf0f98a14479a668bdbfc600b3106def853199e2cc17ecf6d31",
+    "research/eb_retrieval_generalization_rc4/assurance_runner.py": "f82aa905ff376e68cfba77b31d131af724c08c9c528c637367096215fa2b1a19",
+    "research/eb_retrieval_generalization_rc4/bm25_adapter.py": "c0b7a2ee4dfa4edcb04a6fdd6fdbe9ccb9088e088848b7fe583dd5b12324e81b",
+    "research/eb_retrieval_generalization_rc4/bm25_gate.py": "cb7197e54c888f51dec3b0467f24bbc968fe1caf29e16ca5ff9e9bfd6b5f6c3d",
+    "research/eb_retrieval_generalization_rc4/control_gate.py": "f9987abab5f75c0c6a9b975a2690e16f5022d093fa927efa98175ff267f4fa62",
+    "research/eb_retrieval_generalization_rc4/control_runner.py": "3d44e21b11ef28315b72d81fff8c277ce522203b66ae89b5c712432ccfa85524",
+    "research/eb_retrieval_generalization_rc4/evaluator.py": "6e0d109d1cc7d9579ed6060ae5c18dd362dd57c8093dfd4ad029f5d4b317c334",
+    "research/eb_retrieval_generalization_rc4/generate_challenge.py": "6d6be86f69efe79fd81db82a4426a98d85202943564af7eec437c15310a6e800",
+    "research/eb_retrieval_generalization_rc4/metamorphic_runner.py": "bd6534408c9fdb1ed068f9a0da022ce8f8e2223c7e112d03e39b2ab7386fcc7d",
+    "research/eb_retrieval_generalization_rc4/retrieval_result.schema.json": "d28eb645c0e21af798a4771c318e6cf80c4b4d1b2d1367583976b0b8403c313f",
+    "research/eb_retrieval_generalization_rc4/static_preflight.py": "d1cd1e057cb9c05b73b91f3b79c671f32cb5d99cdba0da10da57d1535f76f03c",
+    "research/eb_retrieval_generalization_rc4/target_identity.json": "1ae97b92305e2838b68441aa7e8022c316ce33eac34bea413b4d4376fe83a909",
+    "research/eb_retrieval_generalization_rc4/terminal_decision.py": "50a1259fd0d185b8ba13b249a68bc0b3dd410ba9156772816e6529f1750b99c1",
+    "research/eb_retrieval_generalization_rc4/validate_challenge.py": "f05587b3e29eb383ada2a501fb1f2d89395c96bacfdfbf812eaf070d69e62b06"
+  },
+  "target_config_sha256": "65c671e25dfd998350cfdb6d2a84c4a46d4db7e867827dd99fd4e57a8003f60e",
+  "target_identity_git_blob": "0fbba006479ce6a267d4e59ba3bfe1e5f096016f",
+  "target_pr": 17,
+  "target_pr_head_sha": "27be0c85fdaae9e56a7622e007ca062575e9c433"
+}
