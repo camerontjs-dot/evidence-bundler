@@ -392,6 +392,10 @@ def render_retrieval_report_markdown(report: RetrievalRunReport) -> str:
         f"- Config hash: `{report.config_hash}`",
         f"- Parent aggregation: `{report.retrieval_config.parent_aggregation}`",
         f"- Parent top-k: `{report.retrieval_config.top_k}`",
+        (
+            "- Parent candidate top-k: "
+            f"`{report.retrieval_config.parent_candidate_top_k or 'default'}`"
+        ),
         f"- Child top-k: `{report.retrieval_config.child_top_k}`",
         f"- Lexical score floor: `{report.retrieval_config.lexical_score_floor}`",
         f"- Chunk max chars: `{report.retrieval_config.chunk_max_chars}`",
@@ -407,6 +411,7 @@ def render_retrieval_report_markdown(report: RetrievalRunReport) -> str:
         ),
         f"- Semantic index path: `{_semantic_index_path_label(report.retrieval_config)}`",
         f"- Semantic child top-k: `{report.retrieval_config.semantic_child_top_k}`",
+        f"- Semantic query prefix: `{report.retrieval_config.semantic_query_prefix or 'none'}`",
         f"- Hybrid lexical candidate pool: `{report.retrieval_config.rrf_candidate_pool}`",
         f"- RRF k constant: `{report.retrieval_config.rrf_k_constant}`",
         f"- Rerank enabled: `{report.retrieval_config.rerank_enabled}`",
@@ -415,6 +420,14 @@ def render_retrieval_report_markdown(report: RetrievalRunReport) -> str:
         f"- Rerank candidate limit: `{report.retrieval_config.rerank_top_n}`",
         f"- Contradiction retrieval enabled: `{report.retrieval_config.contradiction_enabled}`",
         f"- Contradiction top-k: `{report.retrieval_config.contradiction_top_k}`",
+        (
+            "- Counterevidence lexical child top-k: "
+            f"`{report.retrieval_config.counterevidence_lexical_child_top_k or 'default'}`"
+        ),
+        (
+            "- Counterevidence semantic child top-k: "
+            f"`{report.retrieval_config.counterevidence_semantic_child_top_k or 'default'}`"
+        ),
         (
             "- Contradiction query prefixes: "
             f"`{_contradiction_prefixes_label(report.retrieval_config)}`"
@@ -1139,7 +1152,8 @@ def _retrieve_claim_candidates(
         hits=hits,
         chunks_by_id=chunks_by_id,
         config=config,
-    )
+        limit=config.parent_candidate_top_k,
+    )[: config.top_k]
     return candidates, _make_claim_summary(
         claim=claim,
         candidates=candidates,
@@ -1177,7 +1191,8 @@ def _retrieve_semantic_claim(
         hits=hits,
         chunks_by_id=chunks_by_id,
         config=config,
-    )
+        limit=config.parent_candidate_top_k,
+    )[: config.top_k]
     return candidates, _make_claim_summary(
         claim=claim,
         candidates=candidates,
@@ -1221,7 +1236,11 @@ def _retrieve_hybrid_claim(
         )
         for fused_rank in fused_ranks
     ]
-    parent_pool_limit = max(config.top_k, config.rerank_top_n) if config.rerank_enabled else None
+    parent_pool_limit = (
+        config.parent_candidate_top_k
+        if config.parent_candidate_top_k is not None
+        else (max(config.top_k, config.rerank_top_n) if config.rerank_enabled else config.top_k)
+    )
     candidates = aggregate_parent_candidates(
         claim=claim,
         hits=fused_hits,
@@ -1238,6 +1257,7 @@ def _retrieve_hybrid_claim(
             reranker=reranker,
             config=config,
         )
+    candidates = candidates[: config.top_k]
     lexical_set = set(lexical_ids)
     semantic_set = set(semantic_ids)
     overlap = lexical_set & semantic_set
