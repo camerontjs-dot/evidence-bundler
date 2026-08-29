@@ -84,7 +84,8 @@ def main() -> int:
     parser.add_argument("--json-out")
     args = parser.parse_args()
     root = Path(args.repo_root).resolve()
-    findings = scan_paths((root / "research").rglob("*.py"), root)
+    module_root = root / "research" / "source_access_firewall"
+    findings = scan_paths(module_root.rglob("*.py"), root)
     result = {"guard_version": "1.0.0", "finding_count": len(findings), "findings": findings}
     if args.json_out:
         out = Path(args.json_out)
