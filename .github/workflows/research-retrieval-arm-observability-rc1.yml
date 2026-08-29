@@ -1,6 +1,13 @@
 name: Research - retrieval arm observability RC1
 
 on:
+  pull_request:
+    paths:
+      - "src/evidence_bundler/**"
+      - "tests/**"
+      - "research/retrieval_control_surface_rc0/**"
+      - ".github/workflows/research-retrieval-arm-observability-rc1.yml"
+      - "pyproject.toml"
   push:
     branches:
       - research-infra/retrieval-arm-observability-rc1-20260829
@@ -22,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
