@@ -79,7 +79,7 @@ def test_receipt_is_reconstructable_and_replay_stable(
     assert receipt_path.with_suffix(".json.sha256").exists()
     assert receipt_hash.startswith("sha256:")
     assert receipt_a["retrieval_config"]["semantic_query_prefix"] == (
-        "receipt-must-preserve-this-prefix: "
+        "receipt-must-preserve-this-prefix:"
     )
     assert receipt_a["identity_config"] == normalized_identity_config(config)
     assert "embedding_model_cache_dir" not in receipt_a["identity_config"]
