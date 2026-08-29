@@ -1,0 +1,105 @@
+{
+  "artifact": "external-corpus-methodology-pilot-0a-completion-receipt",
+  "date": "2026-08-29",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "branch": "research-infra/external-corpus-pilot-0a-completion",
+  "production_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "report_commit_sha": "dfab1f488bbf30ef25fa61cb6439b6fcf1636a7d",
+  "terminal_disposition": "FALSIFIED",
+  "terminal_reason": "Clean pre-retrieval isolation for this completion run was falsified by accidental exposure to published aggregate FreshStack retrieval-pooling output while inspecting the construction paper. The output was not used for case selection, aperture selection, passage relevance, or gold.",
+  "frozen_object": {
+    "pilot_pr": 20,
+    "pilot_head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+    "evaluator_pr": 21,
+    "evaluator_head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+    "freshstack": {
+      "query_dataset": "freshstack/queries-oct-2024-unfiltered",
+      "query_revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
+      "corpus_dataset": "freshstack/corpus-oct-2024",
+      "corpus_revision": "069f66dc323e163b48b10d08408d282733d4393b",
+      "framework_commit": "f1c4ec96477f5100f10c83798d33b3101db727fa",
+      "selected": [
+        {"topic": "langchain", "row_count": 318, "index": 271},
+        {"topic": "yolo", "row_count": 94, "index": 42},
+        {"topic": "laravel", "row_count": 230, "index": 121},
+        {"topic": "angular", "row_count": 310, "index": 248},
+        {"topic": "godot", "row_count": 197, "index": 36}
+      ]
+    },
+    "scifact": {
+      "repository_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+      "selected_indices": [199, 66, 278, 114, 123],
+      "recorded_archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+      "recorded_archive_bytes": 3115079
+    }
+  },
+  "lane_a": {
+    "freshstack_provenance_join": "UNRESOLVED",
+    "freshstack_aperture": {
+      "langchain_271": "EXTERNALLY FIXED",
+      "yolo_42": "EXTERNALLY FIXED",
+      "laravel_121": "EXTERNALLY FIXED",
+      "angular_248": "EXTERNALLY FIXED",
+      "godot_36": "EXTERNALLY FIXED"
+    },
+    "freshstack_aperture_boundary": "entire pinned topic corpus partition, not the retrieval-conditioned judged-document pool",
+    "scifact_aperture": "DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL via cited_doc_ids",
+    "scifact_immutable_reconstruction": "INCONCLUSIVE",
+    "scifact_license": {
+      "claims_evidence": "CC BY 4.0",
+      "abstracts": "ODC-By 1.0 via S2ORC",
+      "code": "Apache-2.0",
+      "mirror_discrepancy": "Hugging Face aggregate CC-BY-NC-2.0 label observed; canonical upstream split-license statement retained"
+    }
+  },
+  "lane_b": {
+    "contract_path": "research/external_corpus_evaluator_independence_v1/contract.md",
+    "contract_blob_sha": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0",
+    "fresh_context_evaluator_b": "NOT_EXECUTED",
+    "gate_b": "INDEPENDENCE NOT ESTABLISHED",
+    "isolation_attempt": "MainFrame/Conduit surface returned HTTP 404",
+    "same_context_substitution_used": false
+  },
+  "scientific_stage": {
+    "gate_a_complete": false,
+    "adjudicator_a": "NOT_EXECUTED",
+    "adjudicator_b": "NOT_EXECUTED",
+    "disagreement_taxonomy": "NOT_EXECUTED",
+    "published_qrel_comparison": "NOT_EXECUTED",
+    "passage_correspondence": "NOT_EXECUTED",
+    "segmentation_stability": "NOT_EXECUTED",
+    "gold_invariance": "NOT_EXECUTED",
+    "scientific_gold_created": false
+  },
+  "exposure": {
+    "production_bm25_exposed": false,
+    "hybrid_exposed": false,
+    "semantic_only_exposed": false,
+    "evidence_bundler_dense_or_lexical_output_exposed": false,
+    "freshstack_candidate_lists_exposed": false,
+    "freshstack_published_qrels_used_for_gold": false,
+    "scifact_published_evidence_used_for_gold": false,
+    "freshstack_published_aggregate_retrieval_pooling_output_exposed": true
+  },
+  "governance_access": {
+    "requested_documents_re_read": false,
+    "reason": "Exact project-state governance documents were not available through inspected public GitHub surfaces and the sanctioned MainFrame/Conduit access surface returned HTTP 404. No claim of successful re-read is made."
+  },
+  "authorized_next_task": {
+    "name": "Pilot 0A clean-room reconstruction and isolation rerun",
+    "same_frozen_10_cases": true,
+    "change_scientific_object": false,
+    "allow_24_30_case_expansion": false,
+    "allow_production_bm25": false,
+    "allow_hybrid": false,
+    "allow_semantic_only": false,
+    "required_controls": [
+      "source-only allow-list excluding retrieval-result sections and published qrels",
+      "fresh supervisory/agent context",
+      "complete FreshStack official-to-historical bytewise provenance join or preserved failure",
+      "immutable/content-addressed SciFact archive verification",
+      "fresh-context evaluator B frozen before comparison",
+      "two isolated scientific adjudicators only after reconstruction and evaluator gates pass"
+    ]
+  }
+}
