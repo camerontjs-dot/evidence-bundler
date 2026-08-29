@@ -26,7 +26,9 @@ Observed RC3 failure to preserve:
 ## Fresh deterministic design
 Benchmark name: `eb-retrieval-low-overlap-rc4-v1`.
 
-Generator seed: `271828`.
+Generator seed: `173205`.
+
+The initial design draft used `271828`, but live lineage inspection showed that seed was already used by frozen benchmark PR #8. Before generator implementation, before any scientific object existed, and before any sealed execution, the seed was corrected to the new repository-unused value `173205`. The correction is preserved in deviation record `deviation-18a-preimplementation-seed-collision.md`.
 
 Minimum balanced design: 80 sealed cases, 16 each for L01, L02, L03, L04, and C01. Each family consists of 8 fresh semantic scenarios with two paired surface variants. The pair structure is part of the apparatus, not duplicate case inflation.
 
