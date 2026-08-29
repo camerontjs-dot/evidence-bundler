@@ -1,0 +1,56 @@
+{
+  "benchmark_name": "eb-retrieval-low-overlap-rc4-v1",
+  "design_state": "preregistered_unimplemented",
+  "generator_seed": 271828,
+  "sealed_case_count": 80,
+  "families": {
+    "L01": 16,
+    "L02": 16,
+    "L03": 16,
+    "L04": 16,
+    "C01": 16
+  },
+  "paired_semantic_scenarios_per_family": 8,
+  "surface_variants_per_scenario": 2,
+  "maximum_passages": 5,
+  "passages_per_case": 10,
+  "construction_families": [
+    "policy",
+    "procedure",
+    "technical_explanatory",
+    "incident",
+    "faq_dialogue",
+    "catalog_register",
+    "multi_sentence_narrative",
+    "conditional_declarative_summary"
+  ],
+  "balanced_cue_dimensions": [
+    "construction_family",
+    "passage_length_bin",
+    "source_position",
+    "passage_position",
+    "decisive_sentence_position",
+    "punctuation_format_family",
+    "identifier_pattern",
+    "metadata_density_style",
+    "concise_verbose_realization"
+  ],
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "production_bm25_blob": "f8d7dd7e56710453edbca7c51aeea6da949ff903",
+  "target_pr": 17,
+  "target_config_sha256": "65c671e25dfd998350cfdb6d2a84c4a46d4db7e867827dd99fd4e57a8003f60e",
+  "forbid_reuse": [
+    "rc2_case_text",
+    "rc3_case_text",
+    "rc2_rc3_decisive_passages",
+    "rc2_rc3_hard_negatives",
+    "exposed_fictional_entity_stems",
+    "candidate_output"
+  ],
+  "exposure": {
+    "sealed_controls_executed": false,
+    "bm25_sealed_exposed": false,
+    "hybrid_sealed_exposed": false,
+    "semantic_sealed_exposed": false
+  }
+}
