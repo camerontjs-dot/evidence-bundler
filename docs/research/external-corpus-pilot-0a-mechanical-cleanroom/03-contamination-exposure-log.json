@@ -1,0 +1,44 @@
+{
+  "terminal_exposure_state": {
+    "production_BM25_exposed": false,
+    "Hybrid_exposed": false,
+    "Semantic_only_exposed": false,
+    "dense_exposed": false,
+    "lexical_exposed": false,
+    "FreshStack_candidate_list_exposed": false,
+    "FreshStack_published_retrieval_result_exposed": false,
+    "historical_predecessor_retrieval_result_exposed": false,
+    "published_FreshStack_qrel_exposed_before_gold_freeze": false,
+    "published_SciFact_evidence_exposed_before_gold_freeze": false,
+    "scientific_gold_creation_state": "NOT_STARTED"
+  },
+  "events": [
+    {
+      "stage": "pre-receipt GitHub metadata inspection",
+      "event": "An overbroad pull-request search rendered bodies for PR #20, #21, #22, #23 and unrelated PR #5.",
+      "scientific_effect": "NO_PROHIBITED_RETRIEVAL_RESULT_EXPOSED",
+      "details": "No retrieval metric value, FreshStack candidate list, FreshStack qrel, SciFact evidence label, or predecessor retrieval result table/value was rendered. The surface was excluded from all later predecessor inspection."
+    },
+    {
+      "stage": "evaluator isolation preflight",
+      "event": "MainFrame/Conduit adapter-list call failed with MCP SSE HTTP 404 before agent/session content was exposed.",
+      "scientific_effect": "NO_EXPOSURE; INDEPENDENCE_NOT_ESTABLISHED"
+    },
+    {
+      "stage": "source-only acquisition",
+      "event": "GitHub Actions direct pinned-artifact acquisition runs 33253126024 and 33253265218 completed successfully.",
+      "scientific_effect": "NO_PROHIBITED_EXPOSURE",
+      "firewall_receipt": {
+        "general_web_search_used": false,
+        "FreshStack_README_opened": false,
+        "FreshStack_qrels_opened": false,
+        "FreshStack_candidate_lists_opened": false,
+        "FreshStack_retrieval_results_opened": false,
+        "SciFact_published_evidence_output": false,
+        "retriever_executed": false
+      }
+    }
+  ],
+  "terminal_contamination": false,
+  "terminal_decision_basis": "source/query reconstruction falsifier, not contamination"
+}
