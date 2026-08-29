@@ -19,7 +19,7 @@
   "generator_seed": 173205,
   "hybrid_sealed_exposed": false,
   "infrastructure_file_sha256": {
-    ".github/workflows/research-eb-retrieval-rc4-apparatus.yml": "fb2268fa9dde10c0fe5e39243822ecc3f73103144e6b0a99cbc2eb59a6c0f318"
+    ".github/workflows/research-eb-retrieval-rc4-apparatus.yml": "028995c2e63730c15d8e5751ab471a2505f88c83bb7e04486892b265b56133f0"
   },
   "preregistration_git_blobs": {
     "research/eb_retrieval_generalization_rc4/control_plan.json": "43478f173c0bf08bd9636ffe78b6b0da31d109ae",
