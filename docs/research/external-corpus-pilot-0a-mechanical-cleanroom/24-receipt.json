@@ -2,105 +2,82 @@
   "object": "Evidence Bundler External Corpus Methodology Pilot 0A mechanically isolated clean-room completion",
   "execution_date": "2026-08-29",
   "terminal_disposition": "FALSIFIED",
-  "terminal_reason": "The exact frozen FreshStack query object is not reconstructable at its preregistered query revision: angular physical row 248 is out of range because the exact partition has 230 rows, and godot physical row 36 is absent because the exact revision has no godot test data file.",
-  "record_parent_sha_before_receipt": "9c291df32d558e72431e664878d13e78c4684bf8",
+  "terminal_reason": "The source-acquisition machinery deserialized FreshStack qrel-bearing query columns into process memory before scientific gold freeze. The frozen contract makes mechanical pre-gold access itself a terminal falsifier even though qrel values were not rendered, persisted, or intentionally used.",
+  "record_parent_sha_before_corrected_receipt": "eefb18378cfabde97fb5b9dc2861659924fda8b7",
   "branch": "research-infra/external-corpus-pilot0a-mechanical-cleanroom-20260829",
   "production_main_sha_at_start": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
   "frozen_object": {
     "pr20_head": "357fe735067dbbd3d54f8872ffc8391dac724950",
     "pr20_preregistration": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
     "pr21_head": "764144f3da77140a8e542158948b4e88d40a7421",
-    "evaluator_contract_git_blob_sha1": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"
+    "evaluator_contract_git_blob_sha1": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0",
+    "scientific_status_after_this_run": "UNRESOLVED; MAY ONLY BE REUSED UNCHANGED IN A NEW FRESH EXECUTION AFTER SOURCE-ACCESS ISOLATION ASSURANCE"
+  },
+  "first_prohibited_exposure": {
+    "run_id": 33253126024,
+    "head_sha": "2b1cbb7e00a67138384e15ce547b9be87630380a",
+    "mechanism": "PyArrow ParquetFile.iter_batches() was called without a column projection for FreshStack query Parquet, then complete rows were converted to Python objects.",
+    "forbidden_field_basis": "Pinned FreshStack DataLoader source consumes qrels_ds['nuggets'] to construct qrels/relevant_corpus_ids; therefore the query row representation is qrel-bearing.",
+    "qrel_values_rendered_to_model_or_user": false,
+    "qrel_values_persisted_by_harness": false,
+    "qrel_values_intentionally_used": false,
+    "mechanical_access_occurred": true
   },
   "gates": {
-    "1_freshstack_provenance_reconstruction": "FALSIFIED",
-    "2_freshstack_qrel_independent_aperture": "PASS_RULE_ONLY",
-    "3_scifact_immutable_reconstruction": "PASS",
+    "1_freshstack_provenance_reconstruction": "NOT_VALIDLY_COMPLETED_AFTER_TERMINAL_EXPOSURE",
+    "2_freshstack_qrel_independent_aperture": "NOT_COMPLETED_AS_PROMOTION_GATE; PRE_EXPOSURE_SOURCE_CODE_OBSERVATION_ONLY",
+    "3_scifact_immutable_reconstruction": "NOT_EXECUTED_AS_CLEAN_GATE; POST_EXPOSURE_DIAGNOSTIC_ONLY",
     "4_evaluator_B": "INDEPENDENCE NOT ESTABLISHED",
-    "5_passage_materialization": "NOT_EXECUTED_HARD_STOP",
-    "6_independent_scientific_adjudication": "NOT_EXECUTED_HARD_STOP",
+    "5_passage_materialization": "NOT_EXECUTED",
+    "6_independent_scientific_adjudication": "NOT_EXECUTED",
     "7_adjudication_comparison": "NOT_EXECUTED",
-    "8_published_qrel_comparison": "NOT_EXECUTED",
+    "8_published_qrel_comparison": "NOT_EXECUTED; PREMATURE_QREL_BEARING_ACCESS_OCCURRED",
     "9_segmentation_gold_stability": "NOT_EXECUTED",
     "10_corpus_authoring_influence": "NOT_EXECUTED_AS_SCIENTIFIC_AUDIT"
   },
-  "freshstack": {
-    "query_dataset": "freshstack/queries-oct-2024-unfiltered",
-    "query_revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
-    "frozen_row_counts": {
-      "langchain": 318,
-      "yolo": 94,
-      "laravel": 230,
-      "angular": 310,
-      "godot": 197
+  "pre_exposure_observations": {
+    "freshstack_aperture_source_code": "Pinned DataLoader uses the same externally supplied topic/config to load corpus/query partitions; this structurally supports a complete same-topic source aperture without retrieval.",
+    "scifact_license": {
+      "claims_evidence": "CC BY 4.0",
+      "abstracts": "ODC-By 1.0 via S2ORC",
+      "code": "Apache-2.0"
     },
-    "observed_row_counts": {
+    "evaluator_isolation": "MainFrame/Conduit MCP SSE HTTP 404 before independent session creation"
+  },
+  "post_exposure_diagnostics_not_scientific_evidence": {
+    "freshstack_query_revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
+    "diagnostic_observed_row_counts": {
       "langchain": 318,
       "yolo": 94,
       "laravel": 310,
       "angular": 230,
       "godot": 0
     },
-    "frozen_selected_indices": {
-      "langchain": 271,
-      "yolo": 42,
-      "laravel": 121,
-      "angular": 248,
-      "godot": 36
+    "diagnostic_selected_row_presence": {
+      "langchain_271": true,
+      "yolo_42": true,
+      "laravel_121": true,
+      "angular_248": false,
+      "godot_36": false
     },
-    "selected_row_present": {
-      "langchain": true,
-      "yolo": true,
-      "laravel": true,
-      "angular": false,
-      "godot": false
-    },
-    "corpus_revision": "069f66dc323e163b48b10d08408d282733d4393b",
-    "source_aperture": "complete same-topic corpus partition; DETERMINISTICALLY_DERIVED_WITHOUT_RETRIEVAL",
-    "commit_bearing_historical_revision_found_in_checked_official_history": false,
-    "upstream_source_byte_binding": "NOT_EXECUTED"
+    "scifact_archive_sha256_observed": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "scifact_archive_bytes_observed": 3115079,
+    "instruction": "These diagnostics must be independently re-established in a future fresh execution before scientific use."
   },
-  "scifact": {
-    "canonical_repo_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
-    "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
-    "archive_bytes": 3115079,
-    "archive_reproduced_exactly": true,
-    "selected_claim_rows_reconstructed": 5,
-    "missing_cited_doc_ids": 0,
-    "licenses": {
-      "claims_evidence": "CC BY 4.0",
-      "abstracts": "ODC-By 1.0 via S2ORC",
-      "code": "Apache-2.0"
-    }
-  },
-  "evaluator_isolation": {
-    "independent_surface_available": false,
-    "observation": "MainFrame/Conduit MCP SSE HTTP 404 before session creation",
-    "evaluator_B_created": false,
-    "evaluator_B_source_sha256": null,
-    "cross_check": "NOT_EXECUTED"
-  },
-  "source_only_acquisition": {
+  "source_acquisition_artifacts": {
     "run_1": {
       "id": 33253126024,
       "head": "2b1cbb7e00a67138384e15ce547b9be87630380a",
       "artifact_id": 9714980732,
-      "artifact_digest": "sha256:f99d9cd54fdd47844d8b357a00c790233f8c6bd9254174c72db73e30b94fc51c"
+      "artifact_digest": "sha256:f99d9cd54fdd47844d8b357a00c790233f8c6bd9254174c72db73e30b94fc51c",
+      "contaminated": true
     },
     "run_2": {
       "id": 33253265218,
       "head": "ede95664a581e7958307143a800b416e0bb544e2",
       "artifact_id": 9715023795,
-      "artifact_digest": "sha256:e50d7a74872de095726a194b2757097e0c6414f29b636d723fb6f6a7b29090a9"
-    },
-    "firewall": {
-      "general_web_search_used_for_freshstack": false,
-      "freshstack_readme_opened": false,
-      "freshstack_qrels_opened": false,
-      "freshstack_candidate_lists_opened": false,
-      "freshstack_retrieval_results_opened": false,
-      "scifact_published_evidence_output": false,
-      "retriever_executed": false
+      "artifact_digest": "sha256:e50d7a74872de095726a194b2757097e0c6414f29b636d723fb6f6a7b29090a9",
+      "contaminated": true
     }
   },
   "exposure_state": {
@@ -112,11 +89,15 @@
     "FreshStack_candidate_list_exposed": false,
     "FreshStack_published_retrieval_result_exposed": false,
     "historical_predecessor_retrieval_result_exposed": false,
-    "published_FreshStack_qrel_exposed_before_gold_freeze": false,
+    "published_FreshStack_qrel_exposed_before_gold_freeze": true,
+    "published_FreshStack_qrel_values_rendered": false,
     "published_SciFact_evidence_exposed_before_gold_freeze": false,
     "scientific_gold_creation_state": "NOT_STARTED"
   },
   "not_established": [
+    "clean FreshStack exact provenance reconstruction",
+    "clean FreshStack frozen query identity reconstruction",
+    "clean SciFact immutable reconstruction",
     "FreshStack immutable upstream source-byte binding",
     "FreshStack per-upstream-repository licensing",
     "independent evaluator B reproduction",
@@ -129,7 +110,7 @@
     "full corpus-authoring influence audit",
     "any retrieval performance property"
   ],
-  "next_authorized_task": "Source-only preregistration-integrity diagnosis of FreshStack query dataset Git history and design of a mandatory pre-freeze identity/self-consistency gate. Do not repair Pilot 0A, construct the 24-30 case apparatus, or run any retriever.",
+  "next_authorized_task": "Source-access isolation assurance: enforce allow-listed Parquet column projection before deserialization, fail closed on forbidden fields, and freeze an access receipt proving qrel/answer/evidence/result fields never enter process memory. Only then may a new fresh-context Pilot 0A completion restart at Gate 1. Do not repair Pilot 0A, construct the 24-30 case apparatus, or run any retriever.",
   "retrieval_authorized": false,
   "apparatus_24_30_authorized": false
 }
