@@ -76,7 +76,6 @@ jobs:
           rm research/retrieval_control_surface_rc0/apply_rc0_followup.py
           rm research/retrieval_control_surface_rc0/apply_rc0_followup2.py
           rm research/retrieval_control_surface_rc0/apply_rc0_followup3.py
-          rm .github/workflows/research-retrieval-control-surface-rc0-bootstrap.yml
       - name: Freeze implementation commit
         run: |
           git config user.name "github-actions[bot]"
