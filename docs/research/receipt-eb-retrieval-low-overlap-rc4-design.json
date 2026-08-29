@@ -1,0 +1,21 @@
+{
+  "benchmark_name": "eb-retrieval-low-overlap-rc4-v1",
+  "record_type": "design_preregistration_receipt",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "target_pr": 17,
+  "target_config_sha256": "65c671e25dfd998350cfdb6d2a84c4a46d4db7e867827dd99fd4e57a8003f60e",
+  "generator_seed": 271828,
+  "scientific_object_frozen": false,
+  "generator_implemented": false,
+  "validator_implemented": false,
+  "evaluator_implemented": false,
+  "control_runner_implemented": false,
+  "anti_gaming_runner_implemented": false,
+  "sealed_controls_executed": false,
+  "bm25_sealed_exposed": false,
+  "hybrid_sealed_exposed": false,
+  "semantic_sealed_exposed": false,
+  "apparatus_authorized_for_target_exposure": false,
+  "deviations": [],
+  "next_required_action": "dedicated_rc4_apparatus_assurance_implementation_freeze_and_control_execution"
+}
