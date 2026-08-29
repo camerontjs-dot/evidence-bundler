@@ -6,6 +6,7 @@ on:
       - research-infra/external-corpus-pilot0a-mechanical-cleanroom-20260829
     paths:
       - research/external_corpus_pilot0a_mechanical_cleanroom/acquire_sources.py
+      - research/external_corpus_pilot0a_mechanical_cleanroom/freshstack_failsoft.py
       - .github/workflows/external-corpus-pilot0a-source-only-acquisition.yml
   workflow_dispatch:
 
@@ -30,7 +31,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PILOT0A_OUT: out
           HF_HUB_DISABLE_TELEMETRY: '1'
-        run: python research/external_corpus_pilot0a_mechanical_cleanroom/acquire_sources.py
+        run: |
+          python research/external_corpus_pilot0a_mechanical_cleanroom/acquire_sources.py
+          python research/external_corpus_pilot0a_mechanical_cleanroom/freshstack_failsoft.py
       - name: Assert no forbidden output filenames
         shell: bash
         run: |
