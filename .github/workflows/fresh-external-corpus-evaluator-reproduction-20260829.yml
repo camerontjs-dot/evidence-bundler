@@ -1,0 +1,32 @@
+name: Fresh external corpus evaluator reproduction 20260829
+
+on:
+  push:
+    branches:
+      - research-infra/fresh-evaluator-reproduction-20260829-contextfree
+    paths:
+      - "research/external_corpus_evaluator_independence_fresh_reproduction_20260829/**"
+      - "tests/test_fresh_external_corpus_evaluator_reproduction_20260829.py"
+      - ".github/workflows/fresh-external-corpus-evaluator-reproduction-20260829.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comparison:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install "pytest>=8,<10"
+      - name: Run evaluator-independence and frozen fresh comparison tests only
+        run: >-
+          python -m pytest -q
+          tests/test_external_corpus_evaluator_independence.py
+          tests/test_fresh_external_corpus_evaluator_reproduction_20260829.py
