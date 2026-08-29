@@ -1,0 +1,22 @@
+{
+  "schema_version": "external-corpus-eval-contract-v0.3-draft",
+  "benchmark_id": "dummy-ndcg-scope-discriminator",
+  "corpus_version": "dummy-ndcg-scope-v1",
+  "corpus_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "benchmark_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "queries": [
+    {"query_id": "q_clean", "text": "Clean graded query", "provenance": {"kind": "dummy"}},
+    {"query_id": "q_unknown", "text": "Query containing unresolved judgment", "provenance": {"kind": "dummy"}}
+  ],
+  "sources": [
+    {"source_id": "s1", "provenance": {"kind": "dummy", "locator": "dummy://s1"}},
+    {"source_id": "s2", "provenance": {"kind": "dummy", "locator": "dummy://s2"}}
+  ],
+  "passages": [
+    {"passage_id": "p1", "source_id": "s1", "locator": "s1#1"},
+    {"passage_id": "p2", "source_id": "s1", "locator": "s1#2"},
+    {"passage_id": "p3", "source_id": "s2", "locator": "s2#1"},
+    {"passage_id": "p4", "source_id": "s2", "locator": "s2#2"},
+    {"passage_id": "p5", "source_id": "s2", "locator": "s2#3"}
+  ]
+}
