@@ -1,0 +1,68 @@
+{
+  "observed_at": "2026-08-29T08:32:00-04:00",
+  "production_main_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "working_branch": "research-infra/external-corpus-pilot0a-mechanical-cleanroom-20260829",
+  "predecessors": {
+    "20": {
+      "state": "closed",
+      "merged": false,
+      "head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+      "base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+      "preregistration_sha": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
+      "disposition": "INCONCLUSIVE"
+    },
+    "21": {
+      "state": "open",
+      "merged": false,
+      "head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+      "base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+      "disposition": "INCONCLUSIVE"
+    },
+    "22": {
+      "state": "closed",
+      "merged": false,
+      "head_sha": "4d91e7a3de78981e4f73489aab179767c58c1914",
+      "use": "procedural contamination record only"
+    },
+    "23": {
+      "state": "closed",
+      "merged": false,
+      "head_sha": "a24542a32acb4f3c04da2dd5bfd8aeaa63123769",
+      "use": "procedural contamination record only"
+    },
+    "17": {
+      "state": "closed",
+      "merged": false,
+      "head_sha": "27be0c85fdaae9e56a7622e007ca062575e9c433",
+      "safe_merge_base_sha": "2643385c998dd3b08af84eb37f3f089fea7d5e73",
+      "terminal_label": "disposition:superseded",
+      "terminal_disposition": "SUPERSEDED WITHOUT TARGET EXECUTION",
+      "body_rendered": false,
+      "title_live_verified": false,
+      "title_source": "frozen PR #20 preregistration / current task only because live title API also renders body"
+    },
+    "18": {
+      "state": "closed",
+      "merged": false,
+      "head_sha": "f0331faa6f97b655de5b22dc419e21f3c0205df3",
+      "safe_merge_base_sha": "2643385c998dd3b08af84eb37f3f089fea7d5e73",
+      "terminal_label": "disposition:falsified",
+      "terminal_disposition": "FALSIFIED",
+      "body_rendered": false,
+      "title_live_verified": false,
+      "title_source": "frozen PR #20 preregistration / current task only because live title API also renders body"
+    }
+  },
+  "safe_predecessor_surfaces": [
+    "git refs pull/<n>/head",
+    "issue event streams for closed/disposition labels",
+    "GET pull/<n>/merge status",
+    "compare metadata / merge-base / changed filenames only"
+  ],
+  "unsafe_predecessor_surfaces_excluded_after_receipt": [
+    "full PR body for #17/#18",
+    "result documents",
+    "workflow artifacts",
+    "retrieval result tables"
+  ]
+}
