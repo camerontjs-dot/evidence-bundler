@@ -131,7 +131,7 @@ def build_fixture_bundle_command(scaffold_run_dir: Path, output_dir: Path) -> No
     "retrieval_method",
     type=click.Choice(["bm25", "semantic", "hybrid"]),
     default=None,
-    help="Retrieval method. Semantic and hybrid writer paths are not wired until later units.",
+    help="Retrieval method. BM25, semantic, and hybrid execute through the normal bundle path.",
 )
 @click.option(
     "--top-k",
@@ -143,13 +143,13 @@ def build_fixture_bundle_command(scaffold_run_dir: Path, output_dir: Path) -> No
     "--child-top-k",
     default=None,
     type=click.IntRange(min=1),
-    help="Override number of child/leaf BM25 hits to aggregate per claim.",
+    help="Override BM25-only child/leaf candidate budget per claim.",
 )
 @click.option(
     "--semantic-child-top-k",
     default=None,
     type=click.IntRange(min=1),
-    help="Override number of child/leaf semantic hits to retrieve per claim.",
+    help="Override semantic child/leaf candidate budget for semantic and hybrid retrieval.",
 )
 @click.option(
     "--embedding-model",

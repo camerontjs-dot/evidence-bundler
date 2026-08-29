@@ -16,7 +16,6 @@ from evidence_bundler.contracts.hashing import (
     write_sha256sums,
 )
 from evidence_bundler.contracts.writer import (
-    BundleWriterError,
     build_fixture_bundle,
     build_retrieval_bundle,
     validate_bundle_tree,
@@ -379,23 +378,46 @@ def test_contradiction_bundle_reports_no_countercandidate_without_no_candidate(
     assert result.retrieval_report.no_countercandidate_claim_ids == ["clm-001"]
 
 
-def test_retrieval_bundle_rejects_unwired_semantic_before_writing(
+def test_build_retrieval_bundle_semantic_emits_valid_cb_tree(
     mixed_scaffold_run_tmp: Path,
     tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+    monkeypatch.setattr(
+        "evidence_bundler.contracts.writer.load_embedding_model",
+        lambda *_args, **_kwargs: FakeEmbedder(),
+    )
     bundle_dir = tmp_path / "evidence-bundle-semantic"
+    report_path = tmp_path / "semantic-report.md"
 
-    with pytest.raises(
-        BundleWriterError,
-        match="--method semantic is wired in Phase 2b Unit 2/3; not available yet",
-    ):
-        build_retrieval_bundle(
-            mixed_scaffold_run_tmp,
-            bundle_dir,
-            config=RetrievalConfig(retrieval_method="semantic"),
-        )
+    result = build_retrieval_bundle(
+        mixed_scaffold_run_tmp,
+        bundle_dir,
+        config=RetrievalConfig(
+            retrieval_method="semantic",
+            top_k=2,
+            semantic_child_top_k=5,
+            embedding_model="fake-semantic-model",
+        ),
+        report_out=report_path,
+    )
 
-    assert not bundle_dir.exists()
+    assert result.retrieval_report is not None
+    assert result.retrieval_report.retrieval_config.retrieval_method == "semantic"
+    assert validate_bundle_tree(bundle_dir) == []
+    assert verify_sha256sums(bundle_dir) == []
+    assert any(
+        summary.top_semantic_score is not None
+        for summary in result.retrieval_report.claim_summaries
+        if not summary.no_candidate
+    )
+    assert all(
+        summary.top_lexical_score is None
+        for summary in result.retrieval_report.claim_summaries
+    )
+    report = report_path.read_text(encoding="utf-8")
+    assert "- Retrieval method: `semantic`" in report
+    assert "- Semantic child top-k: `5`" in report
 
 
 class FakeEmbedder:
