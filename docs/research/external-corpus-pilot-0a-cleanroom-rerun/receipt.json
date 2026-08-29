@@ -1,0 +1,89 @@
+{
+  "schema": "external-corpus-pilot-0a-cleanroom-rerun-receipt-v1",
+  "date": "2026-08-29",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "production_main_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "record_branch": "research-infra/external-corpus-pilot-0a-cleanroom-rerun-20260829",
+  "record_head_before_receipt": "ba21308cca4e28adb8625e7ca12b7eb04ba9e0c8",
+  "frozen_object": {
+    "pilot0a_pr": 20,
+    "preregistration_commit": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
+    "final_pr20_head": "357fe735067dbbd3d54f8872ffc8391dac724950",
+    "freshstack_queries_revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
+    "freshstack_corpus_revision": "069f66dc323e163b48b10d08408d282733d4393b",
+    "freshstack_framework_commit": "f1c4ec96477f5100f10c83798d33b3101db727fa",
+    "freshstack_indices": {
+      "langchain": 271,
+      "yolo": 42,
+      "laravel": 121,
+      "angular": 248,
+      "godot": 36
+    },
+    "scifact_repo_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+    "scifact_archive_sha256_recorded_by_pr20": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "scifact_archive_size_recorded_by_pr20": 3115079,
+    "scifact_claim_line_indices": [199, 66, 278, 114, 123]
+  },
+  "live_predecessors": {
+    "pr20": {"state": "closed", "merged": false, "disposition": "INCONCLUSIVE", "head": "357fe735067dbbd3d54f8872ffc8391dac724950"},
+    "pr21": {"state": "open", "merged": false, "disposition": "INCONCLUSIVE", "head": "764144f3da77140a8e542158948b4e88d40a7421"},
+    "pr22": {"state": "closed", "merged": false, "disposition": "FALSIFIED_CONTAMINATION_RECORD", "head": "4d91e7a3de78981e4f73489aab179767c58c1914"},
+    "pr18": {"state": "closed", "merged": false, "disposition": "FALSIFIED", "head": "f0331faa6f97b655de5b22dc419e21f3c0205df3"},
+    "pr17": {"state": "closed", "merged": false, "disposition": "SUPERSEDED_WITHOUT_TARGET_EXECUTION", "head": "27be0c85fdaae9e56a7622e007ca062575e9c433"}
+  },
+  "isolation": {
+    "conduit_project_list_attempted": true,
+    "conduit_result": "HTTP_429",
+    "isolated_evaluator_b_session_created": false,
+    "isolated_adjudicator_a_created": false,
+    "isolated_adjudicator_b_created": false,
+    "same_context_substitute_used": false
+  },
+  "exposure": {
+    "production_bm25_exposed": false,
+    "hybrid_exposed": false,
+    "semantic_only_exposed": false,
+    "evidence_bundler_dense_exposed": false,
+    "evidence_bundler_lexical_exposed": false,
+    "candidate_or_substitute_retriever_exposed": false,
+    "freshstack_candidate_list_exposed": false,
+    "freshstack_published_retrieval_result_exposed": true,
+    "freshstack_published_qrel_exposed_before_gold_freeze": false,
+    "scifact_published_evidence_exposed_before_gold_freeze": false,
+    "scientific_gold_creation_state": "NOT_EXECUTED"
+  },
+  "contamination": {
+    "surface": "rendered web search result for fresh-stack/freshstack README",
+    "content_classes_exposed": [
+      "FreshStack leaderboard snapshot",
+      "Oracle/Fusion published retrieval metrics",
+      "BM25 published retrieval metrics"
+    ],
+    "used_for_case_selection": false,
+    "used_for_source_aperture": false,
+    "used_for_provenance_matching": false,
+    "used_for_relevance": false,
+    "used_for_passage_rules": false,
+    "stop_invoked": true
+  },
+  "gates": {
+    "freshstack_provenance": "NOT_EXECUTED",
+    "freshstack_aperture": "NOT_EXECUTED",
+    "scifact_reconstruction": "NOT_EXECUTED",
+    "evaluator_b": "INDEPENDENCE_NOT_ESTABLISHED",
+    "evaluator_crosscheck": "NOT_EXECUTED",
+    "passage_materialization": "NOT_EXECUTED",
+    "adjudicator_a": "NOT_CREATED",
+    "adjudicator_b": "NOT_CREATED",
+    "adjudication_comparison": "NOT_EXECUTED",
+    "published_qrel_comparison": "NOT_EXECUTED",
+    "segmentation_gold_stability": "NOT_EXECUTED",
+    "corpus_authoring_influence": "NOT_EXECUTED"
+  },
+  "terminal_disposition": "FALSIFIED",
+  "terminal_reason": "Prohibited FreshStack published retrieval-result exposure falsified the clean-room isolation condition for this execution.",
+  "frozen_object_modified": false,
+  "retrieval_execution_authorized": false,
+  "later_24_30_case_apparatus_authorized": false,
+  "smallest_next_authorized_task": "Repeat the exact frozen Pilot 0A completion in a fresh context using mechanically source-only direct artifact acquisition that blocks README/paper/website/leaderboard/retrieval-result/qrel surfaces, and establish genuine isolated evaluator/adjudicator sessions before scientific gold work."
+}
