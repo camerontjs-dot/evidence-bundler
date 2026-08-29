@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EB RC4 retrieval result",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["case_id", "hits"],
+    "additionalProperties": false,
+    "properties": {
+      "case_id": {"type": "string", "minLength": 1},
+      "hits": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["passage_id", "rank", "score"],
+          "additionalProperties": false,
+          "properties": {
+            "passage_id": {"type": "string", "minLength": 1},
+            "rank": {"type": "integer", "minimum": 1},
+            "score": {"type": "number"}
+          }
+        }
+      }
+    }
+  }
+}
