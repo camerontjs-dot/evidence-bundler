@@ -17,7 +17,7 @@ This is an execution-isolation falsifier, not a scientific falsification of the 
 - Live `research/source_access_firewall/reader.py` has Git blob `de9387bbe62f481996a864e6404833f448928f4b`, identical to the PR #25 object.
 - Live `research/source_access_firewall/field_registry.json` has Git blob `22ea94bb7dcf6a62e50ce5175826934623fa2867`, identical to the PR #25 object.
 - The preserved assurance receipt records reader version `source-access-firewall/0.1.0`, reader SHA-256 `88f12f5998b729aa3ecee808925849837f98a8dd202f6fa2e419e90c091a1ed2`, registry SHA-256 `9e4c257108045b7b959e4468ba80d9d42ef4e99d2bd7a2f51fc0eec41e7560f9`, and disposition `SOURCE ACCESS ASSURED`.
-- A fresh rerun of the committed synthetic firewall-assurance GitHub Actions job was requested. At the last observation before this terminal record, the rerun job was queued; it is not used as evidence of a fresh pass here.
+- A fresh rerun of the committed synthetic firewall-assurance GitHub Actions job completed successfully on run `33256035804`, job `99110930740`. Compile, adversarial behavioral tests, static bypass guard, dummy-fixture/receipt generation, and runtime recording all completed successfully.
 - No external Parquet row was read in this execution.
 - No frozen Pilot case was materialized.
 - No FreshStack qrel, nugget, relevant/non-relevant ID, candidate list, retrieval result, answer/evidence field, or published gold was consumed.
@@ -31,7 +31,7 @@ This is an execution-isolation falsifier, not a scientific falsification of the 
 
 Because prior Pilot scientific observations entered the current assistant context, this context no longer satisfies the preregistered fresh-context requirement. Continuing scientific source reconstruction, aperture analysis, adjudication, passage mapping, or gold-stability work here would create evidence whose clean-room status cannot be certified.
 
-The source-access firewall itself was not falsified by this event. The breach occurred on the durable-authority acquisition surface before scientific Gate 1 and before any external source row access.
+The source-access firewall itself was not falsified by this event. The fresh synthetic assurance rerun succeeded. The breach occurred on the durable-authority acquisition surface before scientific Gate 1 and before any external source row access.
 
 ## HYPOTHESIS
 
