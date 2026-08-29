@@ -1,12 +1,16 @@
 # Gate 2 — FreshStack qrel-independent source aperture
 
-## Outcome
+## Scientific gate outcome
 
-`PASS` for the aperture rule itself, subject to Gate 1 reconstruction eligibility of the frozen FreshStack cases.
+`NOT COMPLETED AFTER TERMINAL FIREWALL FALSIFIER`
 
-For each frozen FreshStack information need, the bounded source world is the complete pinned corpus partition for the same externally fixed topic/config. This is `DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL`.
+Before the later machine-level qrel exposure occurred, pinned FreshStack construction/source-loader code was inspected through exact GitHub source files. That pre-exposure source-code observation supports the following **structural proposition**:
 
-| topic | aperture classification |
+> If an otherwise valid frozen FreshStack query identity is bound to a topic/config, the complete pinned corpus partition for the same topic can be derived without retrieval output or published qrels.
+
+For the five intended topics, that source-aperture rule is `DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL`.
+
+| topic | structural aperture classification |
 |---|---|
 | langchain | DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL |
 | yolo | DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL |
@@ -14,25 +18,12 @@ For each frozen FreshStack information need, the bounded source world is the com
 | angular | DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL |
 | godot | DETERMINISTICALLY DERIVED WITHOUT RETRIEVAL |
 
-## Source-only basis
+## Pre-exposure source-only basis
 
-At frozen FreshStack construction-code commit `f1c4ec96477f5100f10c83798d33b3101db727fa`, `DataLoader` stores the caller-selected `topic` as one dataset subset and loads the corpus from that subset's `train` split and the queries from that same subset's requested split. No retrieval-produced candidate list is needed to define that complete topic partition.
+At frozen FreshStack construction-code commit `f1c4ec96477f5100f10c83798d33b3101db727fa`, `DataLoader` stores the caller-selected `topic` as one dataset subset and loads the corpus from that subset's `train` split and the queries from that same subset's requested split. No retrieval-produced candidate list is needed to define the complete topic partition.
 
-The frozen Pilot 0A preregistration permits a deterministic query-associated source scope available without published relevance labels. Interpreting the complete pinned topic partition as the source world therefore does not rewrite the preregistered rule.
+No qrel values, candidate lists, retrieval results, leaderboards, or benchmark result tables were consumed in reaching this source-code proposition.
 
-## Explicit exclusions
+## Limitation
 
-This decision did not inspect or consume:
-
-- FreshStack qrels;
-- nuggets;
-- accepted-answer text;
-- relevant/non-relevant candidate lists;
-- leaderboards;
-- benchmark result tables;
-- retrieval-produced candidate pools;
-- retrieval output of any kind.
-
-## Caveat
-
-Gate 2 does not cure a broken or non-reconstructable frozen query identity. If Gate 1 establishes that one or more frozen cases do not exist at the pinned query revision, those cases cannot proceed merely because a topic-level source aperture exists.
+Because the execution was subsequently terminally falsified when the acquisition harness deserialized qrel-bearing query columns before gold freeze, this record must **not** be reported as a completed promotion Gate 2 `PASS`. It is preserved only as a clean pre-exposure methodology observation that may be re-established in a fresh execution.
