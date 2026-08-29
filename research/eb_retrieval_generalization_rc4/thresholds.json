@@ -1,0 +1,51 @@
+{
+  "apparatus_prerequisites": {
+    "oracle_case_hit_at_5_min": 1.0,
+    "oracle_decisive_recall_at_5_min": 1.0,
+    "oracle_c01_counterevidence_recall_at_5_min": 1.0,
+    "bm25_combined_l01_l04_case_hit_at_5_max": 0.70,
+    "bm25_combined_l01_l04_decisive_recall_at_5_max": 0.65,
+    "bm25_minimum_low_overlap_families_failing_target_floor": 3,
+    "bm25_c01_counterevidence_case_hit_at_5_min": 0.90,
+    "bm25_c01_counterevidence_recall_at_5_min": 0.90,
+    "bm25_c01_counterevidence_first_mrr_min": 0.75,
+    "construction_gamer_must_fail_intended_anti_cue_gate": true,
+    "cue_swap_gamer_must_fail_intended_anti_cue_gate": true,
+    "ordinary_lexical_controls_must_not_qualify": true,
+    "source_position_length_metadata_heuristics_must_not_qualify": true,
+    "max_technical_violations": 0
+  },
+  "target_gates": {
+    "combined_l01_l04_case_hit_at_5_min": 0.85,
+    "combined_l01_l04_decisive_recall_at_5_min": 0.80,
+    "combined_l01_l04_first_decisive_mrr_min": 0.60,
+    "per_low_overlap_family_case_hit_at_5_min": 0.75,
+    "per_low_overlap_family_decisive_recall_at_5_min": 0.70,
+    "cue_swap_pair_semantic_role_stability_min": 0.80,
+    "hybrid_minus_bm25_case_hit_absolute_min": 0.20,
+    "hybrid_minus_bm25_decisive_recall_absolute_min": 0.20,
+    "c01_counterevidence_case_hit_at_5_min": 0.90,
+    "c01_counterevidence_recall_at_5_min": 0.90,
+    "c01_counterevidence_first_mrr_min": 0.75,
+    "c01_hybrid_counterevidence_recall_max_regression_vs_bm25": 0.05,
+    "max_budget_violations": 0,
+    "max_invalid_provenance_hits": 0,
+    "max_out_of_scope_hits": 0,
+    "max_scope_mismatches": 0,
+    "max_false_completeness_claims": 0,
+    "max_answerability_overclaims": 0,
+    "max_shape_errors": 0,
+    "max_coverage_errors": 0
+  },
+  "gamer_discrimination": {
+    "intended_anti_cue_gates": [
+      "combined_l01_l04_case_hit_at_5",
+      "combined_l01_l04_decisive_recall_at_5",
+      "l04_case_hit_at_5",
+      "l04_decisive_recall_at_5",
+      "cue_swap_pair_semantic_role_stability"
+    ],
+    "incidental_technical_failure_does_not_count": true
+  },
+  "score_invariance_absolute_tolerance": 1e-12
+}
