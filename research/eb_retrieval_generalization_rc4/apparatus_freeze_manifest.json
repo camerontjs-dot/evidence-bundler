@@ -22,7 +22,7 @@
     ".github/workflows/research-eb-retrieval-rc4-apparatus.yml": "fb2268fa9dde10c0fe5e39243822ecc3f73103144e6b0a99cbc2eb59a6c0f318"
   },
   "preregistration_git_blobs": {
-    "research/eb_retrieval_generalization_rc4/control_plan.json": "43478f4b0c92e915dc14c65257c9241b4c9a5f53",
+    "research/eb_retrieval_generalization_rc4/control_plan.json": "43478f173c0bf08bd9636ffe78b6b0da31d109ae",
     "research/eb_retrieval_generalization_rc4/generator_config.json": "d7ee1093fa3d517ad4b529eb62f9320ed3524045",
     "research/eb_retrieval_generalization_rc4/metamorphic_plan.json": "afc60a698efdc5a60b40fee158639b8f0a59298c",
     "research/eb_retrieval_generalization_rc4/thresholds.json": "88e3ad4a976acc36e54cc2c064664240d4050b87"
