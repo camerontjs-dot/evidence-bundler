@@ -1,0 +1,43 @@
+{
+  "record": "eb-rc4-apparatus-terminal-receipt",
+  "disposition": "FALSIFIED",
+  "authorization": "TARGET_EXECUTION_PROHIBITED",
+  "synthetic_program_termination_required": true,
+  "no_rc5": true,
+  "decisive_run_id": 33226828617,
+  "decisive_run_head": "73e8cb1fee9cc6a77c64fba5a9e3a49af8fc487a",
+  "artifact_id": 9707144626,
+  "artifact_zip_sha256": "695bb5306d41124e2cf0dd24ce4f4b358adedd7e49ad3e2cf0e20c56f91c5389",
+  "benchmark": "eb-retrieval-low-overlap-rc4-v1",
+  "generator_seed": 173205,
+  "benchmark_tree_sha256": "f2b2c31614a78d30c424eb6646f6143a496fe916b446d801a9463cc4184a9457",
+  "freeze_manifest_sha256": "625fdef0a2f3e972e28c4e021b1e2fadc0a44ceb6f793013d603133d1a7e4aaa",
+  "target_config_sha256": "65c671e25dfd998350cfdb6d2a84c4a46d4db7e867827dd99fd4e57a8003f60e",
+  "first_sealed_control_sha256": "74bd5cef071470868d27e6b30e0f4587e0bc9e96fba4195b555ce6e1c5d8ff32",
+  "evaluator_assurance_sha256": "20b80ebe3be822f21b316ab8a6829eab3fe481dc7010fa117618049f8deb53d1",
+  "bm25_raw_sha256": "01edc992ce612a4248de49ef0c12031cae330fc1ce048ce4b944f5f48b66871e",
+  "bm25_evaluation_sha256": "6a93fff5026c090c506282e652cbf22dc949071609b94c1473bf41b9a078378e",
+  "bm25_gate_sha256": "42dddcba6a7d06ba3bf7997c7be98e7b4b9be230c9092f310afc9eae49999c3f",
+  "terminal_decision_sha256": "d1a69d2bd91ceb24da1e7a13d6176b3f8d8e8cd17b0de148b56392727071f402",
+  "terminal_evidence_summary_sha256": "0f2285987515f1cb2d28785194b1c531114b3dcf82842b7740b1d524632a8067",
+  "bm25": {
+    "combined_l01_l04_case_hit_at_5": 0.859375,
+    "combined_l01_l04_decisive_recall_at_5": 0.859375,
+    "combined_l01_l04_first_decisive_mrr": 0.375,
+    "families": {
+      "L01": {"case_hit_at_5": 0.8125, "decisive_recall_at_5": 0.8125},
+      "L02": {"case_hit_at_5": 1.0, "decisive_recall_at_5": 1.0},
+      "L03": {"case_hit_at_5": 0.6875, "decisive_recall_at_5": 0.6875},
+      "L04": {"case_hit_at_5": 0.9375, "decisive_recall_at_5": 0.9375},
+      "C01": {"counterevidence_case_hit_at_5": 1.0, "counterevidence_recall_at_5": 1.0, "first_counterevidence_mrr": 0.75}
+    },
+    "low_overlap_prerequisite_pass": false,
+    "c01_prerequisite_pass": true
+  },
+  "evaluator_assurance_pass": true,
+  "sealed_weak_gaming_controls_executed": false,
+  "sealed_metamorphic_controls_executed": false,
+  "hybrid_sealed_exposed": false,
+  "semantic_sealed_exposed": false,
+  "deviations": ["18a", "18b", "18c", "18d"]
+}
