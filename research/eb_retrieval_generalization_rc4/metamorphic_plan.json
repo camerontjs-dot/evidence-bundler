@@ -1,0 +1,74 @@
+{
+  "pairing_rule": "Each capability family has 8 fresh semantic scenarios with two paired surface variants. Semantic role is preserved unless a transformation explicitly performs a semantic-role exchange control.",
+  "transformations": [
+    {
+      "id": "swap_decisive_decoy_construction_style",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_construction_gamer": "change_or_fail"
+    },
+    {
+      "id": "equalize_exchange_passage_lengths",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_length_heuristic": "change_or_fail"
+    },
+    {
+      "id": "permute_source_and_passage_order",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "identity_invariant_within_scoring_tolerance",
+      "expected_source_order_heuristic": "change_or_fail"
+    },
+    {
+      "id": "exchange_runtime_visible_metadata_style",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_metadata_heuristic": "change_or_fail"
+    },
+    {
+      "id": "consistent_fictional_entity_rename",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_lexical_controls": "may_change"
+    },
+    {
+      "id": "punctuation_and_format_alteration",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_construction_gamer": "may_change_or_fail"
+    },
+    {
+      "id": "move_decisive_meaning_sentence_position",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_position_heuristic": "change_or_fail"
+    },
+    {
+      "id": "exchange_concise_verbose_realization",
+      "semantics": "preserved",
+      "expected_oracle": "same_semantic_role",
+      "expected_legitimate_semantic_system": "preserve_decisive_role",
+      "expected_length_style_gamer": "change_or_fail"
+    },
+    {
+      "id": "semantic_role_exchange_with_cue_profile_fixed",
+      "semantics": "role_changed",
+      "expected_oracle": "follow_new_semantic_role",
+      "expected_legitimate_semantic_system": "follow_new_semantic_role",
+      "expected_cue_gamer": "stay_with_old_cue_and_fail"
+    }
+  ],
+  "promotion_critical_metrics": {
+    "cue_swap_pair_semantic_role_stability_min": 0.80,
+    "oracle_expected_direction_pass_fraction": 1.0,
+    "construction_gamer_expected_direction": "must_fail_at_least_one_intended_anti_cue_gate"
+  },
+  "execution_state": "preregistered_not_run"
+}
