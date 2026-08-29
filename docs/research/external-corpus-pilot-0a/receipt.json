@@ -1,0 +1,51 @@
+{
+  "artifact": "external-corpus-methodology-pilot-0a-receipt",
+  "terminal_disposition": "INCONCLUSIVE",
+  "evidence_bundler_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "preregistration_commit_sha": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
+  "evidence_record_commit_sha": "dad4c9bc77b5740c619c57854dbc36a787d7228c",
+  "evidence_record_tree_sha": "b73561eea125a323eff644020b1f5c371cb840ec",
+  "artifact_git_blob_sha1": {
+    "source-corpus-manifest.json": "a94aa3afaa056f31dc2bec976866175163983cac",
+    "passage-correspondence-manifest.json": "c0b43edb1c196e1e2dbaf7b6b767056d0b6f34c6",
+    "relevance-contract.json": "5caef9ead7db0f43c6a2c4a7cb233305fea64c99",
+    "adjudication-records.json": "57658b5774943ae00a9c7ee33bd6cf1cde9b61be",
+    "evaluator-contract.json": "1771f4eabcdff712b401f0f525ca9cda0d1dc102",
+    "p2-evaluator-results.json": "1149d90c7460bb201b5e4a11cfd5350eda1dd6c9",
+    "blind-handoff-dummy.json": "c5688f0a722eca3e9e4f8ec28165252062c46d04",
+    "deviations.md": "6913004bcaba4ba7711d6d0a80b6c1f0d825cbb8",
+    "terminal-methodology-decision.md": "572f613265761608b4f9b09618171e5701ff592a",
+    "results-external-corpus-methodology-pilot-0a.md": "e96e4dc69d5fb821e7bd88c8555b715ae4b9bc75",
+    "evaluator_a.py": "3a4fa578158ac6d45ecf820e192d8a62cb8fa3b9",
+    "evaluator_b.py": "a42dc698b94a21f1e12e6060c0ec05434c5180cb",
+    "dummy_fixture.json": "02ea3d181a946718ddbcd4a2344613e4c9731151"
+  },
+  "external_integrity_hashes": {
+    "scifact_data_tar_gz_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "dummy_public_manifest_sha256": "350d785a41b8d46e6e244c76f03de503d643e206d2819e8e5cad147dbe9bd4e4",
+    "dummy_hidden_gold_commitment_sha256": "43854ac4ae6d804ae7682252dcc35fa31cad7477cce7210bd7b9cc280891a21d"
+  },
+  "scientific_object": {
+    "sample_frozen": true,
+    "sample_size": 10,
+    "scientific_source_bytes_materialized": false,
+    "scientific_passage_manifest_materialized": false,
+    "scientific_gold_created": false,
+    "independent_adjudications_created": 0,
+    "freshstack_source_aperture": "UNRESOLVED",
+    "scifact_source_aperture": "cited_doc_ids preregistered; bytes not materialized"
+  },
+  "exposure_state": {
+    "production_bm25_exposed": false,
+    "hybrid_exposed": false,
+    "semantic_only_exposed": false,
+    "freshstack_published_qrels_used_for_scientific_gold": false,
+    "scifact_published_evidence_used_for_scientific_gold": false
+  },
+  "parallel_lanes": {
+    "P1": "PARTIAL: provenance/licensing/reconstruction audit completed to available source metadata; scientific bytes blocked",
+    "P2": "PASS FOR DUMMY INFRASTRUCTURE ONLY; two same-context differential implementations; no independence claim",
+    "P3": "PASS FOR DUMMY COMMITMENT/REVEAL MECHANICS ONLY"
+  },
+  "smallest_next_authorized_task": "Complete the already-frozen 10-case Pilot 0A execution unchanged in an environment with pinned-byte acquisition and two isolated adjudicators. Do not expand to 24-30 cases and do not expose retrieval systems."
+}
