@@ -1,0 +1,41 @@
+{
+  "receipt_version": "fresh-external-corpus-evaluator-freeze-v1",
+  "execution_scope": "Research Infrastructure / evaluator-independence reproduction only",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "branch": "research-infra/fresh-evaluator-reproduction-20260829-contextfree",
+  "base_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+  "implementation_freeze_commit_sha": "dfb9912f871f0ca5bba295609da1929bcf883e67",
+  "implementation_path": "research/external_corpus_evaluator_independence_fresh_reproduction_20260829/fresh_external_corpus_evaluator.py",
+  "implementation_git_blob_sha": "28b8a50df9c073eaf13db30f6264304b75be567c",
+  "implementation_sha256": "a1c18384627b929a434f38a81762b592b2483661dc81e11e0a210c1a12a4de5a",
+  "bootstrap_manifest": {
+    "path": "docs/research/pilot0a-fresh-context-isolation/authority-manifest-v3.json",
+    "ref": "417f352400685c5d4db31b8e23f13c530857105a",
+    "git_blob_sha": "ee3cf5ec59f4228b96af5b70c7c0fa439bbe2f3a"
+  },
+  "durable_governance_sha256_verified": {
+    "CAL-PIPELINE-PROJECT-CONTEXT.md": "f5f4081e8d4942f7eb993d937c9e46c80e5a8898811d795f76e2dcb3e7c51caa",
+    "PRODUCT-NORTH-STAR.md": "fedf1cb2f7473f427455c88137ad05164fa935c2584df383ed2eb8f609f01f64",
+    "GITHUB-AND-PR-GOVERNANCE.md": "515b7541313c8ace8807fd1ca46d8ade0569521845e0e68f927d0783202d637c",
+    "PROJECT-STATE-LOCATION-POLICY.md": "dcf80aee6abfa9f4d67f1a8d10176297ea96defb123bce16f4ef1e0187b6085c",
+    "EPISTEMIC-RECORD-CONVENTIONS.md": "df571d1bfb809b2ec6eada35c16f70d4d2697b9dca0f09c3502fff2ed4b19c25",
+    "RELEASE-AND-VERSION-GOVERNANCE.md": "15047684338f726ff598575498c06f53e0e0b7dbfab58817c31c2ed827d1b03a",
+    "AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS.md": "3ac309c059aea19c8fa4f6c0fb963933018fb299339073ef4252feeff7517279",
+    "CAL-PIPELINE-WRITING-STYLE-GUIDANCE.md": "b8a36814e9bbd8fdba5ef0b1ab9b70d87d5e5058364a11fd124f1827ec5ac66b",
+    "CONTEXT-FREE-EXECUTION-PROTOCOL.md": "3c97f27922398cb311a122046d89ac443342a48f675ff01faad344cc0890e30d"
+  },
+  "pre_freeze_task_sources_opened": [
+    {"path": "research/external_corpus_evaluator_independence_v1/contract.md", "ref": "764144f3da77140a8e542158948b4e88d40a7421", "git_blob_sha": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"},
+    {"path": "research/external_corpus_evaluator_independence_v1/dummy_manifest.json", "ref": "764144f3da77140a8e542158948b4e88d40a7421", "git_blob_sha": "f2d0c1ff3b39d20c92878d75d8a345bc152f971d"},
+    {"path": "research/external_corpus_evaluator_independence_v1/dummy_run.json", "ref": "764144f3da77140a8e542158948b4e88d40a7421", "git_blob_sha": "45b9ef6e005fd7e005ec75305c2829fa241f8f81"},
+    {"path": "research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json", "ref": "764144f3da77140a8e542158948b4e88d40a7421", "git_blob_sha": "c6960cebeafa4c5dd214d7f32d47e68294a3f4da"}
+  ],
+  "pre_freeze_self_checks": {
+    "python_compile": "PASS",
+    "authorized_dummy_fixture": "PASS",
+    "contract_derived_fail_closed_and_metamorphic_checks": "PASS",
+    "implementation_bytes_changed_after_self_checks": false
+  },
+  "pre_freeze_prohibited_surfaces_intentionally_opened": [],
+  "statement": "Before this freeze, no existing evaluator A/B, canonicalizer, evaluator-independence tests, expected-result/prior-comparison artifact, prior evaluator implementation reasoning, Pilot scientific source rows/gold/observations, FreshStack qrels/nuggets, SciFact prohibited evidence/rationale, Evidence Bundler retriever, or retrieval output was intentionally opened. No post-reveal implementation edits are permitted under this independence claim."
+}
