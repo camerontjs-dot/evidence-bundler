@@ -1,0 +1,36 @@
+{
+  "pilot": "External Corpus Methodology Pilot 0A",
+  "source_pr": 20,
+  "production_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "preregistration_sha": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
+  "frozen_pr20_head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+  "freshstack": {
+    "query_dataset": "freshstack/queries-oct-2024-unfiltered",
+    "query_revision": "00150066ff2959688ad03ce7148ffb652f2fee38",
+    "corpus_dataset": "freshstack/corpus-oct-2024",
+    "corpus_revision": "069f66dc323e163b48b10d08408d282733d4393b",
+    "construction_repo": "fresh-stack/freshstack",
+    "construction_commit": "f1c4ec96477f5100f10c83798d33b3101db727fa",
+    "selected_physical_test_rows": {
+      "langchain": 271,
+      "yolo": 42,
+      "laravel": 121,
+      "angular": 248,
+      "godot": 36
+    }
+  },
+  "scifact": {
+    "canonical_repo": "allenai/scifact",
+    "canonical_repo_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+    "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "archive_bytes": 3115079,
+    "selected_physical_claim_rows": [199, 66, 278, 114, 123]
+  },
+  "evaluator_contract": {
+    "source_pr": 21,
+    "head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+    "path": "research/external_corpus_evaluator_independence_v1/contract.md",
+    "git_blob_sha1": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"
+  },
+  "mutation_policy": "No sample, corpus, revision, passage rule, relevance degree, evidence role/group semantics, or inclusion criterion may be changed in this execution."
+}
