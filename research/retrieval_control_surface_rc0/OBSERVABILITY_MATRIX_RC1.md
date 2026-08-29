@@ -33,3 +33,7 @@ Status: Research Infrastructure. Characterization remains unauthorized until thi
 A characterization arm must use `build_research_arm_receipt` and persist the JSON receipt plus its SHA-256 sidecar. The receipt contains the complete serialized `RetrievalConfig`, a normalized identity config, apparatus commit/tree, source run/corpus identity, ordered chunk-set hash, canonical model identities/revisions, runtime package versions, platform/device context, and output hashes.
 
 A configuration-hash change is not accepted as the sole observability proof for an experimental variable.
+
+## Validation authority
+
+The successor workflow records the exact commit SHA and tree SHA before running deterministic tests and the pinned real-model smoke. Its artifact is evidence for that exact tested object; it does not mutate the tested tree.
