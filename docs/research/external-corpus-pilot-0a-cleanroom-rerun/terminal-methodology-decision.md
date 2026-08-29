@@ -8,9 +8,11 @@ Date: 2026-08-29
 
 This run cannot support a clean pre-retrieval methodology claim because published FreshStack retrieval results were exposed by the rendered result of a source-only web search. The task explicitly defines prohibited retrieval exposure as a clean-room falsifier and requires the affected scientific claim to stop.
 
+In addition, required live inspection of predecessor PRs #17/#18 rendered historical production-BM25 result values in their PR bodies. Those values were not used for this Pilot 0A work, but the literal firewall also counts that rendering as exposure. The FreshStack exposure independently suffices for the terminal disposition.
+
 This disposition is about this clean execution attempt. It does not establish that the frozen ten-case Pilot 0A object is scientifically invalid.
 
-The frozen object remains unchanged and no production retriever was run.
+The frozen object remains unchanged and no production retriever was executed in this run.
 
 ## OBSERVED
 
@@ -22,10 +24,11 @@ The frozen object remains unchanged and no production retriever was run.
 - The exact Pilot 0A sample identities, corpus revisions, passage rules, relevance semantics, and adjudication protocol were re-established from the frozen PR #20 preregistration and were not modified.
 - A MainFrame/Conduit isolation-surface check returned HTTP 429 before exposing any project/session list. No isolated evaluator or adjudicator was launched.
 - A source-only FreshStack web search rendered the `fresh-stack/freshstack` README and exposed a FreshStack leaderboard snapshot containing published Oracle/Fusion and BM25 retrieval metrics.
+- Required live inspection of predecessor PRs #17/#18 rendered historical production-BM25 result values. They were not used in current Pilot 0A methodology work.
 - No FreshStack retrieval-produced candidate list was inspected.
 - No FreshStack qrels were inspected before scientific gold freeze.
 - No SciFact published evidence/rationale annotations were inspected before scientific gold freeze.
-- No production BM25, Hybrid, Semantic-only, dense, lexical, or substitute candidate retriever was run or inspected.
+- No production BM25, Hybrid, Semantic-only, dense, lexical, or substitute candidate retriever was executed in this run.
 - No scientific gold was created.
 
 ## INFERENCE
@@ -36,7 +39,7 @@ The frozen object remains unchanged and no production retriever was run.
 
 ## HYPOTHESIS
 
-A future clean rerun may still be able to complete Pilot 0A if source acquisition is made mechanically source-only, without search-result surfaces that can inline benchmark leaderboards or paper results, and if genuinely isolated evaluator/adjudicator sessions are available.
+A future clean rerun may still be able to complete Pilot 0A if source acquisition is made mechanically source-only, without search-result surfaces that can inline benchmark leaderboards or paper results, predecessor inspection is reduced to disposition-only metadata that cannot render retrieval results, and genuinely isolated evaluator/adjudicator sessions are available.
 
 ## UNKNOWN
 
@@ -123,7 +126,7 @@ The project did not modify the frozen corpus selection, query selection, segment
 
 ## 12. Contamination/exposure
 
-- production BM25 exposed: `false`
+- production BM25 exposed: `true` — historical predecessor-result values rendered incidentally during required live PR #17/#18 inspection; no production BM25 execution occurred in this run and the values were not used in Pilot 0A methodology work
 - Hybrid exposed: `false`
 - Semantic-only exposed: `false`
 - Evidence Bundler dense exposed: `false`
@@ -139,9 +142,10 @@ Exact retrieval-result exposure is preserved in `contamination-exposure-log.md`.
 
 ## 13. Falsified alternatives
 
-The following alternative is falsified for this execution:
+The following alternatives are falsified for this execution:
 
 - `The rerun remained clean of prohibited FreshStack retrieval-result exposure.`
+- `Required predecessor-state inspection remained free of production-BM25 output rendering.`
 
 No scientific alternatives about provenance, source aperture, segmentation, adjudication, qrel leakage, metadata leakage, evaluator semantics, or corpus-specific gold stability were tested after the stop.
 
@@ -149,7 +153,7 @@ No scientific alternatives about provenance, source aperture, segmentation, adju
 
 The strongest remaining alternative is procedural rather than scientific:
 
-> Pilot 0A may still be methodologically viable, but the current information-acquisition path is too permissive because a search result can inline forbidden benchmark-result content even when the query is source-oriented.
+> Pilot 0A may still be methodologically viable, but the current information-acquisition and predecessor-inspection paths are too permissive because they can render forbidden retrieval-result content before scientific work begins.
 
 This must be tested in a new execution context, not repaired here.
 
@@ -157,7 +161,7 @@ This must be tested in a new execution context, not repaired here.
 
 `FALSIFIED`
 
-Reason: explicit clean-room retrieval-result exposure falsifier.
+Reason: explicit clean-room retrieval-result exposure falsifier. FreshStack published-result exposure is independently decisive; required predecessor inspection also rendered historical production-BM25 output.
 
 This does not authorize any 24-30 case apparatus, production BM25, Hybrid, Semantic-only, dense, lexical, or substitute retrieval execution.
 
@@ -168,11 +172,12 @@ Run the exact frozen ten-case Pilot 0A completion again from a fresh context wit
 1. do not use general web/search rendering for FreshStack source reconstruction;
 2. acquire only exact pinned dataset files, exact source-code files, Git objects, and immutable upstream blobs by direct path/commit;
 3. pre-block FreshStack README, website, paper, leaderboard, retrieval/evaluation documentation, and qrel/candidate-list surfaces before any source reconstruction;
-4. establish a genuinely isolated evaluator-B session before evaluator A comparison;
-5. only after provenance/aperture and evaluator-independence gates pass, create two isolated scientific adjudication contexts;
-6. preserve the exact PR #20 object unchanged.
+4. inspect required predecessor PRs through disposition/head/state-only metadata that does not render historical retrieval-result bodies;
+5. establish a genuinely isolated evaluator-B session before evaluator A comparison;
+6. only after provenance/aperture and evaluator-independence gates pass, create two isolated scientific adjudication contexts;
+7. preserve the exact PR #20 object unchanged.
 
-The cheapest discriminator is therefore not another benchmark modification. It is whether a fresh execution with mechanically source-only acquisition and real isolation can complete Gate 1 without prohibited exposure.
+The cheapest discriminator is therefore not another benchmark modification. It is whether a fresh execution with mechanically source-only acquisition, result-free predecessor metadata, and real isolation can complete Gate 1 without prohibited exposure.
 
 # Required durable-record status map
 
@@ -197,7 +202,7 @@ The cheapest discriminator is therefore not another benchmark modification. It i
 19. published-qrel comparison - `NOT_EXECUTED`
 20. segmentation/gold stability - `NOT_EXECUTED`
 21. corpus-authoring influence audit - `NOT_EXECUTED`
-22. deviations - `RECORDED: isolation HTTP 429; prohibited FreshStack retrieval-result exposure`
+22. deviations - `RECORDED: isolation HTTP 429; prohibited FreshStack retrieval-result exposure; predecessor production-BM25 result rendering`
 23. terminal methodology decision - `RECORDED: FALSIFIED`
 24. machine-readable receipt - `RECORDED`
 
