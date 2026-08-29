@@ -1,0 +1,94 @@
+name: Research - source access firewall assurance
+
+on:
+  pull_request:
+    paths:
+      - "research/source_access_firewall/**"
+      - "docs/research/source-access-isolation-assurance/**"
+      - ".github/workflows/research-source-access-firewall.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-firewall-assurance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install pinned research-only runtime
+        run: |
+          python -m pip install --disable-pip-version-check --no-input pyarrow==17.0.0 pytest==8.3.5
+
+      - name: Compile audited research module
+        run: |
+          python -m compileall -q research/source_access_firewall
+
+      - name: Run adversarial behavioral suite
+        run: |
+          mkdir -p assurance-artifacts
+          python -m pytest research/source_access_firewall/tests -q --junitxml=assurance-artifacts/junit.xml
+
+      - name: Run static bypass guard
+        if: always()
+        run: |
+          python -m research.source_access_firewall.static_guard \
+            --repo-root . \
+            --json-out assurance-artifacts/static-assurance.json
+
+      - name: Generate dummy fixtures and execution receipts
+        if: always()
+        run: |
+          python -m research.source_access_firewall.run_assurance \
+            --out assurance-artifacts/dummy
+
+      - name: Record runtime identity
+        if: always()
+        env:
+          ASSURANCE_GIT_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import platform
+          from pathlib import Path
+          import pyarrow
+
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          record = {
+              "runtime_record_version": "1.0.0",
+              "git_sha": os.environ["ASSURANCE_GIT_SHA"],
+              "python": platform.python_version(),
+              "pyarrow": pyarrow.__version__,
+              "reader_sha256": sha("research/source_access_firewall/reader.py"),
+              "field_registry_sha256": sha("research/source_access_firewall/field_registry.json"),
+              "static_guard_sha256": sha("research/source_access_firewall/static_guard.py"),
+              "fixture_factory_sha256": sha("research/source_access_firewall/fixture_factory.py"),
+              "tests_sha256": sha("research/source_access_firewall/tests/test_firewall.py"),
+              "scientific_external_data_accessed": False,
+              "retriever_executed": False,
+          }
+          Path("assurance-artifacts/runtime.json").write_text(
+              json.dumps(record, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload synthetic assurance receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-access-firewall-assurance
+          path: assurance-artifacts/
+          if-no-files-found: error
+          retention-days: 30

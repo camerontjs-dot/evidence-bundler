@@ -1,0 +1,63 @@
+{
+  "$id": "urn:evidence-bundler:source-access-receipt:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "SUCCESS"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "forbidden_column_requested": {
+            "const": false
+          },
+          "forbidden_columns_deserialized": {
+            "const": false
+          }
+        },
+        "required": [
+          "forbidden_column_requested",
+          "forbidden_columns_deserialized"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "artifact_id": {"type": "string"},
+    "artifact_type": {"type": "string"},
+    "explicitly_forbidden_columns_present": {"type": "array"},
+    "failure_code": {"type": ["string", "null"]},
+    "forbidden_column_requested": {"type": "boolean"},
+    "forbidden_columns_deserialized": {"type": "boolean"},
+    "physical_read_calls": {"type": "array"},
+    "projection_guarantee": {"type": "object"},
+    "reader_source_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "reader_version": {"type": "string"},
+    "receipt_version": {"const": "1.0.0"},
+    "requested_logical_fields": {"oneOf": [{"items": {"type": "string"}, "type": "array"}, {"type": "null"}]},
+    "resolved_physical_columns": {"type": "array"},
+    "result": {"enum": ["SUCCESS", "FAIL_CLOSED", "PENDING"]},
+    "returned_columns": {"type": "array"},
+    "runtime": {"type": "object"},
+    "schema_hash": {"type": ["string", "null"]},
+    "source_artifacts": {"type": "array"},
+    "unknown_columns_present": {"type": "array"}
+  },
+  "required": [
+    "receipt_version", "reader_version", "artifact_id", "artifact_type", "requested_logical_fields",
+    "source_artifacts", "schema_hash", "resolved_physical_columns", "returned_columns",
+    "explicitly_forbidden_columns_present", "unknown_columns_present", "forbidden_column_requested",
+    "forbidden_columns_deserialized", "physical_read_calls", "projection_guarantee", "runtime",
+    "reader_source_sha256", "result", "failure_code"
+  ],
+  "title": "Source Access Firewall Receipt",
+  "type": "object"
+}

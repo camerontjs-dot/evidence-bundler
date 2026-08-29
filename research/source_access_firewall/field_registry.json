@@ -1,0 +1,53 @@
+{
+  "registry_version": "1.0.0",
+  "artifact_types": {
+    "freshstack_query_parquet": {
+      "required_logical_fields": ["query_id", "query_title", "query_text"],
+      "allowed_logical_to_physical": {
+        "query_id": ["query_id"],
+        "query_title": ["query_title"],
+        "query_text": ["query_text"]
+      }
+    },
+    "source_corpus_parquet": {
+      "required_logical_fields": ["source_id", "source_text"],
+      "allowed_logical_to_physical": {
+        "source_id": ["_id", "id"],
+        "source_text": ["text"],
+        "source_url": ["url", "metadata.url"],
+        "source_start_byte": ["start_byte", "metadata.start_byte"],
+        "source_end_byte": ["end_byte", "metadata.end_byte"],
+        "source_commit_id": ["commit_id", "metadata.commit_id"]
+      }
+    }
+  },
+  "forbidden_canonical_fields": [
+    "nuggets",
+    "relevant_corpus_ids",
+    "non_relevant_corpus_ids",
+    "qrel",
+    "qrels",
+    "answer_text",
+    "accepted_answer",
+    "answer",
+    "evidence",
+    "rationale",
+    "candidate_ids",
+    "candidate_documents",
+    "retrieval_score",
+    "retrieval_rank",
+    "retrieval_results",
+    "leaderboard",
+    "result_metadata"
+  ],
+  "forbidden_aliases": {
+    "rel_ids": "relevant_corpus_ids",
+    "relevant_ids": "relevant_corpus_ids",
+    "nonrel_ids": "non_relevant_corpus_ids",
+    "judged_nonrelevant_ids": "non_relevant_corpus_ids",
+    "accepted": "accepted_answer",
+    "answer_evidence": "evidence",
+    "retrieval_candidates": "candidate_ids",
+    "score": "retrieval_score"
+  }
+}
