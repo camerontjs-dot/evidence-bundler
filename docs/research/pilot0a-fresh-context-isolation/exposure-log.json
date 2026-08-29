@@ -1,0 +1,38 @@
+{
+  "log_version": "1.0.0",
+  "task": "External Corpus Methodology Pilot 0A fresh completion using assured source-access firewall",
+  "scientific_gate_entered": false,
+  "scientific_source_rows_read": false,
+  "frozen_cases_materialized": false,
+  "events": [
+    {
+      "event_id": "EXPOSURE-001",
+      "classification": "PRIOR_PILOT_SCIENTIFIC_OBSERVATION_EXPOSURE",
+      "surface": "GitHub pull-request metadata response for PR #20",
+      "cause": "A broad PR metadata action returned the complete PR body while only identity and terminal-state fields were required.",
+      "effect": "The current assistant context can no longer certify itself as a genuinely fresh Pilot 0A scientific execution.",
+      "scientific_use": false,
+      "source_row_access": false,
+      "retrieval_output_access": false,
+      "published_qrel_access": false,
+      "prior_scientific_gold_access": false,
+      "disposition": "terminal clean-room execution falsifier; scientific methodology not evaluated"
+    }
+  ],
+  "exposure_state": {
+    "freshstack_qrel_or_nugget_exposure": false,
+    "freshstack_relevant_or_nonrelevant_corpus_ids": false,
+    "answer_or_evidence_exposure": false,
+    "candidate_list_exposure": false,
+    "retrieval_result_exposure": false,
+    "scifact_published_evidence_or_rationale_exposure": false,
+    "prior_scientific_gold_exposure": false,
+    "production_bm25_exposure": false,
+    "hybrid_exposure": false,
+    "semantic_only_exposure": false,
+    "dense_lexical_or_reranker_exposure": false,
+    "direct_source_reader_bypass_attempt": false,
+    "accidental_browser_or_document_exposure": false,
+    "prior_pilot_scientific_observation_exposure": true
+  }
+}
