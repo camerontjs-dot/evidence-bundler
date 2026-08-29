@@ -1,0 +1,35 @@
+{
+  "schema_version": "external-corpus-hidden-gold-v0.2-draft",
+  "corpus_version": "dummy-corpus-v1",
+  "corpus_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "benchmark_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "qrels_mode": "complete_relevant_set",
+  "ndcg_eligible": true,
+  "queries": [
+    {
+      "query_id": "q1",
+      "judgments": [
+        {"passage_id": "p1", "relevance_degree": "DECISIVE", "binary_relevant": true, "gain": 3, "role": "SUPPORT"},
+        {"passage_id": "p2", "relevance_degree": "PARTIAL", "binary_relevant": true, "gain": 1, "role": "SUPPORT"},
+        {"passage_id": "p3", "relevance_degree": "PARTIAL", "binary_relevant": true, "gain": 1, "role": "COUNTEREVIDENCE"},
+        {"passage_id": "p6", "relevance_degree": "IRRELEVANT", "binary_relevant": false, "gain": 0, "role": "NEUTRAL_OR_NOT_APPLICABLE"}
+      ],
+      "groups": [
+        {"group_id": "g1", "group_kind": "JOINTLY_REQUIRED", "passage_ids": ["p1", "p3"]},
+        {"group_id": "g1-alt", "group_kind": "ALTERNATIVE_SUFFICIENT", "passage_ids": ["p1", "p2"]}
+      ]
+    },
+    {
+      "query_id": "q2",
+      "judgments": [
+        {"passage_id": "p4", "relevance_degree": "DECISIVE", "binary_relevant": true, "gain": 3, "role": "COUNTEREVIDENCE"},
+        {"passage_id": "p5", "relevance_degree": "PARTIAL", "binary_relevant": true, "gain": 1, "role": "SUPPORT"},
+        {"passage_id": "p3", "relevance_degree": "TOPICAL", "binary_relevant": false, "gain": 0, "role": "NEUTRAL_OR_NOT_APPLICABLE"},
+        {"passage_id": "p6", "relevance_degree": "UNKNOWN", "binary_relevant": null, "gain": null, "role": "UNKNOWN"}
+      ],
+      "groups": [
+        {"group_id": "g2", "group_kind": "JOINTLY_REQUIRED", "passage_ids": ["p4", "p5"]}
+      ]
+    }
+  ]
+}
