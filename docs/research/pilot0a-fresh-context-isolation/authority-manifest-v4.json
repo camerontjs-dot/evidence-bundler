@@ -1,0 +1,80 @@
+{
+  "manifest_version": "4.0.0",
+  "purpose": "Fresh-run-safe bootstrap identities and access rules for a second independent reproduction of the External Corpus evaluator contract after contract v0.3 clarified query-local nDCG eligibility. This record is Research Infrastructure only and contains no Pilot scientific observations, corpus diagnostics, scientific relevance judgments, retrieval outputs, target-system performance, or scientific disposition.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "supersedes_for_evaluator_reproduction": "authority-manifest-v3 evaluator-independence reproduction aperture only; v3 remains historical authority for the first reproduction and its durable-governance attachment identities.",
+  "durable_governance": {
+    "source": "Exact ChatGPT project attachments listed below",
+    "rule": "Before task-specific GitHub access, compute SHA-256 of every supplied attachment and require an exact match. If any required file is missing or differs, stop before evaluator implementation rather than substituting another version.",
+    "required_files": [
+      {"name": "CAL-PIPELINE-PROJECT-CONTEXT.md", "sha256": "f5f4081e8d4942f7eb993d937c9e46c80e5a8898811d795f76e2dcb3e7c51caa"},
+      {"name": "PRODUCT-NORTH-STAR.md", "sha256": "fedf1cb2f7473f427455c88137ad05164fa935c2584df383ed2eb8f609f01f64"},
+      {"name": "GITHUB-AND-PR-GOVERNANCE.md", "sha256": "515b7541313c8ace8807fd1ca46d8ade0569521845e0e68f927d0783202d637c"},
+      {"name": "PROJECT-STATE-LOCATION-POLICY.md", "sha256": "dcf80aee6abfa9f4d67f1a8d10176297ea96defb123bce16f4ef1e0187b6085c"},
+      {"name": "EPISTEMIC-RECORD-CONVENTIONS.md", "sha256": "df571d1bfb809b2ec6eada35c16f70d4d2697b9dca0f09c3502fff2ed4b19c25"},
+      {"name": "RELEASE-AND-VERSION-GOVERNANCE.md", "sha256": "15047684338f726ff598575498c06f53e0e0b7dbfab58817c31c2ed827d1b03a"},
+      {"name": "AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS.md", "sha256": "3ac309c059aea19c8fa4f6c0fb963933018fb299339073ef4252feeff7517279"},
+      {"name": "CAL-PIPELINE-WRITING-STYLE-GUIDANCE.md", "sha256": "b8a36814e9bbd8fdba5ef0b1ab9b70d87d5e5058364a11fd124f1827ec5ac66b"},
+      {"name": "CONTEXT-FREE-EXECUTION-PROTOCOL.md", "sha256": "3c97f27922398cb311a122046d89ac443342a48f675ff01faad344cc0890e30d"}
+    ],
+    "frozen_aperture_rule": "Only the exact attachment bytes above are authorized as durable governance for the fresh reproduction. Later project-file edits are not implicitly authorized."
+  },
+  "evaluator_independence_reproduction_v2": {
+    "status_at_preparation": "READY_FOR_GENUINELY_FRESH_REPRODUCTION_ONLY",
+    "source_branch": "research-infra/external-corpus-evaluator-contract-v03-clarification",
+    "source_input_sha": "a6408a594ede083cf4997b47103d836819c559b8",
+    "contract_version": "External Corpus Retrieval Evaluator Contract v0.3-draft",
+    "pre_freeze_allowed_inputs": [
+      {"path": "research/external_corpus_evaluator_independence_v2/contract.md", "git_blob_sha": "3e77312723133ee7ec536d4414e547c7313b8fa8"},
+      {"path": "research/external_corpus_evaluator_independence_v1/dummy_manifest.json", "git_blob_sha": "f2d0c1ff3b39d20c92878d75d8a345bc152f971d"},
+      {"path": "research/external_corpus_evaluator_independence_v1/dummy_run.json", "git_blob_sha": "45b9ef6e005fd7e005ec75305c2829fa241f8f81"},
+      {"path": "research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json", "git_blob_sha": "c6960cebeafa4c5dd214d7f32d47e68294a3f4da"},
+      {"path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_manifest.json", "git_blob_sha": "018323363aecb3b2528b9097177c9aa48f79e88b"},
+      {"path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_run.json", "git_blob_sha": "4e830255062b00406ba7c64cfff4126c1e16433b"},
+      {"path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_gold.json", "git_blob_sha": "f9c4133ef83e0fac350428a693847f0c79d7d33f"}
+    ],
+    "pre_freeze_prohibited": [
+      "research/external_corpus_evaluator_independence_v2/evaluator_a.py",
+      "research/external_corpus_evaluator_independence_v2/evaluator_b.py",
+      "research/external_corpus_evaluator_independence_v2/canonical.py",
+      "tests/test_external_corpus_evaluator_independence_v2.py",
+      "docs/research/decision-external-corpus-evaluator-contract-v03-ndcg-scope.md",
+      "PR #34 body, comments, reviews, patches, or discussion",
+      "PR #33 body, comments, reviews, patches, terminal record, or comparison artifacts",
+      "research/external_corpus_evaluator_independence_v1/evaluator_a.py",
+      "research/external_corpus_evaluator_independence_v1/evaluator_b.py",
+      "research/external_corpus_evaluator_independence_v1/canonical.py",
+      "tests/test_external_corpus_evaluator_independence.py",
+      "any prior fresh-reproduction implementation, receipt, test, expected output, comparison result, or reasoning",
+      "any prior chat/thread reasoning about evaluator semantics or the first reproduction"
+    ],
+    "post_freeze_comparison_surfaces": [
+      {"path": "research/external_corpus_evaluator_independence_v2/evaluator_a.py", "git_blob_sha": "00726ce244c80c89bfab37e31a76db263c986ab5"},
+      {"path": "research/external_corpus_evaluator_independence_v2/evaluator_b.py", "git_blob_sha": "079e1e90e64b60bdd0a806e0c6694aadcb045a6e"},
+      {"path": "research/external_corpus_evaluator_independence_v2/canonical.py", "git_blob_sha": "29f3d86c2b043cd450f65df39eecdd448b4ff7f4"},
+      {"path": "tests/test_external_corpus_evaluator_independence_v2.py", "git_blob_sha": "2a1e42b4cbaf040e4c8b78a8ed78eebc5dc2bb8d"}
+    ],
+    "required_sequence": [
+      "Verify exact SHA-256 for all nine durable governance attachments before any task-specific GitHub access.",
+      "Inspect only the seven pre-freeze allowed inputs at source_input_sha.",
+      "Implement the smallest complete evaluator satisfying contract v0.3 from the allowed dummy inputs only.",
+      "Before opening any comparison surface, freeze implementation bytes, record SHA-256 and Git blob, commit on a fresh research-infrastructure branch rooted at source_input_sha, and record every pre-freeze source opened.",
+      "Only after freeze reveal the four post-freeze comparison surfaces pinned above.",
+      "Run the broad dummy/adversarial checks and the dedicated two-query nDCG scope discriminator.",
+      "Preserve every disagreement. Do not edit the frozen implementation after reveal and still call the same run independent.",
+      "If fresh-context isolation or any required byte identity cannot be established, stop with evaluator independence unresolved."
+    ],
+    "scientific_non_claim": "This dummy evaluator reproduction cannot establish benchmark validity, scientific adjudication validity, Pilot methodology support, or Evidence Bundler retrieval performance."
+  },
+  "scientific_access_boundary": {
+    "throughout": [
+      "Do not open Pilot 0A scientific source rows.",
+      "Do not open FreshStack qrels/nuggets or prohibited SciFact evidence/rationale.",
+      "Do not open prior Pilot scientific gold or prior Pilot scientific observations.",
+      "Do not run or inspect any Evidence Bundler retriever or retrieval output.",
+      "Do not construct a 24-30-case apparatus or modify the frozen Pilot scientific object."
+    ],
+    "after_successful_reproduction": "Scientific Gate 1 remains separately governed. A successful evaluator reproduction would establish infrastructure evidence only and would authorize at most preparation of a separately governed fresh Pilot Gate 1 execution."
+  },
+  "authorization": "Preparation for a new fresh evaluator reproduction only. No retrieval evaluation, production BM25, Hybrid, Semantic-only, dense/lexical retrieval, reranking, scientific Pilot execution, benchmark expansion, production change, or frozen-case modification is authorized by this manifest."
+}
