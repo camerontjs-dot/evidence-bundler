@@ -1,0 +1,24 @@
+{
+  "record_type": "rc4-preexposure-discriminating-control-addition",
+  "added_before_first_sealed_execution": true,
+  "reason": "Pre-exposure adversarial review identified two small weak strategies that could otherwise exploit synthetic presentation rather than claim semantics: avoiding obvious decoy-context markers, and preferring passages whose substantive-looking sentence appears before neutral filler.",
+  "controls": [
+    {
+      "id": "runtime_answer_marker_gamer",
+      "class": "promotion_critical_gamer",
+      "runtime_visibility": "runtime_only",
+      "forbidden_inputs": ["evaluator_gold", "family_labels", "decisive_ids", "hard_negative_ids", "hidden_annotations"],
+      "expected": "fail_intended_semantic_gate"
+    },
+    {
+      "id": "runtime_sentence_position_gamer",
+      "class": "promotion_critical_gamer",
+      "runtime_visibility": "runtime_only",
+      "forbidden_inputs": ["evaluator_gold", "family_labels", "decisive_ids", "hard_negative_ids", "hidden_annotations"],
+      "expected": "fail_intended_semantic_gate"
+    }
+  ],
+  "scientific_effect": "Adds falsifiers before exposure; does not relax any threshold or alter the RC4 target identity.",
+  "hybrid_sealed_exposed": false,
+  "semantic_sealed_exposed": false
+}
