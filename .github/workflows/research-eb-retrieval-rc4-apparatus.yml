@@ -1,0 +1,292 @@
+name: Research EB retrieval RC4 apparatus assurance
+
+on:
+  push:
+    branches:
+      - research-infra/eb-retrieval-low-overlap-rc4-apparatus
+    paths:
+      - 'research/eb_retrieval_generalization_rc4/RUN_FIRST_SEALED'
+
+permissions:
+  contents: read
+
+jobs:
+  assure-rc4-apparatus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exact BM25 runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'pydantic>=2.6,<3' 'rank-bm25==0.2.2'
+
+      - name: Verify frozen source, target identity, and production BM25 identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          m=json.loads(Path('research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json').read_text())
+          for rel,expected in m['source_file_sha256'].items():
+              got=hashlib.sha256(Path(rel).read_bytes()).hexdigest()
+              if got!=expected: raise SystemExit(f'freeze mismatch {rel}: {got} != {expected}')
+          for rel,expected in m['infrastructure_file_sha256'].items():
+              got=hashlib.sha256(Path(rel).read_bytes()).hexdigest()
+              if got!=expected: raise SystemExit(f'infrastructure freeze mismatch {rel}: {got} != {expected}')
+          target=json.loads(Path('research/eb_retrieval_generalization_rc4/target_identity.json').read_text())
+          digest=hashlib.sha256(json.dumps(target,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+          if digest!=m['target_config_sha256']: raise SystemExit('target canonical hash mismatch')
+          if target['exposure']!={'hybrid_sealed_exposed':False,'semantic_sealed_exposed':False}: raise SystemExit('target already exposed')
+          print('frozen source verified', hashlib.sha256(Path('research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json').read_bytes()).hexdigest())
+          PY
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          m=json.loads(Path('research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json').read_text())
+          for rel,expected in m['preregistration_git_blobs'].items():
+              got=subprocess.check_output(['git','rev-parse',f'HEAD:{rel}'],text=True).strip()
+              if got!=expected: raise SystemExit(f'preregistration blob mismatch {rel}: {got} != {expected}')
+          print('preregistration blobs verified')
+          PY
+          git fetch --no-tags origin research/eb-retrieval-low-overlap-rc4
+          test "$(git rev-parse origin/research/eb-retrieval-low-overlap-rc4)" = "27be0c85fdaae9e56a7622e007ca062575e9c433"
+          git show origin/research/eb-retrieval-low-overlap-rc4:research/eb_retrieval_generalization_rc4/target_identity.json > /tmp/live-target.json
+          cmp research/eb_retrieval_generalization_rc4/target_identity.json /tmp/live-target.json
+          test "$(git rev-parse c8189c31adbab11729c31430c2070126224a2d42:src/evidence_bundler/retrieval/bm25_retriever.py)" = "f8d7dd7e56710453edbca7c51aeea6da949ff903"
+          python research/eb_retrieval_generalization_rc4/static_preflight.py
+
+      - name: Regenerate and verify exact frozen benchmark, freshness, and cue independence
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='artifacts/rc4-apparatus/frozen-benchmark'
+          rm -rf artifacts/rc4-apparatus /tmp/rc3-benchmark /tmp/pr14 /tmp/pr16
+          mkdir -p artifacts/rc4-apparatus /tmp/pr14 /tmp/pr16
+          python research/eb_retrieval_generalization_rc4/generate_challenge.py --output-root "$root"
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          m=json.loads(Path('research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json').read_text())
+          root=Path('artifacts/rc4-apparatus/frozen-benchmark')
+          observed={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(root.rglob('*')) if p.is_file()}
+          expected=m['generated_benchmark_file_sha256']
+          if observed!=expected: raise SystemExit(f'generated benchmark bytes differ: {observed}')
+          payload=''.join(f'{observed[k]}  {k}\n' for k in sorted(observed)).encode()
+          tree=hashlib.sha256(payload).hexdigest()
+          if tree!=m['benchmark_tree_sha256']: raise SystemExit(f'benchmark tree mismatch {tree}')
+          print('benchmark tree',tree)
+          PY
+          tmp="$(mktemp -d)"
+          python research/eb_retrieval_generalization_rc4/generate_challenge.py --output-root "$tmp/replay"
+          diff -ru "$root" "$tmp/replay"
+          git fetch --no-tags origin pull/14/head:refs/remotes/origin/pr14 pull/16/head:refs/remotes/origin/pr16
+          test "$(git rev-parse refs/remotes/origin/pr16)" = "00a30dfcb4b0db83e5158725c47d8edb97a26edd"
+          git archive refs/remotes/origin/pr14 | tar -x -C /tmp/pr14
+          git archive refs/remotes/origin/pr16 | tar -x -C /tmp/pr16
+          python /tmp/pr16/research/eb_retrieval_generalization_rc3/generate_challenge.py --output-root /tmp/rc3-benchmark
+          python research/eb_retrieval_generalization_rc4/validate_challenge.py \
+            --benchmark-root "$root" \
+            --reuse-root benchmarks/eb-retrieval-assurance-rc2-v1 \
+            --reuse-root /tmp/pr14 \
+            --reuse-root /tmp/pr16 \
+            --reuse-root /tmp/rc3-benchmark \
+            --output artifacts/rc4-apparatus/validator-result.json
+
+      - name: Preserve first sealed control output
+        shell: bash
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from control_runner import generate
+          root=Path('artifacts/rc4-apparatus/frozen-benchmark')
+          raw=generate(root,'oracle')
+          Path('artifacts/rc4-apparatus/first-sealed-control.json').write_text(json.dumps(raw,sort_keys=True,indent=2)+'\n')
+          PY
+          sha256sum artifacts/rc4-apparatus/first-sealed-control.json > artifacts/rc4-apparatus/first-sealed-control.sha256
+
+      - name: Evaluator assurance
+        id: assurance
+        continue-on-error: true
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          python research/eb_retrieval_generalization_rc4/assurance_runner.py \
+            --benchmark-root artifacts/rc4-apparatus/frozen-benchmark \
+            --oracle-raw artifacts/rc4-apparatus/first-sealed-control.json \
+            --output artifacts/rc4-apparatus/evaluator-assurance.json
+
+      - name: Exact production BM25 replay 1
+        if: steps.assurance.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git worktree add --detach /tmp/eb-production c8189c31adbab11729c31430c2070126224a2d42
+          PYTHONPATH=/tmp/eb-production/src:research/eb_retrieval_generalization_rc4 \
+            python research/eb_retrieval_generalization_rc4/bm25_adapter.py \
+              --benchmark-root artifacts/rc4-apparatus/frozen-benchmark \
+              --raw-output artifacts/rc4-apparatus/bm25-raw.json \
+              --evaluation-output artifacts/rc4-apparatus/bm25-evaluation.json
+
+      - name: Exact production BM25 replay 2 and gate
+        id: bm25gate
+        if: steps.assurance.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=/tmp/eb-production/src:research/eb_retrieval_generalization_rc4 \
+            python research/eb_retrieval_generalization_rc4/bm25_adapter.py \
+              --benchmark-root artifacts/rc4-apparatus/frozen-benchmark \
+              --raw-output artifacts/rc4-apparatus/bm25-raw-replay.json \
+              --evaluation-output artifacts/rc4-apparatus/bm25-evaluation-replay.json
+          cmp artifacts/rc4-apparatus/bm25-raw.json artifacts/rc4-apparatus/bm25-raw-replay.json
+          cmp artifacts/rc4-apparatus/bm25-evaluation.json artifacts/rc4-apparatus/bm25-evaluation-replay.json
+          python research/eb_retrieval_generalization_rc4/bm25_gate.py \
+            --evaluation artifacts/rc4-apparatus/bm25-evaluation.json \
+            --thresholds research/eb_retrieval_generalization_rc4/thresholds.json \
+            --output artifacts/rc4-apparatus/bm25-gate.json
+
+      - name: Sealed weak and gaming controls
+        if: steps.assurance.outcome == 'success' && steps.bm25gate.outcome == 'success'
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          set -euo pipefail
+          python research/eb_retrieval_generalization_rc4/control_runner.py \
+            --benchmark-root artifacts/rc4-apparatus/frozen-benchmark \
+            --thresholds research/eb_retrieval_generalization_rc4/thresholds.json \
+            --output artifacts/rc4-apparatus/sealed-controls.json \
+            --controls oracle null first_n_source_order return_all token_overlap bow_tfidf character_ngram hard_negative_biased_lexical passage_length_heuristic source_position_heuristic metadata_identifier_pattern_heuristic runtime_construction_style_gamer cue_swap_gamer runtime_answer_marker_gamer runtime_sentence_position_gamer provenance_corrupt completeness_aperture_liar semantic_answerability_liar
+          sha256sum artifacts/rc4-apparatus/sealed-controls.json > artifacts/rc4-apparatus/sealed-controls.sha256
+
+      - name: Promotion-critical weak/gaming gate
+        id: controlgate
+        if: steps.assurance.outcome == 'success' && steps.bm25gate.outcome == 'success'
+        continue-on-error: true
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          python research/eb_retrieval_generalization_rc4/control_gate.py \
+            --controls artifacts/rc4-apparatus/sealed-controls.json \
+            --thresholds research/eb_retrieval_generalization_rc4/thresholds.json \
+            --output artifacts/rc4-apparatus/control-gate.json
+          python research/eb_retrieval_generalization_rc4/anti_gaming_runner.py \
+            --controls artifacts/rc4-apparatus/sealed-controls.json \
+            --thresholds research/eb_retrieval_generalization_rc4/thresholds.json \
+            --output artifacts/rc4-apparatus/anti-gaming-result.json
+
+      - name: Metamorphic expected-direction assurance
+        id: metamorphic
+        if: steps.assurance.outcome == 'success' && steps.bm25gate.outcome == 'success' && steps.controlgate.outcome == 'success'
+        continue-on-error: true
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          python research/eb_retrieval_generalization_rc4/metamorphic_runner.py \
+            --benchmark-root artifacts/rc4-apparatus/frozen-benchmark \
+            --plan research/eb_retrieval_generalization_rc4/metamorphic_plan.json \
+            --thresholds research/eb_retrieval_generalization_rc4/thresholds.json \
+            --output artifacts/rc4-apparatus/metamorphic-result.json
+
+      - name: Terminal apparatus decision
+        if: always()
+        env:
+          PYTHONPATH: research/eb_retrieval_generalization_rc4
+        run: |
+          python research/eb_retrieval_generalization_rc4/terminal_decision.py \
+            --artifacts artifacts/rc4-apparatus \
+            --target-identity research/eb_retrieval_generalization_rc4/target_identity.json \
+            --freeze-manifest research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json \
+            --output artifacts/rc4-apparatus/terminal-decision.json
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          out=Path('artifacts/rc4-apparatus')
+          def h(name):
+              p=out/name; return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
+          d=json.loads((out/'terminal-decision.json').read_text())
+          receipt={'record':'eb-rc4-apparatus-run-receipt','commit_sha':os.environ['GITHUB_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'terminal_disposition':d['disposition'],'freeze_manifest_sha256':hashlib.sha256(Path('research/eb_retrieval_generalization_rc4/apparatus_freeze_manifest.json').read_bytes()).hexdigest(),'validator_result_sha256':h('validator-result.json'),'first_sealed_control_sha256':h('first-sealed-control.json'),'evaluator_assurance_sha256':h('evaluator-assurance.json'),'bm25_raw_sha256':h('bm25-raw.json'),'bm25_evaluation_sha256':h('bm25-evaluation.json'),'sealed_controls_sha256':h('sealed-controls.json'),'control_gate_sha256':h('control-gate.json'),'anti_gaming_sha256':h('anti-gaming-result.json'),'metamorphic_sha256':h('metamorphic-result.json'),'terminal_decision_sha256':h('terminal-decision.json'),'hybrid_sealed_exposed':False,'semantic_sealed_exposed':False}
+          (out/'run-receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          PY
+
+      - name: Print compact terminal evidence to immutable workflow log
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          out=Path('artifacts/rc4-apparatus')
+          def load(name):
+              p=out/name
+              return json.loads(p.read_text()) if p.exists() else None
+          def h(name):
+              p=out/name
+              return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
+          assurance=load('evaluator-assurance.json')
+          bm25=load('bm25-gate.json')
+          controls=load('sealed-controls.json')
+          control_gate=load('control-gate.json')
+          anti=load('anti-gaming-result.json')
+          meta=load('metamorphic-result.json')
+          terminal=load('terminal-decision.json')
+          receipt=load('run-receipt.json')
+          compact_controls={}
+          if controls:
+              for name,rec in controls.get('controls',{}).items():
+                  ev=rec.get('evaluation',{})
+                  compact_controls[name]={
+                      'qualifies_target_gate':rec.get('qualifies_target_gate'),
+                      'qualification_failures':rec.get('qualification_failures'),
+                      'technical':ev.get('technical'),
+                      'aggregate':ev.get('aggregate'),
+                      'l04':ev.get('families',{}).get('L04'),
+                      'c01':ev.get('families',{}).get('C01'),
+                  }
+          summary={
+              'record':'eb-rc4-apparatus-terminal-evidence-summary',
+              'evaluator_assurance':assurance,
+              'bm25_gate':bm25,
+              'controls':compact_controls,
+              'control_gate':control_gate,
+              'anti_gaming':anti,
+              'metamorphic':meta,
+              'terminal_decision':terminal,
+              'run_receipt':receipt,
+              'artifact_sha256':{name:h(name) for name in [
+                  'validator-result.json','first-sealed-control.json','evaluator-assurance.json',
+                  'bm25-raw.json','bm25-evaluation.json','bm25-gate.json','sealed-controls.json',
+                  'control-gate.json','anti-gaming-result.json','metamorphic-result.json',
+                  'terminal-decision.json','run-receipt.json']},
+              'hybrid_sealed_exposed':False,
+              'semantic_sealed_exposed':False,
+          }
+          payload=json.dumps(summary,sort_keys=True,indent=2)+'\n'
+          (out/'terminal-evidence-summary.json').write_text(payload)
+          print('BEGIN_RC4_TERMINAL_EVIDENCE_SUMMARY')
+          print(payload,end='')
+          print('END_RC4_TERMINAL_EVIDENCE_SUMMARY')
+          print('terminal-evidence-summary-sha256',hashlib.sha256(payload.encode()).hexdigest())
+          PY
+
+      - name: Preserve RC4 apparatus evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-rc4-apparatus-assurance
+          path: artifacts/rc4-apparatus/
+          if-no-files-found: error
+          retention-days: 90
