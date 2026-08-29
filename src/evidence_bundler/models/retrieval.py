@@ -30,6 +30,7 @@ class RetrievalConfig(StrictBaseModel):
 
     retrieval_method: RetrievalMethod = "bm25"
     top_k: int = Field(default=5, gt=0)
+    parent_candidate_top_k: int | None = Field(default=None, gt=0)
     child_top_k: int = Field(default=20, gt=0)
     parent_aggregation: ParentAggregation = "max"
     lexical_score_floor: float = Field(default=0.0, ge=0.0)
@@ -52,6 +53,8 @@ class RetrievalConfig(StrictBaseModel):
     rerank_top_n: int = Field(default=30, gt=0)
     contradiction_enabled: bool = False
     contradiction_top_k: int = Field(default=20, gt=0)
+    counterevidence_lexical_child_top_k: int | None = Field(default=None, gt=0)
+    counterevidence_semantic_child_top_k: int | None = Field(default=None, gt=0)
     contradiction_query_prefixes: list[NonBlankStr] = Field(
         default_factory=lambda: list(DEFAULT_CONTRADICTION_QUERY_PREFIXES),
         min_length=1,
@@ -64,6 +67,8 @@ class RetrievalConfig(StrictBaseModel):
         """Validate feature knobs that depend on the hybrid retrieval stack."""
         if self.chunk_overlap_chars >= self.chunk_max_chars:
             raise ValueError("chunk_overlap_chars must be smaller than chunk_max_chars")
+        if self.parent_candidate_top_k is not None and self.parent_candidate_top_k < self.top_k:
+            raise ValueError("parent_candidate_top_k must be greater than or equal to top_k")
         for field_name, revision in (
             ("embedding_model_revision", self.embedding_model_revision),
             ("rerank_model_revision", self.rerank_model_revision),
