@@ -94,7 +94,8 @@ def main() -> None:
         raise AssertionError("real semantic retrieval was not repeatable across identical calls")
     if "cardiac" not in semantic_ids_first[:2]:
         raise AssertionError(
-            f"semantic smoke did not place the intended paraphrase target in top 2: {semantic_ids_first}"
+            "semantic smoke did not place the intended paraphrase target in top 2: "
+            f"{semantic_ids_first}"
         )
 
     fused = reciprocal_rank_fusion(
