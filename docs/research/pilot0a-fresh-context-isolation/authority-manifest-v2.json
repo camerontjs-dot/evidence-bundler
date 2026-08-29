@@ -1,0 +1,109 @@
+{
+  "manifest_version": "2.0.0",
+  "purpose": "Fresh-run-safe bootstrap identities and access rules for External Corpus Methodology Pilot 0A. This record contains no prior Pilot scientific observations, corpus diagnostics, row counts, relevance judgments, qrels, retrieval outputs, prior scientific gold, or scientific dispositions beyond the frozen Pilot object's identity/disposition already present in v1.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "prepared_against": {
+    "main_sha": "892f3a5b130f81d42c7366f4f121fa70cdd30fe8",
+    "authority_manifest_v1_path": "docs/research/pilot0a-fresh-context-isolation/authority-manifest-v1.json",
+    "authority_manifest_v1_git_blob_sha": "e4b5c84be8c49bf0899ef162ff69f6c872a0a4bf"
+  },
+  "durable_governance": {
+    "source": "ChatGPT project attachments only",
+    "rule": "These files define durable intent/procedure. GitHub defines live project state. Do not search prior Pilot PR bodies or discussions to reconstruct them.",
+    "required_files": [
+      "CAL-PIPELINE-PROJECT-CONTEXT.md",
+      "PRODUCT-NORTH-STAR.md",
+      "GITHUB-AND-PR-GOVERNANCE.md",
+      "PROJECT-STATE-LOCATION-POLICY.md",
+      "EPISTEMIC-RECORD-CONVENTIONS.md",
+      "RELEASE-AND-VERSION-GOVERNANCE.md",
+      "AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS.md",
+      "CAL-PIPELINE-WRITING-STYLE-GUIDANCE.md"
+    ]
+  },
+  "frozen_pilot": {
+    "authority": "authority-manifest-v1.json",
+    "pr20_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+    "pr20_head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+    "published_terminal_disposition": "INCONCLUSIVE",
+    "rule": "Establish the frozen object by immutable identity without opening prior Pilot scientific narrative before its authorized reveal point."
+  },
+  "source_access_firewall": {
+    "reader_path": "research/source_access_firewall/reader.py",
+    "registry_path": "research/source_access_firewall/field_registry.json",
+    "reader_version": "source-access-firewall/0.1.0",
+    "reader_source_sha256": "88f12f5998b729aa3ecee808925849837f98a8dd202f6fa2e419e90c091a1ed2",
+    "field_registry_sha256": "9e4c257108045b7b959e4468ba80d9d42ef4e99d2bd7a2f51fc0eec41e7560f9",
+    "reader_git_blob_sha": "de9387bbe62f481996a864e6404833f448928f4b",
+    "registry_git_blob_sha": "22ea94bb7dcf6a62e50ce5175826934623fa2867",
+    "preserved_authorization": "SOURCE ACCESS ASSURED",
+    "authorization_boundary": "No retrieval execution and no 24-30-case apparatus is authorized."
+  },
+  "evaluator_independence_reproduction": {
+    "status_at_preparation": "UNRESOLVED_PENDING_GENUINELY_FRESH_INDEPENDENT_REPRODUCTION",
+    "source_branch": "research-infra/external-corpus-evaluator-independence-v1",
+    "source_branch_head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+    "pre_freeze_allowed_inputs": [
+      {
+        "path": "research/external_corpus_evaluator_independence_v1/contract.md",
+        "git_blob_sha": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"
+      },
+      {
+        "path": "research/external_corpus_evaluator_independence_v1/dummy_manifest.json",
+        "git_blob_sha": "f2d0c1ff3b39d20c92878d75d8a345bc152f971d"
+      },
+      {
+        "path": "research/external_corpus_evaluator_independence_v1/dummy_run.json",
+        "git_blob_sha": "45b9ef6e005fd7e005ec75305c2829fa241f8f81"
+      },
+      {
+        "path": "research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json",
+        "git_blob_sha": "c6960cebeafa4c5dd214d7f32d47e68294a3f4da"
+      }
+    ],
+    "pre_freeze_prohibited": [
+      "research/external_corpus_evaluator_independence_v1/evaluator_a.py",
+      "research/external_corpus_evaluator_independence_v1/evaluator_b.py",
+      "research/external_corpus_evaluator_independence_v1/canonical.py",
+      "tests/test_external_corpus_evaluator_independence.py",
+      "docs/research/results-external-corpus-evaluator-independence-v1.md",
+      "docs/research/independent-reproduction-external-corpus-evaluator-independence-v1.md",
+      "docs/research/receipt-external-corpus-evaluator-independence-v1.json",
+      "docs/research/revealed or expected-output material not listed in pre_freeze_allowed_inputs",
+      "any prior chat/thread reasoning about evaluator A or evaluator B"
+    ],
+    "required_sequence": [
+      "In a genuinely fresh context, inspect only the contract and three dummy data inputs listed above.",
+      "Implement the evaluator contract independently without inspecting evaluator A/B, canonicalizer, tests, expected outputs, prior implementation reasoning, or prior comparison results.",
+      "Freeze the independent implementation and record its exact bytes/hash/commit before any comparison surface is opened.",
+      "Only after freeze, compare the independent implementation against the pinned source-branch implementation and adversarial fixtures.",
+      "If outputs/semantics do not agree, preserve the disagreement. Do not repair the frozen independent implementation after exposure and still call the same run independent.",
+      "If the fresh-context condition cannot be established, keep evaluator independence unresolved."
+    ],
+    "scientific_non_claim": "This dummy evaluator reproduction does not establish benchmark validity, scientific adjudication validity, Pilot methodology support, or Evidence Bundler retrieval performance."
+  },
+  "scientific_access_boundary": {
+    "before_evaluator_reproduction_freeze": [
+      "Do not open Pilot 0A scientific source rows.",
+      "Do not open FreshStack qrels/nuggets or SciFact published evidence/rationale.",
+      "Do not open prior Pilot scientific gold or prior Pilot scientific observations.",
+      "Do not run or inspect any Evidence Bundler retriever."
+    ],
+    "after_evaluator_reproduction": "Scientific Gate 1 remains separately governed by the frozen Pilot protocol; clearing evaluator implementation independence is necessary infrastructure evidence only, never scientific support."
+  },
+  "fresh_run_access_rule": {
+    "preferred": [
+      "Read this v2 manifest and v1 manifest by exact path/ref.",
+      "Use body-free ref/commit/tree/blob surfaces for identities.",
+      "Use project attachments for durable governance.",
+      "Use only explicitly allowed evaluator-reproduction inputs before implementation freeze."
+    ],
+    "prohibited": [
+      "Broad prior-Pilot PR retrieval before scientific reveal authorization.",
+      "Historical Pilot issue bodies, comments, reviews, discussion timelines, or search snippets exposing scientific findings.",
+      "Evaluator implementation or expected-result exposure before independent implementation freeze.",
+      "Any retrieval-system execution or output inspection."
+    ]
+  },
+  "authorization": "Preparation only. No retrieval evaluation, production BM25, Hybrid, Semantic-only, dense/lexical retrieval, reranking, 24-30-case apparatus, new benchmark, RC5, production change, or frozen-case modification is authorized by this manifest."
+}
