@@ -1,0 +1,28 @@
+{
+  "record_type": "eb-retrieval-target-preregistration",
+  "benchmark_dependency": "eb-retrieval-low-overlap-rc4-v1",
+  "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+  "candidate": {
+    "retrieval_mode": "hybrid",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "normalized_embeddings": true,
+    "semantic_query_prefix": "production-unchanged",
+    "semantic_child_top_k": 50,
+    "rrf_pool": 50,
+    "rrf_k": 60,
+    "reranking": false,
+    "contradiction_retrieval": false,
+    "scored_k": 5
+  },
+  "baseline": {
+    "retrieval_mode": "bm25",
+    "production_source_sha": "c8189c31adbab11729c31430c2070126224a2d42",
+    "scored_k": 5
+  },
+  "semantic_only_role": "diagnostic_decomposition_only_cannot_rescue_hybrid_failure",
+  "exposure": {
+    "hybrid_sealed_exposed": false,
+    "semantic_sealed_exposed": false
+  }
+}
