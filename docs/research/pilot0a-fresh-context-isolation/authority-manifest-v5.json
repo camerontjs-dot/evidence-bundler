@@ -139,16 +139,19 @@
       }
     ],
     "required_sequence": [
-      "Retrieve and verify the nine exact frozen governance blobs listed by this manifest. Do not use ChatGPT attachment lookup as a prerequisite.",
-      "Inspect only the seven pre-freeze allowed evaluator inputs at source_input_sha.",
-      "Implement the smallest complete evaluator satisfying contract v0.3 from the allowed dummy inputs only.",
-      "Before opening any comparison surface, freeze implementation bytes, record SHA-256 and Git blob, commit on a fresh research-infrastructure branch rooted at source_input_sha, and record every pre-freeze source opened.",
-      "Only after freeze reveal the four post-freeze comparison surfaces pinned above.",
+      "Retrieve this v5 manifest by the exact bootstrap ref/path/blob supplied by the launch prompt.",
+      "Retrieve or checkout only cleanroom_handoff.commit_sha and verify its exact tree SHA. Do not traverse its parent/history before freeze.",
+      "Verify the nine frozen governance files and seven allowed evaluator inputs in the sanitized handoff against the exact Git blobs (and governance SHA-256 values) recorded here.",
+      "Implement the smallest complete evaluator satisfying contract v0.3 from the sanitized handoff only.",
+      "Before opening any comparison surface, freeze implementation bytes, record SHA-256 and Git blob, commit on a fresh research-infrastructure branch rooted at implementation_base_sha, and record every pre-freeze source opened.",
+      "Only after freeze reveal the four post-freeze comparison surfaces at reference_source_sha.",
       "Run the broad dummy/adversarial checks and the dedicated two-query nDCG scope discriminator.",
       "Preserve every disagreement. Do not edit the frozen implementation after reveal and still call the same run independent.",
-      "If fresh-context isolation or any required Git/blob/hash identity cannot be established, stop with evaluator independence unresolved."
+      "If fresh-context isolation or any required commit/tree/blob/hash identity cannot be established, stop with evaluator independence unresolved."
     ],
-    "scientific_non_claim": "This dummy evaluator reproduction cannot establish benchmark validity, scientific adjudication validity, Pilot methodology support, or Evidence Bundler retrieval performance."
+    "scientific_non_claim": "This dummy evaluator reproduction cannot establish benchmark validity, scientific adjudication validity, Pilot methodology support, or Evidence Bundler retrieval performance.",
+    "reference_source_sha": "a6408a594ede083cf4997b47103d836819c559b8",
+    "implementation_base_sha": "e14df1bd8239445ef0b0a07525b07ae9c2b78835"
   },
   "scientific_access_boundary": {
     "throughout": [
@@ -160,5 +163,14 @@
     ],
     "after_successful_reproduction": "Scientific Gate 1 remains separately governed. A successful evaluator reproduction would establish infrastructure evidence only and would authorize at most preparation of a separately governed fresh Pilot Gate 1 execution."
   },
-  "authorization": "Preparation for a new fresh evaluator reproduction only. No retrieval evaluation, production BM25, Hybrid, Semantic-only, dense/lexical retrieval, reranking, scientific Pilot execution, benchmark expansion, production change, or frozen-case modification is authorized by this manifest."
+  "authorization": "Preparation for a new fresh evaluator reproduction only. No retrieval evaluation, production BM25, Hybrid, Semantic-only, dense/lexical retrieval, reranking, scientific Pilot execution, benchmark expansion, production change, or frozen-case modification is authorized by this manifest.",
+  "cleanroom_handoff": {
+    "branch": "research-infra/external-corpus-evaluator-v03-cleanroom-handoff-v5",
+    "commit_sha": "e14df1bd8239445ef0b0a07525b07ae9c2b78835",
+    "tree_sha": "a63098cabf02e78e2f27c8b5df827db02a0c06cf",
+    "parent_reference_sha": "a6408a594ede083cf4997b47103d836819c559b8",
+    "visible_tree_rule": "The handoff commit's visible tree contains only the nine frozen governance files and seven pre-freeze allowed evaluator inputs. No reference evaluator, canonicalizer, test suite, decision rationale, Pilot scientific rows, or retrieval output is present in that visible tree.",
+    "implementation_base_rule": "Create the fresh implementation branch from this sanitized handoff commit, not from source_input_sha and not from the full evaluator-contract branch. Do not traverse the handoff commit's parent/history before freeze.",
+    "checkout_rule": "A full checkout is permitted only at this sanitized handoff commit/descendant before freeze. Do not checkout source_input_sha or the evaluator-contract branch before implementation freeze."
+  }
 }
