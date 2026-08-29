@@ -1,0 +1,48 @@
+name: External Corpus Pilot 0A Source-Only Acquisition
+
+on:
+  push:
+    branches:
+      - research-infra/external-corpus-pilot0a-mechanical-cleanroom-20260829
+    paths:
+      - research/external_corpus_pilot0a_mechanical_cleanroom/acquire_sources.py
+      - .github/workflows/external-corpus-pilot0a-source-only-acquisition.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source readers
+        run: python -m pip install --disable-pip-version-check huggingface_hub==0.34.4 pyarrow==21.0.0
+      - name: Acquire pinned source artifacts under firewall
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PILOT0A_OUT: out
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python research/external_corpus_pilot0a_mechanical_cleanroom/acquire_sources.py
+      - name: Assert no forbidden output filenames
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find out -type f -print | grep -Eiq '(qrel|leaderboard|retrieval-result|candidate-list|evidence-label|rationale)'; then
+            echo 'Forbidden output filename detected' >&2
+            exit 1
+          fi
+      - name: Upload source-only receipt bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot0a-source-only-acquisition
+          path: out/
+          if-no-files-found: error
+          retention-days: 30
