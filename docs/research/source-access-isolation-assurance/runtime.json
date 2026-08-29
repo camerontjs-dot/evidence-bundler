@@ -1,0 +1,13 @@
+{
+  "field_registry_sha256": "9e4c257108045b7b959e4468ba80d9d42ef4e99d2bd7a2f51fc0eec41e7560f9",
+  "fixture_factory_sha256": "bac1b06c07876c5b6cf1c8690d827c53cf40cfacd9072a1871cab28e47f963db",
+  "git_sha": "739e4bf6f7441f368229c04f51adaa93151df986",
+  "pyarrow": "17.0.0",
+  "python": "3.11.16",
+  "reader_sha256": "88f12f5998b729aa3ecee808925849837f98a8dd202f6fa2e419e90c091a1ed2",
+  "retriever_executed": false,
+  "runtime_record_version": "1.0.0",
+  "scientific_external_data_accessed": false,
+  "static_guard_sha256": "f9dc2611735b977be24000271db5bd75d0762da47fea3ee387690cda6d08b05c",
+  "tests_sha256": "f9327facf680246cb6f13ab3fc2cbeaa06bc3e51f50bf37700477d05d4d79c0d"
+}
