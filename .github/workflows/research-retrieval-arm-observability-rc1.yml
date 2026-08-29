@@ -36,6 +36,7 @@ jobs:
           python-version: "3.11"
       - name: Record exact apparatus identity
         run: |
+          set -o pipefail
           mkdir -p artifacts/retrieval-arm-observability-rc1
           git rev-parse HEAD | tee artifacts/retrieval-arm-observability-rc1/commit-sha.txt
           git rev-parse HEAD^{tree} | tee artifacts/retrieval-arm-observability-rc1/tree-sha.txt
@@ -43,13 +44,16 @@ jobs:
         run: python -m pip install -e ".[dev]"
       - name: Run full deterministic suite
         run: |
+          set -o pipefail
           python -m pytest -q 2>&1 | tee artifacts/retrieval-arm-observability-rc1/pytest.txt
       - name: Run successor replay and observability tests explicitly
         run: |
+          set -o pipefail
           python -m pytest -q tests/test_retrieval_arm_observability_rc1.py \
             2>&1 | tee artifacts/retrieval-arm-observability-rc1/observability-tests.txt
       - name: Ruff apparatus
         run: |
+          set -o pipefail
           python -m ruff check \
             src/evidence_bundler/models/retrieval.py \
             src/evidence_bundler/contracts/writer.py \
@@ -61,6 +65,7 @@ jobs:
             2>&1 | tee artifacts/retrieval-arm-observability-rc1/ruff.txt
       - name: Mypy apparatus source
         run: |
+          set -o pipefail
           python -m mypy \
             src/evidence_bundler/models/retrieval.py \
             src/evidence_bundler/contracts/writer.py \
@@ -69,18 +74,21 @@ jobs:
             2>&1 | tee artifacts/retrieval-arm-observability-rc1/mypy.txt
       - name: CLI truthfulness
         run: |
+          set -o pipefail
           evidence-bundler build-bundle --help | tee artifacts/retrieval-arm-observability-rc1/build-bundle-help.txt
           ! grep -q "not wired" artifacts/retrieval-arm-observability-rc1/build-bundle-help.txt
           grep -q "semantic" artifacts/retrieval-arm-observability-rc1/build-bundle-help.txt
           grep -q "hybrid" artifacts/retrieval-arm-observability-rc1/build-bundle-help.txt
       - name: Exact pinned real-model execution smoke
         run: |
+          set -o pipefail
           python research/retrieval_control_surface_rc0/real_model_smoke.py \
             | tee artifacts/retrieval-arm-observability-rc1/real-model-receipt.json
           sha256sum artifacts/retrieval-arm-observability-rc1/real-model-receipt.json \
             > artifacts/retrieval-arm-observability-rc1/real-model-receipt.sha256
       - name: Runtime versions
         run: |
+          set -o pipefail
           python - <<'PY' | tee artifacts/retrieval-arm-observability-rc1/runtime-versions.txt
           import platform, sys
           from importlib.metadata import version
