@@ -1,7 +1,21 @@
 {
-  "stop_reason": "Gate 1 FALSIFIED: two frozen FreshStack query identities do not exist at the exact preregistered query dataset revision.",
-  "hard_gate_applied": true,
+  "stop_reason": "TERMINAL FALSIFIED: source-acquisition machinery deserialized FreshStack qrel-bearing query columns before scientific gold freeze.",
+  "first_prohibited_exposure_run": 33253126024,
+  "hard_gate_applied_retroactively_on_detection": true,
+  "scientific_material_after_exposure": "CONTAMINATED / NOT ADMISSIBLE AS CLEAN GATE EVIDENCE",
   "gates": {
+    "1_freshstack_provenance": {
+      "outcome": "NOT_VALIDLY_COMPLETED",
+      "post_exposure_revision_mismatch_observation": "DIAGNOSTIC_ONLY"
+    },
+    "2_freshstack_aperture": {
+      "outcome": "NOT_COMPLETED_AS_PROMOTION_GATE",
+      "pre_exposure_source_code_observation": "complete same-topic corpus partition is deterministically derivable without retrieval"
+    },
+    "3_scifact_reconstruction": {
+      "outcome": "NOT_EXECUTED_AS_CLEAN_GATE",
+      "post_exposure_archive_observation": "DIAGNOSTIC_ONLY"
+    },
     "4_evaluator_B": {
       "outcome": "INDEPENDENCE NOT ESTABLISHED",
       "implementation_created": false,
@@ -9,21 +23,20 @@
       "disagreement_record": "NOT_EXECUTED"
     },
     "5_materialize_frozen_source_passages": {
-      "outcome": "NOT_EXECUTED",
-      "reason": "hard gate stopped scientific execution before passage materialization"
+      "outcome": "NOT_EXECUTED"
     },
     "6_two_isolated_scientific_adjudicators": {
       "outcome": "NOT_EXECUTED",
       "adjudicator_A": "NOT_CREATED",
-      "adjudicator_B": "NOT_CREATED",
-      "reason": "Gate 1 failed; separate isolation surface was also unavailable"
+      "adjudicator_B": "NOT_CREATED"
     },
     "7_adjudication_comparison": {
       "outcome": "NOT_EXECUTED"
     },
     "8_published_qrel_comparison": {
       "outcome": "NOT_EXECUTED",
-      "FreshStack_qrels_exposed": false,
+      "FreshStack_qrel_values_rendered_to_model": false,
+      "FreshStack_qrel_bearing_columns_accessed_by_acquisition_process": true,
       "SciFact_published_evidence_exposed": false
     },
     "9_segmentation_and_gold_stability": {
@@ -34,19 +47,7 @@
     },
     "10_corpus_authoring_influence": {
       "outcome": "NOT_EXECUTED_AS_SCIENTIFIC_AUDIT",
-      "partial_structural_observations": {
-        "FreshStack_query": "EXTERNALLY_FIXED in intended methodology, but two frozen selected identities are absent at pinned revision",
-        "FreshStack_corpus": "EXTERNALLY_FIXED",
-        "FreshStack_source_aperture": "DETERMINISTICALLY_DERIVED",
-        "SciFact_query": "EXTERNALLY_FIXED",
-        "SciFact_corpus": "EXTERNALLY_FIXED",
-        "SciFact_source_aperture": "EXTERNALLY_FIXED via cited_doc_ids",
-        "passage_segmentation": "DETERMINISTICALLY_DERIVED by frozen rule but NOT_MATERIALIZED",
-        "relevance": "NOT_ADJUDICATED",
-        "evidence_role": "NOT_ADJUDICATED",
-        "evidence_grouping": "NOT_ADJUDICATED",
-        "negatives": "NOT_DEFINED"
-      }
+      "only_admissible_partial_observation": "Pre-exposure pinned loader source indicates topic-level aperture can be deterministically derived without retrieval; no post-exposure authoring analysis is promotion-supporting."
     }
   },
   "scientific_gold_created": false
