@@ -1,4 +1,6 @@
 {
+  "scientific_status": "CONTAMINATED_POST_EXPOSURE_DIAGNOSTIC_ONLY",
+  "first_prohibited_exposure": "FreshStack query parquet reader deserialized qrel-bearing nuggets column before gold freeze in run 33253126024",
   "official_dataset": "freshstack/corpus-oct-2024",
   "official_revision": "069f66dc323e163b48b10d08408d282733d4393b",
   "historical_discovery_scope": "same official Hugging Face dataset Git history only",
@@ -31,5 +33,6 @@
     "commits_without_langchain_train_data": 4,
     "non_null_commit_id_observed": false
   },
-  "stop_reason": "The frozen query identity contradiction independently falsified Gate 1. No broader historical-dataset discovery was attempted after the hard stop, because doing so would be post-falsifier completeness work rather than execution of the frozen scientific discriminator."
+  "scientific_interpretation": "NONE_IN_THIS_RUN",
+  "note": "These post-exposure diagnostics are retained only to document what the contaminated harness did. They do not establish Gate 1 provenance."
 }
