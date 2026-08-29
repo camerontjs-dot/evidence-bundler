@@ -23,5 +23,11 @@
     "No Evidence Bundler retrieval performance measured",
     "No production retrieval change authorized",
     "No genuine independent evaluator authorship established"
-  ]
+  ],
+  "hosted_ci": {
+    "run_id": 33232876329,
+    "head_sha": "185e169eea11e01cab39b9d658d78a9f2159a270",
+    "python_3_11": "success",
+    "python_3_12": "success"
+  }
 }

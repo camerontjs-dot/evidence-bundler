@@ -21,6 +21,7 @@ This is not a benchmark-validity result and not an Evidence Bundler retrieval re
 - Post-reveal canonical hashing of the exact dummy gold reproduces that commitment.
 - Evaluator A and B return exactly equal result objects on the frozen dummy tuple.
 - Local adversarial/invariance suite: `20 passed`.
+- Hosted GitHub Actions run `33232876329`: assurance jobs succeeded on Python 3.11 and 3.12 at code/evidence head `185e169eea11e01cab39b9d658d78a9f2159a270`.
 - No production BM25, Hybrid, Semantic-only, or other Evidence Bundler retriever was run.
 
 ## Contract semantics now explicit
