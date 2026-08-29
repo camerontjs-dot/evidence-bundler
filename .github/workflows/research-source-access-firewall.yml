@@ -34,20 +34,23 @@ jobs:
       - name: Run adversarial behavioral suite
         run: |
           mkdir -p assurance-artifacts
-          pytest research/source_access_firewall/tests -q --junitxml=assurance-artifacts/junit.xml
+          python -m pytest research/source_access_firewall/tests -q --junitxml=assurance-artifacts/junit.xml
 
       - name: Run static bypass guard
+        if: always()
         run: |
           python -m research.source_access_firewall.static_guard \
             --repo-root . \
             --json-out assurance-artifacts/static-assurance.json
 
       - name: Generate dummy fixtures and execution receipts
+        if: always()
         run: |
           python -m research.source_access_firewall.run_assurance \
             --out assurance-artifacts/dummy
 
       - name: Record runtime identity
+        if: always()
         env:
           ASSURANCE_GIT_SHA: ${{ github.sha }}
         run: |
