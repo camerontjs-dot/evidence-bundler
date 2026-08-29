@@ -1,0 +1,94 @@
+{
+  "execution_date": "2026-08-29",
+  "task_class": "Research Infrastructure / benchmark-methodology clean-room completion",
+  "production_main_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+  "working_branch": "research-infra/external-corpus-pilot0a-mechanical-cleanroom-20260829",
+  "pilot0a": {
+    "pr": 20,
+    "state": "closed",
+    "merged": false,
+    "branch": "research-infra/external-corpus-methodology-pilot-0a",
+    "preregistration_sha": "bf6a347704d8711628e044f46c0c3fb9fa4557df",
+    "frozen_head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950"
+  },
+  "evaluator_contract": {
+    "pr": 21,
+    "state": "open",
+    "merged": false,
+    "head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+    "contract_path": "research/external_corpus_evaluator_independence_v1/contract.md",
+    "contract_git_blob_sha1": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"
+  },
+  "procedural_predecessors": {
+    "pr22_head_sha": "4d91e7a3de78981e4f73489aab179767c58c1914",
+    "pr23_head_sha": "a24542a32acb4f3c04da2dd5bfd8aeaa63123769",
+    "use_restriction": "contamination/procedural evidence only; no substantive scientific conclusions imported"
+  },
+  "governance_lookup": {
+    "required_names": [
+      "CAL-PIPELINE-PROJECT-CONTEXT",
+      "GITHUB-AND-PR-GOVERNANCE",
+      "PROJECT-STATE-LOCATION-POLICY",
+      "EPISTEMIC-RECORD-CONVENTIONS",
+      "AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS",
+      "PRODUCT-NORTH-STAR"
+    ],
+    "github_code_search_result": "not located through available GitHub code search before receipt freeze",
+    "deviation": "procedure is constrained by the exact PR #20 preregistration plus current task until durable governance files can be located without crossing forbidden scientific surfaces"
+  },
+  "allowed_freshstack_surfaces": [
+    "pinned Hugging Face dataset files at exact known revision",
+    "direct raw dataset files",
+    "dataset schema/config files",
+    "exact GitHub source-code files at pinned commit",
+    "Git trees",
+    "Git blobs",
+    "Git commit objects",
+    "exact upstream source files at explicit commits",
+    "repository license files",
+    "construction scripts",
+    "immutable raw GitHub URLs",
+    "repository/dataset metadata APIs without benchmark results"
+  ],
+  "forbidden_freshstack_surfaces": [
+    "repository README except exact pre-known result-free lines",
+    "FreshStack homepage/project website",
+    "leaderboards",
+    "benchmark result tables",
+    "evaluation documentation",
+    "papers / paper HTML / paper PDF",
+    "search snippets or abstracts containing benchmark results",
+    "blogs or release posts discussing performance",
+    "retrieval qrels before gold freeze",
+    "judged candidate lists",
+    "result-bearing examples",
+    "general web search for FreshStack provenance"
+  ],
+  "predecessor_metadata_policy": {
+    "pr17_pr18": "result-free Git ref/commit metadata only; full PR bodies and result-bearing surfaces forbidden",
+    "pr20_pr21": "frozen preregistration/contract artifacts permitted",
+    "pr22_pr23": "procedural contamination records only"
+  },
+  "information_acquisition_deviations_before_gate1": [
+    "A GitHub PR search test was overbroad and rendered PR #20/#21/#22/#23 plus unrelated PR #5 bodies. No prohibited retrieval metric/result values or candidate lists were rendered. This surface is now excluded from further predecessor inspection."
+  ],
+  "exposure_state": {
+    "production_BM25_exposed": false,
+    "Hybrid_exposed": false,
+    "Semantic_only_exposed": false,
+    "dense_exposed": false,
+    "lexical_exposed": false,
+    "FreshStack_candidate_list_exposed": false,
+    "FreshStack_published_retrieval_result_exposed": false,
+    "historical_predecessor_retrieval_result_exposed": false,
+    "published_FreshStack_qrel_exposed_before_gold_freeze": false,
+    "published_SciFact_evidence_exposed_before_gold_freeze": false,
+    "scientific_gold_creation_state": "NOT_STARTED"
+  },
+  "evaluator_isolation": {
+    "surface": "MainFrame Conduit separate-agent/session",
+    "availability": "UNAVAILABLE",
+    "observation": "conduit_list_adapters returned MCP SSE HTTP 404 before any agent/session content was exposed",
+    "gate4_initial_state": "INDEPENDENCE NOT ESTABLISHED unless a different genuine isolated surface becomes available"
+  }
+}
