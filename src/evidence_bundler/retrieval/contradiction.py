@@ -78,10 +78,13 @@ def retrieve_contradicting(
     for query in queries:
         lexical_hits = bm25_index.query(
             query,
-            top_k=config.rrf_candidate_pool,
+            top_k=(config.counterevidence_lexical_child_top_k or config.rrf_candidate_pool),
             score_floor=config.lexical_score_floor,
         )
-        semantic_hits = semantic_index.query(query, top_k=config.rrf_candidate_pool)
+        semantic_hits = semantic_index.query(
+            query,
+            top_k=(config.counterevidence_semantic_child_top_k or config.rrf_candidate_pool),
+        )
         rankings.append([hit.chunk.chunk_id for hit in lexical_hits])
         rankings.append([hit.chunk.chunk_id for hit in semantic_hits])
         _keep_best_lexical_hits(lexical_by_id, lexical_hits)
