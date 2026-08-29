@@ -1,83 +1,84 @@
-# External Corpus Retrieval Evaluator Contract v0.1-draft
+# External Corpus Retrieval Evaluator Contract v0.2-draft
 
-This is Research Infrastructure. It defines metric and handoff mechanics only. It does not establish benchmark validity or Evidence Bundler retrieval performance.
+This is Research Infrastructure. It defines evaluator and blind-handoff mechanics only. It does not establish benchmark validity or Evidence Bundler retrieval performance.
 
 ## Required identities
 
-Every manifest, hidden-gold artifact, and retrieval run carries the same `corpus_version`, `corpus_sha256`, and `benchmark_sha256`. Any mismatch invalidates the evaluation. `K` is a positive integer supplied by the run and the run may contain at most K hits per query.
+Manifest, hidden gold, and ranked run must carry identical `corpus_version`, `corpus_sha256`, and `benchmark_sha256`. Any mismatch invalidates evaluation. `K` is a positive integer supplied by the run; each query may return zero through K hits.
 
 ## Public manifest
 
-The public manifest contains unique query IDs, unique source IDs, unique passage IDs, passage-to-source bindings, and provenance sufficient to reconstruct the represented source/passage unit. Source or passage list order has no metric meaning.
+The public manifest represents queries, sources, passages, and provenance. Query, source, and passage IDs are unique. Passage records bind `passage_id` to `source_id` plus a reconstructable locator/representation identity. Source/passages list order has no metric meaning.
 
-The evaluator uses IDs only as identity keys. Consistent stable-ID renaming must preserve metric values. It is expected to change artifact hashes because the revealed object is different bytes.
+IDs are identity keys, not score features. A consistent stable-ID rename must preserve metric values. Artifact hashes are expected to change because the identified object changed.
 
-## Hidden gold
+## Hidden judgments
 
-Each query may contain zero or more judgments. A judgment has:
+A judgment row contains:
 
 - `passage_id`;
-- integer `grade >= 0`;
-- `role` in `support | counterevidence | other`.
+- `relevance_degree`: `DECISIVE | PARTIAL | TOPICAL | IRRELEVANT | UNKNOWN`;
+- `binary_relevant`: boolean for resolved judgments, `null` for `UNKNOWN`;
+- `gain`: non-negative integer for resolved judgments, `null` for `UNKNOWN`;
+- `role`: `SUPPORT | COUNTEREVIDENCE | NEUTRAL_OR_NOT_APPLICABLE | UNKNOWN`.
 
-`grade > 0` is binary relevance. `grade == 0` is explicitly judged non-relevant. A corpus passage with no judgment row is **unjudged**, not non-relevant.
+`binary_relevant=true` requires positive gain. `binary_relevant=false` requires gain 0. `UNKNOWN` requires both binary relevance and gain to be null. This keeps a deliberately unresolved judgment distinct from an absent judgment row.
+
+A passage with no judgment row is **unjudged**, not irrelevant. An `UNKNOWN` row is **judged but unresolved**, not irrelevant and not unjudged. Neither state receives relevance credit.
 
 Gold declares `qrels_mode`:
 
-- `complete_relevant_set`: all passages intended to count as relevant for the query are represented in the gold. Unjudged passages may exist but are not known positives.
-- `partial`: the judgment set is incomplete. Hit/recall results are lower bounds against known positives and must be labelled `lower_bound`.
+- `complete_relevant_set`: all passages intended to count as relevant in the frozen evidence world are represented among resolved positive judgments;
+- `partial`: known judgments are incomplete. Hit/recall are lower bounds against known positives and output must say `metric_interpretation=lower_bound`.
 
-Gold may set `ndcg_eligible=true`. nDCG is computed only if: (a) at least one grade exceeds 1, (b) qrels mode is `complete_relevant_set`, and (c) `ndcg_eligible=true`. Otherwise nDCG is `null`, not silently synthesized.
+### Multi-passage groups
 
-A query may also contain evidence groups with a unique `group_id` and a non-empty set of `required_passage_ids`. A group is covered only when **all** required passages are present in top K.
+A group has unique `group_id`, `group_kind`, and a non-empty set of `passage_ids`.
 
-## Ranked run
+- `JOINTLY_REQUIRED`: covered only if all member passages occur within top K.
+- `ALTERNATIVE_SUFFICIENT`: covered if at least one member occurs within top K.
 
-Each query has zero to K unique hits. Ranks must be exact contiguous integers `1..N`, with no gaps, ties, zero rank, non-integer rank, or duplicate passage IDs. Every hit ID must exist in the public corpus manifest. Unknown IDs fail closed.
+Group members must be valid corpus passage IDs. Group semantics are benchmark gold and must not be inferred from rank or retrieval score.
 
-The set of run query IDs must exactly match the hidden-gold query IDs. Missing or extra queries fail closed.
+## Ranked output
+
+Each query has zero to K unique hits. Ranks must be exact contiguous integers `1..N`, with no gaps, ties, zero, non-integer rank, or duplicate passage IDs. Every hit passage must exist in the public corpus manifest. Unknown IDs fail closed.
+
+The run query-ID set must exactly match the gold query-ID set. Missing or extra queries invalidate evaluation.
 
 ## Metrics
 
-Metrics are computed per query first, then macro-averaged over queries for which that metric is defined. The evaluator must also emit per-query values so aggregate denominators are auditable.
+Compute per query first. Aggregate by macro-average over queries where the metric is defined. Always retain per-query values so undefined cases and denominators remain inspectable.
 
-- `hit@K`: 1 if at least one known relevant passage of any role appears in top K, else 0. Undefined if the query has no known relevant passage.
-- `evidence recall@K`: fraction of known relevant `support` passages retrieved in top K. Undefined if no known relevant support passages exist.
-- `counterevidence recall@K`: fraction of known relevant `counterevidence` passages retrieved in top K. Undefined if none exist.
-- `nDCG@K`: gain `(2^grade - 1) / log2(rank + 1)`, normalized by the ideal ordering of known judgments, only under the eligibility rule above. Unjudged hits have zero gain but are not thereby declared non-relevant.
-- `joint/group coverage@K`: complete groups retrieved divided by total groups. Partial group retrieval receives zero credit for that group. Undefined if no groups exist.
-- `judgment coverage@K`: judged retrieved passages divided by retrieved passages. Empty result lists have coverage 1.0. This is diagnostic, not a relevance score.
+- `hit@K`: 1 if at least one known `binary_relevant=true` passage of any role appears in top K, otherwise 0. Undefined when a query has no known positive judgment.
+- `evidence recall@K`: retrieved known positive `SUPPORT` passages divided by all known positive `SUPPORT` passages. Undefined if none exist.
+- `counterevidence recall@K`: retrieved known positive `COUNTEREVIDENCE` passages divided by all such passages. Undefined if none exist.
+- `nDCG@K`: gain `(2^gain - 1) / log2(rank + 1)` normalized by ideal gain ordering. It is computed only if `ndcg_eligible=true`, qrels mode is `complete_relevant_set`, no unresolved `UNKNOWN` judgment exists, and at least two distinct positive gain levels exist. Otherwise it is null.
+- `joint_group_coverage@K`: satisfied groups divided by total groups, using each group's declared `group_kind`. Undefined if no groups exist.
+- `judgment_coverage@K`: retrieved passages with any judgment row divided by retrieved passages. Empty results = 1.0. Diagnostic only.
+- `resolved_judgment_coverage@K`: retrieved passages with a non-null binary judgment divided by retrieved passages. Empty results = 1.0. Diagnostic only.
+
+Unjudged and `UNKNOWN` passages receive zero gain when ranking positions are inspected, but that zero must not be reinterpreted as an adjudicated non-relevance label.
 
 ## Fail-closed conditions
 
-Evaluation is invalid rather than scored when any of these occur:
+Invalid rather than scored:
 
-- corpus-version, corpus hash, or benchmark hash mismatch;
+- corpus version/hash or benchmark hash mismatch;
 - duplicate query, corpus-passage, judgment-passage, group, or ranked-hit IDs where uniqueness is required;
-- unknown corpus IDs in gold, groups, or run hits;
-- malformed ranks;
-- more than K hits;
+- unknown passage IDs in judgments, groups, or run hits;
+- malformed ranks or more than K hits;
 - query-set mismatch;
-- invalid grade, role, group membership, or qrels mode.
+- invalid relevance degree, binary/gain combination, role, group kind/membership, or qrels mode.
 
-## Invariance and sensitivity
+## Required sensitivity and invariance
 
-The following must preserve metric values when semantics are unchanged:
+Sensitivity controls must change affected metrics when decision-relevant: missing decisive/support evidence, missing counterevidence, relevant rank moved across K, lost jointly-required member, and SUPPORT/COUNTEREVIDENCE mutation.
 
-- object-key order or list serialization order where order is declared irrelevant;
-- source-order permutation;
-- consistent stable-ID renaming.
-
-The following must change the affected metric when the mutated item is decision-relevant:
-
-- removing decisive support;
-- removing counterevidence;
-- moving a relevant passage across K;
-- dropping a required group member;
-- mutating support to counterevidence or the reverse.
+Metric values must remain invariant to irrelevant serialization order, source/passages list permutation, and consistent stable-ID renaming. Gold commitment hashes are invariant to irrelevant serialization only, not ID renaming.
 
 ## Hidden-gold commitment
 
-The commitment is SHA-256 over `canonical-json-v1` bytes. Canonicalization sorts object keys, queries by `query_id`, judgments by `passage_id`, groups by `group_id`, and each group's required IDs lexicographically, then emits UTF-8 JSON with no insignificant whitespace.
+Commitment is SHA-256 over `canonical-json-v1` bytes. Canonicalization sorts object keys; queries by `query_id`; judgments by `passage_id`; groups by `group_id`; each group's `passage_ids` lexicographically; and emits UTF-8 JSON without insignificant whitespace.
 
-Reordered serialization must verify to the same commitment. Any semantic mutation, including a stable-ID rename, is a different revealed gold object and must change the commitment.
+Reordered serialization must verify to the same commitment. Any semantic mutation must fail verification.

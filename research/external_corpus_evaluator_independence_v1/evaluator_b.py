@@ -8,121 +8,129 @@ class ContractError(ValueError):
     pass
 
 
-def _require(condition: bool, message: str) -> None:
+def _ok(condition: bool, message: str) -> None:
     if not condition:
         raise ContractError(message)
 
 
 def evaluate(manifest: dict[str, Any], gold: dict[str, Any], run: dict[str, Any]) -> dict[str, Any]:
-    _require(isinstance(manifest, dict) and isinstance(gold, dict) and isinstance(run, dict), "objects required")
+    _ok(all(isinstance(x, dict) for x in (manifest, gold, run)), "objects required")
     for key in ("corpus_version", "corpus_sha256", "benchmark_sha256"):
-        _require(manifest.get(key) == gold.get(key) == run.get(key), f"identity mismatch: {key}")
+        _ok(len({manifest.get(key), gold.get(key), run.get(key)}) == 1, f"identity mismatch: {key}")
     k = run.get("k")
-    _require(type(k) is int and k > 0, "positive integer K required")
-    passage_rows = manifest.get("passages")
-    _require(isinstance(passage_rows, list) and passage_rows, "passages required")
-    passage_ids = [p.get("passage_id") if isinstance(p, dict) else None for p in passage_rows]
-    _require(all(isinstance(x, str) for x in passage_ids), "string passage IDs required")
-    _require(len(set(passage_ids)) == len(passage_ids), "duplicate corpus passage ID")
-    corpus = set(passage_ids)
+    _ok(type(k) is int and k > 0, "positive K required")
 
-    gold_rows = gold.get("queries")
-    run_rows = run.get("queries")
-    _require(isinstance(gold_rows, list) and gold_rows, "gold queries required")
-    _require(isinstance(run_rows, list) and run_rows, "run queries required")
-    gold_map: dict[str, dict[str, Any]] = {}
-    for row in gold_rows:
-        _require(isinstance(row, dict) and isinstance(row.get("query_id"), str), "invalid gold query")
-        qid = row["query_id"]
-        _require(qid not in gold_map, "duplicate gold query")
-        gold_map[qid] = row
-    run_map: dict[str, list[str]] = {}
-    for row in run_rows:
-        _require(isinstance(row, dict) and isinstance(row.get("query_id"), str), "invalid run query")
-        qid = row["query_id"]
-        _require(qid not in run_map, "duplicate run query")
-        hits = row.get("hits")
-        _require(isinstance(hits, list) and len(hits) <= k, "invalid hit list")
-        ids: list[str] = []
-        ranks: list[int] = []
-        for hit in hits:
-            _require(isinstance(hit, dict), "invalid hit")
-            pid = hit.get("passage_id")
-            rank = hit.get("rank")
-            _require(isinstance(pid, str) and pid in corpus, "unknown hit passage")
-            _require(type(rank) is int, "integer rank required")
-            ids.append(pid)
-            ranks.append(rank)
-        _require(ranks == list(range(1, len(hits) + 1)), "malformed ranks")
-        _require(len(ids) == len(set(ids)), "duplicate hit passage")
-        run_map[qid] = ids
-    _require(set(gold_map) == set(run_map), "query set mismatch")
+    passage_rows = manifest.get("passages")
+    _ok(isinstance(passage_rows, list) and passage_rows, "passages required")
+    corpus_list = [x.get("passage_id") if isinstance(x, dict) else None for x in passage_rows]
+    _ok(all(isinstance(x, str) for x in corpus_list) and len(corpus_list) == len(set(corpus_list)), "bad corpus IDs")
+    corpus = set(corpus_list)
 
     mode = gold.get("qrels_mode")
-    _require(mode in {"complete_relevant_set", "partial"}, "invalid qrels_mode")
-    prepared: dict[str, dict[str, Any]] = {}
-    max_grade = 0
-    for qid, row in gold_map.items():
-        judgments = row.get("judgments", [])
-        groups = row.get("groups", [])
-        _require(isinstance(judgments, list) and isinstance(groups, list), "judgments/groups must be lists")
-        by_pid: dict[str, tuple[int, str]] = {}
-        for judgment in judgments:
-            _require(isinstance(judgment, dict), "invalid judgment")
-            pid = judgment.get("passage_id")
-            grade = judgment.get("grade")
-            role = judgment.get("role")
-            _require(isinstance(pid, str) and pid in corpus and pid not in by_pid, "invalid judgment passage")
-            _require(type(grade) is int and grade >= 0, "invalid grade")
-            _require(role in {"support", "counterevidence", "other"}, "invalid role")
-            by_pid[pid] = (grade, role)
-            max_grade = max(max_grade, grade)
-        normalized_groups: list[frozenset[str]] = []
-        seen_group_ids: set[str] = set()
-        for group in groups:
-            _require(isinstance(group, dict) and isinstance(group.get("group_id"), str), "invalid group")
-            gid = group["group_id"]
-            members = group.get("required_passage_ids")
-            _require(gid not in seen_group_ids, "duplicate group ID")
-            _require(isinstance(members, list) and members and all(isinstance(x, str) for x in members), "invalid group members")
-            _require(len(set(members)) == len(members) and set(members) <= corpus, "invalid group membership")
-            seen_group_ids.add(gid)
-            normalized_groups.append(frozenset(members))
-        prepared[qid] = {"judgments": by_pid, "groups": normalized_groups}
+    _ok(mode in {"complete_relevant_set", "partial"}, "bad qrels mode")
+    gold_rows = gold.get("queries")
+    run_rows = run.get("queries")
+    _ok(isinstance(gold_rows, list) and gold_rows and isinstance(run_rows, list) and run_rows, "query rows required")
 
-    allow_ndcg = bool(gold.get("ndcg_eligible")) and max_grade > 1 and mode == "complete_relevant_set"
-    per_query: dict[str, dict[str, float | None]] = {}
-    for qid in sorted(prepared):
-        judgments: dict[str, tuple[int, str]] = prepared[qid]["judgments"]
-        ranked = run_map[qid][:k]
+    gmap: dict[str, dict[str, Any]] = {}
+    unknown_exists = False
+    positive_gains: set[int] = set()
+    for q in gold_rows:
+        _ok(isinstance(q, dict) and isinstance(q.get("query_id"), str), "bad gold query")
+        qid = q["query_id"]
+        _ok(qid not in gmap, "duplicate gold query")
+        js = q.get("judgments", [])
+        gs = q.get("groups", [])
+        _ok(isinstance(js, list) and isinstance(gs, list), "bad judgment/group collections")
+        seen_j: set[str] = set()
+        for j in js:
+            _ok(isinstance(j, dict), "bad judgment")
+            pid = j.get("passage_id")
+            degree = j.get("relevance_degree")
+            binary = j.get("binary_relevant")
+            gain = j.get("gain")
+            role = j.get("role")
+            _ok(isinstance(pid, str) and pid in corpus and pid not in seen_j, "bad judgment passage")
+            _ok(degree in {"DECISIVE", "PARTIAL", "TOPICAL", "IRRELEVANT", "UNKNOWN"}, "bad degree")
+            _ok(role in {"SUPPORT", "COUNTEREVIDENCE", "NEUTRAL_OR_NOT_APPLICABLE", "UNKNOWN"}, "bad role")
+            if degree == "UNKNOWN":
+                _ok(binary is None and gain is None, "UNKNOWN must be null-valued")
+                unknown_exists = True
+            else:
+                _ok(type(binary) is bool and type(gain) is int and gain >= 0, "resolved judgment shape")
+                _ok((binary and gain > 0) or ((not binary) and gain == 0), "binary/gain inconsistency")
+                if gain > 0:
+                    positive_gains.add(gain)
+            seen_j.add(pid)
+        seen_g: set[str] = set()
+        for group in gs:
+            _ok(isinstance(group, dict), "bad group")
+            gid = group.get("group_id")
+            kind = group.get("group_kind")
+            members = group.get("passage_ids")
+            _ok(isinstance(gid, str) and gid not in seen_g, "bad group ID")
+            _ok(kind in {"JOINTLY_REQUIRED", "ALTERNATIVE_SUFFICIENT"}, "bad group kind")
+            _ok(isinstance(members, list) and members and all(isinstance(x, str) for x in members), "bad group members")
+            _ok(len(set(members)) == len(members) and set(members) <= corpus, "bad group membership")
+            seen_g.add(gid)
+        gmap[qid] = q
+
+    rmap: dict[str, list[str]] = {}
+    for q in run_rows:
+        _ok(isinstance(q, dict) and isinstance(q.get("query_id"), str), "bad run query")
+        qid = q["query_id"]
+        hits = q.get("hits")
+        _ok(qid not in rmap and isinstance(hits, list) and len(hits) <= k, "bad run hit list")
+        ids: list[str] = []
+        ranks: list[int] = []
+        for h in hits:
+            _ok(isinstance(h, dict), "bad hit")
+            pid, rank = h.get("passage_id"), h.get("rank")
+            _ok(isinstance(pid, str) and pid in corpus and type(rank) is int, "bad hit identity/rank")
+            ids.append(pid); ranks.append(rank)
+        _ok(ranks == list(range(1, len(ids) + 1)) and len(ids) == len(set(ids)), "rank/duplicate violation")
+        rmap[qid] = ids
+    _ok(set(gmap) == set(rmap), "query set mismatch")
+
+    ndcg_allowed = bool(gold.get("ndcg_eligible")) and mode == "complete_relevant_set" and not unknown_exists and len(positive_gains) >= 2
+    per: dict[str, dict[str, float | None]] = {}
+    for qid in sorted(gmap):
+        q = gmap[qid]
+        ranked = rmap[qid][:k]
         got = set(ranked)
-        positives = {p for p, (g, _) in judgments.items() if g > 0}
-        supports = {p for p, (g, r) in judgments.items() if g > 0 and r == "support"}
-        counters = {p for p, (g, r) in judgments.items() if g > 0 and r == "counterevidence"}
-        groups: list[frozenset[str]] = prepared[qid]["groups"]
-
-        def recall(target: set[str]) -> float | None:
+        js = {j["passage_id"]: j for j in q.get("judgments", [])}
+        rel = {p for p, j in js.items() if j["binary_relevant"] is True}
+        sup = {p for p, j in js.items() if j["binary_relevant"] is True and j["role"] == "SUPPORT"}
+        ctr = {p for p, j in js.items() if j["binary_relevant"] is True and j["role"] == "COUNTEREVIDENCE"}
+        def frac(target: set[str]) -> float | None:
             return None if not target else len(got & target) / len(target)
-
-        ndcg: float | None = None
-        if allow_ndcg:
-            gains = [judgments.get(pid, (0, "other"))[0] for pid in ranked]
-            ideal = sorted((g for g, _ in judgments.values()), reverse=True)[:k]
-            dcg = sum(((2**g) - 1) / math.log2(i + 2) for i, g in enumerate(gains))
-            idcg = sum(((2**g) - 1) / math.log2(i + 2) for i, g in enumerate(ideal))
-            ndcg = None if idcg == 0 else dcg / idcg
-        per_query[qid] = {
-            "hit_at_k": None if not positives else float(bool(got & positives)),
-            "evidence_recall_at_k": recall(supports),
-            "counterevidence_recall_at_k": recall(counters),
+        groups = q.get("groups", [])
+        group_value = None
+        if groups:
+            flags = []
+            for group in groups:
+                members = set(group["passage_ids"])
+                flags.append(members <= got if group["group_kind"] == "JOINTLY_REQUIRED" else bool(members & got))
+            group_value = sum(flags) / len(flags)
+        ndcg = None
+        if ndcg_allowed:
+            observed = [js.get(pid, {}).get("gain") or 0 for pid in ranked]
+            ideal = sorted((j["gain"] for j in js.values() if j["gain"] is not None), reverse=True)[:k]
+            dcg = sum(((2**g)-1)/math.log2(i+2) for i,g in enumerate(observed))
+            idcg = sum(((2**g)-1)/math.log2(i+2) for i,g in enumerate(ideal))
+            ndcg = None if idcg == 0 else dcg/idcg
+        per[qid] = {
+            "hit_at_k": None if not rel else float(bool(got & rel)),
+            "evidence_recall_at_k": frac(sup),
+            "counterevidence_recall_at_k": frac(ctr),
             "ndcg_at_k": ndcg,
-            "joint_group_coverage_at_k": None if not groups else sum(group <= got for group in groups) / len(groups),
-            "judgment_coverage_at_k": 1.0 if not ranked else sum(pid in judgments for pid in ranked) / len(ranked),
+            "joint_group_coverage_at_k": group_value,
+            "judgment_coverage_at_k": 1.0 if not ranked else sum(p in js for p in ranked)/len(ranked),
+            "resolved_judgment_coverage_at_k": 1.0 if not ranked else sum(p in js and js[p]["binary_relevant"] is not None for p in ranked)/len(ranked),
         }
-
-    names = list(next(iter(per_query.values())))
+    names = list(next(iter(per.values())))
     aggregate: dict[str, float | None] = {}
     for name in names:
-        numbers = [metrics[name] for metrics in per_query.values() if metrics[name] is not None]
-        aggregate[name] = None if not numbers else sum(numbers) / len(numbers)
-    return {"status": "ok", "k": k, "qrels_mode": mode, "metric_interpretation": "lower_bound" if mode == "partial" else "point_estimate", "ndcg_eligible": allow_ndcg, "aggregate": aggregate, "per_query": per_query}
+        vals = [row[name] for row in per.values() if row[name] is not None]
+        aggregate[name] = None if not vals else sum(vals)/len(vals)
+    return {"status":"ok","k":k,"qrels_mode":mode,"metric_interpretation":"lower_bound" if mode=="partial" else "point_estimate","ndcg_eligible":ndcg_allowed,"aggregate":aggregate,"per_query":per}
