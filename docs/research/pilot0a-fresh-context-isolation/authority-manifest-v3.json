@@ -1,0 +1,102 @@
+{
+  "manifest_version": "3.0.0",
+  "purpose": "Fresh-run-safe bootstrap identities and access rules for External Corpus Methodology Pilot 0A, extended only to pin the exact byte identities of durable CAL Pipeline governance attachments and to add the durable context-free execution routing convention. This record contains no Pilot scientific observations, corpus diagnostics, row counts, relevance judgments, qrels, retrieval outputs, prior scientific gold, or new scientific disposition.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "prepared_against": {
+    "main_sha": "fc550394d297294876df421bc98267a80e7e3d2d",
+    "authority_manifest_v2_path": "docs/research/pilot0a-fresh-context-isolation/authority-manifest-v2.json",
+    "authority_manifest_v2_git_blob_sha": "6fa35ed438b7687abb295635ea8a3d57a0e343b7"
+  },
+  "durable_governance": {
+    "source": "Exact ChatGPT project attachments listed below",
+    "rule": "These files define durable intent/procedure only. Before pre-freeze use, compute SHA-256 of every supplied attachment and require an exact match. If any file is missing or differs, stop before evaluator implementation rather than substituting a newer or similarly named file.",
+    "required_files": [
+      {"name": "CAL-PIPELINE-PROJECT-CONTEXT.md", "sha256": "f5f4081e8d4942f7eb993d937c9e46c80e5a8898811d795f76e2dcb3e7c51caa"},
+      {"name": "PRODUCT-NORTH-STAR.md", "sha256": "fedf1cb2f7473f427455c88137ad05164fa935c2584df383ed2eb8f609f01f64"},
+      {"name": "GITHUB-AND-PR-GOVERNANCE.md", "sha256": "515b7541313c8ace8807fd1ca46d8ade0569521845e0e68f927d0783202d637c"},
+      {"name": "PROJECT-STATE-LOCATION-POLICY.md", "sha256": "dcf80aee6abfa9f4d67f1a8d10176297ea96defb123bce16f4ef1e0187b6085c"},
+      {"name": "EPISTEMIC-RECORD-CONVENTIONS.md", "sha256": "df571d1bfb809b2ec6eada35c16f70d4d2697b9dca0f09c3502fff2ed4b19c25"},
+      {"name": "RELEASE-AND-VERSION-GOVERNANCE.md", "sha256": "15047684338f726ff598575498c06f53e0e0b7dbfab58817c31c2ed827d1b03a"},
+      {"name": "AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS.md", "sha256": "3ac309c059aea19c8fa4f6c0fb963933018fb299339073ef4252feeff7517279"},
+      {"name": "CAL-PIPELINE-WRITING-STYLE-GUIDANCE.md", "sha256": "b8a36814e9bbd8fdba5ef0b1ab9b70d87d5e5058364a11fd124f1827ec5ac66b"},
+      {"name": "CONTEXT-FREE-EXECUTION-PROTOCOL.md", "sha256": "3c97f27922398cb311a122046d89ac443342a48f675ff01faad344cc0890e30d"}
+    ],
+    "context_free_protocol_role": "CONTEXT-FREE-EXECUTION-PROTOCOL.md is a routing/isolation procedure only. It adds no Pilot scientific observation or expected result and does not relax any task-specific allowlist/denylist.",
+    "frozen_aperture_rule": "For this v3 execution, only the exact attachment bytes above are authorized as durable governance. Later project-file edits are not implicitly authorized."
+  },
+  "frozen_pilot": {
+    "authority": "authority-manifest-v1.json as inherited through v2",
+    "pr20_base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+    "pr20_head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+    "published_terminal_disposition": "INCONCLUSIVE",
+    "rule": "Establish the frozen object by immutable identity without opening prior Pilot scientific narrative before its authorized reveal point."
+  },
+  "source_access_firewall": {
+    "reader_path": "research/source_access_firewall/reader.py",
+    "registry_path": "research/source_access_firewall/field_registry.json",
+    "reader_version": "source-access-firewall/0.1.0",
+    "reader_source_sha256": "88f12f5998b729aa3ecee808925849837f98a8dd202f6fa2e419e90c091a1ed2",
+    "field_registry_sha256": "9e4c257108045b7b959e4468ba80d9d42ef4e99d2bd7a2f51fc0eec41e7560f9",
+    "reader_git_blob_sha": "de9387bbe62f481996a864e6404833f448928f4b",
+    "registry_git_blob_sha": "22ea94bb7dcf6a62e50ce5175826934623fa2867",
+    "preserved_authorization": "SOURCE ACCESS ASSURED",
+    "authorization_boundary": "No retrieval execution and no 24-30-case apparatus is authorized."
+  },
+  "evaluator_independence_reproduction": {
+    "status_at_preparation": "UNRESOLVED_PENDING_GENUINELY_FRESH_INDEPENDENT_REPRODUCTION",
+    "source_branch": "research-infra/external-corpus-evaluator-independence-v1",
+    "source_branch_head_sha": "764144f3da77140a8e542158948b4e88d40a7421",
+    "pre_freeze_allowed_inputs": [
+      {"path": "research/external_corpus_evaluator_independence_v1/contract.md", "git_blob_sha": "61ad95dab08c89c34e3416c2a3b9b0f35dabb7f0"},
+      {"path": "research/external_corpus_evaluator_independence_v1/dummy_manifest.json", "git_blob_sha": "f2d0c1ff3b39d20c92878d75d8a345bc152f971d"},
+      {"path": "research/external_corpus_evaluator_independence_v1/dummy_run.json", "git_blob_sha": "45b9ef6e005fd7e005ec75305c2829fa241f8f81"},
+      {"path": "research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json", "git_blob_sha": "c6960cebeafa4c5dd214d7f32d47e68294a3f4da"}
+    ],
+    "pre_freeze_prohibited": [
+      "research/external_corpus_evaluator_independence_v1/evaluator_a.py",
+      "research/external_corpus_evaluator_independence_v1/evaluator_b.py",
+      "research/external_corpus_evaluator_independence_v1/canonical.py",
+      "tests/test_external_corpus_evaluator_independence.py",
+      "docs/research/results-external-corpus-evaluator-independence-v1.md",
+      "docs/research/independent-reproduction-external-corpus-evaluator-independence-v1.md",
+      "docs/research/receipt-external-corpus-evaluator-independence-v1.json",
+      "docs/research/revealed or expected-output material not listed in pre_freeze_allowed_inputs",
+      "any prior chat/thread reasoning about evaluator A or evaluator B"
+    ],
+    "required_sequence": [
+      "Verify exact SHA-256 for all nine durable governance attachments before any task-specific GitHub access.",
+      "In a genuinely fresh context, inspect only the contract and three dummy data inputs listed above.",
+      "Implement the evaluator contract independently without inspecting evaluator A/B, canonicalizer, tests, expected outputs, prior implementation reasoning, or prior comparison results.",
+      "Freeze the independent implementation and record its exact bytes/hash/commit before any comparison surface is opened.",
+      "Only after freeze, compare the independent implementation against the pinned source-branch implementation and adversarial fixtures.",
+      "If outputs/semantics do not agree, preserve the disagreement. Do not repair the frozen independent implementation after exposure and still call the same run independent.",
+      "If the fresh-context condition or attachment-byte identity cannot be established, keep evaluator independence unresolved."
+    ],
+    "scientific_non_claim": "This dummy evaluator reproduction does not establish benchmark validity, scientific adjudication validity, Pilot methodology support, or Evidence Bundler retrieval performance."
+  },
+  "scientific_access_boundary": {
+    "before_evaluator_reproduction_freeze": [
+      "Do not open Pilot 0A scientific source rows.",
+      "Do not open FreshStack qrels/nuggets or SciFact published evidence/rationale.",
+      "Do not open prior Pilot scientific gold or prior Pilot scientific observations.",
+      "Do not run or inspect any Evidence Bundler retriever."
+    ],
+    "after_evaluator_reproduction": "Scientific Gate 1 remains separately governed by the frozen Pilot protocol; clearing evaluator implementation independence is necessary infrastructure evidence only, never scientific support."
+  },
+  "fresh_run_access_rule": {
+    "preferred": [
+      "Read this v3 manifest, then v2/v1 only by exact path/ref where the v3 manifest directs it.",
+      "Use body-free ref/commit/tree/blob surfaces for identities.",
+      "Use only the exact hash-matched durable governance attachments listed here.",
+      "Use only explicitly allowed evaluator-reproduction inputs before implementation freeze."
+    ],
+    "prohibited": [
+      "Broad prior-Pilot PR retrieval before scientific reveal authorization.",
+      "Historical Pilot issue bodies, comments, reviews, discussion timelines, or search snippets exposing scientific findings.",
+      "Evaluator implementation or expected-result exposure before independent implementation freeze.",
+      "Any retrieval-system execution or output inspection.",
+      "Substituting a later project attachment for a hash-mismatched required file."
+    ]
+  },
+  "authorization": "Preparation only. No retrieval evaluation, production BM25, Hybrid, Semantic-only, dense/lexical retrieval, reranking, 24-30-case apparatus, new benchmark, RC5, production change, or frozen-case modification is authorized by this manifest."
+}
