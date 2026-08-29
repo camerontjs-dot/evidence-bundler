@@ -1,0 +1,11 @@
+{
+  "schema_version": "external-corpus-ranked-run-v0.3-draft",
+  "corpus_version": "dummy-ndcg-scope-v1",
+  "corpus_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "benchmark_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "k": 3,
+  "queries": [
+    {"query_id": "q_clean", "hits": [{"rank": 1, "passage_id": "p2"}, {"rank": 2, "passage_id": "p1"}]},
+    {"query_id": "q_unknown", "hits": [{"rank": 1, "passage_id": "p3"}, {"rank": 2, "passage_id": "p4"}, {"rank": 3, "passage_id": "p5"}]}
+  ]
+}
