@@ -6,6 +6,7 @@ on:
       - research/retrieval-control-surface-rc0-20260829
     paths:
       - "research/retrieval_control_surface_rc0/apply_rc0.py"
+      - "research/retrieval_control_surface_rc0/apply_rc0_followup.py"
       - ".github/workflows/research-retrieval-control-surface-rc0-bootstrap.yml"
 
 permissions:
@@ -28,7 +29,9 @@ jobs:
           git merge-base --is-ancestor 49e61842fc662b121ce3ff95cdedaa1f8e869aaf HEAD
           test "$(git rev-list --max-parents=0 HEAD)" != ""
       - name: Apply asserted RC0 patch
-        run: python research/retrieval_control_surface_rc0/apply_rc0.py
+        run: |
+          python research/retrieval_control_surface_rc0/apply_rc0.py
+          python research/retrieval_control_surface_rc0/apply_rc0_followup.py
       - name: Install package and dev tools
         run: python -m pip install -e ".[dev]"
       - name: Run full pytest suite before freeze
@@ -43,6 +46,7 @@ jobs:
             src/evidence_bundler/cli.py \
             tests/test_retrieval_control_surface_rc0.py \
             tests/test_bundle_writer.py \
+            tests/test_cli.py \
             research/retrieval_control_surface_rc0/real_model_smoke.py
       - name: Run mypy before freeze
         run: python -m mypy src
@@ -55,6 +59,7 @@ jobs:
       - name: Remove temporary patch/bootstrap machinery
         run: |
           rm research/retrieval_control_surface_rc0/apply_rc0.py
+          rm research/retrieval_control_surface_rc0/apply_rc0_followup.py
           rm .github/workflows/research-retrieval-control-surface-rc0-bootstrap.yml
       - name: Freeze implementation commit
         run: |
