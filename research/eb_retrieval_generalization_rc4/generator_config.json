@@ -1,7 +1,7 @@
 {
   "benchmark_name": "eb-retrieval-low-overlap-rc4-v1",
   "design_state": "preregistered_unimplemented",
-  "generator_seed": 271828,
+  "generator_seed": 173205,
   "sealed_case_count": 80,
   "families": {
     "L01": 16,
