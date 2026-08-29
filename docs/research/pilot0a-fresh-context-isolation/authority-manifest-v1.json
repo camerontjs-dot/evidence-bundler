@@ -1,0 +1,57 @@
+{
+  "manifest_version": "1.0.0",
+  "purpose": "Fresh-run-safe authority identities only. This file intentionally excludes prior Pilot scientific observations, corpus diagnostics, row counts, relevance judgments, qrels, retrieval outputs, and prior scientific gold.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "snapshot": {
+    "live_main_at_capture": "17d5f4e0688c9d255697dfd32e755def856b6eb8",
+    "pr20": {
+      "role": "frozen External Corpus Methodology Pilot 0A scientific object",
+      "state": "closed",
+      "merged": false,
+      "base_sha": "b9917f371d00a8dfaad20ab63e1daebc8c3c5f37",
+      "head_sha": "357fe735067dbbd3d54f8872ffc8391dac724950",
+      "published_terminal_disposition": "INCONCLUSIVE"
+    },
+    "pr21": {
+      "role": "evaluator independence / blind-handoff contract",
+      "state": "merged",
+      "head_sha": "8bd3cf9be308630277c0052835654884718f0153",
+      "merge_sha": "9d1b1311e362ca7aa51ab92472af22491e0edeb1"
+    },
+    "pr25": {
+      "role": "terminal source-access isolation assurance record",
+      "state": "closed",
+      "merged": false,
+      "head_sha": "d2457436c1c9695a9105c981c7ab7087831cbd5a",
+      "published_terminal_disposition": "SOURCE ACCESS ASSURED"
+    },
+    "pr26": {
+      "role": "administrative exact merge of PR25 assured object",
+      "state": "merged",
+      "head_sha": "d2457436c1c9695a9105c981c7ab7087831cbd5a",
+      "merge_sha": "17d5f4e0688c9d255697dfd32e755def856b6eb8"
+    },
+    "source_access_firewall": {
+      "reader_path": "research/source_access_firewall/reader.py",
+      "registry_path": "research/source_access_firewall/field_registry.json",
+      "reader_version": "source-access-firewall/0.1.0",
+      "reader_source_sha256": "88f12f5998b729aa3ecee808925849837f98a8dd202f6fa2e419e90c091a1ed2",
+      "field_registry_sha256": "9e4c257108045b7b959e4468ba80d9d42ef4e99d2bd7a2f51fc0eec41e7560f9",
+      "reader_git_blob_sha": "de9387bbe62f481996a864e6404833f448928f4b",
+      "registry_git_blob_sha": "22ea94bb7dcf6a62e50ce5175826934623fa2867",
+      "authorization": "Begin a new genuinely fresh Pilot 0A completion from Gate 1 using the assured source-access reader and frozen field registry. No retrieval execution and no 24-30-case apparatus is authorized."
+    }
+  },
+  "fresh_run_access_rule": {
+    "prohibited": [
+      "Broad PR metadata/body retrieval for prior Pilot PRs during the scientific fresh context",
+      "Any endpoint or connector action that deserializes prior Pilot scientific narrative when only identity/state is needed"
+    ],
+    "preferred": [
+      "Read this sanitized identity manifest",
+      "Verify live main and exact branch/commit refs through ref/branch endpoints that do not return PR bodies",
+      "Read only the frozen contract/artifact files specifically required by the Pilot methodology"
+    ]
+  },
+  "scope_note": "PR22-PR24 scientific observations are deliberately absent. This manifest does not authorize importing them. Any permitted procedural-contamination facts needed later should come from a separately sanitized durable record, not a broad PR body fetch."
+}
