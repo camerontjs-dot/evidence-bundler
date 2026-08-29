@@ -1,0 +1,35 @@
+{
+  "official_dataset": "freshstack/corpus-oct-2024",
+  "official_revision": "069f66dc323e163b48b10d08408d282733d4393b",
+  "historical_discovery_scope": "same official Hugging Face dataset Git history only",
+  "historical_commit_bearing_revision_found": false,
+  "join_executed": false,
+  "unmatched_official_rows": "NOT_COMPUTABLE_WITHOUT_HISTORICAL_REPRESENTATION",
+  "unmatched_historical_rows": "NOT_COMPUTABLE_WITHOUT_HISTORICAL_REPRESENTATION",
+  "duplicate_join_keys": "NOT_COMPUTABLE_WITHOUT_HISTORICAL_REPRESENTATION",
+  "ambiguous_join_keys": "NOT_COMPUTABLE_WITHOUT_HISTORICAL_REPRESENTATION",
+  "checked_dataset_commits": [
+    "849f3f8224c7182cbea6697243ce843973c38981",
+    "93545d645559ce262444a7534a563ede0dea5cd9",
+    "ebdb7c9d9e4ab4a0a72db94f1f31cfbc02aaa7d7",
+    "7365e274b60936720db56a9eebd077816c06aa63",
+    "3b620c0510dd616f0b2dec8ecd5355ded9a53bc5",
+    "c03d71895f4e9f8c08c5b626ece1824bdd243e54",
+    "0a74b4636f09d7bc10ebd37036bc9b7faec27b69",
+    "f9576b52be913f82b9c3a9e892bb3cf6f0185ae0",
+    "ef206bccada9a4b66130b78efaf33b9e91ac9de3",
+    "081ea5070309cd170e4324a081b5043433e381d1",
+    "89ffe2e417838451c07473cfc657bec86ee793e9",
+    "e9207ed05baac569136e88966a56504430dd7f12",
+    "7592ded1405f8e3bc97d1c3c89d9f8e9565e389d",
+    "db365d5f25cb2adb59b44bf9e41a9811575612d9",
+    "de93c55489af12d3e0ffc1a78202a8dd165db929",
+    "aa87a658bb12ecaca78aeeee577ac55cb3daef91"
+  ],
+  "observed_history": {
+    "commits_with_langchain_train_data_checked": 12,
+    "commits_without_langchain_train_data": 4,
+    "non_null_commit_id_observed": false
+  },
+  "stop_reason": "The frozen query identity contradiction independently falsified Gate 1. No broader historical-dataset discovery was attempted after the hard stop, because doing so would be post-falsifier completeness work rather than execution of the frozen scientific discriminator."
+}
