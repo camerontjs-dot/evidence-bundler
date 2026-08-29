@@ -2,24 +2,24 @@
 
 ## SciFact
 
-`ADEQUATE FOR BOUNDED RESEARCH METHODOLOGY`
+`SOURCE-ONLY LICENSING OBSERVATION ESTABLISHED PRE-EXPOSURE`
 
-At canonical repository commit `68b98a56d93e0f9da0d2aab4e6c3294699a0f72e`, authoritative `LICENSE.md` states:
+Before the contaminated Actions acquisition, authoritative `LICENSE.md` at canonical repository commit `68b98a56d93e0f9da0d2aab4e6c3294699a0f72e` was inspected through an exact GitHub source-file surface. It states:
 
 - claims/evidence annotations: CC BY 4.0;
 - corpus abstracts via S2ORC: ODC-By 1.0;
 - code: Apache-2.0.
 
-The exact dataset archive was independently reproduced by SHA-256, so the licensed object is byte-bound for this execution.
+The later archive SHA reproduction occurred after the FreshStack qrel firewall violation and therefore cannot be used in this execution to claim a clean byte-bound Gate 3 licensing decision.
 
 ## FreshStack
 
-`INCOMPLETE / NOT PROMOTION-RELEVANT AFTER GATE 1 FALSIFIER`
+`INCOMPLETE`
 
-The frozen dataset-level declarations are CC-BY-SA-4.0, with an explicit methodological warning that underlying GitHub source repositories may carry different terms. The official corpus could not be deterministically rebound to exact historical upstream Git commits before the frozen query object itself was falsified. Therefore per-source repository licensing was not completed and must not be reported as established.
+The frozen dataset-level declarations are CC-BY-SA-4.0, with the methodology requiring separate attention to underlying GitHub repository terms. Exact historical upstream source commits were not cleanly bound before termination, so per-source repository licensing was not established.
 
 No source substitution or current-HEAD licensing assumption was made.
 
 ## Overall
 
-Licensing is not an independent reason for the terminal `FALSIFIED` disposition. SciFact licensing is adequate; FreshStack source-specific licensing remains unestablished because the scientific object stopped at Gate 1.
+Licensing is not the terminal falsifier. The execution is terminally `FALSIFIED` because the acquisition machinery accessed qrel-bearing FreshStack query columns before gold freeze. SciFact's authoritative licence text remains a valid pre-exposure source observation; full corpus-specific licensing adequacy for Pilot 0A was not completed.
