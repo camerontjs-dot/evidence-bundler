@@ -1,0 +1,39 @@
+{
+  "controls": [
+    {"id": "oracle", "class": "positive", "expected": "qualify_ceiling"},
+    {"id": "null", "class": "negative", "expected": "fail_coverage"},
+    {"id": "first_n_source_order", "class": "structural", "expected": "fail_semantic_gate"},
+    {"id": "return_all", "class": "gaming", "expected": "fail_budget"},
+    {"id": "token_overlap", "class": "lexical", "expected": "not_qualify"},
+    {"id": "bow_tfidf", "class": "lexical", "expected": "not_qualify"},
+    {"id": "character_ngram", "class": "lexical", "expected": "not_qualify"},
+    {"id": "hard_negative_biased_lexical", "class": "lexical", "expected": "fail_semantic_gate"},
+    {"id": "passage_length_heuristic", "class": "structural", "expected": "fail_semantic_gate"},
+    {"id": "source_position_heuristic", "class": "structural", "expected": "fail_semantic_gate"},
+    {"id": "metadata_identifier_pattern_heuristic", "class": "structural", "expected": "fail_semantic_gate"},
+    {"id": "runtime_construction_style_gamer", "class": "promotion_critical_gamer", "expected": "fail_intended_anti_cue_gate"},
+    {"id": "cue_swap_gamer", "class": "promotion_critical_gamer", "expected": "fail_intended_anti_cue_gate"},
+    {"id": "provenance_corrupt", "class": "integrity", "expected": "fail_provenance"},
+    {"id": "completeness_aperture_liar", "class": "receipt_gaming", "expected": "fail_when_schema_supports"},
+    {"id": "semantic_answerability_liar", "class": "receipt_gaming", "expected": "fail_when_schema_supports"}
+  ],
+  "runtime_only_gamer_firewall": {
+    "allowed": [
+      "query_text",
+      "runtime_passage_text",
+      "runtime_source_order",
+      "runtime_passage_order",
+      "runtime_visible_metadata",
+      "runtime_visible_identifiers"
+    ],
+    "forbidden": [
+      "evaluator_gold",
+      "family_labels",
+      "decisive_ids",
+      "hard_negative_ids",
+      "hidden_annotations"
+    ]
+  },
+  "qualification_rule": "No promotion-critical weak or gaming system may satisfy the target semantic/anti-cue gates. Construction/style gamers must fail an intended anti-cue gate; technical/parser/provenance failure alone is insufficient evidence of semantic discrimination.",
+  "execution_state": "preregistered_not_run"
+}
