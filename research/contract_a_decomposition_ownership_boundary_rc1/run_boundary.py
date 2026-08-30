@@ -11,9 +11,10 @@ from claim_audit_lab.v1.explicit_claims import (
     ExplicitClaimAtom,
     ExplicitClaimRequest,
 )
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
+
 from evidence_bundler.models.ca import ScaffoldClaim
 from evidence_bundler.models.retrieval import RetrievalConfig
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 SNAPSHOT_SHA256 = "8dbedd537c024c4a624f21abd5fa11536ddfe558000f3a9366584c30c045e31c"
 
