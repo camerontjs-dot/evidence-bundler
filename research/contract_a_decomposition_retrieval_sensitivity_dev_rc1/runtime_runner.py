@@ -330,7 +330,12 @@ def run(
             semantic = SemanticIndex.build(
                 chunks,
                 embedder=embedder,
-                corpus_hash=(\n                    "sha256:"\n                    + hashlib.sha256(\n                        f"{CORPUS_TREE_SHA256}:{subset_id}".encode("utf-8")\n                    ).hexdigest()\n                ),
+                corpus_hash=(
+                    "sha256:"
+                    + hashlib.sha256(
+                        f"{CORPUS_TREE_SHA256}:{subset_id}".encode("utf-8")
+                    ).hexdigest()
+                ),
                 embedding_model=EMBEDDING_MODEL,
                 embedding_model_revision=EMBEDDING_REVISION,
                 semantic_query_prefix=str(config.semantic_query_prefix),
