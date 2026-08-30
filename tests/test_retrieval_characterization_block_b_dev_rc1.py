@@ -11,15 +11,36 @@ from research.retrieval_characterization_block_b_dev_rc1.runtime_runner import (
 
 class FakeEmbedder:
     def encode(self, texts: list[str], **_kwargs: object) -> list[list[float]]:
-        return [[float("alpha" in text.lower()), float("beta" in text.lower()), 0.5] for text in texts]
+        return [
+            [float("alpha" in text.lower()), float("beta" in text.lower()), 0.5]
+            for text in texts
+        ]
 
 
 def _write_runtime(root: Path) -> None:
     root.mkdir(parents=True, exist_ok=True)
     passages = [
-        {"source_id":"s1","passage_id":"p1","source_order":1,"passage_order":1,"text":"alpha decisive passage"},
-        {"source_id":"s1","passage_id":"p2","source_order":1,"passage_order":2,"text":"hard negative beta"},
-        {"source_id":"s2","passage_id":"p3","source_order":2,"passage_order":1,"text":"semantic alpha support"},
+        {
+            "source_id": "s1",
+            "passage_id": "p1",
+            "source_order": 1,
+            "passage_order": 1,
+            "text": "alpha decisive passage",
+        },
+        {
+            "source_id": "s1",
+            "passage_id": "p2",
+            "source_order": 1,
+            "passage_order": 2,
+            "text": "hard negative beta",
+        },
+        {
+            "source_id": "s2",
+            "passage_id": "p3",
+            "source_order": 2,
+            "passage_order": 1,
+            "text": "semantic alpha support",
+        },
     ]
     cases = [
         {
