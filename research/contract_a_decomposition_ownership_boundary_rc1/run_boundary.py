@@ -175,8 +175,7 @@ def run(snapshot_path: Path) -> dict[str, Any]:
         eb_generated_origin_rejected = True
 
     # Build a minimal CAL request without invoking model inference.
-    from claim_audit_lab.v1.config import load_default_audit_config
-    from claim_audit_lab.v1.models import Passage
+    from claim_audit_lab.v1.models import AuditConfig, ModelRevision, Passage
 
     fixed_passages = [
         Passage(
@@ -189,7 +188,17 @@ def run(snapshot_path: Path) -> dict[str, Any]:
     request = adapt_to_cal(
         packet,
         passages=fixed_passages,
-        audit_config=load_default_audit_config(),
+        audit_config=AuditConfig(
+            rules_file_sha="research-boundary-no-inference",
+            retriever=ModelRevision(
+                model_id="research-no-inference",
+                hf_revision_sha="0" * 40,
+            ),
+            entailer=ModelRevision(
+                model_id="research-no-inference",
+                hf_revision_sha="0" * 40,
+            ),
+        ),
     )
 
     if [atom.atom_id for atom in request.atoms] != [
