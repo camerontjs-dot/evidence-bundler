@@ -3,17 +3,17 @@ from pathlib import Path
 
 import yaml
 
-from research.contract_e_native_rc2.emit import (
-    source_access_descriptor,
-)
-
+from research.contract_e_native_rc2.emit import source_access_descriptor
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def metadata():
     return yaml.safe_load(
-        (ROOT / "tests/fixtures/scaffold-run-minimal/corpus/src-001/metadata.yaml").read_text()
+        (
+            ROOT
+            / "tests/fixtures/scaffold-run-minimal/corpus/src-001/metadata.yaml"
+        ).read_text()
     )
 
 
@@ -40,7 +40,7 @@ def test_source_identity_mutation_changes_binding():
 
 
 def test_descriptor_domain_is_not_evidence_truth():
-    d = source_access_descriptor(metadata())
-    assert d.authority_domain == "source_access"
-    assert d.operation == "source.read"
-    assert "support" not in d.authority_domain
+    descriptor = source_access_descriptor(metadata())
+    assert descriptor.authority_domain == "source_access"
+    assert descriptor.operation == "source.read"
+    assert "support" not in descriptor.authority_domain
