@@ -1,0 +1,106 @@
+name: Research - retrieval candidate-pool aperture dev RC1
+
+on:
+  push:
+    branches:
+      - research/retrieval-characterization-pool-aperture-dev-rc1-20260829
+    paths:
+      - "research/retrieval_candidate_pool_aperture_dev_rc1/**"
+      - "tests/test_retrieval_candidate_pool_aperture_dev_rc1.py"
+      - ".github/workflows/research-retrieval-candidate-pool-aperture-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/retrieval_candidate_pool_aperture_dev_rc1/**"
+      - "tests/test_retrieval_candidate_pool_aperture_dev_rc1.py"
+      - ".github/workflows/research-retrieval-candidate-pool-aperture-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact identity
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/retrieval-candidate-pool-aperture-dev-rc1
+          git rev-parse HEAD | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/tree-sha.txt
+
+      - name: Verify frozen benchmark identity and gold-blind generator
+        run: |
+          set -o pipefail
+          test "$(sha256sum benchmarks/eb-retrieval-assurance-rc2-v1/SHA256SUMS | cut -d' ' -f1)" = "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad"
+          ! grep -q "evaluator_only" research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py
+          ! grep -q "dev_gold" research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py
+          ! grep -q "sealed_gold" research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py
+
+      - name: Install package and dev tools
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Run full suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/pytest.txt
+
+      - name: Run pool boundary test
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_retrieval_candidate_pool_aperture_dev_rc1.py \
+            2>&1 | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/pool-tests.txt
+
+      - name: Ruff pool apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check \
+            research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py \
+            research/retrieval_candidate_pool_aperture_dev_rc1/pool_analyzer.py \
+            tests/test_retrieval_candidate_pool_aperture_dev_rc1.py \
+            2>&1 | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/ruff.txt
+
+      - name: Generate gold-blind candidate pools
+        run: |
+          set -o pipefail
+          python research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/retrieval-candidate-pool-aperture-dev-rc1/candidates.json \
+            | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/candidate-receipt.json
+
+      - name: Analyze candidate pools against dev gold
+        run: |
+          set -o pipefail
+          python research/retrieval_candidate_pool_aperture_dev_rc1/pool_analyzer.py \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --gold benchmarks/eb-retrieval-assurance-rc2-v1/evaluator_only/dev_gold.jsonl \
+            --candidates artifacts/retrieval-candidate-pool-aperture-dev-rc1/candidates.json \
+            --output artifacts/retrieval-candidate-pool-aperture-dev-rc1/analysis.json \
+            | tee artifacts/retrieval-candidate-pool-aperture-dev-rc1/analysis-summary.json
+
+      - name: Hash artifacts
+        run: |
+          set -o pipefail
+          cd artifacts/retrieval-candidate-pool-aperture-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: retrieval-candidate-pool-aperture-dev-rc1-${{ github.sha }}
+          path: artifacts/retrieval-candidate-pool-aperture-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90
