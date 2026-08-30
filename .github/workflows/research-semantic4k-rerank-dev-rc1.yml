@@ -1,0 +1,142 @@
+name: Research - semantic 4K MiniLM rerank dev RC1
+
+on:
+  push:
+    branches:
+      - research/retrieval-rerank-semantic4k-dev-rc1-20260829
+    paths:
+      - "research/retrieval_rerank_semantic4k_dev_rc1/**"
+      - "tests/test_retrieval_rerank_semantic4k_dev_rc1.py"
+      - ".github/workflows/research-semantic4k-rerank-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/retrieval_rerank_semantic4k_dev_rc1/**"
+      - "tests/test_retrieval_rerank_semantic4k_dev_rc1.py"
+      - ".github/workflows/research-semantic4k-rerank-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  rerank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact identity
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/semantic4k-rerank-dev-rc1
+          git rev-parse HEAD | tee artifacts/semantic4k-rerank-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/semantic4k-rerank-dev-rc1/tree-sha.txt
+
+      - name: Verify frozen benchmark/evaluator identities and gold blindness
+        run: |
+          set -o pipefail
+          test "$(sha256sum benchmarks/eb-retrieval-assurance-rc2-v1/SHA256SUMS | cut -d' ' -f1)" = "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad"
+          test "$(sha256sum research/eb_retrieval_assurance_rc2/evaluator.py | cut -d' ' -f1)" = "c443a64a2c2dfe8c9b0decd8c0414c1e7bb1069d86d3355dd0202fa9725aff08"
+          test "$(sha256sum research/eb_retrieval_assurance_rc2/thresholds.json | cut -d' ' -f1)" = "9df75b448ff5090d9bd2821f624e327d47ba5ea9848460cf69518bb6b04ea05a"
+          ! grep -q "evaluator_only" research/retrieval_rerank_semantic4k_dev_rc1/runtime_runner.py
+          ! grep -q "dev_gold" research/retrieval_rerank_semantic4k_dev_rc1/runtime_runner.py
+          ! grep -q "sealed_gold" research/retrieval_rerank_semantic4k_dev_rc1/runtime_runner.py
+
+      - name: Install exact branch package and dev tools
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Run full deterministic suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/semantic4k-rerank-dev-rc1/pytest.txt
+
+      - name: Run rerank boundary test
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_retrieval_rerank_semantic4k_dev_rc1.py \
+            2>&1 | tee artifacts/semantic4k-rerank-dev-rc1/rerank-tests.txt
+
+      - name: Ruff rerank apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check \
+            research/retrieval_rerank_semantic4k_dev_rc1/runtime_runner.py \
+            tests/test_retrieval_rerank_semantic4k_dev_rc1.py \
+            2>&1 | tee artifacts/semantic4k-rerank-dev-rc1/ruff.txt
+
+      - name: Run exact pinned semantic4K rerank arm
+        run: |
+          set -o pipefail
+          python -m research.retrieval_rerank_semantic4k_dev_rc1.runtime_runner \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/semantic4k-rerank-dev-rc1/results.jsonl \
+            | tee artifacts/semantic4k-rerank-dev-rc1/execution-receipt.json
+
+      - name: Evaluate reranked outputs with frozen RC2 dev evaluator
+        run: |
+          set -o pipefail
+          python research/eb_retrieval_assurance_rc2/evaluator.py \
+            --benchmark-root benchmarks/eb-retrieval-assurance-rc2-v1 \
+            --split dev \
+            --results artifacts/semantic4k-rerank-dev-rc1/results.jsonl \
+            --thresholds research/eb_retrieval_assurance_rc2/thresholds.json \
+            --output artifacts/semantic4k-rerank-dev-rc1/evaluation.json \
+            | tee artifacts/semantic4k-rerank-dev-rc1/evaluation-summary.txt
+
+      - name: Build comparison receipt against frozen semantic-K baseline
+        run: |
+          set -o pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path("artifacts/semantic4k-rerank-dev-rc1")
+          evaluation=json.loads((root/"evaluation.json").read_text())
+          execution=json.loads((root/"execution-receipt.json").read_text())
+          comparison={
+              "schema_version":"1.0",
+              "decision":"reranking characterization only; no production promotion",
+              "baseline":{
+                  "name":"raw semantic K Block B dev",
+                  "results_sha256":"632c727928e49257c4a5840b9325b742be9225a4bbfbbcfa1cbffd6bbeeaf922",
+                  "evaluation_sha256":"fb6673a3c90512f7fd4c2f732b5a669bd1a064017b5e0c4eb87f8be1007db6f8",
+                  "case_hit_at_k":0.6428571428571429,
+                  "decisive_annotation_recall_at_k":0.5,
+                  "counterevidence_recall_at_k":0.0,
+                  "qualifier_exception_recall_at_k":0.0,
+                  "complete_joint_group_coverage_at_k":0.0,
+                  "first_decisive_mrr":0.5,
+              },
+              "reranked":{
+                  "summary":evaluation["summary"],
+                  "execution":execution,
+                  "results_sha256":hashlib.sha256((root/"results.jsonl").read_bytes()).hexdigest(),
+                  "evaluation_sha256":hashlib.sha256((root/"evaluation.json").read_bytes()).hexdigest(),
+              },
+          }
+          (root/"comparison.json").write_text(json.dumps(comparison,indent=2,sort_keys=True)+"\n")
+          print(json.dumps(comparison,sort_keys=True))
+          PY
+
+      - name: Hash artifacts
+        run: |
+          set -o pipefail
+          cd artifacts/semantic4k-rerank-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic4k-rerank-dev-rc1-${{ github.sha }}
+          path: artifacts/semantic4k-rerank-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90
