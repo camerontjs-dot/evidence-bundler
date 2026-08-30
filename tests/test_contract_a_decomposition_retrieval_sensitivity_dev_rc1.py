@@ -4,8 +4,10 @@ import hashlib
 import json
 from pathlib import Path
 
-from research.contract_a_decomposition_retrieval_sensitivity_dev_rc1 import analyzer
-from research.contract_a_decomposition_retrieval_sensitivity_dev_rc1 import runtime_runner
+from research.contract_a_decomposition_retrieval_sensitivity_dev_rc1 import (
+    analyzer,
+    runtime_runner,
+)
 
 
 class FakeEmbedder:
