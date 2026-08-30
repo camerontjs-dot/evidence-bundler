@@ -1,0 +1,31 @@
+name: Research - Contract E native descriptor RC2
+
+on:
+  push:
+    branches: [research/contract-e-native-descriptor-rc2-20260830]
+  pull_request:
+    paths:
+      - "research/contract_e_native_rc2/**"
+      - ".github/workflows/research-contract-e-native-descriptor-rc2.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  native-descriptor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --all-extras
+      - run: uv run python -m ruff check research/contract_e_native_rc2
+      - run: uv run pytest -q research/contract_e_native_rc2/test_native.py
+      - run: uv run python -m research.contract_e_native_rc2.emit
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eb-contract-e-native-rc2-${{ github.sha }}
+          path: artifacts/contract-e-native-rc2/descriptors.json
+          retention-days: 30
