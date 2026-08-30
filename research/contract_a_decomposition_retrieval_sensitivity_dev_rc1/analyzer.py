@@ -208,7 +208,11 @@ def sign_flip_pvalue(deltas: list[float]) -> float | None:
     extreme = 0
     total = 0
     for signs in itertools.product((-1.0, 1.0), repeat=len(nonzero)):
-        permuted = abs(sum(sign * value for sign, value in zip(signs, nonzero, strict=True)) / len(nonzero))
+        signed_sum = sum(
+            sign * value
+            for sign, value in zip(signs, nonzero, strict=True)
+        )
+        permuted = abs(signed_sum / len(nonzero))
         total += 1
         if permuted >= observed - 1e-12:
             extreme += 1
