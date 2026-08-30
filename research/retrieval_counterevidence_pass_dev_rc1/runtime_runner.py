@@ -8,12 +8,12 @@ from pathlib import Path
 from typing import Any
 
 from evidence_bundler.models.ca import ScaffoldClaim
-from evidence_bundler.models.retrieval import RetrievalConfig
-from evidence_bundler.retrieval.bm25_retriever import BM25Retriever
-from evidence_bundler.retrieval.contradiction import (
+from evidence_bundler.models.retrieval import (
     DEFAULT_CONTRADICTION_QUERY_PREFIXES,
-    retrieve_contradicting,
+    RetrievalConfig,
 )
+from evidence_bundler.retrieval.bm25_retriever import BM25Retriever
+from evidence_bundler.retrieval.contradiction import retrieve_contradicting
 from evidence_bundler.retrieval.embedding_retriever import (
     SemanticIndex,
     TextEmbedder,
