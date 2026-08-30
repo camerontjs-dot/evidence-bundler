@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import time
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -306,6 +307,7 @@ def run_split(
     reverse_source_order: bool = False,
     embedder: TextEmbedder | None = None,
 ) -> dict[str, Any]:
+    started = time.perf_counter()
     all_passages = load_jsonl(runtime_root / "passages.jsonl")
     cases = load_jsonl(runtime_root / f"{split}_cases.jsonl")
     subsets_payload = load_json(runtime_root / "apertures.json")
@@ -334,6 +336,7 @@ def run_split(
         for result in results:
             handle.write(canonical_json_bytes(result))
 
+    elapsed_seconds = time.perf_counter() - started
     total_hits = sum(len(result["hits"]) for result in results)
     total_source_candidate_positions = sum(
         int(result["diagnostic_receipt"]["lexical_candidate_top_k"])
@@ -349,6 +352,13 @@ def run_split(
         "arm": arm,
         "case_count": len(results),
         "returned_hits": total_hits,
+        "elapsed_seconds": elapsed_seconds,
+        "semantic_index_passage_encodes": (
+            sum(len(ordered_passages(all_passages, [str(value) for value in subsets[str(case["accessible_subset_id"])]["source_ids"]])) for case in cases)
+            if arm in {"semantic", "hybrid"}
+            else 0
+        ),
+        "semantic_query_encodes": len(cases) if arm in {"semantic", "hybrid"} else 0,
         "source_candidate_positions_budgeted": total_source_candidate_positions,
         "output_sha256": sha256_bytes(output.read_bytes()),
         "embedding_model": EMBEDDING_MODEL if arm in {"semantic", "hybrid"} else None,
