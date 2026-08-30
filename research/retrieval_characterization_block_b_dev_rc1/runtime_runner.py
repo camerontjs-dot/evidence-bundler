@@ -280,7 +280,10 @@ def run_case(
         },
         "completeness_claim": {
             "status": "not_established",
-            "basis": "The adapter records the frozen aperture; retrieval does not establish corpus completeness.",
+            "basis": (
+                "The adapter records the frozen aperture; retrieval does not establish "
+                "corpus completeness."
+            ),
         },
         "answerability_claim": {
             "status": "not_established",
@@ -354,7 +357,20 @@ def run_split(
         "returned_hits": total_hits,
         "elapsed_seconds": elapsed_seconds,
         "semantic_index_passage_encodes": (
-            sum(len(ordered_passages(all_passages, [str(value) for value in subsets[str(case["accessible_subset_id"])]["source_ids"]])) for case in cases)
+            sum(
+                len(
+                    ordered_passages(
+                        all_passages,
+                        [
+                            str(value)
+                            for value in subsets[str(case["accessible_subset_id"])][
+                                "source_ids"
+                            ]
+                        ],
+                    )
+                )
+                for case in cases
+            )
             if arm in {"semantic", "hybrid"}
             else 0
         ),
