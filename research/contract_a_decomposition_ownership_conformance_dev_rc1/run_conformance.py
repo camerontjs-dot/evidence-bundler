@@ -8,16 +8,14 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
-from pydantic import ValidationError
-
 from claim_audit_lab.contracts.cb_models import CBClaim
-from claim_audit_lab.contracts.bundle_loader import BundleContents
 from claim_audit_lab.contracts.factual_context import (
     ContractBFactualContext,
     _semantic_context,
     _validate_extension,
     canonical_bytes,
 )
+from pydantic import ValidationError
 
 SNAPSHOT_SHA256 = "8dbedd537c024c4a624f21abd5fa11536ddfe558000f3a9366584c30c045e31c"
 
@@ -400,7 +398,9 @@ def run(snapshot_path: Path) -> dict[str, Any]:
     if proposition_arm["semantic_context_collision"]:
         raise RuntimeError("proposition-lineage failed to distinguish attribution mutation")
     if not strict_model_rejects_inline_propositions:
-        raise RuntimeError("current strict Contract-B claim unexpectedly accepts propositions field")
+        raise RuntimeError(
+            "current strict Contract-B claim unexpectedly accepts propositions field"
+        )
     if query_arm["passage_union_sha256"] != proposition_arm["passage_union_sha256"]:
         raise RuntimeError("retrieved passage union changed between representations")
 
