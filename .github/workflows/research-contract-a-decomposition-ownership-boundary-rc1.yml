@@ -53,7 +53,7 @@ jobs:
           git clone -q https://github.com/camerontjs-dot/claim-audit-lab.git _deps/claim-audit-lab
           git -C _deps/claim-audit-lab checkout -q 53f0885b111676794d1bd20e10b91aa58b07e9d4
           test "$(git -C _deps/claim-audit-lab rev-parse HEAD)" = "53f0885b111676794d1bd20e10b91aa58b07e9d4"
-          python -m pip install -e _deps/claim-audit-lab
+          python -m pip install -e "_deps/claim-audit-lab[v1]"
 
       - name: Run full EB deterministic suite
         run: |
