@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
-from pathlib import Path
 import json
+from dataclasses import asdict, dataclass
+from pathlib import Path
 
 import yaml
 
@@ -38,15 +38,23 @@ def evidence_admission_descriptor(bundle_dir: Path) -> Descriptor:
     manifest = yaml.safe_load((bundle_dir / "bundle_manifest.yaml").read_text())
     claim = yaml.safe_load(next((bundle_dir / "claims").glob("*.yaml")).read_text())
     passage_ref = claim["evidence_passages"][0]
-    passage = yaml.safe_load(
-        (bundle_dir / "evidence" / passage_ref["source_id"] / "passages" / f"{passage_ref['passage_id']}.yaml").read_text()
+    passage_path = (
+        bundle_dir
+        / "evidence"
+        / passage_ref["source_id"]
+        / "passages"
+        / f"{passage_ref['passage_id']}.yaml"
     )
+    passage = yaml.safe_load(passage_path.read_text())
     return Descriptor(
         participant="evidence-bundler",
         actor="evidence-bundler",
         operation="evidence.admit_passage",
         target_class="evidence_passage",
-        target_id=f"{manifest['bundle_id']}::{passage['source_id']}::{passage['passage_id']}",
+        target_id=(
+            f"{manifest['bundle_id']}::{passage['source_id']}::"
+            f"{passage['passage_id']}"
+        ),
         current_hash=passage["passage_hash"],
         authority_domain="evidence_admission",
     )
@@ -54,7 +62,9 @@ def evidence_admission_descriptor(bundle_dir: Path) -> Descriptor:
 
 def emit(repo: Path, out: Path) -> None:
     fixture = repo / "tests/fixtures/scaffold-run-minimal"
-    metadata = yaml.safe_load((fixture / "corpus/src-001/metadata.yaml").read_text())
+    metadata = yaml.safe_load(
+        (fixture / "corpus/src-001/metadata.yaml").read_text()
+    )
     bundle_dir = out.parent / "bundle"
     build_fixture_bundle(fixture, bundle_dir)
     payload = {
