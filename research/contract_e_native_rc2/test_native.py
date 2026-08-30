@@ -1,5 +1,6 @@
 from copy import deepcopy
 from pathlib import Path
+
 import yaml
 
 from research.contract_e_native_rc2.emit import (
