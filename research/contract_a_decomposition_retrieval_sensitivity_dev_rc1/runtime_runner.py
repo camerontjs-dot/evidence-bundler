@@ -5,7 +5,6 @@ import hashlib
 import json
 import re
 import time
-from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -67,7 +66,9 @@ def paragraph_rows(benchmark_root: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def build_chunks(rows: list[dict[str, Any]]) -> tuple[list[DocumentChunk], dict[str, dict[str, Any]]]:
+def build_chunks(
+    rows: list[dict[str, Any]],
+) -> tuple[list[DocumentChunk], dict[str, dict[str, Any]]]:
     chunks: list[DocumentChunk] = []
     by_id: dict[str, dict[str, Any]] = {}
     for row in rows:
@@ -333,7 +334,7 @@ def run(
                 corpus_hash=(
                     "sha256:"
                     + hashlib.sha256(
-                        f"{CORPUS_TREE_SHA256}:{subset_id}".encode("utf-8")
+                        f"{CORPUS_TREE_SHA256}:{subset_id}".encode()
                     ).hexdigest()
                 ),
                 embedding_model=EMBEDDING_MODEL,
