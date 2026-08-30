@@ -41,10 +41,6 @@ def analyze(
     raw_path: Path,
 ) -> dict[str, Any]:
     raw = load_json(raw_path)
-    cases = {
-        str(row["case_id"]): row
-        for row in load_jsonl(runtime_root / "dev_cases.jsonl")
-    }
     apertures_payload = load_json(runtime_root / "apertures.json")
     apertures = {
         str(row["subset_id"]): {str(value) for value in row["source_ids"]}
@@ -195,7 +191,12 @@ def main() -> int:
         json.dumps(result, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
-    print(json.dumps({"summary": result["summary"], "families": result["families"]}, sort_keys=True))
+    print(
+        json.dumps(
+            {"summary": result["summary"], "families": result["families"]},
+            sort_keys=True,
+        )
+    )
     return 0
 
 
