@@ -1,0 +1,80 @@
+name: Research - Contract A decomposition ownership conformance dev RC1
+
+on:
+  push:
+    branches:
+      - research/contract-a-decomposition-ownership-conformance-dev-rc1-20260829
+    paths:
+      - "research/contract_a_decomposition_ownership_conformance_dev_rc1/**"
+      - ".github/workflows/research-contract-a-decomposition-ownership-conformance-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/contract_a_decomposition_ownership_conformance_dev_rc1/**"
+      - ".github/workflows/research-contract-a-decomposition-ownership-conformance-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  ownership-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact identities
+        run: |
+          mkdir -p artifacts/contract-a-decomposition-ownership-conformance-dev-rc1
+          git rev-parse HEAD | tee artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/eb-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/eb-tree.txt
+          echo "53f0885b111676794d1bd20e10b91aa58b07e9d4" > artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/cal-sha.txt
+          echo "00bdf9546a877f9f6c1d7fd227fd959e1d7aa99e" > artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/apparatus-sha.txt
+
+      - name: Verify frozen retrieval snapshot
+        run: |
+          test "$(sha256sum research/contract_a_decomposition_ownership_conformance_dev_rc1/fixed_claim037_a1_semantic.json | cut -d' ' -f1)" = "8dbedd537c024c4a624f21abd5fa11536ddfe558000f3a9366584c30c045e31c"
+
+      - name: Install Evidence Bundler and test tools
+        run: python -m pip install -e ".[dev]"
+
+      - name: Pin and install live CAL consumer
+        run: |
+          git clone -q https://github.com/camerontjs-dot/claim-audit-lab.git _deps/claim-audit-lab
+          git -C _deps/claim-audit-lab checkout -q 53f0885b111676794d1bd20e10b91aa58b07e9d4
+          test "$(git -C _deps/claim-audit-lab rev-parse HEAD)" = "53f0885b111676794d1bd20e10b91aa58b07e9d4"
+          python -m pip install -e _deps/claim-audit-lab
+
+      - name: Full EB deterministic suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/pytest.txt
+
+      - name: Ruff research apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check research/contract_a_decomposition_ownership_conformance_dev_rc1/run_conformance.py             2>&1 | tee artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/ruff.txt
+
+      - name: Run fixed-retrieval downstream conformance
+        run: |
+          set -o pipefail
+          python -m research.contract_a_decomposition_ownership_conformance_dev_rc1.run_conformance             --snapshot research/contract_a_decomposition_ownership_conformance_dev_rc1/fixed_claim037_a1_semantic.json             --output artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/result.json             | tee artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/summary.json
+
+      - name: Hash artifacts
+        run: |
+          cd artifacts/contract-a-decomposition-ownership-conformance-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: contract-a-decomposition-ownership-conformance-dev-rc1-${{ github.sha }}
+          path: artifacts/contract-a-decomposition-ownership-conformance-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90
