@@ -74,7 +74,7 @@ jobs:
       - name: Generate gold-blind candidate pools
         run: |
           set -o pipefail
-          python research/retrieval_candidate_pool_aperture_dev_rc1/pool_runner.py \
+          python -m research.retrieval_candidate_pool_aperture_dev_rc1.pool_runner \
             --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
             --apparatus-sha "$(git rev-parse HEAD)" \
             --output artifacts/retrieval-candidate-pool-aperture-dev-rc1/candidates.json \
@@ -83,7 +83,7 @@ jobs:
       - name: Analyze candidate pools against dev gold
         run: |
           set -o pipefail
-          python research/retrieval_candidate_pool_aperture_dev_rc1/pool_analyzer.py \
+          python -m research.retrieval_candidate_pool_aperture_dev_rc1.pool_analyzer \
             --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
             --gold benchmarks/eb-retrieval-assurance-rc2-v1/evaluator_only/dev_gold.jsonl \
             --candidates artifacts/retrieval-candidate-pool-aperture-dev-rc1/candidates.json \
