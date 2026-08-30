@@ -1,0 +1,10 @@
+{
+  "schema": "eb-contract-e-native-rc2-receipt",
+  "authority": "research_only",
+  "head": "45702fc80f529654d4745760b071132131d3a509",
+  "push_run": 33321329523,
+  "pr_run": 33321331085,
+  "artifact": 9734965892,
+  "artifact_digest": "sha256:d840710374c574b7f75973725f9f3b5f28e6de41a80f8384748e2ee932b4450c",
+  "result": "SUPPORTED"
+}
