@@ -40,7 +40,8 @@ jobs:
       - name: Ruff maintained Python surfaces
         run: python -m ruff check src tests scripts
 
-      - name: Mypy
+      - name: Mypy against lowest supported Python
+        if: matrix.python-version == '3.11'
         run: python -m mypy src
 
       - name: Pytest
