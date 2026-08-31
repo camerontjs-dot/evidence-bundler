@@ -51,7 +51,7 @@ class ExplicitValue(_Strict):
     value: Any | None
 
     @model_validator(mode="after")
-    def validate_state(self) -> "ExplicitValue":
+    def validate_state(self) -> ExplicitValue:
         if self.state == "known" and self.value is None:
             raise ValueError("known state requires a non-null value")
         if self.state == "unknown" and self.value is not None:
@@ -96,7 +96,7 @@ class HistoryLink(_Strict):
     review: dict[str, Any]
 
     @model_validator(mode="after")
-    def validate_review(self) -> "HistoryLink":
+    def validate_review(self) -> HistoryLink:
         if self.review.get("decision") not in {"accepted", "rejected", "needs-review"}:
             raise ValueError("review.decision must be accepted, rejected, or needs-review")
         return self
@@ -128,7 +128,13 @@ class ContractBFactualContext(_Strict):
 
 
 def _json_key(value: Any) -> str:
-    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False)
+    return json.dumps(
+        value,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    )
 
 
 def normalized_object(extension: ContractBFactualContext) -> dict[str, Any]:
@@ -261,7 +267,8 @@ def validate_for_bundle(bundle_dir: Path, extension: ContractBFactualContext) ->
         expected = tuple(derived.get(check.claim_id, [0, 0, 0]))
         if actual != expected:
             errors.append(
-                f"history count mismatch for {check.claim_id}: supplied={actual}, derived={expected}"
+                "history count mismatch for "
+                f"{check.claim_id}: supplied={actual}, derived={expected}"
             )
     return errors
 
