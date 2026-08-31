@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -18,6 +18,9 @@ from evidence_bundler.contracts.hashing import compute_bundle_tree_hash, write_s
 from evidence_bundler.contracts.yaml_io import load_model_yaml, write_model_yaml
 from evidence_bundler.models.cb import BundleManifest
 from evidence_bundler.models.common import CONTRACT_VERSION, PENDING_HASH
+
+if TYPE_CHECKING:
+    from evidence_bundler.contracts.writer import BundleBuildResult
 
 EXTENSION_PATH = Path("extensions/contract-b-factual-context-v1.json")
 PROHIBITED_KEYS = frozenset(
@@ -117,7 +120,9 @@ class ApertureObservation(_Strict):
 
 
 class ContractBFactualContext(_Strict):
-    schema: Literal["contract-b-factual-context-v1"] = "contract-b-factual-context-v1"
+    schema: Literal["contract-b-factual-context-v1"] = (  # type: ignore[assignment]
+        "contract-b-factual-context-v1"
+    )
     history_complete: Literal[True] = True
     claims: list[ClaimContext] = Field(default_factory=list)
     sources: list[SourceContext] = Field(default_factory=list)
@@ -313,7 +318,7 @@ def build_fixture_bundle_with_factual_context(
     scaffold_run_dir: Path,
     output_dir: Path,
     extension: ContractBFactualContext,
-):
+) -> BundleBuildResult:
     """Build through the real fixture producer, attach the extension, and revalidate."""
     from evidence_bundler.contracts.writer import (  # local import avoids a module cycle
         BundleBuildResult,
