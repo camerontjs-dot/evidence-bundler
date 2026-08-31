@@ -31,7 +31,7 @@ Use Python 3.11 or 3.12.
 ```bash
 python -m venv .venv
 .venv/bin/python -m pip install -e ".[dev]"
-.venv/bin/ruff check .
+.venv/bin/ruff check src tests scripts
 .venv/bin/python -m pytest
 .venv/bin/python -m mypy src
 .venv/bin/python -m compileall src
