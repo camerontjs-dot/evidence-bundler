@@ -24,6 +24,14 @@ Evidence Bundler does not prove that a claim is true. It does not replace audit.
 
 The fixture writer is only a contract-shape smoke path. It copies scaffold-cited passages into bundle shape for local contract checks. It does not retrieve candidate support, determine claim support, or turn chunks into reviewed evidence.
 
+## Related work
+
+Evidence Bundler prepares Contract B bundles for the rest of the pipeline:
+
+- [Claim Audit Lab](https://github.com/camerontjs-dot/claim-audit-lab) audits whether supplied evidence carries a draft claim.
+- [Decision Engine](https://github.com/camerontjs-dot/decision-engine) consumes Contract C and emits Contract D.
+- [Apparatus Contracts](https://github.com/camerontjs-dot/apparatus-contracts) is the canonical home for the shared pipeline contracts.
+
 ## Install and test
 
 Use Python 3.11 or 3.12.
@@ -121,3 +129,7 @@ For `scripts/claim_appendix_workflow.py`, the input PDF path is resolved as:
 1. Positional CLI path argument.
 2. Environment variable: `CLAIM_APPENDIX_PDF`.
 3. If neither is provided, it raises a `FileNotFoundError`.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
