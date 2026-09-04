@@ -76,10 +76,12 @@ def build_generation_input(*, benchmark_root: Path, output: Path) -> dict[str, A
                     "source_id": source_id,
                     "media_type": "text/plain; charset=utf-8",
                     "content": content,
-                    "content_sha256": "sha256:" + hashlib.sha256(content.encode("utf-8")).hexdigest(),
+                    "content_sha256": "sha256:"
+                    + hashlib.sha256(content.encode("utf-8")).hexdigest(),
                     "paragraph_count": paragraph_count(content),
                 }
             )
+        source_aperture_sha256 = sha256_bytes(canonical_json_bytes(sources))
 
         historical: dict[str, Any] = {}
         for strategy, variant_id in HISTORICAL_VARIANTS.items():
@@ -105,10 +107,13 @@ def build_generation_input(*, benchmark_root: Path, output: Path) -> dict[str, A
                     "proposition_id": claim_id,
                     "text": str(a0["original_claim_text"]),
                     "text_sha256": "sha256:"
-                    + hashlib.sha256(str(a0["original_claim_text"]).encode("utf-8")).hexdigest(),
+                    + hashlib.sha256(
+                        str(a0["original_claim_text"]).encode("utf-8")
+                    ).hexdigest(),
                 },
                 "accessible_subset_id": subset_id,
                 "k": int(a0["runtime_config"]["maximum_passages"]),
+                "source_aperture_sha256": source_aperture_sha256,
                 "sources": sources,
                 "historical_treatments": historical,
             }
@@ -116,11 +121,12 @@ def build_generation_input(*, benchmark_root: Path, output: Path) -> dict[str, A
 
     result = {
         "schema_version": "1.0",
-        "experiment": "decomposition-parent-child-complementarity-dev-rc1",
+        "experiment": "decomposition-parent-child-complementarity-dev-rc1a",
         "corpus_tree_sha256": CORPUS_TREE_SHA256,
         "dev_decomposition_sha256": DEV_DECOMPOSITION_SHA256,
         "split": "dev",
         "selected_claim_ids": list(SELECTED_CLAIMS),
+        "generator_source_exposure": "exact_root_only",
         "cases": records,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -129,6 +135,7 @@ def build_generation_input(*, benchmark_root: Path, output: Path) -> dict[str, A
         "case_count": len(records),
         "output_sha256": sha256_bytes(output.read_bytes()),
         "source_representation_count": sum(len(row["sources"]) for row in records),
+        "generator_source_exposure": "exact_root_only",
     }
 
 
