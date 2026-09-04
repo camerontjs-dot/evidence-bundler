@@ -20,7 +20,8 @@ from research.contract_a_decomposition_retrieval_sensitivity_dev_rc1.runtime_run
     paragraph_rows,
 )
 
-ADAPTER_ID = "eb-parent-child-complementarity-dev-v1"
+ADAPTER_ID = "eb-parent-child-complementarity-dev-rc1a"
+EXPERIMENT_ID = "decomposition-parent-child-complementarity-dev-rc1a"
 STRATEGY_ORDER = ("D1", "D2", "D3", "D4", "D5a", "D5b", "D6")
 RETRIEVERS = ("bm25", "semantic")
 BUDGET_MODES = ("equal_total", "equal_per_query")
@@ -100,7 +101,9 @@ def _alloc(total: int, count: int) -> list[int]:
     return [base + (1 if index < remainder else 0) for index in range(count)]
 
 
-def _lanes(obj: dict[str, Any], *, include_root: bool, include_children: bool) -> list[dict[str, Any]]:
+def _lanes(
+    obj: dict[str, Any], *, include_root: bool, include_children: bool
+) -> list[dict[str, Any]]:
     lanes: list[dict[str, Any]] = []
     root = obj["root_proposition"]
     if include_root:
@@ -257,7 +260,9 @@ def _flatten_r2(r2: dict[str, Any]) -> dict[str, Any]:
     ]
     return {
         "derived_from": "R2",
-        "same_physical_passage_ids": [str(hit["paragraph_id"]) for hit in flattened_hits],
+        "same_physical_passage_ids": [
+            str(hit["paragraph_id"]) for hit in flattened_hits
+        ],
         "proposition_and_lane_attribution_removed": True,
         "requested_candidate_positions": r2["requested_candidate_positions"],
         "returned_before_dedupe": r2["returned_before_dedupe"],
@@ -282,19 +287,25 @@ def run(
     if actual_manifest_sha != expected_manifest_sha256:
         raise RuntimeError("frozen Contract A fixture manifest digest mismatch")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("experiment") != EXPERIMENT_ID:
+        raise RuntimeError("unexpected experiment identity in fixture manifest")
     if embedder is None:
         embedder = load_embedding_model(EMBEDDING_MODEL, revision=EMBEDDING_REVISION)
 
     started = time.perf_counter()
     output_cases: list[dict[str, Any]] = []
-    for claim_id in sorted({str(row["original_claim_id"]) for row in manifest["records"]}):
+    for claim_id in sorted(
+        {str(row["original_claim_id"]) for row in manifest["records"]}
+    ):
         strategy_records = {
             str(row["strategy"]): row
             for row in manifest["records"]
             if str(row["original_claim_id"]) == claim_id
         }
         reference_obj = json.loads(
-            (fixture_dir / str(strategy_records["D1"]["path"])).read_text(encoding="utf-8")
+            (fixture_dir / str(strategy_records["D1"]["path"])).read_text(
+                encoding="utf-8"
+            )
         )
         _verify_source_equivalence(obj=reference_obj, benchmark_root=benchmark_root)
         paragraphs = _paragraphs_from_contract_sources(reference_obj)
@@ -314,19 +325,25 @@ def run(
         case_out: dict[str, Any] = {
             "original_claim_id": claim_id,
             "k": k,
-            "source_ids": [str(row["source_id"]) for row in reference_obj["sources"]],
+            "source_ids": [
+                str(row["source_id"]) for row in reference_obj["sources"]
+            ],
             "searchable_paragraph_count": len(paragraphs),
             "strategies": {},
         }
         for strategy in STRATEGY_ORDER:
             manifest_row = strategy_records[strategy]
-            obj = json.loads((fixture_dir / str(manifest_row["path"])).read_text(encoding="utf-8"))
+            obj = json.loads(
+                (fixture_dir / str(manifest_row["path"])).read_text(encoding="utf-8")
+            )
             if canonical_json_bytes(obj["root_proposition"]) != canonical_json_bytes(
                 reference_obj["root_proposition"]
             ) or canonical_json_bytes(obj["sources"]) != canonical_json_bytes(
                 reference_obj["sources"]
             ):
-                raise RuntimeError(f"root/source treatment invariant failed: {claim_id} {strategy}")
+                raise RuntimeError(
+                    f"root/source treatment invariant failed: {claim_id} {strategy}"
+                )
             strategy_out: dict[str, Any] = {
                 "decomposition_state": obj["decomposition"]["state"],
                 "decomposition_id": obj["decomposition"].get("decomposition_id"),
@@ -347,14 +364,18 @@ def run(
                     if obj["decomposition"]["state"] == "declared":
                         r1 = _run_plan(
                             retriever=retriever,
-                            plan=_plan(obj, arm="R1", budget_mode=budget_mode, k=k),
+                            plan=_plan(
+                                obj, arm="R1", budget_mode=budget_mode, k=k
+                            ),
                             bm25=bm25,
                             semantic=semantic,
                             by_id=by_id,
                         )
                         r2 = _run_plan(
                             retriever=retriever,
-                            plan=_plan(obj, arm="R2", budget_mode=budget_mode, k=k),
+                            plan=_plan(
+                                obj, arm="R2", budget_mode=budget_mode, k=k
+                            ),
                             bm25=bm25,
                             semantic=semantic,
                             by_id=by_id,
@@ -364,14 +385,19 @@ def run(
                         r1 = None
                         r2 = None
                         r3 = None
-                    retriever_out[budget_mode] = {"R0": r0, "R1": r1, "R2": r2, "R3": r3}
+                    retriever_out[budget_mode] = {
+                        "R0": r0,
+                        "R1": r1,
+                        "R2": r2,
+                        "R3": r3,
+                    }
                 strategy_out["retrievers"][retriever] = retriever_out
             case_out["strategies"][strategy] = strategy_out
         output_cases.append(case_out)
 
     record = {
         "schema_version": "1.0",
-        "experiment": "decomposition-parent-child-complementarity-dev-rc1",
+        "experiment": EXPERIMENT_ID,
         "adapter_id": ADAPTER_ID,
         "apparatus_sha": apparatus_sha,
         "fixture_manifest_sha256": expected_manifest_sha256,
@@ -389,6 +415,7 @@ def run(
         "output_sha256": sha256_bytes(output.read_bytes()),
         "apparatus_sha": apparatus_sha,
         "fixture_manifest_sha256": expected_manifest_sha256,
+        "experiment": EXPERIMENT_ID,
     }
 
 
