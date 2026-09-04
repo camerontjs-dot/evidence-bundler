@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -18,6 +18,9 @@ from evidence_bundler.contracts.hashing import compute_bundle_tree_hash, write_s
 from evidence_bundler.contracts.yaml_io import load_model_yaml, write_model_yaml
 from evidence_bundler.models.cb import BundleManifest
 from evidence_bundler.models.common import CONTRACT_VERSION, PENDING_HASH
+
+if TYPE_CHECKING:
+    from evidence_bundler.contracts.writer import BundleBuildResult
 
 EXTENSION_PATH = Path("extensions/contract-b-factual-context-v1.json")
 PROHIBITED_KEYS = frozenset(
@@ -51,7 +54,7 @@ class ExplicitValue(_Strict):
     value: Any | None
 
     @model_validator(mode="after")
-    def validate_state(self) -> "ExplicitValue":
+    def validate_state(self) -> ExplicitValue:
         if self.state == "known" and self.value is None:
             raise ValueError("known state requires a non-null value")
         if self.state == "unknown" and self.value is not None:
@@ -96,7 +99,7 @@ class HistoryLink(_Strict):
     review: dict[str, Any]
 
     @model_validator(mode="after")
-    def validate_review(self) -> "HistoryLink":
+    def validate_review(self) -> HistoryLink:
         if self.review.get("decision") not in {"accepted", "rejected", "needs-review"}:
             raise ValueError("review.decision must be accepted, rejected, or needs-review")
         return self
@@ -117,7 +120,9 @@ class ApertureObservation(_Strict):
 
 
 class ContractBFactualContext(_Strict):
-    schema: Literal["contract-b-factual-context-v1"] = "contract-b-factual-context-v1"
+    schema: Literal["contract-b-factual-context-v1"] = (
+        "contract-b-factual-context-v1"  # type: ignore[assignment]
+    )
     history_complete: Literal[True] = True
     claims: list[ClaimContext] = Field(default_factory=list)
     sources: list[SourceContext] = Field(default_factory=list)
@@ -128,7 +133,13 @@ class ContractBFactualContext(_Strict):
 
 
 def _json_key(value: Any) -> str:
-    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False)
+    return json.dumps(
+        value,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    )
 
 
 def normalized_object(extension: ContractBFactualContext) -> dict[str, Any]:
@@ -261,7 +272,8 @@ def validate_for_bundle(bundle_dir: Path, extension: ContractBFactualContext) ->
         expected = tuple(derived.get(check.claim_id, [0, 0, 0]))
         if actual != expected:
             errors.append(
-                f"history count mismatch for {check.claim_id}: supplied={actual}, derived={expected}"
+                "history count mismatch for "
+                f"{check.claim_id}: supplied={actual}, derived={expected}"
             )
     return errors
 
@@ -306,7 +318,7 @@ def build_fixture_bundle_with_factual_context(
     scaffold_run_dir: Path,
     output_dir: Path,
     extension: ContractBFactualContext,
-):
+) -> BundleBuildResult:
     """Build through the real fixture producer, attach the extension, and revalidate."""
     from evidence_bundler.contracts.writer import (  # local import avoids a module cycle
         BundleBuildResult,
