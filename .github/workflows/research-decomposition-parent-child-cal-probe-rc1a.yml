@@ -1,0 +1,116 @@
+name: Research - decomposition parent-child CAL probe RC1A
+
+on:
+  push:
+    branches:
+      - research/decomposition-parent-child-cal-probe-rc1a-20260904
+    paths:
+      - "research/decomposition_parent_child_cal_probe_rc1a/**"
+      - ".github/workflows/research-decomposition-parent-child-cal-probe-rc1a.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Checkout pinned CAL consumer
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: 32275a239b68af383a56bca843e28cbc1e343976
+          path: cal-consumer
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact probe identity
+        run: |
+          set -o pipefail
+          ART=artifacts/decomposition-parent-child-cal-probe-rc1a
+          mkdir -p "$ART"
+          git rev-parse HEAD | tee "$ART/commit-sha.txt"
+          git rev-parse HEAD^{tree} | tee "$ART/tree-sha.txt"
+          git merge-base --is-ancestor c681f55b68994864b833bbb0483046e3065c9783 HEAD
+          test "$(git -C cal-consumer rev-parse HEAD)" = "32275a239b68af383a56bca843e28cbc1e343976"
+          cp research/decomposition_parent_child_cal_probe_rc1a/PREREGISTRATION.md \
+            "$ART/PREREGISTRATION.md"
+
+      - name: Download exact frozen RC1A artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: decomposition-parent-child-complementarity-dev-rc1a-6de9d37140bc16301c151a3ca1b148f13df4c3f5
+          path: upstream-rc1a
+          github-token: ${{ github.token }}
+          repository: camerontjs-dot/evidence-bundler
+          run-id: 33890894890
+
+      - name: Verify frozen upstream identities before installing consumer
+        run: |
+          set -o pipefail
+          test "$(sha256sum upstream-rc1a/raw-retrieval.json | cut -d' ' -f1)" = \
+            "58bb4b1a9e93bd6147013a3787b06bb433d09f5aa51a040def520cc420c81707"
+          test "$(sha256sum upstream-rc1a/contract-a-fixtures/MANIFEST.json | cut -d' ' -f1)" = \
+            "670ee91a4045bfd6cfc6f3d84ab0d2b979745d6d6bb55a9b2cbfd3006e2ff20e"
+
+      - name: Install pinned CAL consumer
+        run: |
+          set -o pipefail
+          python -m pip install -e ./cal-consumer
+          python -m pip install pytest ruff
+
+      - name: Run probe invariant tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/cal-consumer/src
+        run: |
+          set -o pipefail
+          ART=artifacts/decomposition-parent-child-cal-probe-rc1a
+          python -m pytest -q research/decomposition_parent_child_cal_probe_rc1a/test_probe.py \
+            2>&1 | tee "$ART/pytest.txt"
+
+      - name: Ruff probe apparatus
+        run: |
+          set -o pipefail
+          ART=artifacts/decomposition-parent-child-cal-probe-rc1a
+          python -m ruff check --ignore E501 \
+            research/decomposition_parent_child_cal_probe_rc1a/run_probe.py \
+            research/decomposition_parent_child_cal_probe_rc1a/test_probe.py \
+            2>&1 | tee "$ART/ruff.txt"
+
+      - name: Execute frozen research-only CAL probe
+        env:
+          PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/cal-consumer/src
+        run: |
+          set -o pipefail
+          ART=artifacts/decomposition-parent-child-cal-probe-rc1a
+          python -m research.decomposition_parent_child_cal_probe_rc1a.run_probe \
+            --artifact-dir upstream-rc1a \
+            --output "$ART/probe.json" \
+            | tee "$ART/probe-receipt.json"
+          sha256sum "$ART/probe.json" | tee "$ART/probe.sha256"
+
+      - name: Hash complete probe artifact set
+        if: always()
+        run: |
+          set -o pipefail
+          cd artifacts/decomposition-parent-child-cal-probe-rc1a
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: decomposition-parent-child-cal-probe-rc1a-${{ github.sha }}
+          path: artifacts/decomposition-parent-child-cal-probe-rc1a/
+          if-no-files-found: error
+          retention-days: 90
