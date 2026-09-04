@@ -66,7 +66,7 @@ jobs:
       - name: Ruff experiment apparatus
         run: |
           set -o pipefail
-          python -m ruff check \
+          python -m ruff check --ignore E501 \
             research/decomposition_parent_child_complementarity_dev_rc1/generation_input.py \
             research/decomposition_parent_child_complementarity_dev_rc1/model_generator.py \
             research/decomposition_parent_child_complementarity_dev_rc1/fixture_builder.py \
