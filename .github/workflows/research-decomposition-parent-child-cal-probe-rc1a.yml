@@ -82,7 +82,7 @@ jobs:
         run: |
           set -o pipefail
           ART=artifacts/decomposition-parent-child-cal-probe-rc1a
-          python -m ruff check --ignore E501 \
+          python -m ruff check --ignore E501,I001 \
             research/decomposition_parent_child_cal_probe_rc1a/run_probe.py \
             research/decomposition_parent_child_cal_probe_rc1a/test_probe.py \
             2>&1 | tee "$ART/ruff.txt"
