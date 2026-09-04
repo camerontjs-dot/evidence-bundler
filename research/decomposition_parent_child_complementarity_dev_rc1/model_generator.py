@@ -26,10 +26,10 @@ MODEL_SPECS = {
 }
 
 PROMPTS = {
-    "D3": """You are producing a retrieval-oriented decomposition of one proposition. Return ONLY a JSON array of 2 to 4 strings. The strings must be jointly equivalent to the exact root proposition, independently auditable, and useful as retrieval queries. Preserve every number, date, temporal condition, negation, modal/deontic force, exception, condition, named entity and population/scope restriction. Do not add facts from the sources. Sources may only disambiguate wording already present in the root. If you cannot safely decompose, return [].""",
-    "D4": """You are producing a typed-semantic decomposition of one proposition. Return ONLY a JSON array of 2 to 4 proposition strings. Prefer boundaries corresponding to condition/exception, temporal scope, numeric/qualifier, modal/deontic force, and entity/population scope, but the conjunction must preserve the exact root meaning. Preserve every number, date, negation, modality, condition, exception and scope restriction. Do not add facts from the sources. If no safe decomposition exists, return [].""",
-    "D5a": """Independently decompose the exact root proposition into 2 to 4 jointly necessary, independently auditable propositions. Return ONLY a JSON array of strings. The conjunction must neither add nor remove meaning. Preserve all scope, negation, numbers, dates, modality, conditions and exceptions. Do not use source content to add claims. If you cannot safely do this, return [].""",
-    "D5b": """Independently decompose the exact root proposition into 2 to 4 jointly necessary, independently auditable propositions. Return ONLY a JSON array of strings. The conjunction must neither add nor remove meaning. Preserve all scope, negation, numbers, dates, modality, conditions and exceptions. Do not use source content to add claims. If you cannot safely do this, return [].""",
+    "D3": """You are producing a retrieval-oriented decomposition of one proposition. Return ONLY a JSON array of 2 to 4 strings. The strings must be jointly equivalent to the exact root proposition, independently auditable, and useful as retrieval queries. Preserve every number, date, temporal condition, negation, modal/deontic force, exception, condition, named entity and population/scope restriction. Do not add facts that are not in the root. If you cannot safely decompose, return [].""",
+    "D4": """You are producing a typed-semantic decomposition of one proposition. Return ONLY a JSON array of 2 to 4 proposition strings. Prefer boundaries corresponding to condition/exception, temporal scope, numeric/qualifier, modal/deontic force, and entity/population scope, but the conjunction must preserve the exact root meaning. Preserve every number, date, negation, modality, condition, exception and scope restriction. Do not add facts that are not in the root. If no safe decomposition exists, return [].""",
+    "D5a": """Independently decompose the exact root proposition into 2 to 4 jointly necessary, independently auditable propositions. Return ONLY a JSON array of strings. The conjunction must neither add nor remove meaning. Preserve all scope, negation, numbers, dates, modality, conditions and exceptions. Do not add facts that are not in the root. If you cannot safely do this, return [].""",
+    "D5b": """Independently decompose the exact root proposition into 2 to 4 jointly necessary, independently auditable propositions. Return ONLY a JSON array of strings. The conjunction must neither add nor remove meaning. Preserve all scope, negation, numbers, dates, modality, conditions and exceptions. Do not add facts that are not in the root. If you cannot safely do this, return [].""",
 }
 
 
@@ -45,13 +45,13 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def _case_prompt(case: dict[str, Any], strategy: str) -> str:
-    source_text = "\n\n".join(
-        f"SOURCE {row['source_id']}:\n{row['content']}" for row in case["sources"]
-    )
     return (
         f"{PROMPTS[strategy]}\n\n"
         f"EXACT ROOT:\n{case['root_proposition']['text']}\n\n"
-        f"SUPPLIED SOURCE REPRESENTATIONS:\n{source_text}\n"
+        "SOURCE-EXPOSURE POLICY:\n"
+        "The full source aperture is frozen in the experiment input and later Contract A "
+        "fixtures, but source bodies are intentionally not available to this decomposition "
+        "generator. Derive child propositions only from the exact root above.\n"
     )
 
 
@@ -190,6 +190,8 @@ def generate(*, input_path: Path, model_key: str, output: Path) -> dict[str, Any
                     "prompt_sha256": prompt_sha,
                     "input_tokens": input_tokens,
                     "model_context_limit": context_limit,
+                    "generator_source_exposure": "exact_root_only",
+                    "source_aperture_sha256": case["source_aperture_sha256"],
                 }
             )
 
@@ -203,6 +205,8 @@ def generate(*, input_path: Path, model_key: str, output: Path) -> dict[str, Any
         "architecture": spec["architecture"],
         "do_sample": False,
         "torch_seed": 0,
+        "generator_source_exposure": "exact_root_only",
+        "generation_input_source_arrays_frozen_but_not_consumed": True,
         "strategies": list(spec["strategies"]),
         "rows": rows,
     }
@@ -214,6 +218,7 @@ def generate(*, input_path: Path, model_key: str, output: Path) -> dict[str, Any
         "row_count": len(rows),
         "declared_count": sum(row["status"] == "declared" for row in rows),
         "failed_count": sum(row["status"] == "failed" for row in rows),
+        "generator_source_exposure": "exact_root_only",
         "output_sha256": sha256_bytes(output.read_bytes()),
     }
 
