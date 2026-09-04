@@ -8,7 +8,6 @@ from typing import Any
 
 from research.retrieval_characterization_block_b_dev_rc1.runtime_runner import (
     canonical_json_bytes,
-    load_json,
     load_jsonl,
 )
 
@@ -105,7 +104,11 @@ def _classify_passage(
         if row["parent_candidate_rank"] is not None
     ]
     child_ranks = [
-        min(rank for rank in (row["best_lexical_rank"], row["best_semantic_rank"]) if rank is not None)
+        min(
+            rank
+            for rank in (row["best_lexical_rank"], row["best_semantic_rank"])
+            if rank is not None
+        )
         for row in depth_details
         if row["best_lexical_rank"] is not None or row["best_semantic_rank"] is not None
     ]
@@ -137,30 +140,45 @@ def _classify_passage(
             return {
                 "primary": "WIDE_NOISY_RECOVERY",
                 "submechanisms": submechanisms,
-                "reason": "Recovered only at 4K and the retained candidate set remains heavily non-counterevidence or support-duplicative.",
+                "reason": (
+                    "Recovered only at 4K and the retained candidate set remains heavily "
+                    "non-counterevidence or support-duplicative."
+                ),
             }
         return {
             "primary": "MIXED_OR_OTHER",
             "submechanisms": submechanisms,
-            "reason": "Recovered after widening; the preregistered failure taxonomy does not label a clean child-depth-only recovery as fusion or output truncation.",
+            "reason": (
+                "Recovered after widening; the preregistered failure taxonomy does not "
+                "label a clean child-depth-only recovery as fusion or output truncation."
+            ),
         }
 
     if "CROSS_PREFIX_RRF_GEOMETRY" in submechanisms:
         return {
             "primary": "CROSS_PREFIX_RRF_GEOMETRY",
             "submechanisms": submechanisms,
-            "reason": "At least one contradiction child channel ranks the passage within K, but cross-prefix fusion/parent ordering leaves it outside final K.",
+            "reason": (
+                "At least one contradiction child channel ranks the passage within K, "
+                "but cross-prefix fusion/parent ordering leaves it outside final K."
+            ),
         }
     if "OUTPUT_TRUNCATION_PRESSURE" in submechanisms:
         return {
             "primary": "OUTPUT_TRUNCATION",
             "submechanisms": submechanisms,
-            "reason": "The passage reaches the fused/parent aperture near the output boundary but remains outside final K.",
+            "reason": (
+                "The passage reaches the fused/parent aperture near the output boundary "
+                "but remains outside final K."
+            ),
         }
     return {
         "primary": "MIXED_OR_OTHER",
         "submechanisms": submechanisms,
-        "reason": "The passage is present in contradiction children but does not fit the preregistered exclusive mechanisms cleanly.",
+        "reason": (
+            "The passage is present in contradiction children but does not fit the "
+            "preregistered exclusive mechanisms cleanly."
+        ),
     }
 
 
@@ -187,11 +205,16 @@ def analyze(
         and str(row["relevance_class"]) == "decisive_counterevidence"
     ]
     passage_results: list[dict[str, Any]] = []
-    for gold in sorted(decisive_rows, key=lambda row: (str(row["case_id"]), str(row["passage_id"]))):
+    for gold in sorted(
+        decisive_rows,
+        key=lambda row: (str(row["case_id"]), str(row["passage_id"])),
+    ):
         case_id = str(gold["case_id"])
         passage_id = str(gold["passage_id"])
         case = by_case[case_id]
-        depth_records = sorted(case["depths"], key=lambda row: int(row["depth_multiplier"]))
+        depth_records = sorted(
+            case["depths"], key=lambda row: int(row["depth_multiplier"])
+        )
         depth_details: list[dict[str, Any]] = []
         burdens: dict[str, dict[str, Any]] = {}
         for depth in depth_records:
@@ -234,8 +257,12 @@ def analyze(
                 "passage_id": passage_id,
                 "source_id": gold["source_id"],
                 "k": int(case["k"]),
-                "first_lexical_hit": _first_prefix_hit(depth_records, passage_id, "lexical"),
-                "first_semantic_hit": _first_prefix_hit(depth_records, passage_id, "semantic"),
+                "first_lexical_hit": _first_prefix_hit(
+                    depth_records, passage_id, "lexical"
+                ),
+                "first_semantic_hit": _first_prefix_hit(
+                    depth_records, passage_id, "semantic"
+                ),
                 "depths": depth_details,
                 "burdens": burdens,
                 "classification": classification,
@@ -256,12 +283,20 @@ def analyze(
         family = str(case["family"])
         stats = no_counter_families.setdefault(
             family,
-            {"cases": 0, "final_k_candidates_at_4k": 0, "support_duplicates_at_4k": 0},
+            {
+                "cases": 0,
+                "final_k_candidates_at_4k": 0,
+                "support_duplicates_at_4k": 0,
+            },
         )
         stats["cases"] += 1
-        depth4 = next(row for row in case["depths"] if int(row["depth_multiplier"]) == 4)
+        depth4 = next(
+            row for row in case["depths"] if int(row["depth_multiplier"]) == 4
+        )
         stats["final_k_candidates_at_4k"] += len(depth4["final_k_passage_ids"])
-        stats["support_duplicates_at_4k"] += int(depth4["support_channel_duplicate_count"])
+        stats["support_duplicates_at_4k"] += int(
+            depth4["support_channel_duplicate_count"]
+        )
 
     result = {
         "schema_version": "1.0",
