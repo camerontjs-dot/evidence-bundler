@@ -7,6 +7,7 @@ from research.decomposition_parent_child_complementarity_dev_rc1.fixture_builder
     compute_handoff_hash,
 )
 from research.decomposition_parent_child_complementarity_dev_rc1.model_generator import (
+    _case_prompt,
     _parse_children,
 )
 from research.decomposition_parent_child_complementarity_dev_rc1.runtime_runner import (
@@ -38,14 +39,38 @@ def test_model_output_parser_abstains_instead_of_inventing_children() -> None:
     assert error == "CHILD_COUNT_OUT_OF_RANGE"
 
 
+def test_rc1a_generator_prompt_is_root_semantic_and_source_blind() -> None:
+    case = {
+        "original_claim_id": "claim-test",
+        "root_proposition": {
+            "proposition_id": "claim-test",
+            "text": "Alpha is required and beta is prohibited.",
+            "text_sha256": "sha256:" + "4" * 64,
+        },
+        "source_aperture_sha256": "1" * 64,
+        "sources": [
+            {
+                "source_id": "SECRET-SOURCE-ID",
+                "media_type": "text/plain; charset=utf-8",
+                "content": "SOURCE-BODY-MUST-NOT-ENTER-GENERATOR-PROMPT",
+                "content_sha256": "sha256:" + "5" * 64,
+            }
+        ],
+    }
+    prompt = _case_prompt(case, "D3")
+    assert case["root_proposition"]["text"] in prompt
+    assert "SOURCE-BODY-MUST-NOT-ENTER-GENERATOR-PROMPT" not in prompt
+    assert "SECRET-SOURCE-ID" not in prompt
+    assert "source bodies are intentionally not available" in prompt
+
+
 def test_contract_a_treatments_preserve_root_and_source_bytes() -> None:
     case = {
         "original_claim_id": "claim-test",
         "root_proposition": {
             "proposition_id": "claim-test",
             "text": "Alpha is required and beta is prohibited.",
-            "text_sha256": "sha256:"
-            + "4" * 64,
+            "text_sha256": "sha256:" + "4" * 64,
         },
         "sources": [
             {
@@ -66,13 +91,18 @@ def test_contract_a_treatments_preserve_root_and_source_bytes() -> None:
         case=case,
         strategy="D2",
         state="declared",
-        children=["Within scope, alpha is required.", "Within scope, beta is prohibited."],
+        children=[
+            "Within scope, alpha is required.",
+            "Within scope, beta is prohibited.",
+        ],
     )
     assert left["root_proposition"] == right["root_proposition"]
     assert left["sources"] == right["sources"]
     assert left["decomposition"] != right["decomposition"]
     assert left["handoff_sha256"] == compute_handoff_hash(left)
     assert right["handoff_sha256"] == compute_handoff_hash(right)
+    assert left["decomposition"]["decomposition_id"].endswith("-rc1a")
+    assert right["decomposition"]["decomposition_id"].endswith("-rc1a")
 
 
 def test_flattened_control_preserves_physical_set_and_removes_attribution() -> None:
