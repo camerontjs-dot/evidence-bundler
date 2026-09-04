@@ -43,7 +43,7 @@ from evidence_bundler.models.cb import (
     ValidationSetRef,
 )
 from evidence_bundler.models.common import CONTRACT_VERSION, PENDING_HASH
-from evidence_bundler.models.document import DocumentChunk
+from evidence_bundler.models.document import ChunkSpec, DocumentChunk
 from evidence_bundler.models.retrieval import (
     CandidateEvidence,
     RetrievalClaimSummary,
@@ -57,6 +57,7 @@ from evidence_bundler.retrieval.embedding_retriever import (
     SemanticIndexError,
     SemanticIndexManifestMismatch,
     SemanticSearchHit,
+    compute_semantic_chunk_set_hash,
     load_embedding_model,
 )
 from evidence_bundler.retrieval.hits import ChunkSearchHit
@@ -71,6 +72,7 @@ from evidence_bundler.retrieval.reranker import (
 AUDIT_CONFIG_VERSION = "cal-rules-v1.2.0"
 VALIDATION_SET_VERSION = "valset-phase-0-fixture"
 RETRIEVAL_VALIDATION_SET_VERSION = "valset-phase-2a-lexical"
+SEMANTIC_VALIDATION_SET_VERSION = "valset-phase-2b-semantic"
 HYBRID_VALIDATION_SET_VERSION = "valset-phase-2b-hybrid"
 
 
@@ -165,7 +167,6 @@ def build_retrieval_bundle(
 ) -> BundleBuildResult:
     """Build a C-B bundle by nominating candidate passages with BM25 retrieval."""
     retrieval_config = config or RetrievalConfig()
-    _assert_retrieval_method_available(retrieval_config)
     output_dir = output_dir.resolve()
     if report_out is not None and _is_relative_to(report_out.resolve(), output_dir):
         raise BundleWriterError(
@@ -185,7 +186,11 @@ def build_retrieval_bundle(
     config_hash = _retrieval_config_hash(retrieval_config)
 
     documents = load_source_documents(artifact)
-    chunks = chunk_source_documents(documents)
+    chunk_spec = ChunkSpec(
+        max_chars=retrieval_config.chunk_max_chars,
+        overlap_chars=retrieval_config.chunk_overlap_chars,
+    )
+    chunks = chunk_source_documents(documents, chunk_spec)
     retriever = BM25Retriever(chunks)
     semantic_index = _load_semantic_index_if_needed(retrieval_config, chunks, artifact)
     reranker = _load_reranker_if_needed(retrieval_config)
@@ -387,18 +392,42 @@ def render_retrieval_report_markdown(report: RetrievalRunReport) -> str:
         f"- Config hash: `{report.config_hash}`",
         f"- Parent aggregation: `{report.retrieval_config.parent_aggregation}`",
         f"- Parent top-k: `{report.retrieval_config.top_k}`",
+        (
+            "- Parent candidate top-k: "
+            f"`{report.retrieval_config.parent_candidate_top_k or 'default'}`"
+        ),
         f"- Child top-k: `{report.retrieval_config.child_top_k}`",
         f"- Lexical score floor: `{report.retrieval_config.lexical_score_floor}`",
+        f"- Chunk max chars: `{report.retrieval_config.chunk_max_chars}`",
+        f"- Chunk overlap chars: `{report.retrieval_config.chunk_overlap_chars}`",
         f"- Semantic model: `{report.retrieval_config.embedding_model}`",
+        (
+            "- Semantic model revision: "
+            f"`{report.retrieval_config.embedding_model_revision or 'unpinned'}`"
+        ),
+        (
+            "- Immutable model revisions required: "
+            f"`{report.retrieval_config.require_immutable_model_revisions}`"
+        ),
         f"- Semantic index path: `{_semantic_index_path_label(report.retrieval_config)}`",
         f"- Semantic child top-k: `{report.retrieval_config.semantic_child_top_k}`",
-        f"- RRF candidate pool per retriever: `{report.retrieval_config.rrf_candidate_pool}`",
+        f"- Semantic query prefix: `{report.retrieval_config.semantic_query_prefix or 'none'}`",
+        f"- Hybrid lexical candidate pool: `{report.retrieval_config.rrf_candidate_pool}`",
         f"- RRF k constant: `{report.retrieval_config.rrf_k_constant}`",
         f"- Rerank enabled: `{report.retrieval_config.rerank_enabled}`",
         f"- Rerank model: `{report.retrieval_config.rerank_model}`",
+        f"- Rerank model revision: `{report.retrieval_config.rerank_model_revision or 'unpinned'}`",
         f"- Rerank candidate limit: `{report.retrieval_config.rerank_top_n}`",
         f"- Contradiction retrieval enabled: `{report.retrieval_config.contradiction_enabled}`",
         f"- Contradiction top-k: `{report.retrieval_config.contradiction_top_k}`",
+        (
+            "- Counterevidence lexical child top-k: "
+            f"`{report.retrieval_config.counterevidence_lexical_child_top_k or 'default'}`"
+        ),
+        (
+            "- Counterevidence semantic child top-k: "
+            f"`{report.retrieval_config.counterevidence_semantic_child_top_k or 'default'}`"
+        ),
         (
             "- Contradiction query prefixes: "
             f"`{_contradiction_prefixes_label(report.retrieval_config)}`"
@@ -1006,13 +1035,18 @@ def _load_semantic_index_if_needed(
     chunks: list[DocumentChunk],
     artifact: ScaffoldRunArtifact,
 ) -> SemanticIndex | None:
-    if config.retrieval_method != "hybrid":
+    if config.retrieval_method not in {"semantic", "hybrid"}:
         return None
 
     try:
         embedder = load_embedding_model(
             str(config.embedding_model),
             cache_dir=config.embedding_model_cache_dir,
+            revision=(
+                str(config.embedding_model_revision)
+                if config.embedding_model_revision is not None
+                else None
+            ),
         )
         index_path = config.semantic_index_path
         if index_path is not None:
@@ -1025,6 +1059,12 @@ def _load_semantic_index_if_needed(
                         embedder=embedder,
                         corpus_hash=artifact.manifest.corpus.corpus_hash,
                         embedding_model=str(config.embedding_model),
+                        embedding_model_revision=(
+                            str(config.embedding_model_revision)
+                            if config.embedding_model_revision is not None
+                            else None
+                        ),
+                        chunk_set_hash=compute_semantic_chunk_set_hash(chunks),
                         semantic_query_prefix=str(config.semantic_query_prefix)
                         if config.semantic_query_prefix is not None
                         else None,
@@ -1037,6 +1077,11 @@ def _load_semantic_index_if_needed(
             embedder=embedder,
             corpus_hash=artifact.manifest.corpus.corpus_hash,
             embedding_model=str(config.embedding_model),
+            embedding_model_revision=(
+                str(config.embedding_model_revision)
+                if config.embedding_model_revision is not None
+                else None
+            ),
             semantic_query_prefix=str(config.semantic_query_prefix)
             if config.semantic_query_prefix is not None
             else None,
@@ -1053,7 +1098,16 @@ def _load_reranker_if_needed(config: RetrievalConfig) -> ParentReranker | None:
     if not config.rerank_enabled:
         return None
     try:
-        return ParentReranker(load_reranker_model(str(config.rerank_model)))
+        return ParentReranker(
+            load_reranker_model(
+                str(config.rerank_model),
+                revision=(
+                    str(config.rerank_model_revision)
+                    if config.rerank_model_revision is not None
+                    else None
+                ),
+            )
+        )
     except RerankerError as exc:
         raise BundleWriterError(str(exc)) from exc
 
@@ -1078,6 +1132,15 @@ def _retrieve_claim_candidates(
             chunks_by_id=chunks_by_id,
             config=config,
         )
+    if config.retrieval_method == "semantic":
+        if semantic_index is None:
+            raise BundleWriterError("Semantic retrieval requires a semantic index")
+        return _retrieve_semantic_claim(
+            claim=claim,
+            semantic_index=semantic_index,
+            chunks_by_id=chunks_by_id,
+            config=config,
+        )
 
     hits = retriever.query(
         claim.claim_text,
@@ -1089,13 +1152,53 @@ def _retrieve_claim_candidates(
         hits=hits,
         chunks_by_id=chunks_by_id,
         config=config,
-    )
+        limit=config.parent_candidate_top_k,
+    )[: config.top_k]
     return candidates, _make_claim_summary(
         claim=claim,
         candidates=candidates,
         hits=hits,
         lexical_only_child_hits=len(hits),
         semantic_only_child_hits=0,
+        overlap_child_hits=0,
+        total_fused_child_hits=len(hits),
+    )
+
+
+def _retrieve_semantic_claim(
+    *,
+    claim: ScaffoldClaim,
+    semantic_index: SemanticIndex,
+    chunks_by_id: dict[str, DocumentChunk],
+    config: RetrievalConfig,
+) -> tuple[list[CandidateEvidence], RetrievalClaimSummary]:
+    semantic_hits = semantic_index.query(
+        claim.claim_text,
+        top_k=config.semantic_child_top_k,
+    )
+    hits = [
+        ChunkSearchHit(
+            chunk=hit.chunk,
+            score=hit.semantic_score,
+            rank=hit.rank,
+            semantic_score=hit.semantic_score,
+            semantic_rank=hit.rank,
+        )
+        for hit in semantic_hits
+    ]
+    candidates = aggregate_parent_candidates(
+        claim=claim,
+        hits=hits,
+        chunks_by_id=chunks_by_id,
+        config=config,
+        limit=config.parent_candidate_top_k,
+    )[: config.top_k]
+    return candidates, _make_claim_summary(
+        claim=claim,
+        candidates=candidates,
+        hits=hits,
+        lexical_only_child_hits=0,
+        semantic_only_child_hits=len(hits),
         overlap_child_hits=0,
         total_fused_child_hits=len(hits),
     )
@@ -1115,7 +1218,7 @@ def _retrieve_hybrid_claim(
         top_k=config.rrf_candidate_pool,
         score_floor=config.lexical_score_floor,
     )
-    semantic_hits = semantic_index.query(claim.claim_text, top_k=config.rrf_candidate_pool)
+    semantic_hits = semantic_index.query(claim.claim_text, top_k=config.semantic_child_top_k)
     lexical_ids = [hit.chunk.chunk_id for hit in lexical_hits]
     semantic_ids = [hit.chunk.chunk_id for hit in semantic_hits]
     fused_ranks = reciprocal_rank_fusion(
@@ -1133,7 +1236,11 @@ def _retrieve_hybrid_claim(
         )
         for fused_rank in fused_ranks
     ]
-    parent_pool_limit = max(config.top_k, config.rerank_top_n) if config.rerank_enabled else None
+    parent_pool_limit = (
+        config.parent_candidate_top_k
+        if config.parent_candidate_top_k is not None
+        else (max(config.top_k, config.rerank_top_n) if config.rerank_enabled else config.top_k)
+    )
     candidates = aggregate_parent_candidates(
         claim=claim,
         hits=fused_hits,
@@ -1150,6 +1257,7 @@ def _retrieve_hybrid_claim(
             reranker=reranker,
             config=config,
         )
+    candidates = candidates[: config.top_k]
     lexical_set = set(lexical_ids)
     semantic_set = set(semantic_ids)
     overlap = lexical_set & semantic_set
@@ -1275,22 +1383,19 @@ def _retrieval_config_hash(config: RetrievalConfig) -> str:
     return hash_text(yaml_to_string(dumped))
 
 
-def _assert_retrieval_method_available(config: RetrievalConfig) -> None:
-    if config.retrieval_method == "semantic":
-        raise BundleWriterError(
-            "--method semantic is wired in Phase 2b Unit 2/3; not available yet"
-        )
-
-
 def _retrieval_validation_set_version(config: RetrievalConfig) -> str:
     if config.retrieval_method == "hybrid":
         return HYBRID_VALIDATION_SET_VERSION
+    if config.retrieval_method == "semantic":
+        return SEMANTIC_VALIDATION_SET_VERSION
     return RETRIEVAL_VALIDATION_SET_VERSION
 
 
 def _retrieval_validation_set_hash(config: RetrievalConfig) -> str:
     if config.retrieval_method == "hybrid":
         return hash_text("phase-2b-hybrid-validation-set-placeholder-v1")
+    if config.retrieval_method == "semantic":
+        return hash_text("phase-2b-semantic-validation-set-placeholder-v1")
     return hash_text("phase-2a-lexical-validation-set-placeholder-v1")
 
 
@@ -1340,7 +1445,7 @@ def _join_steps(steps: list[str]) -> str:
 def _semantic_index_path_label(config: RetrievalConfig) -> str:
     if config.semantic_index_path is not None:
         return config.semantic_index_path.as_posix()
-    if config.retrieval_method == "hybrid":
+    if config.retrieval_method in {"semantic", "hybrid"}:
         return "none (transient)"
     return "none"
 

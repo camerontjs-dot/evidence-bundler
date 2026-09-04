@@ -1,0 +1,112 @@
+name: Research - Contract A decomposition retrieval sensitivity dev RC1
+
+on:
+  push:
+    branches:
+      - research/contract-a-decomposition-retrieval-sensitivity-dev-rc1-20260829
+    paths:
+      - "research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/**"
+      - "tests/test_contract_a_decomposition_retrieval_sensitivity_dev_rc1.py"
+      - ".github/workflows/research-contract-a-decomposition-retrieval-sensitivity-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/**"
+      - "tests/test_contract_a_decomposition_retrieval_sensitivity_dev_rc1.py"
+      - ".github/workflows/research-contract-a-decomposition-retrieval-sensitivity-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decomposition-sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact tested identity
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1
+          git rev-parse HEAD | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/tree-sha.txt
+
+      - name: Verify frozen development treatment identities and firewall
+        run: |
+          set -o pipefail
+          test "$(sha256sum benchmarks/eb-challenge-corpus-v1/decompositions/dev_decompositions.jsonl | cut -d' ' -f1)" = "2120228c81466471214ca8b56a6eba2fa5bc498cd0b0243ff3b8fe24c9da2144"
+          test "$(sha256sum benchmarks/eb-challenge-corpus-v1/gold/dev_relevance.jsonl | cut -d' ' -f1)" = "da5b06d78060897f85dc78a8ff45c9622c697a10fe43942ea74a688115c7fac3"
+          ! grep -q "dev_relevance" research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/runtime_runner.py
+          ! grep -q "test_decompositions" research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/runtime_runner.py
+          ! grep -q "test_relevance" research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/runtime_runner.py
+
+      - name: Install package and dev tools
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Run full deterministic suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/pytest.txt
+
+      - name: Run decomposition apparatus tests explicitly
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_contract_a_decomposition_retrieval_sensitivity_dev_rc1.py             2>&1 | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/decomposition-tests.txt
+
+      - name: Ruff apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check             research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/runtime_runner.py             research/contract_a_decomposition_retrieval_sensitivity_dev_rc1/analyzer.py             tests/test_contract_a_decomposition_retrieval_sensitivity_dev_rc1.py             2>&1 | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/ruff.txt
+
+      - name: Generate gold-blind composite and decomposition retrieval artifacts
+        run: |
+          set -o pipefail
+          python -m research.contract_a_decomposition_retrieval_sensitivity_dev_rc1.runtime_runner             --benchmark-root benchmarks/eb-challenge-corpus-v1             --apparatus-sha "$(git rev-parse HEAD)"             --output artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/raw.json             | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/execution-receipt.json
+
+      - name: Analyze frozen dev relevance after retrieval freeze
+        run: |
+          set -o pipefail
+          python -m research.contract_a_decomposition_retrieval_sensitivity_dev_rc1.analyzer             --benchmark-root benchmarks/eb-challenge-corpus-v1             --raw artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/raw.json             --gold benchmarks/eb-challenge-corpus-v1/gold/dev_relevance.jsonl             --output artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/analysis.json             | tee artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/analysis-summary.json
+
+      - name: Build compact descriptive comparison
+        run: |
+          set -o pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1")
+          analysis = json.loads((root / "analysis.json").read_text())
+          compact = {
+              "ownership_equivalence": analysis["ownership_equivalence"],
+              "paired_summary": analysis["paired_summary"],
+          }
+          (root / "compact-comparison.json").write_text(
+              json.dumps(compact, indent=2, sort_keys=True) + "\n"
+          )
+          print(json.dumps(compact, sort_keys=True))
+          PY
+
+      - name: Hash experiment artifacts
+        run: |
+          set -o pipefail
+          cd artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: contract-a-decomposition-retrieval-sensitivity-dev-rc1-${{ github.sha }}
+          path: artifacts/contract-a-decomposition-retrieval-sensitivity-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90

@@ -57,8 +57,13 @@ class ParentReranker:
         return sorted(scored_candidates, key=_rerank_sort_key)
 
 
-def load_reranker_model(model_name: str, cache_dir: Path | None = None) -> CrossEncoderModel:
-    """Load a SentenceTransformers CrossEncoder model."""
+def load_reranker_model(
+    model_name: str,
+    cache_dir: Path | None = None,
+    *,
+    revision: str | None = None,
+) -> CrossEncoderModel:
+    """Load a SentenceTransformers CrossEncoder at an optional immutable revision."""
     try:
         from sentence_transformers import CrossEncoder
     except ImportError as exc:  # pragma: no cover - exercised only without optional dep.
@@ -66,7 +71,11 @@ def load_reranker_model(model_name: str, cache_dir: Path | None = None) -> Cross
             "sentence-transformers is required for real cross-encoder reranking"
         ) from exc
 
-    kwargs = {"cache_folder": str(cache_dir)} if cache_dir is not None else {}
+    kwargs: dict[str, object] = {}
+    if cache_dir is not None:
+        kwargs["cache_folder"] = str(cache_dir)
+    if revision is not None:
+        kwargs["revision"] = revision
     return cast(CrossEncoderModel, CrossEncoder(model_name, **kwargs))
 
 

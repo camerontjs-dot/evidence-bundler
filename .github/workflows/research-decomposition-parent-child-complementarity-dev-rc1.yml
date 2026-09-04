@@ -1,0 +1,202 @@
+name: Research - decomposition parent-child complementarity dev RC1
+
+on:
+  push:
+    branches:
+      - research/decomposition-parent-child-complementarity-dev-rc1-20260904
+    paths:
+      - "research/decomposition_parent_child_complementarity_dev_rc1/**"
+      - "tests/test_decomposition_parent_child_complementarity_dev_rc1.py"
+      - ".github/workflows/research-decomposition-parent-child-complementarity-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Checkout canonical contract authority
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: c3563cff66d2c85dcbf575c693056e2d8e4563d4
+          path: contract-authority
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact apparatus identity and frozen preregistration
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/decomposition-parent-child-complementarity-dev-rc1
+          git rev-parse HEAD | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/tree-sha.txt
+          git merge-base --is-ancestor 1e98699ad08849c1ff04e88319a7962ea151a00d HEAD
+          cp research/decomposition_parent_child_complementarity_dev_rc1/PREREGISTRATION.md \
+            artifacts/decomposition-parent-child-complementarity-dev-rc1/PREREGISTRATION.md
+          test "$(git -C contract-authority rev-parse HEAD)" = "c3563cff66d2c85dcbf575c693056e2d8e4563d4"
+          test "$(git -C contract-authority hash-object validators/contract_a_rc2.py)" = "42e5f5b3bf38d677445e9d01ea130ba604e53409"
+
+      - name: Install package and research dependencies
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+          python -m pip install sentencepiece
+
+      - name: Run full deterministic suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/pytest.txt
+
+      - name: Run experiment boundary tests explicitly
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_decomposition_parent_child_complementarity_dev_rc1.py \
+            2>&1 | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/boundary-tests.txt
+
+      - name: Ruff experiment apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check --ignore E501 \
+            research/decomposition_parent_child_complementarity_dev_rc1/generation_input.py \
+            research/decomposition_parent_child_complementarity_dev_rc1/model_generator.py \
+            research/decomposition_parent_child_complementarity_dev_rc1/fixture_builder.py \
+            research/decomposition_parent_child_complementarity_dev_rc1/runtime_runner.py \
+            research/decomposition_parent_child_complementarity_dev_rc1/analyzer.py \
+            research/decomposition_parent_child_complementarity_dev_rc1/faithfulness.py \
+            tests/test_decomposition_parent_child_complementarity_dev_rc1.py \
+            2>&1 | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/ruff.txt
+
+      - name: Build gold-blind generation input from frozen root/source aperture
+        run: |
+          set -o pipefail
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.generation_input \
+            --benchmark-root benchmarks/eb-challenge-corpus-v1 \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input-receipt.json
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.sha256
+
+      - name: Generate FLAN retrieval-oriented and neutral decompositions without gold
+        run: |
+          set -o pipefail
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.model_generator \
+            --input artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.json \
+            --model-key flan \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation-receipt.json
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation.sha256
+
+      - name: Generate Smol typed-semantic and neutral decompositions without gold
+        run: |
+          set -o pipefail
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.model_generator \
+            --input artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.json \
+            --model-key smol \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation-receipt.json
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation.sha256
+
+      - name: Build and freeze Contract A 2.0.0 treatment fixtures
+        run: |
+          set -o pipefail
+          GEN_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.sha256)"
+          FLAN_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation.sha256)"
+          SMOL_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation.sha256)"
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.fixture_builder \
+            --generation-input artifacts/decomposition-parent-child-complementarity-dev-rc1/generation-input.json \
+            --flan-output artifacts/decomposition-parent-child-complementarity-dev-rc1/flan-generation.json \
+            --smol-output artifacts/decomposition-parent-child-complementarity-dev-rc1/smol-generation.json \
+            --expected-generation-input-sha256 "$GEN_SHA" \
+            --expected-flan-sha256 "$FLAN_SHA" \
+            --expected-smol-sha256 "$SMOL_SHA" \
+            --output-dir artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/fixture-build-receipt.json
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures/MANIFEST.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/fixture-manifest.sha256
+
+      - name: Validate every treatment with exact canonical Contract A 2.0.0 validator
+        run: |
+          set -o pipefail
+          COUNT=0
+          for fixture in artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures/claim-*.json; do
+            python contract-authority/validators/contract_a_rc2.py "$fixture"
+            COUNT=$((COUNT+1))
+          done | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-validation.txt
+          test "$COUNT" -eq 42
+          echo "validated_fixture_count=$COUNT" | tee -a artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-validation.txt
+
+      - name: Freeze complete Contract A fixture directory before retrieval
+        run: |
+          set -o pipefail
+          (cd artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures && sha256sum *.json | sort) \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures.sha256
+
+      - name: Run separate semantic-faithfulness instruments before retrieval gold
+        run: |
+          set -o pipefail
+          MANIFEST_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/fixture-manifest.sha256)"
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.faithfulness \
+            --fixture-dir artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures \
+            --expected-manifest-sha256 "$MANIFEST_SHA" \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/faithfulness.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/faithfulness-receipt.json
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/faithfulness.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/faithfulness.sha256
+
+      - name: Run gold-blind R0 R1 R2 R3 retrieval arms
+        run: |
+          set -o pipefail
+          MANIFEST_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/fixture-manifest.sha256)"
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.runtime_runner \
+            --benchmark-root benchmarks/eb-challenge-corpus-v1 \
+            --fixture-dir artifacts/decomposition-parent-child-complementarity-dev-rc1/contract-a-fixtures \
+            --expected-manifest-sha256 "$MANIFEST_SHA" \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/raw-retrieval.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/retrieval-receipt.json
+
+      - name: Freeze raw retrieval before opening dev relevance annotations
+        run: |
+          set -o pipefail
+          sha256sum artifacts/decomposition-parent-child-complementarity-dev-rc1/raw-retrieval.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/raw-retrieval.sha256
+
+      - name: Posthoc retrieval analysis against frozen dev annotations
+        run: |
+          set -o pipefail
+          RAW_SHA="$(cut -d' ' -f1 artifacts/decomposition-parent-child-complementarity-dev-rc1/raw-retrieval.sha256)"
+          python -m research.decomposition_parent_child_complementarity_dev_rc1.analyzer \
+            --benchmark-root benchmarks/eb-challenge-corpus-v1 \
+            --raw artifacts/decomposition-parent-child-complementarity-dev-rc1/raw-retrieval.json \
+            --gold benchmarks/eb-challenge-corpus-v1/gold/dev_relevance.jsonl \
+            --expected-raw-sha256 "$RAW_SHA" \
+            --output artifacts/decomposition-parent-child-complementarity-dev-rc1/analysis.json \
+            | tee artifacts/decomposition-parent-child-complementarity-dev-rc1/analysis-summary.json
+
+      - name: Hash complete experiment artifact set
+        if: always()
+        run: |
+          set -o pipefail
+          cd artifacts/decomposition-parent-child-complementarity-dev-rc1
+          find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: decomposition-parent-child-complementarity-dev-rc1-${{ github.sha }}
+          path: artifacts/decomposition-parent-child-complementarity-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90

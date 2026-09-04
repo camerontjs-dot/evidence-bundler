@@ -11,6 +11,7 @@ from typing import Any, Literal, Protocol, cast
 
 from pydantic import Field
 
+from evidence_bundler.contracts.hashing import hash_text
 from evidence_bundler.contracts.yaml_io import load_model_yaml, write_model_yaml
 from evidence_bundler.models.common import HashValue, NonBlankStr, StrictBaseModel
 from evidence_bundler.models.document import DocumentChunk
@@ -43,6 +44,8 @@ class SemanticIndexManifest(StrictBaseModel):
 
     corpus_hash: HashValue
     embedding_model: NonBlankStr
+    embedding_model_revision: NonBlankStr | None = None
+    chunk_set_hash: HashValue | None = None
     embedding_dim: int = Field(ge=0)
     chunk_count: int = Field(ge=0)
     normalize_embeddings: Literal[True] = NORMALIZE_EMBEDDINGS
@@ -86,6 +89,7 @@ class SemanticIndex:
         embedder: TextEmbedder,
         corpus_hash: str,
         embedding_model: str,
+        embedding_model_revision: str | None = None,
         semantic_query_prefix: str | None,
         show_progress_bar: bool = False,
     ) -> SemanticIndex:
@@ -100,6 +104,8 @@ class SemanticIndex:
         manifest = SemanticIndexManifest(
             corpus_hash=corpus_hash,
             embedding_model=embedding_model,
+            embedding_model_revision=embedding_model_revision,
+            chunk_set_hash=compute_semantic_chunk_set_hash(indexed_chunks),
             embedding_dim=embedding_dim,
             chunk_count=len(indexed_chunks),
             normalize_embeddings=NORMALIZE_EMBEDDINGS,
@@ -122,6 +128,8 @@ class SemanticIndex:
         embedder: TextEmbedder,
         corpus_hash: str,
         embedding_model: str,
+        embedding_model_revision: str | None = None,
+        chunk_set_hash: str | None = None,
         semantic_query_prefix: str | None = None,
     ) -> SemanticIndex:
         """Load a persisted semantic index if its manifest matches active inputs."""
@@ -130,6 +138,8 @@ class SemanticIndex:
             manifest,
             corpus_hash=corpus_hash,
             embedding_model=embedding_model,
+            embedding_model_revision=embedding_model_revision,
+            chunk_set_hash=chunk_set_hash,
         )
         chunks = _read_chunks_jsonl(index_dir / "chunks.jsonl")
         if manifest.chunk_count != len(chunks):
@@ -197,8 +207,13 @@ class SemanticIndex:
         return _sort_ranked_pairs(ranked, self.chunks)[:top_k]
 
 
-def load_embedding_model(model_name: str, cache_dir: Path | None = None) -> TextEmbedder:
-    """Load a SentenceTransformer model, optionally using an explicit cache dir."""
+def load_embedding_model(
+    model_name: str,
+    cache_dir: Path | None = None,
+    *,
+    revision: str | None = None,
+) -> TextEmbedder:
+    """Load a SentenceTransformer model with optional cache and immutable revision."""
     try:
         from sentence_transformers import SentenceTransformer
     except ImportError as exc:  # pragma: no cover - exercised only without optional dep.
@@ -206,7 +221,11 @@ def load_embedding_model(model_name: str, cache_dir: Path | None = None) -> Text
             "sentence-transformers is required for real semantic retrieval"
         ) from exc
 
-    kwargs = {"cache_folder": str(cache_dir)} if cache_dir is not None else {}
+    kwargs: dict[str, object] = {}
+    if cache_dir is not None:
+        kwargs["cache_folder"] = str(cache_dir)
+    if revision is not None:
+        kwargs["revision"] = revision
     return cast(TextEmbedder, SentenceTransformer(model_name, **kwargs))
 
 
@@ -403,18 +422,41 @@ def _validate_manifest(
     *,
     corpus_hash: str,
     embedding_model: str,
+    embedding_model_revision: str | None = None,
+    chunk_set_hash: str | None = None,
 ) -> None:
     mismatches = []
     if manifest.corpus_hash != corpus_hash:
         mismatches.append("corpus_hash")
     if manifest.embedding_model != embedding_model:
         mismatches.append("embedding_model")
+    if manifest.embedding_model_revision != embedding_model_revision:
+        mismatches.append("embedding_model_revision")
+    if chunk_set_hash is not None and manifest.chunk_set_hash != chunk_set_hash:
+        mismatches.append("chunk_set_hash")
     if manifest.normalize_embeddings is not NORMALIZE_EMBEDDINGS:
         mismatches.append("normalize_embeddings")
     if mismatches:
         raise SemanticIndexManifestMismatch(
             "semantic index manifest mismatch: " + ", ".join(mismatches)
         )
+
+
+def compute_semantic_chunk_set_hash(chunks: list[DocumentChunk]) -> str:
+    """Hash the ordered semantic-index rows so cached indexes cannot alias chunk geometry."""
+    indexed_chunks = select_indexable_chunks(chunks)
+    rows = [
+        {
+            "chunk_id": chunk.chunk_id,
+            "chunk_hash": chunk.chunk_hash,
+            "source_id": chunk.source_id,
+            "parent_chunk_id": chunk.parent_chunk_id,
+            "char_start": chunk.char_start,
+            "char_end": chunk.char_end,
+        }
+        for chunk in indexed_chunks
+    ]
+    return hash_text(json.dumps(rows, sort_keys=True, separators=(",", ":")))
 
 
 def _validate_faiss_index_shape(index: object, manifest: SemanticIndexManifest) -> None:

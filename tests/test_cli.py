@@ -288,11 +288,21 @@ def test_build_bundle_cli_config_enables_hybrid_rerank(
     assert "- Rerank model: `fake-reranker`" in report
 
 
-def test_build_bundle_cli_semantic_method_fails_until_wired(
+def test_build_bundle_cli_semantic_method_executes_end_to_end(
     mixed_scaffold_run_tmp: Path,
     tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
+    class CliFakeEmbedder:
+        def encode(self, texts: list[str], **_kwargs: object) -> list[list[float]]:
+            return [[1.0, 0.0, 0.0] for _ in texts]
+
+    monkeypatch.setattr(
+        "evidence_bundler.contracts.writer.load_embedding_model",
+        lambda *_args, **_kwargs: CliFakeEmbedder(),
+    )
     output_dir = tmp_path / "evidence-bundle-semantic"
+    report_path = tmp_path / "semantic-report.md"
     result = CliRunner().invoke(
         cli,
         [
@@ -300,14 +310,17 @@ def test_build_bundle_cli_semantic_method_fails_until_wired(
             str(mixed_scaffold_run_tmp),
             "--output",
             str(output_dir),
+            "--report-out",
+            str(report_path),
             "--method",
             "semantic",
         ],
     )
 
-    assert result.exit_code != 0
-    assert "--method semantic is wired in Phase 2b Unit 2/3; not available yet" in result.output
-    assert not output_dir.exists()
+    assert result.exit_code == 0
+    assert "Bundle written:" in result.output
+    assert output_dir.exists()
+    assert "- Retrieval method: `semantic`" in report_path.read_text(encoding="utf-8")
 
 
 def test_review_init_cli_writes_sidecar_outside_draft_bundle(

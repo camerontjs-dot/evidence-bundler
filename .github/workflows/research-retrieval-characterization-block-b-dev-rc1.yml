@@ -1,0 +1,167 @@
+name: Research - retrieval characterization Block B dev RC1
+
+on:
+  push:
+    branches:
+      - research/retrieval-characterization-block-b-dev-rc1-20260829
+    paths:
+      - "research/retrieval_characterization_block_b_dev_rc1/**"
+      - "tests/test_retrieval_characterization_block_b_dev_rc1.py"
+      - ".github/workflows/research-retrieval-characterization-block-b-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/retrieval_characterization_block_b_dev_rc1/**"
+      - "tests/test_retrieval_characterization_block_b_dev_rc1.py"
+      - ".github/workflows/research-retrieval-characterization-block-b-dev-rc1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  characterize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact tested identity
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/retrieval-characterization-block-b-dev-rc1
+          git rev-parse HEAD | tee artifacts/retrieval-characterization-block-b-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/retrieval-characterization-block-b-dev-rc1/tree-sha.txt
+
+      - name: Verify frozen RC2 evaluator identities
+        run: |
+          set -o pipefail
+          test "$(sha256sum research/eb_retrieval_assurance_rc2/evaluator.py | cut -d' ' -f1)" = "c443a64a2c2dfe8c9b0decd8c0414c1e7bb1069d86d3355dd0202fa9725aff08"
+          test "$(sha256sum research/eb_retrieval_assurance_rc2/thresholds.json | cut -d' ' -f1)" = "9df75b448ff5090d9bd2821f624e327d47ba5ea9848460cf69518bb6b04ea05a"
+          test "$(sha256sum benchmarks/eb-retrieval-assurance-rc2-v1/SHA256SUMS | cut -d' ' -f1)" = "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad"
+
+      - name: Verify gold-blind retrieval adapter
+        run: |
+          set -o pipefail
+          ! grep -q "evaluator_only" research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py
+          ! grep -q "dev_gold" research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py
+          ! grep -q "sealed_gold" research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py
+
+      - name: Install exact branch package and dev tools
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Run full deterministic test suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/retrieval-characterization-block-b-dev-rc1/pytest.txt
+
+      - name: Run Block B adapter tests explicitly
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_retrieval_characterization_block_b_dev_rc1.py \
+            2>&1 | tee artifacts/retrieval-characterization-block-b-dev-rc1/block-b-tests.txt
+
+      - name: Ruff Block B apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check \
+            research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py \
+            tests/test_retrieval_characterization_block_b_dev_rc1.py \
+            2>&1 | tee artifacts/retrieval-characterization-block-b-dev-rc1/ruff.txt
+
+      - name: Run BM25 dev arm
+        run: |
+          set -o pipefail
+          python research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --split dev \
+            --arm bm25 \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/retrieval-characterization-block-b-dev-rc1/bm25-results.jsonl \
+            | tee artifacts/retrieval-characterization-block-b-dev-rc1/bm25-receipt.json
+
+      - name: Run semantic-only dev arm
+        run: |
+          set -o pipefail
+          python research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --split dev \
+            --arm semantic \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/retrieval-characterization-block-b-dev-rc1/semantic-results.jsonl \
+            | tee artifacts/retrieval-characterization-block-b-dev-rc1/semantic-receipt.json
+
+      - name: Run hybrid dev arm
+        run: |
+          set -o pipefail
+          python research/retrieval_characterization_block_b_dev_rc1/runtime_runner.py \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --split dev \
+            --arm hybrid \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/retrieval-characterization-block-b-dev-rc1/hybrid-results.jsonl \
+            | tee artifacts/retrieval-characterization-block-b-dev-rc1/hybrid-receipt.json
+
+      - name: Evaluate all three arms with frozen dev evaluator
+        run: |
+          set -o pipefail
+          for arm in bm25 semantic hybrid; do
+            python research/eb_retrieval_assurance_rc2/evaluator.py \
+              --benchmark-root benchmarks/eb-retrieval-assurance-rc2-v1 \
+              --split dev \
+              --results "artifacts/retrieval-characterization-block-b-dev-rc1/${arm}-results.jsonl" \
+              --thresholds research/eb_retrieval_assurance_rc2/thresholds.json \
+              --output "artifacts/retrieval-characterization-block-b-dev-rc1/${arm}-evaluation.json" \
+              | tee "artifacts/retrieval-characterization-block-b-dev-rc1/${arm}-evaluation-summary.txt"
+          done
+
+      - name: Build non-scalar comparison receipt
+        run: |
+          set -o pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path("artifacts/retrieval-characterization-block-b-dev-rc1")
+          arms={}
+          for arm in ("bm25","semantic","hybrid"):
+              evaluation=json.loads((root/f"{arm}-evaluation.json").read_text())
+              receipt=json.loads((root/f"{arm}-receipt.json").read_text())
+              arms[arm]={
+                  "summary":evaluation["summary"],
+                  "execution_receipt":receipt,
+                  "results_sha256":hashlib.sha256((root/f"{arm}-results.jsonl").read_bytes()).hexdigest(),
+                  "evaluation_sha256":hashlib.sha256((root/f"{arm}-evaluation.json").read_bytes()).hexdigest(),
+              }
+          comparison={
+              "schema_version":"1.0",
+              "decision":"descriptive RC2 dev retrieval-family characterization; no production promotion",
+              "benchmark_tree_sha256":"0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad",
+              "evaluator_sha256":"c443a64a2c2dfe8c9b0decd8c0414c1e7bb1069d86d3355dd0202fa9725aff08",
+              "arms":arms,
+          }
+          (root/"comparison.json").write_text(json.dumps(comparison,indent=2,sort_keys=True)+"\n")
+          print(json.dumps(comparison,sort_keys=True))
+          PY
+
+      - name: Hash all experiment artifacts
+        run: |
+          set -o pipefail
+          cd artifacts/retrieval-characterization-block-b-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: retrieval-characterization-block-b-dev-rc1-${{ github.sha }}
+          path: artifacts/retrieval-characterization-block-b-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90
