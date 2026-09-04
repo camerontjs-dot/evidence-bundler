@@ -1,0 +1,122 @@
+name: Research - counterevidence aperture localization dev RC1
+
+on:
+  push:
+    branches:
+      - research/counterevidence-aperture-localization-dev-rc1-20260904
+    paths:
+      - "research/counterevidence_aperture_localization_dev_rc1/**"
+      - "tests/test_counterevidence_aperture_localization_dev_rc1.py"
+      - ".github/workflows/research-counterevidence-aperture-localization-dev-rc1.yml"
+  pull_request:
+    paths:
+      - "research/counterevidence_aperture_localization_dev_rc1/**"
+      - "tests/test_counterevidence_aperture_localization_dev_rc1.py"
+      - ".github/workflows/research-counterevidence-aperture-localization-dev-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record exact apparatus identity
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/counterevidence-aperture-localization-dev-rc1
+          git rev-parse HEAD | tee artifacts/counterevidence-aperture-localization-dev-rc1/commit-sha.txt
+          git rev-parse HEAD^{tree} | tee artifacts/counterevidence-aperture-localization-dev-rc1/tree-sha.txt
+          git merge-base --is-ancestor ef205de2775ea447eb275dd8cb1c973607684926 HEAD
+          cp research/counterevidence_aperture_localization_dev_rc1/PREREGISTRATION.md \
+            artifacts/counterevidence-aperture-localization-dev-rc1/PREREGISTRATION.md
+
+      - name: Verify frozen predecessor identities and gold-blind runner
+        run: |
+          set -o pipefail
+          test "$(sha256sum benchmarks/eb-retrieval-assurance-rc2-v1/SHA256SUMS | cut -d' ' -f1)" = "0a9da82e3e28fd3650936fc715904e39c91f34a944ac7c3bfe40277953870dad"
+          grep -q '"evidence against"' src/evidence_bundler/models/retrieval.py
+          grep -q '"limitations of"' src/evidence_bundler/models/retrieval.py
+          grep -q '"contradicts the claim that"' src/evidence_bundler/models/retrieval.py
+          grep -q '"does not support"' src/evidence_bundler/models/retrieval.py
+          grep -q '"fails to demonstrate"' src/evidence_bundler/models/retrieval.py
+          ! grep -q "evaluator_only" research/counterevidence_aperture_localization_dev_rc1/runtime_runner.py
+          ! grep -q "dev_gold" research/counterevidence_aperture_localization_dev_rc1/runtime_runner.py
+          ! grep -q "sealed_gold" research/counterevidence_aperture_localization_dev_rc1/runtime_runner.py
+
+      - name: Install package and dev tools
+        run: |
+          set -o pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Run full deterministic suite
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee artifacts/counterevidence-aperture-localization-dev-rc1/pytest.txt
+
+      - name: Run aperture boundary tests explicitly
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_counterevidence_aperture_localization_dev_rc1.py \
+            2>&1 | tee artifacts/counterevidence-aperture-localization-dev-rc1/aperture-tests.txt
+
+      - name: Ruff research apparatus
+        run: |
+          set -o pipefail
+          python -m ruff check \
+            research/counterevidence_aperture_localization_dev_rc1/runtime_runner.py \
+            research/counterevidence_aperture_localization_dev_rc1/analyzer.py \
+            tests/test_counterevidence_aperture_localization_dev_rc1.py \
+            2>&1 | tee artifacts/counterevidence-aperture-localization-dev-rc1/ruff.txt
+
+      - name: Generate gold-blind K 2K 4K retrieval artifact
+        run: |
+          set -o pipefail
+          python -m research.counterevidence_aperture_localization_dev_rc1.runtime_runner \
+            --runtime-root benchmarks/eb-retrieval-assurance-rc2-v1/runtime \
+            --apparatus-sha "$(git rev-parse HEAD)" \
+            --output artifacts/counterevidence-aperture-localization-dev-rc1/raw.json \
+            | tee artifacts/counterevidence-aperture-localization-dev-rc1/execution-receipt.json
+
+      - name: Freeze and hash raw retrieval before gold analysis
+        run: |
+          set -o pipefail
+          sha256sum artifacts/counterevidence-aperture-localization-dev-rc1/raw.json \
+            | tee artifacts/counterevidence-aperture-localization-dev-rc1/raw.sha256
+
+      - name: Analyze frozen raw artifact against dev annotations
+        run: |
+          set -o pipefail
+          RAW_SHA="$(cut -d' ' -f1 artifacts/counterevidence-aperture-localization-dev-rc1/raw.sha256)"
+          python -m research.counterevidence_aperture_localization_dev_rc1.analyzer \
+            --raw artifacts/counterevidence-aperture-localization-dev-rc1/raw.json \
+            --gold benchmarks/eb-retrieval-assurance-rc2-v1/evaluator_only/dev_gold.jsonl \
+            --expected-raw-sha256 "$RAW_SHA" \
+            --output artifacts/counterevidence-aperture-localization-dev-rc1/analysis.json \
+            | tee artifacts/counterevidence-aperture-localization-dev-rc1/analysis-summary.json
+
+      - name: Hash complete experiment artifact set
+        if: always()
+        run: |
+          set -o pipefail
+          cd artifacts/counterevidence-aperture-localization-dev-rc1
+          sha256sum * | sort > SHA256SUMS
+          cat SHA256SUMS
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: counterevidence-aperture-localization-dev-rc1-${{ github.sha }}
+          path: artifacts/counterevidence-aperture-localization-dev-rc1/
+          if-no-files-found: error
+          retention-days: 90
