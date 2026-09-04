@@ -120,8 +120,8 @@ class ApertureObservation(_Strict):
 
 
 class ContractBFactualContext(_Strict):
-    schema: Literal["contract-b-factual-context-v1"] = (  # type: ignore[assignment]
-        "contract-b-factual-context-v1"
+    schema: Literal["contract-b-factual-context-v1"] = (
+        "contract-b-factual-context-v1"  # type: ignore[assignment]
     )
     history_complete: Literal[True] = True
     claims: list[ClaimContext] = Field(default_factory=list)
