@@ -9,6 +9,7 @@ from typing import Any
 SCHEMA_TOKEN = "contract-a-wire-candidate-rc2"
 STRATEGY_ORDER = ("D1", "D2", "D3", "D4", "D5a", "D5b", "D6")
 MODEL_STRATEGIES = {"D3", "D4", "D5a", "D5b"}
+EXPERIMENT_REVISION = "rc1a"
 
 
 def canonical_json_bytes(value: Any) -> bytes:
@@ -73,7 +74,9 @@ def _contract_a_object(
     if state == "declared":
         decomposition = {
             "state": "declared",
-            "decomposition_id": f"research-{claim_id}-{strategy.lower()}-dev-rc1",
+            "decomposition_id": (
+                f"research-{claim_id}-{strategy.lower()}-dev-{EXPERIMENT_REVISION}"
+            ),
             "operator": "all_of",
             "children": [
                 {
@@ -90,12 +93,18 @@ def _contract_a_object(
 
     obj: dict[str, Any] = {
         "schema": SCHEMA_TOKEN,
-        "handoff_id": f"eb-research-{claim_id}-{strategy.lower()}-dev-rc1",
+        "handoff_id": (
+            f"eb-research-{claim_id}-{strategy.lower()}-dev-{EXPERIMENT_REVISION}"
+        ),
         "producer": {
             "producer_id": "evidence-bundler-research-fixture-builder",
-            "producer_version": "decomposition-parent-child-dev-rc1",
+            "producer_version": (
+                f"decomposition-parent-child-dev-{EXPERIMENT_REVISION}"
+            ),
         },
-        "work": {"work_id": f"eb-parent-child-{claim_id}-dev-rc1"},
+        "work": {
+            "work_id": f"eb-parent-child-{claim_id}-dev-{EXPERIMENT_REVISION}"
+        },
         "root_proposition": {
             "proposition_id": case["root_proposition"]["proposition_id"],
             "text": case["root_proposition"]["text"],
@@ -133,7 +142,9 @@ def build(
     ):
         actual = sha256_bytes(path.read_bytes())
         if actual != expected:
-            raise RuntimeError(f"frozen input digest mismatch: {path}: {actual} != {expected}")
+            raise RuntimeError(
+                f"frozen input digest mismatch: {path}: {actual} != {expected}"
+            )
 
     generation = json.loads(generation_input.read_text(encoding="utf-8"))
     flan = json.loads(flan_output.read_text(encoding="utf-8"))
@@ -200,6 +211,7 @@ def build(
     manifest = {
         "schema_version": "1.0",
         "experiment": generation["experiment"],
+        "experiment_revision": EXPERIMENT_REVISION,
         "generation_input_sha256": expected_generation_input_sha256,
         "flan_output_sha256": expected_flan_sha256,
         "smol_output_sha256": expected_smol_sha256,
@@ -219,6 +231,7 @@ def build(
         ),
         "manifest_sha256": sha256_bytes(manifest_path.read_bytes()),
         "same_root_and_source_bytes_per_case": True,
+        "experiment_revision": EXPERIMENT_REVISION,
     }
 
 
