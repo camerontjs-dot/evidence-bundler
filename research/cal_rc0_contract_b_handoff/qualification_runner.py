@@ -19,7 +19,7 @@ def main() -> int:
     root = args.research_root
     out_dir = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
-    cohort = load_cohort(root / "fixtures" / "cases")
+    cohort = load_cohort(root / "fixtures")
     admission = json.loads((root / "fixtures" / "admission.json").read_text(encoding="utf-8"))
     compatibility_carrier = json.loads(
         (root / "fixtures" / "contract_b_compatibility_carrier.json").read_text(
