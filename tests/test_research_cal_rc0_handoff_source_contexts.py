@@ -3,7 +3,6 @@ from __future__ import annotations
 from pathlib import Path
 
 from evidence_bundler.contracts.factual_context import ContractBFactualContext, SourceContext
-
 from research.cal_rc0_contract_b_handoff.qualified_handoff import dedupe_source_contexts
 
 
