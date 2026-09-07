@@ -1,0 +1,64 @@
+name: Research EB RC0 Qualification
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "research/cal_rc0_contract_b_handoff/**"
+      - "tests/test_research_cal_rc0_handoff*.py"
+      - ".github/workflows/research-eb-rc0-qualification.yml"
+
+concurrency:
+  group: research-eb-rc0-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  qualification:
+    name: Emit inspectable Evidence Bundler qualification artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Evidence Bundler
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e "."
+
+      - name: Run frozen RC0 qualification pipeline
+        run: |
+          set -o pipefail
+          mkdir -p qualification-output
+          python -m research.cal_rc0_contract_b_handoff.qualification_runner \
+            --research-root research/cal_rc0_contract_b_handoff \
+            --out-dir qualification-output \
+            | tee qualification-output/runner_stdout.jsonl
+
+      - name: Inventory emitted files
+        run: find qualification-output -type f -print | sort
+
+      - name: Package canonical qualification tree
+        run: |
+          tar -czf research-eb-rc0-qualification.tgz qualification-output
+          sha256sum research-eb-rc0-qualification.tgz > research-eb-rc0-qualification.tgz.sha256
+          cat research-eb-rc0-qualification.tgz.sha256
+
+      - name: Upload packaged qualification artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-eb-rc0-qualification-${{ github.sha }}
+          path: |
+            research-eb-rc0-qualification.tgz
+            research-eb-rc0-qualification.tgz.sha256
+          if-no-files-found: error
+          retention-days: 30
