@@ -45,14 +45,20 @@ jobs:
             | tee qualification-output/runner_stdout.jsonl
 
       - name: Inventory emitted files
-        if: always()
-        run: find qualification-output -type f -print | sort || true
+        run: find qualification-output -type f -print | sort
 
-      - name: Upload qualification artifact
-        if: always()
+      - name: Package canonical qualification tree
+        run: |
+          tar -czf research-eb-rc0-qualification.tgz qualification-output
+          sha256sum research-eb-rc0-qualification.tgz > research-eb-rc0-qualification.tgz.sha256
+          cat research-eb-rc0-qualification.tgz.sha256
+
+      - name: Upload packaged qualification artifact
         uses: actions/upload-artifact@v4
         with:
           name: research-eb-rc0-qualification-${{ github.sha }}
-          path: qualification-output
-          if-no-files-found: warn
+          path: |
+            research-eb-rc0-qualification.tgz
+            research-eb-rc0-qualification.tgz.sha256
+          if-no-files-found: error
           retention-days: 30
