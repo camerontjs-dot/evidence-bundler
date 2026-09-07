@@ -1,0 +1,73 @@
+{
+  "schema": "research-contract-b-1.2-compatibility-carrier-v1",
+  "scope": "qualification_only",
+  "authority": {
+    "actual_upstream_contract": "contract-a-v2.0.0",
+    "contract_b_core_compatibility_only": true,
+    "supplies_contract_a_authority": false,
+    "supplies_cal_semantic_authority": false,
+    "semantic_use_authorized": false
+  },
+  "legacy_claim_fields": {
+    "claim_type": "retrieval_seed",
+    "workflow_condition": "baseline",
+    "scaffold_support_status": "uncertain",
+    "scaffold_claim_strength": 0.0,
+    "scaffold_extraction_fidelity": 0.0,
+    "scaffold_counterevidence_found": false,
+    "scaffold_downgraded": false
+  },
+  "source_profile": {
+    "source_type": "other",
+    "title_template": "Synthetic RC0 qualification source {source_id}",
+    "authors": [
+      "Research EB Profile RC0 fixture"
+    ],
+    "publication_date": null,
+    "url_template": "https://example.invalid/{source_id}",
+    "access_date_utc": "2026-09-06T00:00:00Z",
+    "trust_level": "background",
+    "retrieval_query": "See Contract B factual-context nomination history.",
+    "notes": "Synthetic qualification compatibility metadata supplied by a separate carrier; not Contract A 2.0 authority."
+  },
+  "passage_record": {
+    "section": "Synthetic RC0 qualification fixture",
+    "extraction_method": "auto_retrieved"
+  },
+  "manifest": {
+    "generated_at_utc": "2026-09-06T00:00:00Z",
+    "source_contract_version_compatibility_value": "1.2.0",
+    "source_corpus_hash_semantics": "canonical_contract_a2_sources_digest_compatibility_only",
+    "operator": "research-eb-profile-rc0",
+    "validation_set_version": "research-cal-rc0-handoff-qualification-v1"
+  },
+  "audit_config": {
+    "config_id": "research-cal-rc0-contract-b-compat",
+    "scoring": {
+      "support_threshold_sourced": 0.8,
+      "support_threshold_partial": 0.55,
+      "counterevidence_weight": 0.3
+    },
+    "rule_policies": {
+      "require_passage_level_match": true,
+      "flag_unsupported_threshold": 0.4,
+      "false_caution_detection": true,
+      "false_caution_threshold": 0.85,
+      "overstated_detection": true,
+      "needs_source_detection": true
+    },
+    "known_limitations": [
+      "Fixture-only Contract B 1.2 compatibility payload; no CAL semantic execution is authorized.",
+      "Legacy scalar and boolean fields are required by the locked Contract B core and do not represent Contract A 2.0 unknown state.",
+      "Downstream research consumers must not treat compatibility-carrier fields as proposition-specific support, refutation, trust, or verdict authority."
+    ],
+    "change_log": [
+      {
+        "version": "research-rc0-carrier-v1",
+        "date": "2026-09-07",
+        "changes": "Separate legacy Contract B compatibility state from Contract A 2.0 authority.",
+        "rationale": "Preserve a valid B 1.2 research handoff without minting missing legacy fields from Contract A 2.0."
+      }
+    ]
+  }
+}
