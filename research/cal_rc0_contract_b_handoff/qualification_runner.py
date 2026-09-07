@@ -21,6 +21,11 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     cohort = load_cohort(root / "fixtures" / "cases")
     admission = json.loads((root / "fixtures" / "admission.json").read_text(encoding="utf-8"))
+    compatibility_carrier = json.loads(
+        (root / "fixtures" / "contract_b_compatibility_carrier.json").read_text(
+            encoding="utf-8"
+        )
+    )
     evaluator_gold = json.loads(
         (root / "fixtures" / "evaluator_gold.json").read_text(encoding="utf-8")
     )
@@ -33,6 +38,7 @@ def main() -> int:
         cohort=cohort,
         receipt=receipt,
         profile=profile,
+        compatibility_carrier=compatibility_carrier,
         out_dir=out_dir,
     )
     evaluation = evaluate_receipt(receipt=receipt, evaluator_gold=evaluator_gold)
@@ -40,11 +46,15 @@ def main() -> int:
     evaluation_path.write_bytes(canonical_bytes(evaluation))
 
     summary = {
-        "schema": "research-eb-rc0-qualification-summary-v1",
+        "schema": "research-eb-rc0-qualification-summary-v2",
         "case_count": len(receipt["cases"]),
         "runtime_receipt_sha256": sha256_bytes(receipt_path.read_bytes()),
         "evaluation_receipt_sha256": sha256_bytes(evaluation_path.read_bytes()),
         "contract_b_results": contract_b_results,
+        "compatibility_carrier_schema": compatibility_carrier["schema"],
+        "actual_upstream_contract": compatibility_carrier["authority"][
+            "actual_upstream_contract"
+        ],
         "cal_semantic_engine_called": False,
     }
     (out_dir / "qualification_summary.json").write_bytes(canonical_bytes(summary))
