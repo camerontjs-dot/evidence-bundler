@@ -1,0 +1,77 @@
+name: Research EB RC0 A2-B12 boundary preflight
+
+on:
+  pull_request:
+    paths:
+      - "research/eb_rc0_a2_b12_handoff/**"
+      - "research-records/eb-rc0-a2-b12-handoff/**"
+      - ".github/workflows/research-eb-rc0-a2-b12-boundary.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  boundary-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Evidence Bundler
+        uses: actions/checkout@v4
+
+      - name: Checkout released Contract A authority
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: 529c92b49a34d5c610618551a8737f019f9fa332
+          path: _authority/contract-a
+
+      - name: Checkout locked Contract B authority
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: c314e53bd91c0736aa4370a364673b069aceb43e
+          path: _authority/contract-b
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Evidence Bundler
+        run: python -m pip install -e ".[dev]"
+
+      - name: Reproduce A2 to B1.2 stop-condition counterexample
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p research-records/eb-rc0-a2-b12-handoff/ci-generated
+          python research/eb_rc0_a2_b12_handoff/contract_boundary_preflight.py \
+            --apparatus-a _authority/contract-a \
+            --apparatus-b _authority/contract-b \
+            --output research-records/eb-rc0-a2-b12-handoff/ci-generated/CONTRACT_B_INFORMATION_LOSS_COUNTEREXAMPLE.json \
+            2>&1 | tee research-records/eb-rc0-a2-b12-handoff/ci-generated/PREFLIGHT_STDOUT.txt
+
+      - name: Ordinary Evidence Bundler regression gate
+        shell: bash
+        run: |
+          set -o pipefail
+          pytest -q 2>&1 | tee research-records/eb-rc0-a2-b12-handoff/ci-generated/EB_REGRESSION.txt
+
+      - name: Assert no CAL dependency in research adapter
+        shell: bash
+        run: |
+          set -o pipefail
+          if grep -R -n -E 'claim_audit_lab|audit_claims|from[[:space:]]+claim_audit_lab|import[[:space:]]+claim_audit_lab' \
+            research/eb_rc0_a2_b12_handoff; then
+            echo "CAL dependency found" >&2
+            exit 1
+          fi
+          echo "NO_CAL_DEPENDENCY" | tee research-records/eb-rc0-a2-b12-handoff/ci-generated/NO_CAL_DEPENDENCY.txt
+
+      - name: Upload counterexample receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-rc0-a2-b12-boundary-receipts
+          path: research-records/eb-rc0-a2-b12-handoff/ci-generated/
+          if-no-files-found: error
