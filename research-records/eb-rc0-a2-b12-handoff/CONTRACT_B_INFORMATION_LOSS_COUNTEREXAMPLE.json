@@ -1,0 +1,44 @@
+{
+  "counterexample": {
+    "extension_limit": "origin/atomicity/history/aperture can annotate only existing canonical B claims and cannot replace the required core claim",
+    "failure": "B core requires legacy C-A-derived fields that are absent from, and cannot be added to, valid A2 authority",
+    "input": "released fixtures/contract-a/2.0.0/valid-all-of.json",
+    "lawful_neutral_value_available": false,
+    "requested_projection": "one canonical Contract B claim per exact declared A2 child"
+  },
+  "disposition": "NEGATIVE_INTERFACE_COUNTEREXAMPLE",
+  "next_question": "A new bounded contract/interface decision is required outside this RC0 before the full retrieval handoff can be built.",
+  "observed": {
+    "contract_a_2_0": {
+      "authority": "contract-a-v2.0.0",
+      "facts": [
+        "wire object owns only schema, handoff_id, producer, work, root_proposition, decomposition, sources, handoff_sha256",
+        "unknown Contract-A-owned fields fail closed",
+        "upstream support labels, claim strength and extraction fidelity are explicitly outside Contract A 2.0 authority"
+      ],
+      "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332"
+    },
+    "contract_b_1_2": {
+      "authority": "contract-b-v1.2.0",
+      "facts": [
+        "1.2 extension is additive and does not rewrite the locked 1.0 core",
+        "existing Contract B claim/source/passage files remain canonical",
+        "locked core claim file requires scaffold-assigned labels described as from C-A and immutable in C-B"
+      ],
+      "production_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+      "required_legacy_core_fields": [
+        "claim_type",
+        "workflow_condition",
+        "task_id",
+        "scaffold_support_status",
+        "scaffold_claim_strength",
+        "scaffold_extraction_fidelity",
+        "scaffold_counterevidence_found",
+        "scaffold_downgraded"
+      ]
+    }
+  },
+  "schema": "research-eb-a2-b12-static-counterexample-v1",
+  "status": "PREFLIGHT_COUNTEREXAMPLE_IDENTIFIED",
+  "stop_condition": "Contract B cannot preserve required root/child identity without semantic misuse."
+}
