@@ -10,6 +10,10 @@ on:
       - "tests/test_research_cal_rc0_handoff*.py"
       - ".github/workflows/research-eb-rc0-qualification.yml"
 
+concurrency:
+  group: research-eb-rc0-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -33,6 +37,7 @@ jobs:
 
       - name: Run frozen RC0 qualification pipeline
         run: |
+          set -o pipefail
           mkdir -p qualification-output
           python -m research.cal_rc0_contract_b_handoff.qualification_runner \
             --research-root research/cal_rc0_contract_b_handoff \
