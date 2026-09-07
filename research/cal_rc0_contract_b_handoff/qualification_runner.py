@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .build_handoff import build_runtime_receipt, canonical_bytes, sha256_bytes
-from .evaluate_receipt import evaluate_receipt
+from .evaluate_receipt import evaluate
 from .fixture_loader import load_cohort
 from .qualified_handoff import build_all_contract_b_qualified
 
@@ -41,7 +41,7 @@ def main() -> int:
         compatibility_carrier=compatibility_carrier,
         out_dir=out_dir,
     )
-    evaluation = evaluate_receipt(receipt=receipt, evaluator_gold=evaluator_gold)
+    evaluation = evaluate(runtime=receipt, gold=evaluator_gold)
     evaluation_path = out_dir / "evaluation_receipt.json"
     evaluation_path.write_bytes(canonical_bytes(evaluation))
 
