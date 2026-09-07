@@ -16,7 +16,9 @@
     "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
     "base_tree": "57ad2c2740853f3affa4a792dca04694088ffac0",
     "research_branch": "research-infra/eb-rc0-a2-b12-handoff-20260906",
-    "research_head": "PENDING_FIRST_RESEARCH_COMMIT"
+    "tested_research_head": "7ab5607071d16089dae3a86783e62ebe60cb19e6",
+    "tested_research_tree": "548e2eccec276a25d4f398c0b51702cddf40c453",
+    "workflow_merge_sha": "6ff7048d65f5bc8c4156506901ef69f4791c8ff2"
   },
   "intended_profile": {
     "adaptive_root_rescue": "disabled",
@@ -56,9 +58,15 @@
     "no CAL result",
     "no production-readiness result"
   ],
-  "output_receipt_hashes": {},
+  "output_receipt_hashes": {
+    "ci_artifact_zip_sha256": "sha256:609916bd4be1d5a59e3a45a93683959581c384e30b7fd335056cd12da1e12bf3"
+  },
   "profile_id": "eb-rc0-a2-b12-handoff-20260906",
-  "runtime_versions": "TO_BE_RECORDED_ONLY_IF_PROFILE_EXECUTES",
+  "runtime_versions": {
+    "ci_python": "3.12.14",
+    "ci_runner_os": "Ubuntu 24.04.4 LTS",
+    "profile_runtime": "NOT_MATERIALIZED_DUE_STOP_CONDITION"
+  },
   "schema": "research-eb-profile-v1",
   "status": "STOPPED_BEFORE_EXECUTION_PROFILE_FREEZE",
   "stop_reason": "frozen Contract B 1.2 core requires legacy Contract-A-derived claim fields absent and forbidden in Contract A 2.0"

@@ -23,9 +23,9 @@ This triggers the preregistered stop condition:
 
 > Contract B cannot preserve required root/child identity without semantic misuse.
 
-I did not choose placeholder values, infer labels from retrieval metadata, weaken validation, widen B, or call CAL.
+No placeholder values were chosen. Retrieval metadata was not converted into semantic authority. Validation was not weakened. Contract B was not widened. CAL was not called.
 
-## Executable falsifier
+## Executable falsifier and CI evidence
 
 `research/eb_rc0_a2_b12_handoff/contract_boundary_preflight.py` reproduces the boundary on the pinned authorities. It:
 
@@ -35,13 +35,25 @@ I did not choose placeholder values, infer labels from retrieval metadata, weake
 4. attempts the smallest B child claim using only A2 child identity plus mechanical B fields and requires it to fail missing those fields;
 5. checks that the frozen B1.2 extension remains additive rather than a core rewrite.
 
-The dedicated workflow also runs the ordinary Evidence Bundler regression suite and a no-CAL-import gate.
+Dedicated workflow run `34080648916`, job `101615145174`, completed successfully on tested research head `7ab5607071d16089dae3a86783e62ebe60cb19e6` and GitHub PR merge SHA `6ff7048d65f5bc8c4156506901ef69f4791c8ff2`.
+
+Observed workflow receipts:
+
+- counterexample: `COUNTEREXAMPLE_CONFIRMED`;
+- ordinary Evidence Bundler regression: `199 passed, 5 skipped in 10.40s`;
+- CAL dependency gate: `NO_CAL_DEPENDENCY`;
+- uploaded receipt artifact: ID `10003599509`;
+- uploaded artifact ZIP SHA-256: `609916bd4be1d5a59e3a45a93683959581c384e30b7fd335056cd12da1e12bf3`.
 
 ## Not produced
 
-Because the stop condition occurs before retrieval execution, the following outputs are intentionally **not** fabricated: `A2_INTAKE_RECEIPT.json`, `PROPOSITION_MANIFEST.json`, `QUERY_MANIFEST.json`, `CORPUS_CHUNK_RECEIPT.json`, `CANDIDATE_POOL.jsonl`, `SELECTION_RECEIPT.json`, `ADMISSION_RECEIPT.json`, `APERTURE_RECEIPT.json`, Contract B output tree, `BASELINE_BM25_TOP5.json`, and retrieval `RUN_RECEIPT.json`.
+Because the stop condition occurs before retrieval execution, the following outputs are intentionally **not** fabricated: `A2_INTAKE_RECEIPT.json`, `PROPOSITION_MANIFEST.json`, `QUERY_MANIFEST.json`, `CORPUS_CHUNK_RECEIPT.json`, `CANDIDATE_POOL.jsonl`, `SELECTION_RECEIPT.json`, `ADMISSION_RECEIPT.json`, `APERTURE_RECEIPT.json`, Contract B output tree, and `BASELINE_BM25_TOP5.json`.
 
-`RESEARCH_EB_PROFILE.json` records the intended frozen profile and the pre-execution stop without pretending that a corpus, query set, rankings, admissions, or output hashes were materialized.
+`RESEARCH_EB_PROFILE.json` records the intended frozen profile and the pre-execution stop without pretending that a corpus, query set, rankings, admissions, or Contract B output hashes were materialized.
+
+## Downstream disposition
+
+Track B is **not ready** for a future CAL integration smoke. There is no lawful canonical Contract B 1.2 artifact to hand to CAL under the frozen A2/B1.2 authorities. Resolving that interface boundary is outside this RC0 and requires a new bounded contract/interface decision before this handoff build can resume.
 
 ## Bounded inference
 
