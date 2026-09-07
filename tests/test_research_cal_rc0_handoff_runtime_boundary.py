@@ -3,7 +3,6 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 RESEARCH_ROOT = ROOT / "research" / "cal_rc0_contract_b_handoff"
 
