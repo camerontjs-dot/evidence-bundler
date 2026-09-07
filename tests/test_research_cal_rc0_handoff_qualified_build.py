@@ -18,7 +18,7 @@ def load_json(name: str) -> dict:
 
 
 def test_qualified_build_reports_final_resealed_hashes(tmp_path: Path) -> None:
-    cohort = load_cohort(RESEARCH_ROOT / "fixtures" / "cases")
+    cohort = load_cohort(RESEARCH_ROOT / "fixtures")
     admission = load_json("admission.json")
     carrier = load_json("contract_b_compatibility_carrier.json")
     profile = json.loads(
