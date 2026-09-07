@@ -1,0 +1,45 @@
+{
+  "authority": {
+    "contract_a_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "contract_b_lock": "c314e53bd91c0736aa4370a364673b069aceb43e"
+  },
+  "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "branch": "research-infra/eb-rc0-a2-b12-handoff-20260906",
+  "cal_invoked": false,
+  "ci": {
+    "artifact_id": 10003599509,
+    "artifact_zip_sha256": "sha256:609916bd4be1d5a59e3a45a93683959581c384e30b7fd335056cd12da1e12bf3",
+    "conclusion": "success",
+    "counterexample": "COUNTEREXAMPLE_CONFIRMED",
+    "eb_regression": "199 passed, 5 skipped in 10.40s",
+    "job_id": 101615145174,
+    "no_cal_dependency": "NO_CAL_DEPENDENCY",
+    "tested_head": "7ab5607071d16089dae3a86783e62ebe60cb19e6",
+    "tested_merge_sha": "6ff7048d65f5bc8c4156506901ef69f4791c8ff2",
+    "workflow_run_id": 34080648916
+  },
+  "execution_scope": "contract compatibility preflight only",
+  "fresh_naturalistic_cohort_run": false,
+  "merge_release_tag_promotion_performed": false,
+  "observed_result": "NEGATIVE_INTERFACE_COUNTEREXAMPLE",
+  "production_src_modified": false,
+  "required_outputs_not_produced_due_stop": [
+    "A2_INTAKE_RECEIPT.json",
+    "PROPOSITION_MANIFEST.json",
+    "QUERY_MANIFEST.json",
+    "CORPUS_CHUNK_RECEIPT.json",
+    "CANDIDATE_POOL.jsonl",
+    "SELECTION_RECEIPT.json",
+    "ADMISSION_RECEIPT.json",
+    "APERTURE_RECEIPT.json",
+    "Contract B 1.2 output tree",
+    "BASELINE_BM25_TOP5.json"
+  ],
+  "retrieval_executed": false,
+  "schema": "research-eb-rc0-run-receipt-v1",
+  "semantic_model_loaded": false,
+  "state": "TERMINAL_STOP_CONDITION",
+  "stop_condition": "Contract B cannot preserve required root/child identity without semantic misuse.",
+  "task": "Contract A 2.0 -> Evidence World -> Contract B 1.2 Research Handoff",
+  "terminal_research_pr": 53
+}

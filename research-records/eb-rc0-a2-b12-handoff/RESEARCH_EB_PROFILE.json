@@ -1,0 +1,73 @@
+{
+  "contract_a": {
+    "production_promotion_merge": "b59c2fbe38bae78a3a35699362c0e67d17152e4b",
+    "public_version": "2.0.0",
+    "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "tag": "contract-a-v2.0.0",
+    "wire_schema": "contract-a-wire-candidate-rc2"
+  },
+  "contract_b": {
+    "core": "handoff-contract-v1.0.0.md",
+    "extension": "contract-b-factual-context-extension-v1.2.0.md",
+    "production_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+    "version": "1.2.0"
+  },
+  "evidence_bundler": {
+    "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+    "base_tree": "57ad2c2740853f3affa4a792dca04694088ffac0",
+    "research_branch": "research-infra/eb-rc0-a2-b12-handoff-20260906",
+    "tested_research_head": "7ab5607071d16089dae3a86783e62ebe60cb19e6",
+    "tested_research_tree": "548e2eccec276a25d4f398c0b51702cddf40c453",
+    "workflow_merge_sha": "6ff7048d65f5bc8c4156506901ef69f4791c8ff2"
+  },
+  "intended_profile": {
+    "adaptive_root_rescue": "disabled",
+    "admission_policy": "accepted_only; scores never auto-admit",
+    "bm25": {
+      "candidate_k": 20,
+      "selected_k": 5
+    },
+    "chunk_geometry": "NOT_MATERIALIZED_DUE_STOP_CONDITION",
+    "contradiction_query_expansion": "disabled",
+    "downstream_cal_profile": "pending",
+    "fusion": "disabled",
+    "lexical_diversity": "disabled",
+    "mmr": "disabled",
+    "model_generated_query_expansion": "disabled",
+    "ordered_chunk_set_hash": "NOT_MATERIALIZED_DUE_STOP_CONDITION",
+    "query_strategy": {
+      "id": "exact-authoritative-proposition-text-v1",
+      "query_ids_and_text_hashes": "NOT_MATERIALIZED_DUE_STOP_CONDITION"
+    },
+    "reranking": "disabled",
+    "root_policy": "declared all_of => not_run_primary_profile; non-declared => exact root retrieval",
+    "semantic": {
+      "candidate_k": 20,
+      "model": "BAAI/bge-small-en-v1.5",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "selected_k": 5
+    },
+    "source_corpus_identity": "NOT_MATERIALIZED_DUE_STOP_CONDITION",
+    "source_uniqueness": "disabled"
+  },
+  "nonclaims": [
+    "no retrieval-quality result",
+    "no evidence-completeness result",
+    "no semantic result",
+    "no CAL result",
+    "no production-readiness result"
+  ],
+  "output_receipt_hashes": {
+    "ci_artifact_zip_sha256": "sha256:609916bd4be1d5a59e3a45a93683959581c384e30b7fd335056cd12da1e12bf3"
+  },
+  "profile_id": "eb-rc0-a2-b12-handoff-20260906",
+  "runtime_versions": {
+    "ci_python": "3.12.14",
+    "ci_runner_os": "Ubuntu 24.04.4 LTS",
+    "profile_runtime": "NOT_MATERIALIZED_DUE_STOP_CONDITION"
+  },
+  "schema": "research-eb-profile-v1",
+  "status": "STOPPED_BEFORE_EXECUTION_PROFILE_FREEZE",
+  "stop_reason": "frozen Contract B 1.2 core requires legacy Contract-A-derived claim fields absent and forbidden in Contract A 2.0"
+}
