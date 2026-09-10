@@ -60,12 +60,16 @@ jobs:
         run: |
           git diff --exit-code f5e257904bef731b5798233ad53caa709136c810...HEAD -- src
 
+      - name: Pack frozen experiment package
+        if: always()
+        run: |
+          tar -czf eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}.tar.gz \
+            research-artifacts predecessor-artifacts
+
       - name: Upload frozen experiment package
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}
-          path: |
-            research-artifacts/
-            predecessor-artifacts/
+          path: eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}.tar.gz
           if-no-files-found: error
