@@ -1,0 +1,53 @@
+name: Research Contract B Evidence Package Recoverability RC1
+
+on:
+  pull_request:
+    branches:
+      - research-infra/cal-rc0-contract-b-handoff-20260906
+    paths:
+      - "research/contract_b_evidence_package_recoverability_rc1/**"
+      - ".github/workflows/research-contract-b-evidence-package-recoverability-rc1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  recoverability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Evidence Bundler
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Re-run Contract B qualification boundary tests
+        run: |
+          python -m pytest -q \
+            tests/test_research_cal_rc0_handoff_compatibility_carrier.py \
+            tests/test_research_cal_rc0_handoff_qualified_build.py
+
+      - name: Run preregistered recoverability experiment
+        run: |
+          mkdir -p research-artifacts
+          python -m research.contract_b_evidence_package_recoverability_rc1.run_experiment \
+            --research-root research/cal_rc0_contract_b_handoff \
+            --out research-artifacts/RESULT.json
+
+      - name: Assert no maintained production source mutation
+        run: |
+          git diff --exit-code dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05...HEAD -- src
+
+      - name: Upload frozen experiment result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: contract-b-evidence-package-recoverability-rc1-${{ github.run_id }}
+          path: research-artifacts/
+          if-no-files-found: error
