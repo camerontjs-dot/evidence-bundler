@@ -1,0 +1,75 @@
+name: Research EB Retrieval Audit Sidecar RC2
+
+on:
+  pull_request:
+    branches:
+      - research/contract-b-evidence-package-recoverability-rc1-20260909
+    paths:
+      - "research/eb_retrieval_audit_sidecar_rc2/**"
+      - ".github/workflows/research-eb-retrieval-audit-sidecar-rc2.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  sidecar-recoverability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Evidence Bundler
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Re-run predecessor Contract B boundary tests
+        run: |
+          python -m pytest -q \
+            tests/test_research_cal_rc0_handoff_compatibility_carrier.py \
+            tests/test_research_cal_rc0_handoff_qualified_build.py
+
+      - name: Reproduce RC1 partial-recoverability observation
+        run: |
+          mkdir -p predecessor-artifacts
+          python -m research.contract_b_evidence_package_recoverability_rc1.run_experiment \
+            --research-root research/cal_rc0_contract_b_handoff \
+            --out predecessor-artifacts/RC1-RESULT.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('predecessor-artifacts/RC1-RESULT.json').read_text())
+          assert result['disposition'] == 'PARTIAL_RECOVERABILITY', result['disposition']
+          assert result['criteria']['pre_retention_candidate_identity'] is False
+          PY
+
+      - name: Run preregistered sidecar successor experiment
+        run: |
+          mkdir -p research-artifacts
+          python -m research.eb_retrieval_audit_sidecar_rc2.run_experiment \
+            --research-root research/cal_rc0_contract_b_handoff \
+            --artifact-root research-artifacts
+
+      - name: Assert no maintained production source mutation
+        run: |
+          git diff --exit-code f5e257904bef731b5798233ad53caa709136c810...HEAD -- src
+
+      - name: Pack frozen experiment package
+        if: always()
+        run: |
+          tar -czf eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}.tar.gz \
+            research-artifacts predecessor-artifacts
+
+      - name: Upload frozen experiment package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}
+          path: eb-retrieval-audit-sidecar-rc2-${{ github.run_id }}.tar.gz
+          if-no-files-found: error
