@@ -420,7 +420,7 @@ def validate_package(value: Any) -> dict[str, Any]:
         if not isinstance(execution["candidate_depth_hit"], bool):
             raise EvidencePackageValidationError(f"{path}.candidate_depth_hit must be boolean")
         if execution["status"] == "not_run":
-            expected = ([], [], 0, False, "not_run")
+            expected: tuple[list[Any], list[Any], int, bool, str] = ([], [], 0, False, "not_run")
             actual = (
                 execution["searched_source_ids"],
                 execution["returned_source_ids"],
