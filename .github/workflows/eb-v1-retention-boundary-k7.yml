@@ -1,0 +1,176 @@
+name: Research - EB V1 retention boundary K7
+
+on:
+  push:
+    branches:
+      - research/eb-v1-retention-boundary-k7-20260911
+    paths:
+      - "research/eb_v1_retention_boundary_k7/**"
+      - ".github/workflows/eb-v1-retention-boundary-k7.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "research/eb_v1_retention_boundary_k7/**"
+      - ".github/workflows/eb-v1-retention-boundary-k7.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  retention-boundary-k7:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Checkout exact frozen implementation and authorities
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/evidence-bundler.git _impl
+          git -C _impl checkout --quiet c4e3f97ec8f0bd36180954c3aa382418925bf947
+          test "$(git -C _impl rev-parse HEAD)" = \
+            "c4e3f97ec8f0bd36180954c3aa382418925bf947"
+          test "$(git -C _impl rev-parse HEAD^{tree})" = \
+            "1d254e38cb0e174635efc7687c2b0ab091aa52b3"
+
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/evidence-bundler.git _eb_runtime_src
+          git -C _eb_runtime_src checkout --quiet \
+            dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05
+          test "$(git -C _eb_runtime_src rev-parse HEAD)" = \
+            "dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05"
+
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/claim-audit-lab.git _cal_runtime_src
+          git -C _cal_runtime_src checkout --quiet \
+            7a46d61585f868a2e904f870528f605fb06772ea
+          test "$(git -C _cal_runtime_src rev-parse HEAD)" = \
+            "7a46d61585f868a2e904f870528f605fb06772ea"
+
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/apparatus-contracts.git _apparatus
+          git -C _apparatus checkout --quiet \
+            529c92b49a34d5c610618551a8737f019f9fa332
+          test "$(git -C _apparatus rev-parse HEAD)" = \
+            "529c92b49a34d5c610618551a8737f019f9fa332"
+          test "$(git -C _apparatus hash-object validators/contract_a_rc2.py)" = \
+            "42e5f5b3bf38d677445e9d01ea130ba604e53409"
+
+      - name: Stage exact runtime inputs without evaluator gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _runtime_inputs/eb/cases _runtime_inputs/cal
+          cp _eb_runtime_src/research/cal_rc0_contract_b_handoff/fixtures/cases/*.json \
+            _runtime_inputs/eb/cases/
+          cp _eb_runtime_src/research/cal_rc0_contract_b_handoff/fixtures/admission.json \
+            _runtime_inputs/eb/admission.json
+          cp _cal_runtime_src/pipeline/cal_rc0/data_campaign/retrieval_aperture/cohort.json \
+            _runtime_inputs/cal/cohort.json
+          cp _cal_runtime_src/pipeline/cal_rc0/data_campaign/retrieval_aperture/admission.json \
+            _runtime_inputs/cal/admission.json
+          test "$(find _runtime_inputs/eb/cases -maxdepth 1 -name '*.json' | wc -l | tr -d ' ')" = "8"
+
+          # Remove the frozen source checkouts that contain evaluator material.
+          # Runtime execution below has only the copied runtime inputs plus the
+          # immutable implementation checkout.
+          rm -rf _eb_runtime_src _cal_runtime_src _apparatus
+          test ! -e _runtime_inputs/eb/evaluator_gold.json
+
+      - name: Install exact frozen implementation runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -e ./_impl
+
+      - name: Verify pre-gold runtime script aperture
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -q "evaluator_gold" \
+            research/eb_v1_retention_boundary_k7/run_runtime.py
+          ! grep -q -- "--gold" \
+            research/eb_v1_retention_boundary_k7/run_runtime.py
+          python -m py_compile \
+            research/eb_v1_retention_boundary_k7/run_runtime.py \
+            research/eb_v1_retention_boundary_k7/evaluate_frozen.py
+
+      - name: Freeze baseline and K7 runtime before gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="_impl/src" python \
+            research/eb_v1_retention_boundary_k7/run_runtime.py \
+            --runtime-input-root _runtime_inputs \
+            --preregistration \
+              research/eb_v1_retention_boundary_k7/PREREGISTRATION.md \
+            --out _pre_gold
+          test -f _pre_gold/BASELINE_5_3_RECEIPT.json
+          test -f _pre_gold/TREATMENT_10_7_RECEIPT.json
+          test -f _pre_gold/PRE_GOLD_RUNTIME_FREEZE.json
+
+      - name: Bind exact predecessor qualification artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          digest="$(gh api \
+            repos/camerontjs-dot/evidence-bundler/actions/artifacts/10267561504 \
+            --jq '.digest')"
+          test "$digest" = \
+            "sha256:86283d446726f4c5d430d87bfec642427a099575b9f7e1de9835f74b2060b4f9"
+          gh api \
+            repos/camerontjs-dot/evidence-bundler/actions/artifacts/10267561504/zip \
+            > _predecessor.zip
+          mkdir -p _predecessor
+          unzip -q _predecessor.zip -d _predecessor
+          test -f _predecessor/v1-convergence-qualification.json
+
+      - name: Open frozen gold only after runtime freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/evidence-bundler.git _eb_gold
+          git -C _eb_gold checkout --quiet \
+            dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05
+          test "$(git -C _eb_gold rev-parse HEAD)" = \
+            "dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05"
+          test -f \
+            _eb_gold/research/cal_rc0_contract_b_handoff/fixtures/evaluator_gold.json
+
+      - name: Evaluate frozen K7 result
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/eb_v1_retention_boundary_k7/evaluate_frozen.py \
+            --runtime-dir _pre_gold \
+            --gold \
+              _eb_gold/research/cal_rc0_contract_b_handoff/fixtures/evaluator_gold.json \
+            --runtime-admission _runtime_inputs/eb/admission.json \
+            --predecessor _predecessor/v1-convergence-qualification.json \
+            --out artifacts/k7
+          test -f artifacts/k7/RETENTION_BOUNDARY_RESULT.json
+          test -f artifacts/k7/RESULTS.md
+          (cd artifacts/k7 && sha256sum -c SHA256SUMS)
+
+      - name: Upload frozen result set
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-v1-retention-boundary-k7-${{ github.run_id }}
+          path: |
+            artifacts/k7/
+            _pre_gold/
+          if-no-files-found: warn
+          retention-days: 90
