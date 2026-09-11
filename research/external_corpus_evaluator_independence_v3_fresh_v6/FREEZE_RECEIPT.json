@@ -1,0 +1,134 @@
+{
+  "clean_room_base": {
+    "branch": "research-infra/external-corpus-evaluator-v04-cleanroom-handoff-v6",
+    "commit": "82057ad512e11d3d2ee13a37b1c99fa1058913cf",
+    "identity_match": true,
+    "tree": "bf6aeeef62bca1a5e1b5d75c2c25e1bce6600878",
+    "tree_recomputed_from_opened_root_entries": "bf6aeeef62bca1a5e1b5d75c2c25e1bce6600878"
+  },
+  "commands_run": [
+    "python3 -m py_compile research/external_corpus_evaluator_independence_v3_fresh_v6/evaluator.py",
+    "python3 -m py_compile research/external_corpus_evaluator_independence_v3_fresh_v6/test_evaluator.py",
+    "python3 -m unittest -v test_evaluator.py (with permitted fixture root)",
+    "python3 test_evaluator.py (with permitted fixture root)",
+    "python3 -m unittest -q test_evaluator.py (with permitted fixture root)",
+    "python3 Git-tree SHA-1 recomputation from already-opened root tree entries"
+  ],
+  "contamination": {
+    "prohibited_project_specific_material_accessed": [],
+    "reference_implementation_revealed": false,
+    "state": "clean",
+    "web_search_used": false
+  },
+  "execution_branch": "research/external-corpus-evaluator-v04-fresh-reproduction-v6-20260911-0005",
+  "implementation": {
+    "dependencies": "Python standard library only",
+    "path": "research/external_corpus_evaluator_independence_v3_fresh_v6/evaluator.py",
+    "sha256": "0a81cd76522d1e9212f4b34d9a176cfe3fb8291e8bf8e8487e474f2f3ec9d23a"
+  },
+  "non_file_identity_surfaces_opened_pre_freeze": [
+    "named branch ref only",
+    "required root tree identity and recursive tree listing at required tree"
+  ],
+  "project_files_opened_pre_freeze": [
+    {
+      "blob_sha": "2fc7156db742efd601a3d0de03e2439570edca4c",
+      "path": "research/external_corpus_evaluator_independence_v3/contract.md"
+    },
+    {
+      "blob_sha": "f2d0c1ff3b39d20c92878d75d8a345bc152f971d",
+      "path": "research/external_corpus_evaluator_independence_v1/dummy_manifest.json"
+    },
+    {
+      "blob_sha": "45b9ef6e005fd7e005ec75305c2829fa241f8f81",
+      "path": "research/external_corpus_evaluator_independence_v1/dummy_run.json"
+    },
+    {
+      "blob_sha": "c6960cebeafa4c5dd214d7f32d47e68294a3f4da",
+      "path": "research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json"
+    },
+    {
+      "blob_sha": "018323363aecb3b2528b9097177c9aa48f79e88b",
+      "path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_manifest.json"
+    },
+    {
+      "blob_sha": "4e830255062b00406ba7c64cfff4126c1e16433b",
+      "path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_run.json"
+    },
+    {
+      "blob_sha": "f9c4133ef83e0fac350428a693847f0c79d7d33f",
+      "path": "research/external_corpus_evaluator_independence_v2/ndcg_scope_gold.json"
+    },
+    {
+      "blob_sha": "acb4282838919a38ce69926e986cb4292c6af954",
+      "path": "docs/research/pilot0a-fresh-context-isolation/governance-v6/CONTEXT-FREE-EXECUTION-PROTOCOL.md"
+    },
+    {
+      "blob_sha": "e8f224a7464e62aaea468f43aa0f73139e2f7142",
+      "path": "docs/research/pilot0a-fresh-context-isolation/governance-v6/GITHUB-AND-PR-GOVERNANCE.md"
+    },
+    {
+      "blob_sha": "7e99ff66f29cf52bc51617b0e025a03af7881344",
+      "path": "docs/research/pilot0a-fresh-context-isolation/governance-v6/EPISTEMIC-RECORD-CONVENTIONS.md"
+    },
+    {
+      "blob_sha": "aaa0e535263acb441d430a6f46484fafa5c47302",
+      "path": "docs/research/pilot0a-fresh-context-isolation/governance-v6/RELEASE-AND-VERSION-GOVERNANCE.md"
+    }
+  ],
+  "receipt_schema": "external-corpus-evaluator-v04-fresh-freeze-receipt-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "runtime": {
+    "implementation": "CPython",
+    "python_version": "3.13.5"
+  },
+  "scientific_boundary": {
+    "cal_called": false,
+    "merge_release_tag_or_promotion_performed": false,
+    "pilot0a_scientific_data_materialized": false,
+    "production_defaults_changed": false,
+    "target_retriever_run": false
+  },
+  "terminal_state_at_freeze": "FROZEN_AWAITING_REVEAL",
+  "tests": {
+    "controls": [
+      "valid_baseline_dummy_evaluation",
+      "query_local_ndcg_discriminator",
+      "missing_required_identity_all_three",
+      "identity_mismatch",
+      "valid_representation_identity",
+      "representation_alias_rejection",
+      "unknown_degree_resolved_role_rejection",
+      "resolved_relevance_unknown_role_acceptance",
+      "cross_query_group_id_reuse",
+      "same_query_duplicate_group_id_rejection",
+      "missing_judgments_rejection",
+      "missing_groups_rejection",
+      "explicit_empty_judgments_groups",
+      "malformed_ranks",
+      "duplicate_ranked_passage_ids",
+      "unknown_passage_and_source_identities",
+      "k_overflow",
+      "support_counterevidence_sensitivity",
+      "missing_decisive_support_sensitivity",
+      "counterevidence_sensitivity",
+      "jointly_required_group_sensitivity",
+      "relevant_item_cutoff_sensitivity",
+      "serialization_order_invariance",
+      "stable_id_renaming_metric_invariance",
+      "hidden_gold_commitment_determinism",
+      "exact_success_result_interface",
+      "partial_qrels_lower_bound",
+      "empty_result_diagnostic_coverage",
+      "duplicate_judgment_rejection",
+      "unknown_judged_vs_resolved_coverage"
+    ],
+    "errors": 0,
+    "failures": 0,
+    "framework": "unittest",
+    "passed": 30,
+    "path": "research/external_corpus_evaluator_independence_v3_fresh_v6/test_evaluator.py",
+    "sha256": "b525a07d938a6ab53986b37c785cbe7a0edf7fbefd59243066a87c9b1e352e41",
+    "tests_run": 30
+  }
+}

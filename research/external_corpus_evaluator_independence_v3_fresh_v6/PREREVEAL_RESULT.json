@@ -1,0 +1,33 @@
+{
+  "baseline_dummy": {
+    "aggregate": {
+      "counterevidence_recall_at_k": 0.5,
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1.0,
+      "joint_group_coverage_at_k": 0.75,
+      "judgment_coverage_at_k": 1.0,
+      "ndcg_at_k": 0.938506417451168,
+      "resolved_judgment_coverage_at_k": 1.0
+    },
+    "hidden_gold_commitment_sha256": "2d0e0d99d23295b91c838e01a4e1a6274e2a77af45cd52ab834ed78fd5b6131f",
+    "ndcg_eligible_by_query": {
+      "q1": true,
+      "q2": false
+    },
+    "status": "ok"
+  },
+  "claim_boundary": "Evaluator Research Infrastructure only; no Pilot 0A scientific or target-retriever claim is established.",
+  "contamination_state": "clean",
+  "exact_result_interface_control": "passed",
+  "ndcg_scope_discriminator": "passed",
+  "reference_reveal_performed": false,
+  "required_sensitivity_and_invariance_controls": "passed",
+  "result_schema": "external-corpus-evaluator-v04-prereveal-result-v1",
+  "terminal_state": "FROZEN_AWAITING_REVEAL",
+  "test_summary": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 30,
+    "tests_run": 30
+  }
+}
