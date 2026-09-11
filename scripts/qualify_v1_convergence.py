@@ -33,7 +33,6 @@ STAGE_ORDINAL = {
     "admission": 2,
     None: 3,
 }
-PROFILES = ((5, 3), (10, 3), (10, 6))
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -64,6 +63,31 @@ def _legacy_passage_map(case: dict[str, Any]) -> dict[tuple[str, str], str]:
     }
 
 
+def _legacy_evidence_id(
+    case: dict[str, Any],
+    *,
+    source_id: str,
+    text: str,
+    passage_map: dict[tuple[str, str], str],
+) -> str | None:
+    exact = passage_map.get((source_id, text))
+    if exact is not None:
+        return exact
+
+    # The preserved CAL aperture counterexample represented each source as one
+    # full fixture passage. V1 deterministically chunks the long S6 source, so
+    # its exact old passage bytes no longer equal a V1 candidate chunk. Bridge
+    # only that frozen cross-era identity by requiring both the exact source
+    # identity and the exact decisive sentence. Do not generalize fuzzy mapping.
+    if (
+        case["case_id"] == "RETRIEVAL_APERTURE"
+        and source_id == "RET-AP-S6"
+        and "Alpha exceeded Beta by 4 units." in text
+    ):
+        return "RET-AP-P6"
+    return None
+
+
 def _legacy_decisions(
     admission_fixture: dict[str, Any], case_id: str
 ) -> dict[tuple[str, str], str]:
@@ -78,6 +102,7 @@ def _legacy_decisions(
 def _translated_admission(
     package: dict[str, Any],
     *,
+    case: dict[str, Any],
     passage_map: dict[tuple[str, str], str],
     legacy_decisions: dict[tuple[str, str], str],
 ) -> dict[tuple[str, str], str]:
@@ -85,7 +110,12 @@ def _translated_admission(
     for row in package["candidates"]:
         if row["selection_state"] != "retained":
             continue
-        evidence_id = passage_map.get((str(row["source_id"]), str(row["text"])))
+        evidence_id = _legacy_evidence_id(
+            case,
+            source_id=str(row["source_id"]),
+            text=str(row["text"]),
+            passage_map=passage_map,
+        )
         if evidence_id is None:
             continue
         decision = legacy_decisions.get((str(row["proposition_id"]), evidence_id))
@@ -115,10 +145,11 @@ def _documents(contract_a: dict[str, Any]) -> list[SourceDocument]:
 
 
 def _score_diagnostics(
-    contract_a: dict[str, Any],
+    case: dict[str, Any],
     config: V1Config,
     passage_map: dict[tuple[str, str], str],
 ) -> list[dict[str, Any]]:
+    contract_a = case["contract_a"]
     chunks = chunk_source_documents(
         _documents(contract_a),
         ChunkSpec(
@@ -134,8 +165,11 @@ def _score_diagnostics(
                 {
                     "proposition_id": target["proposition_id"],
                     "source_id": hit.chunk.source_id,
-                    "evidence_id": passage_map.get(
-                        (hit.chunk.source_id, hit.chunk.text)
+                    "evidence_id": _legacy_evidence_id(
+                        case,
+                        source_id=hit.chunk.source_id,
+                        text=hit.chunk.text,
+                        passage_map=passage_map,
                     ),
                     "rank": hit.rank,
                     "score": round(hit.score, 12),
@@ -157,6 +191,7 @@ def _run_case(
     initial = build_package(contract_a=case["contract_a"], config=config)
     translated = _translated_admission(
         initial,
+        case=case,
         passage_map=passage_map,
         legacy_decisions=decisions,
     )
@@ -171,7 +206,12 @@ def _run_case(
     admitted_ids: set[str] = set()
     candidate_rows: list[dict[str, Any]] = []
     for row in package["candidates"]:
-        evidence_id = passage_map.get((str(row["source_id"]), str(row["text"])))
+        evidence_id = _legacy_evidence_id(
+            case,
+            source_id=str(row["source_id"]),
+            text=str(row["text"]),
+            passage_map=passage_map,
+        )
         if evidence_id is None:
             continue
         candidate_ids.add(evidence_id)
@@ -197,7 +237,7 @@ def _run_case(
         "retained_ids": sorted(retained_ids),
         "admitted_ids": sorted(admitted_ids),
         "candidate_rows": candidate_rows,
-        "score_diagnostics": _score_diagnostics(case["contract_a"], config, passage_map),
+        "score_diagnostics": _score_diagnostics(case, config, passage_map),
         "retained_count": len(
             [row for row in package["candidates"] if row["selection_state"] == "retained"]
         ),
