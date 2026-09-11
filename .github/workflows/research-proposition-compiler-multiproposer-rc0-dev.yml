@@ -1,0 +1,44 @@
+name: Research - Multi-Proposer Convergence RC0 Development
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/proposition_compiler_multiproposer_rc0/**'
+      - '.github/workflows/research-proposition-compiler-multiproposer-rc0-dev.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  development-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch exact frozen RC1 authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/evaluator.py' -o work/rc1_evaluator.py
+          echo '1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d  work/rc1_evaluator.py' | sha256sum -c -
+      - name: Compile research apparatus
+        run: python -m py_compile research/proposition_compiler_multiproposer_rc0/proposers.py research/proposition_compiler_multiproposer_rc0/resolver.py research/proposition_compiler_multiproposer_rc0/score.py
+      - name: Run development surface twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PYTHONPATH="$PWD/research/proposition_compiler_multiproposer_rc0"
+          python research/proposition_compiler_multiproposer_rc0/resolver.py --authority work/rc1_evaluator.py --roots research/proposition_compiler_multiproposer_rc0/dev_cases.jsonl --output work/dev_raw_a.jsonl | tee work/dev_hash_a.txt
+          python research/proposition_compiler_multiproposer_rc0/resolver.py --authority work/rc1_evaluator.py --roots research/proposition_compiler_multiproposer_rc0/dev_cases.jsonl --output work/dev_raw_b.jsonl | tee work/dev_hash_b.txt
+          cmp work/dev_raw_a.jsonl work/dev_raw_b.jsonl
+          cat work/dev_raw_a.jsonl
+      - name: Upload development receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: multiproposer-rc0-development
+          path: work/
+          if-no-files-found: error
