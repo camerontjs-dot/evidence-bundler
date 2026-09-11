@@ -1,0 +1,50 @@
+{
+  "ambiguity_accepted": [
+    "R29-router",
+    "R29-controller"
+  ],
+  "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "core_exact": 135,
+  "core_n": 150,
+  "critical_unsafe_accepted": [
+    "R04-swap-object",
+    "R04-fragment",
+    "R06-or-change",
+    "R14-scope-loss",
+    "R15-drop-unit",
+    "R19-partial-strip",
+    "R21-swap",
+    "R21-cross",
+    "R23-cross",
+    "R25-wrong-ref"
+  ],
+  "disposition": "FALSIFIED",
+  "frozen_gold": {
+    "GOLD/gold.jsonl": "9c481d0215c7ea3531dc4ca28ab802cb543f8aeddd0d39f6e990909c17e7965d",
+    "GOLD/metamorphic_relations.jsonl": "b3f9d83533f53705042bf1bad0f3a145de6a895c0fb0db56478745dc23d39f0f"
+  },
+  "frozen_pre_target": {
+    "ANNOTATION_SPEC.md": "e52bb01dc8a44fa2a354a66af6e4853e33f5c1495e13d14eaa014b8046bceb06",
+    "candidates.jsonl": "1e1c2977573ae559ea72849109635dbe24acb804006f4585d053052ef2701846",
+    "case_manifest.json": "7a447128fb99fd81f43fd23eb03fc71e6cfa6191ed49ea29303b792b53396bd8",
+    "controls.py": "0ada71aed251a298434dba847e075616363eafd2a3383718dc21d3541dcf8445",
+    "evaluator.py": "d6dcda3c053e4cb68a65aa8bcb01404e72e084cdd735068c6e6935cf8cb71643",
+    "metamorphic_cases.jsonl": "eaea3c6771ba169bd0d1d3363e0b4b5690ad70042f70ecbfcd0d1d84eadf97ab",
+    "result.schema.json": "cde347eb8adb3a2d73bd15df89d79c6e2565df6ad2275d380935d9d7e2210430",
+    "scorer.py": "e0f279426c9f1687d9058d06091a659dbdec71dbee5d661e425b10206f946d8b"
+  },
+  "metamorphic_n": 40,
+  "metamorphic_satisfied": 34,
+  "post_result_semantic_repair_permitted": false,
+  "record_type": "proposition_compiler_evaluator_rc0_terminal_receipt",
+  "replay_byte_identical": true,
+  "replay_sha256": "06afbef245722355c728de43ff9aa60878814927be4dfec8281d737458924311",
+  "target_raw_sha256": "06afbef245722355c728de43ff9aa60878814927be4dfec8281d737458924311",
+  "unavailable_controls": {
+    "C10_LLM_MAJORITY": "No independently invokable panel is available; independence must not be simulated.",
+    "C5_ONE_DIRECTION_NLI": "No frozen NLI runtime/model is available in this execution surface.",
+    "C6_BIDIRECTIONAL_NLI": "No frozen NLI runtime/model is available in this execution surface.",
+    "C8_DEPENDENCY_SRL_ONLY": "No frozen parser/SRL runtime is available in this execution surface.",
+    "C9_LLM_BINARY_JUDGE": "No independently invokable frozen LLM judge is available in this execution surface."
+  }
+}
