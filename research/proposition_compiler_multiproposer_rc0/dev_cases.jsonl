@@ -1,0 +1,12 @@
+{"root_id":"D01","family":"shared_subject","root_text":"Sensor Alder logged three events and stored two copies.","context_text":""}
+{"root_id":"D02","family":"shared_scope","root_text":"During Q2, Team Birch inspected Lot 7 and retested Lot 8.","context_text":""}
+{"root_id":"D03","family":"explicit_clauses","root_text":"Company Cedar acquired Firm Dune and Agency Elm filed Report 4.","context_text":""}
+{"root_id":"D04","family":"directional","root_text":"Depot Fir sent Parcel 3 to Site Grove and Hub Hazel delivered Crate 2 to Lab Iris.","context_text":""}
+{"root_id":"D05","family":"reference","root_text":"Drone Juniper notified Console Kelp and it stopped transmitting.","context_text":"Only the drone was powered; the console was disconnected."}
+{"root_id":"D06","family":"modal_bottleneck","root_text":"Process Cedar may restart and Process Maple must stop.","context_text":""}
+{"root_id":"D07","family":"attribution_bottleneck","root_text":"Panel Cedar approved Plan 4 and Review Board reported that Panel Maple approved Plan 5.","context_text":""}
+{"root_id":"D08","family":"local_scope","root_text":"Team Juniper inspected Lot 2 during Q3 and Team Kestrel retested Lot 3.","context_text":""}
+{"root_id":"D09","family":"ambiguity","root_text":"Router Lime notified Controller Moss and it shut down.","context_text":""}
+{"root_id":"D10","family":"connective","root_text":"Module Nectar encrypted Record 2 or Module Oak archived Record 3.","context_text":""}
+{"root_id":"D11","family":"negation","root_text":"Unit Pine did not cache File A and did not cache File B.","context_text":""}
+{"root_id":"D12","family":"comparison","root_text":"Device Quartz is faster than Device Reed and Device Spruce is slower than Device Thyme.","context_text":""}
