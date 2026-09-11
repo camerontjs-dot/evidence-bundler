@@ -61,7 +61,7 @@ jobs:
             529c92b49a34d5c610618551a8737f019f9fa332
           test "$(git -C _apparatus rev-parse HEAD)" = \
             "529c92b49a34d5c610618551a8737f019f9fa332"
-          test "$(git -C _apparatus hash-object validators/contract_a.py)" = \
+          test "$(git -C _apparatus hash-object validators/contract_a_rc2.py)" = \
             "42e5f5b3bf38d677445e9d01ea130ba604e53409"
 
       - name: Stage exact runtime inputs without evaluator gold
