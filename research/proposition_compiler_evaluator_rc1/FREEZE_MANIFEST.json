@@ -1,0 +1,35 @@
+{
+  "experiment": "proposition-compiler-evaluator-rc1-binding",
+  "phase": "target-and-controls-freeze-before-fresh-corpus",
+  "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "predecessor": {
+    "pull_request": 61,
+    "head_commit": "7e4cfef6551c18ae63082b83c2cb6b0877edf9b9",
+    "disposition": "FALSIFIED",
+    "frozen_evaluator_sha256": "d6dcda3c053e4cb68a65aa8bcb01404e72e084cdd735068c6e6935cf8cb71643"
+  },
+  "profile_id": "pc-evaluator-rc1-binding-v1",
+  "frozen_objects": {
+    "ARCHITECTURE.md": "e377b509aaea2e2509a8c65c5207dde1c3ff221438b584380556d247e3ef5b97",
+    "PREREGISTRATION.md": "eeae44d72577f2b348606ff3ffe71812ccd4b51cec12b33e4b8ac49cbdc105c4",
+    "evaluator.py": "1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d",
+    "controls.py": "4840b2399121f2f7da1fdb3cdbcca1fee6a6ca024200b780ffef82eaac9eab76",
+    "run_raw.py": "5823b1351dcabccf6e59123cf0a3ec6235a293e1e545cf3c102765fc110a5e24",
+    "score.py": "71f13594b790dd7a34d4564c9000b5ade56eabaccc50a9abff7c24f2c02dbb50",
+    "result.schema.json": "8bbe7fcf6f598898657c23d60ae36f2190eb9c6919d1a1d00a1e05fc9bf4d9f1",
+    "regression_cases.jsonl": "c5b4d2fcb0191a2f3823f1be79a1b23d5bbeb10fbc5f588622ad58b472a73583",
+    "GOLD/regression_gold.jsonl": "bd1a446af7c5e82e811c86185c5f8004b34b02f040ec89cedc8180d20dfef637",
+    "REGRESSION_LINEAGE.md": "8fbcd0627a551b878175b7909c3899ed4749438ccaaa0e0d90deed7984bf830d",
+    "README.md": "8cee9d831c0f5ee6307c91e9e4ec6da1744b03bac82da439129bd8cc3f6c243f",
+    "tests/test_pc_evaluator_rc1.py": "a54dd8a708cd0b85d198cdd740099f8ec30710adc7866b52f7c0071b3630eae5"
+  },
+  "pre_freeze_sanity": {
+    "python_compile": "PASS",
+    "rc0_regression_exact": "15/15",
+    "exact_replay": "PASS_BYTE_IDENTICAL",
+    "target_runtime_gold_reference_check": "PASS",
+    "rc0_local_baseline_sha256_verified": true
+  },
+  "fresh_corpus_existed_before_this_freeze": false,
+  "rule": "After the Git commit containing this manifest is recorded as the target freeze head, evaluator.py and controls.py must not change before the decisive fresh run."
+}

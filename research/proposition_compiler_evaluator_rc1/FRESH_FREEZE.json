@@ -1,0 +1,29 @@
+{
+  "experiment": "proposition-compiler-evaluator-rc1-binding",
+  "phase": "fresh-surface-freeze-before-decisive-execution",
+  "target_freeze_commit": "26539c53781148543e980fe1f07b25f1ad9c2005",
+  "target_evaluator_sha256": "1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d",
+  "controls_sha256": "4840b2399121f2f7da1fdb3cdbcca1fee6a6ca024200b780ffef82eaac9eab76",
+  "fresh_fixture_materializer_sha256": "51ba8477156bac9aaee7b19780c73ee63ee511c10b0c0bf92d9c0ad6b50ddb5a",
+  "fresh_cases_sha256": "42068ca5373d9c808cff9de02bb6a2759e35803d732838f9572a588b222465e4",
+  "fresh_gold_sha256": "8f619fef47c1b5dd48744a073f267d80db63811e0e056583b82c33722ac32693",
+  "fresh_root_count": 30,
+  "fresh_candidate_count": 57,
+  "fresh_expected_dispositions": {
+    "ACCEPTABLE_WITHIN_PROFILE": 27,
+    "REJECT_UNSAFE": 26,
+    "INDETERMINATE": 4,
+    "INVALID_INPUT": 0
+  },
+  "metamorphic_fixture_materializer_sha256": "1a03a40ed32a809d4bcf1f2ed77061ea4523980825e159580473e406b82ff03b",
+  "metamorphic_cases_sha256": "9b3f7095de2e4abeb944c32c658ebd2efd71f363c3ad9d51fedeb9f0c7103fe8",
+  "metamorphic_gold_sha256": "6d78ab74b6366a58ac73ad86ee43daf9df35c0b552ae8990e97d94db5cb8b1d9",
+  "metamorphic_case_count": 8,
+  "adjudication": {
+    "status": "internal_single_researcher",
+    "independent_human_available": false,
+    "target_output_seen_before_gold_freeze": false,
+    "retrieval_or_downstream_outcomes_used": false
+  },
+  "rule": "Target evaluator and controls remain frozen at the target freeze commit. Fresh fixture/gold bytes represented by the materializers and hashes in this record must not be changed after decisive target output begins."
+}

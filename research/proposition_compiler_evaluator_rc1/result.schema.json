@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposition Compiler Evaluator RC1 Result",
+  "type": "object",
+  "required": ["schema_version", "profile_id", "case_id", "root_id", "candidate_state", "disposition", "findings", "canonical_sha256"],
+  "properties": {
+    "schema_version": {"const": "pc-evaluator-result-rc1.0"},
+    "profile_id": {"const": "pc-evaluator-rc1-binding-v1"},
+    "case_id": {"type": ["string", "null"]},
+    "root_id": {"type": ["string", "null"]},
+    "candidate_state": {"type": ["string", "null"]},
+    "disposition": {"enum": ["ACCEPTABLE_WITHIN_PROFILE", "REJECT_UNSAFE", "INDETERMINATE", "INVALID_INPUT"]},
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

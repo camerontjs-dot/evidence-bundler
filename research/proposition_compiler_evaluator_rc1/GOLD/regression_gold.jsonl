@@ -1,0 +1,15 @@
+{"case_id": "R04-swap-object", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R04-fragment", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R06-or-change", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R11-safe", "expected_disposition": "ACCEPTABLE_WITHIN_PROFILE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R14-scope-loss", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R15-drop-unit", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R16-safe", "expected_disposition": "ACCEPTABLE_WITHIN_PROFILE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R18-safe", "expected_disposition": "ACCEPTABLE_WITHIN_PROFILE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R19-partial-strip", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R21-swap", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R21-cross", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R23-cross", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R25-wrong-ref", "expected_disposition": "REJECT_UNSAFE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R29-router", "expected_disposition": "INDETERMINATE", "family": "rc0_regression", "promotion_critical": false}
+{"case_id": "R29-controller", "expected_disposition": "INDETERMINATE", "family": "rc0_regression", "promotion_critical": false}

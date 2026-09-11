@@ -1,0 +1,223 @@
+name: Research - Proposition Compiler Evaluator RC1
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'research/proposition_compiler_evaluator_rc1/**'
+      - 'research-records/proposition-compiler-evaluator-rc1/**'
+      - 'tests/test_pc_evaluator_rc1.py'
+      - '.github/workflows/research-proposition-compiler-evaluator-rc1.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rc1-binding-qualification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install maintained project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Record Git identity
+        run: |
+          mkdir -p work
+          git rev-parse HEAD | tee work/GIT_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/GIT_TREE.txt
+          git status --porcelain=v1 | tee work/PRE_RUN_STATUS.txt
+
+      - name: Verify frozen target and control bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat <<'EOF' | sha256sum -c -
+          1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d  research/proposition_compiler_evaluator_rc1/evaluator.py
+          4840b2399121f2f7da1fdb3cdbcca1fee6a6ca024200b780ffef82eaac9eab76  research/proposition_compiler_evaluator_rc1/controls.py
+          5823b1351dcabccf6e59123cf0a3ec6235a293e1e545cf3c102765fc110a5e24  research/proposition_compiler_evaluator_rc1/run_raw.py
+          71f13594b790dd7a34d4564c9000b5ade56eabaccc50a9abff7c24f2c02dbb50  research/proposition_compiler_evaluator_rc1/score.py
+          c5b4d2fcb0191a2f3823f1be79a1b23d5bbeb10fbc5f588622ad58b472a73583  research/proposition_compiler_evaluator_rc1/regression_cases.jsonl
+          bd1a446af7c5e82e811c86185c5f8004b34b02f040ec89cedc8180d20dfef637  research/proposition_compiler_evaluator_rc1/GOLD/regression_gold.jsonl
+          51ba8477156bac9aaee7b19780c73ee63ee511c10b0c0bf92d9c0ad6b50ddb5a  research/proposition_compiler_evaluator_rc1/fresh_fixture_materializer.py
+          1a03a40ed32a809d4bcf1f2ed77061ea4523980825e159580473e406b82ff03b  research/proposition_compiler_evaluator_rc1/metamorphic_fixture_materializer.py
+          EOF
+
+      - name: Materialize and verify fresh frozen fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_evaluator_rc1/fresh_fixture_materializer.py
+          python research/proposition_compiler_evaluator_rc1/metamorphic_fixture_materializer.py
+          cat <<'EOF' | sha256sum -c -
+          42068ca5373d9c808cff9de02bb6a2759e35803d732838f9572a588b222465e4  research/proposition_compiler_evaluator_rc1/fresh_cases.jsonl
+          8f619fef47c1b5dd48744a073f267d80db63811e0e056583b82c33722ac32693  research/proposition_compiler_evaluator_rc1/GOLD/fresh_gold.jsonl
+          9b3f7095de2e4abeb944c32c658ebd2efd71f363c3ad9d51fedeb9f0c7103fe8  research/proposition_compiler_evaluator_rc1/metamorphic_cases.jsonl
+          6d78ab74b6366a58ac73ad86ee43daf9df35c0b552ae8990e97d94db5cb8b1d9  research/proposition_compiler_evaluator_rc1/GOLD/metamorphic_gold.jsonl
+          EOF
+          mkdir -p work/sealed_gold
+          mv research/proposition_compiler_evaluator_rc1/GOLD/fresh_gold.jsonl work/sealed_gold/fresh_gold.jsonl
+          mv research/proposition_compiler_evaluator_rc1/GOLD/metamorphic_gold.jsonl work/sealed_gold/metamorphic_gold.jsonl
+
+      - name: Fetch and verify exact frozen RC0 baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/7e4cfef6551c18ae63082b83c2cb6b0877edf9b9/research/proposition_compiler_evaluator_rc0/evaluator.py' -o work/rc0_frozen_evaluator.py
+          echo 'd6dcda3c053e4cb68a65aa8bcb01404e72e084cdd735068c6e6935cf8cb71643  work/rc0_frozen_evaluator.py' | sha256sum -c -
+          echo "RC0_BASELINE_PATH=$PWD/work/rc0_frozen_evaluator.py" >> "$GITHUB_ENV"
+
+      - name: Verify runtime-gold separation
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -nE 'gold\.jsonl|expected_disposition' research/proposition_compiler_evaluator_rc1/evaluator.py research/proposition_compiler_evaluator_rc1/controls.py research/proposition_compiler_evaluator_rc1/run_raw.py
+
+      - name: Run maintained regressions and RC1 unit tests
+        run: python -m pytest -q
+
+      - name: Run maintained lint surface
+        run: python -m ruff check src tests scripts
+
+      - name: Run bounded research static checks
+        run: |
+          python -m py_compile research/proposition_compiler_evaluator_rc1/evaluator.py research/proposition_compiler_evaluator_rc1/controls.py research/proposition_compiler_evaluator_rc1/run_raw.py research/proposition_compiler_evaluator_rc1/score.py
+          python -m ruff check --select F821,F822,F823 research/proposition_compiler_evaluator_rc1/evaluator.py research/proposition_compiler_evaluator_rc1/controls.py research/proposition_compiler_evaluator_rc1/run_raw.py research/proposition_compiler_evaluator_rc1/score.py
+
+      - name: Execute fresh target and weak controls before opening gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_evaluator_rc1/run_raw.py research/proposition_compiler_evaluator_rc1/fresh_cases.jsonl work/fresh_raw
+          python research/proposition_compiler_evaluator_rc1/run_raw.py research/proposition_compiler_evaluator_rc1/metamorphic_cases.jsonl work/metamorphic_raw
+          sha256sum work/fresh_raw/*.jsonl | sort > work/FRESH_RAW_SHA256SUMS.txt
+          sha256sum work/metamorphic_raw/*.jsonl | sort > work/METAMORPHIC_RAW_SHA256SUMS.txt
+          cp work/fresh_raw/RAW_HASHES.json work/FRESH_RAW_HASHES.json
+          cp work/metamorphic_raw/RAW_HASHES.json work/METAMORPHIC_RAW_HASHES.json
+
+      - name: Score only after raw-output freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_evaluator_rc1/score.py --gold work/sealed_gold/fresh_gold.jsonl --raw-dir work/fresh_raw --output work/FRESH_SCORE.json > work/FRESH_SCORE_SHA256.txt
+          python research/proposition_compiler_evaluator_rc1/score.py --gold work/sealed_gold/metamorphic_gold.jsonl --raw-dir work/metamorphic_raw --output work/METAMORPHIC_SCORE.json > work/METAMORPHIC_SCORE_SHA256.txt
+
+      - name: Run exact target replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_evaluator_rc1/evaluator.py research/proposition_compiler_evaluator_rc1/fresh_cases.jsonl work/replay_target.jsonl
+          cmp work/replay_target.jsonl work/fresh_raw/target_raw.jsonl
+          sha256sum work/replay_target.jsonl > work/REPLAY_SHA256.txt
+
+      - name: Run RC0 regression comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_evaluator_rc1/run_raw.py research/proposition_compiler_evaluator_rc1/regression_cases.jsonl work/regression_raw
+          python research/proposition_compiler_evaluator_rc1/score.py --gold research/proposition_compiler_evaluator_rc1/GOLD/regression_gold.jsonl --raw-dir work/regression_raw --output work/REGRESSION_SCORE.json > work/REGRESSION_SCORE_SHA256.txt
+
+      - name: Validate accepted safe declared objects against released Contract A validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/camerontjs-dot/apparatus-contracts.git work/apparatus-contracts
+          git -C work/apparatus-contracts checkout --quiet --detach c3563cff66d2c85dcbf575c693056e2d8e4563d4
+          test "$(git -C work/apparatus-contracts rev-parse HEAD)" = 'c3563cff66d2c85dcbf575c693056e2d8e4563d4'
+          test "$(git -C work/apparatus-contracts hash-object validators/contract_a_rc2.py)" = '42e5f5b3bf38d677445e9d01ea130ba604e53409'
+          python - <<'PY'
+          import hashlib, importlib.util, json, sys
+          from pathlib import Path
+          ap = Path('work/apparatus-contracts/validators/contract_a_rc2.py')
+          spec = importlib.util.spec_from_file_location('contract_a_release_validator', ap)
+          mod = importlib.util.module_from_spec(spec); sys.modules[spec.name] = mod; spec.loader.exec_module(mod)
+          cases = {r['case_id']: r for r in map(json.loads, open('research/proposition_compiler_evaluator_rc1/fresh_cases.jsonl'))}
+          raw = {r['case_id']: r for r in map(json.loads, open('work/fresh_raw/target_raw.jsonl'))}
+          gold = {r['case_id']: r for r in map(json.loads, open('work/sealed_gold/fresh_gold.jsonl'))}
+          def h(text): return 'sha256:' + hashlib.sha256(text.encode()).hexdigest()
+          count = 0
+          for cid, g in gold.items():
+              if g['expected_disposition'] != 'ACCEPTABLE_WITHIN_PROFILE' or raw[cid]['disposition'] != 'ACCEPTABLE_WITHIN_PROFILE':
+                  continue
+              c = cases[cid]
+              obj = {
+                  'schema': mod.SCHEMA_TOKEN,
+                  'handoff_id': 'rc1-' + cid,
+                  'producer': {'producer_id': 'pc-evaluator-rc1-research-adapter', 'producer_version': '1'},
+                  'work': {'work_id': c['root_id']},
+                  'root_proposition': {'proposition_id': c['root_id'], 'text': c['root_text'], 'text_sha256': h(c['root_text'])},
+                  'decomposition': {'state': 'declared', 'decomposition_id': 'rc1-decomp-' + cid, 'operator': 'all_of', 'children': [
+                      {'proposition_id': x['child_id'], 'text': x['text'], 'text_sha256': h(x['text']), 'sequence': i + 1}
+                      for i, x in enumerate(c['children'])
+                  ]},
+                  'sources': [{'source_id': 'source-' + cid, 'media_type': 'text/plain; charset=utf-8', 'content': c['root_text'], 'content_sha256': h(c['root_text'])}],
+                  'handoff_sha256': 'sha256:' + '0' * 64,
+              }
+              obj['handoff_sha256'] = mod.compute_handoff_sha256(obj)
+              mod.validate_candidate(obj)
+              count += 1
+          Path('work/CONTRACT_A_VALIDATION.txt').write_text(f'validated_safe_declared={count}\nvalidator_blob=42e5f5b3bf38d677445e9d01ea130ba604e53409\n')
+          PY
+
+      - name: Derive preregistered gate status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          fresh=json.load(open('work/FRESH_SCORE.json'))
+          meta=json.load(open('work/METAMORPHIC_SCORE.json'))
+          reg=json.load(open('work/REGRESSION_SCORE.json'))
+          t=fresh['systems']['target_raw']
+          c4=fresh['systems']['C4_FROZEN_RC0']
+          safe_total=27
+          safe_accepted=safe_total - sum(1 for fam,n in t['family_errors'].items() for _ in range(n))
+          # All target errors on the frozen fresh surface are safe false negatives; unsafe/ambiguity acceptances are tracked separately.
+          positive=(t['unsafe_acceptances']==0 and t['ambiguity_acceptances']==0 and t['exact']==57 and meta['systems']['target_raw']['exact']==8 and reg['systems']['target_raw']['exact']==15)
+          status='SUPPORTED_FOR_FRESHER_QUALIFICATION' if positive else 'INCONCLUSIVE'
+          out={'terminal_candidate':status,'fresh_target':t,'fresh_rc0_baseline':c4,'metamorphic_target':meta['systems']['target_raw'],'regression_target':reg['systems']['target_raw'],'all_fresh_safe_controls_accepted':t['exact']==57,'note':'No semantic falsifier fired if unsafe_acceptances and ambiguity_acceptances are zero; positive support still requires all safe controls.'}
+          Path('work/GATE_STATUS.json').write_text(json.dumps(out,sort_keys=True,indent=2)+'\n')
+          print(json.dumps(out,sort_keys=True,indent=2))
+          PY
+
+      - name: Generate immutable artifact checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          find work -type f ! -path 'work/apparatus-contracts/*' ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > work/SHA256SUMS
+
+      - name: Upload RC1 research receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: proposition-compiler-evaluator-rc1-${{ github.sha }}
+          path: |
+            work/GIT_HEAD.txt
+            work/GIT_TREE.txt
+            work/PRE_RUN_STATUS.txt
+            work/FRESH_RAW_SHA256SUMS.txt
+            work/METAMORPHIC_RAW_SHA256SUMS.txt
+            work/FRESH_RAW_HASHES.json
+            work/METAMORPHIC_RAW_HASHES.json
+            work/fresh_raw/
+            work/metamorphic_raw/
+            work/regression_raw/
+            work/FRESH_SCORE.json
+            work/METAMORPHIC_SCORE.json
+            work/REGRESSION_SCORE.json
+            work/FRESH_SCORE_SHA256.txt
+            work/METAMORPHIC_SCORE_SHA256.txt
+            work/REGRESSION_SCORE_SHA256.txt
+            work/REPLAY_SHA256.txt
+            work/CONTRACT_A_VALIDATION.txt
+            work/GATE_STATUS.json
+            work/SHA256SUMS
+          if-no-files-found: error
