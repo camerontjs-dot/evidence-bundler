@@ -1,0 +1,207 @@
+name: Research - Multi-Proposer Convergence RC0 Decisive
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/proposition_compiler_multiproposer_rc0/**'
+      - 'research-records/proposition-compiler-multiproposer-rc0/**'
+      - '.github/workflows/research-proposition-compiler-multiproposer-rc0-decisive.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-convergence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR surface
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Record hosted identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+
+      - name: Verify frozen scientific Git blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object research/proposition_compiler_multiproposer_rc0/proposers.py)" = 'b2684f1752a1eb841dd6ee85b1e81ae523b03810'
+          test "$(git hash-object research/proposition_compiler_multiproposer_rc0/resolver.py)" = 'ca2fbf63855f21551c2e1ebb46019768753746e4'
+          test "$(git hash-object research/proposition_compiler_multiproposer_rc0/score.py)" = 'c7ee9d99cccb96d2b713b22d6f29f06feca54212'
+          test "$(git hash-object research/proposition_compiler_multiproposer_rc0/fresh_roots.jsonl)" = 'e51ec542898a0f40489e0140bbd0455e1429e0bb'
+          test "$(git hash-object research/proposition_compiler_multiproposer_rc0/GOLD/fresh_gold.jsonl)" = 'da169fcc9b0efc096cbb3c68a744da9d7beaa03d'
+          git hash-object research/proposition_compiler_multiproposer_rc0/proposers.py research/proposition_compiler_multiproposer_rc0/resolver.py research/proposition_compiler_multiproposer_rc0/score.py research/proposition_compiler_multiproposer_rc0/fresh_roots.jsonl research/proposition_compiler_multiproposer_rc0/GOLD/fresh_gold.jsonl | tee work/SCIENTIFIC_GIT_BLOBS.txt
+
+      - name: Fetch and verify exact frozen RC1 authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/evaluator.py' -o work/rc1_evaluator.py
+          echo '1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d  work/rc1_evaluator.py' | sha256sum -c -
+          sha256sum work/rc1_evaluator.py | tee work/RC1_AUTHORITY_SHA256.txt
+
+      - name: Recheck frozen RC1 binding regression surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/regression_cases.jsonl' -o work/rc1_regression_cases.jsonl
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/GOLD/regression_gold.jsonl' -o work/rc1_regression_gold.jsonl
+          echo 'c5b4d2fcb0191a2f3823f1be79a1b23d5bbeb10fbc5f588622ad58b472a73583  work/rc1_regression_cases.jsonl' | sha256sum -c -
+          echo 'bd1a446af7c5e82e811c86185c5f8004b34b02f040ec89cedc8180d20dfef637  work/rc1_regression_gold.jsonl' | sha256sum -c -
+          python - <<'PY'
+          import importlib.util, json, sys
+          spec=importlib.util.spec_from_file_location('frozen_rc1_regression','work/rc1_evaluator.py')
+          mod=importlib.util.module_from_spec(spec); sys.modules[spec.name]=mod; spec.loader.exec_module(mod)
+          cases={x['case_id']:x for x in map(json.loads,open('work/rc1_regression_cases.jsonl'))}
+          gold={x['case_id']:x['expected_disposition'] for x in map(json.loads,open('work/rc1_regression_gold.jsonl'))}
+          got={cid:mod.evaluate(case)['disposition'] for cid,case in cases.items()}
+          assert got == gold, [(cid,gold[cid],got[cid]) for cid in gold if gold[cid] != got[cid]]
+          open('work/RC1_REGRESSION.txt','w').write(f'exact={len(gold)}/{len(gold)}\n')
+          PY
+
+      - name: Compile frozen convergence apparatus
+        run: python -m py_compile research/proposition_compiler_multiproposer_rc0/proposers.py research/proposition_compiler_multiproposer_rc0/resolver.py research/proposition_compiler_multiproposer_rc0/score.py
+
+      - name: Seal gold away from runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_gold
+          mv research/proposition_compiler_multiproposer_rc0/GOLD/fresh_gold.jsonl work/sealed_gold/fresh_gold.jsonl
+          test ! -e research/proposition_compiler_multiproposer_rc0/GOLD/fresh_gold.jsonl
+          ! grep -nE 'fresh_gold|expected|allowed_child_sets' research/proposition_compiler_multiproposer_rc0/proposers.py research/proposition_compiler_multiproposer_rc0/resolver.py
+
+      - name: Execute target systems before opening gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PYTHONPATH="$PWD/research/proposition_compiler_multiproposer_rc0"
+          python research/proposition_compiler_multiproposer_rc0/resolver.py --authority work/rc1_evaluator.py --roots research/proposition_compiler_multiproposer_rc0/fresh_roots.jsonl --output work/FRESH_RAW_A.jsonl | tee work/FRESH_RAW_A_PRINTED_SHA256.txt
+          sha256sum work/FRESH_RAW_A.jsonl | tee work/FRESH_RAW_A_SHA256.txt
+
+      - name: Exact replay before scoring
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PYTHONPATH="$PWD/research/proposition_compiler_multiproposer_rc0"
+          python research/proposition_compiler_multiproposer_rc0/resolver.py --authority work/rc1_evaluator.py --roots research/proposition_compiler_multiproposer_rc0/fresh_roots.jsonl --output work/FRESH_RAW_B.jsonl | tee work/FRESH_RAW_B_PRINTED_SHA256.txt
+          cmp work/FRESH_RAW_A.jsonl work/FRESH_RAW_B.jsonl
+          sha256sum work/FRESH_RAW_B.jsonl | tee work/FRESH_RAW_B_SHA256.txt
+          echo 'byte_identical=true' | tee work/REPLAY.txt
+
+      - name: Score only after raw freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_multiproposer_rc0/score.py --raw work/FRESH_RAW_A.jsonl --gold work/sealed_gold/fresh_gold.jsonl --output work/SCORE.json | tee work/SCORE_PRINTED_SHA256.txt
+          sha256sum work/SCORE.json | tee work/SCORE_SHA256.txt
+
+      - name: Audit every selected pooled survivor against semantic gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def norm(t): return ' '.join(t.lower().strip().rstrip('.').split())
+          def cset(xs): return tuple(sorted(norm(x) for x in xs))
+          raw={r['root_id']:r for r in map(json.loads,Path('work/FRESH_RAW_A.jsonl').read_text().splitlines()) if r}
+          gold={g['root_id']:g for g in map(json.loads,Path('work/sealed_gold/fresh_gold.jsonl').read_text().splitlines()) if g}
+          violations=[]
+          audited=0
+          for rid,g in gold.items():
+              row=raw[rid]['systems']['S4_POOL']
+              if row['state']!='RESOLVED':
+                  continue
+              allowed={tuple(sorted(norm(x) for x in option)) for option in g.get('allowed_child_sets',[])}
+              for ev in row['evaluations']:
+                  if ev.get('semantic_cluster') != row.get('semantic_cluster'):
+                      continue
+                  audited += 1
+                  if g['expected']!='RESOLVED' or cset(ev['children']) not in allowed:
+                      violations.append({'root_id':rid,'candidate_id':ev['candidate_id'],'children':ev['children']})
+          Path('work/SELECTED_SURVIVOR_AUDIT.json').write_text(json.dumps({'audited':audited,'violations':violations},sort_keys=True,separators=(',',':'))+'\n')
+          assert not violations, violations
+          PY
+
+      - name: Verify vote-count invariance
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PYTHONPATH="$PWD/research/proposition_compiler_multiproposer_rc0"
+          python - <<'PY'
+          import importlib.util,json,sys
+          from pathlib import Path
+          import resolver
+          authority=resolver.load_authority('work/rc1_evaluator.py')
+          roots={x['root_id']:x for x in map(json.loads,Path('research/proposition_compiler_multiproposer_rc0/fresh_roots.jsonl').read_text().splitlines()) if x}
+          checks=[]
+          for rid,prop in [('F01','P1'),('F05','P2')]:
+              one=resolver.resolve_system(authority,roots[rid],(prop,))
+              duplicated=resolver.resolve_system(authority,roots[rid],(prop,prop))
+              assert one['state']==duplicated['state']
+              assert one['semantic_cluster']==duplicated['semantic_cluster']
+              assert one['surviving_cluster_count']==duplicated['surviving_cluster_count']
+              checks.append({'root_id':rid,'proposer':prop,'state':one['state'],'cluster':one['semantic_cluster']})
+          Path('work/VOTE_INVARIANCE.json').write_text(json.dumps(checks,sort_keys=True,separators=(',',':'))+'\n')
+          PY
+
+      - name: Derive preregistered terminal candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          score=json.load(open('work/SCORE.json'))
+          pool=score['summary']['S4_POOL']
+          fail_closed_expected=sum(1 for x in map(json.loads,Path('work/sealed_gold/fresh_gold.jsonl').read_text().splitlines()) if x and x['expected']=='FAIL_CLOSED')
+          if pool['unsafe_resolved'] > 0:
+              disposition='FALSIFIED'
+              reason='pooled unsafe authoritative resolution observed'
+          elif pool['correct_fail_closed'] < fail_closed_expected:
+              disposition='FALSIFIED'
+              reason='material fail-closed case resolved'
+          elif score['pooled_gain'] < 3:
+              disposition='INCONCLUSIVE'
+              reason='pooled gain below preregistered +3 threshold'
+          elif score['gain_family_count'] < 2:
+              disposition='INCONCLUSIVE'
+              reason='pooled gain confined to fewer than two families'
+          else:
+              disposition='SUPPORTED_FOR_FRESHER_QUALIFICATION'
+              reason='all semantic gates passed on hosted decisive surface'
+          expected_resolved=[]; unresolved=[]
+          gold={x['root_id']:x for x in map(json.loads,Path('work/sealed_gold/fresh_gold.jsonl').read_text().splitlines()) if x}
+          raw={x['root_id']:x for x in map(json.loads,Path('work/FRESH_RAW_A.jsonl').read_text().splitlines()) if x}
+          for rid,g in gold.items():
+              if g['expected']=='RESOLVED':
+                  expected_resolved.append(rid)
+                  if raw[rid]['systems']['S4_POOL']['state']!='RESOLVED': unresolved.append(rid)
+          result={'disposition':disposition,'reason':reason,'pooled_gain':score['pooled_gain'],'gain_family_count':score['gain_family_count'],'gain_families':score['gain_families'],'pooled_safe_resolved':score['pooled_safe_resolved'],'best_single_safe_resolved':score['best_single_safe_resolved'],'pooled_unsafe_resolved':pool['unsafe_resolved'],'correct_fail_closed':pool['correct_fail_closed'],'expected_fail_closed':fail_closed_expected,'expected_resolved_count':len(expected_resolved),'unresolved_expected_resolved':unresolved}
+          Path('work/DISPOSITION.json').write_text(json.dumps(result,sort_keys=True,separators=(',',':'))+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          PY
+
+      - name: Generate checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum work/FRESH_RAW_A.jsonl work/FRESH_RAW_B.jsonl work/SCORE.json work/SELECTED_SURVIVOR_AUDIT.json work/VOTE_INVARIANCE.json work/DISPOSITION.json work/RC1_REGRESSION.txt | sort | tee work/SHA256SUMS.txt
+
+      - name: Upload decisive receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: multiproposer-rc0-decisive
+          path: work/
+          if-no-files-found: error
