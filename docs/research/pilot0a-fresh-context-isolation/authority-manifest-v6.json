@@ -1,0 +1,69 @@
+{
+  "manifest_version": "6.0.0",
+  "purpose": "Fresh-run-safe bootstrap for a genuinely independent reproduction of External Corpus Retrieval Evaluator Contract v0.4. Research Infrastructure only. No Pilot scientific source rows, scientific gold, retrieval output, target-system performance, or scientific disposition are contained or authorized here.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "reference_source": {
+    "commit_sha": "582c948e23e87529c9c1f3a431299afdbb60ef3d",
+    "assurance_run_id": 34560593915,
+    "assurance_result": "success on Python 3.11 and 3.12; 33 tests passed on each",
+    "contract_path": "research/external_corpus_evaluator_independence_v3/contract.md",
+    "contract_blob_sha": "2fc7156db742efd601a3d0de03e2439570edca4c"
+  },
+  "cleanroom_handoff": {
+    "branch": "research-infra/external-corpus-evaluator-v04-cleanroom-handoff-v6",
+    "commit_sha": "82057ad512e11d3d2ee13a37b1c99fa1058913cf",
+    "tree_sha": "bf6aeeef62bca1a5e1b5d75c2c25e1bce6600878",
+    "parent_sha": "e14df1bd8239445ef0b0a07525b07ae9c2b78835",
+    "visible_file_count": 16,
+    "visible_tree_rule": "The exact handoff tree contains only nine frozen governance files, the v0.4 written contract, and six dummy/discriminator fixture files. It contains no v0.4 reference evaluator, canonicalizer, tests, decision rationale, PR narrative, Pilot scientific rows/gold, or retriever output.",
+    "implementation_base_rule": "Create the fresh implementation branch from this exact handoff commit. Do not traverse parent/history or inspect any other branch before freeze."
+  },
+  "governance_files": [
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/CAL-PIPELINE-PROJECT-CONTEXT.md","git_blob_sha":"5ce89ea50dcd467ef52dc741f986e951339eea65"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/PRODUCT-NORTH-STAR.md","git_blob_sha":"48e25f18e3070005a55088fe1a5d7a8ebe7427b4"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/GITHUB-AND-PR-GOVERNANCE.md","git_blob_sha":"e8f224a7464e62aaea468f43aa0f73139e2f7142"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/PROJECT-STATE-LOCATION-POLICY.md","git_blob_sha":"73c5721c1b85ceacfc626cdfd00a932fed464f53"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/EPISTEMIC-RECORD-CONVENTIONS.md","git_blob_sha":"7e99ff66f29cf52bc51617b0e025a03af7881344"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/RELEASE-AND-VERSION-GOVERNANCE.md","git_blob_sha":"aaa0e535263acb441d430a6f46484fafa5c47302"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/AGENT-TASK-DESIGN-GUIDANCE-SYNTHESIS.md","git_blob_sha":"33a503d35915ce1cff7eac7686300d7b58e7a282"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/CAL-PIPELINE-WRITING-STYLE-GUIDANCE.md","git_blob_sha":"4c84516bd6bf1da47171cddac34ec65f2746c633"},
+    {"path":"docs/research/pilot0a-fresh-context-isolation/governance-v6/CONTEXT-FREE-EXECUTION-PROTOCOL.md","git_blob_sha":"acb4282838919a38ce69926e986cb4292c6af954"}
+  ],
+  "pre_freeze_allowed_inputs": [
+    {"path":"research/external_corpus_evaluator_independence_v3/contract.md","git_blob_sha":"2fc7156db742efd601a3d0de03e2439570edca4c"},
+    {"path":"research/external_corpus_evaluator_independence_v1/dummy_manifest.json","git_blob_sha":"f2d0c1ff3b39d20c92878d75d8a345bc152f971d"},
+    {"path":"research/external_corpus_evaluator_independence_v1/dummy_run.json","git_blob_sha":"45b9ef6e005fd7e005ec75305c2829fa241f8f81"},
+    {"path":"research/external_corpus_evaluator_independence_v1/revealed_dummy_gold.json","git_blob_sha":"c6960cebeafa4c5dd214d7f32d47e68294a3f4da"},
+    {"path":"research/external_corpus_evaluator_independence_v2/ndcg_scope_manifest.json","git_blob_sha":"018323363aecb3b2528b9097177c9aa48f79e88b"},
+    {"path":"research/external_corpus_evaluator_independence_v2/ndcg_scope_run.json","git_blob_sha":"4e830255062b00406ba7c64cfff4126c1e16433b"},
+    {"path":"research/external_corpus_evaluator_independence_v2/ndcg_scope_gold.json","git_blob_sha":"f9c4133ef83e0fac350428a693847f0c79d7d33f"}
+  ],
+  "pre_freeze_prohibited": [
+    "research/external_corpus_evaluator_independence_v3/evaluator_a.py",
+    "research/external_corpus_evaluator_independence_v3/evaluator_b.py",
+    "research/external_corpus_evaluator_independence_v3/canonical.py",
+    "tests/test_external_corpus_evaluator_independence_v3.py",
+    "research/external_corpus_evaluator_independence_v3/CONTRACT_DECISION.md",
+    "PR #35 and earlier evaluator reproduction narratives or implementations",
+    "PR for this v0.4 reference line, comments, reviews, diffs, workflow logs, or discussion",
+    "any Pilot 0A scientific source rows, scientific gold, prior scientific observations, qrels/nuggets, prohibited SciFact evidence/rationale, or retriever output",
+    "any prior conversation or project memory about the expected v0.4 implementation behavior beyond the written contract"
+  ],
+  "post_freeze_comparison_surfaces": [
+    {"path":"research/external_corpus_evaluator_independence_v3/evaluator_a.py","git_blob_sha":"f34b96ebc8b2d77d35946d5e7608d9dac5b755e3"},
+    {"path":"research/external_corpus_evaluator_independence_v3/evaluator_b.py","git_blob_sha":"dac36a8de66b8faecccbc9b7a934446d18a9db9c"},
+    {"path":"research/external_corpus_evaluator_independence_v3/canonical.py","git_blob_sha":"07d02f070c051466188125128808e1b10ea17c12"},
+    {"path":"tests/test_external_corpus_evaluator_independence_v3.py","git_blob_sha":"6a5095a441c562ebd877a7c3f5be6391059a5d4e"}
+  ],
+  "required_sequence": [
+    "Verify exact cleanroom handoff commit and tree before reading project content.",
+    "Use only the exact visible handoff tree before freeze. Do not traverse parent/history.",
+    "Implement the smallest complete evaluator satisfying v0.4 using Python standard library only unless the written contract itself requires otherwise.",
+    "Create independent adversarial/self-checks derived from the written contract and dummy fixtures, including every v0.4 discriminator.",
+    "Freeze implementation, prereveal tests, result receipt, hashes, and contamination record on a fresh branch rooted at the handoff commit.",
+    "Open a Draft Research PR targeting the cleanroom handoff branch, then stop with FROZEN_AWAITING_REVEAL.",
+    "Only after supervisor authorization may the four post-freeze comparison surfaces at reference source commit 582c948e23e87529c9c1f3a431299afdbb60ef3d be opened.",
+    "Do not edit the frozen implementation after reveal and retain the same independence claim."
+  ],
+  "scientific_boundary": "This reproduction can establish evaluator infrastructure only. It does not authorize Pilot 0A Scientific Gate 1, source materialization, scientific adjudication, BM25/Semantic/Hybrid execution, benchmark expansion, or production change."
+}
