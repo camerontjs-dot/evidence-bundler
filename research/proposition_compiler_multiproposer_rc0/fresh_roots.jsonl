@@ -1,0 +1,24 @@
+{"root_id":"F01","family":"shared_subject","root_text":"Assembly Atlas recorded four readings and archived two reports.","context_text":""}
+{"root_id":"F02","family":"shared_subject","root_text":"Unit Beacon inspected Batch 14 and retested Batch 15.","context_text":""}
+{"root_id":"F03","family":"shared_subject","root_text":"Station Copper logged five events and stored three copies.","context_text":""}
+{"root_id":"F04","family":"shared_subject","root_text":"Team Drift reviewed Plan 8 and approved Plan 9.","context_text":""}
+{"root_id":"F05","family":"explicit_directional","root_text":"Vendor Ember sold Device 4 to Buyer Frost and Depot Garnet shipped Crate 6 to Lab Harbor.","context_text":""}
+{"root_id":"F06","family":"explicit_directional","root_text":"Firm Indigo acquired Studio Jade and Office Kite filed Record 12.","context_text":""}
+{"root_id":"F07","family":"explicit_directional","root_text":"Warehouse Lumen sent Parcel 5 to Clinic Mica and Hub Nova delivered Box 7 to Site Opal.","context_text":""}
+{"root_id":"F08","family":"explicit_directional","root_text":"Broker Pearl bought Asset 3 from Seller Quartz and Carrier River transferred Sample 2 from Dock Stone to Lab Topaz.","context_text":""}
+{"root_id":"F09","family":"scope_attachment","root_text":"During Q4, Crew Umber inspected Lot 21 and retested Lot 22.","context_text":""}
+{"root_id":"F10","family":"scope_attachment","root_text":"At North Lab, Team Violet recorded Sample 9 and archived Report 6.","context_text":""}
+{"root_id":"F11","family":"scope_attachment","root_text":"Group Willow inspected Batch 30 during Q1 and Group Xenia retested Batch 31.","context_text":""}
+{"root_id":"F12","family":"scope_attachment","root_text":"Unit Yarrow recorded File 8 at North Site and Unit Zephyr archived File 9.","context_text":""}
+{"root_id":"F13","family":"operator_binding","root_text":"Valve Amber may restart and must stop.","context_text":""}
+{"root_id":"F14","family":"operator_binding","root_text":"Unit Brisk did not cache File C and did not cache File D.","context_text":""}
+{"root_id":"F15","family":"operator_binding","root_text":"Motor Cobalt may restart and Pump Delta must stop.","context_text":""}
+{"root_id":"F16","family":"operator_binding","root_text":"Each module logged two events and every controller stored three copies.","context_text":""}
+{"root_id":"F17","family":"reference_attribution_ellipsis","root_text":"Robot Ash notified Terminal Bay and it dimmed its display.","context_text":"Only the robot was active; the terminal was disconnected."}
+{"root_id":"F18","family":"reference_attribution_ellipsis","root_text":"Controller Birch notified Sensor Cedar and it shut down.","context_text":"Only the controller was powered; the sensor was offline."}
+{"root_id":"F19","family":"reference_attribution_ellipsis","root_text":"Team Dawn inspected Lot 41 and Team Eagle did too.","context_text":""}
+{"root_id":"F20","family":"reference_attribution_ellipsis","root_text":"Committee Flint approved Plan 10 and Board Grove reported that Committee Hazel approved Plan 11.","context_text":""}
+{"root_id":"F21","family":"comparison_connective_ambiguity","root_text":"Server Iris is faster than Server Juniper and Device Kappa is slower than Device Lilac.","context_text":""}
+{"root_id":"F22","family":"comparison_connective_ambiguity","root_text":"Model Maple is higher than Model Nickel and Meter Onyx is lower than Meter Pearl.","context_text":""}
+{"root_id":"F23","family":"comparison_connective_ambiguity","root_text":"Unit Quartz encrypted File 2 or Unit Rose archived File 3.","context_text":""}
+{"root_id":"F24","family":"comparison_connective_ambiguity","root_text":"Router Saffron notified Console Teal and it shut down.","context_text":""}
