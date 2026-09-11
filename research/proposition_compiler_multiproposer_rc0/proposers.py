@@ -25,6 +25,7 @@ VERBS = {
 }
 MODALS = {"may", "might", "must", "should", "can", "could", "will", "would"}
 AUX = {"did", "is", "was", "are", "were", "be"}
+PRONOUNS = {"it", "they", "he", "she", "them", "him", "her"}
 SHARED_PREFIX = re.compile(
     r"^(?P<prefix>(?:During|Among|At|In|If|Except for|According to)\s+[^,]+),\s*(?P<body>.+)$",
     re.I,
@@ -190,7 +191,7 @@ def proposer_p2(root: dict) -> list[dict]:
         return []
     left, right = split
     first = tokens(right)[0].lower() if tokens(right) else ""
-    if first in {"it", "they", "he", "she", "them", "him", "her"}:
+    if first in PRONOUNS:
         return []
     return [make_candidate(root, "P2", "explicit-clauses", [apply_prefix(prefix, left), apply_prefix(prefix, right)])]
 
@@ -214,7 +215,7 @@ def _expand_ellipsis(left: str, right: str) -> str | None:
 
 
 def proposer_p3(root: dict) -> list[dict]:
-    """Alternative reconstruction proposer; emits bounded variants without choosing among them."""
+    """Specialist alternative proposer for reference, ellipsis, and scope stress variants."""
     text = strip_period(root["root_text"])
     prefix = None
     body = text
@@ -229,18 +230,13 @@ def proposer_p3(root: dict) -> list[dict]:
         subj = subject_prefix(left)
         variants: list[tuple[str, list[str]]] = []
 
-        if has_predicate(right) and right_has_explicit_subject(right):
-            variants.append(("surface-preserving", [apply_prefix(prefix, left), apply_prefix(prefix, right)]))
-
-        if subj and right_starts_predicate(right) and not right_has_explicit_subject(right):
-            variants.append(("shared-subject-expanded", [apply_prefix(prefix, left), apply_prefix(prefix, f"{subj} {right}")]))
-
         ell = _expand_ellipsis(left, right)
         if ell:
             variants.append(("ellipsis-expanded", [apply_prefix(prefix, left), apply_prefix(prefix, ell)]))
 
         ts = tokens(right)
-        if ts and ts[0].lower() in {"it", "they", "he", "she", "them", "him", "her"}:
+        if ts and ts[0].lower() in PRONOUNS and has_predicate(right):
+            variants.append(("reference-preserving", [apply_prefix(prefix, left), apply_prefix(prefix, right)]))
             ref = _context_unique_referent(root.get("context_text", ""))
             if ref:
                 rest = " ".join(ts[1:])
