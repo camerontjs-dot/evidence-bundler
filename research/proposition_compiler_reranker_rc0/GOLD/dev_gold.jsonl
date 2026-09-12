@@ -1,0 +1,12 @@
+{"root_id":"D01","family":"scope_attachment","expected":"SELECT","safe_candidate_ids":["D01-C1"],"critical_unsafe_candidate_ids":["D01-C2","D01-C3"]}
+{"root_id":"D02","family":"scope_attachment","expected":"SELECT","safe_candidate_ids":["D02-C1"],"critical_unsafe_candidate_ids":["D02-C2","D02-C3","D02-C4"]}
+{"root_id":"D03","family":"negation","expected":"SELECT","safe_candidate_ids":["D03-C1"],"critical_unsafe_candidate_ids":["D03-C2","D03-C3"]}
+{"root_id":"D04","family":"modality","expected":"SELECT","safe_candidate_ids":["D04-C1"],"critical_unsafe_candidate_ids":["D04-C2","D04-C3","D04-C4"]}
+{"root_id":"D05","family":"quantifier","expected":"SELECT","safe_candidate_ids":["D05-C1"],"critical_unsafe_candidate_ids":["D05-C2","D05-C3","D05-C4"]}
+{"root_id":"D06","family":"direction_binding","expected":"SELECT","safe_candidate_ids":["D06-C1"],"critical_unsafe_candidate_ids":["D06-C2","D06-C3"]}
+{"root_id":"D07","family":"comparison_direction","expected":"SELECT","safe_candidate_ids":["D07-C1"],"critical_unsafe_candidate_ids":["D07-C2","D07-C3","D07-C4"]}
+{"root_id":"D08","family":"attribution","expected":"SELECT","safe_candidate_ids":["D08-C1"],"critical_unsafe_candidate_ids":["D08-C2","D08-C3","D08-C4"]}
+{"root_id":"D09","family":"reference_binding","expected":"SELECT","safe_candidate_ids":["D09-C1","D09-C2"],"critical_unsafe_candidate_ids":["D09-C3"]}
+{"root_id":"D10","family":"completeness_duplication","expected":"SELECT","safe_candidate_ids":["D10-C1"],"critical_unsafe_candidate_ids":["D10-C2","D10-C4"]}
+{"root_id":"D11","family":"multiple_legitimate","expected":"SELECT","safe_candidate_ids":["D11-C1","D11-C2"],"critical_unsafe_candidate_ids":["D11-C3","D11-C4"]}
+{"root_id":"D12","family":"intrinsic_ambiguity","expected":"ABSTAIN","safe_candidate_ids":[],"critical_unsafe_candidate_ids":["D12-C1","D12-C2"]}
