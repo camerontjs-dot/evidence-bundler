@@ -1,0 +1,87 @@
+name: Research - Proposition Compiler CAL Learned Reranker RC0 Train
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_cal_learned_reranker_rc0/**"
+      - ".github/workflows/research-proposition-compiler-cal-learned-reranker-rc0-train.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  train-and-calibrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install frozen scorer runtime
+        run: |
+          set -euo pipefail
+          python -m pip install 'torch==2.14.0' 'transformers==5.17.0' 'tokenizers==0.23.2' 'huggingface-hub==1.31.0'
+          python - <<'PY'
+          from importlib.metadata import version
+          for p,v in [('torch','2.14.0'),('transformers','5.17.0'),('tokenizers','0.23.2'),('huggingface-hub','1.31.0')]: assert version(p)==v,(p,version(p))
+          PY
+      - name: Fetch exact predecessor scorer and revealed evidence
+        run: |
+          set -euo pipefail
+          mkdir -p work/GOLD
+          base='https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/b7755caa740245682544282c869dc816670976c0/research/proposition_compiler_reranker_rc0'
+          curl -fsSL "$base/runner.py" -o work/frozen_runner.py
+          curl -fsSL "$base/dev_cases.jsonl" -o work/dev_cases.jsonl
+          curl -fsSL "$base/GOLD/dev_gold.jsonl" -o work/GOLD/dev_gold.jsonl
+          curl -fsSL "$base/fresh_cases.jsonl" -o work/previous_fresh_cases.jsonl
+          curl -fsSL "$base/GOLD/fresh_gold.jsonl" -o work/GOLD/previous_fresh_gold.jsonl
+          test "$(git hash-object work/frozen_runner.py)" = 'c717d5c066305c3f612ef82c5314974a3777f1e3'
+          test "$(git hash-object work/dev_cases.jsonl)" = '8909a1e4cbc2caa496b6eb95a2b536739fa29ad1'
+          test "$(git hash-object work/GOLD/dev_gold.jsonl)" = '04ed7a5d0ba369cf9c779a84039120d73b7269dc'
+          test "$(git hash-object work/previous_fresh_cases.jsonl)" = 'bef1d64c160f4b2ff140bd62caadcc1467a57739'
+          test "$(git hash-object work/GOLD/previous_fresh_gold.jsonl)" = 'bfbc7414f136af421fa98ede59ebbf7c5f6ddd85'
+          cat work/dev_cases.jsonl work/previous_fresh_cases.jsonl > work/historical_cases.jsonl
+          cat work/GOLD/dev_gold.jsonl work/GOLD/previous_fresh_gold.jsonl > work/GOLD/historical_gold.jsonl
+      - name: Compile learned apparatus
+        run: python -m py_compile research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py work/frozen_runner.py
+      - name: Reproduce frozen base semantic measurements
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python work/frozen_runner.py --cases work/historical_cases.jsonl --output work/HIST_RAW.json | tee work/HIST_RAW_PRINTED_SHA256.txt
+          sha256sum work/HIST_RAW.json > work/HIST_RAW_SHA256.txt
+      - name: Deterministically train and calibrate twice
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py train --cases work/historical_cases.jsonl --raw work/HIST_RAW.json --gold work/GOLD/historical_gold.jsonl --model work/MODEL_A.json | tee work/MODEL_A_PRINTED_SHA256.txt
+          python research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py train --cases work/historical_cases.jsonl --raw work/HIST_RAW.json --gold work/GOLD/historical_gold.jsonl --model work/MODEL_B.json | tee work/MODEL_B_PRINTED_SHA256.txt
+          cmp work/MODEL_A.json work/MODEL_B.json
+          cp work/MODEL_A.json work/FROZEN_MODEL_CANDIDATE.json
+          echo 'byte_identical_training=true' > work/TRAINING_REPLAY.txt
+          python - <<'PY'
+          import json
+          m=json.load(open('work/MODEL_A.json'))
+          print(json.dumps({'calibration':m['calibration'],'features':m['features'],'weights':dict(zip(m['features'],m['weights']))},indent=2,sort_keys=True))
+          PY
+      - name: Characterize learned signal on revealed predecessor evidence
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py score --cases work/historical_cases.jsonl --raw work/HIST_RAW.json --model work/MODEL_A.json --output work/HIST_T1_RAW.json | tee work/HIST_T1_RAW_PRINTED_SHA256.txt
+          python research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py --raw work/HIST_T1_RAW.json --gold work/GOLD/historical_gold.jsonl --model work/MODEL_A.json --output work/HIST_EVALUATION.json | tee work/HIST_EVALUATION_PRINTED_SHA256.txt
+          python - <<'PY'
+          import json
+          print(json.dumps(json.load(open('work/HIST_EVALUATION.json'))['summaries'],indent=2,sort_keys=True))
+          PY
+          sha256sum work/HIST_RAW.json work/MODEL_A.json work/HIST_T1_RAW.json work/HIST_EVALUATION.json work/TRAINING_REPLAY.txt | sort > work/SHA256SUMS.txt
+          git rev-parse HEAD > work/HOSTED_HEAD.txt
+          git hash-object research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py > work/SCIENTIFIC_BLOBS.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-cal-learned-reranker-rc0-training
+          path: work/
+          retention-days: 90
