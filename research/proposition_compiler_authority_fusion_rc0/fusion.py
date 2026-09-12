@@ -182,7 +182,7 @@ def score_case(authority, nli, case: dict[str, Any]) -> dict[str, Any]:
             auth_clusters.setdefault(r["semantic_cluster"], []).append(r)
     if len(auth_clusters) == 1:
         only = next(iter(auth_clusters.values()))
-        a0_selected = sorted(only, key=lambda x: (-x["nli_score"], x["candidate_id"]))[0]["candidate_id"]
+        a0_selected = sorted(only, key=lambda x: x["candidate_id"])[0]["candidate_id"]
         a0_state = "SELECT"
     else:
         a0_selected = None
