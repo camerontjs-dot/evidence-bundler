@@ -115,8 +115,7 @@ jobs:
               classification='FALSIFIED_AUTHORITY_PRESERVING_FUSION'
           elif a1['safe_selects'] >= a0['safe_selects'] + 2:
               disposition='INCONCLUSIVE'
-              classification='SUPPORTED_AS_NONAUTHORITATIVE_FUSION_CANDIDATE'
-              # Fresh gain is necessary but this RC0 still cannot authorize promotion; governance remains inconclusive pending independent qualification.
+              classification='SUPPORTED_AS_NONAUTHORITATIVE_FUSION'
           else:
               disposition='INCONCLUSIVE'
               classification='INCONCLUSIVE_NO_MATERIAL_RESOLUTION_GAIN'
