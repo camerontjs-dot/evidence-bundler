@@ -1,0 +1,141 @@
+name: Research - Proposition Compiler Authority Fusion RC0 Decisive
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_authority_fusion_rc0/**"
+      - ".github/workflows/research-proposition-compiler-authority-fusion-rc0-decisive.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-fusion:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record hosted identity and verify frozen objects
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_gold
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+          test "$(git hash-object research/proposition_compiler_authority_fusion_rc0/fusion.py)" = 'dbf978216fb94b821c7f50fa1c5a11b702699618'
+          test "$(git hash-object research/proposition_compiler_authority_fusion_rc0/score.py)" = 'eaf7e6fbb78c71806362ef92f295abab1dd7f932'
+          test "$(git hash-object research/proposition_compiler_authority_fusion_rc0/shared_fresh/cases_a.jsonl)" = 'f78cb78f211ce9587a12408a4677c2c780b031fe'
+          test "$(git hash-object research/proposition_compiler_authority_fusion_rc0/shared_fresh/cases_b.jsonl)" = 'b65bc4c2a8cbc9d58f4559aa3690ee7b897a6013'
+          test "$(git hash-object research/proposition_compiler_authority_fusion_rc0/shared_fresh/gold.jsonl)" = 'd99225950c78e187482a3e5bd0bf6a7ace3d47ae'
+          cat research/proposition_compiler_authority_fusion_rc0/shared_fresh/cases_a.jsonl research/proposition_compiler_authority_fusion_rc0/shared_fresh/cases_b.jsonl > work/FRESH_CASES.jsonl
+          echo '480c2e876fefd66c3315152cefdb531b739e83e42a1c29a9371b2507a21c0319  work/FRESH_CASES.jsonl' | sha256sum -c -
+          echo 'cb6a7805b9fefe5e26d6bb9ff5bf5081a347c32ee8d9902c94bf8c37b4ceaf67  research/proposition_compiler_authority_fusion_rc0/shared_fresh/gold.jsonl' | sha256sum -c -
+
+      - name: Install frozen model runtime
+        run: |
+          set -euo pipefail
+          python -m pip install 'torch==2.14.0' 'transformers==5.17.0' 'tokenizers==0.23.2' 'huggingface-hub==1.31.0'
+          python - <<'PY'
+          from importlib.metadata import version
+          for p,v in [('torch','2.14.0'),('transformers','5.17.0'),('tokenizers','0.23.2'),('huggingface-hub','1.31.0')]:
+              assert version(p)==v,(p,version(p))
+          print('runtime_distribution_versions_exact=true')
+          PY
+
+      - name: Fetch exact frozen RC1 semantic authority
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/evaluator.py' -o work/rc1_evaluator.py
+          echo '1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d  work/rc1_evaluator.py' | sha256sum -c -
+          python -m py_compile work/rc1_evaluator.py research/proposition_compiler_authority_fusion_rc0/fusion.py research/proposition_compiler_authority_fusion_rc0/score.py
+
+      - name: Seal fresh gold away from scorer
+        run: |
+          set -euo pipefail
+          mv research/proposition_compiler_authority_fusion_rc0/shared_fresh/gold.jsonl work/sealed_gold/gold.jsonl
+          test ! -e research/proposition_compiler_authority_fusion_rc0/shared_fresh/gold.jsonl
+          ! grep -nE 'safe_candidate_ids|critical_unsafe_candidate_ids|shared_fresh/gold' research/proposition_compiler_authority_fusion_rc0/fusion.py
+
+      - name: Execute decisive fusion before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_authority_fusion_rc0/fusion.py --authority work/rc1_evaluator.py --cases work/FRESH_CASES.jsonl --output work/RAW_A.json | tee work/RAW_A_PRINTED_SHA256.txt
+          sha256sum work/RAW_A.json | tee work/RAW_A_SHA256.txt
+
+      - name: Exact replay before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_authority_fusion_rc0/fusion.py --authority work/rc1_evaluator.py --cases work/FRESH_CASES.jsonl --output work/RAW_B.json | tee work/RAW_B_PRINTED_SHA256.txt
+          cmp work/RAW_A.json work/RAW_B.json
+          sha256sum work/RAW_B.json | tee work/RAW_B_SHA256.txt
+          echo 'byte_identical=true' | tee work/REPLAY.txt
+
+      - name: Reveal gold and score
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_authority_fusion_rc0/score.py --raw work/RAW_A.json --gold work/sealed_gold/gold.jsonl --output work/SCORE.json | tee work/SCORE_PRINTED_SHA256.txt
+          sha256sum work/SCORE.json | tee work/SCORE_SHA256.txt
+
+      - name: Apply preregistered terminal gates
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          raw=json.load(open('work/RAW_A.json'))
+          scored=json.load(open('work/SCORE.json'))
+          a0=scored['summaries']['A0_AUTHORITY_ONLY']
+          a1=scored['summaries']['A1_FUSION']
+          violations=[]
+          for row in raw['rows']:
+              sel=row['systems']['A1_FUSION']['selected']
+              if not sel:
+                  continue
+              chosen=next(c for c in row['candidates'] if c['candidate_id']==sel)
+              if row['root_hazards']:
+                  violations.append({'root_id':row['root_id'],'kind':'ROOT_HAZARD_OVERRIDE','selected':sel})
+              if chosen['authority_disposition']!='ACCEPTABLE_WITHIN_PROFILE':
+                  violations.append({'root_id':row['root_id'],'kind':'AUTHORITY_OVERRIDE','selected':sel})
+              if chosen['candidate_hazards']:
+                  violations.append({'root_id':row['root_id'],'kind':'CANDIDATE_HAZARD_OVERRIDE','selected':sel,'hazards':chosen['candidate_hazards']})
+          if a1['unsafe_selects']>0 or a1['correct_abstains']<4 or violations:
+              disposition='FALSIFIED'
+              classification='FALSIFIED_AUTHORITY_PRESERVING_FUSION'
+          elif a1['safe_selects'] >= a0['safe_selects'] + 2:
+              disposition='INCONCLUSIVE'
+              classification='SUPPORTED_AS_NONAUTHORITATIVE_FUSION_CANDIDATE'
+              # Fresh gain is necessary but this RC0 still cannot authorize promotion; governance remains inconclusive pending independent qualification.
+          else:
+              disposition='INCONCLUSIVE'
+              classification='INCONCLUSIVE_NO_MATERIAL_RESOLUTION_GAIN'
+          out={'governance_disposition':disposition,'experimental_classification':classification,'A0':a0,'A1':a1,'authority_override_violations':violations,'safe_resolution_gain':a1['safe_selects']-a0['safe_selects']}
+          open('work/TERMINAL.json','w').write(json.dumps(out,sort_keys=True,separators=(',',':'))+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+          sha256sum work/TERMINAL.json | tee work/TERMINAL_SHA256.txt
+
+      - name: Preserve decisive receipt hashes
+        run: |
+          set -euo pipefail
+          sha256sum work/FRESH_CASES.jsonl work/RAW_A.json work/RAW_B.json work/SCORE.json work/TERMINAL.json work/REPLAY.txt work/rc1_evaluator.py | sort | tee work/SHA256SUMS.txt
+
+      - name: Upload decisive receipts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-authority-fusion-rc0-decisive
+          path: work/
+          if-no-files-found: error
+          retention-days: 90
