@@ -39,7 +39,7 @@ Return a single JSON object with:
     "reviewer_id": "<opaque name>",
     "model_or_human": "<description>",
     "execution_context": "<fresh context description>",
-    "packet_sha256": "0b8b3e9021a992bbcc810cce7c3d2293b881d4d9eb7db0d0e9b7e3cb4b211455",
+    "packet_canonical_sha256": "4f50b1e385c48b6b15fc223f4700f0c104ce1633742887ced388fe6342420e9c",
     "independent_of_other_reviewers": true
   },
   "judgments": [
