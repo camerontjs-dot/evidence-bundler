@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-PACKET_SHA256 = "0b8b3e9021a992bbcc810cce7c3d2293b881d4d9eb7db0d0e9b7e3cb4b211455"
+PACKET_CANONICAL_SHA256 = "4f50b1e385c48b6b15fc223f4700f0c104ce1633742887ced388fe6342420e9c"
 EXPECTED_RUN = 34649326414
 EXPECTED_ARTIFACT_ID = 10282804289
 EXPECTED_ARTIFACT_DIGEST = "sha256:3424e70988a2ca878e97f6eeaf855cd5ebbd449413536841872bd485de74819d"
@@ -30,6 +30,16 @@ def sha256_bytes(data: bytes) -> str:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def canonical_json_sha256(obj: Any) -> str:
+    payload = json.dumps(
+        obj,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    ).encode("utf-8")
+    return sha256_bytes(payload)
 
 
 def verify_sha256sums(root: Path) -> None:
@@ -107,10 +117,9 @@ def build_frozen_mapping(root: Path) -> tuple[dict[str, dict[str, str]], dict[st
 
 
 def verify_packet(packet_path: Path, mapping: dict[str, dict[str, str]]) -> None:
-    data = packet_path.read_bytes()
-    if sha256_bytes(data) != PACKET_SHA256:
-        raise ValueError("blind packet SHA-256 mismatch")
-    packet = json.loads(data)
+    packet = load_json(packet_path)
+    if canonical_json_sha256(packet) != PACKET_CANONICAL_SHA256:
+        raise ValueError("blind packet canonical JSON SHA-256 mismatch")
     if packet.get("item_count") != 27:
         raise ValueError("packet item count mismatch")
     ids = {x["item_id"] for x in packet["items"]}
@@ -135,7 +144,7 @@ def parse_review(path: Path, allowed_ids: set[str], exact_ids: set[str] | None =
     if obj.get("schema") != "eb-v1-k7-blind-adjudication-result-v1":
         raise ValueError(f"{path}: wrong review schema")
     reviewer = obj.get("reviewer", {})
-    if reviewer.get("packet_sha256") != PACKET_SHA256:
+    if reviewer.get("packet_canonical_sha256") != PACKET_CANONICAL_SHA256:
         raise ValueError(f"{path}: packet hash mismatch")
     if reviewer.get("independent_of_other_reviewers") is not True:
         raise ValueError(f"{path}: independence not asserted")
@@ -251,7 +260,7 @@ def main() -> int:
             "artifact_digest": EXPECTED_ARTIFACT_DIGEST,
             "terminal_disposition": "INCONCLUSIVE_GOLD_COVERAGE",
         },
-        "packet_sha256": PACKET_SHA256,
+        "packet_canonical_sha256": PACKET_CANONICAL_SHA256,
         "reviewer_a": str(args.review_a),
         "reviewer_b": str(args.review_b),
         "reviewer_c": str(args.review_c) if args.review_c else None,
