@@ -50,8 +50,10 @@ It must not expose:
 
 Packet identity is frozen before adjudication:
 
-`BLIND_ADJUDICATION_PACKET.json` SHA-256:
-`0b8b3e9021a992bbcc810cce7c3d2293b881d4d9eb7db0d0e9b7e3cb4b211455`
+`BLIND_ADJUDICATION_PACKET.json` canonical-JSON SHA-256 (UTF-8, sorted keys, compact separators):
+`4f50b1e385c48b6b15fc223f4700f0c104ce1633742887ced388fe6342420e9c`
+
+The initial raw-byte hash in preregistration was superseded pre-exposure by the recorded packet-serialization deviation; scientific JSON content and all 27 items were unchanged.
 
 ## Adjudication labels
 
