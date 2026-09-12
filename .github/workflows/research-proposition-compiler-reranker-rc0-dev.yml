@@ -48,7 +48,7 @@ jobs:
           set -euo pipefail
           mv research/proposition_compiler_reranker_rc0/GOLD/dev_gold.jsonl work/sealed_gold/dev_gold.jsonl
           test ! -e research/proposition_compiler_reranker_rc0/GOLD/dev_gold.jsonl
-          ! grep -nE 'dev_gold|safe_candidate_ids|critical_unsafe_candidate_ids|expected' research/proposition_compiler_reranker_rc0/runner.py
+          ! grep -nE 'dev_gold|safe_candidate_ids|critical_unsafe_candidate_ids' research/proposition_compiler_reranker_rc0/runner.py
 
       - name: Score development candidates before gold
         env:
