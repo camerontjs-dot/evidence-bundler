@@ -3,19 +3,44 @@
   "title": "EB V1 K7 Blind Adjudication Result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "reviewer", "judgments"],
+  "required": [
+    "schema",
+    "reviewer",
+    "judgments"
+  ],
   "properties": {
-    "schema": {"const": "eb-v1-k7-blind-adjudication-result-v1"},
+    "schema": {
+      "const": "eb-v1-k7-blind-adjudication-result-v1"
+    },
     "reviewer": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["reviewer_id", "model_or_human", "execution_context", "packet_sha256", "independent_of_other_reviewers"],
+      "required": [
+        "reviewer_id",
+        "model_or_human",
+        "execution_context",
+        "packet_canonical_sha256",
+        "independent_of_other_reviewers"
+      ],
       "properties": {
-        "reviewer_id": {"type": "string", "minLength": 1},
-        "model_or_human": {"type": "string", "minLength": 1},
-        "execution_context": {"type": "string", "minLength": 1},
-        "packet_sha256": {"const": "0b8b3e9021a992bbcc810cce7c3d2293b881d4d9eb7db0d0e9b7e3cb4b211455"},
-        "independent_of_other_reviewers": {"const": true}
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_or_human": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independent_of_other_reviewers": {
+          "const": true
+        },
+        "packet_canonical_sha256": {
+          "const": "4f50b1e385c48b6b15fc223f4700f0c104ce1633742887ced388fe6342420e9c"
+        }
       }
     },
     "judgments": {
@@ -25,11 +50,27 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["item_id", "label", "rationale"],
+        "required": [
+          "item_id",
+          "label",
+          "rationale"
+        ],
         "properties": {
-          "item_id": {"type": "string", "pattern": "^[0-9a-f]{16}$"},
-          "label": {"enum": ["MATERIAL_OR_POTENTIALLY_USEFUL_FOR_PROPOSITION", "KNOWN_NON_REQUIRED_OR_DISTRACTOR", "UNRESOLVED"]},
-          "rationale": {"type": "string", "minLength": 1}
+          "item_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{16}$"
+          },
+          "label": {
+            "enum": [
+              "MATERIAL_OR_POTENTIALLY_USEFUL_FOR_PROPOSITION",
+              "KNOWN_NON_REQUIRED_OR_DISTRACTOR",
+              "UNRESOLVED"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }
