@@ -1,0 +1,100 @@
+name: Research - Proposition Compiler Reranker RC0 Development
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_reranker_rc0/**"
+      - ".github/workflows/research-proposition-compiler-reranker-rc0-dev.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  development-calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record hosted identity
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_gold
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+
+      - name: Install exact repository surface
+        run: |
+          set -euo pipefail
+          python -m pip install -e ".[dev]"
+
+      - name: Compile research apparatus
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            research/proposition_compiler_reranker_rc0/runner.py \
+            research/proposition_compiler_reranker_rc0/calibrate.py \
+            research/proposition_compiler_reranker_rc0/evaluate.py
+
+      - name: Seal development gold away from scorer
+        run: |
+          set -euo pipefail
+          mv research/proposition_compiler_reranker_rc0/GOLD/dev_gold.jsonl work/sealed_gold/dev_gold.jsonl
+          test ! -e research/proposition_compiler_reranker_rc0/GOLD/dev_gold.jsonl
+          ! grep -nE 'dev_gold|safe_candidate_ids|critical_unsafe_candidate_ids|expected' research/proposition_compiler_reranker_rc0/runner.py
+
+      - name: Score development candidates before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/runner.py \
+            --cases research/proposition_compiler_reranker_rc0/dev_cases.jsonl \
+            --output work/DEV_RAW_A.json | tee work/DEV_RAW_A_PRINTED_SHA256.txt
+          sha256sum work/DEV_RAW_A.json | tee work/DEV_RAW_A_SHA256.txt
+
+      - name: Exact development replay before calibration
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/runner.py \
+            --cases research/proposition_compiler_reranker_rc0/dev_cases.jsonl \
+            --output work/DEV_RAW_B.json | tee work/DEV_RAW_B_PRINTED_SHA256.txt
+          cmp work/DEV_RAW_A.json work/DEV_RAW_B.json
+          echo 'byte_identical=true' | tee work/REPLAY.txt
+
+      - name: Calibrate after raw freeze
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/calibrate.py \
+            --raw work/DEV_RAW_A.json \
+            --gold work/sealed_gold/dev_gold.jsonl \
+            --output work/CALIBRATION.json | tee work/CALIBRATION_PRINTED_SHA256.txt
+          python - <<'PY'
+          import json
+          result=json.load(open('work/CALIBRATION.json'))
+          for system,row in result['systems'].items():
+              chosen=row.get('chosen')
+              print(system, row['status'], chosen and {k:chosen[k] for k in ('floor','margin_threshold','safe_selects','unsafe_selects','correct_abstains','false_abstains','critical_unsafe_top1')})
+          PY
+
+      - name: Hash development receipts
+        run: |
+          set -euo pipefail
+          sha256sum work/DEV_RAW_A.json work/DEV_RAW_B.json work/CALIBRATION.json work/REPLAY.txt | sort | tee work/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-reranker-rc0-development
+          path: work/
+          if-no-files-found: error
+          retention-days: 90
