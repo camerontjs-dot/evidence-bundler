@@ -1,0 +1,136 @@
+name: Research - Proposition Compiler CAL Learned Reranker RC0 Decisive
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_cal_learned_reranker_rc0/**"
+      - ".github/workflows/research-proposition-compiler-cal-learned-reranker-rc0-decisive.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-learned-ranking:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record hosted identity and verify frozen objects
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_gold
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py)" = 'f0440ca67189bedd1f898bed46dfc8a80ac6c12e'
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py)" = 'cd3f2cb75e3ebfd51d16be480b64d9adcde35585'
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json)" = '0e9e10d998c2641ea90a19c079125394d735ff0c'
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/cases_a.jsonl)" = 'f78cb78f211ce9587a12408a4677c2c780b031fe'
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/cases_b.jsonl)" = 'b65bc4c2a8cbc9d58f4559aa3690ee7b897a6013'
+          test "$(git hash-object research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl)" = 'd99225950c78e187482a3e5bd0bf6a7ace3d47ae'
+          echo 'a4e6aecbb02af4cb1cdd4bd6116a955ca4cc05480ad93daf00ca28323de91e7b  research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json' | sha256sum -c -
+          cat research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/cases_a.jsonl research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/cases_b.jsonl > work/FRESH_CASES.jsonl
+          echo '480c2e876fefd66c3315152cefdb531b739e83e42a1c29a9371b2507a21c0319  work/FRESH_CASES.jsonl' | sha256sum -c -
+          echo 'cb6a7805b9fefe5e26d6bb9ff5bf5081a347c32ee8d9902c94bf8c37b4ceaf67  research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl' | sha256sum -c -
+
+      - name: Install frozen scorer runtime
+        run: |
+          set -euo pipefail
+          python -m pip install 'torch==2.14.0' 'transformers==5.17.0' 'tokenizers==0.23.2' 'huggingface-hub==1.31.0'
+          python - <<'PY'
+          from importlib.metadata import version
+          for p,v in [('torch','2.14.0'),('transformers','5.17.0'),('tokenizers','0.23.2'),('huggingface-hub','1.31.0')]:
+              assert version(p)==v,(p,version(p))
+          print('runtime_distribution_versions_exact=true')
+          PY
+
+      - name: Fetch exact frozen predecessor scorer
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/b7755caa740245682544282c869dc816670976c0/research/proposition_compiler_reranker_rc0/runner.py' -o work/frozen_runner.py
+          test "$(git hash-object work/frozen_runner.py)" = 'c717d5c066305c3f612ef82c5314974a3777f1e3'
+          python -m py_compile work/frozen_runner.py research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py
+
+      - name: Seal fresh gold away from scorers
+        run: |
+          set -euo pipefail
+          mv research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl work/sealed_gold/gold.jsonl
+          test ! -e research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl
+          ! grep -nE 'safe_candidate_ids|critical_unsafe_candidate_ids|shared_fresh/gold' work/frozen_runner.py research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py
+
+      - name: Execute frozen base scoring before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python work/frozen_runner.py --cases work/FRESH_CASES.jsonl --output work/BASE_RAW_A.json | tee work/BASE_RAW_A_PRINTED_SHA256.txt
+          python work/frozen_runner.py --cases work/FRESH_CASES.jsonl --output work/BASE_RAW_B.json | tee work/BASE_RAW_B_PRINTED_SHA256.txt
+          cmp work/BASE_RAW_A.json work/BASE_RAW_B.json
+          sha256sum work/BASE_RAW_A.json work/BASE_RAW_B.json | tee work/BASE_RAW_SHA256.txt
+
+      - name: Apply frozen learned ranking before gold
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py score --cases work/FRESH_CASES.jsonl --raw work/BASE_RAW_A.json --model research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json --output work/T1_RAW_A.json | tee work/T1_RAW_A_PRINTED_SHA256.txt
+          python research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py score --cases work/FRESH_CASES.jsonl --raw work/BASE_RAW_B.json --model research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json --output work/T1_RAW_B.json | tee work/T1_RAW_B_PRINTED_SHA256.txt
+          cmp work/T1_RAW_A.json work/T1_RAW_B.json
+          sha256sum work/T1_RAW_A.json work/T1_RAW_B.json | tee work/T1_RAW_SHA256.txt
+          echo 'byte_identical=true' | tee work/REPLAY.txt
+
+      - name: Reveal gold and evaluate ranking
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_cal_learned_reranker_rc0/evaluate.py --raw work/T1_RAW_A.json --gold work/sealed_gold/gold.jsonl --model research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json --output work/EVALUATION.json | tee work/EVALUATION_PRINTED_SHA256.txt
+          sha256sum work/EVALUATION.json | tee work/EVALUATION_SHA256.txt
+
+      - name: Apply preregistered terminal gates
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          r=json.load(open('work/EVALUATION.json'))['summaries']
+          r2=r['R2_bidirectional_nli']
+          t1=r['T1_CAL_LINEAR']
+          if t1['selection_available']:
+              raise SystemExit('Frozen model unexpectedly gained a selection calibration')
+          overall=float(t1['pairwise_safe_over_unsafe_rate'])
+          critical=float(t1['critical_pairwise_safe_over_unsafe_rate'])
+          r2_overall=float(r2['pairwise_safe_over_unsafe_rate'])
+          r2_critical=float(r2['critical_pairwise_safe_over_unsafe_rate'])
+          if overall <= r2_overall or critical <= r2_critical:
+              disposition='FALSIFIED'
+              classification='FALSIFIED_NO_FRESH_RANKING_ADVANTAGE'
+          elif overall >= 0.95 and critical >= 0.95:
+              disposition='INCONCLUSIVE'
+              classification='INCONCLUSIVE_STRONG_RANKING_SIGNAL_NO_SAFE_CALIBRATION'
+          else:
+              disposition='INCONCLUSIVE'
+              classification='INCONCLUSIVE_RANKING_IMPROVEMENT_BELOW_POSITIVE_GATE'
+          out={'governance_disposition':disposition,'experimental_classification':classification,'R2':r2,'T1':t1,'overall_gain':overall-r2_overall,'critical_gain':critical-r2_critical,'selection_calibration':'NO_ZERO_UNSAFE_CALIBRATION'}
+          open('work/TERMINAL.json','w').write(json.dumps(out,sort_keys=True,separators=(',',':'))+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+          sha256sum work/TERMINAL.json | tee work/TERMINAL_SHA256.txt
+
+      - name: Preserve decisive receipt hashes
+        run: |
+          set -euo pipefail
+          sha256sum work/FRESH_CASES.jsonl work/BASE_RAW_A.json work/BASE_RAW_B.json work/T1_RAW_A.json work/T1_RAW_B.json work/EVALUATION.json work/TERMINAL.json work/REPLAY.txt research/proposition_compiler_cal_learned_reranker_rc0/FROZEN_MODEL.json | sort | tee work/SHA256SUMS.txt
+
+      - name: Upload decisive receipts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-cal-learned-reranker-rc0-decisive
+          path: work/
+          if-no-files-found: error
+          retention-days: 90
