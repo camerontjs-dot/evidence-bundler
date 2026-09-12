@@ -53,12 +53,12 @@ jobs:
             'tokenizers==0.23.2' \
             'huggingface-hub==1.31.0'
           python - <<'PY'
-          import torch, transformers, tokenizers, huggingface_hub
-          assert torch.__version__ == '2.14.0'
-          assert transformers.__version__ == '5.17.0'
-          assert tokenizers.__version__ == '0.23.2'
-          assert huggingface_hub.__version__ == '1.31.0'
-          print('runtime_versions_exact=true')
+          from importlib.metadata import version
+          assert version('torch') == '2.14.0'
+          assert version('transformers') == '5.17.0'
+          assert version('tokenizers') == '0.23.2'
+          assert version('huggingface-hub') == '1.31.0'
+          print('runtime_distribution_versions_exact=true')
           PY
 
       - name: Compile frozen apparatus
