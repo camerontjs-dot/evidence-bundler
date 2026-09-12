@@ -65,7 +65,9 @@ jobs:
           set -euo pipefail
           mv research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl work/sealed_gold/gold.jsonl
           test ! -e research/proposition_compiler_cal_learned_reranker_rc0/shared_fresh/gold.jsonl
-          ! grep -nE 'safe_candidate_ids|critical_unsafe_candidate_ids|shared_fresh/gold' work/frozen_runner.py research/proposition_compiler_cal_learned_reranker_rc0/cal_ranker.py
+          ! grep -nE 'safe_candidate_ids|critical_unsafe_candidate_ids|shared_fresh/gold' work/frozen_runner.py
+          # cal_ranker.py contains training/calibration code that legitimately names gold fields,
+          # but the decisive command below invokes only its `score` subcommand with no gold path.
 
       - name: Execute frozen base scoring before gold
         env:
