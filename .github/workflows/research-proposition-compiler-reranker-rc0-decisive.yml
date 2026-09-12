@@ -1,0 +1,133 @@
+name: Research - Proposition Compiler Reranker RC0 Decisive
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_reranker_rc0/**"
+      - ".github/workflows/research-proposition-compiler-reranker-rc0-decisive.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  decisive-reranker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record hosted identity
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_gold
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+
+      - name: Verify frozen scientific Git blobs
+        run: |
+          set -euo pipefail
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/runner.py)" = 'c717d5c066305c3f612ef82c5314974a3777f1e3'
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/calibrate.py)" = '1250868ac59278006eddf8a2f6ea22860e7782b8'
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/evaluate.py)" = '310a31d6f846a07c1eb9d2e1df4728aa2a1c9260'
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/FROZEN_CALIBRATION.json)" = 'd3476286fc01655ca1f379e8f4b4f2e5b50d5c0b'
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/fresh_cases.jsonl)" = 'bef1d64c160f4b2ff140bd62caadcc1467a57739'
+          test "$(git hash-object research/proposition_compiler_reranker_rc0/GOLD/fresh_gold.jsonl)" = 'bfbc7414f136af421fa98ede59ebbf7c5f6ddd85'
+          sha256sum research/proposition_compiler_reranker_rc0/FROZEN_CALIBRATION.json | tee work/CALIBRATION_CONTENT_SHA256.txt
+          grep -q '^2099d086de75f05030bc6cbf0ba51ae4c2882e71c11e4c106860b634299bfcd5 ' work/CALIBRATION_CONTENT_SHA256.txt
+
+      - name: Install frozen model runtime
+        run: |
+          set -euo pipefail
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+          python - <<'PY'
+          import torch, transformers, tokenizers, huggingface_hub
+          assert torch.__version__ == '2.14.0'
+          assert transformers.__version__ == '5.17.0'
+          assert tokenizers.__version__ == '0.23.2'
+          assert huggingface_hub.__version__ == '1.31.0'
+          print('runtime_versions_exact=true')
+          PY
+
+      - name: Compile frozen apparatus
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            research/proposition_compiler_reranker_rc0/runner.py \
+            research/proposition_compiler_reranker_rc0/evaluate.py
+
+      - name: Seal fresh gold away from scorer
+        run: |
+          set -euo pipefail
+          mv research/proposition_compiler_reranker_rc0/GOLD/fresh_gold.jsonl work/sealed_gold/fresh_gold.jsonl
+          test ! -e research/proposition_compiler_reranker_rc0/GOLD/fresh_gold.jsonl
+          ! grep -nE 'fresh_gold|safe_candidate_ids|critical_unsafe_candidate_ids' research/proposition_compiler_reranker_rc0/runner.py
+
+      - name: Execute fresh scoring before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/runner.py \
+            --cases research/proposition_compiler_reranker_rc0/fresh_cases.jsonl \
+            --output work/FRESH_RAW_A.json | tee work/FRESH_RAW_A_PRINTED_SHA256.txt
+          sha256sum work/FRESH_RAW_A.json | tee work/FRESH_RAW_A_SHA256.txt
+
+      - name: Exact fresh replay before gold
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/runner.py \
+            --cases research/proposition_compiler_reranker_rc0/fresh_cases.jsonl \
+            --output work/FRESH_RAW_B.json | tee work/FRESH_RAW_B_PRINTED_SHA256.txt
+          cmp work/FRESH_RAW_A.json work/FRESH_RAW_B.json
+          sha256sum work/FRESH_RAW_B.json | tee work/FRESH_RAW_B_SHA256.txt
+          echo 'byte_identical=true' | tee work/REPLAY.txt
+
+      - name: Evaluate only after raw freeze
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_reranker_rc0/evaluate.py \
+            --raw work/FRESH_RAW_A.json \
+            --gold work/sealed_gold/fresh_gold.jsonl \
+            --calibration research/proposition_compiler_reranker_rc0/FROZEN_CALIBRATION.json \
+            --output work/EVALUATION.json | tee work/EVALUATION_PRINTED_SHA256.txt
+          sha256sum work/EVALUATION.json | tee work/EVALUATION_SHA256.txt
+          python - <<'PY'
+          import json
+          r=json.load(open('work/EVALUATION.json'))
+          print(json.dumps({'disposition':r['disposition'],'reason':r['reason'],'summaries':r['summaries']}, indent=2, sort_keys=True))
+          PY
+
+      - name: Preserve decisive checksums
+        run: |
+          set -euo pipefail
+          sha256sum \
+            work/FRESH_RAW_A.json \
+            work/FRESH_RAW_B.json \
+            work/EVALUATION.json \
+            work/REPLAY.txt \
+            research/proposition_compiler_reranker_rc0/FROZEN_CALIBRATION.json \
+            | sort | tee work/SHA256SUMS.txt
+
+      - name: Upload decisive receipts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-reranker-rc0-decisive
+          path: work/
+          if-no-files-found: error
+          retention-days: 90
