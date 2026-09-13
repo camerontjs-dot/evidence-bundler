@@ -95,7 +95,6 @@ run_one() {
 
   local work
   work="$(mktemp -d "${TMPDIR:-/tmp}/eb-v1-codex-review.XXXXXX")"
-  trap 'rm -rf "$work"' RETURN
 
   cp "$packet_source" "$work/BLIND_REVIEW_PACKET.json"
   cp "$rubric_source" "$work/REVIEWER_RUBRIC.md"
@@ -105,7 +104,7 @@ run_one() {
 
   echo "Launching isolated reviewer ${neutral_arm}-${ordinal}"
 
-  (
+  if ! (
     cd "$work"
     codex exec \
       --ephemeral \
@@ -117,11 +116,17 @@ run_one() {
       --output-last-message "$final_out" \
       "$PROMPT" \
       > "$trace_out"
-  )
+  ); then
+    echo "ERROR: Codex reviewer ${neutral_arm}-${ordinal} failed. Preserving isolated workspace for diagnosis: $work" >&2
+    exit 3
+  fi
 
-  validate_review "$work/BLIND_REVIEW_PACKET.json" "$final_out" "$expected_count" "$expected_hash"
+  if ! validate_review "$work/BLIND_REVIEW_PACKET.json" "$final_out" "$expected_count" "$expected_hash"; then
+    echo "ERROR: reviewer ${neutral_arm}-${ordinal} failed structural validation. Preserving isolated workspace: $work" >&2
+    exit 4
+  fi
+
   rm -rf "$work"
-  trap - RETURN
 }
 
 # The supervisor may know the neutral arm names. Child executions do not receive
