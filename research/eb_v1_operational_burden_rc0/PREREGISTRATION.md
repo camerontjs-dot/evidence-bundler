@@ -128,7 +128,7 @@ These are descriptive workload/exposure measurements, not substitutes for human 
 
 Use exactly one:
 
-### `SUPPORTED FOR_V1_POLICY_REVIEW`
+### `SUPPORTED FOR PROMOTION`
 
 Use only if:
 
@@ -137,6 +137,8 @@ Use only if:
 - no apparatus-invalidating deviation occurred.
 
 Meaning: on this frozen cohort, the PR #72 distractor-dominance proxy did not predict worse blind admission decision quality on the matched relationships. This authorizes only a separate V1 policy/disposition review. It does not itself override PR #72, qualify K=7 as the production default, merge, release, tag, or promote.
+
+The promoted claim is only `NO_OBSERVED_DECISION_QUALITY_HARM_IN_MATCHED_BLIND_REVIEW`; this disposition is **not** Evidence Bundler V1 promotion authorization.
 
 ### `FALSIFIED`
 
@@ -154,7 +156,7 @@ Use for packet/answer-key identity mismatch, profile construction error, leaked 
 
 ## Interpretation boundary
 
-Even a `SUPPORTED FOR_V1_POLICY_REVIEW` result would establish only that **decision-quality harm was not observed in this bounded model-review study**. It would not establish:
+Even a `SUPPORTED FOR PROMOTION` result would establish only that **decision-quality harm was not observed in this bounded model-review study**. It would not establish:
 
 - acceptable human wall-clock review cost;
 - universal robustness to distractors;
