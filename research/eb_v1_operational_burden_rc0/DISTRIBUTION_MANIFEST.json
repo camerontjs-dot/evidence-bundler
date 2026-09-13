@@ -1,0 +1,13 @@
+{
+  "schema": "eb-v1-operational-review-distribution-v1",
+  "sets": {
+    "amber": {
+      "filename": "eb-v1-operational-review-amber.zip",
+      "zip_sha256": "47a641bd43115ae4914795e38c24153fbe5193731a74861455c14c06993e6fe4"
+    },
+    "cobalt": {
+      "filename": "eb-v1-operational-review-cobalt.zip",
+      "zip_sha256": "de60562f84f978d2edbfb0dba312c00ea3f41da3ddcd29e3f04ee0b1e9ddda2d"
+    }
+  }
+}
