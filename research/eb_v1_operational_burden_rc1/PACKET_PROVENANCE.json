@@ -1,0 +1,32 @@
+{
+  "schema": "eb-v1-operational-burden-rc1-packet-provenance-v1",
+  "source": {
+    "pr": 73,
+    "commit": "dd3aa6fbb19f77895131224319dd26d02a2bae39",
+    "reason_for_reuse": "RC0 was invalidated by rubric/answer-key construct mismatch, not by blind packet construction. RC1 deliberately reuses the exact frozen packet bytes and replaces only the task/reference/evaluator layer."
+  },
+  "arms": {
+    "amber": {
+      "profile_supervisor_only": "5/3",
+      "github_blob_sha": "269f99548e9381945c94553bd34111c500b061d6",
+      "packet_raw_sha256": "0e26242f3ec742e62c4cfba5334f06ef4d5d1da0c4847bf3e4dbb8f050824756",
+      "packet_canonical_sha256": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+      "lane_count": 18,
+      "relationship_count": 54,
+      "unique_physical_passage_count": 38,
+      "presented_passage_whitespace_tokens": 677
+    },
+    "cobalt": {
+      "profile_supervisor_only": "10/7",
+      "github_blob_sha": "c1b5965625c06f134208637091890700e6552978",
+      "packet_raw_sha256": "a4deaf891859e7ff543f07a9333d7e504e9c0b7268fdf6bedae6e6b978a184fb",
+      "packet_canonical_sha256": "9692386b125c73520fbdbd3c3f61b0c0b020f35b57b089cbd1bb17f662043675",
+      "lane_count": 18,
+      "relationship_count": 96,
+      "unique_physical_passage_count": 48,
+      "presented_passage_whitespace_tokens": 1456
+    }
+  },
+  "shared_relationship_count": 54,
+  "larger_arm_only_relationship_count": 42
+}
