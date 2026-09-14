@@ -1,0 +1,59 @@
+{
+  "schema": "eb-v1-operational-burden-raw-mechanical-reconstruction-v1",
+  "source_review_commit": "6da1d1489c7451726dab3bc6fdd92f9d1c99b89e",
+  "authoritative_for_promotion": false,
+  "reason_non_authoritative": "hidden answer key and reviewer rubric encode different materiality/admission constructs",
+  "arm_mapping": {
+    "amber": "5/3",
+    "cobalt": "10/7"
+  },
+  "shared_relationship_count": 54,
+  "primary": {
+    "amber": {
+      "per_reviewer": [
+        {"false_material": 4, "false_nonmaterial": 0, "unresolved": 0, "total_error": 4},
+        {"false_material": 4, "false_nonmaterial": 0, "unresolved": 0, "total_error": 4}
+      ],
+      "pooled": {"false_material": 8, "false_nonmaterial": 0, "unresolved": 0, "total_error": 8},
+      "inter_reviewer_disagreement": 0
+    },
+    "cobalt": {
+      "per_reviewer": [
+        {"false_material": 1, "false_nonmaterial": 0, "unresolved": 0, "total_error": 1},
+        {"false_material": 1, "false_nonmaterial": 0, "unresolved": 0, "total_error": 1}
+      ],
+      "pooled": {"false_material": 2, "false_nonmaterial": 0, "unresolved": 0, "total_error": 2},
+      "inter_reviewer_disagreement": 0
+    }
+  },
+  "larger_worse_flags": {
+    "false_material": false,
+    "false_nonmaterial": false,
+    "unresolved": false,
+    "inter_reviewer_disagreement": false
+  },
+  "mechanical_primary_conclusion": "NO_OBSERVED_DECISION_QUALITY_HARM",
+  "mechanical_primary_disposition": "SUPPORTED FOR PROMOTION",
+  "secondary_larger_only": {
+    "relationship_count": 42,
+    "gold_material_count": 3,
+    "gold_nonmaterial_count": 39,
+    "per_reviewer": [
+      {"false_material": 0, "false_nonmaterial": 0, "unresolved": 2, "total_error": 0},
+      {"false_material": 0, "false_nonmaterial": 0, "unresolved": 1, "total_error": 0}
+    ],
+    "material_correct_by_reviewer": [2, 2],
+    "nonmaterial_correct_by_reviewer": [38, 39],
+    "inter_reviewer_disagreement": 1
+  },
+  "descriptive_cross_arm_shared_label_flips": {
+    "count": 3,
+    "direction": "amber MATERIAL -> cobalt NONMATERIAL",
+    "semantic_relationships": [
+      "C06_HARD_NEG:child:1|C06-P3",
+      "C06_HARD_NEG:child:1|C06-P4",
+      "C06_HARD_NEG:child:1|C06-P5"
+    ]
+  },
+  "terminal_validity": "APPARATUS_INVALID"
+}
