@@ -1,0 +1,36 @@
+{
+  "schema": "eb-v1-selector-bakeoff-rc0-operational-binding-v1",
+  "authority": {
+    "reference_freeze_commit": "79e8c41462b791716c89b7f8329f15b580d504a7",
+    "terminal_commit": "e84cfd84826eacb9751ecf4b54ff9c369547df58",
+    "reference_file": "research/eb_v1_operational_burden_rc1/reference_outputs_v5/REFERENCE_COBALT.json",
+    "relation_map_file": "research/eb_v1_operational_burden_rc1/SUPERVISOR_RELATION_MAP.json",
+    "expected_label_counts": {"KEEP_DISTINCT": 19, "DROP_REDUNDANT": 3, "DROP_DISTRACTOR": 73, "UNRESOLVED": 1}
+  },
+  "non_drop_bindings": [
+    {"relation_id":"a71bd3f4518b39a3","semantic_key":"C01_DIRECT:child:1|C01-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"a2c5adebb805ad69","semantic_key":"C01_DIRECT:child:2|C01-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"9c3c473be51c1cb8","semantic_key":"C02_COUNTER:child:1|C02-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"475432e96a8a68e0","semantic_key":"C02_COUNTER:child:2|C02-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"fe599bc8cc26f0b8","semantic_key":"C03_POOL_MISS:child:1|C03-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"47fa7aeba33ac560","semantic_key":"C04_QUALIFIER:child:1|C04-P3","label":"KEEP_DISTINCT"},
+    {"relation_id":"7c1f7f6dc870683d","semantic_key":"C04_QUALIFIER:child:2|C04-P3","label":"KEEP_DISTINCT"},
+    {"relation_id":"dbe9cf0f08d29c32","semantic_key":"C05_JOINT:child:1|C05-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"5c7b94e653eb5fd0","semantic_key":"C05_JOINT:child:1|C05-P3","label":"KEEP_DISTINCT"},
+    {"relation_id":"41ee784b91d7d7ae","semantic_key":"C05_JOINT:child:2|C05-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"42ed1e7042b39c60","semantic_key":"C05_JOINT:child:2|C05-P3","label":"KEEP_DISTINCT"},
+    {"relation_id":"405f0cc0bcdccbbd","semantic_key":"C06_HARD_NEG:child:1|C06-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"2513a7047eef13e0","semantic_key":"C06_HARD_NEG:child:2|C06-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"4fd5852680b2a144","semantic_key":"C07_DUPLICATE:child:1|C07-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"f1d0cde8675d58c6","semantic_key":"C07_DUPLICATE:child:2|C07-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"2e3fe280f19281d8","semantic_key":"C08_ADMISSION:child:1|C08-P1","label":"KEEP_DISTINCT"},
+    {"relation_id":"80375b23285b8336","semantic_key":"C08_ADMISSION:child:2|C08-P2","label":"KEEP_DISTINCT"},
+    {"relation_id":"e8ec7ed594a57243","semantic_key":"RETRIEVAL_APERTURE:child:1|RET-AP-P6","label":"KEEP_DISTINCT"},
+    {"relation_id":"6f630270ca0be356","semantic_key":"RETRIEVAL_APERTURE:child:2|RET-AP-P7","label":"KEEP_DISTINCT"},
+    {"relation_id":"9f79ce4c025c60f3","semantic_key":"C04_QUALIFIER:child:1|C04-P1","label":"DROP_REDUNDANT"},
+    {"relation_id":"5db75ebe649e3e0f","semantic_key":"C04_QUALIFIER:child:2|C04-P2","label":"DROP_REDUNDANT"},
+    {"relation_id":"6aedadce120bea76","semantic_key":"C07_DUPLICATE:child:1|C07-P1T","label":"DROP_REDUNDANT"},
+    {"relation_id":"867a4e59a6339253","semantic_key":"C03_POOL_MISS:child:2|C03-P2","label":"UNRESOLVED"}
+  ],
+  "default_for_other_cobalt_relationships": "DROP_DISTRACTOR"
+}
