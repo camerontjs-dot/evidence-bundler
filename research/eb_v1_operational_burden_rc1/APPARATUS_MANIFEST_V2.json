@@ -1,0 +1,32 @@
+{
+  "schema": "eb-v1-operational-burden-rc1-apparatus-manifest-v2",
+  "identity_model": {
+    "repository_file_identity": "git_blob_sha1_via_git_hash_object",
+    "packet_semantic_identity": "canonical_json_sha256_sorted_keys_compact_utf8",
+    "v1_raw_sha256_status": "preserved_in_v1_record_but_non_authoritative_for_checkout_identity"
+  },
+  "git_blob_sha1": {
+    "APPARATUS_SELFTEST.md": "c0139bb974ff2422f7667306a276ffdf88d733f6",
+    "BLIND_REVIEW_PACKET_AMBER.json": "269f99548e9381945c94553bd34111c500b061d6",
+    "BLIND_REVIEW_PACKET_COBALT.json": "c1b5965625c06f134208637091890700e6552978",
+    "CODEX_SUPERVISOR_HANDOFF.md": "bfa9de7fcfe3e85f39957d4fe710dfbe119bcaf6",
+    "CONTEXT_FREE_EXECUTION.md": "9b3d1484566f41f03f4d747a221c0c4efcee358e",
+    "DEVIATION-PREEXPOSURE-APPARATUS-IDENTITY.md": "4969b4e98b19252bf6bbf91ed7b3dae4d12f9c72",
+    "OPERATIONAL_REVIEW_RUBRIC_AMBER.md": "04487cf231ba88600eb7be5fba4d990c4727a18d",
+    "OPERATIONAL_REVIEW_RUBRIC_COBALT.md": "721c014f493b9d8a909b356f54eb8be5a26d3db3",
+    "PACKET_PROVENANCE.json": "9769b6434bb7d6ca0080f6a9119586196e805e11",
+    "PREREGISTRATION.md": "cada74104ff41d6d6e43288c8a6aaf7201280d39",
+    "SUPERVISOR_RELATION_MAP.json": "435c58b28c09909c6ec6bedea24f55cb032bc00d",
+    "consolidate_references.py": "aa7abaf79ee95a705f62927eee068f9682e25348",
+    "evaluate_rc1.py": "8c4e775abdc5719b589872bcdb7860e489685cd7",
+    "review_common.py": "fae8a150200227b7b55a90646129bea285ea8946",
+    "run_rc1_with_codex.sh": "edb2b12a04fbe9dcb6b1d3095070ea90f75538ef",
+    "run_rc1_with_codex_v2.sh": "f3d98cc17d4e939f5eb58c376a0225599ae7dda3"
+  },
+  "packet_canonical_sha256": {
+    "BLIND_REVIEW_PACKET_AMBER.json": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+    "BLIND_REVIEW_PACKET_COBALT.json": "9692386b125c73520fbdbd3c3f61b0c0b020f35b57b089cbd1bb17f662043675"
+  },
+  "pre_exposure_failure_head": "4f62c8f0e7b75f8869d189430787360f20996203",
+  "semantic_exposure_before_v2": false
+}
