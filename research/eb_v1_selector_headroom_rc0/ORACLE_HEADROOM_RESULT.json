@@ -1,0 +1,84 @@
+{
+  "authorities": {
+    "gold_interpretation": "PR72 established all 27 previously unresolved retained relationships as KNOWN_NON_REQUIRED_OR_DISTRACTOR; PR63 explicit required mappings are therefore the conservative qualification-required oracle set.",
+    "pr63_artifact_id": 10282804289,
+    "pr63_artifact_sha256": "sha256:3424e70988a2ca878e97f6eeaf855cd5ebbd449413536841872bd485de74819d",
+    "pr63_run": 34649326414,
+    "pr72_conclusion": "FIXED_K_WIDENING_REJECTED_ON_COMPLETED_QUALIFICATION_GOLD",
+    "pr72_head": "22d83d9af465a026eb58ff64888267c4fce18619"
+  },
+  "classification": "RETROSPECTIVE_HEADROOM_ONLY",
+  "cohort": {
+    "candidate_relationships": 96,
+    "deepest_required_rank_distribution": {"1": 9, "2": 4, "3": 2, "4": 1, "6": 1, "7": 1},
+    "lanes": 18,
+    "qualification_required_relationships": 22,
+    "required_count_distribution": {"1": 14, "2": 4}
+  },
+  "fixed_k_frontier": [
+    {"fully_covered_lanes": 9, "k": 1, "required_kept": 13, "required_recall": 0.5909090909090909, "retained_relationships": 18},
+    {"fully_covered_lanes": 13, "k": 2, "required_kept": 17, "required_recall": 0.7727272727272727, "retained_relationships": 36},
+    {"fully_covered_lanes": 15, "k": 3, "required_kept": 19, "required_recall": 0.8636363636363636, "retained_relationships": 54},
+    {"fully_covered_lanes": 16, "k": 4, "required_kept": 20, "required_recall": 0.9090909090909091, "retained_relationships": 72},
+    {"fully_covered_lanes": 16, "k": 5, "required_kept": 20, "required_recall": 0.9090909090909091, "retained_relationships": 86},
+    {"fully_covered_lanes": 17, "k": 6, "required_kept": 21, "required_recall": 0.9545454545454546, "retained_relationships": 92},
+    {"fully_covered_lanes": 18, "k": 7, "required_kept": 22, "required_recall": 1.0, "retained_relationships": 96}
+  ],
+  "nonclaims": [
+    "This does not qualify a selector.",
+    "This does not prove candidate depth 10 is sufficient on future or naturalistic corpora.",
+    "Qualification-required is not identical to the later V5 operational KEEP_DISTINCT construct.",
+    "No retrieval or semantic review was rerun."
+  ],
+  "oracle": {
+    "compression_upper_bound_fraction": 0.7708333333333334,
+    "lane_rows": [
+      {"candidate_count": 5, "deepest_required_rank": 1, "oracle_removable_relationships": 4, "proposition_id": "C01_DIRECT:child:1", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 5, "deepest_required_rank": 1, "oracle_removable_relationships": 4, "proposition_id": "C01_DIRECT:child:2", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 4, "deepest_required_rank": 1, "oracle_removable_relationships": 3, "proposition_id": "C02_COUNTER:child:1", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 4, "deepest_required_rank": 1, "oracle_removable_relationships": 3, "proposition_id": "C02_COUNTER:child:2", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 7, "deepest_required_rank": 1, "oracle_removable_relationships": 6, "proposition_id": "C03_POOL_MISS:child:1", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 7, "deepest_required_rank": 6, "oracle_removable_relationships": 6, "proposition_id": "C03_POOL_MISS:child:2", "required_count": 1, "required_ranks": [6]},
+      {"candidate_count": 5, "deepest_required_rank": 2, "oracle_removable_relationships": 3, "proposition_id": "C04_QUALIFIER:child:1", "required_count": 2, "required_ranks": [1, 2]},
+      {"candidate_count": 5, "deepest_required_rank": 2, "oracle_removable_relationships": 3, "proposition_id": "C04_QUALIFIER:child:2", "required_count": 2, "required_ranks": [1, 2]},
+      {"candidate_count": 5, "deepest_required_rank": 3, "oracle_removable_relationships": 3, "proposition_id": "C05_JOINT:child:1", "required_count": 2, "required_ranks": [1, 3]},
+      {"candidate_count": 5, "deepest_required_rank": 3, "oracle_removable_relationships": 3, "proposition_id": "C05_JOINT:child:2", "required_count": 2, "required_ranks": [1, 3]},
+      {"candidate_count": 6, "deepest_required_rank": 4, "oracle_removable_relationships": 5, "proposition_id": "C06_HARD_NEG:child:1", "required_count": 1, "required_ranks": [4]},
+      {"candidate_count": 6, "deepest_required_rank": 1, "oracle_removable_relationships": 5, "proposition_id": "C06_HARD_NEG:child:2", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 5, "deepest_required_rank": 1, "oracle_removable_relationships": 4, "proposition_id": "C07_DUPLICATE:child:1", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 5, "deepest_required_rank": 2, "oracle_removable_relationships": 4, "proposition_id": "C07_DUPLICATE:child:2", "required_count": 1, "required_ranks": [2]},
+      {"candidate_count": 4, "deepest_required_rank": 1, "oracle_removable_relationships": 3, "proposition_id": "C08_ADMISSION:child:1", "required_count": 1, "required_ranks": [1]},
+      {"candidate_count": 4, "deepest_required_rank": 2, "oracle_removable_relationships": 3, "proposition_id": "C08_ADMISSION:child:2", "required_count": 1, "required_ranks": [2]},
+      {"candidate_count": 7, "deepest_required_rank": 7, "oracle_removable_relationships": 6, "proposition_id": "RETRIEVAL_APERTURE:child:1", "required_count": 1, "required_ranks": [7]},
+      {"candidate_count": 7, "deepest_required_rank": 1, "oracle_removable_relationships": 6, "proposition_id": "RETRIEVAL_APERTURE:child:2", "required_count": 1, "required_ranks": [1]}
+    ],
+    "max_per_lane": 2,
+    "mean_per_lane": 1.2222222222222223,
+    "median_per_lane": 1.0,
+    "removable_relationships_upper_bound": 74,
+    "retained_relationships": 22
+  },
+  "rank_gt_3_required": [
+    {"evidence_id": "C03-P2", "proposition_id": "C03_POOL_MISS:child:2", "rank": 6, "score": 1.026309538064},
+    {"evidence_id": "C06-P1", "proposition_id": "C06_HARD_NEG:child:1", "rank": 4, "score": 1.516499547732},
+    {"evidence_id": "RET-AP-P6", "proposition_id": "RETRIEVAL_APERTURE:child:1", "rank": 7, "score": 0.294235083295}
+  ],
+  "schema": "eb-v1-selector-headroom-rc0-result-v1",
+  "simple_score_diagnostics": {
+    "largest_relative_gap": {
+      "failures": [
+        {"cut_after_rank": 1, "missed_required": [{"evidence_id": "C04-P2", "rank": 2, "score": 2.791974006947}], "proposition_id": "C04_QUALIFIER:child:2"},
+        {"cut_after_rank": 3, "missed_required": [{"evidence_id": "C06-P1", "rank": 4, "score": 1.516499547732}], "proposition_id": "C06_HARD_NEG:child:1"},
+        {"cut_after_rank": 5, "missed_required": [{"evidence_id": "RET-AP-P6", "rank": 7, "score": 0.294235083295}], "proposition_id": "RETRIEVAL_APERTURE:child:1"}
+      ],
+      "fully_covered_lanes": 15,
+      "required_kept": 19,
+      "required_total": 22,
+      "retained_relationships": 56
+    },
+    "lossless_global_ratio_fully_covered_lanes": 18,
+    "lossless_global_ratio_required_kept": 22,
+    "lossless_global_ratio_retained_relationships": 73,
+    "lossless_global_top_score_ratio": 0.24649237138715252
+  }
+}
