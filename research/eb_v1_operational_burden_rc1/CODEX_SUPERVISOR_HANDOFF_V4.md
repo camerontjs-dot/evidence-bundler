@@ -31,6 +31,14 @@ V4 keeps the V3 identity, packet, structure, relation-map, rubric-hash, isolatio
 
 The only new correction is Bash portability for macOS system Bash. The launcher deterministically rewrites exactly two Bash-4-only uppercase expansions in the temporary generated runner, verifies none remain, and runs `bash -n` before any semantic child execution.
 
+The V4 apparatus record is:
+
+`research/eb_v1_operational_burden_rc1/APPARATUS_MANIFEST_V4.json`
+
+The preserved portability deviation is:
+
+`research/eb_v1_operational_burden_rc1/DEVIATION-PREEXPOSURE-BASH-PORTABILITY.md`
+
 ## Supervisor prohibitions
 
 Do not:
