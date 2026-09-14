@@ -1,0 +1,22 @@
+Reading additional input from stdin...
+2026-09-14T17:15:51.279863Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.284299Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.287964Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.290822Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.293664Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.296944Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.299761Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.302676Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.305893Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.308768Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.311666Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.314637Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.319014Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.324355Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.327109Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.330150Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-09-14T17:15:51.968960Z  WARN codex_rmcp_client::oauth::refresh_transaction: MCP OAuth refresh token was rejected; reauthorization required error=OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found
+2026-09-14T17:15:51.969180Z ERROR codex_rmcp_client::oauth::refresh_transaction: error=failed to refresh OAuth tokens for server cloudflare-api: OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found
+2026-09-14T17:15:51.969305Z  WARN codex_rmcp_client::oauth::refresh_transaction: MCP OAuth refresh transaction failed server_name=cloudflare-api refresh_reason="expiry" error=failed to refresh OAuth tokens for server cloudflare-api: OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found
+2026-09-14T17:15:51.969511Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="cloudflare-api" error=failed to refresh OAuth tokens for server cloudflare-api: OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found: OAuth authorization required
+2026-09-14T17:16:53.132747Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: failed to refresh OAuth tokens for server cloudflare-api: OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found: OAuth authorization required

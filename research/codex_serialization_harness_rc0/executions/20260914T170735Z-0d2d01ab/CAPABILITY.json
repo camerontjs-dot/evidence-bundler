@@ -1,0 +1,13 @@
+{
+  "codex_version": "codex-cli 0.154.0",
+  "output_schema_supported": true,
+  "required_flags": [
+    "--output-schema",
+    "--output-last-message",
+    "--json",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--sandbox"
+  ]
+}

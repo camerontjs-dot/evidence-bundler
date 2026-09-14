@@ -1,0 +1,18 @@
+{
+  "negative_controls": {
+    "duplicate_key": "DuplicateKeyError",
+    "duplicate_result_message": "ValueError",
+    "extra_id": "ValueError",
+    "forbidden_command": "ValueError",
+    "invalid_label": "ValueError",
+    "malformed_result_message": "ValueError",
+    "missing_id": "ValueError",
+    "result_not_last": "ValueError",
+    "wrong_reviewer_id": "ValueError",
+    "wrong_valid_label": "ValueError"
+  },
+  "pass": true,
+  "schema": "eb-codex-serialization-harness-selftest-v2",
+  "status_message_control_passed": true,
+  "valid_control_passed": true
+}
