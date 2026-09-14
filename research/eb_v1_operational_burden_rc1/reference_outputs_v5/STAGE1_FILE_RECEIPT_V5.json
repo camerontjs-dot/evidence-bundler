@@ -1,0 +1,74 @@
+{
+  "files": {
+    "CODEX_VERSION.txt": {
+      "sha256": "5efa0283757c66156d45d082b4e2e8afb881de3a97862bc03aed7fb34f45df7b"
+    },
+    "REFERENCE_AMBER.json": {
+      "sha256": "818802c9044967d0ec39f0e990eb7be77c5d0bdb34d3e7af5e9f317525878302"
+    },
+    "REFERENCE_AMBER_1.json": {
+      "sha256": "b983544dcf2ad903a6266fa0e0da70e8a4f244aac196ee8d4872593164635b30"
+    },
+    "REFERENCE_AMBER_1.stderr.log": {
+      "sha256": "938e3795f519407b61b65c93f5358a8a6c3868b02b73d829f4118275a8fa4581"
+    },
+    "REFERENCE_AMBER_1.trace.jsonl": {
+      "sha256": "1618ff3c9c42ec0d98a55b650aa722cce3f46fd7f611ebb59a5bdc6586631b4d"
+    },
+    "REFERENCE_AMBER_2.json": {
+      "sha256": "058426db1c5b6610a90c591d0765fdf001bcd12c0a081b2c6ea1c64ae84fbee5"
+    },
+    "REFERENCE_AMBER_2.stderr.log": {
+      "sha256": "b745ba93b778f5b46a44397b58e7158723174f1f5fbbecd287dec2b28c46c699"
+    },
+    "REFERENCE_AMBER_2.trace.jsonl": {
+      "sha256": "b38f62cd424204e17845357e1f75bf0a3cd0ff9797339597e001ddc293fe05d8"
+    },
+    "REFERENCE_AMBER_3.json": {
+      "sha256": "fa73eba8e4c2c1ca25da26da7d6cb59d0501481549369dc3309439e9ac83efd2"
+    },
+    "REFERENCE_AMBER_3.stderr.log": {
+      "sha256": "22e100d884acfcb9aaff01b516edbaed6ffb118d8057664d6852954ee4fed199"
+    },
+    "REFERENCE_AMBER_3.trace.jsonl": {
+      "sha256": "dad126c47b585c6a5bbf85b7b5937c0ad73131463daf77ea87c2d495b3244392"
+    },
+    "REFERENCE_COBALT.json": {
+      "sha256": "1fb8436ce65f2f6684ddbab12c80822826f639e6eb16c6ac136d709d12660a2a"
+    },
+    "REFERENCE_COBALT_1.json": {
+      "sha256": "bbb059264dfc526b4da3a23659b3e92982e43c4ed5a9403e63654467de450f37"
+    },
+    "REFERENCE_COBALT_1.stderr.log": {
+      "sha256": "54405797ae737085efa9bfcf0fc5940d9fbc141421f683682e2a91a126549c32"
+    },
+    "REFERENCE_COBALT_1.trace.jsonl": {
+      "sha256": "5592a7cbcc28594428afd893e073026a5553c10e0a02f02bd1932f347ba09d59"
+    },
+    "REFERENCE_COBALT_2.json": {
+      "sha256": "f04e92cdd82bc53adde3596456855c21b727a74d76ed53afbda121f0a6f74fa9"
+    },
+    "REFERENCE_COBALT_2.stderr.log": {
+      "sha256": "3e41f2168911c0a4160ec4bd0870ba02d3049b850364e6a78acbbf76ea465272"
+    },
+    "REFERENCE_COBALT_2.trace.jsonl": {
+      "sha256": "2802ca48fc655baa6aa7441962039d5395c408641526a495ca265249956d35a1"
+    },
+    "REFERENCE_COBALT_3.json": {
+      "sha256": "50f63e10d9edc33aa427bb5acf74c307c313263115c6e2eac1f790869c1f9cc5"
+    },
+    "REFERENCE_COBALT_3.stderr.log": {
+      "sha256": "c546e01235f92f2e820b8c9764e91484962cb271a617e26ef0571278ba4d1fac"
+    },
+    "REFERENCE_COBALT_3.trace.jsonl": {
+      "sha256": "19466455431d5b97d0896381c97b2e1b288102ab3965f815f5bbe7b86743fbc5"
+    },
+    "REFERENCE_FREEZE_RECEIPT.json": {
+      "sha256": "5adcdee5b6b6c1b387410bb9b156dfdb38950866ab7501b7a9a28189d1982166"
+    },
+    "V5_STAGE1_CHILD_RECEIPTS.json": {
+      "sha256": "5f3d3cfc35ce251b37aafc0ad29dc69a729b773748d1d7c97cea455bb95ad144"
+    }
+  },
+  "schema": "eb-v1-operational-burden-rc1-v5-file-receipt-v1"
+}
