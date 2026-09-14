@@ -1,0 +1,184 @@
+{
+  "apparatus_git_blob_checks": {
+    "APPARATUS_SELFTEST.md": {
+      "actual": "c0139bb974ff2422f7667306a276ffdf88d733f6",
+      "expected": "c0139bb974ff2422f7667306a276ffdf88d733f6",
+      "pass": true
+    },
+    "BLIND_REVIEW_PACKET_AMBER.json": {
+      "actual": "269f99548e9381945c94553bd34111c500b061d6",
+      "expected": "269f99548e9381945c94553bd34111c500b061d6",
+      "pass": true
+    },
+    "BLIND_REVIEW_PACKET_COBALT.json": {
+      "actual": "c1b5965625c06f134208637091890700e6552978",
+      "expected": "c1b5965625c06f134208637091890700e6552978",
+      "pass": true
+    },
+    "CONTEXT_FREE_EXECUTION.md": {
+      "actual": "9b3d1484566f41f03f4d747a221c0c4efcee358e",
+      "expected": "9b3d1484566f41f03f4d747a221c0c4efcee358e",
+      "pass": true
+    },
+    "OPERATIONAL_REVIEW_RUBRIC_AMBER.md": {
+      "actual": "04487cf231ba88600eb7be5fba4d990c4727a18d",
+      "expected": "04487cf231ba88600eb7be5fba4d990c4727a18d",
+      "pass": true
+    },
+    "OPERATIONAL_REVIEW_RUBRIC_COBALT.md": {
+      "actual": "721c014f493b9d8a909b356f54eb8be5a26d3db3",
+      "expected": "721c014f493b9d8a909b356f54eb8be5a26d3db3",
+      "pass": true
+    },
+    "PREREGISTRATION.md": {
+      "actual": "cada74104ff41d6d6e43288c8a6aaf7201280d39",
+      "expected": "cada74104ff41d6d6e43288c8a6aaf7201280d39",
+      "pass": true
+    },
+    "SUPERVISOR_RELATION_MAP.json": {
+      "actual": "435c58b28c09909c6ec6bedea24f55cb032bc00d",
+      "expected": "435c58b28c09909c6ec6bedea24f55cb032bc00d",
+      "pass": true
+    },
+    "consolidate_references.py": {
+      "actual": "aa7abaf79ee95a705f62927eee068f9682e25348",
+      "expected": "aa7abaf79ee95a705f62927eee068f9682e25348",
+      "pass": true
+    },
+    "evaluate_rc1.py": {
+      "actual": "8c4e775abdc5719b589872bcdb7860e489685cd7",
+      "expected": "8c4e775abdc5719b589872bcdb7860e489685cd7",
+      "pass": true
+    },
+    "review_common.py": {
+      "actual": "fae8a150200227b7b55a90646129bea285ea8946",
+      "expected": "fae8a150200227b7b55a90646129bea285ea8946",
+      "pass": true
+    },
+    "run_rc1_with_codex.sh": {
+      "actual": "edb2b12a04fbe9dcb6b1d3095070ea90f75538ef",
+      "expected": "edb2b12a04fbe9dcb6b1d3095070ea90f75538ef",
+      "pass": true
+    }
+  },
+  "audit_repo_head": "8d663d024e1c266689ddf6a855c39e58ddb665db",
+  "codex_version_file": "codex-cli 0.154.0",
+  "failed_cobalt_1_structural_comparison": {
+    "attribution": "CHILD_AGENT_MESSAGE_ALREADY_CONTAINED_DUPLICATE_RELATION_ID",
+    "expected_relation_count": 96,
+    "failed_output_duplicate_relation_ids": [
+      "80375b23285b8336",
+      "c9b5f817e8c9b400"
+    ],
+    "failed_output_relation_count": 39,
+    "failed_output_relation_set_matches_packet": false,
+    "failed_output_sha256": "6cd9fbec241c0300cdbab2118f88e5513c1570cd0fd512b56267309c0d3231e2",
+    "failed_output_unique_relation_count": 37,
+    "failed_trace_sha256": "78070888eae9fa8c39f35e45cc7f477f9d9a89267082a872219a1e449999dce0",
+    "final_and_trace_relation_id_sequence_equal": true,
+    "final_and_trace_text_sha256_equal_after_strip": true,
+    "packet_sha256": "651a1db560987507942b85c80728b91440fbaa0ec065efcae9f5f55704b96c53",
+    "trace_completed_agent_message_count": 1,
+    "trace_final_duplicate_relation_ids": [
+      "80375b23285b8336",
+      "c9b5f817e8c9b400"
+    ],
+    "trace_final_relation_count": 39,
+    "trace_final_unique_relation_count": 37
+  },
+  "failed_worktree_head": "ebed6c29b31614687c0b3d7b0f05444482166abd",
+  "packet_and_supervisor_structure": {
+    "amber_count": 54,
+    "amber_map_exact": true,
+    "cobalt_count": 96,
+    "cobalt_map_exact": true,
+    "larger_only_count": 42,
+    "matched_count": 54,
+    "matched_lane_count": 18
+  },
+  "packet_canonical_checks": {
+    "BLIND_REVIEW_PACKET_AMBER.json": {
+      "actual": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+      "expected": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+      "pass": true
+    },
+    "BLIND_REVIEW_PACKET_COBALT.json": {
+      "actual": "9cc015f234e20eab7bf3f68569732c60db55edebe1053c8d32b10120537d3621",
+      "expected": "9cc015f234e20eab7bf3f68569732c60db55edebe1053c8d32b10120537d3621",
+      "pass": true
+    }
+  },
+  "planned_output_paths": {
+    "all_unique": true,
+    "planned_count": 20,
+    "unique_count": 20
+  },
+  "planned_output_paths_ignored_by_git": [],
+  "preserved_reference_output_inventory": [
+    {
+      "name": "CODEX_VERSION.txt",
+      "sha256": "5efa0283757c66156d45d082b4e2e8afb881de3a97862bc03aed7fb34f45df7b",
+      "size": 18
+    },
+    {
+      "name": "REFERENCE_AMBER_1.json",
+      "sha256": "326764ffef5558ba4c797fd030c75f9366cdb29ac00069622c92ab04a076c858",
+      "size": 4224
+    },
+    {
+      "name": "REFERENCE_AMBER_1.trace.jsonl",
+      "sha256": "6f8f0d3ac589ff1e02676d2764a57b70af9c818f890a57a319b7279af2c0c941",
+      "size": 20931
+    },
+    {
+      "name": "REFERENCE_AMBER_2.json",
+      "sha256": "aa67ce501ec5d691556653974f484d9b44fbb946748000b2389410412221f88d",
+      "size": 4239
+    },
+    {
+      "name": "REFERENCE_AMBER_2.trace.jsonl",
+      "sha256": "9d7f30952b0aa27a19e79daa8babdceb726cf098be3b6ca4a2f2a236b421b0ab",
+      "size": 20946
+    },
+    {
+      "name": "REFERENCE_AMBER_3.json",
+      "sha256": "55f4dff739b8e32efed1724489e3575d8e5c353c1aea89baaf2fed689d6312a1",
+      "size": 4209
+    },
+    {
+      "name": "REFERENCE_AMBER_3.trace.jsonl",
+      "sha256": "6d84712c25dc2d60d330fa70fbf270b4f960e1464bef1f4d14aa2fe31105ea47",
+      "size": 20917
+    },
+    {
+      "name": "REFERENCE_COBALT_1.json",
+      "sha256": "6cd9fbec241c0300cdbab2118f88e5513c1570cd0fd512b56267309c0d3231e2",
+      "size": 3103
+    },
+    {
+      "name": "REFERENCE_COBALT_1.trace.jsonl",
+      "sha256": "78070888eae9fa8c39f35e45cc7f477f9d9a89267082a872219a1e449999dce0",
+      "size": 26752
+    }
+  ],
+  "real_reviewer_launched_by_audit": false,
+  "runner_static_mechanics": {
+    "direct_output_last_message_to_final": true,
+    "fresh_child_mktemp_present": true,
+    "trace_uses_truncating_redirect": true,
+    "v4_bash_parse_gate_present": true,
+    "v4_forbids_old_uppercase_expansions": true,
+    "validator_call_count_in_run_child_source": 1
+  },
+  "schema": "eb-v1-operational-burden-rc1-v4-harness-audit-v1",
+  "scientific_result": false,
+  "stop_boundary": "HARNESS_AUDIT_ONLY_NO_RETRY_AUTHORIZED",
+  "synthetic_validator_selftest": {
+    "rejected": {
+      "duplicate": "ValueError",
+      "missing": "ValueError",
+      "unknown": "ValueError"
+    },
+    "valid_passed": true
+  }
+}

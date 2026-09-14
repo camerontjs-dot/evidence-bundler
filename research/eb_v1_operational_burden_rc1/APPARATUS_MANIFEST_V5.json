@@ -1,0 +1,45 @@
+{
+  "schema": "eb-v1-operational-burden-rc1-apparatus-manifest-v5",
+  "qualified_serialization_harness": {
+    "commit": "1240671474b0f2cf638338bbcfd7ba0fc98e7322",
+    "validator_path": "research/codex_serialization_harness_rc0/validator.py",
+    "validator_git_blob_sha1": "7bcba07f1bca5d9d6b6f8aa35d0dfd533d32d512",
+    "codex_version": "codex-cli 0.154.0",
+    "qualification_execution_id": "20260914T170735Z-0d2d01ab"
+  },
+  "git_blob_sha1": {
+    "BLIND_REVIEW_PACKET_AMBER.json": "269f99548e9381945c94553bd34111c500b061d6",
+    "BLIND_REVIEW_PACKET_COBALT.json": "c1b5965625c06f134208637091890700e6552978",
+    "SUPERVISOR_RELATION_MAP.json": "435c58b28c09909c6ec6bedea24f55cb032bc00d",
+    "OPERATIONAL_REVIEW_RUBRIC_COMMON_V5.md": "2bcc49d26bd868df2e372103883421cf75b844da",
+    "POSTEXPOSURE-CORRECTION-SERIALIZATION-V5.md": "b35c3e81f496858de87092ae0d60d30cf09f7c95",
+    "review_common_v2.py": "6449e640a4c21afea56c03decfca6aa1e2ec2bb6",
+    "consolidate_references_v2.py": "597a9c47d7a7f720395da7c07df06e66335e5512",
+    "evaluate_rc1_v2.py": "7a86da6aa35d09bab2b2650af561a472ab06686d",
+    "selftest_v5.py": "4c18c180dad163cfe14e6dc54ff71a43d33a6547",
+    "run_rc1_with_codex_v5.py": "eaf7c1ded962c6f0e85f1ddeac66cc35b5431337"
+  },
+  "packet_canonical_sha256": {
+    "BLIND_REVIEW_PACKET_AMBER.json": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+    "BLIND_REVIEW_PACKET_COBALT.json": "9cc015f234e20eab7bf3f68569732c60db55edebe1053c8d32b10120537d3621"
+  },
+  "structural_expectations": {
+    "arm_mapping": {
+      "amber": "5/3",
+      "cobalt": "10/7"
+    },
+    "amber_lane_count": 18,
+    "cobalt_lane_count": 18,
+    "amber_relationship_count": 54,
+    "cobalt_relationship_count": 96,
+    "matched_relationship_count": 54,
+    "larger_arm_only_relationship_count": 42,
+    "normative_lane_count": 18
+  },
+  "fresh_cohort": {
+    "reference_reviewers_per_arm": 3,
+    "test_reviewers_per_arm": 2,
+    "reuse_v4_outputs": false,
+    "selective_child_retry": false
+  }
+}

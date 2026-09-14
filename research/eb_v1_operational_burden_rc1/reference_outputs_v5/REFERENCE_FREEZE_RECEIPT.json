@@ -1,0 +1,47 @@
+{
+  "reviewer_ids_unique": true,
+  "schema": "eb-v1-operational-burden-rc1-reference-freeze-receipt-v1",
+  "sets": {
+    "amber": {
+      "label_counts": {
+        "DROP_DISTRACTOR": 34,
+        "DROP_REDUNDANT": 3,
+        "KEEP_DISTINCT": 17
+      },
+      "packet_canonical_sha256": "c0255cb02a20f43179bbf6e2ba1117a38dbbd158ecac6c34e22eac926286c731",
+      "reference_file": "REFERENCE_AMBER.json",
+      "reference_sha256": "818802c9044967d0ec39f0e990eb7be77c5d0bdb34d3e7af5e9f317525878302",
+      "review_files": {
+        "REFERENCE_AMBER_1.json": "b983544dcf2ad903a6266fa0e0da70e8a4f244aac196ee8d4872593164635b30",
+        "REFERENCE_AMBER_2.json": "058426db1c5b6610a90c591d0765fdf001bcd12c0a081b2c6ea1c64ae84fbee5",
+        "REFERENCE_AMBER_3.json": "fa73eba8e4c2c1ca25da26da7d6cb59d0501481549369dc3309439e9ac83efd2"
+      },
+      "reviewer_ids": [
+        "20260914T183919Z-1d3c505d-reference-amber-1-e911f9c78909",
+        "20260914T183919Z-1d3c505d-reference-amber-2-1583cd08d09c",
+        "20260914T183919Z-1d3c505d-reference-amber-3-8d4a38539304"
+      ]
+    },
+    "cobalt": {
+      "label_counts": {
+        "DROP_DISTRACTOR": 73,
+        "DROP_REDUNDANT": 3,
+        "KEEP_DISTINCT": 19,
+        "UNRESOLVED": 1
+      },
+      "packet_canonical_sha256": "9cc015f234e20eab7bf3f68569732c60db55edebe1053c8d32b10120537d3621",
+      "reference_file": "REFERENCE_COBALT.json",
+      "reference_sha256": "1fb8436ce65f2f6684ddbab12c80822826f639e6eb16c6ac136d709d12660a2a",
+      "review_files": {
+        "REFERENCE_COBALT_1.json": "bbb059264dfc526b4da3a23659b3e92982e43c4ed5a9403e63654467de450f37",
+        "REFERENCE_COBALT_2.json": "f04e92cdd82bc53adde3596456855c21b727a74d76ed53afbda121f0a6f74fa9",
+        "REFERENCE_COBALT_3.json": "50f63e10d9edc33aa427bb5acf74c307c313263115c6e2eac1f790869c1f9cc5"
+      },
+      "reviewer_ids": [
+        "20260914T183919Z-1d3c505d-reference-cobalt-1-6821456b6930",
+        "20260914T183919Z-1d3c505d-reference-cobalt-2-93173bb74640",
+        "20260914T183919Z-1d3c505d-reference-cobalt-3-631edcc77a2b"
+      ]
+    }
+  }
+}
