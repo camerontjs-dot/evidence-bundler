@@ -1,0 +1,17 @@
+{
+  "schema": "eb-v1-operational-burden-rc1-apparatus-manifest-v1",
+  "sha256": {
+    "APPARATUS_SELFTEST.md": "ab253150d224ace6012f9687b6deac7319ce46639c45cb8104ccd5113dcfc5b1",
+    "BLIND_REVIEW_PACKET_AMBER.json": "0e26242f3ec742e62c4cfba5334f06ef4d5d1da0c4847bf3e4dbb8f050824756",
+    "BLIND_REVIEW_PACKET_COBALT.json": "a4deaf891859e7ff543f07a9333d7e504e9c0b7268fdf6bedae6e6b978a184fb",
+    "CONTEXT_FREE_EXECUTION.md": "0aeb8d295837779d636e130fd699c1bb59ccb319a4c1732efbffc91d3b9ad9d9",
+    "OPERATIONAL_REVIEW_RUBRIC_AMBER.md": "79efed9b7127bbd9986ab1a09f1d808e98ab47d30ee76d34cd1c508158fd73a2",
+    "OPERATIONAL_REVIEW_RUBRIC_COBALT.md": "f37d1248794c93885fc2be6caee6d87df36b8e07182c81b4de4e43dfdac57ad9",
+    "PACKET_PROVENANCE.json": "90f49a046864b48e6239f503942e3e9a5e0cffdadc94bf2ce4fde36390b90298",
+    "PREREGISTRATION.md": "68ed2a9abfc131eaaba43ea9fbd72dde512b6f994269ccb00bed080fa31faea3",
+    "SUPERVISOR_RELATION_MAP.json": "2929848b4b1a5ba25880a7797e1bd89cd42556247febe9ca816c71803b392b8e",
+    "consolidate_references.py": "a8e8354055f9814203f79ec5f8cac4547bdcb508a9db2bfd7cdb04613f78e7a4",
+    "evaluate_rc1.py": "5a4cb204ad2b7f88044bca8065e712937f5ca4ad1451e97639fe0c051c579431",
+    "review_common.py": "ba85c49c0bede7b99bc76d2e96f13540edbaa3d8939aec9debfa64633b1f062f"
+  }
+}
