@@ -179,9 +179,11 @@ def main() -> int:
         return 0
     head = fixture = selftest = capability = None
     runs: list[dict] = []
-    execution_id, execution_root = make_execution_dir()
+    execution_id: str | None = None
+    execution_root: Path | None = None
     try:
         head = ensure_clean_checkout()
+        execution_id, execution_root = make_execution_dir()
         fixture = verify_frozen_fixture()
         selftest = run_selftest()
         atomic_json(execution_root / "SELFTEST_RESULT.json", selftest)
@@ -201,20 +203,24 @@ def main() -> int:
         print("RC1_RESUME_AUTHORIZED=no")
         return 0
     except HarnessStop as exc:
-        write_result(execution_root,exc.status,head,fixture,selftest,capability,runs,{"step":exc.step,"detail":exc.detail})
+        failure = {"step": exc.step, "detail": exc.detail}
+        if execution_root is not None:
+            write_result(execution_root,exc.status,head,fixture,selftest,capability,runs,failure)
         print(f"HARNESS_STATUS={exc.status}")
-        print(f"EXECUTION_ID={execution_id}")
-        print(f"EXECUTION_DIR={execution_root}")
+        print(f"EXECUTION_ID={execution_id or 'none'}")
+        print(f"EXECUTION_DIR={execution_root or 'none'}")
         print(f"COMPLETED_RUNS={len(runs)}")
         print(f"FAILING_STEP={exc.step}")
         print(f"ERROR={exc.detail}")
         print("RC1_RESUME_AUTHORIZED=no")
         return 20
     except Exception as exc:
-        write_result(execution_root,"HARNESS_ERROR",head,fixture,selftest,capability,runs,{"step":"unexpected_harness_error","detail":f"{type(exc).__name__}: {exc}"})
+        failure = {"step": "unexpected_harness_error", "detail": f"{type(exc).__name__}: {exc}"}
+        if execution_root is not None:
+            write_result(execution_root,"HARNESS_ERROR",head,fixture,selftest,capability,runs,failure)
         print("HARNESS_STATUS=HARNESS_ERROR")
-        print(f"EXECUTION_ID={execution_id}")
-        print(f"EXECUTION_DIR={execution_root}")
+        print(f"EXECUTION_ID={execution_id or 'none'}")
+        print(f"EXECUTION_DIR={execution_root or 'none'}")
         print(f"COMPLETED_RUNS={len(runs)}")
         print(f"ERROR={type(exc).__name__}: {exc}")
         print("RC1_RESUME_AUTHORIZED=no")
