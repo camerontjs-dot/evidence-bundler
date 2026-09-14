@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import json
+import subprocess
 import sys
 
 HERE = Path(__file__).resolve().parent
@@ -16,6 +17,24 @@ audit.REPO = HERE.parents[1]
 sup = json.loads((HERE / 'SUPERVISOR_RELATION_MAP.json').read_text(encoding='utf-8'))
 if sup.get('arm_mapping') != {'amber': '5/3', 'cobalt': '10/7'}:
     raise SystemExit(f"arm mapping mismatch: {sup.get('arm_mapping')}")
+
+# The audit may inspect only the preserved V4 execution worktree. Do not allow
+# a reconstructed or later checkout to masquerade as the failed V4 source.
+try:
+    i = sys.argv.index('--failed-worktree')
+    failed_worktree = Path(sys.argv[i + 1]).resolve()
+except (ValueError, IndexError):
+    raise SystemExit('--failed-worktree is required')
+
+expected_v4_head = 'ebed6c29b31614687c0b3d7b0f05444482166abd'
+try:
+    failed_head = subprocess.check_output(
+        ['git', '-C', str(failed_worktree), 'rev-parse', 'HEAD'], text=True
+    ).strip()
+except Exception as exc:
+    raise SystemExit(f'cannot read preserved V4 worktree HEAD: {exc}')
+if failed_head != expected_v4_head:
+    raise SystemExit(f'preserved V4 worktree HEAD mismatch: {failed_head} != {expected_v4_head}')
 
 # V4 portability checks are source-generation invariants, not a literal search
 # for the generated shell text. The tr commands are embedded inside Python
@@ -36,7 +55,7 @@ if missing:
 
 # The generator must still fail closed unless exactly the two expected Bash-4
 # expansions were replaced before parsing/execution.
-if v4.count("portable_replacements += 1") != 2:
+if v4.count('portable_replacements += 1') != 2:
     raise SystemExit('V4 portability replacement accounting changed')
 
 # This audit is mechanical only. audit.main() launches no Codex reviewer.
