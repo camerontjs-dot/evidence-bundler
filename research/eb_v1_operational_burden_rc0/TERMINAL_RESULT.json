@@ -1,0 +1,20 @@
+{
+  "schema": "eb-v1-operational-burden-terminal-result-v1",
+  "source_review_commit": "6da1d1489c7451726dab3bc6fdd92f9d1c99b89e",
+  "review_execution_valid": true,
+  "salvage_runner_repair": {
+    "observed": true,
+    "scientific_effect": "none identified",
+    "description": "parent validator was extended to flatten frozen lanes[].passages[] packet shape"
+  },
+  "mechanical_evaluator_conclusion": "NO_OBSERVED_DECISION_QUALITY_HARM",
+  "mechanical_evaluator_disposition": "SUPPORTED FOR PROMOTION",
+  "mechanical_result_authoritative": false,
+  "apparatus_invalidating_reason": "hidden answer key maps predecessor non-required/distractor status to semantic NONMATERIAL while reviewer rubric defines MATERIAL to include supporting, refuting, qualifying, limiting, or otherwise materially bearing passages; hidden gold also relies on identity information absent from the blind reviewer aperture",
+  "descriptive_shared_consensus_label_flip_count": 3,
+  "descriptive_shared_relationship_count": 54,
+  "terminal_disposition": "APPARATUS_INVALID",
+  "v1_promotion_authorized": false,
+  "retrieval_rerun_required_for_successor": false,
+  "stop_boundary": true
+}
