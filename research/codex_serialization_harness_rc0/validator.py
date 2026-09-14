@@ -95,9 +95,19 @@ _ALLOWED_COMMANDS = {
 }
 
 
-def extract_trace_final_message(trace_path: Path) -> tuple[str, dict[str, Any]]:
+def _is_result_shaped_message(text: str) -> bool:
+    try:
+        obj = load_json_no_duplicates_text(text)
+    except (json.JSONDecodeError, DuplicateKeyError):
+        return False
+    if not isinstance(obj, dict):
+        return False
+    return obj.get("schema") == RESULT_SCHEMA or bool({"reviewer_id", "labels"} & set(obj))
+
+
+def extract_trace_agent_messages(trace_path: Path) -> tuple[list[str], dict[str, Any]]:
     completed_commands: list[str] = []
-    final_messages: list[str] = []
+    agent_messages: list[str] = []
     forbidden_items: list[str] = []
     thread_ids: list[str] = []
 
@@ -118,7 +128,7 @@ def extract_trace_final_message(trace_path: Path) -> tuple[str, dict[str, Any]]:
         elif typ in {"agent_message", "assistant_message"}:
             text = item.get("text")
             if isinstance(text, str):
-                final_messages.append(text)
+                agent_messages.append(text)
         elif typ in {"mcp_tool_call", "web_search", "file_change", "collab_tool_call"}:
             forbidden_items.append(str(typ))
 
@@ -128,17 +138,17 @@ def extract_trace_final_message(trace_path: Path) -> tuple[str, dict[str, Any]]:
         raise ValueError(f"unexpected child command: {completed_commands[0]}")
     if forbidden_items:
         raise ValueError(f"forbidden child trace items: {forbidden_items}")
-    if len(final_messages) != 1:
-        raise ValueError(f"expected exactly one completed agent message, got {len(final_messages)}")
+    if not agent_messages:
+        raise ValueError("expected at least one completed agent message")
     if len(set(thread_ids)) > 1:
         raise ValueError(f"multiple thread IDs in one child trace: {thread_ids}")
 
     meta = {
         "completed_command": completed_commands[0],
-        "completed_agent_message_count": len(final_messages),
+        "completed_agent_message_count": len(agent_messages),
         "thread_id": thread_ids[0] if thread_ids else None,
     }
-    return final_messages[0], meta
+    return agent_messages, meta
 
 
 def validate_trace_and_final(
@@ -147,14 +157,36 @@ def validate_trace_and_final(
     expected_labels: dict[str, str],
     expected_reviewer_id: str,
 ) -> dict[str, Any]:
-    trace_message, trace_meta = extract_trace_final_message(trace_path)
+    agent_messages, trace_meta = extract_trace_agent_messages(trace_path)
     final_text = final_path.read_text(encoding="utf-8")
-    if trace_message.strip() != final_text.strip():
-        raise ValueError("trace final agent message differs from --output-last-message file")
-    validate_output_text(trace_message, expected_labels, expected_reviewer_id)
+
     validate_output_text(final_text, expected_labels, expected_reviewer_id)
+
+    result_indexes: list[int] = []
+    for idx, message in enumerate(agent_messages):
+        if not _is_result_shaped_message(message):
+            continue
+        # Any result-shaped message must be fully valid. This prevents malformed
+        # result attempts from being silently reclassified as ordinary status text.
+        validate_output_text(message, expected_labels, expected_reviewer_id)
+        result_indexes.append(idx)
+
+    if len(result_indexes) != 1:
+        raise ValueError(
+            f"expected exactly one result-shaped completed agent message, got {len(result_indexes)}"
+        )
+    result_index = result_indexes[0]
+    if result_index != len(agent_messages) - 1:
+        raise ValueError("unique result-shaped agent message was not the final agent message")
+
+    trace_message = agent_messages[result_index]
+    if trace_message.strip() != final_text.strip():
+        raise ValueError("trace result agent message differs from --output-last-message file")
+
     return {
         **trace_meta,
+        "status_agent_message_count": len(agent_messages) - 1,
+        "result_agent_message_count": 1,
         "trace_final_sha256": sha256_bytes(trace_message.strip().encode("utf-8")),
         "output_final_sha256": sha256_bytes(final_text.strip().encode("utf-8")),
         "trace_final_text_equal": True,
