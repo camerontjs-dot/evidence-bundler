@@ -1,0 +1,23 @@
+{
+  "schema": "eb-v1-selector-bakeoff-rc0-systems-checks-v1",
+  "artifact_sha256": "sha256:3424e70988a2ca878e97f6eeaf855cd5ebbd449413536841872bd485de74819d",
+  "canonical_selection_sha256": "sha256:d925877bfdb7410f2088a159fd3d23ae7204cce2aff98e22f18497980b6f8b81",
+  "canonical_replay_byte_equal": true,
+  "facility_order_permutation_invariance": {
+    "passed": true,
+    "seeds_per_lane": 20,
+    "lanes": 18,
+    "alphas": [0.25, 0.5, 0.75]
+  },
+  "selected_identity_subset_of_frozen_pool": true,
+  "duplicate_selected_identity_observed": false,
+  "fixed_k3_exact_min3_cardinality": true,
+  "facility_exact_min3_cardinality": true,
+  "semantic_authority_fields_emitted": false,
+  "retrieval_rerun": false,
+  "semantic_reviewer_launched": false,
+  "notes": [
+    "Selection archive transport formatting deviation is preserved separately.",
+    "Checks were rerun against the corrected canonical serializer and unchanged selector semantics."
+  ]
+}
