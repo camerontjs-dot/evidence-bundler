@@ -1,0 +1,17 @@
+{
+  "review_files": {
+    "REVIEW_AMBER_1.json": {
+      "sha256": "1e8e0e86924da019b8346aff2fdae4ed8bb2d315431ad8ed32e4c3f3b3b2c30f"
+    },
+    "REVIEW_AMBER_2.json": {
+      "sha256": "699bb4781b742773aebce8ef2ef97fad7a3eeeabd04e3322046600d5866df08f"
+    },
+    "REVIEW_COBALT_1.json": {
+      "sha256": "fbc00b70d029eaceacd24972788c7a81e5306cc29c17d52fabd7f4c9aa50071a"
+    },
+    "REVIEW_COBALT_2.json": {
+      "sha256": "ad00854cb17b69a0f02b76f9f18f5fd5d3a78f97c5e138d8f363a624fc7a263c"
+    }
+  },
+  "schema": "eb-v1-operational-review-codex-launch-receipt-v1"
+}

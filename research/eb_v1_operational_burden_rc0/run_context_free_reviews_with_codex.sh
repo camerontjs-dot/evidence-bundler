@@ -51,6 +51,10 @@ if meta.get("saw_other_review_set") is not False:
 items = packet.get("relationships")
 if items is None:
     items = packet.get("items")
+if items is None:
+    lanes = packet.get("lanes")
+    if isinstance(lanes, list):
+        items = [passage for lane in lanes for passage in lane.get("passages", [])]
 if not isinstance(items, list):
     raise SystemExit("packet relationship array not found")
 
