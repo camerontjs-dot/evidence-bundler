@@ -164,7 +164,7 @@ def main():
         ],
     }
     out = Path(args.out)
-    out.write_text(json.dumps(output, indent=2, sort_keys=True) + '\n')
+    out.write_text(json.dumps(output, sort_keys=True, separators=(',', ':')) + '\n')
     print('OUTPUT_SHA256=' + sha256(out))
     for name, records in arms.items():
         print(name, sum(len(record['selected']) for record in records))
