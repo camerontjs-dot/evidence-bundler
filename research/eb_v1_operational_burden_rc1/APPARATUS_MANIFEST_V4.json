@@ -1,0 +1,35 @@
+{
+  "schema": "eb-v1-operational-burden-rc1-apparatus-manifest-v4",
+  "parent_apparatus": {
+    "manifest": "APPARATUS_MANIFEST_V3.json",
+    "git_blob_sha1": "8e9397736835bfe584bae9651e3b12dd5edfc5a7"
+  },
+  "portability_correction": {
+    "source_runner": "run_rc1_with_codex.sh",
+    "source_runner_git_blob_sha1": "edb2b12a04fbe9dcb6b1d3095070ea90f75538ef",
+    "v4_runner": "run_rc1_with_codex_v4.sh",
+    "v4_runner_git_blob_sha1": "d0f3734e44867751b7bfd767d84a574a8d3926ef",
+    "deviation_record": "DEVIATION-PREEXPOSURE-BASH-PORTABILITY.md",
+    "deviation_record_git_blob_sha1": "e9c9b38f7780d0dd3fdc0e17f4124a58eb3009f9",
+    "required_replacements": 2,
+    "forbidden_generated_expansions": ["${phase^^}", "${set_name^^}"],
+    "replacement_mechanism": "printf_plus_tr_uppercase_in_temporary_generated_runner",
+    "prelaunch_parse_check": "bash -n using execution bash"
+  },
+  "pre_exposure_failures": [
+    {
+      "head": "4f62c8f0e7b75f8869d189430787360f20996203",
+      "step": "V1 raw apparatus SHA-256 verification"
+    },
+    {
+      "head": "40142ae3897fe046475d9ee88d49e8a97285643a",
+      "step": "V2 cobalt canonical identity verification"
+    },
+    {
+      "head": "7b89496a8b51072197db6384bad4ef75b6ae0dad",
+      "step": "V3 generated-runner Bash uppercase expansion on macOS system Bash"
+    }
+  ],
+  "semantic_exposure_before_v4": false,
+  "scientific_design_changed": false
+}
