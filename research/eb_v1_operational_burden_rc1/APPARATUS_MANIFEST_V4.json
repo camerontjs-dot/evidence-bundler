@@ -9,6 +9,8 @@
     "source_runner_git_blob_sha1": "edb2b12a04fbe9dcb6b1d3095070ea90f75538ef",
     "v4_runner": "run_rc1_with_codex_v4.sh",
     "v4_runner_git_blob_sha1": "d0f3734e44867751b7bfd767d84a574a8d3926ef",
+    "handoff": "CODEX_SUPERVISOR_HANDOFF_V4.md",
+    "handoff_git_blob_sha1": "4f7fd0be3568321dcd629aec88aa6d7264812333",
     "deviation_record": "DEVIATION-PREEXPOSURE-BASH-PORTABILITY.md",
     "deviation_record_git_blob_sha1": "e9c9b38f7780d0dd3fdc0e17f4124a58eb3009f9",
     "required_replacements": 2,
