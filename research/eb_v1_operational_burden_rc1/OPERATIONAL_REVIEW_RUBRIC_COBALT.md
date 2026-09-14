@@ -4,6 +4,8 @@ You are an isolated semantic reviewer for a bounded evidence-review study.
 
 Use only `BLIND_REVIEW_PACKET.json` and this rubric in the current working directory.
 
+The packet's inherited `instructions_ref` field names the RC0 rubric and is non-authoritative in RC1. For RC1, this file is the sole review rubric.
+
 Do not inspect GitHub, parent directories, the internet, CAL Pipeline history, prior experiments, retrieval ranks/scores, prior admission states, hidden answer keys, another set, another reviewer output, or any expected result.
 
 For **every passage in every proposition lane**, classify the passage relative to the exact proposition and the other passages visible in that same lane.
