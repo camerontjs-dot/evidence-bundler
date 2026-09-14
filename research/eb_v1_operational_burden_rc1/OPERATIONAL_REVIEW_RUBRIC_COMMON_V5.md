@@ -1,15 +1,38 @@
-# Evidence Bundler V1 RC1 V5 Blind Operational Review Rubric
+# Evidence Bundler V1 RC1 V5 — Blind Operational Review Rubric
 
-Use only the blind packet and this rubric. Classify every passage relative to the exact proposition and the other passages in the same lane.
+You are an isolated semantic reviewer for a bounded evidence-review study.
 
-`KEEP_DISTINCT`: the passage contributes distinct evidence useful for assessing the proposition.
+Use only `BLIND_REVIEW_PACKET.json` and this rubric in the current working directory.
 
-`DROP_REDUNDANT`: the passage bears materially on the proposition, but another passage in the same lane fully duplicates or subsumes its contribution.
+The packet's inherited `instructions_ref` field is non-authoritative in RC1. This file is the sole semantic review rubric for V5.
 
-`DROP_DISTRACTOR`: the passage contributes no proposition-relevant evidence to the review record.
+Do not inspect GitHub, parent directories, the internet, CAL Pipeline history, prior experiments, retrieval ranks/scores, prior admission states, hidden answer keys, another set, another reviewer output, prior references, or expected outcomes.
 
-`UNRESOLVED`: the authorized proposition, lane context, and passage text are insufficient for safe classification.
+For **every passage in every proposition lane**, classify the passage relative to the exact proposition and the other passages visible in that same lane.
 
-Redundancy is lane-relative. Do not infer unstated identity bindings across lanes. This is a fresh isolated review; do not use another set, another review, prior references, prior results, retrieval rank or score, or expected outcomes.
+## Labels
 
-The supervisor supplies the exact packet identity, reviewer identity, phase, and strict JSON output schema. Return one object matching that schema. The `labels` object must contain every packet relation ID exactly once with one of the four labels above. Do not add rationales or extra relation IDs.
+### `KEEP_DISTINCT`
+Retain the passage because, given the other passages in the same lane, it contributes distinct evidentiary information materially useful for assessing the exact proposition. Distinct support, refutation, qualification, limitation, or necessary contextual evidence can qualify.
+
+### `DROP_REDUNDANT`
+The passage bears materially on the proposition, but its evidentiary contribution is fully duplicated or subsumed by another passage in the same lane. Dropping it loses no distinct evidentiary contribution. Do not use this merely because another passage is also relevant.
+
+### `DROP_DISTRACTOR`
+The passage does not provide a proposition-relevant evidentiary contribution to the review record. Examples include unrelated entities or conditions, lexical/numeric decoys, operational details that do not bear on the proposition, or hypothetical/rejected/unverified mentions that do not themselves contribute usable evidence.
+
+### `UNRESOLVED`
+The authorized proposition, lane context, and passage text are insufficient to classify the relationship safely. Do not infer hidden entity bindings, source semantics, or provenance facts that are not present in the packet.
+
+## Lane-relative rule
+Judge each passage in the context of the other passages in the **same lane**. Redundancy is lane-relative. A passage that is distinct in a smaller lane can be redundant when another passage in the same lane fully subsumes it. Do not use information from another lane to manufacture an unstated identity binding.
+
+## Independence rule
+This must be a fresh isolated execution. If you have seen the other set, another reviewer's judgments, a consolidated reference, hidden gold, prior experiment results, or expected outcomes, do not provide judgments.
+
+## Required output
+The supervisor supplies a strict JSON output schema plus the exact packet identity, reviewer ID, and review phase. Return exactly one JSON object conforming to that schema, with no markdown fences and no commentary.
+
+The `labels` object is keyed by the opaque relation IDs from the packet. Include every required relation ID exactly once and use only `KEEP_DISTINCT`, `DROP_REDUNDANT`, `DROP_DISTRACTOR`, or `UNRESOLVED`.
+
+Do not add rationales or extra relation IDs. Do not inspect or mention profile identity, K, rank, score, prior labels, or expected outcomes.
