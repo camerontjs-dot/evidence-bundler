@@ -1,6 +1,8 @@
 # Evidence Bundler V1 — Operational Review Burden RC0
 
-Status: **PREREGISTERED — REVIEW EXECUTION NOT YET RUN**
+Status: **EXECUTED — TERMINAL `APPARATUS_INVALID`**
+
+The preregistered procedure below is preserved as the pre-execution scientific plan. Terminal evidence is frozen in `RESULTS.md`, `TERMINAL_RESULT.json`, `RAW_MECHANICAL_EVALUATOR_RECONSTRUCTION.json`, and `DEVIATION-POSTREVIEW-CONSTRUCT-MISMATCH.md`.
 
 ## Purpose
 
