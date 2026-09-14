@@ -1,0 +1,120 @@
+{
+  "arm_mapping": {
+    "amber": "5/3",
+    "cobalt": "10/7"
+  },
+  "coverage_guard_pass": true,
+  "input_hashes": {
+    "amber_reference_sha256": "818802c9044967d0ec39f0e990eb7be77c5d0bdb34d3e7af5e9f317525878302",
+    "amber_test_1_sha256": "4406eea049cab3acb0ab4cac5df2cca04eecf3ee92ed7dfd14e1201836a35f36",
+    "amber_test_2_sha256": "b5a33bf81cda10992b9c715884024f612b10f4bc61084e22c7da6e9187a64c1e",
+    "cobalt_reference_sha256": "1fb8436ce65f2f6684ddbab12c80822826f639e6eb16c6ac136d709d12660a2a",
+    "cobalt_test_1_sha256": "bba556a7f01007f4d2a334ca34cfda2b99aaf69d3b896b8048827c179312e766",
+    "cobalt_test_2_sha256": "dc11edcd4bacf33dde12435cdb9bbd547ffe452ee66c7d9324b4f71a1ca59897",
+    "map_sha256": "7e567f169dc5ce1e2b39fd5eca59413daf8fc552d9c0a8308a3a298449e9d246"
+  },
+  "larger_arm": "cobalt",
+  "larger_arm_only": {
+    "per_reviewer": [
+      {
+        "exact_label_error": 0,
+        "false_drop": 0,
+        "false_keep": 0,
+        "unresolved": 0
+      },
+      {
+        "exact_label_error": 1,
+        "false_drop": 0,
+        "false_keep": 0,
+        "unresolved": 1
+      }
+    ],
+    "reference_label_counts": {
+      "DROP_DISTRACTOR": 39,
+      "KEEP_DISTINCT": 2,
+      "UNRESOLVED": 1
+    },
+    "relationship_count": 42,
+    "resolved_reference_count": 41
+  },
+  "larger_worse_flags": {
+    "action_disagreement": true,
+    "false_drop": false,
+    "false_keep": false,
+    "unresolved": false
+  },
+  "primary": {
+    "amber": {
+      "inter_reviewer_action_disagreement": 0,
+      "inter_reviewer_exact_label_disagreement": 0,
+      "per_reviewer": [
+        {
+          "exact_label_error": 5,
+          "false_drop": 2,
+          "false_keep": 3,
+          "unresolved": 0
+        },
+        {
+          "exact_label_error": 5,
+          "false_drop": 2,
+          "false_keep": 3,
+          "unresolved": 0
+        }
+      ],
+      "pooled": {
+        "exact_label_error": 10,
+        "false_drop": 4,
+        "false_keep": 6,
+        "unresolved": 0
+      }
+    },
+    "cobalt": {
+      "inter_reviewer_action_disagreement": 2,
+      "inter_reviewer_exact_label_disagreement": 2,
+      "per_reviewer": [
+        {
+          "exact_label_error": 2,
+          "false_drop": 2,
+          "false_keep": 0,
+          "unresolved": 0
+        },
+        {
+          "exact_label_error": 0,
+          "false_drop": 0,
+          "false_keep": 0,
+          "unresolved": 0
+        }
+      ],
+      "pooled": {
+        "exact_label_error": 2,
+        "false_drop": 2,
+        "false_keep": 0,
+        "unresolved": 0
+      }
+    }
+  },
+  "primary_conclusion": "OPERATIONAL_DECISION_HARM_OBSERVED",
+  "primary_disposition": "FALSIFIED",
+  "reference_freeze_commit": "79e8c41462b791716c89b7f8329f15b580d504a7",
+  "reference_label_counts": {
+    "amber": {
+      "DROP_DISTRACTOR": 34,
+      "DROP_REDUNDANT": 3,
+      "KEEP_DISTINCT": 17
+    },
+    "cobalt": {
+      "DROP_DISTRACTOR": 73,
+      "DROP_REDUNDANT": 3,
+      "KEEP_DISTINCT": 19,
+      "UNRESOLVED": 1
+    }
+  },
+  "schema": "eb-v1-operational-burden-rc1-result-v1",
+  "scoreable_lane_count": 18,
+  "scoreable_matched_relationship_count": 54,
+  "shared_reference_label_flips": [],
+  "shared_relationship_count": 54,
+  "smaller_arm": "amber",
+  "stop_boundary": true,
+  "unresolved_shared_reference_relationships": []
+}
