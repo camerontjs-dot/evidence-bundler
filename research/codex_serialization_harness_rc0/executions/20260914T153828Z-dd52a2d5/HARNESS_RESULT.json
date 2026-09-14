@@ -1,0 +1,52 @@
+{
+  "capability": {
+    "codex_version": "codex-cli 0.154.0",
+    "output_schema_supported": true,
+    "required_flags": [
+      "--output-schema",
+      "--output-last-message",
+      "--json",
+      "--ephemeral",
+      "--ignore-user-config",
+      "--ignore-rules",
+      "--sandbox"
+    ]
+  },
+  "completed_run_count": 0,
+  "failure": {
+    "detail": "ValueError: expected exactly one completed agent message, got 2",
+    "step": "unexpected_harness_error"
+  },
+  "fixture": {
+    "expected_labels_sha256": "d7858e8564a9ecac2253ef617cdcbd65c8522d0200298ea86bf89c7bd6aa8700",
+    "item_count": 96,
+    "output_schema_sha256": "583f536c4dfd2808d1097b125f905c204533ad213a3cdb49a37a91bfa34f3fd6",
+    "packet_sha256": "5348631af8b2ecd5419929984988c30db5d1399bb825d7197c569fe84109df55",
+    "task_sha256": "52c74aa8c3cf277dcfd4bb72f16986c208d125d2d26c7a9ccb0e892df98e0486",
+    "unique_relation_id_count": 96
+  },
+  "harness_status": "HARNESS_ERROR",
+  "qualification_rule": "QUALIFIED only if all 12 fresh synthetic Codex executions pass every structural, isolation, deterministic-value, duplicate-key, and trace/final identity check.",
+  "rc1_resume_authorized": false,
+  "required_run_count": 12,
+  "runs": [],
+  "schema": "eb-codex-serialization-harness-result-v1",
+  "scientific_result": false,
+  "selftest": {
+    "negative_controls": {
+      "duplicate_agent_message": "ValueError",
+      "duplicate_key": "DuplicateKeyError",
+      "extra_id": "ValueError",
+      "forbidden_command": "ValueError",
+      "invalid_label": "ValueError",
+      "missing_id": "ValueError",
+      "wrong_reviewer_id": "ValueError",
+      "wrong_valid_label": "ValueError"
+    },
+    "pass": true,
+    "schema": "eb-codex-serialization-harness-selftest-v1",
+    "valid_control_passed": true
+  },
+  "source_head": "d288b1c40f56695cd2e198f268fbdc8f58347d5c",
+  "stop_boundary": "HARNESS_QUALIFICATION_ONLY_NO_RC1_EXECUTION"
+}
