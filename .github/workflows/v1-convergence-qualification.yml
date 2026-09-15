@@ -1,0 +1,84 @@
+name: V1 Convergence Qualification
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/evidence_bundler/v1/**"
+      - "tests/test_v1_package.py"
+      - "scripts/qualify_v1_convergence.py"
+      - ".github/workflows/v1-convergence-qualification.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  qualify-v1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install candidate
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Checkout exact frozen qualification authorities
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _qualification
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/evidence-bundler.git \
+            _qualification/eb-research
+          git -C _qualification/eb-research checkout --quiet \
+            dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/claim-audit-lab.git \
+            _qualification/cal-research
+          git -C _qualification/cal-research checkout --quiet \
+            7a46d61585f868a2e904f870528f605fb06772ea
+          git clone --quiet --no-checkout \
+            https://github.com/camerontjs-dot/apparatus-contracts.git \
+            _qualification/apparatus-contracts
+          git -C _qualification/apparatus-contracts checkout --quiet \
+            529c92b49a34d5c610618551a8737f019f9fa332
+
+      - name: Verify exact authority identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C _qualification/eb-research rev-parse HEAD)" = \
+            "dd4fb2b89f351fbdcd8b08e48dd9d7d1f10c2d05"
+          test "$(git -C _qualification/cal-research rev-parse HEAD)" = \
+            "7a46d61585f868a2e904f870528f605fb06772ea"
+          test "$(git -C _qualification/apparatus-contracts rev-parse HEAD)" = \
+            "529c92b49a34d5c610618551a8737f019f9fa332"
+          test "$(git -C _qualification/apparatus-contracts \
+            rev-parse HEAD:validators/contract_a_rc2.py)" = \
+            "42e5f5b3bf38d677445e9d01ea130ba604e53409"
+
+      - name: Run bounded Contract A and retrieval qualification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/qualify_v1_convergence.py \
+            --eb-research-root _qualification/eb-research \
+            --cal-research-root _qualification/cal-research \
+            --apparatus-root _qualification/apparatus-contracts \
+            --out artifacts/v1-convergence-qualification.json
+
+      - name: Upload qualification receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1-convergence-qualification-${{ github.run_id }}
+          path: artifacts/v1-convergence-qualification.json
+          if-no-files-found: warn
+          retention-days: 90

@@ -1,0 +1,43 @@
+{
+  "schema": "eb-v1-integration-candidate-record-v1",
+  "status": "EVIDENCE_BUNDLER_V1_INTEGRATION_CANDIDATE_FROZEN",
+  "candidate_profile": "eb-v1-integration-10x3-rc0",
+  "frozen_v1_implementation": {
+    "commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "tree": "1d254e38cb0e174635efc7687c2b0ab091aa52b3"
+  },
+  "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+  "contract_a_authority": {
+    "version": "2.0.0",
+    "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409"
+  },
+  "contract_b_authority": {
+    "version": "1.2.0",
+    "production_lock": "c314e53bd91c0736aa4370a364673b069aceb43e"
+  },
+  "cal_intake_qualification_subject": {
+    "repository": "camerontjs-dot/claim-audit-lab",
+    "candidate_commit": "4d1b8909f7e2e52c33cf99632be8565f2685f948"
+  },
+  "retrieval_default_qualified": false,
+  "production_release": false,
+  "merge_authorized": false,
+  "automatic_action_authorized": false,
+  "qualification": {
+    "hosted_ci": "CI_35019499084_SUCCESS_AT_8e1e15a__LEGACY_CONVERGENCE_35019499090_EXPECTED_NONPASS_UNRESOLVED_AT_AUTHORIZED_BOUND",
+    "local_execution": "PASS_AT_8e1e15a__SUCCESSOR_PROTOCOL",
+    "freeze_status_after_pass": "EVIDENCE_BUNDLER_V1_INTEGRATION_CANDIDATE_FROZEN",
+    "tested_head": "8e1e15a96308d20be24b0bd0f0a4d554b0f020cc",
+    "tested_tree": "ac169ca5c8f5c2b01ee1566427e8d2e267a1e90a",
+    "predecessor_preserved": "74dcbc4f616298d5cd542be51c6404a657dca4bb_FAIL_NOT_REINTERPRETED",
+    "receipt": "research/eb_v1_integration_candidate/qualification/2026-09-15__successor-8e1e15a__qualification-receipt.json"
+  },
+  "known_limitations": [
+    "candidate_depth_10_is_bounded_and_does_not_establish_completeness",
+    "retained_k_3_can_drop_known_required_rank_4_or_rank_7_evidence",
+    "fixed_10x7_widening_failed_completed_burden_and_operational_instability_gates",
+    "tested_frozen_pool_facility_selectors_did_not_improve_over_k3",
+    "contract_b_requires_explicit_legacy_compatibility_payload_not_owned_by_contract_a_2_0"
+  ]
+}
