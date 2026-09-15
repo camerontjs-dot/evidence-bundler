@@ -1,0 +1,77 @@
+{
+  "schema": "eb-v1-stage-a-smoke-freeze-v1",
+  "freeze_date": "2026-09-14",
+  "classification": "research_infrastructure_pilot_freeze",
+  "profile_id": "eb-v1-pilot-10x3-smoke-rc0",
+  "scope": "first_10_claim_cal_pipeline_stage_a_smoke_only",
+  "production_default": false,
+  "automatic_carry_forward": false,
+  "implementation": {
+    "repository": "camerontjs-dot/evidence-bundler",
+    "commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "tree": "1d254e38cb0e174635efc7687c2b0ab091aa52b3",
+    "product_disposition": "NOT_READY"
+  },
+  "config": {
+    "candidate_depth": 10,
+    "retained_k": 3,
+    "chunk_max_chars": 1800,
+    "chunk_overlap_chars": 80,
+    "root_diagnostic": false,
+    "retrieval_engine": "evidence_bundler_okapi_bm25_v1",
+    "tokenizer": "lowercase_word_v1",
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "source_scope_policy": "all_contract_a_sources",
+    "query_strategy": "exact_primary_target_text"
+  },
+  "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+  "admission_policy": "existing_v1_explicit_admission_semantics_no_smoke_specific_auto_acceptance",
+  "retrieval_policy": {
+    "semantic_reranker": false,
+    "query_rewrite": false,
+    "adaptive_k": false,
+    "declared_root_retrieval": false,
+    "midrun_tuning": false
+  },
+  "trace_requirements": {
+    "preserve_native_eb_package": true,
+    "preserve_candidate_history_through_depth": true,
+    "preserve_nomination_rank": true,
+    "preserve_selection_state": true,
+    "preserve_admission_state": true,
+    "preserve_source_and_passage_hashes": true,
+    "preserve_aperture_state": true,
+    "raw_bm25_score_native_package": false,
+    "raw_bm25_score_if_recorded": "diagnostic_only_nonsemantic_sidecar"
+  },
+  "handoff": {
+    "contract_b_target": "released_contract_b_1.2.0",
+    "current_stage_a_projection_status": "NOT_FROZEN",
+    "required_before_claim_1": "freeze_and_qualify_a_nonsemantic_c4e3f97_to_contract_b_1.2_test_projection_or_carrier",
+    "native_eb_package_remains_retrieval_trace_authority": true
+  },
+  "evidence_record": {
+    "v1_convergence_pr": 60,
+    "fixed_k_gold_completion_pr": 72,
+    "operational_burden_rc1_pr": 74,
+    "selector_bakeoff_pr": 77,
+    "mainframe_pilot_prep_pr": "camerontjs-dot/mainframe-live#20"
+  },
+  "known_failures_preserved": [
+    "candidate_depth_5_can_miss_required_rank_7_evidence",
+    "retained_k_3_can_drop_required_rank_4_or_rank_7_evidence",
+    "fixed_10x7_widening_is_not_qualified_as_a_production_default",
+    "fixed_10x7_increased_review_noise_and_observed_reviewer_action_disagreement",
+    "frozen_pool_setwise_facility_selector_did_not_improve_over_fixed_k3"
+  ],
+  "nonclaims": [
+    "not_a_release",
+    "not_a_production_default",
+    "not_retrieval_quality_qualification",
+    "not_evidence_completeness",
+    "not_contract_b_projection_qualification",
+    "not_cal_semantic_correctness",
+    "not_authorization_for_automatic_action"
+  ]
+}
