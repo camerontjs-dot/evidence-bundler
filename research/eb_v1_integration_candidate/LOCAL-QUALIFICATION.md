@@ -54,12 +54,25 @@ Run the dedicated V1 suites first:
 python -m pytest -q tests/test_v1_package.py tests/test_v1_contract_b_projection.py
 python -m ruff check src/evidence_bundler/v1 scripts/run_v1_integration_candidate.py \
   tests/test_v1_package.py tests/test_v1_contract_b_projection.py
-python -m ruff format --check src/evidence_bundler/v1 scripts/run_v1_integration_candidate.py \
-  tests/test_v1_package.py tests/test_v1_contract_b_projection.py
+python -m ruff format --check src/evidence_bundler/v1/contract_b.py scripts/run_v1_integration_candidate.py \
+  tests/test_v1_contract_b_projection.py
 python -m mypy --strict src/evidence_bundler/v1 scripts/run_v1_integration_candidate.py
 python -m compileall -q src/evidence_bundler/v1 scripts/run_v1_integration_candidate.py
 python -m pip check
 ```
+
+Successor qualification protocol (post-`74dcbc4`): historical CI at the frozen
+V1 commit `c4e3f97` used Ruff 0.16.7 but ran `ruff check`, not
+`ruff format --check`; there is therefore no evidence that Ruff formatting is
+a frozen-V1 invariant. The exact-diff guard in §4 for the six frozen V1 files
+is preserved and remains the frozen-file authority. Formatter qualification
+applies only to candidate-owned/new Python surfaces
+(`src/evidence_bundler/v1/contract_b.py`,
+`scripts/run_v1_integration_candidate.py`,
+`tests/test_v1_contract_b_projection.py`). The preserved `74dcbc4` run
+(strict-mypy 6 errors, `V1 Convergence Qualification`
+`UNRESOLVED_AT_AUTHORIZED_BOUND`, CI Python 3.11 fail) is not reinterpreted
+as passing.
 
 Then run the maintained repository suite:
 

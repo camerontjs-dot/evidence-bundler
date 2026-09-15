@@ -28,10 +28,7 @@ from evidence_bundler.v1.package import compute_package_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 CARRIER_PATH = (
-    ROOT
-    / "research"
-    / "eb_v1_integration_candidate"
-    / "contract_b_compatibility_carrier.json"
+    ROOT / "research" / "eb_v1_integration_candidate" / "contract_b_compatibility_carrier.json"
 )
 
 
@@ -189,12 +186,9 @@ def test_projection_preserves_full_candidate_history_and_native_not_applicable(
         out_dir=tmp_path,
     )
     extension = json.loads(
-        (
-            tmp_path
-            / "contract_b"
-            / "extensions"
-            / "contract-b-factual-context-v1.json"
-        ).read_text(encoding="utf-8")
+        (tmp_path / "contract_b" / "extensions" / "contract-b-factual-context-v1.json").read_text(
+            encoding="utf-8"
+        )
     )
     assert len(extension["history"]) == len(package["candidates"])
     assert len(receipt["mappings"]) == len(package["candidates"])
@@ -211,9 +205,7 @@ def test_projection_preserves_full_candidate_history_and_native_not_applicable(
     assert history["nomination"]["selection_state"] == "not_retained"
     assert history["review"]["native_admission_state"] == "not_applicable"
     assert history["review"]["decision"] == "needs-review"
-    assert history["review"]["encoding"] == (
-        "contract_b_needs_review_for_native_not_applicable"
-    )
+    assert history["review"]["encoding"] == ("contract_b_needs_review_for_native_not_applicable")
 
     accepted = {
         (row["proposition_id"], row["passage_id"])

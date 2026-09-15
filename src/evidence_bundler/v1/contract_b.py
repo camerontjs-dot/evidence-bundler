@@ -6,7 +6,7 @@ import json
 from collections import defaultdict
 from copy import deepcopy
 from pathlib import Path
-from typing import Any
+from typing import Any, Final, Literal
 from uuid import NAMESPACE_URL, uuid5
 
 from evidence_bundler.contracts.factual_context import (
@@ -51,7 +51,7 @@ from evidence_bundler.models.cb import (
 from evidence_bundler.models.common import PENDING_HASH
 from evidence_bundler.v1.package import V1Config, canonical_json_bytes, hash_json, validate_package
 
-CONTRACT_B_VERSION = "1.2.0"
+CONTRACT_B_VERSION: Final[Literal["1.2.0"]] = "1.2.0"
 CONTRACT_B_PRODUCTION_LOCK = "c314e53bd91c0736aa4370a364673b069aceb43e"
 FROZEN_V1_IMPLEMENTATION_COMMIT = "c4e3f97ec8f0bd36180954c3aa382418925bf947"
 FROZEN_V1_IMPLEMENTATION_TREE = "1d254e38cb0e174635efc7687c2b0ab091aa52b3"
@@ -521,16 +521,13 @@ def _attach_extension(package: dict[str, Any], bundle_dir: Path) -> None:
     claim_rows = _claims(package)
     root_id = str(contract_a["root_proposition"]["proposition_id"])
     children = {
-        str(row["proposition_id"]): row
-        for row in contract_a["decomposition"].get("children", [])
+        str(row["proposition_id"]): row for row in contract_a["decomposition"].get("children", [])
     }
     plans = {str(row["retrieval_id"]): row for row in package["retrieval_plans"]}
     executions = {str(row["retrieval_id"]): row for row in package["retrieval_executions"]}
     passage_by_id = _passages(package)
 
-    counts: dict[str, list[int]] = {
-        str(row["proposition_id"]): [0, 0, 0] for row in claim_rows
-    }
+    counts: dict[str, list[int]] = {str(row["proposition_id"]): [0, 0, 0] for row in claim_rows}
     history: list[HistoryLink] = []
     for candidate in package["candidates"]:
         claim_id = str(candidate["proposition_id"])
