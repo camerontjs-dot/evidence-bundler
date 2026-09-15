@@ -1,6 +1,6 @@
 {
   "schema": "eb-v1-integration-candidate-record-v1",
-  "status": "IMPLEMENTED_AWAITING_LOCAL_QUALIFICATION",
+  "status": "EVIDENCE_BUNDLER_V1_INTEGRATION_CANDIDATE_FROZEN",
   "candidate_profile": "eb-v1-integration-10x3-rc0",
   "frozen_v1_implementation": {
     "commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
@@ -25,9 +25,13 @@
   "merge_authorized": false,
   "automatic_action_authorized": false,
   "qualification": {
-    "hosted_ci": "NOT_RUN_RUNNER_QUOTA_UNAVAILABLE",
-    "local_execution": "PENDING",
-    "freeze_status_after_pass": "EVIDENCE_BUNDLER_V1_INTEGRATION_CANDIDATE_FROZEN"
+    "hosted_ci": "CI_35019499084_SUCCESS_AT_8e1e15a__LEGACY_CONVERGENCE_35019499090_EXPECTED_NONPASS_UNRESOLVED_AT_AUTHORIZED_BOUND",
+    "local_execution": "PASS_AT_8e1e15a__SUCCESSOR_PROTOCOL",
+    "freeze_status_after_pass": "EVIDENCE_BUNDLER_V1_INTEGRATION_CANDIDATE_FROZEN",
+    "tested_head": "8e1e15a96308d20be24b0bd0f0a4d554b0f020cc",
+    "tested_tree": "ac169ca5c8f5c2b01ee1566427e8d2e267a1e90a",
+    "predecessor_preserved": "74dcbc4f616298d5cd542be51c6404a657dca4bb_FAIL_NOT_REINTERPRETED",
+    "receipt": "research/eb_v1_integration_candidate/qualification/2026-09-15__successor-8e1e15a__qualification-receipt.json"
   },
   "known_limitations": [
     "candidate_depth_10_is_bounded_and_does_not_establish_completeness",
