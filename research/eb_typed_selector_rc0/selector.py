@@ -10,6 +10,28 @@ from pathlib import Path
 from typing import Any, Iterable
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9%'-]+")
+NON_DIRECT_EVIDENCE_PATTERNS = (
+    ("rejected", re.compile(r"\brejected (?:hypothesis|claim|proposal|statement)\b", re.I)),
+    ("unverified", re.compile(r"\bunverified\b", re.I)),
+    (
+        "unresolved_question",
+        re.compile(r"\basked whether\b|\bno conclusion(?: was)? recorded\b|\bno conclusion\b", re.I),
+    ),
+    ("hypothetical", re.compile(r"\bhypothetical\b", re.I)),
+    (
+        "example_or_template",
+        re.compile(r"\bexample only\b|\bas an example\b|\btemplate\b.*\bexample\b", re.I),
+    ),
+    (
+        "explicit_non_result",
+        re.compile(
+            r"\bnot (?:an? |the )?(?:measured )?(?:efficiency|result|measurement)\b"
+            r"|\bnot (?:removal )?efficiency\b"
+            r"|\bnot as (?:a )?measured (?:efficiency|result|measurement)\b",
+            re.I,
+        ),
+    ),
+)
 
 
 def canonical_json(value: Any) -> str:
@@ -57,6 +79,13 @@ def phrase_coverage(text: str, terms: Iterable[str]) -> float | None:
     return hits / len(term_list)
 
 
+def evidence_posture(text: str) -> tuple[str, float]:
+    for label, pattern in NON_DIRECT_EVIDENCE_PATTERNS:
+        if pattern.search(text):
+            return f"non_direct:{label}", 0.0
+    return "direct_or_unmarked_assertion", 1.0
+
+
 def weighted_mean(pairs: Iterable[tuple[float | None, float]]) -> float | None:
     numerator = 0.0
     denominator = 0.0
@@ -94,6 +123,7 @@ def characterize(
 ) -> list[dict[str, Any]]:
     bm25 = normalize_bm25(rows)
     concepts = list(profile.get("concepts", []))
+    requires_direct_evidence = bool(profile.get("requires_direct_evidence", False))
     output: list[dict[str, Any]] = []
     for row in rows:
         concept_scores: dict[str, float | None] = {}
@@ -119,6 +149,9 @@ def characterize(
             source_role_match = None
         else:
             source_role_match = float(str(observed_role) in source_roles)
+
+        posture_label, posture_value = evidence_posture(row.text)
+        direct_evidence_match = posture_value if requires_direct_evidence else None
 
         profile_score = weighted_mean(
             [
@@ -151,6 +184,8 @@ def characterize(
                     "concept_coverage": concept_scores,
                     "evidence_form_match": evidence_form_match,
                     "source_role_match": source_role_match,
+                    "evidence_posture": posture_label,
+                    "direct_evidence_match": direct_evidence_match,
                 },
                 "unknowns": unknowns,
             }
@@ -163,12 +198,14 @@ def candidate_base_utility(row: dict[str, Any], ablate: set[str] | None = None) 
     s = row["signals"]
     weighted = []
     if "semantic" not in ablate:
-        weighted.append((s["semantic_relevance"], 0.35))
+        weighted.append((s["semantic_relevance"], 0.25))
     if "local_span" not in ablate:
-        weighted.append((s["local_span_recall"], 0.25))
+        weighted.append((s["local_span_recall"], 0.10))
     if "profile" not in ablate:
         weighted.append((s["profile_compatibility"], 0.25))
-    weighted.append((s["bm25_normalized"], 0.15))
+    if "posture" not in ablate:
+        weighted.append((s["direct_evidence_match"], 0.30))
+    weighted.append((s["bm25_normalized"], 0.10))
     value = weighted_mean(weighted)
     return 0.0 if value is None else value
 
@@ -214,7 +251,7 @@ def set_utility(
     coverage = None if ablate and "profile" in ablate else concept_set_coverage(selected)
     return (
         base
-        + (0.20 * coverage if coverage is not None else 0.0)
+        + (0.15 * coverage if coverage is not None else 0.0)
         - 0.15 * redundancy(selected, by_id)
     )
 
@@ -303,6 +340,9 @@ def run_lane(lane: dict[str, Any]) -> dict[str, Any]:
             "typed_without_semantic": typed_select(
                 characterized, candidates, ablate={"semantic"}
             ),
+            "typed_without_evidence_posture": typed_select(
+                characterized, candidates, ablate={"posture"}
+            ),
         },
     }
 
@@ -320,6 +360,7 @@ def main() -> int:
         "nonclaims": [
             "No SUPPORTS/REFUTES judgment is produced.",
             "No selector is qualified by this development output.",
+            "Evidence posture is candidate-side discourse/evidence-form characterization, not truth or entailment authority.",
             "Unknown signals remain explicit and are omitted from weighted means rather than coerced to zero.",
         ],
     }
