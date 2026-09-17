@@ -1,0 +1,18 @@
+{
+  "arm_output_freeze_commit": "04523e52606ce47bb3c2eec16c18a5de66b2f277",
+  "arm_output_freeze_tree": "0eb513dbbf8edd45d981c09d1a276ba6b20d1e6d",
+  "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "decisive_result_sha256": "4efb6ff20dbebd0649df57d92843ddc6ebb805ee48ee2ee5c31bfd136cde2807",
+  "disposition": "FALSIFIED",
+  "evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "final_system_gates_sha256": "dfbc681a5c59c40221589354f2c63ee60087897c331be1a33fcb448b73c4fec8",
+  "frozen_evaluator_edited": false,
+  "gold_canonical_sha256": "f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9",
+  "gold_commit": "cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+  "gold_opened_only_after_arm_output_freeze": true,
+  "gold_raw_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "production_authorization": false,
+  "role_binding_sha256": "699649c77b0d1c60307ec173600f7e00bcffd418b26ddc852908eb12b376a3fd",
+  "schema": "eb-typed-selector-rc1-decisive-result-receipt-v1",
+  "status": "DECISIVE_EVALUATION_COMPLETE"
+}

@@ -1,0 +1,558 @@
+{
+  "arm_metrics": {
+    "ARM_A": {
+      "arm": "ARM_A",
+      "category10_selected_burden": 9,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "deep_useful_rescue_count": 0,
+      "mean_original_rank_of_selected_useful": 1.6818181818181819,
+      "nonuseful_burden": {
+        "per_lane_mean": 2.2666666666666666,
+        "total": 68
+      },
+      "ordinary_easy_lane_coverage": 2,
+      "per_category": {
+        "1": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "10": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 0,
+          "unsafe_retained": 8,
+          "useful_groups_available": 0,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": null
+        },
+        "2": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 8,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 1,
+          "useful_recall_at_3": 0.2
+        },
+        "3": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "4": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "5": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 1.0
+        },
+        "6": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 8,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 1,
+          "useful_recall_at_3": 0.2
+        },
+        "7": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 6,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.5
+        },
+        "8": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 3,
+          "positive_lanes": 3,
+          "unsafe_retained": 3,
+          "useful_groups_available": 10,
+          "useful_groups_retained": 6,
+          "useful_recall_at_3": 0.6
+        },
+        "9": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 5,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        }
+      },
+      "redundant_retention": 1,
+      "required_lane_coverage": {
+        "covered_positive_lanes": 16,
+        "eligible_positive_lanes": 27,
+        "rate": 0.5925925925925926
+      },
+      "unsafe_misleading_retention": {
+        "lanes_affected": 29,
+        "total": 62
+      },
+      "useful_distinct_retention": 4,
+      "useful_item_recall_at_3": {
+        "rate": 0.5365853658536586,
+        "useful_groups_available": 41,
+        "useful_groups_retained": 22
+      }
+    },
+    "ARM_B": {
+      "arm": "ARM_B",
+      "category10_selected_burden": 9,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "deep_useful_rescue_count": 6,
+      "mean_original_rank_of_selected_useful": 2.4583333333333335,
+      "nonuseful_burden": {
+        "per_lane_mean": 2.2,
+        "total": 66
+      },
+      "ordinary_easy_lane_coverage": 1,
+      "per_category": {
+        "1": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 1.0
+        },
+        "10": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 0,
+          "unsafe_retained": 7,
+          "useful_groups_available": 0,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": null
+        },
+        "2": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "3": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "4": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 1.0
+        },
+        "5": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 1.0
+        },
+        "6": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "7": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 6,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.5
+        },
+        "8": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 10,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.3
+        },
+        "9": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 8,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 1,
+          "useful_recall_at_3": 0.3333333333333333
+        }
+      },
+      "redundant_retention": 2,
+      "required_lane_coverage": {
+        "covered_positive_lanes": 21,
+        "eligible_positive_lanes": 27,
+        "rate": 0.7777777777777778
+      },
+      "unsafe_misleading_retention": {
+        "lanes_affected": 30,
+        "total": 62
+      },
+      "useful_distinct_retention": 3,
+      "useful_item_recall_at_3": {
+        "rate": 0.5853658536585366,
+        "useful_groups_available": 41,
+        "useful_groups_retained": 24
+      }
+    },
+    "ARM_C": {
+      "arm": "ARM_C",
+      "category10_selected_burden": 9,
+      "complementary_coverage": {
+        "covered": 1,
+        "total": 3
+      },
+      "deep_useful_rescue_count": 8,
+      "mean_original_rank_of_selected_useful": 2.727272727272727,
+      "nonuseful_burden": {
+        "per_lane_mean": 2.2666666666666666,
+        "total": 68
+      },
+      "ordinary_easy_lane_coverage": 2,
+      "per_category": {
+        "1": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "10": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 0,
+          "unsafe_retained": 7,
+          "useful_groups_available": 0,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": null
+        },
+        "2": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 5,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "3": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "4": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "5": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": 0.0
+        },
+        "6": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 5,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "7": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 6,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.5
+        },
+        "8": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 4,
+          "positive_lanes": 3,
+          "unsafe_retained": 4,
+          "useful_groups_available": 10,
+          "useful_groups_retained": 5,
+          "useful_recall_at_3": 0.5
+        },
+        "9": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 4,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        }
+      },
+      "redundant_retention": 2,
+      "required_lane_coverage": {
+        "covered_positive_lanes": 17,
+        "eligible_positive_lanes": 27,
+        "rate": 0.6296296296296297
+      },
+      "unsafe_misleading_retention": {
+        "lanes_affected": 30,
+        "total": 58
+      },
+      "useful_distinct_retention": 3,
+      "useful_item_recall_at_3": {
+        "rate": 0.5365853658536586,
+        "useful_groups_available": 41,
+        "useful_groups_retained": 22
+      }
+    },
+    "ARM_D": {
+      "arm": "ARM_D",
+      "category10_selected_burden": 9,
+      "complementary_coverage": {
+        "covered": 1,
+        "total": 3
+      },
+      "deep_useful_rescue_count": 6,
+      "mean_original_rank_of_selected_useful": 2.409090909090909,
+      "nonuseful_burden": {
+        "per_lane_mean": 2.2666666666666666,
+        "total": 68
+      },
+      "ordinary_easy_lane_coverage": 2,
+      "per_category": {
+        "1": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "10": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 0,
+          "unsafe_retained": 8,
+          "useful_groups_available": 0,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": null
+        },
+        "2": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 5,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "3": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 7,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        },
+        "4": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 8,
+          "positive_lanes": 3,
+          "unsafe_retained": 8,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 1,
+          "useful_recall_at_3": 0.3333333333333333
+        },
+        "5": {
+          "covered_positive_lanes": 0,
+          "nonuseful_retained": 9,
+          "positive_lanes": 3,
+          "unsafe_retained": 8,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 0,
+          "useful_recall_at_3": 0.0
+        },
+        "6": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 5,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.6
+        },
+        "7": {
+          "covered_positive_lanes": 3,
+          "nonuseful_retained": 6,
+          "positive_lanes": 3,
+          "unsafe_retained": 6,
+          "useful_groups_available": 6,
+          "useful_groups_retained": 3,
+          "useful_recall_at_3": 0.5
+        },
+        "8": {
+          "covered_positive_lanes": 1,
+          "nonuseful_retained": 3,
+          "positive_lanes": 3,
+          "unsafe_retained": 3,
+          "useful_groups_available": 10,
+          "useful_groups_retained": 6,
+          "useful_recall_at_3": 0.6
+        },
+        "9": {
+          "covered_positive_lanes": 2,
+          "nonuseful_retained": 7,
+          "positive_lanes": 3,
+          "unsafe_retained": 5,
+          "useful_groups_available": 3,
+          "useful_groups_retained": 2,
+          "useful_recall_at_3": 0.6666666666666666
+        }
+      },
+      "redundant_retention": 2,
+      "required_lane_coverage": {
+        "covered_positive_lanes": 17,
+        "eligible_positive_lanes": 27,
+        "rate": 0.6296296296296297
+      },
+      "unsafe_misleading_retention": {
+        "lanes_affected": 29,
+        "total": 62
+      },
+      "useful_distinct_retention": 3,
+      "useful_item_recall_at_3": {
+        "rate": 0.5365853658536586,
+        "useful_groups_available": 41,
+        "useful_groups_retained": 22
+      }
+    }
+  },
+  "exact_replay_identity": {
+    "all_arms": true,
+    "per_arm": {
+      "ARM_A": true,
+      "ARM_B": true,
+      "ARM_C": true,
+      "ARM_D": true
+    }
+  },
+  "pairwise_deltas": {
+    "ARM_A_vs_ARM_B": {
+      "nonuseful_burden_delta": 2,
+      "required_lane_coverage_delta": -5,
+      "unsafe_retention_delta": 0,
+      "useful_recall_delta": -0.04878048780487798
+    },
+    "ARM_A_vs_ARM_C": {
+      "nonuseful_burden_delta": 0,
+      "required_lane_coverage_delta": -1,
+      "unsafe_retention_delta": 4,
+      "useful_recall_delta": 0.0
+    },
+    "ARM_A_vs_ARM_D": {
+      "nonuseful_burden_delta": 0,
+      "required_lane_coverage_delta": -1,
+      "unsafe_retention_delta": 0,
+      "useful_recall_delta": 0.0
+    },
+    "ARM_B_vs_ARM_C": {
+      "nonuseful_burden_delta": -2,
+      "required_lane_coverage_delta": 4,
+      "unsafe_retention_delta": 4,
+      "useful_recall_delta": 0.04878048780487798
+    },
+    "ARM_B_vs_ARM_D": {
+      "nonuseful_burden_delta": -2,
+      "required_lane_coverage_delta": 4,
+      "unsafe_retention_delta": 0,
+      "useful_recall_delta": 0.04878048780487798
+    },
+    "ARM_C_vs_ARM_D": {
+      "nonuseful_burden_delta": 0,
+      "required_lane_coverage_delta": 0,
+      "unsafe_retention_delta": -4,
+      "useful_recall_delta": 0.0
+    }
+  },
+  "research_disposition": {
+    "disposition": "FALSIFIED",
+    "reasons": [
+      "required_lane_coverage_worse_by_at_least_3"
+    ]
+  },
+  "schema": "eb-typed-selector-rc1-evaluation-v1",
+  "selection_overlap_jaccard": {
+    "ARM_A_vs_ARM_B": 0.5433333333333333,
+    "ARM_A_vs_ARM_C": 0.4966666666666667,
+    "ARM_A_vs_ARM_D": 0.5333333333333333,
+    "ARM_B_vs_ARM_C": 0.46,
+    "ARM_B_vs_ARM_D": 0.5133333333333333,
+    "ARM_C_vs_ARM_D": 0.8
+  }
+}
