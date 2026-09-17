@@ -111,7 +111,7 @@ jobs:
             --gold sealed-gold/research/eb_typed_selector_rc1_successor/GOLD.json \
             --replay-1 evaluation/research/eb_typed_selector_rc1_execution/frozen/ARM_OUTPUTS_REPLAY_A.json \
             --replay-2 evaluation/research/eb_typed_selector_rc1_execution/frozen/ARM_OUTPUTS_REPLAY_B.json \
-            --binding evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json \
+            --binding evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING_EXACT.json \
             --system-gates out/FINAL_SYSTEM_GATES.json \
             --out out/DECISIVE-RESULT.json
           python - <<'PY'
@@ -133,7 +133,7 @@ jobs:
           result=Path("out/DECISIVE-RESULT.json")
           r=json.loads(result.read_text())
           m=r.get("arm_metrics",{})
-          roles=json.loads(Path("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json").read_text())
+          roles=json.loads(Path("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING_EXACT.json").read_text())
           d=r["research_disposition"]
           lines=[
               "# EB Typed Selector RC1 - Decisive Fresh Qualification Result",
@@ -188,7 +188,7 @@ jobs:
               "disposition":d["disposition"],
               "decisive_result_sha256":sha("out/DECISIVE-RESULT.json"),
               "final_system_gates_sha256":sha("out/FINAL_SYSTEM_GATES.json"),
-              "role_binding_sha256":sha("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json"),
+              "role_binding_sha256":sha("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING_EXACT.json"),
               "gold_opened_only_after_arm_output_freeze":True,
               "frozen_evaluator_edited":False,
               "production_authorization":False,
