@@ -1,0 +1,22 @@
+{
+  "schema": "eb-typed-selector-rc1-postfreeze-reveal-binding-v1",
+  "status": "TARGET_REVEALED_AFTER_VALID_PREREVEAL_FREEZE",
+  "fresh_input_ref": "research/eb-typed-selector-rc1-successor-fresh-input-final-20260917",
+  "fresh_input_commit": "a15a336e61f99b97fb9ea284761e1952fc1289cf",
+  "prereveal_receipt_status": "READY_FOR_REVEAL",
+  "target_freeze_commit": "98ddfb4f2e9623da6b44009abf921657b9445955",
+  "selector_path": "research/eb_typed_selector_rc0/selector.py",
+  "selector_sha256": "e83e6305008a0f7a264cde2167bff80ce6399f03d34ebce10376f106c52cec6c",
+  "semantic_scorer_path": "research/eb_typed_selector_rc0/score_frozen_pool.py",
+  "semantic_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "semantic_model_revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "arm_binding": {
+    "ARM_A": "bm25_top3",
+    "ARM_B": "semantic_top3",
+    "ARM_C": "typed_top3",
+    "ARM_D": "typed_without_evidence_posture"
+  },
+  "sealed_gold_opened": false,
+  "scientific_change": false,
+  "note": "Binding fixed before arm execution. ARM_D is the preregistered evidence-posture ablation from the selector freeze."
+}
