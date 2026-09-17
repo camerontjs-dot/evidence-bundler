@@ -1,0 +1,142 @@
+name: Research - EB Typed Selector RC1 Persist Non-Gold Prep
+
+on:
+  push:
+    branches:
+      - research-infra/eb-typed-selector-rc1-successor-freeze-prep-20260917
+    paths:
+      - '.github/workflows/research-eb-typed-selector-rc1-persist-nongold-prep.yml'
+
+permissions:
+  contents: write
+
+env:
+  PINNED_EB_COMMIT: 4e1f6fe00e7c350b28f52bfea14f1f8988847884
+  PINNED_EB_TREE: 11fa35d4d3eeb5ece07269a3f3040fa23df982e4
+  AUTHORING_HEAD: 5aaa24f4f9f9ac6ac5c02a1d99ff4b52bdea8a52
+  FRESH_CORPUS_COMMIT: 3332b90c830ba0a0c3dfae05cc74f410c55aa869
+  EXPECTED_POOL_RAW_SHA256: 4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6
+  OUTPUT_BRANCH: research/eb-typed-selector-rc1-successor-nongold-prep-20260917
+
+jobs:
+  persist-nongold-prep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact authoring head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.AUTHORING_HEAD }}
+          path: authoring
+          fetch-depth: 0
+
+      - name: Checkout exact frozen EB integration candidate
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.PINNED_EB_COMMIT }}
+          path: pinned-eb
+          fetch-depth: 1
+
+      - name: Verify immutable identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C authoring rev-parse HEAD)" = "$AUTHORING_HEAD"
+          test "$(git -C pinned-eb rev-parse HEAD)" = "$PINNED_EB_COMMIT"
+          test "$(git -C pinned-eb rev-parse HEAD^{tree})" = "$PINNED_EB_TREE"
+          git -C authoring merge-base --is-ancestor "$FRESH_CORPUS_COMMIT" "$AUTHORING_HEAD"
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact pinned Evidence Bundler package
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install ./pinned-eb
+          python -m pip check
+
+      - name: Execute exact first stage twice and match prior authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          runner="authoring/research/eb_typed_selector_rc1_successor/authoritative_first_stage.py"
+          claims="authoring/research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json"
+          fixtures="authoring/research/eb_typed_selector_rc1_successor/SOURCE_FIXTURES_V2.json"
+          python "$runner" --self-test
+          rm -rf run-a run-b
+          python "$runner" --claims-profiles "$claims" --source-fixtures "$fixtures" --out-dir run-a
+          python "$runner" --claims-profiles "$claims" --source-fixtures "$fixtures" --out-dir run-b
+          cmp run-a/CANDIDATE_POOLS_AUTHORITATIVE.json run-b/CANDIDATE_POOLS_AUTHORITATIVE.json
+          cmp run-a/FIRST_STAGE_RECEIPT.json run-b/FIRST_STAGE_RECEIPT.json
+          actual="$(sha256sum run-a/CANDIDATE_POOLS_AUTHORITATIVE.json | awk '{print $1}')"
+          test "$actual" = "$EXPECTED_POOL_RAW_SHA256"
+          printf '%s\n' "$PINNED_EB_COMMIT" > run-a/PINNED_EB_HEAD.txt
+          printf '%s\n' "$PINNED_EB_TREE" > run-a/PINNED_EB_TREE.txt
+          sha256sum \
+            "$claims" \
+            "$fixtures" \
+            run-a/CANDIDATE_POOLS_AUTHORITATIVE.json \
+            run-a/FIRST_STAGE_RECEIPT.json \
+            > run-a/AUTHORITATIVE_FIRST_STAGE_SHA256SUMS.txt
+
+      - name: Create immutable non-gold preparation ref
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$OUTPUT_BRANCH" >/dev/null 2>&1; then
+            echo "ref already exists; refusing mutation: $OUTPUT_BRANCH" >&2
+            exit 1
+          fi
+          git -C authoring switch --detach "$AUTHORING_HEAD"
+          git -C authoring switch -c "$OUTPUT_BRANCH"
+          dest="authoring/research/eb_typed_selector_rc1_successor"
+          cp run-a/CANDIDATE_POOLS_AUTHORITATIVE.json "$dest/AUTHORITATIVE_CANDIDATE_POOLS.json"
+          cp run-a/FIRST_STAGE_RECEIPT.json "$dest/AUTHORITATIVE_FIRST_STAGE_RECEIPT.json"
+          cp run-a/PINNED_EB_HEAD.txt "$dest/PINNED_EB_HEAD.txt"
+          cp run-a/PINNED_EB_TREE.txt "$dest/PINNED_EB_TREE.txt"
+          cp run-a/AUTHORITATIVE_FIRST_STAGE_SHA256SUMS.txt "$dest/AUTHORITATIVE_FIRST_STAGE_SHA256SUMS.txt"
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path('authoring/research/eb_typed_selector_rc1_successor')
+          def sha(path):
+              return hashlib.sha256((root / path).read_bytes()).hexdigest()
+          receipt = {
+              'schema': 'eb-typed-selector-rc1-successor-nongold-prep-v1',
+              'classification': 'RESEARCH_INFRASTRUCTURE_ONLY',
+              'status': 'AUTHORITATIVE_NONGOLD_PREP_FROZEN',
+              'authoring_head': os.environ['AUTHORING_HEAD'],
+              'fresh_corpus_commit': os.environ['FRESH_CORPUS_COMMIT'],
+              'pinned_eb_commit': os.environ['PINNED_EB_COMMIT'],
+              'pinned_eb_tree': os.environ['PINNED_EB_TREE'],
+              'candidate_pools_raw_sha256': sha('AUTHORITATIVE_CANDIDATE_POOLS.json'),
+              'expected_prior_candidate_pools_raw_sha256': os.environ['EXPECTED_POOL_RAW_SHA256'],
+              'first_stage_receipt_raw_sha256': sha('AUTHORITATIVE_FIRST_STAGE_RECEIPT.json'),
+              'claims_profiles_raw_sha256': sha('FROZEN_CLAIMS_PROFILES.json'),
+              'source_fixtures_raw_sha256': sha('SOURCE_FIXTURES_V2.json'),
+              'gold_present': False,
+              'selector_present': False,
+              'scientific_change': False,
+              'note': 'Mechanical persistence of exact deterministic first-stage output. Not READY_FOR_REVEAL and not a selector result.'
+          }
+          assert receipt['candidate_pools_raw_sha256'] == receipt['expected_prior_candidate_pools_raw_sha256']
+          (root / 'NONGOLD_PREP_RECEIPT.json').write_text(json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+          PY
+          git -C authoring config user.name github-actions[bot]
+          git -C authoring config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git -C authoring add research/eb_typed_selector_rc1_successor/
+          git -C authoring commit -m "Research: freeze checksum-locked RC1 successor non-gold first-stage prep"
+          git -C authoring push origin "HEAD:refs/heads/$OUTPUT_BRANCH"
+
+      - name: Report frozen non-gold prep identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C authoring rev-parse HEAD
+          git -C authoring rev-parse HEAD^{tree}
