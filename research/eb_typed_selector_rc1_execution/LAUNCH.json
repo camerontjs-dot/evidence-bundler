@@ -1,0 +1,11 @@
+{
+  "schema": "eb-typed-selector-rc1-blind-execution-launch-v1",
+  "status": "AUTHORIZED_AFTER_READY_FOR_REVEAL",
+  "pr": 88,
+  "fresh_input_commit": "a15a336e61f99b97fb9ea284761e1952fc1289cf",
+  "target_freeze_commit": "98ddfb4f2e9623da6b44009abf921657b9445955",
+  "pinned_eb_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+  "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "sealed_gold_opened": false,
+  "action": "run four frozen arms twice, run preregistered pre-gold system gates, freeze outputs, stop before gold reveal"
+}
