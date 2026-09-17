@@ -1,0 +1,29 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-evaluator-test-receipt-v1",
+  "status": "PASS",
+  "evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "evaluator_tests_sha256": "00da5bed1256a039290faa380ae4580fca74c49ce31bfbaf59f441349fcf5815",
+  "command": "python -m unittest -v test_evaluator.py",
+  "test_count": 12,
+  "failures": 0,
+  "errors": 0,
+  "controls": [
+    "support gate",
+    "falsification gate",
+    "inconclusive gate",
+    "weak-control discrimination",
+    "duplicate selection rejection",
+    "out-of-pool rejection",
+    "K=3 enforcement",
+    "gold-like output-field rejection",
+    "candidate replay mismatch handling",
+    "target-owned deterministic failure handling",
+    "complementary required-group coverage",
+    "candidate-pool hash mismatch rejection"
+  ],
+  "environment_notes": [
+    "Unrelated artifact_tool spreadsheet-runtime warmup timeout appeared on stderr; unittest exit status remained 0 and all 12 evaluator tests passed."
+  ],
+  "executed_before_target_reveal": true,
+  "hidden_selector_opened_or_executed": false
+}
