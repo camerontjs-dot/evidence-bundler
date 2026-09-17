@@ -1,0 +1,8 @@
+Python 3.11.16
+torch==2.14.0
+transformers==5.17.0
+tokenizers==0.23.2
+huggingface-hub==1.31.0
+21bb31c7174387b4e60e056428dd576ec203b45c
+98ddfb4f2e9623da6b44009abf921657b9445955
+4e1f6fe00e7c350b28f52bfea14f1f8988847884
