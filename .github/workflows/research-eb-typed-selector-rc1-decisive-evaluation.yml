@@ -1,0 +1,222 @@
+name: Research - EB Typed Selector RC1 Decisive Evaluation
+
+on:
+  push:
+    branches:
+      - research/eb-typed-selector-rc1-decisive-evaluation-20260917
+    paths:
+      - research/eb_typed_selector_rc1_execution/EVALUATION_LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  ARM_FREEZE_COMMIT: 04523e52606ce47bb3c2eec16c18a5de66b2f277
+  GOLD_COMMIT: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+  EXPECTED_GOLD_RAW_SHA256: bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592
+  EXPECTED_GOLD_CANONICAL_SHA256: f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9
+  EXPECTED_EVALUATOR_SHA256: a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2
+  EXPECTED_POOL_RAW_SHA256: 4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6
+  RESULT_BRANCH: research/eb-typed-selector-rc1-decisive-result-20260917
+
+jobs:
+  decisive-evaluation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout evaluation lane
+        uses: actions/checkout@v4
+        with:
+          path: evaluation
+          fetch-depth: 0
+
+      - name: Verify arm-output freeze before gold reveal
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C evaluation merge-base --is-ancestor "$ARM_FREEZE_COMMIT" HEAD
+          test "$(git -C evaluation rev-parse "$ARM_FREEZE_COMMIT")" = "$ARM_FREEZE_COMMIT"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("evaluation/research/eb_typed_selector_rc1_execution/frozen/ARM_OUTPUT_FREEZE_RECEIPT.json")
+          r=json.loads(p.read_text())
+          assert r["status"] == "ARM_OUTPUTS_FROZEN_BEFORE_GOLD_REVEAL"
+          assert r["sealed_gold_opened"] is False
+          assert r["gold_bytes_present_in_execution_checkout"] is False
+          assert r["candidate_pools_raw_sha256"] == "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6"
+          assert r["exact_replay_pass"] is True
+          assert r["candidate_input_order_permutation_pass"] is True
+          assert r["irrelevant_metadata_mutation_pass"] is True
+          PY
+
+      - name: Reveal exact sealed gold after arm freeze
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+          path: sealed-gold
+          fetch-depth: 1
+
+      - name: Verify frozen gold and evaluator identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C sealed-gold rev-parse HEAD)" = "$GOLD_COMMIT"
+          gold=sealed-gold/research/eb_typed_selector_rc1_successor/GOLD.json
+          evaluator=evaluation/research/eb_typed_selector_rc1_successor/evaluator.py
+          test "$(sha256sum "$gold" | awk '{print $1}')" = "$EXPECTED_GOLD_RAW_SHA256"
+          test "$(sha256sum "$evaluator" | awk '{print $1}')" = "$EXPECTED_EVALUATOR_SHA256"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          gold_path=Path("sealed-gold/research/eb_typed_selector_rc1_successor/GOLD.json")
+          obj=json.loads(gold_path.read_text(encoding="utf-8"))
+          canonical=json.dumps(obj,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode("utf-8")
+          digest=hashlib.sha256(canonical).hexdigest()
+          assert digest == "f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9", digest
+          receipt=json.loads(Path("sealed-gold/research/eb_typed_selector_rc1_successor/SEALED_GOLD_RECEIPT.json").read_text())
+          assert receipt["gold_raw_sha256"] == "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592"
+          assert receipt["gold_canonical_sha256"] == "f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9"
+          PY
+
+      - name: Materialize final frozen system gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("evaluation/research/eb_typed_selector_rc1_execution/frozen/PRE_GOLD_SYSTEM_GATES.json")
+          g=json.loads(p.read_text())
+          pending=g.pop("pending_until_gold_reveal")
+          assert set(pending) == {
+              "frozen_gold_evaluator_unchanged_after_reveal",
+              "gold_opened_only_after_arm_output_freeze",
+          }
+          g["frozen_gold_evaluator_unchanged_after_reveal"]=True
+          g["gold_opened_only_after_arm_output_freeze"]=True
+          g["schema"]="eb-typed-selector-rc1-final-system-gates-v1"
+          Path("out/FINAL_SYSTEM_GATES.json").write_text(
+              json.dumps(g,sort_keys=True,separators=(",",":"))+"\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Run exact frozen evaluator once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python evaluation/research/eb_typed_selector_rc1_successor/evaluator.py \
+            --gold sealed-gold/research/eb_typed_selector_rc1_successor/GOLD.json \
+            --replay-1 evaluation/research/eb_typed_selector_rc1_execution/frozen/ARM_OUTPUTS_REPLAY_A.json \
+            --replay-2 evaluation/research/eb_typed_selector_rc1_execution/frozen/ARM_OUTPUTS_REPLAY_B.json \
+            --binding evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json \
+            --system-gates out/FINAL_SYSTEM_GATES.json \
+            --out out/DECISIVE-RESULT.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("out/DECISIVE-RESULT.json").read_text())
+          d=r["research_disposition"]["disposition"]
+          assert d in {"SUPPORTED FOR PROMOTION","FALSIFIED","INCONCLUSIVE","BLOCKED_APPARATUS"}
+          print("FROZEN_DISPOSITION="+d)
+          PY
+
+      - name: Render evidence record and result receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          result=Path("out/DECISIVE-RESULT.json")
+          r=json.loads(result.read_text())
+          m=r.get("arm_metrics",{})
+          roles=json.loads(Path("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json").read_text())
+          d=r["research_disposition"]
+          lines=[
+              "# EB Typed Selector RC1 - Decisive Fresh Qualification Result",
+              "",
+              "**Disposition:** "+d["disposition"],
+              "",
+              "## Frozen role binding",
+              "",
+              "- Rank-only: "+roles["rank_only"],
+              "- Semantic: "+roles["semantic"],
+              "- Candidate: "+roles["candidate"],
+              "- Weak: "+roles["weak"],
+              "",
+              "## Observed primary metrics",
+              "",
+              "| Arm | Required lanes | Useful recall@3 | Unsafe | Non-useful burden |",
+              "|---|---:|---:|---:|---:|",
+          ]
+          for arm in ("ARM_A","ARM_B","ARM_C","ARM_D"):
+              x=m[arm]
+              lines.append(
+                  "| {} | {}/{} | {:.6f} | {} | {} |".format(
+                      arm,
+                      x["required_lane_coverage"]["covered_positive_lanes"],
+                      x["required_lane_coverage"]["eligible_positive_lanes"],
+                      x["useful_item_recall_at_3"]["rate"],
+                      x["unsafe_misleading_retention"]["total"],
+                      x["nonuseful_burden"]["total"],
+                  )
+              )
+          lines += [
+              "",
+              "## Research disposition record",
+              "",
+              json.dumps(d,indent=2,sort_keys=True),
+              "",
+              "This disposition is bounded to the frozen RC1 selector identity and frozen fresh 30-lane cohort. It is not production authorization and does not establish CAL semantic correctness, source truth, or universal evidence completeness.",
+          ]
+          Path("out/DECISIVE-RESULT.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          receipt={
+              "schema":"eb-typed-selector-rc1-decisive-result-receipt-v1",
+              "status":"DECISIVE_EVALUATION_COMPLETE",
+              "arm_output_freeze_commit":"04523e52606ce47bb3c2eec16c18a5de66b2f277",
+              "arm_output_freeze_tree":"0eb513dbbf8edd45d981c09d1a276ba6b20d1e6d",
+              "gold_commit":"cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+              "gold_raw_sha256":"bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+              "gold_canonical_sha256":"f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9",
+              "evaluator_sha256":"a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+              "candidate_pools_raw_sha256":"4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+              "disposition":d["disposition"],
+              "decisive_result_sha256":sha("out/DECISIVE-RESULT.json"),
+              "final_system_gates_sha256":sha("out/FINAL_SYSTEM_GATES.json"),
+              "role_binding_sha256":sha("evaluation/research/eb_typed_selector_rc1_execution/EVALUATOR_ROLE_BINDING.json"),
+              "gold_opened_only_after_arm_output_freeze":True,
+              "frozen_evaluator_edited":False,
+              "production_authorization":False,
+          }
+          Path("out/DECISIVE-RESULT-RECEIPT.json").write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+"\n",encoding="utf-8"
+          )
+          PY
+
+      - name: Freeze decisive result
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "result branch already exists; refusing overwrite"
+            exit 1
+          fi
+          git -C evaluation checkout -b "$RESULT_BRANCH"
+          dest=evaluation/research/eb_typed_selector_rc1_execution/decisive_result
+          mkdir -p "$dest"
+          cp out/DECISIVE-RESULT.json "$dest/"
+          cp out/DECISIVE-RESULT.md "$dest/"
+          cp out/DECISIVE-RESULT-RECEIPT.json "$dest/"
+          cp out/FINAL_SYSTEM_GATES.json "$dest/"
+          git -C evaluation config user.name "github-actions[bot]"
+          git -C evaluation config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C evaluation add research/eb_typed_selector_rc1_execution/decisive_result
+          git -C evaluation commit -m "Research: freeze RC1 decisive fresh qualification result"
+          git -C evaluation push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C evaluation rev-parse HEAD
+          git -C evaluation rev-parse HEAD^{tree}
