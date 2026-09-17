@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: camerontjs-dot/evidence-bundler
-          ref: \${{ env.TARGET_COMMIT }}
+          ref: ${{ env.TARGET_COMMIT }}
           path: target
           fetch-depth: 1
 
@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: camerontjs-dot/evidence-bundler
-          ref: \${{ env.PINNED_EB_COMMIT }}
+          ref: ${{ env.PINNED_EB_COMMIT }}
           path: pinned-eb
           fetch-depth: 1
 
