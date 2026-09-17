@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.metadata
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -150,6 +152,15 @@ def main() -> int:
         "arm_binding": binding["arm_binding"],
         "source_hashes": source_hashes,
         "output_hashes": output_hashes,
+        "semantic_model": binding["semantic_model"],
+        "semantic_model_revision": binding["semantic_model_revision"],
+        "runtime": {
+            "python": sys.version.split()[0],
+            "torch": importlib.metadata.version("torch"),
+            "transformers": importlib.metadata.version("transformers"),
+            "tokenizers": importlib.metadata.version("tokenizers"),
+            "huggingface_hub": importlib.metadata.version("huggingface-hub"),
+        },
         "exact_replay_pass": replay_exact,
         "candidate_input_order_permutation_pass": permutation_pass,
         "irrelevant_metadata_mutation_pass": metadata_pass,
