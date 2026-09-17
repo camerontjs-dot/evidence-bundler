@@ -7,5 +7,9 @@
   "pinned_eb_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
   "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
   "sealed_gold_opened": false,
-  "action": "run four frozen arms twice, run preregistered pre-gold system gates, freeze outputs, stop before gold reveal"
+  "action": "run four frozen arms twice, run preregistered pre-gold system gates, freeze outputs, stop before gold reveal",
+  "retry": 2,
+  "prior_failed_run": 35288019274,
+  "prior_failure_classification": "MECHANICAL_PRE_EXECUTION_CHECKOUT_ESCAPE",
+  "gold_opened": false
 }
