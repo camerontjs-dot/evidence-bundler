@@ -1,0 +1,31 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-source-access-v1",
+  "phase": "pre-first-stage",
+  "opened_sources_pre_freeze": [
+    {"path":"research/eb_typed_selector_rc1_successor/SUCCESSOR-MANIFEST.json","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_successor/SUCCESSOR-PRE-REVEAL-TASK.md","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_context_free/EVALUATION-CONTRACT.md","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_context_free/FRESH-COHORT-CONTRACT.md","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_context_free/FREEZE-AND-REVEAL-PROTOCOL.md","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_context_free/RETURN-HANDOFF-TEMPLATE.md","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":".github/workflows/research-eb-typed-selector-rc1-authoritative-first-stage.yml","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"},
+    {"path":"research/eb_typed_selector_rc1_successor/authoritative_first_stage.py","ref":"research-infra/eb-typed-selector-rc1-successor-prereveal-20260917"}
+  ],
+  "metadata_only_reads": [
+    "research/ directory listing on bootstrap ref, used only to locate explicitly named prereveal contracts",
+    "research/eb_typed_selector_rc1_successor/ directory listing on bootstrap ref",
+    "research/eb_typed_selector_rc1_context_free/ directory listing on bootstrap ref, names only",
+    "bootstrap-branch head commit metadata"
+  ],
+  "forbidden_sources_opened": [],
+  "predecessor_scientific_bytes_opened": [],
+  "selector_or_target_bytes_opened": [],
+  "broad_searches": [
+    {"query":"EVALUATION-CONTRACT.md","result":"no results on default-branch code index","justification":"exact filename named by successor task"},
+    {"query":"RETURN-HANDOFF-TEMPLATE.md","result":"no results on default-branch code index","justification":"exact filename named by successor task"}
+  ],
+  "deviations_so_far": [
+    "An initial authoring branch named research-infra/eb-typed-selector-rc1-successor-authoring-20260917 was created and received the fresh SOURCE_FIXTURES_V2.json commit. Before any candidate-pool exposure, a workflow-compatible authoring ref research/eb-typed-selector-rc1-successor-authoring-20260917 was created at that exact fresh-corpus commit. No target information was available and no corpus bytes changed during this correction."
+  ]
+}
