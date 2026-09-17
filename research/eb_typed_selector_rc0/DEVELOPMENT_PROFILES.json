@@ -1,0 +1,22 @@
+{
+  "schema": "eb-typed-selector-rc0-development-profiles-v1",
+  "classification": "KNOWN_CASE_DEVELOPMENT_ONLY_NOT_DECISIVE",
+  "profiles": {
+    "C06_HARD_NEG:child:1": {
+      "concepts": [
+        {"name": "measured_result", "terms": ["measured", "result", "efficiency"], "weight": 3.0},
+        {"name": "target", "terms": ["lumen filter"], "weight": 1.0},
+        {"name": "value", "terms": ["93 percent", "ninety-three percent"], "weight": 1.0}
+      ]
+    },
+    "RETRIEVAL_APERTURE:child:1": {
+      "concepts": [
+        {"name": "comparison", "terms": ["alpha", "beta", "exceeded", "4 units"], "weight": 2.0}
+      ]
+    }
+  },
+  "nonclaims": [
+    "These profiles are answer-aware development scaffolds for two already-exposed failure cases.",
+    "They are not ClaimGate or EvidenceGate authority and may not be reused as decisive fresh profiles."
+  ]
+}
