@@ -1,0 +1,3620 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-gold-v1",
+  "classification": "SEALED_PREREVEAL_GOLD",
+  "immutable_parent_commit": "03528f8ac137007ade205ab0d1d78424df6c388f",
+  "immutable_parent_tree": "7516869306c9de0472f4b6097fbc98d29ccee6cc",
+  "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "claims_profiles_raw_sha256": "0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+  "source_fixtures_raw_sha256": "943a68853863b1479fb1a9621fca1075ba832fe6fb77bdc2d9084f84013d8e4c",
+  "adjudication_basis": "Independent prereveal adjudication against the immutable authoritative top-10 candidate text; no target selector or prior gold/evaluator scientific output used.",
+  "primary_classes": [
+    "REQUIRED",
+    "USEFUL_DISTINCT",
+    "REDUNDANT",
+    "DISTRACTOR",
+    "UNSAFE_OR_MISLEADING",
+    "UNRESOLVED"
+  ],
+  "lanes": [
+    {
+      "lane_id": "L001",
+      "category": 1,
+      "lane_type": "positive",
+      "claim": "The Northbridge trial found that the blue ceramic filter reduced dissolved copper by 18% after 30 minutes at pH 7.",
+      "candidates": [
+        {
+          "candidate_id": "passage:626109d9696146e50cb3b3be03a321e6",
+          "source_id": "L001-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0d87347513f054fbb07f095b5bb38ae0",
+          "source_id": "L001-S06",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7892a09d2276122a0ea90cbbda85cd7b",
+          "source_id": "L001-S03",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c24b1300ce37f88a99018097ab7f4caa",
+          "source_id": "L001-S01",
+          "rank": 4,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1dd12664ee8c4de45cc4a13de0d5b412",
+          "source_id": "L001-S02",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:98bbad78f732fb04b766a18681794553",
+          "source_id": "L001-S05",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:41f169bf3f37ef64997054d91e3c6c90",
+          "source_id": "L001-S07",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0899edf6e3e1eb9b0fc431a4fab474be",
+          "source_id": "L001-S12",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:baa41a0b21bb74c16e1f13459b43a9c2",
+          "source_id": "L001-S08",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:60dbd1721b194deb50c8b0940613cb5a",
+          "source_id": "L001-S09",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L002",
+      "category": 1,
+      "lane_type": "positive",
+      "claim": "The Elmport transit pilot cut median platform wait time to 4.2 minutes on weekday mornings during March.",
+      "candidates": [
+        {
+          "candidate_id": "passage:852bf280b2b283037af1fd79045c5abf",
+          "source_id": "L002-S02",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5f4714df76241520beac3693972eb43c",
+          "source_id": "L002-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:90787db0636b636324b707beecf8422a",
+          "source_id": "L002-S07",
+          "rank": 3,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7d3db2863336683c8592510f9f294497",
+          "source_id": "L002-S06",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c91e8ae25ab1c97a49af7f1b4dcaccfd",
+          "source_id": "L002-S05",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:634f1d0670858f8c08e36b49fa1c8e29",
+          "source_id": "L002-S09",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1cbbeb95dd17dc2f9bbaf3011c35e350",
+          "source_id": "L002-S12",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:15dd17d28bddb9baedfc55550ef25d0c",
+          "source_id": "L002-S08",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:937f03266f31984326896e72f7e97565",
+          "source_id": "L002-S04",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:468f87183090647faacdeee40d44ea29",
+          "source_id": "L002-S03",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L003",
+      "category": 1,
+      "lane_type": "positive",
+      "claim": "The Ardent Lake sensor measured nitrate at 6.4 mg/L at the east inlet on 12 May.",
+      "candidates": [
+        {
+          "candidate_id": "passage:9c29947c99059f00a5163b59ba1d8881",
+          "source_id": "L003-S05",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:304b8d177d58c77370d1584fcdd3495d",
+          "source_id": "L003-S12",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0ea28d576e4aa4b6e21d38f5c5e48bff",
+          "source_id": "L003-S01",
+          "rank": 3,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fc9ee4c424dd34ba00af23a688b48351",
+          "source_id": "L003-S02",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0ec55c70b38ace860e17b3dbf45efd74",
+          "source_id": "L003-S04",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:824ad6eee15d3d8323f0cea4e5d3a097",
+          "source_id": "L003-S07",
+          "rank": 6,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:76ac366d66b8ebfcc7db42daa61a83e6",
+          "source_id": "L003-S09",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:87efe0f5e0427007d3f04a6b60bb2591",
+          "source_id": "L003-S03",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9867bb5716a4c1dba83dc76bb4a71300",
+          "source_id": "L003-S06",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_UNIT",
+          "justification": "Uses a different unit from the frozen claim and would materially change the reported quantity.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0603681c9a7efbc70ca8186ccc39c126",
+          "source_id": "L003-S10",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L004",
+      "category": 2,
+      "lane_type": "positive",
+      "claim": "The Aster-9 battery retained 82% capacity after 600 cycles at 25°C under 1C charge and 1C discharge cycling.",
+      "candidates": [
+        {
+          "candidate_id": "passage:4c9e7177721cb6a453785796239d7fec",
+          "source_id": "L004-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fd8db66f9117b9d1cba4d98b09428f14",
+          "source_id": "L004-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ca916c9bf1c3b030a863037090a1b70f",
+          "source_id": "L004-S07",
+          "rank": 3,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:001ee0746e2ee1958ac7e07d8bd487cc",
+          "source_id": "L004-S02",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2143af47765c0c7cae327db49dc56162",
+          "source_id": "L004-S05",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:201fe6e12b74bfda373548eb05155cde",
+          "source_id": "L004-S03",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:504acdb343a44099e301cb8e0a7d4776",
+          "source_id": "L004-S09",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:49eb9eca9b077d1e6c2f3db356f9dcac",
+          "source_id": "L004-S12",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7d419a305c1fc3e81111f50e07def772",
+          "source_id": "L004-S08",
+          "rank": 9,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:939b94691930bdd260113820e560c302",
+          "source_id": "L004-S10",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L005",
+      "category": 2,
+      "lane_type": "positive",
+      "claim": "Marlow Clinic's tele-dermatology pilot had 71% follow-up completion within 14 days among first-time adult patients.",
+      "candidates": [
+        {
+          "candidate_id": "passage:bde967bad14b093c4dd3c8064ec0a78c",
+          "source_id": "L005-S03",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5fb44247a525c2259ec0de9fb6e16f0d",
+          "source_id": "L005-S04",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:02379c3369701b51558513a9813afcd4",
+          "source_id": "L005-S02",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_POPULATION",
+          "justification": "Uses a different population or subgroup from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3da577ee9096a710cdb8b8b7b4857d8f",
+          "source_id": "L005-S01",
+          "rank": 4,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:eb89740e9a844d7b3ce0c248953b8bb5",
+          "source_id": "L005-S10",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_POPULATION",
+          "justification": "Uses a different population or subgroup from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b000c1cdfbd9875fdd9d3e19bc557c74",
+          "source_id": "L005-S09",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:dfea7114be1b20390c3f78360c7d7d1c",
+          "source_id": "L005-S05",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:446b56d0bd098dd6f22db8b33137f904",
+          "source_id": "L005-S06",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:bbd184b11297e258a769d777f2bdbc17",
+          "source_id": "L005-S08",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ca016918c22301738f23bccd599d57f0",
+          "source_id": "L005-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L006",
+      "category": 2,
+      "lane_type": "positive",
+      "claim": "The Rivermark turbine produced an average of 2.8 MW during the 10-minute steady-state test at a wind speed of 12 m/s.",
+      "candidates": [
+        {
+          "candidate_id": "passage:4c3e1b026208bfb3b2ba4518611df13f",
+          "source_id": "L006-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8956d8201b34b99d6154ac605590b4d5",
+          "source_id": "L006-S11",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3a654879be12b824006fd016b935d160",
+          "source_id": "L006-S03",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4bb89c03392c7071dafe5aedd82f3466",
+          "source_id": "L006-S05",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9db773548d6257eaa37bd760b9b384d9",
+          "source_id": "L006-S01",
+          "rank": 5,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:e5510306ba4021986f7f6d7037f2adf4",
+          "source_id": "L006-S08",
+          "rank": 6,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:74c9f787ff3dfc2fc22bff982a63cad2",
+          "source_id": "L006-S09",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:443d0fcc5759933c53ac18018850745c",
+          "source_id": "L006-S02",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3ee3f7f91a155caaf7d87f3ab0c4f5bc",
+          "source_id": "L006-S06",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6f1111b267b3c0583bfe01cc21dce985",
+          "source_id": "L006-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L007",
+      "category": 3,
+      "lane_type": "positive",
+      "claim": "The Cedar Bay survey estimated that 43% of respondents used reusable bottles daily.",
+      "candidates": [
+        {
+          "candidate_id": "passage:0d6a50f291b5bec501b3c6bd87f8734e",
+          "source_id": "L007-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c3a975eee820e16b13263c43c15b7fd1",
+          "source_id": "L007-S04",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2c15eb64a02dda7e24b5365d5083a9f2",
+          "source_id": "L007-S06",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5da96132a2dae48ad6998ceb3d67c18f",
+          "source_id": "L007-S05",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:a727d3dbce1f32edca3808e30181c51c",
+          "source_id": "L007-S03",
+          "rank": 5,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4d2f9e9edc5d2030abc3486b126853f7",
+          "source_id": "L007-S02",
+          "rank": 6,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9620b0b513c614e5bf80d928c6ee5e00",
+          "source_id": "L007-S10",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:26a7636c46063325e7c1cd2db640ccf3",
+          "source_id": "L007-S11",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:afe5bbb64196b61891c04c4ad5c3a1ee",
+          "source_id": "L007-S12",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0a6fbba70fd6ed78af92831074cb8425",
+          "source_id": "L007-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L008",
+      "category": 3,
+      "lane_type": "positive",
+      "claim": "The Orion-Delta compiler reduced median build time by 16% on the benchmark suite.",
+      "candidates": [
+        {
+          "candidate_id": "passage:b2f4ac98ab9bfbc310ab443d41f84e2a",
+          "source_id": "L008-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7ce91ae3212680c232d6ab1f2ee6675d",
+          "source_id": "L008-S06",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f0f30c5fd2ba9d8560663f039eeab9d9",
+          "source_id": "L008-S12",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:afecf492893c050495dd83c1cf7c632b",
+          "source_id": "L008-S05",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:d01c9fe1806434f7351fb7fbde8de0d3",
+          "source_id": "L008-S01",
+          "rank": 5,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5661818f2588dd12f30c0e7308b6ba50",
+          "source_id": "L008-S03",
+          "rank": 6,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:bbf0bd6dbb4a0278800d1eba042fbe83",
+          "source_id": "L008-S02",
+          "rank": 7,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:885b26d9e64c7a12c54ba40391b35c38",
+          "source_id": "L008-S08",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:086687b6898a1e78b002a0d675501731",
+          "source_id": "L008-S09",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:e0be378386df1650f676e8ad90742e5b",
+          "source_id": "L008-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L009",
+      "category": 3,
+      "lane_type": "positive",
+      "claim": "The Fenwick greenhouse trial recorded tomato yield of 5.6 kg per plant under the low-sodium nutrient mix.",
+      "candidates": [
+        {
+          "candidate_id": "passage:cd4b26327c9c740fe1742d7a57b3bb0c",
+          "source_id": "L009-S06",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6ea48c7d1f8e1c1da2c99a36e18f8c5e",
+          "source_id": "L009-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8e469509987f2e697fe5d27334cbef28",
+          "source_id": "L009-S05",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8af10171c05ec0db2a8c2a598a172825",
+          "source_id": "L009-S04",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c2e02596abb4c7424c72d14f11209004",
+          "source_id": "L009-S12",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:a09aac57631a8de1724226657eca3d4f",
+          "source_id": "L009-S03",
+          "rank": 6,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ad4ec9e4a13db872360ee7f085c74e6e",
+          "source_id": "L009-S09",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ddbed4c730e426f6befd42cddb2a6cf0",
+          "source_id": "L009-S02",
+          "rank": 8,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9ed6e583fb3cb9a2b490a2ed8002a340",
+          "source_id": "L009-S10",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8347df0f609402997452dc1c1856bc82",
+          "source_id": "L009-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L010",
+      "category": 4,
+      "lane_type": "positive",
+      "claim": "The Harrow Creek sample contained 12.1 µg/L lead by ICP-MS.",
+      "candidates": [
+        {
+          "candidate_id": "passage:50d8b51be5ca90a1698f1407dd9dccdb",
+          "source_id": "L010-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:be2f3d6168076c5c4ba0f6204e587cf0",
+          "source_id": "L010-S12",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:41e415a4cd767d9048069ccfe05dc648",
+          "source_id": "L010-S04",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4d3fb40db9ea361e484acc893072930a",
+          "source_id": "L010-S05",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9513a4b7c99549ea4bcb8b28cd59753a",
+          "source_id": "L010-S03",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_UNIT",
+          "justification": "Uses a different unit from the frozen claim and would materially change the reported quantity.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:61b4a3c56f736fdeb7b71b331b5a2282",
+          "source_id": "L010-S02",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2f795fd0c75663f3fdc2ac95cc626c63",
+          "source_id": "L010-S11",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:981cc82b640e3861e74a02336035fa86",
+          "source_id": "L010-S08",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:39f8365cd8f8cd93aac10afd5b7a1695",
+          "source_id": "L010-S09",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ecbf9c9dcc131e3bd1007be313037406",
+          "source_id": "L010-S06",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L011",
+      "category": 4,
+      "lane_type": "positive",
+      "claim": "The Solace hearing study found a mean threshold improvement of 7.3 dB at 2 kHz after six weeks.",
+      "candidates": [
+        {
+          "candidate_id": "passage:6a32039d1959ce66f36a18735e113aa9",
+          "source_id": "L011-S05",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:888ea49a5be17b0d5f50d825adf6b09c",
+          "source_id": "L011-S04",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:088875730619d5722dbab174451d9fb4",
+          "source_id": "L011-S06",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fad001d92af3d2e065001a0c569c5dce",
+          "source_id": "L011-S03",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b2aa45aff8523899e6f73351df4fef38",
+          "source_id": "L011-S02",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:231c89c1f731f6081f85e709de3eb021",
+          "source_id": "L011-S01",
+          "rank": 6,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4683952fa1450c4380dd9aafa862a63e",
+          "source_id": "L011-S09",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:98573ffbf8d4a5eb60f0f70754577706",
+          "source_id": "L011-S10",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f77f3d64a8f88dc36a0cad042c55b3c0",
+          "source_id": "L011-S07",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:376305abd9cd2be7e9ccada98044add4",
+          "source_id": "L011-S12",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L012",
+      "category": 4,
+      "lane_type": "positive",
+      "claim": "The Port Azure warehouse picked 96.2% of orders without item substitution during the audit week.",
+      "candidates": [
+        {
+          "candidate_id": "passage:41f75a4e2c1aa27a0715eec84c8bc0fd",
+          "source_id": "L012-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:cc8a05c1a1fcd87760aa6a25d8961241",
+          "source_id": "L012-S02",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9a80340eeaf2645e9e14022b64fcd450",
+          "source_id": "L012-S03",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6767497c04ecc5fd9f941fbd551c3f67",
+          "source_id": "L012-S04",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c5501a02647485c1f0d3c43c59946e72",
+          "source_id": "L012-S05",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:00ffe714214565b02544a69f4b7510dd",
+          "source_id": "L012-S12",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:dbba891ec0529f6cbc13a80ad5e1cd6f",
+          "source_id": "L012-S09",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c1a0f0d61604d94c9022be879d3de305",
+          "source_id": "L012-S07",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:11644b7726e413816718267e3dd70695",
+          "source_id": "L012-S08",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:052a893d3dc19a1a282bb93c0fcdaa9d",
+          "source_id": "L012-S11",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L013",
+      "category": 5,
+      "lane_type": "positive",
+      "claim": "In 2025, Lydon County's adult vaccination outreach reached 68% of residents aged 65 and older.",
+      "candidates": [
+        {
+          "candidate_id": "passage:6a0b5f849c8899b0cf4ca1054264522d",
+          "source_id": "L013-S03",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:719d80aaadf5ab1dd3c9c3027eb35b03",
+          "source_id": "L013-S09",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c64604ef7d4209522a79486ed1cb03b9",
+          "source_id": "L013-S01",
+          "rank": 3,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fac1cc059c6b218d9cc4207a616aa0cf",
+          "source_id": "L013-S06",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_POPULATION",
+          "justification": "Uses a different population or subgroup from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:543c9e295bd6dce1222e572e97862b13",
+          "source_id": "L013-S04",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8b02503e198a53889dab210c2bd6356d",
+          "source_id": "L013-S08",
+          "rank": 6,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:d67c5ea74ed6456f93d125c8f110cc0d",
+          "source_id": "L013-S02",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_POPULATION",
+          "justification": "Uses a different population or subgroup from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:93bc3b92fc765ee973eee1b14fa578ca",
+          "source_id": "L013-S05",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3306864f4a7c1ff2651b7c7b25d20289",
+          "source_id": "L013-S10",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c4aa7f0daa247395383b10d06e02edae",
+          "source_id": "L013-S11",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L014",
+      "category": 5,
+      "lane_type": "positive",
+      "claim": "Under the 2026 Westhaven municipal code, rooftop rain barrels up to 500 L require no permit on single-family lots.",
+      "candidates": [
+        {
+          "candidate_id": "passage:a7663e3350be1284a7fafc2f53a73203",
+          "source_id": "L014-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:560ca9cb6c80cb2651646873cdd69b94",
+          "source_id": "L014-S03",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:51331b9e0fda5d17e57dafc45c2a05e6",
+          "source_id": "L014-S05",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9359ef2b185bd31e4740e9ef0f2e956a",
+          "source_id": "L014-S11",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ee9b7e09de4b9abc392a6af544acb31e",
+          "source_id": "L014-S12",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DRAFT_OR_NONFINAL",
+          "justification": "Reports a draft, preliminary, or nonfinal source state rather than the final source state required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0db5d63d8a25fac4528339a6fbb87068",
+          "source_id": "L014-S02",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:e8e49dd58a0108a1054e3138a3031226",
+          "source_id": "L014-S04",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9a96f7d50f1196d2811b4f2ea435624a",
+          "source_id": "L014-S08",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:d8ac0ca2402d4481804bca155655431b",
+          "source_id": "L014-S10",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_JURISDICTION",
+          "justification": "Uses a different governing jurisdiction from the one named in the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6a2582e2ec8710aa8903e565d14eb1ec",
+          "source_id": "L014-S06",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L015",
+      "category": 5,
+      "lane_type": "positive",
+      "claim": "Among night-shift nurses at Briar Hospital, mean sleep duration was 6.1 hours during the intervention month.",
+      "candidates": [
+        {
+          "candidate_id": "passage:51e68b64e8b4705c7ca5e7337c42767d",
+          "source_id": "L015-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:268d7b05aee799660b8be4af8b9d849c",
+          "source_id": "L015-S06",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0f4e3ea18608d8a649a4b58566f6c752",
+          "source_id": "L015-S04",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8940ef5afb977786f42cec4d318486f0",
+          "source_id": "L015-S05",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:069cbe512b6a5cdea010b368a060b8e9",
+          "source_id": "L015-S03",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5e594ce3b9c1d4c3e54a40f16c5f9a8a",
+          "source_id": "L015-S12",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CRITERION_NOT_OUTCOME",
+          "justification": "States a target, specification, or acceptance criterion rather than an achieved result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:bfc1d729cc656b132bd424d8433b7a07",
+          "source_id": "L015-S02",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_POPULATION",
+          "justification": "Uses a different population or subgroup from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2d17480229af51f4d65c9f197158e9f0",
+          "source_id": "L015-S10",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:786968017a608f51d3c430aff17f761e",
+          "source_id": "L015-S08",
+          "rank": 9,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:e0e7427d1673684aaab7d74bc31f2e5c",
+          "source_id": "L015-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L016",
+      "category": 6,
+      "lane_type": "positive",
+      "claim": "The manufacturer's final calibration certificate reports the Q7 gauge error as +0.14 mm at the 50 mm reference.",
+      "candidates": [
+        {
+          "candidate_id": "passage:714e41a24ac7e4c09bbf4444bfef3728",
+          "source_id": "L016-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:85bb7750e6e2f43f6057c1ac45a4835a",
+          "source_id": "L016-S05",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:cc6b3fb2efd4f3c221f85eee328f0b88",
+          "source_id": "L016-S08",
+          "rank": 3,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0fc7f8aeec206d17abf80bd542a20848",
+          "source_id": "L016-S06",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8fe578b444ba1a4e954192d59383f6d0",
+          "source_id": "L016-S01",
+          "rank": 5,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9b7c16c38b101efb187c5278398384f9",
+          "source_id": "L016-S09",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:323557a988b4314a321c9808aba6f033",
+          "source_id": "L016-S02",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DRAFT_OR_NONFINAL",
+          "justification": "Reports a draft, preliminary, or nonfinal source state rather than the final source state required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c48d747fade5d2457fbce1eeb592782f",
+          "source_id": "L016-S10",
+          "rank": 8,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:ebd6be8c3da6e5480eda89a218381b8b",
+          "source_id": "L016-S03",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6a4b0b21f3216bb66fe96a1e46f22a3a",
+          "source_id": "L016-S12",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L017",
+      "category": 6,
+      "lane_type": "positive",
+      "claim": "The library registrar's certified inventory lists 1,842 catalogued maps in the Harbor collection.",
+      "candidates": [
+        {
+          "candidate_id": "passage:ef7cfa116596cc1eca70f205b688dfb4",
+          "source_id": "L017-S04",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4af6ecec47780f4519b0aff3168d5460",
+          "source_id": "L017-S05",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:17e666abc3016ebe5f63c856a7522d6e",
+          "source_id": "L017-S02",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DRAFT_OR_NONFINAL",
+          "justification": "Reports a draft, preliminary, or nonfinal source state rather than the final source state required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:cdece15a2f9536c3385ef462c84ac1a4",
+          "source_id": "L017-S06",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c08aa259ed926076397c08687d6b528d",
+          "source_id": "L017-S01",
+          "rank": 5,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b04b8e5fdf616f67f144f630c0fc3ef0",
+          "source_id": "L017-S07",
+          "rank": 6,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fa29b115eb3cf1af781ef8c2201032a3",
+          "source_id": "L017-S12",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:e67c1e4bc8d3594adec1065592cba389",
+          "source_id": "L017-S10",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c373f5f9c79216e0c914c4963cdc0751",
+          "source_id": "L017-S08",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:06620b52f367946c8d1e88176fde849d",
+          "source_id": "L017-S03",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L018",
+      "category": 6,
+      "lane_type": "positive",
+      "claim": "The independent lab's signed assay measured 0.032% sulfur in alloy batch K-41.",
+      "candidates": [
+        {
+          "candidate_id": "passage:8aee49a8e5a5f3e3f63480c350497352",
+          "source_id": "L018-S05",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9079c1d349cbad1edf16a0a1be923e6b",
+          "source_id": "L018-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:dc8eecacc7df04a07303274ccc1b2c55",
+          "source_id": "L018-S12",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8ccbb349d348d4df603cb78d002cc24d",
+          "source_id": "L018-S07",
+          "rank": 4,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f3f0f6f857448bc02df0485d5cbc2edd",
+          "source_id": "L018-S11",
+          "rank": 5,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:1627100871befb9f278c3ff238c61d92",
+          "source_id": "L018-S03",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:18a4e9a11890c492092151ce16c82d4c",
+          "source_id": "L018-S06",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3f0e275839db77bd376becc7a8c72f18",
+          "source_id": "L018-S10",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1f0922244673194c5294ff232023ed31",
+          "source_id": "L018-S04",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b149f17b38c12056d447c0ef5b603e73",
+          "source_id": "L018-S02",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DRAFT_OR_NONFINAL",
+          "justification": "Reports a draft, preliminary, or nonfinal source state rather than the final source state required by the claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L019",
+      "category": 7,
+      "lane_type": "positive",
+      "claim": "The audit found no evidence that the backup pump operated during the outage.",
+      "candidates": [
+        {
+          "candidate_id": "passage:f1fe112fc770bc41a2160b20c921eabe",
+          "source_id": "L019-S03",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f003768a8099ea90a96397fe4e339ad1",
+          "source_id": "L019-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7c139226c44472b522e1f4f082197bb7",
+          "source_id": "L019-S05",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1d6dfcd2845294cf6ec105bcb09cac17",
+          "source_id": "L019-S04",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+          "source_id": "L019-S11",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9a5d18b9be261270c2cad11dbf4fcc56",
+          "source_id": "L019-S06",
+          "rank": 6,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7ca96a3cb4d63c1ce5c83b743d296551",
+          "source_id": "L019-S09",
+          "rank": 7,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:0ccb146ecd28ec687c6375c00ff38bb7",
+          "source_id": "L019-S08",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:869b419baff0e8bdc6d2bd30d457f507",
+          "source_id": "L019-S12",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f99f8047d6d4e1135412c126282aec54",
+          "source_id": "L019-S02",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "OVERSTATES_EVIDENCE_STATUS",
+          "justification": "Changes the evidentiary status or modality in a way that would overstate the frozen claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L020",
+      "category": 7,
+      "lane_type": "positive",
+      "claim": "The report states that the additive may reduce foaming above 60°C; it does not claim a reduction at room temperature.",
+      "candidates": [
+        {
+          "candidate_id": "passage:80d9ff54208c669f7a986410df4ebf99",
+          "source_id": "L020-S03",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fab1448da0a16677e0f9a66879bcbdac",
+          "source_id": "L020-S01",
+          "rank": 2,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4c10b22a36397d833cdd7d93cba139b8",
+          "source_id": "L020-S05",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "OVERSTATES_EVIDENCE_STATUS",
+          "justification": "Changes the evidentiary status or modality in a way that would overstate the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2f7ca54c29d3659808c8628c48fc835e",
+          "source_id": "L020-S02",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1f1ec61e9ac710dfcefb33cd49ca386c",
+          "source_id": "L020-S10",
+          "rank": 5,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:386edf360afaf7b08c0913aef598adc5",
+          "source_id": "L020-S04",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9ccf2cb7850d4ab4c8060d8ae00dec62",
+          "source_id": "L020-S08",
+          "rank": 7,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:e29de7d331ea8697d027990ff041d400",
+          "source_id": "L020-S12",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DRAFT_OR_NONFINAL",
+          "justification": "Reports a draft, preliminary, or nonfinal source state rather than the final source state required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:79104cc8df08f9eb6b66a0a1e9885bbf",
+          "source_id": "L020-S11",
+          "rank": 9,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_EQUIVALENT_SUPPORT",
+          "justification": "Materially duplicates the evidence supplied by the stronger candidate assigned to the same evidence group.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:09a2f9f5de752370932efdb00ed0d0f9",
+          "source_id": "L020-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L021",
+      "category": 7,
+      "lane_type": "positive",
+      "claim": "According to the witness log, technician Mara Venn reported hearing the alarm before the compressor stopped.",
+      "candidates": [
+        {
+          "candidate_id": "passage:57c41d38ff804c06073747f3a80f7774",
+          "source_id": "L021-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:26db4a3ceda3a3f2f94db4e5068ab8f5",
+          "source_id": "L021-S08",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ATTRIBUTION",
+          "justification": "Attributes the statement to a different speaker or source than the one named in the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:33032957998aed0fd53e367192ce09bd",
+          "source_id": "L021-S02",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:91f41552a3010827c1b11924b84ad84a",
+          "source_id": "L021-S03",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:57602453d783ff0870357819fd7a8979",
+          "source_id": "L021-S06",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f64e31a3549fc80cfc7dd6a87f3bbd57",
+          "source_id": "L021-S05",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4824484315219b3e505c8f45fbcc46c2",
+          "source_id": "L021-S04",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:015fc77a66c03b84045b737126ca917e",
+          "source_id": "L021-S10",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SOURCE_ROLE",
+          "justification": "Reports through a different provenance or source role from the one explicitly required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ee1a9f846f6786e1514ae46893579e3b",
+          "source_id": "L021-S07",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "RELATED_BUT_NONPROBATIVE",
+          "justification": "Is related to the lane but does not establish a claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:79714a4d4a117e711bbbc412ddcd44db",
+          "source_id": "L021-S11",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L022",
+      "category": 8,
+      "lane_type": "positive",
+      "claim": "The Alpine Field kit met the deployment criterion because it started in under 90 seconds and maintained at least 8 hours of runtime at -10°C.",
+      "candidates": [
+        {
+          "candidate_id": "passage:85477b1f6258062ccb8cc16c4a546a2d",
+          "source_id": "L022-S07",
+          "rank": 1,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_CRITERION_CONTEXT",
+          "justification": "States the governing criterion needed to interpret the complementary measured-result evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1fd60a10659873a96ce9d6a563313f06",
+          "source_id": "L022-S06",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:a06a64557ab02adb1b0ceabc9fad997c",
+          "source_id": "L022-S01",
+          "rank": 3,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "startup"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+          "source_id": "L022-S12",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:70a962c74a6c00ecc5859dae78c981a0",
+          "source_id": "L022-S10",
+          "rank": 5,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:53ade8c6a98c691477758409f21b5466",
+          "source_id": "L022-S03",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:56a44168738aa0a4681e824d1d2ff3a8",
+          "source_id": "L022-S02",
+          "rank": 7,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "runtime"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7c5c87062cc65d27457f30d49a3d1888",
+          "source_id": "L022-S08",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:862eb72c5e278db582e78b295b0a6d76",
+          "source_id": "L022-S05",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f5c73788db1eb4ade368490ce3ff733f",
+          "source_id": "L022-S11",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L023",
+      "category": 8,
+      "lane_type": "positive",
+      "claim": "The Juniper archive migration was complete only after all 24 collections were copied and checksum verification passed for every collection.",
+      "candidates": [
+        {
+          "candidate_id": "passage:57b1430212fbe15ea5cc52b4d604006d",
+          "source_id": "L023-S02",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "checksum"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+          "source_id": "L023-S09",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_SCOPE",
+          "justification": "Changes a material scope restriction or denominator and would misstate the frozen claim if retained as support.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+          "source_id": "L023-S07",
+          "rank": 3,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_CRITERION_CONTEXT",
+          "justification": "States the governing criterion needed to interpret the complementary measured-result evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9666438854f70cb774389cd27f9ddb56",
+          "source_id": "L023-S01",
+          "rank": 4,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "copy"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ce0a013e3d0456e7d0149d1ce4717e96",
+          "source_id": "L023-S06",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:787907d8f2929a04348bd96b354d7fa8",
+          "source_id": "L023-S12",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b432be69934e0201f48a7517d568b37c",
+          "source_id": "L023-S10",
+          "rank": 7,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "checksum",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:6ce844b2c94a759a96164d36cdfa44bc",
+          "source_id": "L023-S11",
+          "rank": 8,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "copy",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:06cd97e3585c7ec485cca31dde8631f1",
+          "source_id": "L023-S04",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ba6b34a79ac0b65e40ba49cc477a2da1",
+          "source_id": "L023-S05",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L024",
+      "category": 8,
+      "lane_type": "positive",
+      "claim": "The Delta Room air-quality target was met because CO2 stayed below 900 ppm and PM2.5 stayed below 12 µg/m³ during the occupied test.",
+      "candidates": [
+        {
+          "candidate_id": "passage:7de01e397cb8d03488180e56753a1492",
+          "source_id": "L024-S07",
+          "rank": 1,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_CRITERION_CONTEXT",
+          "justification": "States the governing criterion needed to interpret the complementary measured-result evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:dfbff1686f3a57c04b8abde6cc86161b",
+          "source_id": "L024-S11",
+          "rank": 2,
+          "gold_class": "USEFUL_DISTINCT",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "USEFUL_PARTIAL_CORROBORATION",
+          "justification": "Provides independently useful corroboration for a material claim facet but is not sufficient to establish the full objective.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+          "source_id": "L024-S12",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:adac66a1f1bdec8fcb38633a415f25ff",
+          "source_id": "L024-S02",
+          "rank": 4,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "pm25"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c27f829bf47fd8e6efa3c3082fcda795",
+          "source_id": "L024-S10",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b94506163210f257e14140a0c8d95055",
+          "source_id": "L024-S06",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3523fe718b15e6caee3a52599ca40f3b",
+          "source_id": "L024-S01",
+          "rank": 7,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "co2"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "COMPLEMENTARY_REQUIRED_FACET",
+          "justification": "Directly establishes one independently required facet of the lane's complementary evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:a2f2184ebb49d67b913b73a9aa1320d3",
+          "source_id": "L024-S09",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f488aedaa13c1734d4595974df949b05",
+          "source_id": "L024-S03",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:2a08cc6816b8842e4a96cde2af367b2c",
+          "source_id": "L024-S05",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L025",
+      "category": 9,
+      "lane_type": "positive",
+      "claim": "The Redfern reservoir depth was 14.6 m at gauge station R3 on 3 June.",
+      "candidates": [
+        {
+          "candidate_id": "passage:6b04f989989a25eb8a2484d4d322628c",
+          "source_id": "L025-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8645ed87fe708c8dd258e3bb5ce82b44",
+          "source_id": "L025-S09",
+          "rank": 2,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:432cee8c00ce24f82e1d6b244314ab3c",
+          "source_id": "L025-S06",
+          "rank": 3,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9bc35ef21784ee2a7a02ba359eafac55",
+          "source_id": "L025-S02",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4074ec8f690e600895c705542642dade",
+          "source_id": "L025-S10",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_UNIT",
+          "justification": "Uses a different unit from the frozen claim and would materially change the reported quantity.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:e7afa6c8bde48ff36cb94dc186393afb",
+          "source_id": "L025-S12",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:4107fa20a04df33718bd663545d7bdee",
+          "source_id": "L025-S04",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0293b82243edb23812ddb776d90021f5",
+          "source_id": "L025-S03",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_LOCATION",
+          "justification": "Uses a different location, facility, station, or geographic scope from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:6b6b5d09c5a4497377f2a4783050383b",
+          "source_id": "L025-S05",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0f6625d37ae0ca25994f1a237db9ae0f",
+          "source_id": "L025-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L026",
+      "category": 9,
+      "lane_type": "positive",
+      "claim": "The Kestrel oven reached 220°C 11 minutes after startup.",
+      "candidates": [
+        {
+          "candidate_id": "passage:438a2b539d0e5c3d18bdb736eae9890f",
+          "source_id": "L026-S01",
+          "rank": 1,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:d3f9c8b0eac137fe8647ed9e6bc4cfb0",
+          "source_id": "L026-S05",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:90a7025def81bc373004991a0ac94507",
+          "source_id": "L026-S03",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:3f0d7f0b9221a7afa8c08fec49daf9e4",
+          "source_id": "L026-S04",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_UNIT",
+          "justification": "Uses a different unit from the frozen claim and would materially change the reported quantity.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:a9ed97c406c723a58e7b19c56e62a628",
+          "source_id": "L026-S09",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "DIFFERENT_RUN_OR_CONTEXT",
+          "justification": "Reports a different run, project, season, or context and would misrepresent the frozen claim if treated as its evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:104aa3046106b3c675398a57c33cf03d",
+          "source_id": "L026-S02",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:815b0bac2c77637370d5fad931e7a70e",
+          "source_id": "L026-S10",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:dd0ca5c183905c2f65b9181d3ba1232b",
+          "source_id": "L026-S11",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:86288a7c81f2744365e413b07b8c462b",
+          "source_id": "L026-S06",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7f1d12b127b58c358721e4752c5da023",
+          "source_id": "L026-S12",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L027",
+      "category": 9,
+      "lane_type": "positive",
+      "claim": "The Pinehaven seed lot had a germination rate of 91% in the standard test.",
+      "candidates": [
+        {
+          "candidate_id": "passage:a095cc6042692a30378d6172c497fd13",
+          "source_id": "L027-S08",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c364d1ef0470fb2bae0394c4976b8fb0",
+          "source_id": "L027-S12",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+          "source_id": "L027-S10",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:450f2c599732b96f8dd7c225456d21da",
+          "source_id": "L027-S07",
+          "rank": 4,
+          "gold_class": "REDUNDANT",
+          "required_group_ids": [],
+          "redundancy_group_id": "core",
+          "reason_code": "REDUNDANT_WEAKER_CORROBORATION",
+          "justification": "Corroborates the same evidence group but less completely or precisely than the stronger candidate.",
+          "reviewer_confidence": "medium"
+        },
+        {
+          "candidate_id": "passage:fb1ea2b2084fd4a8ff374056d0d4e8a3",
+          "source_id": "L027-S01",
+          "rank": 5,
+          "gold_class": "REQUIRED",
+          "required_group_ids": [
+            "core"
+          ],
+          "redundancy_group_id": null,
+          "reason_code": "EXACT_DIRECT_MATCH",
+          "justification": "Directly states the lane's claim-critical result with the required scope and conditions.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b0c90b06874cd27aa4c81de8296aebfe",
+          "source_id": "L027-S04",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:b0ffaadd04426dd0b35fa35319357310",
+          "source_id": "L027-S05",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:aa9dbba0286ecb7f3f303ea0b45faf3d",
+          "source_id": "L027-S02",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fcbced5dc0f20dc60a35578fd562a760",
+          "source_id": "L027-S06",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:cbce2d2e958f8a31aaa5a869b190ee9e",
+          "source_id": "L027-S11",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L028",
+      "category": 10,
+      "lane_type": "no_clear_suitable",
+      "claim": "The Brookstone adhesive cures fully in exactly 18 minutes at 15°C.",
+      "candidates": [
+        {
+          "candidate_id": "passage:ed843cbb8375e09e94237d2f491d5c06",
+          "source_id": "L028-S03",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:10faf34aae1e6ec75a31479f0f52299d",
+          "source_id": "L028-S09",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:26258d447cb5340af710d162772de74f",
+          "source_id": "L028-S01",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:229fdd8aa2d1570382736593f70dc6f4",
+          "source_id": "L028-S04",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f8fd268b84f1d882d693631392e7bd9f",
+          "source_id": "L028-S02",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1f7f7088902d6ed0a34066cc2b28a276",
+          "source_id": "L028-S08",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:53b37582b1e4a03ebde45a29a9c42a5e",
+          "source_id": "L028-S07",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7a94632c020594fd283082c41e21da36",
+          "source_id": "L028-S05",
+          "rank": 8,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:7f97bb0c8cda09b50344b6204c65252c",
+          "source_id": "L028-S06",
+          "rank": 9,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:9e64facbe7a407111d78ff53b7d88463",
+          "source_id": "L028-S10",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENDPOINT",
+          "justification": "Reports a different endpoint or outcome from the one asserted by the claim.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L029",
+      "category": 10,
+      "lane_type": "no_clear_suitable",
+      "claim": "The Vela-X drone can carry 4.0 kg for 30 minutes at 2,000 m altitude.",
+      "candidates": [
+        {
+          "candidate_id": "passage:20416b6224502e30a95720e0aae0d8a5",
+          "source_id": "L029-S11",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "OVERSTATES_EVIDENCE_STATUS",
+          "justification": "Changes the evidentiary status or modality in a way that would overstate the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c1bc4186375824a820cba43f0c53a059",
+          "source_id": "L029-S10",
+          "rank": 2,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:c95c7227f92232ff9af6e3c8d53c9ecb",
+          "source_id": "L029-S03",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_CONDITION",
+          "justification": "Uses a different test condition, threshold, rate, temperature, altitude, or operating condition from the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:86bafd4820923c6066da5172cccb84b1",
+          "source_id": "L029-S01",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:cf08e18fd2a239bb4a0446171ec3be8a",
+          "source_id": "L029-S06",
+          "rank": 5,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:508ce68e3b20577a519d492158526117",
+          "source_id": "L029-S09",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:5ebc9a6269c77ab715f3a112705464f6",
+          "source_id": "L029-S08",
+          "rank": 7,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_VALUE",
+          "justification": "Reports a claim-critical numeric value that differs from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fddb2d70f44c07f4ce52828faea34f66",
+          "source_id": "L029-S05",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:df7b8bd898639ea00561e9d1c7caa655",
+          "source_id": "L029-S12",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_MEASURE",
+          "justification": "Uses a different measurement, statistic, analyte, or quantity from the claim-critical one.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:1f0370788423154e65fa70af9d7e1e1f",
+          "source_id": "L029-S07",
+          "rank": 10,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "METHODS_ONLY",
+          "justification": "Describes method, setup, or measurement procedure without reporting the claim-critical result.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    },
+    {
+      "lane_id": "L030",
+      "category": 10,
+      "lane_type": "no_clear_suitable",
+      "claim": "The Norwick ceramic coating remains intact after 1,000 salt-spray hours with zero blistering.",
+      "candidates": [
+        {
+          "candidate_id": "passage:e7453ebfe9f14944c1a983aa90973d10",
+          "source_id": "L030-S09",
+          "rank": 1,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_ENTITY_OR_OBJECT",
+          "justification": "Refers to a different entity, object, model, item, or subject from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:f0941ace3454292ab58ee0e2c2c1e46a",
+          "source_id": "L030-S05",
+          "rank": 2,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8b329621a9e30c9a6618f4eca18603d3",
+          "source_id": "L030-S02",
+          "rank": 3,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_TIME_WINDOW",
+          "justification": "Uses a different date, duration, cycle count, period, or time window from the frozen claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:46aea51736c08e58f3b5206c05fa633e",
+          "source_id": "L030-S03",
+          "rank": 4,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:8d5c5a69f3e525c4f3b7e48cc824d947",
+          "source_id": "L030-S04",
+          "rank": 5,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "WRONG_EVIDENCE_FORM",
+          "justification": "Uses a different measurement method or evidence form from the one required by the claim.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:91ea038aa1fc6eb1656c37afb3afa835",
+          "source_id": "L030-S11",
+          "rank": 6,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CRITERION_NOT_OUTCOME",
+          "justification": "States a target, specification, or acceptance criterion rather than an achieved result.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:0dfb0677c8f6040cb75ce3f13a16c0ef",
+          "source_id": "L030-S06",
+          "rank": 7,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:fa794ca4850c7be107d45f6b2f94f63b",
+          "source_id": "L030-S12",
+          "rank": 8,
+          "gold_class": "DISTRACTOR",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "UNDER_SPECIFIED",
+          "justification": "Is relevant but omits a claim-critical value, condition, identity, or result and is not independently useful for the evidence objective.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:ae03ca7228049c473200561fb3a3f8c3",
+          "source_id": "L030-S01",
+          "rank": 9,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        },
+        {
+          "candidate_id": "passage:af792d7a2bf3d71c2e5cc91a92561135",
+          "source_id": "L030-S10",
+          "rank": 10,
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "required_group_ids": [],
+          "redundancy_group_id": null,
+          "reason_code": "CONTRADICTS_CLAIM",
+          "justification": "Reports a result that materially conflicts with the frozen claim and is unsafe to retain as supporting evidence.",
+          "reviewer_confidence": "high"
+        }
+      ]
+    }
+  ]
+}

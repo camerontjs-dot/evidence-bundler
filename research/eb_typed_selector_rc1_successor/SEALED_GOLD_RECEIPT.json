@@ -1,0 +1,21 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-sealed-gold-receipt-v1",
+  "status": "SEALED_GOLD_FROZEN",
+  "immutable_parent_commit": "03528f8ac137007ade205ab0d1d78424df6c388f",
+  "immutable_parent_tree": "7516869306c9de0472f4b6097fbc98d29ccee6cc",
+  "gold_path": "research/eb_typed_selector_rc1_successor/GOLD.json",
+  "gold_raw_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "gold_canonical_sha256": "f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9",
+  "canonicalization": "UTF-8 JSON with object keys recursively sorted, arrays preserved in frozen order, and no insignificant whitespace.",
+  "lane_count": 30,
+  "candidate_count": 300,
+  "gold_class_counts": {
+    "UNSAFE_OR_MISLEADING": 187,
+    "REQUIRED": 30,
+    "DISTRACTOR": 59,
+    "USEFUL_DISTINCT": 11,
+    "REDUNDANT": 13
+  },
+  "hidden_selector_opened_or_executed": false,
+  "prior_gold_or_evaluator_scientific_bytes_reused": false
+}
