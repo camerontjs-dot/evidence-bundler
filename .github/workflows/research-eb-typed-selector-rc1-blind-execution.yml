@@ -1,0 +1,205 @@
+name: Research - EB Typed Selector RC1 Blind Execution
+
+on:
+  push:
+    branches:
+      - research/eb-typed-selector-rc1-blind-execution-20260917
+    paths:
+      - research/eb_typed_selector_rc1_execution/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  FRESH_INPUT_COMMIT: a15a336e61f99b97fb9ea284761e1952fc1289cf
+  TARGET_COMMIT: 98ddfb4f2e9623da6b44009abf921657b9445955
+  PINNED_EB_COMMIT: 4e1f6fe00e7c350b28f52bfea14f1f8988847884
+  EXPECTED_SELECTOR_SHA256: e83e6305008a0f7a264cde2167bff80ce6399f03d34ebce10376f106c52cec6c
+  EXPECTED_EVALUATOR_SHA256: a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2
+  FREEZE_BRANCH: research/eb-typed-selector-rc1-arm-output-freeze-20260917
+  TOKENIZERS_PARALLELISM: "false"
+
+jobs:
+  blind-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blind execution branch
+        uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 0
+
+      - name: Checkout exact selector freeze
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: \${{ env.TARGET_COMMIT }}
+          path: target
+          fetch-depth: 1
+
+      - name: Checkout exact pinned Evidence Bundler
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: \${{ env.PINNED_EB_COMMIT }}
+          path: pinned-eb
+          fetch-depth: 1
+
+      - name: Verify immutable identities and gold absence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C execution merge-base --is-ancestor "$FRESH_INPUT_COMMIT" HEAD
+          test "$(git -C target rev-parse HEAD)" = "$TARGET_COMMIT"
+          test "$(git -C pinned-eb rev-parse HEAD)" = "$PINNED_EB_COMMIT"
+          test ! -e execution/research/eb_typed_selector_rc1_successor/GOLD.json
+          selector=target/research/eb_typed_selector_rc0/selector.py
+          test "$(sha256sum "$selector" | awk '{print $1}')" = "$EXPECTED_SELECTOR_SHA256"
+          evaluator=execution/research/eb_typed_selector_rc1_successor/evaluator.py
+          test "$(sha256sum "$evaluator" | awk '{print $1}')" = "$EXPECTED_EVALUATOR_SHA256"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          receipt=json.loads(Path("execution/research/eb_typed_selector_rc1_successor/PREREVEAL_FREEZE_RECEIPT.json").read_text())
+          assert receipt["status"] == "READY_FOR_REVEAL"
+          assert receipt["gold_separation"]["fresh_input_contains_gold"] is False
+          assert receipt["information_aperture"]["hidden_selector_executed"] is False
+          binding=json.loads(Path("execution/research/eb_typed_selector_rc1_execution/REVEAL_BINDING.json").read_text())
+          assert binding["sealed_gold_opened"] is False
+          assert binding["target_freeze_commit"] == "98ddfb4f2e9623da6b44009abf921657b9445955"
+          PY
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install exact execution dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install ./pinned-eb
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+          python -m pip check
+
+      - name: Compile frozen post-reveal adapter surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            execution/research/eb_typed_selector_rc1_execution/blind_execution_adapter.py \
+            execution/research/eb_typed_selector_rc1_execution/validate_blind_outputs.py
+
+      - name: Execute all four arms twice without gold
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          fresh=execution/research/eb_typed_selector_rc1_successor
+          adapter=execution/research/eb_typed_selector_rc1_execution/blind_execution_adapter.py
+
+          python "$adapter" \
+            --fresh-root "$fresh" \
+            --target-root target \
+            --mode baseline \
+            --output out/ARM_OUTPUTS_REPLAY_A.json \
+            --score-receipt out/SCORE_RECOVERY_RECEIPT.json
+
+          python "$adapter" \
+            --fresh-root "$fresh" \
+            --target-root target \
+            --mode baseline \
+            --output out/ARM_OUTPUTS_REPLAY_B.json
+
+          python "$adapter" \
+            --fresh-root "$fresh" \
+            --target-root target \
+            --mode permuted \
+            --output out/ARM_OUTPUTS_PERMUTED.json
+
+          python "$adapter" \
+            --fresh-root "$fresh" \
+            --target-root target \
+            --mode irrelevant-metadata \
+            --output out/ARM_OUTPUTS_IRRELEVANT_METADATA.json
+
+      - name: Validate replay and metamorphic/system gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python execution/research/eb_typed_selector_rc1_execution/validate_blind_outputs.py \
+            --pools execution/research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json \
+            --replay-a out/ARM_OUTPUTS_REPLAY_A.json \
+            --replay-b out/ARM_OUTPUTS_REPLAY_B.json \
+            --permuted out/ARM_OUTPUTS_PERMUTED.json \
+            --metadata out/ARM_OUTPUTS_IRRELEVANT_METADATA.json \
+            --adapter execution/research/eb_typed_selector_rc1_execution/blind_execution_adapter.py \
+            --selector target/research/eb_typed_selector_rc0/selector.py \
+            --scorer target/research/eb_typed_selector_rc0/score_frozen_pool.py \
+            --reveal-binding execution/research/eb_typed_selector_rc1_execution/REVEAL_BINDING.json \
+            --pre-gold-gates out/PRE_GOLD_SYSTEM_GATES.json \
+            --freeze-receipt out/ARM_OUTPUT_FREEZE_RECEIPT.json
+
+          cmp out/ARM_OUTPUTS_REPLAY_A.json out/ARM_OUTPUTS_REPLAY_B.json
+          cmp out/ARM_OUTPUTS_REPLAY_A.json out/ARM_OUTPUTS_PERMUTED.json
+          cmp out/ARM_OUTPUTS_REPLAY_A.json out/ARM_OUTPUTS_IRRELEVANT_METADATA.json
+
+      - name: Record exact source and runtime hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum \
+            execution/research/eb_typed_selector_rc1_execution/blind_execution_adapter.py \
+            execution/research/eb_typed_selector_rc1_execution/validate_blind_outputs.py \
+            execution/research/eb_typed_selector_rc1_execution/REVEAL_BINDING.json \
+            target/research/eb_typed_selector_rc0/selector.py \
+            target/research/eb_typed_selector_rc0/score_frozen_pool.py \
+            execution/research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json \
+            execution/research/eb_typed_selector_rc1_successor/evaluator.py \
+            > out/SOURCE_HASHES.txt
+          {
+            python --version
+            python - <<'PY'
+          import importlib.metadata as m
+          for name in ("torch","transformers","tokenizers","huggingface-hub"):
+              print(f"{name}=={m.version(name)}")
+          PY
+            git -C execution rev-parse HEAD
+            git -C target rev-parse HEAD
+            git -C pinned-eb rev-parse HEAD
+          } > out/RUNTIME_IDENTITY.txt
+
+      - name: Freeze arm outputs before any gold reveal
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FREEZE_BRANCH" >/dev/null 2>&1; then
+            echo "freeze branch already exists; refusing overwrite"
+            exit 1
+          fi
+
+          git -C execution checkout -b "$FREEZE_BRANCH"
+          dest=execution/research/eb_typed_selector_rc1_execution/frozen
+          mkdir -p "$dest"
+          cp out/ARM_OUTPUTS_REPLAY_A.json "$dest/"
+          cp out/ARM_OUTPUTS_REPLAY_B.json "$dest/"
+          cp out/ARM_OUTPUTS_PERMUTED.json "$dest/"
+          cp out/ARM_OUTPUTS_IRRELEVANT_METADATA.json "$dest/"
+          cp out/SCORE_RECOVERY_RECEIPT.json "$dest/"
+          cp out/PRE_GOLD_SYSTEM_GATES.json "$dest/"
+          cp out/ARM_OUTPUT_FREEZE_RECEIPT.json "$dest/"
+          cp out/SOURCE_HASHES.txt "$dest/"
+          cp out/RUNTIME_IDENTITY.txt "$dest/"
+
+          git -C execution config user.name "github-actions[bot]"
+          git -C execution config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C execution add research/eb_typed_selector_rc1_execution/frozen
+          git -C execution commit -m "Research: freeze RC1 blind arm outputs before gold reveal"
+          git -C execution push origin "HEAD:refs/heads/$FREEZE_BRANCH"
+          git -C execution rev-parse HEAD
+          git -C execution rev-parse HEAD^{tree}
