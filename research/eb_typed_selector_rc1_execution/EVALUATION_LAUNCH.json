@@ -1,0 +1,10 @@
+{
+  "schema": "eb-typed-selector-rc1-decisive-evaluation-launch-v1",
+  "status": "AUTHORIZED_AFTER_ARM_OUTPUT_FREEZE",
+  "pr": 89,
+  "arm_output_freeze_commit": "04523e52606ce47bb3c2eec16c18a5de66b2f277",
+  "sealed_gold_commit": "cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+  "evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "action": "verify frozen gold/evaluator, materialize final gates, run frozen evaluator once, freeze decisive result",
+  "scientific_change": false
+}
