@@ -1,0 +1,37 @@
+{
+  "schema": "eb-typed-selector-rc0-development-input-v1",
+  "classification": "SYNTHETIC_DEVELOPMENT_ONLY",
+  "lanes": [
+    {
+      "proposition_id": "DEV_HARD_NEG",
+      "proposition_text": "Lumen Filter removal in the 5 micron test was 93 percent.",
+      "claim_profile": {
+        "concepts": [
+          {"name": "measured_result", "terms": ["measured", "result", "efficiency"], "weight": 3.0},
+          {"name": "target", "terms": ["lumen filter"], "weight": 1.0}
+        ]
+      },
+      "candidates": [
+        {"evidence_id": "D1", "text": "Lumen Filter 5 micron protocol revision used 93 percent humidity.", "rank": 1, "bm25_score": 10.0, "semantic_score": 0.97},
+        {"evidence_id": "D2", "text": "Lumen Filter 5 micron setup fixture was checked at 93 percent.", "rank": 2, "bm25_score": 9.5, "semantic_score": 0.96},
+        {"evidence_id": "D3", "text": "Lumen Filter protocol notes list 93 percent for setup use.", "rank": 3, "bm25_score": 9.0, "semantic_score": 0.95},
+        {"evidence_id": "KEEP", "text": "Lumen Filter measured efficiency result was 93 percent.", "rank": 4, "bm25_score": 8.0, "semantic_score": 0.90}
+      ]
+    },
+    {
+      "proposition_id": "DEV_LONG_CONTEXT",
+      "proposition_text": "Alpha exceeded Beta by 4 units.",
+      "claim_profile": {
+        "concepts": [
+          {"name": "comparison", "terms": ["alpha", "beta", "4 units"], "weight": 2.0}
+        ]
+      },
+      "candidates": [
+        {"evidence_id": "D1", "text": "Alpha and Beta calibration context was reviewed.", "rank": 1, "bm25_score": 10.0, "semantic_score": 0.91},
+        {"evidence_id": "D2", "text": "Alpha calibration exceeded a prior setup threshold.", "rank": 2, "bm25_score": 9.0, "semantic_score": 0.90},
+        {"evidence_id": "D3", "text": "Beta calibration context differed by four setup units.", "rank": 3, "bm25_score": 8.5, "semantic_score": 0.89},
+        {"evidence_id": "KEEP", "text": "Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Calibration context Alpha exceeded Beta by 4 units.", "rank": 7, "bm25_score": 4.0, "semantic_score": 0.82}
+      ]
+    }
+  ]
+}
