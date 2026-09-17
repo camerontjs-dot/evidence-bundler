@@ -1,0 +1,11 @@
+{
+  "schema": "eb-typed-selector-rc1-launch-status-v1",
+  "status": "READY_TO_OPEN_RESEARCH_INFRA_PR",
+  "branch": "research-infra/eb-typed-selector-rc1-context-free-bootstrap-20260917",
+  "base": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "head_before_status_file": "47940928d9b990442a6c43fa11f7b27abcac8ce0",
+  "selector_candidate_freeze_commit": "98ddfb4f2e9623da6b44009abf921657b9445955",
+  "packet_scope": "context-free prereveal authoring bootstrap only",
+  "production_impact": "none",
+  "next_step": "open research-infrastructure PR, then launch PRE-REVEAL-TASK.md in the separate context-free execution surface"
+}
