@@ -1,0 +1,516 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-source-fixtures-v1",
+  "claims_profiles_sha256": "sha256:0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+  "lanes": [
+    {
+      "lane_id": "L001",
+      "sources": [
+        {"source_id":"L001-S01","media_type":"text/plain; charset=utf-8","content":"Northbridge trial bench note: at pH 7, the blue ceramic filter lowered dissolved copper by 18% after a 30-minute contact period."},
+        {"source_id":"L001-S02","media_type":"text/plain; charset=utf-8","content":"Northbridge trial summary: the blue ceramic filter was tested for 30 minutes at pH 7; dissolved copper fell by 12%."},
+        {"source_id":"L001-S03","media_type":"text/plain; charset=utf-8","content":"Northbridge trial log: a red ceramic filter reduced dissolved copper by 18% after 30 minutes at pH 7."},
+        {"source_id":"L001-S04","media_type":"text/plain; charset=utf-8","content":"Northbridge trial memo: the blue ceramic filter reduced total copper by 18% after 30 minutes at pH 7."},
+        {"source_id":"L001-S05","media_type":"text/plain; charset=utf-8","content":"Northbridge trial table: blue ceramic filter, dissolved copper, 18% reduction, 30 minutes, pH 6."},
+        {"source_id":"L001-S06","media_type":"text/plain; charset=utf-8","content":"Northbridge trial extension: the blue ceramic filter reduced dissolved copper by 18% after 60 minutes at pH 7."},
+        {"source_id":"L001-S07","media_type":"text/plain; charset=utf-8","content":"A Northbridge water study used the blue ceramic filter at pH 7 for 30 minutes and recorded an 18% decrease in zinc."},
+        {"source_id":"L001-S08","media_type":"text/plain; charset=utf-8","content":"Northbridge methods note: dissolved copper was measured before and after ceramic-filter exposure; the run used pH 7 water."},
+        {"source_id":"L001-S09","media_type":"text/plain; charset=utf-8","content":"The blue ceramic filter in the Northbridge trial was conditioned overnight before copper measurements were taken."},
+        {"source_id":"L001-S10","media_type":"text/plain; charset=utf-8","content":"Northbridge trial archive: a 30-minute pH 7 run compared several ceramic filters for dissolved metal removal."},
+        {"source_id":"L001-S11","media_type":"text/plain; charset=utf-8","content":"Northbridge pilot discussion mentions an 18% dissolved-copper change, but the passage does not identify which filter produced it."},
+        {"source_id":"L001-S12","media_type":"text/plain; charset=utf-8","content":"A separate Northbridge trial used the blue ceramic filter for 30 minutes in pH 7 water while monitoring conductivity rather than copper."}
+      ]
+    },
+    {
+      "lane_id": "L002",
+      "sources": [
+        {"source_id":"L002-S01","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot operations report: on weekday mornings in March, the median platform wait was 4.2 minutes."},
+        {"source_id":"L002-S02","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot summary: median platform wait reached 4.2 minutes on weekday evenings during March."},
+        {"source_id":"L002-S03","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot March table: weekday morning average platform wait was 4.2 minutes."},
+        {"source_id":"L002-S04","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot note: weekday mornings in March had a median platform wait of 5.2 minutes."},
+        {"source_id":"L002-S05","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot review: median platform wait was 4.2 minutes on weekday mornings in April."},
+        {"source_id":"L002-S06","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot dashboard: March weekday mornings showed 4.2 minutes for median vehicle dwell time."},
+        {"source_id":"L002-S07","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot measured platform wait during March; the weekday-morning series was the primary service indicator."},
+        {"source_id":"L002-S08","media_type":"text/plain; charset=utf-8","content":"March scheduling memo for the Elmport transit pilot describes shorter platform waits on weekday mornings after dispatch changes."},
+        {"source_id":"L002-S09","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot weekend mornings in March had a median platform wait of 4.2 minutes."},
+        {"source_id":"L002-S10","media_type":"text/plain; charset=utf-8","content":"Elmport station study reported a 4.2-minute median transfer walk on weekday mornings in March."},
+        {"source_id":"L002-S11","media_type":"text/plain; charset=utf-8","content":"Elmport transit pilot archived a weekday-morning wait-time distribution for each week of March."},
+        {"source_id":"L002-S12","media_type":"text/plain; charset=utf-8","content":"Elmport March rider survey asked about platform wait time on weekday mornings but did not publish a median."}
+      ]
+    },
+    {
+      "lane_id": "L003",
+      "sources": [
+        {"source_id":"L003-S01","media_type":"text/plain; charset=utf-8","content":"Ardent Lake field sheet, 12 May: the east-inlet sensor recorded nitrate at 6.4 mg/L."},
+        {"source_id":"L003-S02","media_type":"text/plain; charset=utf-8","content":"Ardent Lake field sheet, 12 May: the west-inlet sensor recorded nitrate at 6.4 mg/L."},
+        {"source_id":"L003-S03","media_type":"text/plain; charset=utf-8","content":"Ardent Lake east-inlet sensor log for 12 May lists nitrate at 4.6 mg/L."},
+        {"source_id":"L003-S04","media_type":"text/plain; charset=utf-8","content":"Ardent Lake east-inlet sensor log lists nitrate at 6.4 mg/L on 21 May."},
+        {"source_id":"L003-S05","media_type":"text/plain; charset=utf-8","content":"Ardent Lake east inlet, 12 May: the sensor measured nitrite at 6.4 mg/L."},
+        {"source_id":"L003-S06","media_type":"text/plain; charset=utf-8","content":"Ardent Lake east inlet sampling note reports nitrate at 6.4 µg/L on 12 May."},
+        {"source_id":"L003-S07","media_type":"text/plain; charset=utf-8","content":"The Ardent Lake sensor at the east inlet underwent calibration on 12 May before nitrate observations."},
+        {"source_id":"L003-S08","media_type":"text/plain; charset=utf-8","content":"Ardent Lake monitoring plan names the east inlet as a nitrate station and schedules readings during May."},
+        {"source_id":"L003-S09","media_type":"text/plain; charset=utf-8","content":"Ardent Lake 12 May summary lists 6.4 mg/L nitrate at the central basin rather than the east inlet."},
+        {"source_id":"L003-S10","media_type":"text/plain; charset=utf-8","content":"An east-inlet record from Ardent Lake gives a nitrate reading on 12 May but the numeric value is missing."},
+        {"source_id":"L003-S11","media_type":"text/plain; charset=utf-8","content":"Ardent Lake sensor archive includes east-inlet nitrate records in mg/L throughout May."},
+        {"source_id":"L003-S12","media_type":"text/plain; charset=utf-8","content":"A handheld sample collected near the Ardent Lake east inlet on 12 May measured nitrate at 6.8 mg/L."}
+      ]
+    },
+    {
+      "lane_id": "L004",
+      "sources": [
+        {"source_id":"L004-S01","media_type":"text/plain; charset=utf-8","content":"Aster-9 battery cycling record: after 600 cycles at 25°C with 1C charge and 1C discharge, retained capacity was 82%. The same bench also tracked case temperature, impedance drift, and periodic reference checks across the run."},
+        {"source_id":"L004-S02","media_type":"text/plain; charset=utf-8","content":"Aster-9 long-run notebook describes 600 cycles at 25°C under 1C charge and 1C discharge. The retained-capacity result in this entry is 76%, while auxiliary notes discuss fixture resistance and chamber airflow."},
+        {"source_id":"L004-S03","media_type":"text/plain; charset=utf-8","content":"Aster-9 battery test used 600 cycles at 25°C and 1C charging, but discharge was 0.5C. The report lists 82% retained capacity and several unrelated thermal observations."},
+        {"source_id":"L004-S04","media_type":"text/plain; charset=utf-8","content":"Aster-9 battery retained 82% after 600 cycles under 1C/1C cycling, but the chamber was maintained at 35°C. The remainder of the page discusses sensor placement and cable routing."},
+        {"source_id":"L004-S05","media_type":"text/plain; charset=utf-8","content":"Aster-9 qualification memo cites 82% retained capacity after 500 cycles at 25°C with 1C charge and 1C discharge, followed by comments on inspection intervals."},
+        {"source_id":"L004-S06","media_type":"text/plain; charset=utf-8","content":"Aster-9 cycle-life report covers 25°C and 1C/1C operation for 600 cycles, with plots of voltage, current, and capacity retention but no numeric retained-capacity figure in the text."},
+        {"source_id":"L004-S07","media_type":"text/plain; charset=utf-8","content":"The Aster-9 battery program compared 25°C cycling protocols at 1C charge and 1C discharge with slower-rate controls over hundreds of cycles."},
+        {"source_id":"L004-S08","media_type":"text/plain; charset=utf-8","content":"Aster-9 reference test reports 82% capacity retention after 600 cycles at 25°C, while the charging and discharging rates are not specified in this excerpt."},
+        {"source_id":"L004-S09","media_type":"text/plain; charset=utf-8","content":"During Aster-9 testing, a 1C charge/1C discharge schedule at 25°C was used for 600 cycles; the 82% figure in this passage refers to coulombic efficiency, not retained capacity."},
+        {"source_id":"L004-S10","media_type":"text/plain; charset=utf-8","content":"An Aster-9 maintenance note mentions 600 cycles, 25°C, and 1C charge/discharge settings while documenting connector replacement rather than capacity retention."},
+        {"source_id":"L004-S11","media_type":"text/plain; charset=utf-8","content":"Aster-9 battery baseline at cycle zero was measured at 25°C before the 600-cycle 1C/1C program began."},
+        {"source_id":"L004-S12","media_type":"text/plain; charset=utf-8","content":"Aster-9 summary states that retained capacity exceeded 80% after extended cycling, without giving the exact cycle count or the 82% value."}
+      ]
+    },
+    {
+      "lane_id": "L005",
+      "sources": [
+        {"source_id":"L005-S01","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot review: among first-time adult patients, 71% completed follow-up within 14 days. The report also describes reminder timing, portal access, and appointment routing."},
+        {"source_id":"L005-S02","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot found 71% follow-up completion within 14 days among returning adult patients; the surrounding section discusses scheduling."},
+        {"source_id":"L005-S03","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot reported 71% follow-up completion within 30 days among first-time adult patients."},
+        {"source_id":"L005-S04","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot logged 61% follow-up completion within 14 days among first-time adult patients."},
+        {"source_id":"L005-S05","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot reported 71% completion of the intake questionnaire within 14 days for first-time adults."},
+        {"source_id":"L005-S06","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic pilot methods define first-time adult patients and the 14-day follow-up window but do not state a completion percentage."},
+        {"source_id":"L005-S07","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology dashboard includes first-time adults, follow-up status, and 14-day tracking as separate fields."},
+        {"source_id":"L005-S08","media_type":"text/plain; charset=utf-8","content":"A Marlow Clinic dermatology pilot reported 71% follow-up completion, but this excerpt does not identify tele-dermatology or the patient subgroup."},
+        {"source_id":"L005-S09","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology note says 71% of first-time adult patients were contacted within 14 days, not that follow-up was completed."},
+        {"source_id":"L005-S10","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic tele-dermatology pilot tracked follow-up completion for pediatric first-time patients within 14 days and reported 71%."},
+        {"source_id":"L005-S11","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic implementation memo discusses reminders sent to first-time adults during the two-week follow-up window."},
+        {"source_id":"L005-S12","media_type":"text/plain; charset=utf-8","content":"Marlow Clinic pilot summary says most first-time adults completed follow-up promptly, without a numeric rate or explicit 14-day cutoff."}
+      ]
+    },
+    {
+      "lane_id": "L006",
+      "sources": [
+        {"source_id":"L006-S01","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine steady-state report: at 12 m/s wind speed, the 10-minute test averaged 2.8 MW. The record also notes yaw alignment, ambient pressure, and sampling cadence."},
+        {"source_id":"L006-S02","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine report: at 12 m/s, the 10-minute steady-state test averaged 3.1 MW, with additional notes on vibration channels."},
+        {"source_id":"L006-S03","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine averaged 2.8 MW in a 10-minute steady-state test conducted at 10 m/s wind speed."},
+        {"source_id":"L006-S04","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine produced a peak of 2.8 MW during the 10-minute steady-state test at 12 m/s."},
+        {"source_id":"L006-S05","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine averaged 2.8 MW during a 20-minute steady-state test at 12 m/s."},
+        {"source_id":"L006-S06","media_type":"text/plain; charset=utf-8","content":"Rivermark methods note describes a 10-minute steady-state run at 12 m/s and lists power as the principal output metric."},
+        {"source_id":"L006-S07","media_type":"text/plain; charset=utf-8","content":"The Rivermark turbine campaign included 12 m/s wind conditions and ten-minute acquisition windows for several operating points."},
+        {"source_id":"L006-S08","media_type":"text/plain; charset=utf-8","content":"Rivermark report lists 2.8 MW as the average at 12 m/s, but the excerpt does not identify whether that value came from the 10-minute steady-state run."},
+        {"source_id":"L006-S09","media_type":"text/plain; charset=utf-8","content":"Rivermark steady-state test at 12 m/s lasted 10 minutes; 2.8 in this passage is a rotor-speed ratio rather than megawatts."},
+        {"source_id":"L006-S10","media_type":"text/plain; charset=utf-8","content":"A Rivermark maintenance record mentions the 12 m/s test and 10-minute interval while documenting gearbox temperature."},
+        {"source_id":"L006-S11","media_type":"text/plain; charset=utf-8","content":"Rivermark turbine test averaged 2.8 MW over 10 minutes, but wind speed varied from 10 to 14 m/s instead of remaining at 12 m/s."},
+        {"source_id":"L006-S12","media_type":"text/plain; charset=utf-8","content":"Rivermark campaign summary says output was near 3 MW at 12 m/s and does not provide the exact ten-minute mean."}
+      ]
+    },
+    {
+      "lane_id": "L007",
+      "sources": [
+        {"source_id":"L007-S01","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey results estimate that 43% of respondents used reusable bottles daily."},
+        {"source_id":"L007-S02","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey bulletin repeats the daily reusable-bottle estimate as 43% of respondents."},
+        {"source_id":"L007-S03","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey chart caption states that 43 percent of respondents reported daily use of reusable bottles."},
+        {"source_id":"L007-S04","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey results estimate that 43% of respondents used reusable bottles weekly."},
+        {"source_id":"L007-S05","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey results estimate that 34% of respondents used reusable bottles daily."},
+        {"source_id":"L007-S06","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey recorded that 43% of respondents owned reusable bottles, without saying they used them daily."},
+        {"source_id":"L007-S07","media_type":"text/plain; charset=utf-8","content":"The Cedar Bay survey asked respondents about daily reusable-bottle use and other household habits."},
+        {"source_id":"L007-S08","media_type":"text/plain; charset=utf-8","content":"Cedar Bay community poll reported a 43% daily rate for reusable shopping bags rather than bottles."},
+        {"source_id":"L007-S09","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey methods describe the respondent sample and frequency categories for reusable-bottle use."},
+        {"source_id":"L007-S10","media_type":"text/plain; charset=utf-8","content":"An early Cedar Bay survey draft estimated daily reusable-bottle use at 41% before weighting."},
+        {"source_id":"L007-S11","media_type":"text/plain; charset=utf-8","content":"Cedar Bay survey summary says fewer than half of respondents used reusable bottles every day."},
+        {"source_id":"L007-S12","media_type":"text/plain; charset=utf-8","content":"A neighboring Bay survey reported 43% daily reusable-bottle use; it was not the Cedar Bay survey."}
+      ]
+    },
+    {
+      "lane_id": "L008",
+      "sources": [
+        {"source_id":"L008-S01","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler benchmark report: median build time fell by 16% on the benchmark suite."},
+        {"source_id":"L008-S02","media_type":"text/plain; charset=utf-8","content":"Orion-Delta release note states a 16% reduction in median build time across the benchmark suite."},
+        {"source_id":"L008-S03","media_type":"text/plain; charset=utf-8","content":"Orion-Delta benchmark appendix reports median build time was 16% lower on the suite than the reference compiler."},
+        {"source_id":"L008-S04","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler reduced mean build time by 16% on the benchmark suite."},
+        {"source_id":"L008-S05","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler reduced median build time by 11% on the benchmark suite."},
+        {"source_id":"L008-S06","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler reduced median test-execution time by 16% on the benchmark suite."},
+        {"source_id":"L008-S07","media_type":"text/plain; charset=utf-8","content":"The Orion-Delta benchmark suite was used to compare build-time distributions before and after compiler changes."},
+        {"source_id":"L008-S08","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler documentation cites a 16% improvement but does not identify whether the statistic is median build time."},
+        {"source_id":"L008-S09","media_type":"text/plain; charset=utf-8","content":"An Orion-Delta microbenchmark showed a 16% median reduction for a single project, not the full benchmark suite."},
+        {"source_id":"L008-S10","media_type":"text/plain; charset=utf-8","content":"Orion-Delta benchmark methodology explains how median build time was calculated from repeated builds."},
+        {"source_id":"L008-S11","media_type":"text/plain; charset=utf-8","content":"Orion-Delta compiler build-time results are summarized as a double-digit reduction without the exact percentage."},
+        {"source_id":"L008-S12","media_type":"text/plain; charset=utf-8","content":"A separate Orion compiler variant reduced median build time by 16% on the benchmark suite."}
+      ]
+    },
+    {
+      "lane_id": "L009",
+      "sources": [
+        {"source_id":"L009-S01","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse trial: tomato yield under the low-sodium nutrient mix was 5.6 kg per plant."},
+        {"source_id":"L009-S02","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse results table gives 5.6 kg of tomatoes per plant for the low-sodium nutrient treatment."},
+        {"source_id":"L009-S03","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse summary reports a 5.6 kg-per-plant tomato yield in the low-sodium mix group."},
+        {"source_id":"L009-S04","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse trial recorded 5.6 kg per plant under the standard-sodium nutrient mix."},
+        {"source_id":"L009-S05","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse trial recorded 6.5 kg per plant under the low-sodium nutrient mix."},
+        {"source_id":"L009-S06","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse trial recorded tomato biomass of 5.6 kg per plant under the low-sodium nutrient mix."},
+        {"source_id":"L009-S07","media_type":"text/plain; charset=utf-8","content":"Fenwick methods note describes the low-sodium nutrient mix and the per-plant tomato harvest protocol."},
+        {"source_id":"L009-S08","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse study lists 5.6 kg per plot for the low-sodium treatment rather than per plant."},
+        {"source_id":"L009-S09","media_type":"text/plain; charset=utf-8","content":"Fenwick greenhouse trial measured tomato yield under several nutrient mixes, including a low-sodium formulation."},
+        {"source_id":"L009-S10","media_type":"text/plain; charset=utf-8","content":"An interim Fenwick note estimated low-sodium tomato yield at 5.4 kg per plant before the final harvest."},
+        {"source_id":"L009-S11","media_type":"text/plain; charset=utf-8","content":"Fenwick trial summary says low-sodium plants yielded more than 5 kg each but gives no exact figure."},
+        {"source_id":"L009-S12","media_type":"text/plain; charset=utf-8","content":"A separate Fenwick field trial recorded 5.6 kg per plant using the low-sodium nutrient mix outside the greenhouse."}
+      ]
+    },
+    {
+      "lane_id": "L010",
+      "sources": [
+        {"source_id":"L010-S01","media_type":"text/plain; charset=utf-8","content":"Harrow Creek laboratory result: the sample contained 12.1 µg/L lead as measured by ICP-MS."},
+        {"source_id":"L010-S02","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sample report lists 12.1 µg/L lead by ICP-OES."},
+        {"source_id":"L010-S03","media_type":"text/plain; charset=utf-8","content":"Harrow Creek ICP-MS result lists 12.1 mg/L lead in the sample."},
+        {"source_id":"L010-S04","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sample contained 10.2 µg/L lead by ICP-MS."},
+        {"source_id":"L010-S05","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sample had 12.1 µg/L cadmium by ICP-MS."},
+        {"source_id":"L010-S06","media_type":"text/plain; charset=utf-8","content":"Harrow Creek screening note reports a field colorimetric lead estimate of 12.1 µg/L."},
+        {"source_id":"L010-S07","media_type":"text/plain; charset=utf-8","content":"Harrow Creek analytical plan specifies ICP-MS for trace lead in water samples."},
+        {"source_id":"L010-S08","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sample sheet records 12.1 µg/L as an instrument blank correction, not the sample lead concentration."},
+        {"source_id":"L010-S09","media_type":"text/plain; charset=utf-8","content":"Harrow Creek ICP-MS report gives a lead result in µg/L but the numeric value is omitted from this excerpt."},
+        {"source_id":"L010-S10","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sample discussion mentions 12.1 and lead while comparing two analytical methods."},
+        {"source_id":"L010-S11","media_type":"text/plain; charset=utf-8","content":"A Harrow Creek duplicate sample measured 12.6 µg/L lead by ICP-MS."},
+        {"source_id":"L010-S12","media_type":"text/plain; charset=utf-8","content":"Harrow Creek sediment extract contained 12.1 µg/L lead by ICP-MS; it was not the water sample described elsewhere."}
+      ]
+    },
+    {
+      "lane_id": "L011",
+      "sources": [
+        {"source_id":"L011-S01","media_type":"text/plain; charset=utf-8","content":"Solace hearing study final table: mean threshold improvement was 7.3 dB at 2 kHz after six weeks."},
+        {"source_id":"L011-S02","media_type":"text/plain; charset=utf-8","content":"Solace hearing study reports a mean 7.3 dB improvement at 4 kHz after six weeks."},
+        {"source_id":"L011-S03","media_type":"text/plain; charset=utf-8","content":"Solace hearing study reports a median threshold improvement of 7.3 dB at 2 kHz after six weeks."},
+        {"source_id":"L011-S04","media_type":"text/plain; charset=utf-8","content":"Solace hearing study found a mean threshold improvement of 5.7 dB at 2 kHz after six weeks."},
+        {"source_id":"L011-S05","media_type":"text/plain; charset=utf-8","content":"Solace hearing study found a mean threshold improvement of 7.3 dB at 2 kHz after three weeks."},
+        {"source_id":"L011-S06","media_type":"text/plain; charset=utf-8","content":"Solace hearing study recorded a mean threshold level of 7.3 dB at 2 kHz after six weeks, not an improvement."},
+        {"source_id":"L011-S07","media_type":"text/plain; charset=utf-8","content":"Solace methods section defines the six-week endpoint and the 2 kHz threshold measure."},
+        {"source_id":"L011-S08","media_type":"text/plain; charset=utf-8","content":"Solace study summary says hearing thresholds improved at 2 kHz after six weeks but gives no magnitude."},
+        {"source_id":"L011-S09","media_type":"text/plain; charset=utf-8","content":"Solace hearing study cites 7.3 dB as the mean improvement pooled across frequencies rather than specifically at 2 kHz."},
+        {"source_id":"L011-S10","media_type":"text/plain; charset=utf-8","content":"Solace hearing pilot at another clinic reported 7.3 dB at 2 kHz after six weeks."},
+        {"source_id":"L011-S11","media_type":"text/plain; charset=utf-8","content":"Solace six-week results include several frequency-specific threshold changes and confidence intervals."},
+        {"source_id":"L011-S12","media_type":"text/plain; charset=utf-8","content":"Solace hearing study measured 2 kHz thresholds at baseline and six weeks using the same audiometric procedure."}
+      ]
+    },
+    {
+      "lane_id": "L012",
+      "sources": [
+        {"source_id":"L012-S01","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit: 96.2% of orders were picked without item substitution during the audit week."},
+        {"source_id":"L012-S02","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit reports 96.2% of orders shipped without item substitution during the audit week."},
+        {"source_id":"L012-S03","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit reports 92.6% of orders picked without item substitution during the audit week."},
+        {"source_id":"L012-S04","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse monthly report gives 96.2% of orders picked without substitution, not the audit-week figure."},
+        {"source_id":"L012-S05","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit says 96.2% of order lines, rather than orders, were picked without item substitution."},
+        {"source_id":"L012-S06","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit week recorded 96.2% pick accuracy, a broader metric that includes quantity errors."},
+        {"source_id":"L012-S07","media_type":"text/plain; charset=utf-8","content":"Port Azure audit methods define an item substitution and the order-level denominator used during the week."},
+        {"source_id":"L012-S08","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit summary says more than 95% of orders avoided substitutions but does not give the exact percentage."},
+        {"source_id":"L012-S09","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse recorded 96.2% without substitution during a training week outside the audit period."},
+        {"source_id":"L012-S10","media_type":"text/plain; charset=utf-8","content":"Port Azure warehouse audit mentions 96.2% while discussing scan compliance rather than substitutions."},
+        {"source_id":"L012-S11","media_type":"text/plain; charset=utf-8","content":"Port Azure audit-week dashboard tracks picked orders, substitutions, and exceptions as separate fields."},
+        {"source_id":"L012-S12","media_type":"text/plain; charset=utf-8","content":"A second Port Azure facility reported 96.2% of orders picked without substitution during its audit week."}
+      ]
+    },
+    {
+      "lane_id": "L013",
+      "sources": [
+        {"source_id":"L013-S01","media_type":"text/plain; charset=utf-8","content":"Lydon County outreach report for 2025: the adult vaccination program reached 68% of residents aged 65 and older."},
+        {"source_id":"L013-S02","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 outreach reached 68% of residents aged 18 and older."},
+        {"source_id":"L013-S03","media_type":"text/plain; charset=utf-8","content":"Lydon County adult vaccination outreach reached 68% of residents aged 65 and older in 2024."},
+        {"source_id":"L013-S04","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 vaccination outreach reached 58% of residents aged 65 and older."},
+        {"source_id":"L013-S05","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 outreach contacted 68% of residents aged 65 and older, while completed vaccination reach was not stated."},
+        {"source_id":"L013-S06","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 adult vaccination outreach reached 68% of enrolled clinic patients aged 65 and older rather than all county residents."},
+        {"source_id":"L013-S07","media_type":"text/plain; charset=utf-8","content":"Lydon County program methods define outreach reach as a resident receiving at least one documented contact."},
+        {"source_id":"L013-S08","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 report says roughly two-thirds of residents 65 and older were reached by adult vaccination outreach."},
+        {"source_id":"L013-S09","media_type":"text/plain; charset=utf-8","content":"A neighboring Lydon City program reached 68% of residents aged 65 and older in 2025."},
+        {"source_id":"L013-S10","media_type":"text/plain; charset=utf-8","content":"Lydon County outreach dashboard includes age bands and 2025 vaccination contact rates without the final 68% figure in this excerpt."},
+        {"source_id":"L013-S11","media_type":"text/plain; charset=utf-8","content":"Lydon County adult vaccination campaign reached 68% of seniors during a six-month pilot spanning late 2024 and early 2025."},
+        {"source_id":"L013-S12","media_type":"text/plain; charset=utf-8","content":"Lydon County 2025 vaccination report gives 68% as the share of reached seniors who booked appointments."}
+      ]
+    },
+    {
+      "lane_id": "L014",
+      "sources": [
+        {"source_id":"L014-S01","media_type":"text/plain; charset=utf-8","content":"Westhaven municipal code, 2026 edition: rooftop rain barrels with capacity up to 500 L require no permit on single-family lots."},
+        {"source_id":"L014-S02","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code allows rooftop rain barrels up to 500 L without a permit on multi-family lots."},
+        {"source_id":"L014-S03","media_type":"text/plain; charset=utf-8","content":"Westhaven 2025 municipal code states that rooftop rain barrels up to 500 L require no permit on single-family lots."},
+        {"source_id":"L014-S04","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code exempts rooftop rain barrels up to 300 L from permits on single-family lots."},
+        {"source_id":"L014-S05","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code says rooftop rain barrels up to 500 L require a simplified permit on single-family lots."},
+        {"source_id":"L014-S06","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code exempts ground-level rain barrels up to 500 L, while this passage does not address rooftop installations."},
+        {"source_id":"L014-S07","media_type":"text/plain; charset=utf-8","content":"Westhaven code commentary discusses rainwater-storage permitting thresholds for residential lots."},
+        {"source_id":"L014-S08","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 guidance says small rooftop rain barrels on single-family lots are generally permit-exempt but omits the capacity cutoff."},
+        {"source_id":"L014-S09","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code uses 500 L as a threshold for rooftop equipment, but the excerpt concerns inspection rather than permits."},
+        {"source_id":"L014-S10","media_type":"text/plain; charset=utf-8","content":"A county rule outside Westhaven permits rooftop rain barrels up to 500 L without permits on single-family lots."},
+        {"source_id":"L014-S11","media_type":"text/plain; charset=utf-8","content":"Westhaven 2026 code requires no permit for rooftop rain barrels up to 500 L on single-family lots only when a heritage overlay is absent; the claim does not include that added condition."},
+        {"source_id":"L014-S12","media_type":"text/plain; charset=utf-8","content":"Westhaven draft code proposed a 500 L no-permit threshold for single-family rooftop barrels before the 2026 code was adopted."}
+      ]
+    },
+    {
+      "lane_id": "L015",
+      "sources": [
+        {"source_id":"L015-S01","media_type":"text/plain; charset=utf-8","content":"Briar Hospital intervention-month report: among night-shift nurses, mean sleep duration was 6.1 hours."},
+        {"source_id":"L015-S02","media_type":"text/plain; charset=utf-8","content":"Briar Hospital intervention month: day-shift nurses had mean sleep duration of 6.1 hours."},
+        {"source_id":"L015-S03","media_type":"text/plain; charset=utf-8","content":"Briar Hospital night-shift nurses averaged 6.1 hours of sleep during the baseline month."},
+        {"source_id":"L015-S04","media_type":"text/plain; charset=utf-8","content":"Briar Hospital night-shift nurses had median sleep duration of 6.1 hours during the intervention month."},
+        {"source_id":"L015-S05","media_type":"text/plain; charset=utf-8","content":"Briar Hospital night-shift nurses had mean sleep duration of 5.8 hours during the intervention month."},
+        {"source_id":"L015-S06","media_type":"text/plain; charset=utf-8","content":"Briar Hospital intervention month found 6.1 hours of mean time in bed among night-shift nurses, not sleep duration."},
+        {"source_id":"L015-S07","media_type":"text/plain; charset=utf-8","content":"Briar Hospital protocol defines the night-shift nurse cohort and the intervention-month sleep diary schedule."},
+        {"source_id":"L015-S08","media_type":"text/plain; charset=utf-8","content":"Briar Hospital report says night-shift nurses slept about six hours on average during the intervention month."},
+        {"source_id":"L015-S09","media_type":"text/plain; charset=utf-8","content":"Briar Hospital intervention-month figure of 6.1 hours applies to all nursing staff, with no night-shift subgroup result in this passage."},
+        {"source_id":"L015-S10","media_type":"text/plain; charset=utf-8","content":"A different Briar medical center reported 6.1 hours of mean sleep for night-shift nurses during its intervention month."},
+        {"source_id":"L015-S11","media_type":"text/plain; charset=utf-8","content":"Briar Hospital night-shift nurse report tracks sleep duration across baseline, intervention, and follow-up months."},
+        {"source_id":"L015-S12","media_type":"text/plain; charset=utf-8","content":"Briar Hospital intervention month lists 6.1 hours as the target sleep duration rather than the observed mean."}
+      ]
+    },
+    {
+      "lane_id": "L016",
+      "sources": [
+        {"source_id":"L016-S01","media_type":"text/plain; charset=utf-8","content":"Manufacturer final calibration certificate for the Q7 gauge: error at the 50 mm reference was +0.14 mm."},
+        {"source_id":"L016-S02","media_type":"text/plain; charset=utf-8","content":"Manufacturer preliminary calibration worksheet for the Q7 gauge lists +0.14 mm error at 50 mm."},
+        {"source_id":"L016-S03","media_type":"text/plain; charset=utf-8","content":"Distributor inspection note says the Q7 gauge showed +0.14 mm error at the 50 mm reference."},
+        {"source_id":"L016-S04","media_type":"text/plain; charset=utf-8","content":"Manufacturer final calibration certificate reports the Q7 gauge error as -0.14 mm at 50 mm."},
+        {"source_id":"L016-S05","media_type":"text/plain; charset=utf-8","content":"Manufacturer final calibration certificate reports +0.14 mm error for the Q7 gauge at the 100 mm reference."},
+        {"source_id":"L016-S06","media_type":"text/plain; charset=utf-8","content":"Manufacturer final certificate for a Q8 gauge reports +0.14 mm at the 50 mm reference."},
+        {"source_id":"L016-S07","media_type":"text/plain; charset=utf-8","content":"The Q7 gauge service log cites a +0.14 mm reading at 50 mm while discussing adjustment before final calibration."},
+        {"source_id":"L016-S08","media_type":"text/plain; charset=utf-8","content":"The manufacturer's final calibration certificate identifies the 50 mm reference point and includes an error table for the Q7 gauge."},
+        {"source_id":"L016-S09","media_type":"text/plain; charset=utf-8","content":"A technician email paraphrases the final Q7 calibration result as about +0.14 mm at 50 mm but is not the certificate."},
+        {"source_id":"L016-S10","media_type":"text/plain; charset=utf-8","content":"Manufacturer final Q7 certificate says the measured indication was 50.14 mm at the 50 mm reference; this passage does not explicitly state the signed error field."},
+        {"source_id":"L016-S11","media_type":"text/plain; charset=utf-8","content":"A third-party lab note measured Q7 gauge error at +0.14 mm at a 50 mm reference."},
+        {"source_id":"L016-S12","media_type":"text/plain; charset=utf-8","content":"Manufacturer final calibration certificate lists several Q7 reference points, but the 50 mm row is omitted from this excerpt."}
+      ]
+    },
+    {
+      "lane_id": "L017",
+      "sources": [
+        {"source_id":"L017-S01","media_type":"text/plain; charset=utf-8","content":"Library registrar certified inventory: the Harbor collection contains 1,842 catalogued maps."},
+        {"source_id":"L017-S02","media_type":"text/plain; charset=utf-8","content":"Library registrar working draft lists 1,842 catalogued maps in the Harbor collection."},
+        {"source_id":"L017-S03","media_type":"text/plain; charset=utf-8","content":"Curator presentation states that the Harbor collection has 1,842 catalogued maps."},
+        {"source_id":"L017-S04","media_type":"text/plain; charset=utf-8","content":"Library registrar certified inventory lists 1,824 catalogued maps in the Harbor collection."},
+        {"source_id":"L017-S05","media_type":"text/plain; charset=utf-8","content":"Library registrar certified inventory lists 1,842 catalogued photographs in the Harbor collection."},
+        {"source_id":"L017-S06","media_type":"text/plain; charset=utf-8","content":"Library registrar certified inventory lists 1,842 catalogued maps across the Harbor and Estuary collections combined."},
+        {"source_id":"L017-S07","media_type":"text/plain; charset=utf-8","content":"The registrar's certified inventory describes map-cataloguing rules for the Harbor collection and includes a collection-total field."},
+        {"source_id":"L017-S08","media_type":"text/plain; charset=utf-8","content":"A library newsletter says the Harbor collection has roughly 1,800 catalogued maps."},
+        {"source_id":"L017-S09","media_type":"text/plain; charset=utf-8","content":"An accession spreadsheet outside the certified inventory shows 1,842 map records for the Harbor collection before deduplication."},
+        {"source_id":"L017-S10","media_type":"text/plain; charset=utf-8","content":"Library registrar certified inventory gives 1,842 as the total number of Harbor items, not specifically maps."},
+        {"source_id":"L017-S11","media_type":"text/plain; charset=utf-8","content":"A donor brochure claims that the Harbor collection includes 1,842 maps."},
+        {"source_id":"L017-S12","media_type":"text/plain; charset=utf-8","content":"The certified inventory for a similarly named Harbor Annex collection lists 1,842 catalogued maps."}
+      ]
+    },
+    {
+      "lane_id": "L018",
+      "sources": [
+        {"source_id":"L018-S01","media_type":"text/plain; charset=utf-8","content":"Independent laboratory signed assay for alloy batch K-41: sulfur measured 0.032%."},
+        {"source_id":"L018-S02","media_type":"text/plain; charset=utf-8","content":"Independent laboratory unsigned draft assay for batch K-41 reports 0.032% sulfur."},
+        {"source_id":"L018-S03","media_type":"text/plain; charset=utf-8","content":"Supplier certificate for alloy batch K-41 states sulfur at 0.032%."},
+        {"source_id":"L018-S04","media_type":"text/plain; charset=utf-8","content":"Independent lab signed assay for K-41 reports sulfur at 0.023%."},
+        {"source_id":"L018-S05","media_type":"text/plain; charset=utf-8","content":"Independent lab signed assay reports 0.032% sulfur in alloy batch K-14."},
+        {"source_id":"L018-S06","media_type":"text/plain; charset=utf-8","content":"Independent lab signed assay for K-41 reports phosphorus at 0.032%."},
+        {"source_id":"L018-S07","media_type":"text/plain; charset=utf-8","content":"The independent laboratory's signed assay for K-41 includes sulfur among the quantified elements and records results as mass percent."},
+        {"source_id":"L018-S08","media_type":"text/plain; charset=utf-8","content":"A purchasing memo quotes a 0.032% sulfur value for K-41 from an unspecified source."},
+        {"source_id":"L018-S09","media_type":"text/plain; charset=utf-8","content":"Independent lab signed assay gives 0.032% as total sulfur-plus-phosphorus for K-41, not sulfur alone."},
+        {"source_id":"L018-S10","media_type":"text/plain; charset=utf-8","content":"A plant-floor analyzer reading for K-41 measured sulfur at 0.032%."},
+        {"source_id":"L018-S11","media_type":"text/plain; charset=utf-8","content":"Independent lab signed assay for K-41 says sulfur was below 0.04% but does not give the exact 0.032% result in this excerpt."},
+        {"source_id":"L018-S12","media_type":"text/plain; charset=utf-8","content":"The signed assay from an affiliated internal lab reports 0.032% sulfur for batch K-41; it was not the independent laboratory named in the claim."}
+      ]
+    },
+    {
+      "lane_id": "L019",
+      "sources": [
+        {"source_id":"L019-S01","media_type":"text/plain; charset=utf-8","content":"Outage audit finding: investigators found no evidence that the backup pump operated during the outage."},
+        {"source_id":"L019-S02","media_type":"text/plain; charset=utf-8","content":"Outage audit says the backup pump did not operate during the outage."},
+        {"source_id":"L019-S03","media_type":"text/plain; charset=utf-8","content":"Outage audit found no evidence that the primary pump operated during the outage."},
+        {"source_id":"L019-S04","media_type":"text/plain; charset=utf-8","content":"Outage audit found evidence that the backup pump operated briefly during the outage."},
+        {"source_id":"L019-S05","media_type":"text/plain; charset=utf-8","content":"Outage audit found no evidence that the backup pump operated after the outage."},
+        {"source_id":"L019-S06","media_type":"text/plain; charset=utf-8","content":"Maintenance log says the backup pump was available during the outage, without recording whether it operated."},
+        {"source_id":"L019-S07","media_type":"text/plain; charset=utf-8","content":"The audit reviewed controller logs, power traces, and operator notes for the backup pump during the outage."},
+        {"source_id":"L019-S08","media_type":"text/plain; charset=utf-8","content":"An operator recalled that the backup pump may have started during the outage, but the recollection was not part of the audit finding."},
+        {"source_id":"L019-S09","media_type":"text/plain; charset=utf-8","content":"Audit summary states that operation of the backup pump during the outage could not be confirmed from available records."},
+        {"source_id":"L019-S10","media_type":"text/plain; charset=utf-8","content":"Backup-pump test records show successful operation the day before the outage."},
+        {"source_id":"L019-S11","media_type":"text/plain; charset=utf-8","content":"The audit found no evidence of sustained backup-pump operation during the outage, while leaving open the possibility of a momentary start."},
+        {"source_id":"L019-S12","media_type":"text/plain; charset=utf-8","content":"A post-outage engineering memo states that the backup pump did not run, but it is separate from the audit."}
+      ]
+    },
+    {
+      "lane_id": "L020",
+      "sources": [
+        {"source_id":"L020-S01","media_type":"text/plain; charset=utf-8","content":"Report wording: the additive may reduce foaming above 60°C; the report does not claim a reduction at room temperature."},
+        {"source_id":"L020-S02","media_type":"text/plain; charset=utf-8","content":"Report states that the additive reduces foaming above 60°C and also reduces foaming at room temperature."},
+        {"source_id":"L020-S03","media_type":"text/plain; charset=utf-8","content":"Report states that the additive may reduce foaming at room temperature; it does not address temperatures above 60°C."},
+        {"source_id":"L020-S04","media_type":"text/plain; charset=utf-8","content":"Report says the additive may reduce foaming above 60°C, but a room-temperature reduction is described as established."},
+        {"source_id":"L020-S05","media_type":"text/plain; charset=utf-8","content":"Report states the additive will reduce foaming above 60°C; room-temperature performance is not mentioned."},
+        {"source_id":"L020-S06","media_type":"text/plain; charset=utf-8","content":"The report discusses foaming tests above 60°C and at room temperature as separate conditions."},
+        {"source_id":"L020-S07","media_type":"text/plain; charset=utf-8","content":"Report notes a possible reduction in foaming at elevated temperature, with 60°C used as the threshold for the high-temperature series."},
+        {"source_id":"L020-S08","media_type":"text/plain; charset=utf-8","content":"Room-temperature appendix reports no statistically clear effect, but the main report does not phrase this as a categorical no-reduction claim."},
+        {"source_id":"L020-S09","media_type":"text/plain; charset=utf-8","content":"A product brochure says the additive reduces foaming at all temperatures, including room temperature."},
+        {"source_id":"L020-S10","media_type":"text/plain; charset=utf-8","content":"The report says the additive may reduce foaming above 60°C; a different additive was tested at room temperature."},
+        {"source_id":"L020-S11","media_type":"text/plain; charset=utf-8","content":"Report conclusion says evidence is consistent with lower foaming above 60°C while explicitly withholding a room-temperature claim."},
+        {"source_id":"L020-S12","media_type":"text/plain; charset=utf-8","content":"An earlier draft report proposed a room-temperature reduction claim that was removed from the final wording."}
+      ]
+    },
+    {
+      "lane_id": "L021",
+      "sources": [
+        {"source_id":"L021-S01","media_type":"text/plain; charset=utf-8","content":"Witness log entry: technician Mara Venn reported hearing the alarm before the compressor stopped."},
+        {"source_id":"L021-S02","media_type":"text/plain; charset=utf-8","content":"Witness log entry: technician Mara Venn reported hearing the alarm after the compressor stopped."},
+        {"source_id":"L021-S03","media_type":"text/plain; charset=utf-8","content":"Witness log entry: technician Ivo Renn reported hearing the alarm before the compressor stopped."},
+        {"source_id":"L021-S04","media_type":"text/plain; charset=utf-8","content":"Maintenance report states that Mara Venn heard the alarm before the compressor stopped, but it is not the witness log."},
+        {"source_id":"L021-S05","media_type":"text/plain; charset=utf-8","content":"Witness log says Mara Venn reported seeing the alarm indicator before the compressor stopped."},
+        {"source_id":"L021-S06","media_type":"text/plain; charset=utf-8","content":"Witness log notes that Mara Venn reported hearing the alarm before a pump stopped, not the compressor."},
+        {"source_id":"L021-S07","media_type":"text/plain; charset=utf-8","content":"The witness log records Mara Venn's account alongside timestamps for the alarm and compressor shutdown."},
+        {"source_id":"L021-S08","media_type":"text/plain; charset=utf-8","content":"Another technician told Mara Venn that the alarm sounded before the compressor stopped; the witness log attributes that statement to the other technician."},
+        {"source_id":"L021-S09","media_type":"text/plain; charset=utf-8","content":"Witness log summarizes conflicting recollections about whether the alarm preceded the compressor stop."},
+        {"source_id":"L021-S10","media_type":"text/plain; charset=utf-8","content":"Mara Venn's later interview says she heard an alarm before the compressor stopped, separate from the witness log."},
+        {"source_id":"L021-S11","media_type":"text/plain; charset=utf-8","content":"Witness log entry says Mara Venn was present during the compressor stop but does not record what she heard."},
+        {"source_id":"L021-S12","media_type":"text/plain; charset=utf-8","content":"A control-system event log shows an alarm timestamp before compressor shutdown but contains no witness attribution."}
+      ]
+    },
+    {
+      "lane_id": "L022",
+      "sources": [
+        {"source_id":"L022-S01","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit cold-test startup record: at -10°C, the unit started in 74 seconds."},
+        {"source_id":"L022-S02","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit cold-test runtime record: at -10°C, continuous operation lasted 8 hours 26 minutes."},
+        {"source_id":"L022-S03","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit cold test at -10°C started in 94 seconds."},
+        {"source_id":"L022-S04","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit at -10°C ran for 7 hours 42 minutes before shutdown."},
+        {"source_id":"L022-S05","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit started in 74 seconds at 0°C."},
+        {"source_id":"L022-S06","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit maintained 8 hours 26 minutes of runtime at 0°C."},
+        {"source_id":"L022-S07","media_type":"text/plain; charset=utf-8","content":"The Alpine Field kit deployment criterion specifies startup under 90 seconds and runtime of at least 8 hours at -10°C."},
+        {"source_id":"L022-S08","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit cold-test checklist records both startup and runtime channels but omits the measured values in this excerpt."},
+        {"source_id":"L022-S09","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit at -10°C completed an eight-hour chamber exposure, but the passage does not state whether the kit remained running the entire time."},
+        {"source_id":"L022-S10","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit startup was under 90 seconds in a bench test where temperature was not recorded."},
+        {"source_id":"L022-S11","media_type":"text/plain; charset=utf-8","content":"Alpine Field kit runtime exceeded eight hours during a cold test, but the excerpt does not identify the chamber temperature."},
+        {"source_id":"L022-S12","media_type":"text/plain; charset=utf-8","content":"An Alpine Field kit prototype used a different battery and started in 70 seconds while running nine hours at -10°C."}
+      ]
+    },
+    {
+      "lane_id": "L023",
+      "sources": [
+        {"source_id":"L023-S01","media_type":"text/plain; charset=utf-8","content":"Juniper archive migration copy ledger: all 24 collections were copied to the destination store."},
+        {"source_id":"L023-S02","media_type":"text/plain; charset=utf-8","content":"Juniper archive migration verification report: checksum verification passed for every collection."},
+        {"source_id":"L023-S03","media_type":"text/plain; charset=utf-8","content":"Juniper migration copy ledger shows 23 of 24 collections copied."},
+        {"source_id":"L023-S04","media_type":"text/plain; charset=utf-8","content":"Juniper migration verification report records a checksum failure for one collection."},
+        {"source_id":"L023-S05","media_type":"text/plain; charset=utf-8","content":"Juniper archive copied all 24 collections, but this passage concerns a rehearsal migration rather than the production migration."},
+        {"source_id":"L023-S06","media_type":"text/plain; charset=utf-8","content":"Juniper archive verification passed for all copied collections, but one collection had not yet been copied."},
+        {"source_id":"L023-S07","media_type":"text/plain; charset=utf-8","content":"The Juniper migration completion rule required both copying all 24 collections and passing checksum verification for each collection."},
+        {"source_id":"L023-S08","media_type":"text/plain; charset=utf-8","content":"Juniper archive project dashboard lists copy count and checksum status as separate completion fields."},
+        {"source_id":"L023-S09","media_type":"text/plain; charset=utf-8","content":"Juniper migration copied 24 collections and sampled checksums for six collections only."},
+        {"source_id":"L023-S10","media_type":"text/plain; charset=utf-8","content":"Juniper migration verification passed every checksum, but the total number of collections is not stated in this excerpt."},
+        {"source_id":"L023-S11","media_type":"text/plain; charset=utf-8","content":"Juniper archive copied all collections, but the collection count is omitted and no checksum result is given."},
+        {"source_id":"L023-S12","media_type":"text/plain; charset=utf-8","content":"A Juniper media-refresh project, separate from the archive migration, copied 24 collections and passed all checksums."}
+      ]
+    },
+    {
+      "lane_id": "L024",
+      "sources": [
+        {"source_id":"L024-S01","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied-test CO2 log: concentration remained below 900 ppm throughout the occupied period."},
+        {"source_id":"L024-S02","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied-test PM2.5 log: concentration remained below 12 µg/m³ throughout the occupied period."},
+        {"source_id":"L024-S03","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied test kept CO2 below 950 ppm, not 900 ppm."},
+        {"source_id":"L024-S04","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied test recorded PM2.5 peaks of 14 µg/m³."},
+        {"source_id":"L024-S05","media_type":"text/plain; charset=utf-8","content":"Delta Room unoccupied test kept CO2 below 900 ppm."},
+        {"source_id":"L024-S06","media_type":"text/plain; charset=utf-8","content":"Delta Room unoccupied test kept PM2.5 below 12 µg/m³."},
+        {"source_id":"L024-S07","media_type":"text/plain; charset=utf-8","content":"The Delta Room target requires CO2 below 900 ppm and PM2.5 below 12 µg/m³ during occupied testing."},
+        {"source_id":"L024-S08","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied-test dashboard tracks CO2 and PM2.5 continuously but this excerpt omits threshold results."},
+        {"source_id":"L024-S09","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied test kept mean CO2 below 900 ppm, while brief peaks exceeded the threshold."},
+        {"source_id":"L024-S10","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied test kept PM2.5 median below 12 µg/m³, while short intervals exceeded the threshold."},
+        {"source_id":"L024-S11","media_type":"text/plain; charset=utf-8","content":"Delta Room occupied-test note says both air-quality indicators stayed within project limits without stating the numeric limits."},
+        {"source_id":"L024-S12","media_type":"text/plain; charset=utf-8","content":"A nearby Delta Lab room kept CO2 below 900 ppm and PM2.5 below 12 µg/m³ during its occupied test."}
+      ]
+    },
+    {
+      "lane_id": "L025",
+      "sources": [
+        {"source_id":"L025-S01","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir gauge record for station R3 on 3 June: water depth was 14.6 m."},
+        {"source_id":"L025-S02","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir gauge station R3 measured 14.6 m on 4 June."},
+        {"source_id":"L025-S03","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir station R2 measured 14.6 m on 3 June."},
+        {"source_id":"L025-S04","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir gauge station R3 measured 14.1 m on 3 June."},
+        {"source_id":"L025-S05","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir R3 on 3 June recorded surface elevation of 14.6 m, not water depth."},
+        {"source_id":"L025-S06","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir 3 June field note lists depth at R3 but omits the numeric value in this excerpt."},
+        {"source_id":"L025-S07","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir monitoring schedule includes gauge station R3 and daily June depth readings."},
+        {"source_id":"L025-S08","media_type":"text/plain; charset=utf-8","content":"Redfern R3 sensor calibration used a 14.6 m reference rod on 3 June."},
+        {"source_id":"L025-S09","media_type":"text/plain; charset=utf-8","content":"A Redfern reservoir summary says depth at R3 was about 15 m on 3 June."},
+        {"source_id":"L025-S10","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir gauge station R3 recorded 14.6 feet on 3 June."},
+        {"source_id":"L025-S11","media_type":"text/plain; charset=utf-8","content":"Redfern reservoir R3 measured 14.6 m during a 3 July reading."},
+        {"source_id":"L025-S12","media_type":"text/plain; charset=utf-8","content":"A different Redfern basin gauge station R3 recorded 14.6 m on 3 June."}
+      ]
+    },
+    {
+      "lane_id": "L026",
+      "sources": [
+        {"source_id":"L026-S01","media_type":"text/plain; charset=utf-8","content":"Kestrel oven startup log: the chamber reached 220°C 11 minutes after startup."},
+        {"source_id":"L026-S02","media_type":"text/plain; charset=utf-8","content":"Kestrel oven reached 220°C 9 minutes after startup."},
+        {"source_id":"L026-S03","media_type":"text/plain; charset=utf-8","content":"Kestrel oven reached 200°C 11 minutes after startup."},
+        {"source_id":"L026-S04","media_type":"text/plain; charset=utf-8","content":"Kestrel oven reached 220°F 11 minutes after startup."},
+        {"source_id":"L026-S05","media_type":"text/plain; charset=utf-8","content":"Kestrel oven reached 220°C 11 minutes after a restart, not the initial startup."},
+        {"source_id":"L026-S06","media_type":"text/plain; charset=utf-8","content":"Kestrel oven startup test recorded temperature every minute until the 220°C setpoint was reached."},
+        {"source_id":"L026-S07","media_type":"text/plain; charset=utf-8","content":"Kestrel oven manual estimates about 10–12 minutes to reach 220°C from room temperature."},
+        {"source_id":"L026-S08","media_type":"text/plain; charset=utf-8","content":"Kestrel oven log lists 11 minutes as fan stabilization time rather than heat-up time."},
+        {"source_id":"L026-S09","media_type":"text/plain; charset=utf-8","content":"A Kestrel drying oven in another lab reached 220°C 11 minutes after startup."},
+        {"source_id":"L026-S10","media_type":"text/plain; charset=utf-8","content":"Kestrel oven reached 220°C after 11 minutes during an empty-chamber test; the excerpt does not identify whether this was the referenced run."},
+        {"source_id":"L026-S11","media_type":"text/plain; charset=utf-8","content":"Kestrel oven startup log says the chamber reached the setpoint in 11 minutes but omits the setpoint value."},
+        {"source_id":"L026-S12","media_type":"text/plain; charset=utf-8","content":"Kestrel oven temperature trace includes the 220°C crossing but the timestamp excerpt is missing."}
+      ]
+    },
+    {
+      "lane_id": "L027",
+      "sources": [
+        {"source_id":"L027-S01","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot standard germination test: 91% of seeds germinated."},
+        {"source_id":"L027-S02","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot standard test recorded an 89% germination rate."},
+        {"source_id":"L027-S03","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot accelerated test recorded 91% germination."},
+        {"source_id":"L027-S04","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot standard test recorded 91% emergence, a different endpoint from germination."},
+        {"source_id":"L027-S05","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot standard germination test counted 91 seeds germinated but the denominator is not stated."},
+        {"source_id":"L027-S06","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot testing protocol describes the standard germination method and scoring window."},
+        {"source_id":"L027-S07","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot certificate says germination exceeded 90% in the standard test without giving the exact rate."},
+        {"source_id":"L027-S08","media_type":"text/plain; charset=utf-8","content":"A Pinehaven seed lot from the prior season had a 91% germination rate in the standard test."},
+        {"source_id":"L027-S09","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot standard test lists 91% as purity, not germination."},
+        {"source_id":"L027-S10","media_type":"text/plain; charset=utf-8","content":"Pinehaven seed lot germination rate was 91% in a greenhouse trial rather than the standard laboratory test."},
+        {"source_id":"L027-S11","media_type":"text/plain; charset=utf-8","content":"Pinehaven standard-test worksheet records germinated and ungerminated counts but this excerpt omits the calculated percentage."},
+        {"source_id":"L027-S12","media_type":"text/plain; charset=utf-8","content":"A different Pinehaven lot identified as PX-91 had a 91% germination rate in the standard test."}
+      ]
+    },
+    {
+      "lane_id": "L028",
+      "sources": [
+        {"source_id":"L028-S01","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive bench sheet: at 15°C, the material reached handling strength in 18 minutes; full cure was not measured."},
+        {"source_id":"L028-S02","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive test at 15°C observed full cure in 24 minutes."},
+        {"source_id":"L028-S03","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive reached full cure in exactly 18 minutes at 25°C."},
+        {"source_id":"L028-S04","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive at 15°C was still tacky at 18 minutes and fully cured later."},
+        {"source_id":"L028-S05","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive application guide gives an 18-minute open time at 15°C."},
+        {"source_id":"L028-S06","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive test records an approximate cure window of 16–22 minutes at 15°C, without an exact full-cure time."},
+        {"source_id":"L028-S07","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive thermal study includes 15°C conditions and cure observations but no full-cure result in this excerpt."},
+        {"source_id":"L028-S08","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive reached a surface-dry state at 18 minutes at 15°C."},
+        {"source_id":"L028-S09","media_type":"text/plain; charset=utf-8","content":"A Brookstone sealant, a different product, fully cured in 18 minutes at 15°C."},
+        {"source_id":"L028-S10","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive at 15°C had an 18-minute gel time; full cure required a separate endpoint."},
+        {"source_id":"L028-S11","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive documentation says lower temperature slows curing and lists 15°C among tested conditions."},
+        {"source_id":"L028-S12","media_type":"text/plain; charset=utf-8","content":"Brookstone adhesive pilot used an 18-minute timer at 15°C for fixture removal, not as a full-cure measurement."}
+      ]
+    },
+    {
+      "lane_id": "L029",
+      "sources": [
+        {"source_id":"L029-S01","media_type":"text/plain; charset=utf-8","content":"Vela-X drone high-altitude test: at 2,000 m it carried 4.0 kg for 24 minutes before landing."},
+        {"source_id":"L029-S02","media_type":"text/plain; charset=utf-8","content":"Vela-X drone endurance run lasted 30 minutes at 2,000 m with a 3.0 kg payload."},
+        {"source_id":"L029-S03","media_type":"text/plain; charset=utf-8","content":"Vela-X drone carried 4.0 kg for 30 minutes at 1,000 m altitude."},
+        {"source_id":"L029-S04","media_type":"text/plain; charset=utf-8","content":"Vela-X drone specification lists a 4.0 kg maximum payload and a separate 30-minute no-payload endurance figure at 2,000 m."},
+        {"source_id":"L029-S05","media_type":"text/plain; charset=utf-8","content":"Vela-X drone test at 2,000 m carried 4.0 kg for an unspecified duration."},
+        {"source_id":"L029-S06","media_type":"text/plain; charset=utf-8","content":"Vela-X drone flew for 30 minutes at 2,000 m, but the payload mass is not given."},
+        {"source_id":"L029-S07","media_type":"text/plain; charset=utf-8","content":"Vela-X drone altitude campaign evaluated payload and endurance at 2,000 m across several configurations."},
+        {"source_id":"L029-S08","media_type":"text/plain; charset=utf-8","content":"Vela-X drone at 2,000 m carried 3.8 kg for 30 minutes."},
+        {"source_id":"L029-S09","media_type":"text/plain; charset=utf-8","content":"Vela-X drone carried 4.0 kg for 28 minutes at 2,000 m."},
+        {"source_id":"L029-S10","media_type":"text/plain; charset=utf-8","content":"A Vela-Y drone, not the Vela-X, carried 4.0 kg for 30 minutes at 2,000 m."},
+        {"source_id":"L029-S11","media_type":"text/plain; charset=utf-8","content":"Vela-X drone marketing sheet says it can carry up to 4.0 kg and fly up to 30 minutes, without stating that both limits apply simultaneously at 2,000 m."},
+        {"source_id":"L029-S12","media_type":"text/plain; charset=utf-8","content":"Vela-X drone test at 2,000 m reported a 30-minute mission with total takeoff mass of 4.0 kg, not a 4.0 kg payload."}
+      ]
+    },
+    {
+      "lane_id": "L030",
+      "sources": [
+        {"source_id":"L030-S01","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating salt-spray panel remained attached through 1,000 hours, but small blisters were recorded near one edge."},
+        {"source_id":"L030-S02","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating showed zero blistering after 500 salt-spray hours; the test did not continue to 1,000 hours in this record."},
+        {"source_id":"L030-S03","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating salt-spray test reached 1,000 hours with blistering rated at trace level rather than zero."},
+        {"source_id":"L030-S04","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating had zero blistering after 1,000 humidity-test hours, not salt-spray exposure."},
+        {"source_id":"L030-S05","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating salt-spray report notes intact adhesion after 1,000 hours but does not report blistering."},
+        {"source_id":"L030-S06","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating salt-spray report notes zero blistering but the exposure duration is omitted from this excerpt."},
+        {"source_id":"L030-S07","media_type":"text/plain; charset=utf-8","content":"Norwick coating qualification included salt-spray exposure, blister inspection, and adhesion checks at several intervals."},
+        {"source_id":"L030-S08","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating panel showed no blistering at 750 salt-spray hours before later observations were taken."},
+        {"source_id":"L030-S09","media_type":"text/plain; charset=utf-8","content":"A Norwick polymer coating, not the ceramic coating, remained intact for 1,000 salt-spray hours with zero blistering."},
+        {"source_id":"L030-S10","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating completed a 1,000-hour salt-spray exposure, but one scribe line showed coating failure."},
+        {"source_id":"L030-S11","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating specification calls for 1,000 salt-spray hours and zero blistering as acceptance targets; the passage does not report an achieved result."},
+        {"source_id":"L030-S12","media_type":"text/plain; charset=utf-8","content":"Norwick ceramic coating test summary says appearance remained generally good after extended salt spray but gives neither exact duration nor a zero-blistering result."}
+      ]
+    }
+  ]
+}
