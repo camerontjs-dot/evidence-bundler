@@ -1,0 +1,18 @@
+{
+  "authoring_head": "5aaa24f4f9f9ac6ac5c02a1d99ff4b52bdea8a52",
+  "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "claims_profiles_raw_sha256": "0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+  "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
+  "expected_prior_candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "first_stage_receipt_raw_sha256": "28a88b54c01929214fb7190798eef1d7d311b91b6b680597cd5d1ea435265421",
+  "fresh_corpus_commit": "3332b90c830ba0a0c3dfae05cc74f410c55aa869",
+  "gold_present": false,
+  "note": "Mechanical persistence of exact deterministic first-stage output. Not READY_FOR_REVEAL and not a selector result.",
+  "pinned_eb_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+  "pinned_eb_tree": "11fa35d4d3eeb5ece07269a3f3040fa23df982e4",
+  "schema": "eb-typed-selector-rc1-successor-nongold-prep-v1",
+  "scientific_change": false,
+  "selector_present": false,
+  "source_fixtures_raw_sha256": "943a68853863b1479fb1a9621fca1075ba832fe6fb77bdc2d9084f84013d8e4c",
+  "status": "AUTHORITATIVE_NONGOLD_PREP_FROZEN"
+}
