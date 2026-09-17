@@ -1,0 +1,9 @@
+{
+  "schema": "eb-typed-selector-rc1-evaluator-role-binding-v1",
+  "source_reveal_binding_sha256": "130ec0eb8511b9315633f8ad9c7c79e7c92682baeb3786b88a9e88e4b730f417",
+  "derivation": "Mechanical inversion/role naming of the arm binding frozen before blind execution; no outcome inspection used.",
+  "rank_only": "ARM_A",
+  "semantic": "ARM_B",
+  "candidate": "ARM_C",
+  "weak": "ARM_D"
+}
