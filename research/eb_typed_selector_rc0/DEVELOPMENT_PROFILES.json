@@ -3,6 +3,7 @@
   "classification": "KNOWN_CASE_DEVELOPMENT_ONLY_NOT_DECISIVE",
   "profiles": {
     "C06_HARD_NEG:child:1": {
+      "requires_direct_evidence": true,
       "concepts": [
         {"name": "measured_result", "terms": ["measured", "result", "efficiency"], "weight": 3.0},
         {"name": "target", "terms": ["lumen filter"], "weight": 1.0},
@@ -10,6 +11,7 @@
       ]
     },
     "RETRIEVAL_APERTURE:child:1": {
+      "requires_direct_evidence": true,
       "concepts": [
         {"name": "comparison", "terms": ["alpha", "beta", "exceeded", "4 units"], "weight": 2.0}
       ]
@@ -17,6 +19,7 @@
   },
   "nonclaims": [
     "These profiles are answer-aware development scaffolds for two already-exposed failure cases.",
+    "requires_direct_evidence asks for an evidentiary assertion rather than a rejected, hypothetical, unresolved, example-only, or explicitly disclaimed mention; it does not assert that the candidate is true or that it supports the proposition.",
     "They are not ClaimGate or EvidenceGate authority and may not be reused as decisive fresh profiles."
   ]
 }
