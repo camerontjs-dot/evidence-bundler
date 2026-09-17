@@ -1,0 +1,75 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-freeze-completion-v1",
+  "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
+  "status": "READY_FOR_CONTEXT_FREE_FREEZE_COMPLETION",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "immutable_nongold_parent": {
+    "ref": "research/eb-typed-selector-rc1-successor-nongold-prep-20260917",
+    "commit": "03528f8ac137007ade205ab0d1d78424df6c388f",
+    "tree": "7516869306c9de0472f4b6097fbc98d29ccee6cc",
+    "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+    "claims_profiles_raw_sha256": "0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+    "source_fixtures_raw_sha256": "943a68853863b1479fb1a9621fca1075ba832fe6fb77bdc2d9084f84013d8e4c",
+    "pinned_eb_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "pinned_eb_tree": "11fa35d4d3eeb5ece07269a3f3040fa23df982e4"
+  },
+  "authoritative_first_stage_run": {
+    "persistence_run_id": 35276182034,
+    "prior_success_run_id": 35260417728,
+    "prior_artifact_id": 10514017898,
+    "prior_artifact_digest": "sha256:c8031671523fdc8ae4489c23352efd11e99213d4e61bbbc2289ae413f394a342",
+    "rule": "The persisted pool bytes must be used as-is. Do not rerun, reproduce, tune, or replace first-stage retrieval in the freeze-completion lane."
+  },
+  "allowed_sources": [
+    "research/eb_typed_selector_rc1_successor/** at 03528f8ac137007ade205ab0d1d78424df6c388f",
+    "research/eb_typed_selector_rc1_context_free/FRESH-COHORT-CONTRACT.md at 14632b157d271fafc7fc31287ff0a053267dc282",
+    "research/eb_typed_selector_rc1_context_free/EVALUATION-CONTRACT.md at 14632b157d271fafc7fc31287ff0a053267dc282",
+    "research/eb_typed_selector_rc1_context_free/FREEZE-AND-REVEAL-PROTOCOL.md at 14632b157d271fafc7fc31287ff0a053267dc282",
+    "research/eb_typed_selector_rc1_context_free/RETURN-HANDOFF-TEMPLATE.md at 14632b157d271fafc7fc31287ff0a053267dc282",
+    "this FREEZE_COMPLETION_MANIFEST.json and FREEZE-COMPLETION-TASK.md on the freeze-completion branch",
+    "metadata for workflow runs 35260417728 and 35276182034 only when needed to verify first-stage provenance"
+  ],
+  "denylist": [
+    "PR #82 body, comments, diff, checks, artifacts, or selector-development narrative",
+    "branch research/eb-typed-selector-rc0-20260917",
+    "any path research/eb_typed_selector_rc0/**",
+    "issue #80 and adjacent selector-development issues",
+    "any prior blocked predecessor corpus, reproduced pools, gold, eligibility, evaluator, controls, or fallback-derived scientific bytes",
+    "the prior successor execution's uncommitted or partially prepared gold/evaluator bytes or reported gold hashes/statistics",
+    "normal CAL Pipeline conversation history, saved summaries, or project-memory summaries about selector development or prior gold",
+    "broad repository search used to discover selector-development material",
+    "the hidden target selector or target/control arm mapping"
+  ],
+  "fresh_objects_required": [
+    "GOLD.json independently adjudicated from the immutable authoritative pools",
+    "eligibility report derived from that fresh gold and the fixed cohort contract",
+    "target-agnostic evaluator implementation",
+    "evaluator unit tests / synthetic controls",
+    "freeze-completion source-access log",
+    "sealed-gold receipt",
+    "prereveal READY_FOR_REVEAL receipt"
+  ],
+  "forbidden_changes": [
+    "claims or profiles",
+    "source fixtures",
+    "candidate pool bytes or candidate order/history",
+    "first-stage authority",
+    "selection budget",
+    "evaluation metrics, support thresholds, falsification thresholds, or terminal disposition rules"
+  ],
+  "required_final_refs": {
+    "sealed_gold": "research/eb-typed-selector-rc1-successor-sealed-gold-final-20260917",
+    "fresh_input": "research/eb-typed-selector-rc1-successor-fresh-input-final-20260917"
+  },
+  "ref_rule": "Both final refs must be created from immutable non-gold parent 03528f8ac137007ade205ab0d1d78424df6c388f. The sealed-gold ref may add only fresh gold and its gold receipt. The fresh-input ref may add evaluator/tests/eligibility/access/freeze receipts but must contain no GOLD.json and must not descend from the sealed-gold commit.",
+  "terminal_states": [
+    "READY_FOR_REVEAL",
+    "BLOCKED_APPARATUS",
+    "CONTAMINATED_PRE_FREEZE"
+  ],
+  "nonclaims": [
+    "The non-gold preparation ref is not READY_FOR_REVEAL.",
+    "Completing the freeze does not qualify the selector.",
+    "No target execution or selector research disposition is authorized before a valid READY_FOR_REVEAL receipt exists."
+  ]
+}
