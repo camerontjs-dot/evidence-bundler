@@ -1,0 +1,88 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-prereveal-freeze-receipt-v1",
+  "status": "READY_FOR_REVEAL",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "immutable_parent_commit": "03528f8ac137007ade205ab0d1d78424df6c388f",
+  "immutable_parent_tree": "7516869306c9de0472f4b6097fbc98d29ccee6cc",
+  "fresh_input_ref": "research/eb-typed-selector-rc1-successor-fresh-input-final-20260917",
+  "fresh_input_scientific_freeze_commit": "af3b945f9ded71eed9419460794e86e91025d707",
+  "fresh_input_scientific_freeze_tree": "7687301caa7a06666a6dffb0be7659dab62810a4",
+  "fresh_input_head_note": "This receipt is committed after the scientific-freeze commit, so the final ref head/commit/tree are mechanically recorded in the return handoff rather than self-referenced inside this file.",
+  "sealed_gold_ref": "research/eb-typed-selector-rc1-successor-sealed-gold-final-20260917",
+  "sealed_gold_commit": "cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+  "sealed_gold_tree": "f020933c3705ed341a6447a59f95bb3a282b516e",
+  "gold_raw_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "gold_canonical_sha256": "f91281db997f8d935808bbf5588f71f5fac4e3c3c614ac48fd28b43df88672f9",
+  "cohort_manifest_equivalent": {
+    "path": "research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json",
+    "raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6"
+  },
+  "candidate_pools_raw_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "claims_profiles_raw_sha256": "0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+  "source_fixtures_raw_sha256": "943a68853863b1479fb1a9621fca1075ba832fe6fb77bdc2d9084f84013d8e4c",
+  "evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "evaluator_tests_sha256": "00da5bed1256a039290faa380ae4580fca74c49ce31bfbaf59f441349fcf5815",
+  "eligibility_report_sha256": "699e4bbda64f60cefa8c242449e32b5ad094316d4e9efb72017e53a92c5124f1",
+  "source_access_log_sha256": "68af6a7cf311c5c74853e058fa809a8c40b5094e8a61f0d46cd52dfc7aba75f8",
+  "evaluator_test_receipt_sha256": "4a49aaedfb5845472123a705b8e0dace8aacd6e4c95c8c0716ad1fa1859c18d5",
+  "evaluator_test_status": {
+    "passed": true,
+    "test_count": 12,
+    "failures": 0,
+    "errors": 0
+  },
+  "eligibility": {
+    "eligible_lane_count": 30,
+    "category_counts": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3,
+      "7": 3,
+      "8": 3,
+      "9": 3,
+      "10": 3
+    },
+    "positive_lanes": 27,
+    "no_clear_suitable_lanes": 3,
+    "lanes_with_unsafe_or_misleading": 30,
+    "lanes_with_top_rank_nonuseful": 19,
+    "lanes_with_deep_useful_rank_4_10": 15,
+    "complementary_coverage_lanes": 3,
+    "unresolved_candidates": 0,
+    "preregistered_exclusions_from_primary_scoring": 0,
+    "all_fixed_cohort_gates_pass": true
+  },
+  "first_stage_authority": {
+    "pinned_eb_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "candidate_depth": 10,
+    "retrieval_rerun_performed": false,
+    "authoritative_persisted_pool_used_as_is": true
+  },
+  "information_aperture": {
+    "forbidden_sources_opened": [],
+    "broad_repository_searches": [],
+    "denylist_exposure": false,
+    "hidden_selector_opened": false,
+    "hidden_selector_executed": false,
+    "prior_blocked_execution_scientific_bytes_used": false
+  },
+  "gold_separation": {
+    "fresh_input_contains_gold": false,
+    "fresh_input_descends_from_sealed_gold": false,
+    "sealed_gold_descends_from_fresh_input": false,
+    "both_lineages_rooted_at_immutable_nongold_parent": true
+  },
+  "deviations": [
+    "Mechanical directory-fetch method correction; no scientific effect.",
+    "Mechanical SHA helper correction after unavailable TextEncoder; all immutable hashes subsequently matched.",
+    "Unrelated artifact_tool warmup timeout on evaluator-test stderr; unittest exit 0 with 12/12 passing.",
+    "Connector blocked one combined large write before fresh-input branch creation; identical tested bytes were then written in smaller commits without scientific edits."
+  ],
+  "strongest_authorized_claim": "READY_FOR_REVEAL",
+  "selector_research_disposition_issued": false,
+  "production_recommendation_issued": false,
+  "next_authorized_step": "In the normal CAL Pipeline execution lane, open only the frozen non-gold input/evaluator identity plus the post-freeze target/control surfaces permitted by FREEZE-AND-REVEAL-PROTOCOL.md; bind ARM_A-D; freeze the adapter; run all arms and metamorphic gates twice without opening sealed gold; commit the arm-output freeze receipt; only then reveal gold and run the frozen evaluator."
+}
