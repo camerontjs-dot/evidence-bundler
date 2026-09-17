@@ -1,0 +1,89 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-prereveal-manifest-v1",
+  "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
+  "predecessor_terminal_state": "BLOCKED_APPARATUS",
+  "predecessor_terminal_commit": "26b93f9553e7a01e66635709418c847f1c924175",
+  "successor_branch": "research-infra/eb-typed-selector-rc1-successor-prereveal-20260917",
+  "frozen_target_identity_prereveal_only": {
+    "candidate_freeze_commit": "98ddfb4f2e9623da6b44009abf921657b9445955",
+    "candidate_selector_sha256": "e83e6305008a0f7a264cde2167bff80ce6399f03d34ebce10376f106c52cec6c",
+    "contents_forbidden_until_ready_for_reveal": true
+  },
+  "frozen_first_stage_authority": {
+    "integration_candidate_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "v1_implementation_commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "candidate_depth": 10,
+    "retained_k_inside_native_package": 3,
+    "integration_config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc"
+  },
+  "salvaged_prereveal_object": {
+    "path": "research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json",
+    "original_commit": "cad2341823f2af59de4a3c26e994adcb8842466e",
+    "original_blob": "a14f03bef601baff307c32fb8a3f50061059645d",
+    "canonical_sha256": "sha256:0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d",
+    "salvage_basis": "The object was committed directly on top of the bootstrap head before any corpus or retrieval candidate pool was authored or inspected."
+  },
+  "predecessor_objects_explicitly_invalid_for_successor_science": [
+    "SOURCE_FIXTURES.json.gz",
+    "CANDIDATE_POOLS.json.gz",
+    "GOLD.json or any sealed-gold artifact from the blocked execution",
+    "ELIGIBILITY.json",
+    "evaluate_rc1.py",
+    "preexecution_controls.py",
+    "any draft or receipt derived from the locally reproduced BM25 fallback"
+  ],
+  "successor_requires_fresh": [
+    "all 30 lane corpora/source fixtures",
+    "all exact authoritative depth-10 candidate pools",
+    "all candidate gold adjudication",
+    "cohort eligibility report",
+    "target-agnostic evaluator and evaluator tests",
+    "source-access log",
+    "replacement/deviation log",
+    "prereveal freeze receipt",
+    "sealed-gold freeze identity"
+  ],
+  "authoritative_first_stage_service": {
+    "workflow": ".github/workflows/research-eb-typed-selector-rc1-authoritative-first-stage.yml",
+    "runner": "research/eb_typed_selector_rc1_successor/authoritative_first_stage.py",
+    "input": "research/eb_typed_selector_rc1_successor/SOURCE_FIXTURES_V2.json",
+    "output_artifact_files": [
+      "CANDIDATE_POOLS_AUTHORITATIVE.json",
+      "FIRST_STAGE_RECEIPT.json",
+      "SHA256SUMS.txt",
+      "PINNED_EB_HEAD.txt",
+      "PINNED_EB_TREE.txt",
+      "contract_a/"
+    ],
+    "properties": [
+      "checks out the exact pinned Evidence Bundler commit in an isolated directory",
+      "installs and imports that exact package",
+      "uses the pinned V1 build_package implementation with the exact 10/3 config identity",
+      "runs each lane twice and requires byte-identical native package output",
+      "requires exactly 10 unique candidates and candidate_depth_hit for every lane",
+      "does not open or execute selector code",
+      "does not open gold"
+    ]
+  },
+  "pre_reveal_denylist": [
+    "PR #82 body, comments, diff, checks, artifacts, or branch narrative",
+    "branch research/eb-typed-selector-rc0-20260917",
+    "any path research/eb_typed_selector_rc0/**",
+    "issue #80 and adjacent selector-development issues",
+    "selector-development workflow runs or artifacts",
+    "PR #77 answer-bearing selector results",
+    "normal CAL Pipeline conversation history or saved summaries about selector behavior",
+    "the blocked predecessor's source fixtures, candidate pools, gold, eligibility, evaluator, or fallback outputs",
+    "any frozen target source bytes before a valid successor READY_FOR_REVEAL receipt"
+  ],
+  "allowed_terminal_states": [
+    "READY_FOR_REVEAL",
+    "BLOCKED_APPARATUS",
+    "CONTAMINATED_PRE_FREEZE"
+  ],
+  "nonclaims": [
+    "The predecessor BLOCKED_APPARATUS run is not a selector result.",
+    "The salvaged claims/profiles do not validate any corpus, pool, gold, evaluator, or selector behavior.",
+    "The first-stage workflow does not authorize target reveal until fresh gold/evaluator/freeze receipts are complete."
+  ]
+}
