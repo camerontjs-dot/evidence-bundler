@@ -1,0 +1,91 @@
+{
+  "schema": "eb-typed-selector-rc0-candidate-freeze-v1",
+  "status": "FROZEN_FOR_FRESH_QUALIFICATION",
+  "freeze_basis": {
+    "development_record_head": "b0103e1d7c881a52ad934fa473e273d987b300c9",
+    "selector_git_blob": "9979e1dd7b3bfa7afc2b2211f98f62d1ed1afb8e",
+    "selector_sha256": "e83e6305008a0f7a264cde2167bff80ce6399f03d34ebce10376f106c52cec6c",
+    "operational_screen_run": 35186274289,
+    "operational_screen_artifact": 10482472144,
+    "operational_screen_artifact_sha256": "3117b3028c7c216001f3f5050b0d1b7704d35a9f08c41ad4fc0f337b9c50729a",
+    "operational_selection_sha256": "b1cb5c0e0a0634638e01ac017f44968218f945af7468fcb595bf2b532ad5c8dc",
+    "operational_evaluation_sha256": "73542390f11e436111f5ce995f698b2458f2ef3a93d8da6a5a614814bd1232db"
+  },
+  "first_stage_boundary": {
+    "v1_implementation": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "integration_candidate_pr": 79,
+    "integration_candidate_head": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "candidate_depth": 10,
+    "retained_budget": 3,
+    "query_generation_change_allowed": false,
+    "retrieval_change_allowed": false,
+    "admission_change_allowed": false
+  },
+  "semantic_control": {
+    "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "python": "3.11",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "huggingface_hub": "1.31.0"
+  },
+  "typed_selector": {
+    "budget": 3,
+    "candidate_weights": {
+      "semantic_relevance": 0.25,
+      "local_span_recall": 0.10,
+      "profile_compatibility": 0.25,
+      "direct_evidence_match": 0.30,
+      "bm25_normalized": 0.10
+    },
+    "set_terms": {
+      "concept_coverage_bonus": 0.15,
+      "redundancy_penalty": 0.15
+    },
+    "tie_break": ["higher_marginal_gain", "better_original_rank", "stable_evidence_id"],
+    "unknown_handling": "omit_unknown_signal_from_weighted_mean_never_coerce_to_zero",
+    "profile_interface": {
+      "requires_direct_evidence": "optional boolean",
+      "concepts": "optional list of {name, terms, weight}",
+      "evidence_forms": "optional list of expected evidence-form labels",
+      "source_roles": "optional list of expected source-role labels"
+    },
+    "authority_boundary": "candidate-side evidence/discourse characterization only; no SUPPORTS/REFUTES, truth, CAL conclusion, completeness, or downstream verdict authority"
+  },
+  "frozen_primary_arms": [
+    "bm25_top3",
+    "semantic_top3",
+    "typed_top3",
+    "typed_without_evidence_posture"
+  ],
+  "development_evidence": {
+    "known_case_run_01": 35185340754,
+    "known_case_run_02": 35185668550,
+    "operational_pool_run_03": 35186274289,
+    "operational_pool_result": {
+      "bm25_top3": {"keep_distinct": "17/19", "all_keep_lanes": "16/18", "non_keep_selected": 37},
+      "semantic_top3": {"keep_distinct": "17/19", "all_keep_lanes": "16/18", "non_keep_selected": 37},
+      "typed_top3": {"keep_distinct": "19/19", "all_keep_lanes": "18/18", "non_keep_selected": 35},
+      "typed_without_evidence_posture": {"keep_distinct": "17/19", "all_keep_lanes": "16/18", "non_keep_selected": 37}
+    }
+  },
+  "post_freeze_prohibited_without_successor_identity": [
+    "selector logic or weights",
+    "evidence-posture rules",
+    "semantic model or revision",
+    "candidate budget",
+    "unknown handling",
+    "primary control-arm definitions",
+    "first-stage retrieval behavior"
+  ],
+  "next_required_step": "fresh context-free qualification on unseen cases under a separately frozen decisive case/gold/evaluator packet",
+  "nonclaims": [
+    "This freeze is not production qualification or promotion authorization.",
+    "The development evidence is retrospective and exposed.",
+    "The current profile interface is research scaffolding, not a canonical ClaimGate or EvidenceGate contract.",
+    "No searchable canonical Claim Profile / Evidence World Profile schema was established in live GitHub at freeze time.",
+    "The selector has not been tested on a fresh unseen decisive cohort.",
+    "The frozen 10/3 integration candidate remains unchanged."
+  ]
+}
