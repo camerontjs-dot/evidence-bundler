@@ -94,6 +94,29 @@ def long_context_lane():
     }
 
 
+def evidence_posture_lane():
+    return {
+        "proposition_id": "DEV_POSTURE",
+        "proposition_text": "Alpha exceeded Beta by 4 units.",
+        "claim_profile": {
+            "requires_direct_evidence": True,
+            "concepts": [
+                {
+                    "name": "comparison",
+                    "terms": ["alpha", "beta", "4 units"],
+                    "weight": 2.0,
+                }
+            ],
+        },
+        "candidates": [
+            candidate("D1", '"Alpha exceeded Beta by 4 units" was a rejected hypothesis.', 1, 10.0, 0.99),
+            candidate("D2", 'The draft claim "Alpha exceeded Beta by 4 units" was unverified.', 2, 9.8, 0.99),
+            candidate("D3", "Alpha exceeded Beta by 4 units appeared in a hypothetical scenario.", 3, 9.5, 0.98),
+            candidate("KEEP", "Alpha exceeded Beta by 4 units.", 7, 4.0, 0.90),
+        ],
+    }
+
+
 def test_typed_selector_can_rescue_hard_negative_when_semantic_only_does_not():
     result = selector.run_lane(hard_negative_lane())
     assert "KEEP" not in result["arms"]["semantic_top3"]
@@ -107,6 +130,25 @@ def test_local_span_signal_can_rescue_long_context_candidate():
     assert "KEEP" in result["arms"]["typed_top3"]
 
 
+def test_evidence_posture_is_inspectable_and_discriminating():
+    result = selector.run_lane(evidence_posture_lane())
+    by_id = {row["evidence_id"]: row for row in result["characterization"]}
+    assert by_id["D1"]["signals"]["evidence_posture"] == "non_direct:rejected"
+    assert by_id["D2"]["signals"]["evidence_posture"] == "non_direct:unverified"
+    assert by_id["D3"]["signals"]["evidence_posture"] == "non_direct:hypothetical"
+    assert by_id["KEEP"]["signals"]["evidence_posture"] == "direct_or_unmarked_assertion"
+    assert "KEEP" in result["arms"]["typed_top3"]
+    assert "KEEP" not in result["arms"]["typed_without_evidence_posture"]
+
+
+def test_explicit_non_result_is_not_treated_as_direct_evidence():
+    label, value = selector.evidence_posture(
+        "The 93 percent mark was not removal efficiency."
+    )
+    assert label == "non_direct:explicit_non_result"
+    assert value == 0.0
+
+
 def test_unknown_is_preserved_not_silently_zeroed():
     lane = hard_negative_lane()
     lane["claim_profile"] = {}
@@ -115,6 +157,7 @@ def test_unknown_is_preserved_not_silently_zeroed():
     row = result["characterization"][0]
     assert row["signals"]["semantic_relevance"] is None
     assert row["signals"]["profile_compatibility"] is None
+    assert row["signals"]["direct_evidence_match"] is None
     assert "semantic_score" in row["unknowns"]
     assert "profile_compatibility" in row["unknowns"]
 
@@ -129,7 +172,7 @@ def test_input_order_permutation_does_not_change_selection():
 
 
 def test_selector_never_exceeds_budget_or_duplicates():
-    result = selector.run_lane(hard_negative_lane())
+    result = selector.run_lane(evidence_posture_lane())
     for selected in result["arms"].values():
         assert len(selected) <= 3
         assert len(selected) == len(set(selected))
