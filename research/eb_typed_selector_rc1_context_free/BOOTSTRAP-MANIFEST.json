@@ -1,0 +1,68 @@
+{
+  "schema": "eb-typed-selector-rc1-context-free-bootstrap-v1",
+  "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
+  "status": "READY_FOR_CONTEXT_FREE_AUTHORING",
+  "objective": "Construct and freeze a fresh, unseen decisive cohort and evaluator for a post-retrieval K=3 selector experiment without exposing the frozen selector implementation, development results, expected outcomes, or answer-bearing prior cases before the cohort/gold/evaluator freeze.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "bootstrap_base": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "bootstrap_branch": "research-infra/eb-typed-selector-rc1-context-free-bootstrap-20260917",
+  "opaque_target_identity": {
+    "candidate_freeze_commit": "98ddfb4f2e9623da6b44009abf921657b9445955",
+    "candidate_selector_sha256": "e83e6305008a0f7a264cde2167bff80ce6399f03d34ebce10376f106c52cec6c",
+    "note": "These identities may be recorded before freeze but their contents are forbidden until authorized reveal."
+  },
+  "frozen_first_stage_authority": {
+    "integration_candidate_commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "v1_implementation_commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "candidate_depth": 10,
+    "selection_budget": 3,
+    "allowed_pre_reveal_paths": [
+      "src/evidence_bundler/v1/** at 4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+      "scripts/run_v1_integration_candidate.py at 4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+      "research/eb_v1_integration_candidate/INTEGRATION_PROFILE.json at 4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+      "research/eb_v1_integration_candidate/CANDIDATE.json at 4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+      "research/eb_typed_selector_rc1_context_free/** on the bootstrap branch"
+    ]
+  },
+  "pre_reveal_denylist": [
+    "PR #82 body, comments, diff, checks, artifacts, or branch narrative",
+    "branch research/eb-typed-selector-rc0-20260917",
+    "any path research/eb_typed_selector_rc0/**",
+    "issue #80 and adjacent selector-development issues",
+    "selector-development workflow runs or artifacts",
+    "PR #77 selector results or its answer-bearing artifacts",
+    "PR #63 answer-bearing selector/retrieval artifacts except where explicitly re-authorized after freeze",
+    "normal CAL Pipeline conversation history, saved summaries, or project-memory summaries about this selector experiment",
+    "broad repository search used to discover selector-development material",
+    "any frozen target source bytes before the prereveal freeze receipt is committed"
+  ],
+  "pre_reveal_allowed_knowledge": [
+    "The system under test chooses at most three items from a fixed depth-10 first-stage candidate pool.",
+    "The fresh cohort should discriminate robust candidate selection from ordinary ranking without being tailored to any hidden implementation.",
+    "The profile input schema in FRESH-COHORT-CONTRACT.md is part of the experiment input contract.",
+    "Four opaque execution arms will be compared after freeze; their implementation mapping is not required for authoring."
+  ],
+  "required_prereveal_outputs": [
+    "fresh cohort source fixtures",
+    "exact frozen depth-10 candidate pools",
+    "claim/profile inputs authored without target access",
+    "sealed gold sidecar",
+    "target-agnostic evaluator",
+    "preregistered thresholds and terminal disposition rules",
+    "prereveal source-access log",
+    "freeze receipt identifying exact bytes/hashes and declaring denylist compliance"
+  ],
+  "freeze_rule": "No target implementation, target development record, prior answer-bearing selector result, or post-reveal arm mapping may be opened until all prereveal outputs are frozen and the freeze receipt is committed.",
+  "contamination_rule": "If any denylisted target/development/answer-bearing source is opened before freeze, stop. Preserve an exposure record. Do not continue the same execution under an independence claim.",
+  "post_freeze_reveal": "After a valid prereveal freeze, return the input/evaluator freeze identity and sealed-gold identity to the normal CAL Pipeline lane. The execution lane runs the frozen target and controls without opening gold, freezes arm outputs, then gold is revealed for evaluation.",
+  "allowed_terminal_states": [
+    "READY_FOR_REVEAL",
+    "BLOCKED_APPARATUS",
+    "CONTAMINATED_PRE_FREEZE"
+  ],
+  "nonclaims": [
+    "This bootstrap does not qualify or promote the selector.",
+    "The opaque target identity is not evidence of correctness.",
+    "Context-free authoring establishes only the information aperture documented by its receipts; a fresh thread alone is not sufficient."
+  ]
+}
