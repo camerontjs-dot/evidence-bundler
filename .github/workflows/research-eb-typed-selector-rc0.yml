@@ -1,0 +1,130 @@
+name: Research - EB Typed Selector RC0 Development
+
+on:
+  pull_request:
+    paths:
+      - "research/eb_typed_selector_rc0/**"
+      - ".github/workflows/research-eb-typed-selector-rc0.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  apparatus-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test runtime
+        run: python -m pip install 'pytest>=8,<10'
+
+      - name: Compile apparatus
+        run: |
+          python -m py_compile \
+            research/eb_typed_selector_rc0/selector.py \
+            research/eb_typed_selector_rc0/test_selector.py \
+            research/eb_typed_selector_rc0/score_frozen_pool.py \
+            research/eb_typed_selector_rc0/evaluate_known_cases.py
+
+      - name: Run controls
+        run: python -m pytest -q research/eb_typed_selector_rc0/test_selector.py
+
+      - name: Exact synthetic replay
+        run: |
+          mkdir -p work
+          python research/eb_typed_selector_rc0/selector.py \
+            --input research/eb_typed_selector_rc0/DEVELOPMENT_FIXTURES.json \
+            --output work/SYNTHETIC_A.json
+          python research/eb_typed_selector_rc0/selector.py \
+            --input research/eb_typed_selector_rc0/DEVELOPMENT_FIXTURES.json \
+            --output work/SYNTHETIC_B.json
+          cmp work/SYNTHETIC_A.json work/SYNTHETIC_B.json
+          sha256sum work/SYNTHETIC_A.json work/SYNTHETIC_B.json | tee work/SYNTHETIC_SHA256.txt
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eb-typed-selector-rc0-apparatus-controls
+          path: work/
+          if-no-files-found: warn
+          retention-days: 90
+
+  known-case-development:
+    needs: apparatus-controls
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TOKENIZERS_PARALLELISM: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install exact previously exercised semantic runtime
+        run: |
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+
+      - name: Download and verify exact predecessor artifact
+        run: |
+          set -euo pipefail
+          mkdir -p work/sealed_eval
+          gh api repos/camerontjs-dot/evidence-bundler/actions/artifacts/10282804289/zip > work/pr63.zip
+          echo '3424e70988a2ca878e97f6eeaf855cd5ebbd449413536841872bd485de74819d  work/pr63.zip' | sha256sum -c -
+
+      - name: Score and select before answer-bearing evaluation
+        run: |
+          set -euo pipefail
+          python research/eb_typed_selector_rc0/score_frozen_pool.py \
+            --artifact-zip work/pr63.zip \
+            --profiles research/eb_typed_selector_rc0/DEVELOPMENT_PROFILES.json \
+            --output work/KNOWN_CASE_SELECTION_A.json
+          python research/eb_typed_selector_rc0/score_frozen_pool.py \
+            --artifact-zip work/pr63.zip \
+            --profiles research/eb_typed_selector_rc0/DEVELOPMENT_PROFILES.json \
+            --output work/KNOWN_CASE_SELECTION_B.json
+          cmp work/KNOWN_CASE_SELECTION_A.json work/KNOWN_CASE_SELECTION_B.json
+          sha256sum work/KNOWN_CASE_SELECTION_A.json work/KNOWN_CASE_SELECTION_B.json \
+            | tee work/KNOWN_CASE_SELECTION_SHA256.txt
+
+      - name: Open known answers only after selection freeze
+        run: |
+          python research/eb_typed_selector_rc0/evaluate_known_cases.py \
+            --selection work/KNOWN_CASE_SELECTION_A.json \
+            --output work/sealed_eval/KNOWN_CASE_EVALUATION.json
+          cat work/sealed_eval/KNOWN_CASE_EVALUATION.json
+
+      - name: Preserve receipts
+        run: |
+          git rev-parse HEAD | tee work/HOSTED_HEAD.txt
+          git rev-parse HEAD^{tree} | tee work/HOSTED_TREE.txt
+          sha256sum \
+            research/eb_typed_selector_rc0/selector.py \
+            research/eb_typed_selector_rc0/DEVELOPMENT_PROFILES.json \
+            work/KNOWN_CASE_SELECTION_A.json \
+            work/sealed_eval/KNOWN_CASE_EVALUATION.json \
+            | sort | tee work/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eb-typed-selector-rc0-known-case-development
+          path: work/
+          if-no-files-found: error
+          retention-days: 90
