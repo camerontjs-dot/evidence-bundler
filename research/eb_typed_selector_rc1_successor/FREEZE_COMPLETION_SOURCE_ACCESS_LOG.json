@@ -1,0 +1,102 @@
+{
+  "schema": "eb-typed-selector-rc1-successor-freeze-completion-source-access-v1",
+  "status": "CLEAN_PREREVEAL_APERTURE",
+  "immutable_parent_commit": "03528f8ac137007ade205ab0d1d78424df6c388f",
+  "immutable_parent_tree": "7516869306c9de0472f4b6097fbc98d29ccee6cc",
+  "opened_sources": [
+    {
+      "path": "research/eb_typed_selector_rc1_successor/FREEZE_COMPLETION_MANIFEST.json",
+      "ref": "research/eb-typed-selector-rc1-successor-freeze-completion-20260917",
+      "purpose": "initial authority, denylist, immutable identities, final ref names, stop rules"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/FREEZE-COMPLETION-TASK.md",
+      "ref": "research/eb-typed-selector-rc1-successor-freeze-completion-20260917",
+      "purpose": "freeze-completion work and return requirements"
+    },
+    {
+      "path": "Git commit metadata for 03528f8ac137007ade205ab0d1d78424df6c388f",
+      "ref": "03528f8ac137007ade205ab0d1d78424df6c388f",
+      "purpose": "verify immutable parent commit/tree"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/ directory metadata",
+      "ref": "03528f8ac137007ade205ab0d1d78424df6c388f",
+      "purpose": "bounded listing inside the allowlisted successor directory"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json",
+      "ref": "03528f8ac137007ade205ab0d1d78424df6c388f",
+      "purpose": "raw hash verification and independent adjudication of the frozen authoritative top-10 pools"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json",
+      "ref": "03528f8ac137007ade205ab0d1d78424df6c388f",
+      "purpose": "raw hash verification and bounded schema inspection"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/SOURCE_FIXTURES_V2.json",
+      "ref": "03528f8ac137007ade205ab0d1d78424df6c388f",
+      "purpose": "raw hash verification and bounded schema inspection"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_context_free/FRESH-COHORT-CONTRACT.md",
+      "ref": "14632b157d271fafc7fc31287ff0a053267dc282",
+      "purpose": "fixed cohort and gold contract"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_context_free/EVALUATION-CONTRACT.md",
+      "ref": "14632b157d271fafc7fc31287ff0a053267dc282",
+      "purpose": "fixed metrics, support/falsification/inconclusive gates, system controls"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_context_free/FREEZE-AND-REVEAL-PROTOCOL.md",
+      "ref": "14632b157d271fafc7fc31287ff0a053267dc282",
+      "purpose": "commit/reveal protocol and post-freeze authorization"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_context_free/RETURN-HANDOFF-TEMPLATE.md",
+      "ref": "14632b157d271fafc7fc31287ff0a053267dc282",
+      "purpose": "required return structure"
+    },
+    {
+      "path": "research/eb_typed_selector_rc1_successor/GOLD.json",
+      "ref": "research/eb-typed-selector-rc1-successor-sealed-gold-final-20260917",
+      "purpose": "newly authored sealed gold opened only inside the prereveal authoring lane to derive eligibility"
+    }
+  ],
+  "exact_branch_metadata_queries": [
+    "research/eb-typed-selector-rc1-successor-nongold-prep-20260917",
+    "research/eb-typed-selector-rc1-successor-sealed-gold-final-20260917",
+    "research/eb-typed-selector-rc1-successor-fresh-input-final-20260917"
+  ],
+  "workflow_run_metadata_opened": [],
+  "forbidden_sources_opened": [],
+  "broad_repository_searches": [],
+  "hidden_selector_opened": false,
+  "hidden_selector_executed": false,
+  "previous_blocked_execution_gold_evaluator_eligibility_hashes_statistics_or_scientific_bytes_used": false,
+  "lane_replacements": [],
+  "deviations": [
+    {
+      "type": "MECHANICAL_TOOLING",
+      "detail": "An initial exact-path directory read used the file-only fetch method and was rejected because the path was a directory; it was replaced by a bounded contents-API listing of the same allowlisted successor directory.",
+      "scientific_effect": "none"
+    },
+    {
+      "type": "MECHANICAL_TOOLING",
+      "detail": "An initial SHA-256 helper attempted to use an unavailable TextEncoder; it was replaced by an explicit UTF-8 encoder and SHA-256 implementation, after which all three immutable manifest hashes matched exactly.",
+      "scientific_effect": "none"
+    },
+    {
+      "type": "ENVIRONMENT_NOTE",
+      "detail": "The evaluator unittest subprocess emitted an unrelated artifact_tool spreadsheet-runtime warmup timeout on stderr; unittest exited 0 and all 12 evaluator tests passed.",
+      "scientific_effect": "none"
+    },
+    {
+      "type": "MECHANICAL_TOOLING",
+      "detail": "A combined large fresh-input write was blocked by the connector safety filter before creating the fresh-input branch; the identical already-tested evaluator/test bytes were then written in smaller commits without scientific edits.",
+      "scientific_effect": "none"
+    }
+  ]
+}
