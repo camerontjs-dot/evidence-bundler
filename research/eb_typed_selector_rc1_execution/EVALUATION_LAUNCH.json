@@ -6,5 +6,10 @@
   "sealed_gold_commit": "cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
   "evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
   "action": "verify frozen gold/evaluator, materialize final gates, run frozen evaluator once, freeze decisive result",
-  "scientific_change": false
+  "scientific_change": false,
+  "retry": 2,
+  "prior_workflow_run": 35288456558,
+  "prior_disposition": "BLOCKED_APPARATUS",
+  "prior_failure_classification": "MECHANICAL_POST_REVEAL_BINDING_SERIALIZATION_FAILURE",
+  "correction": "exact four-key binding file with unchanged preregistered mapping"
 }
