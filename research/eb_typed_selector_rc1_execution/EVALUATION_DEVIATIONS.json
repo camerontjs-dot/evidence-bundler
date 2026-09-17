@@ -1,0 +1,25 @@
+{
+  "schema": "eb-typed-selector-rc1-evaluation-deviation-log-v1",
+  "deviations": [
+    {
+      "id": "DECISIVE_EVAL_RUN_01_BINDING_SHAPE",
+      "workflow_run_id": 35288456558,
+      "classification": "MECHANICAL_POST_REVEAL_BINDING_SERIALIZATION_FAILURE",
+      "observed_frozen_disposition": "BLOCKED_APPARATUS",
+      "root_cause": "The evaluator role-binding file contained three metadata keys in addition to the four frozen role keys. The frozen evaluator requires exactly rank_only, semantic, candidate, weak.",
+      "frozen_mapping_unchanged": {
+        "rank_only": "ARM_A",
+        "semantic": "ARM_B",
+        "candidate": "ARM_C",
+        "weak": "ARM_D"
+      },
+      "arm_outputs_changed": false,
+      "gold_changed": false,
+      "evaluator_changed": false,
+      "thresholds_changed": false,
+      "candidate_pools_changed": false,
+      "correction": "Create a new evaluator input file containing only the same four previously frozen mappings; preserve the malformed file and failed run.",
+      "rerun_authorized_as_mechanical": true
+    }
+  ]
+}
