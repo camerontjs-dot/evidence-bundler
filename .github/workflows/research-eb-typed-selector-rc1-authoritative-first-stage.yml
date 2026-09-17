@@ -1,0 +1,109 @@
+name: Research - EB Typed Selector RC1 Authoritative First Stage
+
+on:
+  push:
+    branches:
+      - research-infra/eb-typed-selector-rc1-successor-prereveal-20260917
+      - 'research/eb-typed-selector-rc1-successor-authoring-*'
+    paths:
+      - '.github/workflows/research-eb-typed-selector-rc1-authoritative-first-stage.yml'
+      - 'research/eb_typed_selector_rc1_successor/**'
+  pull_request:
+    paths:
+      - '.github/workflows/research-eb-typed-selector-rc1-authoritative-first-stage.yml'
+      - 'research/eb_typed_selector_rc1_successor/**'
+
+permissions:
+  contents: read
+
+env:
+  PINNED_EB_COMMIT: 4e1f6fe00e7c350b28f52bfea14f1f8988847884
+
+jobs:
+  authoritative-first-stage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout prereveal apparatus / authoring ref
+        uses: actions/checkout@v4
+        with:
+          path: authoring
+          fetch-depth: 1
+
+      - name: Checkout exact frozen EB integration candidate
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.PINNED_EB_COMMIT }}
+          path: pinned-eb
+          fetch-depth: 1
+
+      - name: Verify exact pinned EB identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git -C pinned-eb rev-parse HEAD)"
+          test "$actual" = "$PINNED_EB_COMMIT"
+          echo "$actual" | tee PINNED_EB_HEAD.txt
+          git -C pinned-eb rev-parse HEAD^{tree} | tee PINNED_EB_TREE.txt
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact pinned Evidence Bundler package
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install ./pinned-eb
+          python -m pip check
+
+      - name: Exercise exact pinned first-stage apparatus
+        shell: bash
+        run: |
+          set -euo pipefail
+          python authoring/research/eb_typed_selector_rc1_successor/authoritative_first_stage.py --self-test
+
+      - name: Run fresh cohort if source fixtures are present
+        id: cohort
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_path="authoring/research/eb_typed_selector_rc1_successor/SOURCE_FIXTURES_V2.json"
+          if [[ ! -f "$source_path" ]]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "No fresh source fixtures on this ref; smoke-only qualification complete."
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
+          claims="authoring/research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json"
+          test -f "$claims"
+          rm -rf run-a run-b
+          python authoring/research/eb_typed_selector_rc1_successor/authoritative_first_stage.py \
+            --claims-profiles "$claims" \
+            --source-fixtures "$source_path" \
+            --out-dir run-a
+          python authoring/research/eb_typed_selector_rc1_successor/authoritative_first_stage.py \
+            --claims-profiles "$claims" \
+            --source-fixtures "$source_path" \
+            --out-dir run-b
+          cmp run-a/CANDIDATE_POOLS_AUTHORITATIVE.json run-b/CANDIDATE_POOLS_AUTHORITATIVE.json
+          cmp run-a/FIRST_STAGE_RECEIPT.json run-b/FIRST_STAGE_RECEIPT.json
+          diff -qr run-a/contract_a run-b/contract_a
+          sha256sum \
+            authoring/research/eb_typed_selector_rc1_successor/FROZEN_CLAIMS_PROFILES.json \
+            "$source_path" \
+            run-a/CANDIDATE_POOLS_AUTHORITATIVE.json \
+            run-a/FIRST_STAGE_RECEIPT.json \
+            | tee run-a/SHA256SUMS.txt
+          cp PINNED_EB_HEAD.txt PINNED_EB_TREE.txt run-a/
+
+      - name: Upload authoritative non-gold first-stage receipt
+        if: steps.cohort.outputs.present == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-typed-selector-rc1-authoritative-first-stage-${{ github.sha }}
+          path: run-a/
+          if-no-files-found: error
+          retention-days: 90
