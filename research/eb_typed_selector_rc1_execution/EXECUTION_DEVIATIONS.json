@@ -1,0 +1,16 @@
+{
+  "schema": "eb-typed-selector-rc1-execution-deviation-log-v1",
+  "deviations": [
+    {
+      "id": "BLIND_EXECUTION_RUN_01_CHECKOUT_ESCAPE",
+      "workflow_run_id": 35288019274,
+      "classification": "MECHANICAL_PRE_EXECUTION_FAILURE",
+      "observed": "actions/checkout received target ref with a leading backslash and failed before target checkout completed",
+      "scientific_effect": false,
+      "target_executed": false,
+      "gold_opened": false,
+      "correction": "removed only the two serialized backslashes before GitHub expression refs in the workflow",
+      "rerun_required": true
+    }
+  ]
+}
