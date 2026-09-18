@@ -93,7 +93,7 @@ def extract_json(raw_path: str, out_path: str) -> None:
         if start < 0 or end <= start:
             raise IsolationPromptError(
                 "Copilot response contains no JSON object"
-            )
+            ) from None
         value = json.loads(raw[start : end + 1])
 
     if not isinstance(value, dict):
