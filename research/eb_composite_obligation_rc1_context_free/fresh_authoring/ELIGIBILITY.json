@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "all_c4_c5_have_actionable_form": true,
+    "c1_starvation_opportunity_at_least_2": true,
+    "case_count_24": true,
+    "deep_required_parents_at_least_8": true,
+    "four_per_category": true,
+    "no_unresolved": true,
+    "unsafe_parents_at_least_12": true
+  },
+  "hashes": {
+    "corpus_sha256": "b0d76c627384247d52efa09ef3632ebe212ee998d5a0c4ea6f6cc15a5ed96320",
+    "descriptors_sha256": "f430f2735dcc64b23cd8068881bebaf31249b5483a9f9c6eb0d5c5abc35d5b92",
+    "fresh_input_sha256": "da553e3081afdd403dfb4cab24e3a37399baced017b14576b1605714b676307a",
+    "gold_sha256": "9e521d0010836ec66dc76c5fa21abd1d7fc343e271b2d18029300021f217d801"
+  },
+  "observations": {
+    "actionable_c4_c5_count": 8,
+    "c1_starvation_opportunity_count": 3,
+    "category_counts": {
+      "C1": 4,
+      "C2": 4,
+      "C3": 4,
+      "C4": 4,
+      "C5": 4,
+      "C6": 4
+    },
+    "deep_required_parent_count": 15,
+    "unsafe_parent_count": 24
+  },
+  "passed": true,
+  "schema": "eb-composite-obligation-rc1-eligibility"
+}
