@@ -426,7 +426,10 @@ def run_pressure() -> dict[str, Any]:
         "nonclaims": [
             "does not qualify any of the 92 fields as semantically correct",
             "does not authorize any field for causal Evidence Bundler use",
-            "does not test retrieval, ranking, retention, admission, CAL, Decision, or Authorization",
+            (
+                "does not test retrieval, ranking, retention, admission, CAL, Decision, "
+                "or Authorization"
+            ),
             "does not supersede Proposition Authoring pressure results",
         ],
         "next_authorized_step": (
