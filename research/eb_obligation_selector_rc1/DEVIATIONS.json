@@ -1,0 +1,13 @@
+{
+  "schema": "eb-obligation-selector-rc1-deviations",
+  "deviations": [
+    {
+      "id": "FREEZE_RUN_01_TEST_EXPECTATION",
+      "workflow_run_id": 35352099736,
+      "classification": "MECHANICAL_TEST_EXPECTATION_INVALID",
+      "observed": "The test expected c5 to replace semantically stronger c1 even though neither expected-form nor subject match justified that swap.",
+      "selector_source_changed": false,
+      "correction": "Change only the expected final set from {c2,c4,c5} to {c1,c2,c4}. Candidate algorithm, cap, K, stage order, and fixture are unchanged."
+    }
+  ]
+}
