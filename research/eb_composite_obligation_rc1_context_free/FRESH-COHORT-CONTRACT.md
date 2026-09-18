@@ -1,137 +1,169 @@
-# Composite Evidence Obligation RC1 — Fresh Cohort Contract
+# Composite Evidence Obligation RC1 — Narrow Fresh Cohort Contract
 
 ## Purpose
 
-Build a fresh challenge that can separate four different hypotheses:
+Construct a fresh fixed-pool challenge for three bounded inputs only:
 
-1. explicit child coverage matters;
-2. exact claim-native subject binding matters;
-3. exact claim-native scope binding matters;
-4. expected evidence form matters.
+1. explicit parent/child `all_of` composition;
+2. exact claim-native subject identity;
+3. expected evidence form derived mechanically from the frozen Claim Profile implementation.
 
-The corpus must make these disagree. A descriptor match is never itself evidence usefulness.
+This cohort must discriminate the fields without encoding the answer in them.
+
+It is a **post-retrieval selector qualification**. It does not test first-stage retrieval.
 
 ## Population
 
-Author exactly **36 fresh parent claims**, 6 per category. Every parent has exactly two meaning-preserving child propositions under explicit `all_of`.
+Author exactly **24 fresh parents**, exactly four per category. Every parent has exactly two meaning-preserving child propositions under explicit `all_of`.
 
-### C1 — child-starvation controls
+### C1 — composition starvation
 
-Both children concern the same named system but different evidentiary facts. Make semantic relevance naturally favor one child strongly enough that a fixed top-K can overrepresent it.
+Create two legitimate child obligations where a semantic top-K selector could overrepresent one child. Both children must remain meaningful independently.
 
-### C2 — explicit wrong-entity conflicts
+### C2 — explicit subject conflicts
 
-Use pairs such as Valve 2 vs Valve 3, Channel A vs Channel B, Unit 4 vs Unit 5.
+Each child explicitly names the target subject. Candidate pools later must be able to contain same-predicate sibling-subject competitors.
 
-Both entities must appear naturally in the corpus with the same or very similar predicate vocabulary. Useful evidence is keyed to the entity named by the child.
+### C3 — inherited subject conflicts
 
-### C3 — inherited-subject conflicts
+The parent explicitly names one target subject. One or both children are deliberately elliptical but meaning-preserving in parent context. The frozen subject binding for an elliptical child must be copied exactly from the parent.
 
-The parent names the governed object. At least one child is intentionally elliptical but still meaning-preserving in parent context, for example:
+### C4 — evidence-form conflicts
 
-- parent: "For Valve 2, the closure check passed and the witness record was signed."
-- child 1: "the closure check passed."
-- child 2: "the witness record was signed."
+Choose child proposition types likely to produce a nontrivial expected form under the frozen Claim Profile, such as status/compliance, existence/registration, attribution/declaration, causal/event, or quantitative/measurement claims. Do not author an evidence form manually.
 
-The corpus contains same-predicate passages for a sibling object. Freeze the inherited subject from the parent before corpus authoring.
+### C5 — crossed subject × form conflicts
 
-### C4 — scope conflicts
+Create propositions for which wrong-subject/right-form and right-subject/wrong-form passages could both be plausible competitors. Do not state which factor is expected to win.
 
-Use same-entity/same-predicate evidence that differs only in claim-native scope such as:
+### C6 — easy/no-op controls
 
-- revision 3.0 vs revision 4.0;
-- 2026-08-27 vs another date;
-- 3.3 °C vs another threshold;
-- 21-minute hold vs another duration.
+Create straightforward two-child claims where direct evidence for both children should be semantically easy to identify. These detect gratuitous selector churn.
 
-### C5 — evidence-form conflicts
+## Claim authoring
 
-Use claim children whose experimental expected evidence forms differ, with plausible passages in both matching and nonmatching forms. Include same-subject hard negatives so form cannot stand in for subject identity.
+Before corpus authoring, freeze for every case:
 
-### C6 — crossed anti-shortcut cases
+- `case_id`;
+- `category`;
+- `parent_text`;
+- exactly two child IDs/texts;
+- `logic = all_of`;
+- `subject_anchor` for each child;
+- `subject_source = child | parent`.
 
-For each parent, arrange candidate types that cross the factors:
+### Subject boundary
 
-- correct subject + correct scope/form;
-- correct subject + wrong scope/form;
-- wrong subject + correct scope/form;
-- wrong subject + wrong scope/form.
+A subject anchor must be copied verbatim from the declared claim:
 
-At least one descriptor-matching candidate must be adjudicated non-useful or unsafe, and at least one useful candidate must not maximize every descriptor field.
+- `subject_source=child`: exact substring of child text;
+- `subject_source=parent`: exact substring of parent text and the child is elliptical with respect to that subject.
 
-## Claim and descriptor freeze
+Allowed examples include synthetic identifiers such as `Valve 12`, `Unit 4`, `Channel 7`, or unique named systems.
 
-Before any corpus text is authored, freeze:
+Forbidden:
 
-- parent ID/text;
-- exactly two child IDs/text;
-- `all_of` lineage;
-- child-native subject anchors;
-- parent-inherited subject anchors;
-- claim-native scope literals;
-- child-native predicate/property terms;
-- experimental expected evidence forms;
-- provenance for every descriptor field.
+- evidence-derived entities;
+- an entity absent from the declared claim;
+- answer values;
+- support/refute labels;
+- source identifiers;
+- search phrases.
 
-### Allowed descriptor content
+Use fresh synthetic names/numbers. Do not copy prior development fixtures.
 
-A descriptor may contain only information already present in the frozen parent/child claim, except the separately generated experimental expected-evidence-form label.
+## Expected evidence form
 
-Examples:
+After claim freeze, the apparatus runs exact Proposition Authoring subject:
 
-- `Valve 2` when Valve 2 is in the parent/child;
-- `revision 3.0` when the claim says revision 3.0;
-- `below 3.3 degrees C` when that threshold is in the claim;
-- `event_record` as an experimental expected evidence form.
+`e29a165b682d060f5dc2a0f3c7d64a7f29b172b4`
 
-### Forbidden descriptor content
+For each child, call `build_claim_profile(AuthoringRequest)` from child text alone and freeze its `expected_evidence_forms`.
 
-Do not include:
+The isolated author must not manually edit the returned forms.
 
-- evidence-derived terms absent from the claim;
-- answer text copied from a passage;
-- source IDs, domains, URLs, or issuer names to target;
-- passage IDs;
-- query strings/rewrites;
-- support/refute direction;
-- expected verdict;
-- candidate scores/ranks;
-- gold class or evaluator state.
+The relevant experimental vocabulary may include:
 
-If the claim says Valve 2, do not add Valve 3 just because Valve 3 appears in the corpus.
+- `authoritative_declaration`
+- `event_record`
+- `registry_entry`
+- `measurement`
 
-## Corpus
+Other returned forms remain recorded but may be non-actionable to the later selector.
 
-Target 12–20 fresh passages per parent.
+## Candidate-pool authoring
 
-For C2–C6, include hard negatives that are genuinely competitive rather than keyword caricatures.
+Only after claims and descriptors are frozen, author exactly **10 fresh candidate passages per parent**.
 
-Do not put gold-like hints in filenames, source IDs, headings, or metadata.
+Each candidate has:
 
-Intended-form metadata may be authored before retrieval for audit/eligibility, but is not gold and must not be edited after candidate inspection.
+- `candidate_id`;
+- `text`;
+- `intended_form` for construction audit;
+- `design_role` for cohort eligibility only.
 
-## Retrieval and candidate freeze
+Allowed `design_role` values:
 
-Use one exact frozen retrieval configuration for every arm.
+- `target_subject_target_form`
+- `target_subject_other_form`
+- `other_subject_target_form`
+- `other_subject_other_form`
+- `neutral_distractor`
+- `redundant_target`
 
-Freeze at least the top 10 candidate pool per child/parent experiment unit before gold adjudication.
+The later selector and gold adjudicator do **not** receive `design_role`.
 
-Preserve:
+The candidate author may use the frozen expected-form descriptors to construct genuine form conflicts, but may not label usefulness, correctness, support/refute, or gold state.
 
-- passage bytes and IDs;
-- source IDs;
-- retrieval rank/score;
-- child-query attribution;
-- exact query/proposition identity;
-- candidate-pool hash.
+Avoid giveaway filenames, headings, phrases such as “correct evidence,” or other answer-key cues.
 
-No post-reveal retrieval tuning.
+## Category geometry
 
-## Gold
+C1: at least four candidates should plausibly concern one child and at least two should plausibly concern the other.
 
-Adjudicate candidate usefulness independently of descriptor matching.
+C2: include at least two same-predicate wrong-subject competitors.
 
-Use candidate classes:
+C3: include at least two wrong-subject or subject-omitted competitors that could fool an elliptical child.
+
+C4: include at least two target-subject candidates in a different evidentiary form from at least one actionable expected form.
+
+C5: include at least one candidate in each crossed cell when applicable:
+- target subject + target form;
+- target subject + other form;
+- other subject + target form;
+- other subject + other form.
+
+C6: include direct target evidence for both children and ordinary distractors, without adversarial overpacking.
+
+## Semantic scoring
+
+After corpus freeze, score every child/candidate pair with:
+
+- `cross-encoder/ms-marco-MiniLM-L6-v2`
+- revision `233902d25c440f23af6f7d6e94d2946bac0bee0a`
+- sigmoid of the one-logit output
+- max length 512.
+
+Freeze all scores before gold adjudication.
+
+## Gold adjudication
+
+Gold adjudication receives only:
+
+- parent text;
+- child IDs/texts;
+- candidate IDs/texts.
+
+It must **not** receive:
+
+- expected-evidence-form descriptors;
+- subject-source metadata;
+- design-role metadata;
+- selector implementation;
+- arm mapping;
+- development results.
+
+Label every candidate exactly one of:
 
 - `REQUIRED`
 - `USEFUL_DISTINCT`
@@ -140,42 +172,30 @@ Use candidate classes:
 - `UNSAFE_OR_MISLEADING`
 - `UNRESOLVED`
 
-Also record which child proposition(s), if any, each useful candidate actually bears on.
+For useful evidence, record which child proposition(s) it actually bears on.
 
-Gold must answer the factual/evidentiary objective, not "did the candidate contain Valve 2?" or "did it use an event record?"
+Gold usefulness is determined from the evidentiary objective, not by subject/form metadata matching.
 
-## Prereveal cohort gates
+## Primary eligibility
 
-Before `READY_FOR_REVEAL`, require:
+Require before `READY_FOR_REVEAL`:
 
-- 36 eligible parents, exactly 6 per category;
-- 72 declared child propositions;
-- all parent/child/descriptors frozen before corpus authoring;
-- at least 24 parents where semantic top-K has a plausible opportunity to starve one child;
-- all C2 cases contain same-predicate wrong-entity candidates;
-- all C3 cases contain wrong-entity candidates that would fool an unbound elliptical child;
-- all C4 cases contain same-entity wrong-scope candidates;
-- all C5 cases contain at least two plausible evidence forms;
-- all C6 cases satisfy the crossed-factor geometry;
-- at least 18 parents contain one or more `UNSAFE_OR_MISLEADING` candidates;
-- at least 18 parents contain useful evidence at retrieval rank 4–10;
-- zero target/development exposure before freeze.
+- exactly 24 parents and 48 children;
+- exactly four parents in each C1-C6;
+- every subject anchor passes exact-substring provenance validation;
+- every child has a frozen Claim Profile;
+- every parent has exactly 10 candidate passages;
+- candidate IDs are unique within and across parents;
+- every positive parent has at least one `REQUIRED` candidate for each child;
+- at least 12 parents contain one or more `UNSAFE_OR_MISLEADING` candidates;
+- at least 8 parents contain useful evidence whose maximum semantic rank is 4-10;
+- all C2/C3/C5 construction-geometry checks pass;
+- no `UNRESOLVED` candidate remains in the primary population;
+- exact scorer replay/hash checks pass;
+- no denylisted source was exposed prereveal.
 
-Failed lanes are preserved and replaced from scratch. Do not patch a lane after gold or target inspection.
+Failed model output or invalid cases are preserved as apparatus/cohort deviations. Do not patch a case after gold inspection.
 
-## Primary preregistered comparisons after reveal
+## Nonclaims
 
-The execution lane will compare opaque frozen arms corresponding to:
-
-- semantic baseline;
-- child-coverage repair;
-- child coverage + correct subject;
-- child coverage + wrong/shuffled subject;
-- child coverage + correct scope;
-- child coverage + wrong/shuffled scope;
-- child coverage + expected evidence form;
-- child coverage + shuffled form;
-- full obligation;
-- broad claim-native lexical control.
-
-The clean-room author must not see the implementation details, cap, or post-reveal arm mapping.
+The cohort does not establish first-stage retrieval quality, retrieval completeness, CAL semantics, or the reliability of a production subject extractor.
