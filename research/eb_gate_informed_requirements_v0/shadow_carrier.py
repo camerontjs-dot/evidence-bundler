@@ -9,7 +9,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Mapping, Sequence
 from typing import Any
 
 REGISTRY_SCHEMA = "eb-gate-informed-shadow-field-registry-v0"
