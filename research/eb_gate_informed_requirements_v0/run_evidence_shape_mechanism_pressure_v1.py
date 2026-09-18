@@ -4,17 +4,14 @@ import argparse
 import hashlib
 import json
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Callable
 
 from run_actual_gate_field_pressure import (
-    DECLARATION_RE,
-    EVENT_RE,
     NEG_RE,
     NUMBER_RE,
     POSTURE_BAD,
-    REGISTRY_RE,
     UNIT_RE,
     bounded_repair,
     candidate_forms,
