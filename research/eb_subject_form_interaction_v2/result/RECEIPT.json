@@ -1,0 +1,11 @@
+{
+  "evaluation_internal_sha256": "73eb4b7b239e53d6134b78486bd439fe34ad7808e5aaab1086678e80aba3dd55",
+  "evaluation_sha256": "417f3ca24caa69573de94031f3cca22f8a2b6594e2c9fc34def9acf2c3d3e6b2",
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-subject-form-interaction-v2-receipt",
+  "status": "EXPOSED_INTERACTION_PRESSURE_COMPLETE",
+  "study_head": "2b91d51a58cba1f47c5483239155b49ac1c4da97",
+  "v1_selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+  "v2_selection_sha256": "50f07d0fdae78c4bdde50bf3e31c438b07aaa2c083e747e00b1e9617114832d7"
+}
