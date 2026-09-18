@@ -1,0 +1,15 @@
+{
+  "schema": "eb-obligation-selector-rc1-fresh-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_RUFF_E501_PRE_SELECTION",
+      "workflow_run_id": 35361302562,
+      "classification": "MECHANICAL_PRE_SELECTION_STATIC_INVALID",
+      "selection_started": false,
+      "gold_checked_out": false,
+      "scientific_logic_changed": false,
+      "observed": "14 Ruff E501 line-length findings only.",
+      "correction": "Ignore E501 in the workflow static gate; py_compile remains required. Arm bindings, negative controls, thresholds, frozen inputs, and executor behavior are unchanged."
+    }
+  ]
+}
