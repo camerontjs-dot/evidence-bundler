@@ -1,0 +1,17 @@
+{
+  "schema": "eb-gate-specificity-v2-launch",
+  "status": "AUTHORIZED_EXPOSED_DEVELOPMENT_SPECIFICITY_FALSIFIER",
+  "pr": 101,
+  "source_pre_gold_commit": "c8839068feaaecf1d904a93be22dcf4f60dec6a4",
+  "source_v1_selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "dominant_prior": [
+    "document_text",
+    "measurement"
+  ],
+  "default_lane_count": 22,
+  "exceptional_lane_count": 8,
+  "rerun_model": false,
+  "rerun_gate": false,
+  "fresh_qualification": false,
+  "production_authority": false
+}
