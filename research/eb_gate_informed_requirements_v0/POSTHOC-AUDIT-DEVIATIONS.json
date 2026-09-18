@@ -1,0 +1,16 @@
+{
+  "schema": "eb-gate-field-pressure-posthoc-audit-deviations-v0",
+  "deviations": [
+    {
+      "id": "POSTHOC_RUN_01_ARM_LABEL_COMPARISON",
+      "workflow_run_id": 35297906313,
+      "classification": "MECHANICAL_REPORTING_ASSERTION",
+      "observed": "Frozen RC1 evaluator includes the arm name inside each metric object, so identical baseline/placebo selection sets yielded unequal full metric dictionaries solely because the arm labels differ.",
+      "source_selections_changed": false,
+      "gold_changed": false,
+      "evaluator_changed": false,
+      "scientific_effect": false,
+      "correction": "Compare metric payloads after removing only the arm label."
+    }
+  ]
+}
