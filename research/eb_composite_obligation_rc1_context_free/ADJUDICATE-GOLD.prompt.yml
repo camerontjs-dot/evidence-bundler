@@ -1,0 +1,76 @@
+messages:
+  - role: system
+    content: |-
+      You are an isolated evidence adjudicator. Judge candidate usefulness only from the supplied parent/child propositions and candidate text. You are not given descriptor metadata, construction roles, selector behavior, prior results, or expected winner. Do not infer gold from wording style alone.
+  - role: user
+    content: |-
+      Gold-label contract:
+
+      {{contract}}
+
+      Sanitized cases:
+
+      {{gold_input}}
+
+      Label every candidate exactly once.
+
+      Use REQUIRED when the passage directly supplies evidence needed to establish one or both child propositions in this synthetic evidence world. Use USEFUL_DISTINCT for independently useful but non-required evidence; REDUNDANT for materially duplicative evidence; DISTRACTOR for irrelevant/non-probative material; UNSAFE_OR_MISLEADING for superficially attractive evidence with wrong entity, wrong evidentiary state, wrong scope, or similar material mismatch; UNRESOLVED only if reliable adjudication is genuinely impossible.
+
+      required_for lists the child IDs the candidate bears on. Every case must have at least one REQUIRED candidate for each child.
+
+      Return JSON only according to the response schema.
+model: openai/gpt-4o
+modelParameters:
+  maxCompletionTokens: 8000
+  temperature: 0.0
+responseFormat: json_schema
+jsonSchema: |-
+  {
+    "name": "fresh_candidate_gold",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "category_id": {"type": "string"},
+        "cases": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "case_id": {"type": "string"},
+              "candidates": {
+                "type": "array",
+                "minItems": 10,
+                "maxItems": 10,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "candidate_id": {"type": "string"},
+                    "gold_class": {
+                      "type": "string",
+                      "enum": ["REQUIRED", "USEFUL_DISTINCT", "REDUNDANT", "DISTRACTOR", "UNSAFE_OR_MISLEADING", "UNRESOLVED"]
+                    },
+                    "required_for": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 2,
+                      "items": {"type": "string"}
+                    },
+                    "reason": {"type": "string"}
+                  },
+                  "required": ["candidate_id", "gold_class", "required_for", "reason"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["case_id", "candidates"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["category_id", "cases"],
+      "additionalProperties": false
+    }
+  }
