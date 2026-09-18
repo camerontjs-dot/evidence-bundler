@@ -12,6 +12,18 @@
       "gate_pressure_executed": false,
       "gold_opened": false,
       "scientific_effect": false
+    },
+    {
+      "id": "RUN_02_STATIC_HYGIENE",
+      "workflow_run_id": 35297189758,
+      "classification": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+      "observed": "Ruff found one unused import, one import-order issue, and two line-length violations.",
+      "study_code_executed": false,
+      "gate_pressure_executed": false,
+      "pre_gold_selection_frozen": false,
+      "gold_opened": false,
+      "scientific_effect": false,
+      "correction": "Removed unused import, applied Ruff import ordering, wrapped two lines. No scientific logic changed."
     }
   ]
 }
