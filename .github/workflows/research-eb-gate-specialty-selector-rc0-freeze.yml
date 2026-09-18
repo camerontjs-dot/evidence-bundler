@@ -1,0 +1,140 @@
+name: Research - EB Gate Specialty Selector RC0 Freeze
+
+on:
+  push:
+    branches:
+      - research/eb-gate-specialty-selector-rc0-20260917
+    paths:
+      - research/eb_gate_specialty_selector_rc0/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_gate_specialty_selector_rc0
+  DEV_SELECTION_SHA: 095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4
+  POOLS_SHA: 4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6
+  FROZEN_BRANCH: research/eb-gate-specialty-selector-rc0-frozen-20260917
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout RC0 candidate
+        uses: actions/checkout@v4
+        with:
+          path: candidate
+          fetch-depth: 0
+
+      - name: Checkout immutable V1 pre-gold development selections
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: c8839068feaaecf1d904a93be22dcf4f60dec6a4
+          path: development
+          fetch-depth: 1
+
+      - name: Checkout immutable RC1 candidate pools
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: a15a336e61f99b97fb9ea284761e1952fc1289cf
+          path: cohort
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify immutable development inputs
+        run: |
+          set -euo pipefail
+          selections=development/research/eb_gate_informed_requirements_v0/evidence_shape_mechanism_v1/SELECTIONS.json
+          pools=cohort/research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json
+          test "$(sha256sum "$selections" | awk '{print $1}')" = "$DEV_SELECTION_SHA"
+          test "$(sha256sum "$pools" | awk '{print $1}')" = "$POOLS_SHA"
+
+      - name: Static checks and unit tests
+        env:
+          PYTHONPATH: candidate/research/eb_gate_specialty_selector_rc0
+        run: |
+          set -euo pipefail
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check \
+            candidate/$SURFACE/selector.py \
+            candidate/$SURFACE/test_selector.py \
+            candidate/$SURFACE/reproduce_exposed.py
+          python -m py_compile \
+            candidate/$SURFACE/selector.py \
+            candidate/$SURFACE/test_selector.py \
+            candidate/$SURFACE/reproduce_exposed.py
+          python -m unittest candidate/$SURFACE/test_selector.py
+
+      - name: Reproduce frozen exposed development arm
+        env:
+          PYTHONPATH: candidate/research/eb_gate_specialty_selector_rc0
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python candidate/$SURFACE/reproduce_exposed.py \
+            --v1-selections development/research/eb_gate_informed_requirements_v0/evidence_shape_mechanism_v1/SELECTIONS.json \
+            --pools cohort/research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json \
+            --out out/EQUIVALENCE.json
+
+      - name: Exact replay of equivalence gate
+        env:
+          PYTHONPATH: candidate/research/eb_gate_specialty_selector_rc0
+        run: |
+          set -euo pipefail
+          python candidate/$SURFACE/reproduce_exposed.py \
+            --v1-selections development/research/eb_gate_informed_requirements_v0/evidence_shape_mechanism_v1/SELECTIONS.json \
+            --pools cohort/research/eb_typed_selector_rc1_successor/AUTHORITATIVE_CANDIDATE_POOLS.json \
+            --out out/EQUIVALENCE-REPLAY.json
+          cmp out/EQUIVALENCE.json out/EQUIVALENCE-REPLAY.json
+
+      - name: Build freeze receipt
+        run: |
+          set -euo pipefail
+          selector=candidate/$SURFACE/selector.py
+          cat > out/FREEZE-RECEIPT.json <<EOF
+          {
+            "schema": "eb-gate-specialty-selector-rc0-freeze-receipt",
+            "status": "FROZEN_FOR_FRESH_QUALIFICATION",
+            "candidate_head": "$(git -C candidate rev-parse HEAD)",
+            "candidate_tree": "$(git -C candidate rev-parse HEAD^{tree})",
+            "selector_git_blob": "$(git -C candidate hash-object $SURFACE/selector.py)",
+            "selector_sha256": "$(sha256sum "$selector" | awk '{print $1}')",
+            "development_selection_sha256": "$DEV_SELECTION_SHA",
+            "candidate_pools_sha256": "$POOLS_SHA",
+            "equivalence_sha256": "$(sha256sum out/EQUIVALENCE.json | awk '{print $1}')",
+            "unit_tests_passed": true,
+            "exact_replay_passed": true,
+            "production_authority": false,
+            "fresh_qualification_complete": false
+          }
+          EOF
+
+      - name: Freeze exact candidate identity
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FROZEN_BRANCH" >/dev/null 2>&1; then
+            echo "frozen candidate branch already exists"
+            exit 1
+          fi
+          git -C candidate checkout -b "$FROZEN_BRANCH"
+          cp out/EQUIVALENCE.json candidate/$SURFACE/EQUIVALENCE.json
+          cp out/FREEZE-RECEIPT.json candidate/$SURFACE/FREEZE-RECEIPT.json
+          git -C candidate config user.name "github-actions[bot]"
+          git -C candidate config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C candidate add "$SURFACE/EQUIVALENCE.json" "$SURFACE/FREEZE-RECEIPT.json"
+          git -C candidate commit -m "Research: freeze Gate specialty selector RC0"
+          git -C candidate push origin "HEAD:refs/heads/$FROZEN_BRANCH"
+          git -C candidate rev-parse HEAD
+          git -C candidate rev-parse HEAD^{tree}
+
+      - name: Upload freeze artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-gate-specialty-selector-rc0-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
