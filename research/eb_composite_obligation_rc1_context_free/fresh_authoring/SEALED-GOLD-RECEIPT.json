@@ -1,0 +1,8 @@
+{
+  "schema": "eb-composite-obligation-rc1-sealed-gold-receipt",
+  "fresh_base_commit": "1413333c3e23a3c807bb58af723395650b35bdd8",
+  "gold_file_sha256": "9e521d0010836ec66dc76c5fa21abd1d7fc343e271b2d18029300021f217d801",
+  "eligibility_file_sha256": "31eae925980ce044a39d940627f640577a2416acfa514e7f789d9f979f96ce5b",
+  "eligibility_passed": true,
+  "target_revealed": false
+}

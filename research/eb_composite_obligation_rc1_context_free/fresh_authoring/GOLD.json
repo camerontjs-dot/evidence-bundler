@@ -1,0 +1,1851 @@
+{
+  "case_count": 24,
+  "cases": [
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct maintenance log confirms the Asterion Relay Console completed its scheduled thermal inspection during the current cycle.",
+          "required_for": [
+            "C1-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P02",
+          "gold_class": "REQUIRED",
+          "reason": "A signed supervisor statement directly verifies completion before the cycle closed.",
+          "required_for": [
+            "C1-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "The service record independently confirms the completed thermal inspection and review authorization.",
+          "required_for": [
+            "C1-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P04",
+          "gold_class": "REDUNDANT",
+          "reason": "Equipment notice repeats the same completion fact for the same inspection obligation.",
+          "required_for": [
+            "C1-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P05",
+          "gold_class": "REQUIRED",
+          "reason": "The calibration office entry confirms the console retained its calibration seal after the review.",
+          "required_for": [
+            "C1-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P06",
+          "gold_class": "REQUIRED",
+          "reason": "Seal-control register confirms the seal was present and intact at the close of the inspection cycle.",
+          "required_for": [
+            "C1-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Later inventory photography supports continued seal presence, though it is less direct than the close-of-cycle record.",
+          "required_for": [
+            "C1-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-01-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity: the Asterion Relay Cabinet is not the named Asterion Relay Console.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-01-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Another relay console with a seal and temperature reading is not the target unit and is not the same obligation.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-01-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Generic bulletin about inspection scheduling without identifying a specific console or seal status.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C1-01",
+      "category": "C1"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "The audit entry directly records the firmware review after the designated procedure was completed.",
+          "required_for": [
+            "C1-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P02",
+          "gold_class": "REQUIRED",
+          "reason": "The compliance officer's declaration directly verifies that the firmware audit followed the specified review procedure.",
+          "required_for": [
+            "C1-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "The audit packet confirms a complete checklist and the operating procedure used by the reviewer.",
+          "required_for": [
+            "C1-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P04",
+          "gold_class": "REDUNDANT",
+          "reason": "The maintenance-system review event repeats the same recorded audit completion for the target controller.",
+          "required_for": [
+            "C1-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P05",
+          "gold_class": "REQUIRED",
+          "reason": "The override test record directly shows the emergency override was tested and witnessed.",
+          "required_for": [
+            "C1-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P06",
+          "gold_class": "REQUIRED",
+          "reason": "A signed safety declaration directly confirms the emergency override was tested before return to service.",
+          "required_for": [
+            "C1-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "The override register records a test status for the specific controller, independently supporting the test fact.",
+          "required_for": [
+            "C1-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-02-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity: the Helix Orchard Pump Controller is a different device and is not the target subject.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-02-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Another orchard controller's measured override response is not evidence about the named Helix Orchard Controller.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-02-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "The circular states a general requirement for orchard controllers without naming the target unit or outcome.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C1-02",
+      "category": "C1"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "The synchronization log directly records completion of the coastal check after the designated observation interval.",
+          "required_for": [
+            "C1-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P02",
+          "gold_class": "REQUIRED",
+          "reason": "The field supervisor's declaration directly establishes that the beacon completed the coastal synchronization check.",
+          "required_for": [
+            "C1-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "The worksheet confirms completion and the observation window for the target beacon.",
+          "required_for": [
+            "C1-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P04",
+          "gold_class": "REDUNDANT",
+          "reason": "The survey database completion event restates the same successful synchronization-check fact.",
+          "required_for": [
+            "C1-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P05",
+          "gold_class": "REQUIRED",
+          "reason": "The enclosure inspection record directly states the beacon's enclosure remained sealed throughout the observation period.",
+          "required_for": [
+            "C1-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P06",
+          "gold_class": "REQUIRED",
+          "reason": "The seal register confirms the closure was intact at both the start and end of the survey interval.",
+          "required_for": [
+            "C1-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-03-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "This passage directly contradicts the claim by stating the enclosure was opened and later resealed, not kept sealed throughout.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-03-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: the Brindle Coastal Marker Beacon is a different beacon and not the named Brindle Survey Beacon.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-03-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "A different survey beacon's temperature reading and bench-test context are not evidence about the target subject.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-03-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "The bulletin gives general rules for the beacon network without identifying a specific beacon or outcome.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C1-03",
+      "category": "C1"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "The route-data review record directly confirms the Quenby Transit Monitor underwent the specified operating-period review.",
+          "required_for": [
+            "C1-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P02",
+          "gold_class": "REQUIRED",
+          "reason": "The route-audit manager's declaration directly verifies the required route-data review occurred.",
+          "required_for": [
+            "C1-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "The review packet independently confirms completion under the operating-period procedure.",
+          "required_for": [
+            "C1-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P04",
+          "gold_class": "REDUNDANT",
+          "reason": "The transit operations system review event restates the same route-data review completion fact.",
+          "required_for": [
+            "C1-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P05",
+          "gold_class": "REQUIRED",
+          "reason": "The inspection register directly states the monitor retained its inspection mark after the review.",
+          "required_for": [
+            "C1-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P06",
+          "gold_class": "REQUIRED",
+          "reason": "A signed equipment declaration confirms the inspection mark remained attached and legible at period close.",
+          "required_for": [
+            "C1-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Later platform photography supports ongoing mark visibility even though it is not the nearest-in-time evidence.",
+          "required_for": [
+            "C1-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C1-04-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity: the Quenby Transit Display Monitor is a different monitor and not the target subject.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-04-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "A different transit monitor's measured route-data variance is unrelated to the named Quenby Transit Monitor.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C1-04-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "The operations circular gives general network procedures without naming the specific device or its outcomes.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C1-04",
+      "category": "C1"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Kestrel Array relay Rho-3 confirms a calibration event on 2031-04-12, matching the first child proposition.",
+          "required_for": [
+            "C2-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P02",
+          "gold_class": "REDUNDANT",
+          "reason": "Materially duplicates the same calibration-event evidence for Rho-3 and adds no independent support.",
+          "required_for": [
+            "C2-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Mentions Rho-5 rather than the target relay Rho-3, creating a wrong-entity calibration claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-01-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Kestrel Array controller Sigma-8 is enrolled in the municipal equipment register, matching the second child proposition.",
+          "required_for": [
+            "C2-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P05",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Corroborates the controller\u2019s registration status through its active municipal certificate, which supports the same child but is not the exact registration claim.",
+          "required_for": [
+            "C2-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P06",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Provides follow-on evidence about the same relay after the calibration event, supporting the event\u2019s occurrence without being the core claim.",
+          "required_for": [
+            "C2-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong controller entity (Sigma-9 instead of Sigma-8) and thus misidentifies the subject for the second child.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-01-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Refers to the array\u2019s controller in general without identifying Sigma-8, which is too vague and not directly probative for the specific child.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-01-P09",
+          "gold_class": "REDUNDANT",
+          "reason": "Another direct record of the same Rho-3 calibration event on the same date, repeating the required evidence.",
+          "required_for": [
+            "C2-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-01-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Describes a general outage and inspection without tying the evidence to the specific relay or controller in the child claims.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C2-01",
+      "category": "C2"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly establishes that Oriole Transit Grid beacon Lumen-5 completed the quarterly inspection, matching the first child proposition.",
+          "required_for": [
+            "C2-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-02-P02",
+          "gold_class": "REDUNDANT",
+          "reason": "A duplicate inspection-completion record for the same beacon and date, adding no independent evidentiary value.",
+          "required_for": [
+            "C2-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-02-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong beacon subject (Lumen-7 instead of Lumen-5), which is a same-predicate competitor with the wrong entity.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-02-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Oriole Transit Grid gate unit Nadir-2 holds an active operating certificate, matching the second child proposition.",
+          "required_for": [
+            "C2-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-02-P05",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Supports the same gate-unit certification status with an active certificate through 2032, but the child is about an active certificate being held.",
+          "required_for": [
+            "C2-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-02-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "States the beacon is in a scheduled inspection queue, but not that the quarterly inspection has actually completed.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-02-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong gate unit (Nadir-4 instead of Nadir-2), creating a same-predicate but wrong-subject competitor.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-02-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "A post-inspection maintenance bulletin is not specific to Lumen-5 or Nadir-2 and does not directly establish either child proposition.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-02-P09",
+          "gold_class": "REDUNDANT",
+          "reason": "An additional direct record of the same Lumen-5 inspection completion, matching the same child proposition with no new information.",
+          "required_for": [
+            "C2-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-02-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Generic network policy about required logging is not direct evidence that the specific beacon or gate unit satisfies the child claims.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C2-02",
+      "category": "C2"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Bramble Water Network pressure node Vela-7 recorded a 4.8 bar reading during the morning test, matching the first child proposition.",
+          "required_for": [
+            "C2-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P02",
+          "gold_class": "REDUNDANT",
+          "reason": "Repeats the same direct pressure measurement for Vela-7 and adds no new evidentiary substance.",
+          "required_for": [
+            "C2-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong node subject (Vela-9 instead of Vela-7), which undermines the exact pressure-node claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-03-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Bramble Water Network treatment module Cinder-4 has a signed compliance declaration for the current operating period, matching the second child proposition.",
+          "required_for": [
+            "C2-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P05",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Corroborates the same signed compliance declaration by showing it is filed in the current operating binder, supporting the Cinder-4 child without being the primary claim.",
+          "required_for": [
+            "C2-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P06",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Shows the current compliance status for Cinder-4 on the operations board, which supports the declaration claim but is not a direct statement of the declaration itself.",
+          "required_for": [
+            "C2-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong treatment module (Cinder-8 instead of Cinder-4) and thus not evidence for the actual child subject.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-03-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "A nearby gauge reading lacks the named node and is too vague and mismatched to establish Vela-7\u2019s specific measurement.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-03-P09",
+          "gold_class": "REDUNDANT",
+          "reason": "Provides a second record of the same Vela-7 4.8 bar reading, reinforcing the same required evidence without adding distinct probative value.",
+          "required_for": [
+            "C2-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-03-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "General policy about treatment modules maintaining compliance declarations does not prove Cinder-4 actually has one in the current operating period.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C2-03",
+      "category": "C2"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Halcyon Storage Cluster cold-store monitor Aster-9 documented a temperature excursion on 2032-09-03, matching the first child proposition.",
+          "required_for": [
+            "C2-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P02",
+          "gold_class": "REDUNDANT",
+          "reason": "Another direct temperature-excursion record for Aster-9 on the same date, repeating the same required evidence.",
+          "required_for": [
+            "C2-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong monitor subject (Aster-7 instead of Aster-9), which is an incorrect entity for the first child claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-04-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states that Halcyon Storage Cluster access service Quill-6 is listed in the authorized-services registry, matching the second child proposition.",
+          "required_for": [
+            "C2-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P05",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Corroborates Quill-6\u2019s registry status with a recent renewal entry, supporting the same authorization claim without replacing the exact listing fact.",
+          "required_for": [
+            "C2-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P06",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Provides an active authorization memo for Quill-6, which supports the registered-service status but is not the specific registry listing itself.",
+          "required_for": [
+            "C2-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong service subject (Quill-2 instead of Quill-6), making it a same-predicate but wrong-subject competitor.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-04-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Reports a generic cooling-team alarm after the spike but omits the named monitor, so it is not reliable evidence for Aster-9 specifically.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C2-04-P09",
+          "gold_class": "REDUNDANT",
+          "reason": "A duplicate direct record of the same Aster-9 temperature excursion in the daily maintenance log, with no distinct evidentiary content.",
+          "required_for": [
+            "C2-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C2-04-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Describes a different storage site and general risk pattern, which is unrelated to the specific Aster-9 and Quill-6 child claims.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C2-04",
+      "category": "C2"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Meridian Relay K8 completed the scheduled April 2026 calibration.",
+          "required_for": [
+            "C3-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct calibration compliance record for Meridian Relay K8 in the relevant period.",
+          "required_for": [
+            "C3-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Maintenance log explicitly confirms K8 was calibrated in April 2026 and cleared for service.",
+          "required_for": [
+            "C3-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Meridian Relay K8 remained available for service throughout May 2026 with no scheduled downtime.",
+          "required_for": [
+            "C3-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P05",
+          "gold_class": "REQUIRED",
+          "reason": "Availability report shows 100% uptime for Meridian Relay K8 across May 2026.",
+          "required_for": [
+            "C3-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong unit (K9) despite matching the calibration wording; materially mismatched subject.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-01-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong relay (K9) and wrong subject for the availability claim; appears superficially similar but is not about K8.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-01-P08",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Confirms the April 2026 calibration was completed without material deviation, corroborating the calibration proposition though it omits the subject name.",
+          "required_for": [
+            "C3-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-01-P09",
+          "gold_class": "DISTRACTOR",
+          "reason": "Mentions a thermal sensor replacement for K8, which is tangential to both child propositions and does not establish either claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-01-P10",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity (K7) and opposite availability outcome, making it materially misleading for the target subject.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C3-01",
+      "category": "C3"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Copper Finch Array R3 entered supervised operation on 7 June 2026.",
+          "required_for": [
+            "C3-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct measurement showing Copper Finch Array R3 remained below the specified threshold during the operation window.",
+          "required_for": [
+            "C3-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Operations log explicitly records the supervised operation start time for Copper Finch Array R3.",
+          "required_for": [
+            "C3-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Thermal monitoring summary directly confirms the temperature stayed below the configured threshold during the operation window.",
+          "required_for": [
+            "C3-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (R4) with the same predicate, so it is not evidence for R3.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-02-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (R4) for the temperature-threshold claim; not evidence for Copper Finch Array R3.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-02-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Event-level evidence that the supervised operation began on schedule and without a system-level alarm, supporting the start-of-operation proposition.",
+          "required_for": [
+            "C3-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P08",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states R3 entered operation at 08:15 on 7 June 2026 with the threshold monitor enabled.",
+          "required_for": [
+            "C3-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-02-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (Channel 2) despite the same supervised-operation wording, so it is not relevant to R3.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-02-P10",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (Channel 2) for the threshold condition and not evidence for Copper Finch Array R3.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C3-02",
+      "category": "C3"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Obsidian Gate M4 was registered for the northern test range in the range ledger.",
+          "required_for": [
+            "C3-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-03-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Obsidian Gate M4 transmitted an authenticated status report at the end of the trial.",
+          "required_for": [
+            "C3-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-03-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Signal-confidence data during the end-of-trial transmission corroborates that the status transmission occurred for M4.",
+          "required_for": [
+            "C3-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-03-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Official declaration for M4 lists the northern test range as its assigned operating area, directly supporting the registration claim.",
+          "required_for": [
+            "C3-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-03-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (M5) even though it mentions the same range registration claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-03-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (M5) for the end-of-trial status report and materially mismatched target entity.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-03-P07",
+          "gold_class": "DISTRACTOR",
+          "reason": "This is a range-level process description without specific evidence about Obsidian Gate M4.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-03-P08",
+          "gold_class": "REQUIRED",
+          "reason": "Ledger record explicitly confirms registration for Obsidian Gate M4 in the northern test range with no exceptions noted.",
+          "required_for": [
+            "C3-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-03-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Mentions a different unit (Horizon Gate M3), not Obsidian Gate M4, so it does not bear on the target.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-03-P10",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong relay and wrong operating area; a different unit at the eastern range is not evidence for M4.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C3-03",
+      "category": "C3"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Saffron Beacon T11 was inspected after the west-sector incident.",
+          "required_for": [
+            "C3-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-04-P02",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Thermal-deviation reading during the post-incident inspection corroborates the inspection claim for T11.",
+          "required_for": [
+            "C3-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C3-04-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Maintenance record confirms Saffron Beacon T11 received a replacement power module before the next deployment.",
+          "required_for": [
+            "C3-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-04-P04",
+          "gold_class": "REDUNDANT",
+          "reason": "Same proposition as the direct maintenance record, presented as a procurement declaration rather than a maintenance record.",
+          "required_for": [
+            "C3-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-04-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (T12) for the post-incident inspection claim, so it is not evidence for T11.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-04-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (T12) for the power-module replacement and materially mismatched target.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-04-P07",
+          "gold_class": "DISTRACTOR",
+          "reason": "Generic statement about incident-driven inspections across several beacons, without specific evidence for T11.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-04-P08",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states T11 was serviced after the west-sector incident and had its power module replaced before the next deployment, covering both child propositions.",
+          "required_for": [
+            "C3-04-A",
+            "C3-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C3-04-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity (Ember Beacon T8) and a different unit; not evidence for Saffron Beacon T11.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C3-04-P10",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject (Ember Beacon T8) for the power-module replacement; materially misleading for the target unit.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C3-04",
+      "category": "C3"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Module Zeta-31 met the specified thermal-safety standard; this establishes child A.",
+          "required_for": [
+            "C4-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-01-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Directly records a spring service-cycle inspection with technician acknowledgment for Module Zeta-31, matching child B.",
+          "required_for": [
+            "C4-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-01-P03",
+          "gold_class": "REQUIRED",
+          "reason": "The compliance statement for Module Zeta-31 is explicitly archived as satisfying the specified thermal-safety standard.",
+          "required_for": [
+            "C4-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-01-P04",
+          "gold_class": "DISTRACTOR",
+          "reason": "Mentions a cooling-loop reset after a temperature excursion but does not prove the thermal-safety standard or the calibration inspection.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-01-P05",
+          "gold_class": "REQUIRED",
+          "reason": "A sensor log showing a safe thermal profile under the specified standard directly supports child A.",
+          "required_for": [
+            "C4-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-01-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject, Module Alpha-22, while appearing similar to the target claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-01-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong module; references a neighboring unit rather than Module Zeta-31 and does not establish the target calibration event.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-01-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong module; it concerns Module Theta-44, not Module Zeta-31.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-01-P09",
+          "gold_class": "REQUIRED",
+          "reason": "Directly confirms both that Module Zeta-31 passed the thermal-safety standard and that it completed the spring calibration package.",
+          "required_for": [
+            "C4-01-A",
+            "C4-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-01-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Irrelevant plant logistics information unrelated to either child proposition.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C4-01",
+      "category": "C4"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Orion Mesh Node Q-58 has an active equipment registration and no lapsed compliance flag.",
+          "required_for": [
+            "C4-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-02-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Measures Orion Mesh Node Q-58 latency at 12.8 ms, directly matching the below-14-ms child proposition.",
+          "required_for": [
+            "C4-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-02-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Lists Orion Mesh Node Q-58 as active in the network equipment registry with current maintenance status.",
+          "required_for": [
+            "C4-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-02-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Explicitly confirms the registration remains active despite a temporary outage notice, directly supporting child A.",
+          "required_for": [
+            "C4-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-02-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject, Orion Mesh Node Q-59, with a superficially similar active-registration/latency claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-02-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong target; concerns Orion Mesh Node Q-59 instead of Q-58.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-02-P07",
+          "gold_class": "REQUIRED",
+          "reason": "Maintenance bulletin directly records Orion Mesh Node Q-58 latency at 13.2 ms during peak traffic, matching child B.",
+          "required_for": [
+            "C4-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-02-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "It contradicts the active-registration claim by saying Q-58 was removed from the maintenance schedule after a failed inspection.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-02-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject, Orion Mesh Node P-11, and the latency value exceeds the below-14-ms threshold.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-02-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "General network-topology memo unrelated to either the equipment registration or the latency proposition.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C4-02",
+      "category": "C4"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "SCADA export directly records Turbine Array Rho-204 produced 8.4 MW, matching child A.",
+          "required_for": [
+            "C4-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Maintenance incident report directly states the turbine shut down after a coolant-pressure excursion, matching child B.",
+          "required_for": [
+            "C4-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Output log directly records 8.4 megawatts for Turbine Array Rho-204.",
+          "required_for": [
+            "C4-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P04",
+          "gold_class": "REQUIRED",
+          "reason": "States the turbine was taken offline after coolant pressure exceeded the emergency threshold, directly supporting child B.",
+          "required_for": [
+            "C4-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject, Turbine Array Rho-203, and the shutdown event is tied to a different unit.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-03-P06",
+          "gold_class": "REQUIRED",
+          "reason": "Emergency log directly notes a shutdown after a coolant-pressure excursion for Turbine Array Rho-204.",
+          "required_for": [
+            "C4-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong turbine and wrong subject; neighboring unit Rho-402 is not the target asset.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-03-P08",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Mentions pump-room pressure review after a shutdown at Rho-204, which is relevant but less direct than a formal shutdown report.",
+          "required_for": [
+            "C4-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-03-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong site and wrong scope; it describes a different facility with coolant-pressure anomalies.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-03-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Routine housekeeping record not probative for output level or emergency shutdown.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C4-03",
+      "category": "C4"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states the facility assessor certified Helix Archive Cluster K-77 for archival preservation.",
+          "required_for": [
+            "C4-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Directly states Helix Archive Cluster K-77 appears in the regional infrastructure directory with an active registration.",
+          "required_for": [
+            "C4-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P03",
+          "gold_class": "REQUIRED",
+          "reason": "Preservation audit memo explicitly says K-77 met the archival standards set by the facility assessor.",
+          "required_for": [
+            "C4-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P04",
+          "gold_class": "REQUIRED",
+          "reason": "Maintenance notice directly confirms K-77 remains in active registration in the regional infrastructure directory.",
+          "required_for": [
+            "C4-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Same subject but wrong assessor; it explicitly says certification was by a contractor assessor rather than the facility assessor.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-04-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject, K-99, while also asserting K-77 is unregistered, which conflicts with the target claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-04-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Neighboring archive cluster K-82 is a wrong-subject competitor and not the subject under consideration.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C4-04-P08",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Relevant to the registration claim because it says K-77 remains registered despite relocation review, but it is not a primary authority.",
+          "required_for": [
+            "C4-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P09",
+          "gold_class": "REQUIRED",
+          "reason": "The assessor's certification was renewed after follow-up, directly supporting the certification claim for K-77.",
+          "required_for": [
+            "C4-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C4-04-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Campus network map of archive wing and backup vault schedule is unrelated to the assessed certification or registration.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C4-04",
+      "category": "C4"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Lumen Transit Hub 19 received the official compliance declaration confirming compliance with the regional access standard.",
+          "required_for": [
+            "C5-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-01-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence of a service interruption at the target subject during the winter operating period.",
+          "required_for": [
+            "C5-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-01-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Harbor Line Gate 6 is not the target asset, though it resembles the same compliance declaration form.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-01-P04",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong asset; it mimics the interruption record but concerns North Quay Relay 3 instead of Lumen Transit Hub 19.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-01-P05",
+          "gold_class": "REDUNDANT",
+          "reason": "Semantically duplicates the compliance claim through a registry listing, so it is materially duplicative rather than independently required.",
+          "required_for": [
+            "C5-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-01-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in a compliance-register statement; the evidence is superficially similar but pertains to another installation.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-01-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent but non-required evidence that the target unit experienced a winter outage and resumed after a reset, supporting the interruption claim.",
+          "required_for": [
+            "C5-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-01-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "Operational performance measure unrelated to either compliance or winter service interruption.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-01-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Harbor Line Gate 6 is described as compliant, which may look relevant but does not establish the target asset's compliance.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-01-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Irrelevant bulletin about elevator access at a different facility and unrelated to the target claim.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C5-01",
+      "category": "C5"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Copper Finch Array 38 is entered in the coastal equipment ledger as an active installation.",
+          "required_for": [
+            "C5-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-02-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Copper Finch Array 38 produced a measured output above its operating baseline.",
+          "required_for": [
+            "C5-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-02-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Harbor Crest Array 12 is recorded in the ledger, not Copper Finch Array 38.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-02-P04",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in the same output form; it presents another installation's measured output above baseline.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-02-P05",
+          "gold_class": "REDUNDANT",
+          "reason": "A procurement memo similarly confirms registration in the coastal equipment ledger, making it duplicative of the direct registration evidence.",
+          "required_for": [
+            "C5-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-02-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject with a similar output claim; Sandbar Relay 9 is not the target asset.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-02-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent evidence that the target array operated above its expected baseline, supporting the measured output above baseline claim.",
+          "required_for": [
+            "C5-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-02-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong proposition: a maintenance status change at Cedar Loom Array 7 is not evidence about Copper Finch Array 38.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-02-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in the ledger-registration form; Hornbeam Array 11 is not the target installation.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-02-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Weather summary is unrelated to the equipment ledger registration or output claim.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C5-02",
+      "category": "C5"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record.",
+          "required_for": [
+            "C5-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-03-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Northstar Relay 62 triggered an alert during the spring test.",
+          "required_for": [
+            "C5-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-03-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Dune Lattice Relay 17 is assigned in the deployment record rather than Northstar Relay 62.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-03-P04",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in the alarm-log form; it concerns a different relay despite the same alert pattern.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-03-P05",
+          "gold_class": "REDUNDANT",
+          "reason": "Same underlying attribution claim in a ledger record, making it duplicative of the direct deployment-record evidence.",
+          "required_for": [
+            "C5-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-03-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong asset; the calibration report concerns Lantern Echo Unit 51, not Northstar Relay 62.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-03-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent attribution evidence from a launch summary for the same subject, supporting the Meridian Signal Group assignment.",
+          "required_for": [
+            "C5-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-03-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Pine Harbor Relay 9 is mentioned in a field note rather than Northstar Relay 62.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-03-P09",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Relevant supporting evidence of a measured voltage spike at the target unit during the spring test, which supports the alert event.",
+          "required_for": [
+            "C5-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-03-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Unrelated cafe bulletin with no bearing on deployment attribution or spring-test alerts.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C5-03",
+      "category": "C5"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Silver Morrow Unit 74 received a conformity declaration for its revised design.",
+          "required_for": [
+            "C5-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-04-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct evidence that Silver Morrow Unit 74 has a rated capacity exceeding the installation threshold.",
+          "required_for": [
+            "C5-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-04-P03",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Harbor Finch Unit 91 is described as receiving a conformity declaration rather than Silver Morrow Unit 74.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-04-P04",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in the capacity form; Harbor Finch Unit 91 is not the target unit.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-04-P05",
+          "gold_class": "REDUNDANT",
+          "reason": "The compliance register documents the same revised-design conformity declaration, duplicating direct evidence for the target unit.",
+          "required_for": [
+            "C5-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C5-04-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject; Eastmarsh Unit 17 is listed in a valid conformity declaration but not the target asset.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-04-P07",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent evidence from a procurement note that the unit's rated capacity is above the installation threshold, supporting the capacity claim.",
+          "required_for": [
+            "C5-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C5-04-P08",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject in the capacity-over-threshold form; Crescent Vale Unit 26 is not Silver Morrow Unit 74.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-04-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong entity; Graywater Unit 53 is reported as receiving a conformity declaration instead of the target unit.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C5-04-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Public notice about a school fundraiser is unrelated to design conformity or capacity thresholds.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C5-04",
+      "category": "C5"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-01-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct ledger record showing the subject is registered with the North Basin Operations Ledger.",
+          "required_for": [
+            "C6-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-01-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct commissioning notice establishing the subject entered service on 14 March 2024.",
+          "required_for": [
+            "C6-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-01-P03",
+          "gold_class": "REDUNDANT",
+          "reason": "Another direct registration entry for the same subject; materially duplicative of the required registration evidence.",
+          "required_for": [
+            "C6-01-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-01-P04",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent service-start evidence for the same subject, though less precise than the exact date record.",
+          "required_for": [
+            "C6-01-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-01-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong entity: Kestrel Array 39 is not the target subject and could be mistaken for the same claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-01-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and matching service date for a different installation, creating a misleading false positive.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-01-P07",
+          "gold_class": "DISTRACTOR",
+          "reason": "Unrelated later logistics movement for the same subject; not evidence of registration or service start.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-01-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "Document about archival scheduling, unrelated to the claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-01-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Different asset and registry, wrong subject and wrong evidentiary context.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-01-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Weather report near the area, unrelated to the subject or the two child propositions.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C6-01",
+      "category": "C6"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-02-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct inspection record naming the subject and the Westhaven Safety Office.",
+          "required_for": [
+            "C6-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-02-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct signed determination establishing the subject received a compliant rating during the relevant inspection.",
+          "required_for": [
+            "C6-02-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-02-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent registry-style evidence that the subject had a completed inspection entry with the office.",
+          "required_for": [
+            "C6-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-02-P04",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Maintenance log covering an inspection of the target subject, supporting the inspection fact.",
+          "required_for": [
+            "C6-02-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-02-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Oriole Signal Node 57 is not the target entity.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-02-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong entity-specific compliance determination.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-02-P07",
+          "gold_class": "DISTRACTOR",
+          "reason": "Signal strength reading is operational data, not evidence of inspection or compliance.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-02-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "Schedule bulletin about future inspections is unrelated to the specific completed inspection claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-02-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Different asset and different regulator; wrong subject, wrong office, and wrong governance context.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-02-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Logistics note about relocation after maintenance is irrelevant to inspection and compliance.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C6-02",
+      "category": "C6"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-03-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct municipal notice confirming the subject opened for public service on 2 June 2025.",
+          "required_for": [
+            "C6-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-03-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct platform inventory establishing the subject operates three passenger platforms.",
+          "required_for": [
+            "C6-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-03-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent opening evidence for the same subject, supporting the launch date with a different source form.",
+          "required_for": [
+            "C6-03-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-03-P04",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Current inventory record confirming three passenger platforms at the target subject.",
+          "required_for": [
+            "C6-03-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-03-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Juniper Transit Hub 72 is not the target facility.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-03-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and wrong facility-specific platform count.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-03-P07",
+          "gold_class": "DISTRACTOR",
+          "reason": "Later service event unrelated to the opening date or the platform count claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-03-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "Procedural report about platform numbering, not evidence of the subject's opening or platform count.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-03-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Different terminal and different platform configuration; wrong subject and wrong operational profile.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-03-P10",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Operational observation of three active boarding positions, providing corroborating evidence for the three-platform claim.",
+          "required_for": [
+            "C6-03-B"
+          ]
+        }
+      ],
+      "case_id": "C6-03",
+      "category": "C6"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-04-P01",
+          "gold_class": "REQUIRED",
+          "reason": "Direct calibration certificate establishing the subject was calibrated by Meridian Instruments.",
+          "required_for": [
+            "C6-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-04-P02",
+          "gold_class": "REQUIRED",
+          "reason": "Direct calibration worksheet showing the subject recorded a flow rate of 18.6 liters per minute.",
+          "required_for": [
+            "C6-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-04-P03",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent service report confirming completion of calibration for the target subject.",
+          "required_for": [
+            "C6-04-A"
+          ]
+        },
+        {
+          "candidate_id": "C6-04-P04",
+          "gold_class": "USEFUL_DISTINCT",
+          "reason": "Independent instrument log corroborating the 18.6 liters per minute rate during the calibration check.",
+          "required_for": [
+            "C6-04-B"
+          ]
+        },
+        {
+          "candidate_id": "C6-04-P05",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject: Solace Water Monitor 85 is not the target instrument.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-04-P06",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Wrong subject and misattributed measurement for a different monitor.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-04-P07",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Same subject but wrong evidentiary state: a shipment for recalibration suggests the calibration was not complete, contradicting the claim.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-04-P08",
+          "gold_class": "DISTRACTOR",
+          "reason": "Procedural handbook on flow sensor checks is generic and does not establish calibration or measured rate.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-04-P09",
+          "gold_class": "UNSAFE_OR_MISLEADING",
+          "reason": "Different gauge with a different measurement, creating a misleading wrong-subject/wrong-value match.",
+          "required_for": []
+        },
+        {
+          "candidate_id": "C6-04-P10",
+          "gold_class": "DISTRACTOR",
+          "reason": "Service ticket about an intake seal replacement is unrelated to calibration status or measured flow rate.",
+          "required_for": []
+        }
+      ],
+      "case_id": "C6-04",
+      "category": "C6"
+    }
+  ],
+  "classification": "SEALED_FRESH_CONTEXT_FREE_GOLD",
+  "gold_sha256": "338f45124d0106355e33dd1d003cd840cbd600e854ea5ac60203e8865f62167e",
+  "schema": "eb-composite-obligation-rc1-gold",
+  "source_fresh_input_sha256": "da553e3081afdd403dfb4cab24e3a37399baced017b14576b1605714b676307a"
+}
