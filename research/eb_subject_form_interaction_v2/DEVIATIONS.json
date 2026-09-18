@@ -1,0 +1,16 @@
+{
+  "schema": "eb-subject-form-interaction-v2-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_B023_PRE_INPUT",
+      "workflow_run_id": 35349811229,
+      "classification": "MECHANICAL_PRE_INPUT_STATIC_INVALID",
+      "observed": "Ruff B023: local score helper closed over loop variable child.",
+      "frozen_v1_artifact_fetched": false,
+      "v2_selection_started": false,
+      "evaluation_started": false,
+      "scientific_effect": false,
+      "correction": "Bind child as a keyword-only default in the local score helper. No arm, cap, descriptor, candidate, or evaluation logic changed."
+    }
+  ]
+}
