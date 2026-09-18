@@ -1,0 +1,75 @@
+{
+  "schema": "eb-gate-informed-requirements-design-sketch-v0",
+  "classification": "NON_EXECUTABLE_DESIGN_EXAMPLE",
+  "gate_hint": {
+    "proposition_id": "example-proposition",
+    "upstream_field_id": "claim.expected_evidence_shape",
+    "authority_status": "QUALIFIED_HINT",
+    "qualification_ref": "example-only",
+    "value": {
+      "op": "all_of",
+      "items": [
+        {
+          "op": "any_of",
+          "items": [
+            {
+              "op": "form",
+              "form": "measurement"
+            },
+            {
+              "op": "form",
+              "form": "document_text"
+            }
+          ]
+        },
+        {
+          "op": "optional",
+          "item": {
+            "op": "form",
+            "form": "authoritative_declaration"
+          }
+        }
+      ]
+    }
+  },
+  "eb_compiled_plan": {
+    "required_targets": [
+      {
+        "target_id": "target-1",
+        "mode": "any_of",
+        "forms": [
+          "measurement",
+          "document_text"
+        ]
+      }
+    ],
+    "optional_targets": [
+      {
+        "target_id": "optional-1",
+        "forms": [
+          "authoritative_declaration"
+        ]
+      }
+    ],
+    "unresolved_targets": [],
+    "causal_owner": "Evidence Bundler"
+  },
+  "prohibited_upstream_fields": [
+    "query",
+    "query_terms",
+    "source_id_to_search",
+    "source_domain",
+    "passage_id",
+    "rank_weight",
+    "retained_k",
+    "admission",
+    "supports_refutes",
+    "decision",
+    "authorization"
+  ],
+  "nonclaims": [
+    "evidence-form coverage is not evidence sufficiency",
+    "this sketch grants no upstream field retrieval authority",
+    "this sketch is not a schema or implementation contract"
+  ]
+}
