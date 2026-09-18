@@ -1,0 +1,10 @@
+{
+  "evaluation_internal_sha256": "716cd36979316263ba121d3f08317557f596c8347acdcb314e62b9cea3750084",
+  "evaluation_sha256": "deefdcc57bdc6e78e3e5c54b58ba4322c368cbfc9d5890c60ba5b97ca9eadb88",
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-composite-obligation-targeted-stress-v1-receipt",
+  "selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+  "status": "EXPOSED_TARGETED_STRESS_COMPLETE",
+  "study_head": "392a9c713558a6952947a3e4074be3957c648021"
+}
