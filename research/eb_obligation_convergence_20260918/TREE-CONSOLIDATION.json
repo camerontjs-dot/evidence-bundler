@@ -1,0 +1,87 @@
+{
+  "schema": "eb-obligation-research-tree-consolidation-20260918",
+  "status": "CONSOLIDATED",
+  "convergence_pr": 119,
+  "terminal_disposition": "SUPPORTED_SUBJECT_ONLY; COMBINED_FORM_INCREMENT_NOT_REPRODUCED",
+  "untouched_baseline": {
+    "pr": 79,
+    "reason": "EB V1 integration baseline; outside this research-cycle cleanup"
+  },
+  "closed_completed_predecessors": {
+    "issue": [
+      80,
+      91
+    ],
+    "pull_requests": [
+      82,
+      84,
+      85,
+      87,
+      88,
+      89,
+      90,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ]
+  },
+  "preserved_refs_policy": {
+    "branches_deleted": false,
+    "commits_rewritten": false,
+    "artifacts_discarded": false,
+    "meaning_of_closed": "completed or superseded as active research thread; evidence remains authoritative at its exact ref"
+  },
+  "final_fresh_result": {
+    "selection_commit": "c21de9878327d4a0db3211eeeb008a9e09a30a00",
+    "result_commit": "e36a786ececc8f9f54607813b2212bdbc3581836",
+    "result_tree": "5a9a53676720a63835ad51504bdcd6c4f79b055d",
+    "workflow_run": 35361473380,
+    "artifact_id": 10553579903,
+    "artifact_digest": "sha256:4f1cb8a2d67616b7ea752e46143cb82bc62b8c84b904849eb0929b805166573c"
+  },
+  "next_cycle_boundary": {
+    "mechanism_work_stopped": true,
+    "supported_next_candidate": [
+      "semantic_top3",
+      "child_coverage",
+      "exact_claim_native_subject_identity"
+    ],
+    "expected_evidence_form_causal_stage": false,
+    "subject_producer_qualified": false,
+    "subject_only_successor_frozen": false
+  },
+  "intentionally_open_outside_cycle": [
+    {
+      "pr": 79,
+      "reason": "EB V1 integration baseline"
+    },
+    {
+      "pr": 86,
+      "reason": "separate provenance-architecture documentation pointer"
+    }
+  ]
+}
