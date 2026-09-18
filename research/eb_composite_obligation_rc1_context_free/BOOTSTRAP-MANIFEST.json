@@ -1,47 +1,97 @@
 {
-  "schema": "eb-composite-obligation-rc1-context-free-bootstrap-v0",
+  "schema": "eb-composite-obligation-rc1-context-free-bootstrap-v1",
   "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
-  "status": "READY_FOR_CONTEXT_FREE_AUTHORING",
-  "objective": "Author and freeze a fresh composite all_of challenge that discriminates child coverage, claim-native subject binding, scope binding, and expected evidence form without exposing development outcomes or post-reveal selection rules.",
+  "status": "READY_FOR_ISOLATED_AUTHORING_LAUNCH",
+  "objective": "Create and seal a fresh fixed-pool qualification cohort for an Evidence Bundler obligation selector using only composition identity, claim-native subject identity, and mechanically derived expected evidence forms. Do not expose selector implementation, development results, arm ordering, or expected winner before prereveal freeze.",
   "repository": "camerontjs-dot/evidence-bundler",
   "bootstrap_base": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
   "bootstrap_branch": "research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918",
-  "prereveal_allowed_knowledge": [
-    "Each fresh parent has exactly two declared child propositions under all_of.",
-    "Evidence-obligation descriptors may copy exact subject/scope terms from the parent or child and may include a separately frozen experimental expected-evidence-form label.",
-    "The cohort must contain same-topic wrong-entity, wrong-scope, and wrong-form hard negatives.",
-    "Gold usefulness must not be defined by descriptor match.",
-    "Post-reveal selection budget is bounded and identical across arms."
+  "isolation_surface": {
+    "provider": "GitHub Models via actions/ai-inference",
+    "model": "openai/gpt-4o",
+    "github_mcp_enabled": false,
+    "rule": "Each model invocation receives only explicitly supplied prereveal files/variables. It has no GitHub MCP access and no conversation-memory context."
+  },
+  "claim_profile_authority": {
+    "repository": "camerontjs-dot/proposition-authoring",
+    "commit": "e29a165b682d060f5dc2a0f3c7d64a7f29b172b4",
+    "interface": "build_claim_profile(AuthoringRequest)",
+    "purpose": "derive expected_evidence_forms mechanically after claims freeze and before corpus authoring"
+  },
+  "frozen_semantic_scorer": {
+    "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "transform": "sigmoid of one-logit cross-encoder output",
+    "max_length": 512
+  },
+  "prereveal_allowed_files": [
+    "BOOTSTRAP-MANIFEST.json",
+    "FRESH-COHORT-CONTRACT.md",
+    "PRE-REVEAL-TASK.md",
+    "EVALUATION-CONTRACT.md",
+    "authoring prompt files and target-agnostic apparatus committed on this bootstrap branch",
+    "proposition-authoring exact claim-profile authority named above"
   ],
   "prereveal_denylist": [
-    "PR #109 and PR #110 bodies, diffs, comments, artifacts, checks, result branches, or source files",
+    "PRs #109 through #116 bodies, comments, diffs, checks, artifacts, result branches, or source not explicitly allowlisted",
     "research/eb_composite_evidence_obligations_dev_v0/**",
-    "all Gate-specialty development/result PRs #95 through #108 and their answer-bearing artifacts",
-    "normal conversation or saved summaries describing which descriptor fields helped or failed",
-    "post-reveal selector implementation, cap choice, arm bindings, or expected winner"
+    "research/eb_composite_obligation_targeted_stress_v1/**",
+    "research/eb_subject_form_interaction_v2/**",
+    "research/eb_obligation_selector_rc1/**",
+    "research/eb-obligation-selector-rc1-* branches",
+    "Gate-specialty development/result branches and PRs #95 through #108",
+    "normal CAL Pipeline conversation history, saved summaries, project memory, or other answer-bearing development summaries",
+    "post-reveal arm mapping, selector stage order, semantic-loss cap, or expected winner"
+  ],
+  "prereveal_allowed_knowledge": [
+    "The scientific factors under study are parent/child composition, exact claim-native subject identity, and expected evidence form.",
+    "Subject values must be exact substrings of the frozen parent or child claim and may not come from evidence.",
+    "Expected evidence forms are derived mechanically from the exact frozen Claim Profile implementation, not authored from corpus evidence.",
+    "The study is a fixed-pool post-retrieval selector qualification and makes no first-stage retrieval claim.",
+    "Correct and wrong/mixed controls will be executed after reveal, but the authoring lane does not know the implementation or arm ordering."
   ],
   "required_freeze_order": [
-    "author fresh parent claims",
-    "author and freeze exactly two meaning-preserving child propositions per parent with explicit all_of lineage",
-    "derive and freeze claim-native obligation descriptors before corpus authoring",
-    "author fresh corpora and intended-form metadata",
-    "freeze corpus bytes",
-    "run frozen retrieval and freeze candidate pools/scores",
-    "adjudicate candidate-level gold independently of descriptor match",
-    "freeze gold",
-    "freeze evaluator and eligibility report",
-    "commit prereveal information-aperture receipt"
+    "author 24 fresh parent claims and exactly two meaning-preserving all_of child propositions per parent",
+    "freeze claims and claim-native subject bindings",
+    "derive and freeze expected_evidence_forms mechanically from exact Claim Profile authority",
+    "author fresh 10-candidate pools using frozen claims/descriptors",
+    "freeze candidate text and construction metadata",
+    "compute and freeze exact semantic scores for both children",
+    "produce fresh-input base without gold",
+    "adjudicate candidate gold from sanitized claim+candidate inputs without descriptor metadata",
+    "freeze sealed gold",
+    "return to fresh-input base and commit READY_FOR_REVEAL receipt referencing sealed-gold identities"
   ],
-  "terminal_states": [
+  "required_outputs": [
+    "24 fresh parents / 48 children balanced across six categories",
+    "CLAIMS.json",
+    "CLAIMS-AND-DESCRIPTORS.json",
+    "CORPUS.json",
+    "FRESH-INPUT.json with frozen semantic scores and no gold",
+    "GOLD.json on sealed-gold ref only",
+    "EVALUATOR.py and evaluator contract",
+    "ELIGIBILITY.json",
+    "SOURCE-ACCESS.json",
+    "READY-FOR-REVEAL.json"
+  ],
+  "final_refs": {
+    "fresh_input": "research/eb-composite-obligation-rc1-fresh-input-final-20260918",
+    "sealed_gold": "research/eb-composite-obligation-rc1-sealed-gold-final-20260918",
+    "claims_freeze": "research/eb-composite-obligation-rc1-claims-freeze-20260918",
+    "descriptors_freeze": "research/eb-composite-obligation-rc1-descriptors-freeze-20260918",
+    "corpus_freeze": "research/eb-composite-obligation-rc1-corpus-freeze-20260918"
+  },
+  "contamination_rule": "If any denylisted target/development material is supplied to or opened by the isolated authoring/evaluation lane before READY_FOR_REVEAL, terminate as CONTAMINATED_PRE_FREEZE and preserve the run.",
+  "allowed_terminal_states": [
     "READY_FOR_REVEAL",
     "BLOCKED_APPARATUS",
+    "BLOCKED_COHORT",
     "CONTAMINATED_PRE_FREEZE"
   ],
-  "contamination_rule": "Any denylisted development result or post-reveal selector information opened before the prereveal freeze terminates the run as CONTAMINATED_PRE_FREEZE.",
   "nonclaims": [
-    "This bootstrap does not establish that subject, scope, form, or child coverage helps.",
-    "Claim-native identifiers are scope bindings, not answer labels.",
-    "Expected evidence form remains an experimental research field unless separately qualified.",
-    "READY_FOR_REVEAL authorizes only blinded execution."
+    "This bootstrap does not qualify or promote any selector.",
+    "The fresh study qualifies post-retrieval selection only, not first-stage retrieval.",
+    "An explicit subject binding used by EB does not itself qualify the upstream subject extractor/producer.",
+    "READY_FOR_REVEAL authorizes blind execution only."
   ]
 }
