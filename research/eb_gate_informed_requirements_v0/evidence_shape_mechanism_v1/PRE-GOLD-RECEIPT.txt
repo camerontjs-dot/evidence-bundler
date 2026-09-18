@@ -1,0 +1,3 @@
+study_head=f8aeecc17582f07b9e30f4da49b72916a6994b1b
+study_tree=fa879d7d371bd0b557a46920e2fc250b99d041bf
+gold_opened=false
