@@ -1,0 +1,3 @@
+study_head=19d2d3a253a817732f619ef6ee6bc8a3902698ff
+source_selection_sha256=095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4
+gold_opened=false
