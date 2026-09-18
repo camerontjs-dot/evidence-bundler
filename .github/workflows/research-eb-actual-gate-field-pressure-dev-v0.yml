@@ -1,0 +1,194 @@
+name: Research - EB Actual Gate Field Pressure Dev V0
+
+on:
+  push:
+    branches:
+      - research/eb-gate-field-pressure-dev-v0-20260917
+    paths:
+      - research/eb_gate_informed_requirements_v0/ACTUAL-FIELD-PRESSURE-LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  STUDY: research/eb_gate_informed_requirements_v0
+  PROP_SHA: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+  COHORT_SHA: a15a336e61f99b97fb9ea284761e1952fc1289cf
+  GOLD_SHA: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+  PRE_GOLD_BRANCH: research/eb-gate-field-pressure-dev-v0-selections-20260917
+  RESULT_BRANCH: research/eb-gate-field-pressure-dev-v0-result-20260917
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout study apparatus
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - name: Checkout exact Proposition Authoring subject
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/proposition-authoring
+          ref: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+          path: proposition-authoring
+          fetch-depth: 1
+
+      - name: Checkout exact exposed RC1 nongold cohort
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: a15a336e61f99b97fb9ea284761e1952fc1289cf
+          path: cohort
+          fetch-depth: 1
+
+      - name: Verify exact identities and nongold input hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C proposition-authoring rev-parse HEAD)" = "$PROP_SHA"
+          test "$(git -C cohort rev-parse HEAD)" = "$COHORT_SHA"
+          base=cohort/research/eb_typed_selector_rc1_successor
+          test "$(sha256sum "$base/FROZEN_CLAIMS_PROFILES.json" | awk '{print $1}')" = "0e142d3bace270f9c7d45c7c35f3b1e17ab06156ed936681c98ccdaf39f6e15d"
+          test "$(sha256sum "$base/SOURCE_FIXTURES_V2.json" | awk '{print $1}')" = "943a68853863b1479fb1a9621fca1075ba832fe6fb77bdc2d9084f84013d8e4c"
+          test "$(sha256sum "$base/AUTHORITATIVE_CANDIDATE_POOLS.json" | awk '{print $1}')" = "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6"
+          test ! -e cohort/research/eb_typed_selector_rc1_successor/GOLD.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install exact study runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ./proposition-authoring
+          python -m pip install "torch==2.14.0" "transformers==5.17.0" "tokenizers==0.23.2" "huggingface_hub==1.3.1" "ruff>=0.15,<1"
+
+      - name: Static quality controls
+        run: |
+          python -m ruff check \
+            study/$STUDY/shadow_carrier.py \
+            study/$STUDY/run_actual_gate_field_pressure.py \
+            study/$STUDY/evaluate_actual_gate_field_pressure.py
+          python -m py_compile \
+            study/$STUDY/shadow_carrier.py \
+            study/$STUDY/run_actual_gate_field_pressure.py \
+            study/$STUDY/evaluate_actual_gate_field_pressure.py
+
+      - name: Run actual Gate representation and selection pressure without gold
+        env:
+          PYTHONPATH: study/research/eb_gate_informed_requirements_v0
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          base=cohort/research/eb_typed_selector_rc1_successor
+          python study/$STUDY/run_actual_gate_field_pressure.py \
+            --claims "$base/FROZEN_CLAIMS_PROFILES.json" \
+            --sources "$base/SOURCE_FIXTURES_V2.json" \
+            --pools "$base/AUTHORITATIVE_CANDIDATE_POOLS.json" \
+            --registry "study/$STUDY/SHADOW-FIELD-REGISTRY.json" \
+            --out out/SELECTIONS-PRE-GOLD.json
+
+      - name: Freeze pre-gold selection output
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$PRE_GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "pre-gold result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$PRE_GOLD_BRANCH"
+          dest=study/$STUDY/actual_field_pressure
+          mkdir -p "$dest"
+          cp out/SELECTIONS-PRE-GOLD.json "$dest/"
+          {
+            echo "study_head=$(git -C study rev-parse HEAD)"
+            echo "study_tree=$(git -C study rev-parse HEAD^{tree})"
+            echo "proposition_authoring=$PROP_SHA"
+            echo "cohort=$COHORT_SHA"
+            echo "gold_opened=false"
+          } > "$dest/PRE-GOLD-RECEIPT.txt"
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study add research/eb_gate_informed_requirements_v0/actual_field_pressure
+          git -C study commit -m "Research: freeze actual Gate field selections before gold"
+          git -C study push origin "HEAD:refs/heads/$PRE_GOLD_BRANCH"
+
+      - name: Reveal exact exposed development gold
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+          path: gold
+          fetch-depth: 1
+
+      - name: Verify gold identity
+        run: |
+          set -euo pipefail
+          test "$(git -C gold rev-parse HEAD)" = "$GOLD_SHA"
+          file=gold/research/eb_typed_selector_rc1_successor/GOLD.json
+          test "$(sha256sum "$file" | awk '{print $1}')" = "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592"
+
+      - name: Evaluate all control and Gate-informed arms
+        run: |
+          python study/$STUDY/evaluate_actual_gate_field_pressure.py \
+            --selections out/SELECTIONS-PRE-GOLD.json \
+            --gold gold/research/eb_typed_selector_rc1_successor/GOLD.json \
+            --out out/EVALUATION.json
+
+      - name: Create final receipt
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+
+          def sha(p):
+              return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+          sel=json.loads(Path("out/SELECTIONS-PRE-GOLD.json").read_text())
+          ev=json.loads(Path("out/EVALUATION.json").read_text())
+          receipt={
+              "schema":"eb-actual-gate-field-pressure-dev-receipt-v0",
+              "status":"DEVELOPMENT_PRESSURE_COMPLETE",
+              "study_subject":subprocess.check_output(["git","-C","study","rev-parse","HEAD"],text=True).strip(),
+              "proposition_authoring_subject":"e29a165b682d060f5dc2a0f3c7d64a7f29b172b4",
+              "cohort_subject":"a15a336e61f99b97fb9ea284761e1952fc1289cf",
+              "gold_subject":"cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+              "selection_sha256":sha("out/SELECTIONS-PRE-GOLD.json"),
+              "evaluation_sha256":sha("out/EVALUATION.json"),
+              "baseline_arm":"baseline_no_gates_semantic_top3",
+              "placebo_equal":ev["placebo_control"]["exact_metrics_equal"],
+              "selection_arm_count":len(sel["selections"]),
+              "registry_field_count":sel["representation_summary"]["field_count"],
+              "fresh_qualification":False,
+              "production_authority":False,
+          }
+          Path("out/RECEIPT.json").write_text(json.dumps(receipt,indent=2,sort_keys=True)+"\n")
+          PY
+
+      - name: Upload full study artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-actual-gate-field-pressure-dev-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+
+      - name: Freeze final development result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "final result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$RESULT_BRANCH"
+          dest=study/$STUDY/actual_field_pressure_result
+          mkdir -p "$dest"
+          cp out/SELECTIONS-PRE-GOLD.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C study add research/eb_gate_informed_requirements_v0/actual_field_pressure_result
+          git -C study commit -m "Research: freeze actual Gate field pressure development result"
+          git -C study push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
