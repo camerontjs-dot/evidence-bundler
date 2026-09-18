@@ -1,0 +1,20 @@
+{
+  "schema": "eb-composite-obligation-rc1-context-free-launch",
+  "status": "AUTHORIZED_ISOLATED_AUTHORING",
+  "pr": 111,
+  "population": {
+    "parents": 24,
+    "children": 48,
+    "categories": 6,
+    "parents_per_category": 4,
+    "candidates_per_parent": 10
+  },
+  "isolation_provider": "GitHub Models via actions/ai-inference@v2.1.1",
+  "isolation_model": "openai/gpt-4o",
+  "github_mcp_enabled": false,
+  "target_identity_withheld_prereveal": true,
+  "candidate_frozen_before_launch": true,
+  "candidate_frozen_commit": "df6e0af3732fc08e9db330741b9b99113247a40c",
+  "candidate_selector_sha256": "31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f",
+  "note": "Target identity is recorded for governance but target bytes, stage order, cap, development results, and expected winner are not supplied to any prereveal model invocation."
+}
