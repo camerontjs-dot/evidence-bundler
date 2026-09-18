@@ -1,0 +1,16 @@
+{
+  "schema": "eb-evidence-shape-mechanism-pressure-v1-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_STATIC_ONLY",
+      "workflow_run_id": 35298341233,
+      "classification": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+      "observed": "Ruff rejected three unused imports and one missing defaultdict import before mechanism selection.",
+      "mechanism_selection_started": false,
+      "pre_gold_selection_frozen": false,
+      "gold_opened": false,
+      "scientific_effect": false,
+      "correction": "Removed unused imports and added defaultdict import only. No mechanism, control, cap, classifier, or evaluator logic changed."
+    }
+  ]
+}
