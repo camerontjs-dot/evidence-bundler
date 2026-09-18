@@ -1,0 +1,4384 @@
+{
+  "classification": "EXPOSED_DEVELOPMENT_MECHANISM_DIAGNOSTIC",
+  "controls": {
+    "bm25_no_gates": {
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 16,
+      "coverage_total": 27,
+      "deep_useful_rescue": 0,
+      "nonuseful": 68,
+      "ordinary_easy_coverage": 2,
+      "redundant": 1,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5365853658536586,
+      "useful_retained": 22
+    },
+    "gate_present_ignored": {
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    "placebo_exact_equal": true,
+    "semantic_no_gates": {
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    }
+  },
+  "evaluation_sha256": "ddd2b03fd51522a649b98f2b72daaba22a6ffbc2bf137baead766d89a075205c",
+  "expected_form_distribution": {
+    "[\"authoritative_declaration\",\"database_record\",\"document_text\",\"measurement\",\"registry_entry\"]": 2,
+    "[\"authoritative_declaration\",\"document_text\",\"measurement\"]": 2,
+    "[\"authoritative_declaration\",\"document_text\"]": 2,
+    "[\"document_text\",\"event_record\",\"measurement\"]": 2,
+    "[\"document_text\",\"measurement\"]": 22
+  },
+  "family_summaries": {
+    "gate_anyof_loose": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "best_correct_vs_shuffled_unsafe": 0,
+      "best_correct_vs_shuffled_useful_recall": 0.0,
+      "max_changed_lanes": 0,
+      "screens": [
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_anyof_strict": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "best_correct_vs_shuffled_unsafe": 0,
+      "best_correct_vs_shuffled_useful_recall": 0.0,
+      "max_changed_lanes": 0,
+      "screens": [
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_fraction_loose": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 63,
+      "best_correct_unsafe": 58,
+      "best_correct_useful_recall": 0.6585365853658537,
+      "best_correct_vs_shuffled_unsafe": -6,
+      "best_correct_vs_shuffled_useful_recall": 0.09756097560975607,
+      "max_changed_lanes": 5,
+      "screens": [
+        "CORRECT_SIGNAL_BEATS_SHUFFLED",
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_fraction_loose_then_negation": {
+      "best_correct_coverage": 22,
+      "best_correct_nonuseful": 62,
+      "best_correct_unsafe": 60,
+      "best_correct_useful_recall": 0.6829268292682927,
+      "best_correct_vs_shuffled_unsafe": -4,
+      "best_correct_vs_shuffled_useful_recall": 0.12195121951219512,
+      "max_changed_lanes": 10,
+      "screens": [
+        "CORRECT_SIGNAL_BEATS_SHUFFLED",
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_fraction_strict": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 64,
+      "best_correct_unsafe": 59,
+      "best_correct_useful_recall": 0.6341463414634146,
+      "best_correct_vs_shuffled_unsafe": -3,
+      "best_correct_vs_shuffled_useful_recall": 0.04878048780487809,
+      "max_changed_lanes": 14,
+      "screens": [
+        "HARMFUL_PRIMARY",
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_set_coverage_loose": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 63,
+      "best_correct_unsafe": 58,
+      "best_correct_useful_recall": 0.6585365853658537,
+      "best_correct_vs_shuffled_unsafe": -5,
+      "best_correct_vs_shuffled_useful_recall": 0.07317073170731714,
+      "max_changed_lanes": 5,
+      "screens": [
+        "CORRECT_SIGNAL_BEATS_SHUFFLED",
+        "NO_DISCRIMINATION"
+      ]
+    },
+    "gate_set_coverage_strict": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 64,
+      "best_correct_unsafe": 60,
+      "best_correct_useful_recall": 0.6341463414634146,
+      "best_correct_vs_shuffled_unsafe": -2,
+      "best_correct_vs_shuffled_useful_recall": 0.024390243902439046,
+      "max_changed_lanes": 8,
+      "screens": [
+        "CORRECT_SIGNAL_BEATS_SHUFFLED",
+        "NO_DISCRIMINATION"
+      ]
+    }
+  },
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "generic_results": [
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.005",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.010",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.020",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.050",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.005",
+      "changed_lanes": 4,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.010",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.020",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.050",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.005",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -4,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.010",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.020",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.050",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_strict_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_form_diversity_strict_cap_0.005",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_diversity_strict_cap_0.010",
+      "changed_lanes": 11,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_diversity_strict_cap_0.020",
+      "changed_lanes": 11,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_diversity_strict_cap_0.050",
+      "changed_lanes": 11,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.005",
+      "changed_lanes": 11,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -4,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.010",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.020",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.050",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_strict_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_form_richness_strict_cap_0.005",
+      "changed_lanes": 14,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 2,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_richness_strict_cap_0.010",
+      "changed_lanes": 15,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 2,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_richness_strict_cap_0.020",
+      "changed_lanes": 16,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 2,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_form_richness_strict_cap_0.050",
+      "changed_lanes": 16,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 4,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 2,
+        "nonuseful": -1,
+        "unsafe": -3,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "generic_source_diversity_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_source_diversity_cap_0.005",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_source_diversity_cap_0.010",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_source_diversity_cap_0.020",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "generic_source_diversity_cap_0.050",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    }
+  ],
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "nonclaims": [
+    "exposed development evidence only",
+    "mechanism results do not qualify any Gate field or EB behavior",
+    "first-stage retrieval is unchanged",
+    "fresh independent reproduction is required for any surviving mechanism"
+  ],
+  "pair_results": [
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_loose_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_loose",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_loose_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_loose_correct_cap_0.005",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_loose",
+      "loss_cap": 0.005,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_loose_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_loose_correct_cap_0.010",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_loose",
+      "loss_cap": 0.01,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_loose_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_loose_correct_cap_0.020",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_loose",
+      "loss_cap": 0.02,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_loose_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_loose_correct_cap_0.050",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_loose",
+      "loss_cap": 0.05,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_loose_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_strict_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_strict",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_strict_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_strict_correct_cap_0.005",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_strict",
+      "loss_cap": 0.005,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_strict_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_strict_correct_cap_0.010",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_strict",
+      "loss_cap": 0.01,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_strict_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_strict_correct_cap_0.020",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_strict",
+      "loss_cap": 0.02,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_strict_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_anyof_strict_correct_cap_0.050",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_anyof_strict",
+      "loss_cap": 0.05,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_anyof_strict_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_fraction_loose_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_fraction_loose",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_loose_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_fraction_loose_correct_cap_0.005",
+      "correct_changed_lanes": 4,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731703
+      },
+      "family": "gate_fraction_loose",
+      "loss_cap": 0.005,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_fraction_loose_correct_cap_0.010",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "gate_fraction_loose",
+      "loss_cap": 0.01,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_fraction_loose_correct_cap_0.020",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "gate_fraction_loose",
+      "loss_cap": 0.02,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_fraction_loose_correct_cap_0.050",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "gate_fraction_loose",
+      "loss_cap": 0.05,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_fraction_loose_then_negation_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_fraction_loose_then_negation",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_loose_then_negation_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_fraction_loose_then_negation_correct_cap_0.005",
+      "correct_changed_lanes": 9,
+      "correct_vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -1,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 3,
+        "deep_useful_rescue": 2,
+        "nonuseful": -4,
+        "unsafe": -4,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "gate_fraction_loose_then_negation",
+      "loss_cap": 0.005,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 65,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_then_negation_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 11,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 3,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "correct_arm": "gate_fraction_loose_then_negation_correct_cap_0.010",
+      "correct_changed_lanes": 10,
+      "correct_vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      },
+      "correct_vs_shuffled": {
+        "coverage": 3,
+        "deep_useful_rescue": 3,
+        "nonuseful": -5,
+        "unsafe": -4,
+        "useful_recall": 0.12195121951219512
+      },
+      "family": "gate_fraction_loose_then_negation",
+      "loss_cap": 0.01,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_then_negation_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "correct_arm": "gate_fraction_loose_then_negation_correct_cap_0.020",
+      "correct_changed_lanes": 10,
+      "correct_vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      },
+      "correct_vs_shuffled": {
+        "coverage": 3,
+        "deep_useful_rescue": 3,
+        "nonuseful": -5,
+        "unsafe": -4,
+        "useful_recall": 0.12195121951219512
+      },
+      "family": "gate_fraction_loose_then_negation",
+      "loss_cap": 0.02,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_then_negation_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "correct_arm": "gate_fraction_loose_then_negation_correct_cap_0.050",
+      "correct_changed_lanes": 10,
+      "correct_vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      },
+      "correct_vs_shuffled": {
+        "coverage": 3,
+        "deep_useful_rescue": 3,
+        "nonuseful": -5,
+        "unsafe": -4,
+        "useful_recall": 0.12195121951219512
+      },
+      "family": "gate_fraction_loose_then_negation",
+      "loss_cap": 0.05,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "gate_fraction_loose_then_negation_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 0,
+        "nonuseful": 1,
+        "unsafe": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_fraction_strict_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_fraction_strict",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_strict_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_fraction_strict_correct_cap_0.005",
+      "correct_changed_lanes": 13,
+      "correct_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "family": "gate_fraction_strict",
+      "loss_cap": 0.005,
+      "screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_strict_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 11,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 1,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_fraction_strict_correct_cap_0.010",
+      "correct_changed_lanes": 13,
+      "correct_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "family": "gate_fraction_strict",
+      "loss_cap": 0.01,
+      "screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_strict_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 11,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 1,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_fraction_strict_correct_cap_0.020",
+      "correct_changed_lanes": 14,
+      "correct_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "family": "gate_fraction_strict",
+      "loss_cap": 0.02,
+      "screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_strict_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 1,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_fraction_strict_correct_cap_0.050",
+      "correct_changed_lanes": 14,
+      "correct_vs_semantic": {
+        "coverage": -1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 1,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "family": "gate_fraction_strict",
+      "loss_cap": 0.05,
+      "screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 19,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_fraction_strict_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_semantic": {
+        "coverage": -2,
+        "deep_useful_rescue": 1,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_set_coverage_loose_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_set_coverage_loose",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_loose_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_set_coverage_loose_correct_cap_0.005",
+      "correct_changed_lanes": 4,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -4,
+        "useful_recall": 0.04878048780487809
+      },
+      "family": "gate_set_coverage_loose",
+      "loss_cap": 0.005,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_loose_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_set_coverage_loose_correct_cap_0.010",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      },
+      "family": "gate_set_coverage_loose",
+      "loss_cap": 0.01,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_loose_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_set_coverage_loose_correct_cap_0.020",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      },
+      "family": "gate_set_coverage_loose",
+      "loss_cap": 0.02,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_loose_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "gate_set_coverage_loose_correct_cap_0.050",
+      "correct_changed_lanes": 5,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      },
+      "family": "gate_set_coverage_loose",
+      "loss_cap": 0.05,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_loose_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "gate_set_coverage_strict_correct_cap_0.000",
+      "correct_changed_lanes": 0,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      },
+      "family": "gate_set_coverage_strict",
+      "loss_cap": 0.0,
+      "screen": "NO_DISCRIMINATION",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "gate_set_coverage_strict_shuffled_cap_0.000",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_set_coverage_strict_correct_cap_0.005",
+      "correct_changed_lanes": 8,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -2,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "gate_set_coverage_strict",
+      "loss_cap": 0.005,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "gate_set_coverage_strict_shuffled_cap_0.005",
+      "shuffled_changed_lanes": 5,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_set_coverage_strict_correct_cap_0.010",
+      "correct_changed_lanes": 8,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -2,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "gate_set_coverage_strict",
+      "loss_cap": 0.01,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "gate_set_coverage_strict_shuffled_cap_0.010",
+      "shuffled_changed_lanes": 5,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_set_coverage_strict_correct_cap_0.020",
+      "correct_changed_lanes": 8,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -2,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "gate_set_coverage_strict",
+      "loss_cap": 0.02,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "gate_set_coverage_strict_shuffled_cap_0.020",
+      "shuffled_changed_lanes": 5,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "correct_arm": "gate_set_coverage_strict_correct_cap_0.050",
+      "correct_changed_lanes": 8,
+      "correct_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      },
+      "correct_vs_shuffled": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": -2,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "gate_set_coverage_strict",
+      "loss_cap": 0.05,
+      "screen": "CORRECT_SIGNAL_BEATS_SHUFFLED",
+      "shuffled": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "gate_set_coverage_strict_shuffled_cap_0.050",
+      "shuffled_changed_lanes": 5,
+      "shuffled_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    }
+  ],
+  "prior_evidence_shape_reproduction": {
+    "arm": "gate_fraction_loose_correct_cap_0.020",
+    "metrics": {
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    "pass": true
+  },
+  "schema": "eb-evidence-shape-mechanism-pressure-v1-evaluation",
+  "selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "top_arms": [
+    {
+      "arm": "gate_fraction_loose_then_negation_correct_cap_0.010",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_negation_correct_cap_0.020",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_negation_correct_cap_0.050",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 62,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6829268292682927,
+        "useful_retained": 28
+      },
+      "vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 3,
+        "nonuseful": -4,
+        "unsafe": -2,
+        "useful_recall": 0.09756097560975618
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_negation_correct_cap_0.005",
+      "changed_lanes": 9,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 1,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -1,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.010",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.020",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.050",
+      "changed_lanes": 12,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.010",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.020",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.050",
+      "changed_lanes": 13,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 57,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -5,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_correct_cap_0.010",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_correct_cap_0.020",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_correct_cap_0.050",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.010",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.020",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.050",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_set_coverage_loose_correct_cap_0.010",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_set_coverage_loose_correct_cap_0.020",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_set_coverage_loose_correct_cap_0.050",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.010",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.020",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.050",
+      "changed_lanes": 6,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -3,
+        "useful_recall": 0.07317073170731714
+      }
+    },
+    {
+      "arm": "generic_form_diversity_loose_cap_0.005",
+      "changed_lanes": 10,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -2,
+        "unsafe": -4,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "generic_form_richness_loose_cap_0.005",
+      "changed_lanes": 11,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 2,
+        "redundant": 4,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -4,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_correct_cap_0.005",
+      "changed_lanes": 4,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_source_diversity_cap_0.005",
+      "changed_lanes": 4,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_loose_correct_cap_0.005",
+      "changed_lanes": 4,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 59,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_fraction_loose_then_posture_cap_0.005",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_correct_cap_0.005",
+      "changed_lanes": 8,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_correct_cap_0.010",
+      "changed_lanes": 8,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_correct_cap_0.020",
+      "changed_lanes": 8,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_correct_cap_0.050",
+      "changed_lanes": 8,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 8,
+        "nonuseful": 64,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 60,
+        "useful_available": 41,
+        "useful_recall": 0.6341463414634146,
+        "useful_retained": 26
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -2,
+        "useful_recall": 0.04878048780487809
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_shuffled_cap_0.005",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_shuffled_cap_0.010",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_shuffled_cap_0.020",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "gate_set_coverage_strict_shuffled_cap_0.050",
+      "changed_lanes": 5,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 1,
+        "nonuseful": -1,
+        "unsafe": 0,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "arm": "control_gate_present_ignored",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "control_semantic_top3_no_gates",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "gate_anyof_loose_correct_cap_0.000",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "arm": "gate_anyof_loose_correct_cap_0.005",
+      "changed_lanes": 0,
+      "metrics": {
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 0,
+        "nonuseful": 0,
+        "unsafe": 0,
+        "useful_recall": 0.0
+      }
+    }
+  ]
+}

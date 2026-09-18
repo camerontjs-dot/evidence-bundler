@@ -1,0 +1,44 @@
+{
+  "arm_count": 108,
+  "bm25_control": {
+    "complementary_coverage": {
+      "covered": 0,
+      "total": 3
+    },
+    "coverage": 16,
+    "coverage_total": 27,
+    "deep_useful_rescue": 0,
+    "nonuseful": 68,
+    "ordinary_easy_coverage": 2,
+    "redundant": 1,
+    "unsafe": 62,
+    "useful_available": 41,
+    "useful_recall": 0.5365853658536586,
+    "useful_retained": 22
+  },
+  "evaluation_sha256": "9dcecbdff78f97ac4a0fc5467508ebdc167edc1cebe7ff782a9f9d1be8e9449b",
+  "fresh_qualification": false,
+  "placebo_exact_equal": true,
+  "prior_evidence_shape_reproduced": true,
+  "production_authority": false,
+  "schema": "eb-evidence-shape-mechanism-pressure-v1-receipt",
+  "selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "semantic_control": {
+    "complementary_coverage": {
+      "covered": 0,
+      "total": 3
+    },
+    "coverage": 21,
+    "coverage_total": 27,
+    "deep_useful_rescue": 6,
+    "nonuseful": 66,
+    "ordinary_easy_coverage": 1,
+    "redundant": 2,
+    "unsafe": 62,
+    "useful_available": 41,
+    "useful_recall": 0.5853658536585366,
+    "useful_retained": 24
+  },
+  "status": "EXPOSED_DEVELOPMENT_MECHANISM_PRESSURE_COMPLETE",
+  "study_head": "c8839068feaaecf1d904a93be22dcf4f60dec6a4"
+}
