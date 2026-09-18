@@ -1,0 +1,12 @@
+{
+  "schema": "eb-gate-specialty-v4-launch",
+  "status": "AUTHORIZED_EXPOSED_DEVELOPMENT_COMPLEMENT_FALSIFIER",
+  "pr": 105,
+  "source_v3_pre_gold_commit": "81914a445386a0658931a6b16ace2e8a86d23de8",
+  "source_v1_selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "exceptional_lane_count": 8,
+  "rerun_model": false,
+  "rerun_gate": false,
+  "fresh_qualification": false,
+  "production_authority": false
+}
