@@ -1,0 +1,13 @@
+{
+  "claim_count": 6,
+  "descriptor_count": 12,
+  "evaluation_internal_sha256": "007180ff0e30f08f45bc55a83d5f5ebd1ddcece4450632f42eb2e4e9a1951762",
+  "evaluation_sha256": "ebf2256500f5a243b9b51853d0ebb20d5f4330441ab901805a384f6c866ea61f",
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-composite-evidence-obligations-dev-v0-receipt",
+  "selection_sha256": "2e2abf26d23f9eb1ce8d9fb2877281cfa4f174ebc86637ae7dacfde1841f0696",
+  "source_retrieval_sha256": "b7522a147f1dccd1614bb8dcb4565b8a8834bee4cf2d47695befeb311ebd6680",
+  "status": "EXPOSED_DEVELOPMENT_PRESSURE_COMPLETE",
+  "study_head": "68816f47201bf4c8cbe902fddf8fb0d2d68b160c"
+}
