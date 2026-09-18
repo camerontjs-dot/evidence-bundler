@@ -1,0 +1,8 @@
+{
+  "schema": "eb-composite-obligation-rc1-fresh-input-base",
+  "corpus_commit": "81d735dc4ebd1e187f937beb506fbb1e9699bb09",
+  "fresh_input_file_sha256": "da553e3081afdd403dfb4cab24e3a37399baced017b14576b1605714b676307a",
+  "semantic_replay_exact": true,
+  "gold_adjudicated": false,
+  "target_revealed": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "eb-composite-obligation-rc1-source-access",
+  "bootstrap_head": "8f520b4b89bbf06e36ce4e63eac98b643d55f9eb",
+  "allowed_repository_reads": [
+    "bootstrap files rendered explicitly into Copilot CLI prompts",
+    "proposition-authoring@e29a165b682d060f5dc2a0f3c7d64a7f29b172b4 after claim freeze"
+  ],
+  "isolation_provider": "GitHub Copilot CLI with Actions GITHUB_TOKEN",
+  "isolation_model": "auto",
+  "copilot_builtin_mcp_disabled": true,
+  "copilot_tool_policy": "read,shell,write,url,memory denied",
+  "normal_conversation_context_available": false,
+  "target_bytes_available_prereveal": false,
+  "development_results_available_prereveal": false
+}

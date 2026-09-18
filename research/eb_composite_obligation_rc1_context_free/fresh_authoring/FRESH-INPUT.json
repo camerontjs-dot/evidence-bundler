@@ -1,0 +1,2708 @@
+{
+  "case_count": 24,
+  "cases": [
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-01-P01",
+          "semantic_scores": {
+            "C1-01-A": 0.9998123049736023,
+            "C1-01-B": 0.0029389173723757267
+          },
+          "text": "The Asterion Relay Console thermal inspection log records completion during the current maintenance cycle, with the inspection timestamp and reviewer initials entered in the service register."
+        },
+        {
+          "candidate_id": "C1-01-P02",
+          "semantic_scores": {
+            "C1-01-A": 0.999923586845398,
+            "C1-01-B": 0.006404391955584288
+          },
+          "text": "A maintenance supervisor's signed statement says the Asterion Relay Console completed the scheduled thermal inspection before the current cycle closed."
+        },
+        {
+          "candidate_id": "C1-01-P03",
+          "semantic_scores": {
+            "C1-01-A": 0.9984982013702393,
+            "C1-01-B": 0.0012805759906768799
+          },
+          "text": "The Asterion Relay Console service record lists a completed thermal inspection, including the inspection interval and the technician's authorization."
+        },
+        {
+          "candidate_id": "C1-01-P04",
+          "semantic_scores": {
+            "C1-01-A": 0.9991835951805115,
+            "C1-01-B": 0.006566367112100124
+          },
+          "text": "An equipment notice reports that the Asterion Relay Console passed through its scheduled thermal review on the date entered in the maintenance calendar."
+        },
+        {
+          "candidate_id": "C1-01-P05",
+          "semantic_scores": {
+            "C1-01-A": 0.9382712841033936,
+            "C1-01-B": 0.9999179840087891
+          },
+          "text": "The calibration office recorded that the Asterion Relay Console retained its calibration seal after the maintenance review."
+        },
+        {
+          "candidate_id": "C1-01-P06",
+          "semantic_scores": {
+            "C1-01-A": 0.05873773992061615,
+            "C1-01-B": 0.9992129802703857
+          },
+          "text": "A seal-control entry for the console notes that its calibration seal was present and intact at the close of the inspection cycle."
+        },
+        {
+          "candidate_id": "C1-01-P07",
+          "semantic_scores": {
+            "C1-01-A": 0.47903451323509216,
+            "C1-01-B": 0.9937227368354797
+          },
+          "text": "The Asterion Relay Console calibration seal was photographed during a later inventory check, with the seal number entered in the inventory sheet."
+        },
+        {
+          "candidate_id": "C1-01-P08",
+          "semantic_scores": {
+            "C1-01-A": 0.9992403984069824,
+            "C1-01-B": 3.512111652526073e-05
+          },
+          "text": "The Asterion Relay Cabinet completed the same scheduled thermal inspection, according to the neighboring cabinet's maintenance log."
+        },
+        {
+          "candidate_id": "C1-01-P09",
+          "semantic_scores": {
+            "C1-01-A": 0.24103687703609467,
+            "C1-01-B": 0.9943785071372986
+          },
+          "text": "A separate relay console was listed in the calibration ledger with an intact seal and a recorded temperature reading from the maintenance area."
+        },
+        {
+          "candidate_id": "C1-01-P10",
+          "semantic_scores": {
+            "C1-01-A": 0.368332177400589,
+            "C1-01-B": 0.0002807985292747617
+          },
+          "text": "The quarterly facilities bulletin describes revised inspection scheduling for relay equipment without identifying a particular console."
+        }
+      ],
+      "case_id": "C1-01",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-01-A",
+          "child_text": "Asterion Relay Console completed its scheduled thermal inspection under the current maintenance cycle.",
+          "claim_profile_sha256": "sha256:ef7a403fc52edf0738b1872a8edff9c789e1428abb65c410bc4d303d7b8e7ccd",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Asterion Relay Console",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-01-B",
+          "child_text": "The console retained its calibration seal.",
+          "claim_profile_sha256": "sha256:5ca9feb6d3d91df36f205df106472593cce0561ac5bb549f039c90e0f59d6973",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "The console",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The dual obligations for the Asterion Relay Console are that Asterion Relay Console completed its scheduled thermal inspection and that the console retained its calibration seal."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-02-P01",
+          "semantic_scores": {
+            "C1-02-A": 0.9999470710754395,
+            "C1-02-B": 1.4687991097162012e-05
+          },
+          "text": "The Helix Orchard Controller firmware audit entry shows that the review was recorded after the designated procedure was completed, with the auditor's approval attached."
+        },
+        {
+          "candidate_id": "C1-02-P02",
+          "semantic_scores": {
+            "C1-02-A": 0.9999189376831055,
+            "C1-02-B": 1.7026226487359963e-05
+          },
+          "text": "The compliance officer declared that the Helix Orchard Controller's firmware audit had been entered following the designated review procedure."
+        },
+        {
+          "candidate_id": "C1-02-P03",
+          "semantic_scores": {
+            "C1-02-A": 0.3549925684928894,
+            "C1-02-B": 1.3034608855377883e-05
+          },
+          "text": "The controller audit packet contains a dated checklist marked complete and a reference to the operating procedure used by the reviewer."
+        },
+        {
+          "candidate_id": "C1-02-P04",
+          "semantic_scores": {
+            "C1-02-A": 0.9982746839523315,
+            "C1-02-B": 1.3080595635983627e-05
+          },
+          "text": "A review event for the Helix Orchard Controller appears in the maintenance system, showing the firmware audit was finalized during the operating period."
+        },
+        {
+          "candidate_id": "C1-02-P05",
+          "semantic_scores": {
+            "C1-02-A": 0.9361300468444824,
+            "C1-02-B": 0.9991717338562012
+          },
+          "text": "The Helix Orchard Controller emergency override test record lists a successful test run, its test date, and the operator who witnessed it."
+        },
+        {
+          "candidate_id": "C1-02-P06",
+          "semantic_scores": {
+            "C1-02-A": 0.5640254020690918,
+            "C1-02-B": 0.9993636012077332
+          },
+          "text": "A signed safety declaration states that the emergency override on the Helix Orchard Controller was tested before the controller returned to service."
+        },
+        {
+          "candidate_id": "C1-02-P07",
+          "semantic_scores": {
+            "C1-02-A": 0.9550166130065918,
+            "C1-02-B": 0.4571075439453125
+          },
+          "text": "The override register identifies the Helix Orchard Controller and records a test status alongside the applicable procedure number."
+        },
+        {
+          "candidate_id": "C1-02-P08",
+          "semantic_scores": {
+            "C1-02-A": 0.9996435642242432,
+            "C1-02-B": 0.025266248732805252
+          },
+          "text": "The Helix Orchard Pump Controller has a firmware audit recorded under the same review procedure and an emergency test listed in its equipment file."
+        },
+        {
+          "candidate_id": "C1-02-P09",
+          "semantic_scores": {
+            "C1-02-A": 0.017111891880631447,
+            "C1-02-B": 0.9223433136940002
+          },
+          "text": "Another orchard controller produced a measured override response of 2.4 seconds during a bench test conducted by the controls team."
+        },
+        {
+          "candidate_id": "C1-02-P10",
+          "semantic_scores": {
+            "C1-02-A": 0.7813823223114014,
+            "C1-02-B": 0.014324287883937359
+          },
+          "text": "The seasonal operations circular announces that firmware reviews and emergency tests are required for orchard controllers, without naming a unit."
+        }
+      ],
+      "case_id": "C1-02",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-02-A",
+          "child_text": "Helix Orchard Controller has its firmware audit recorded following the designated review procedure.",
+          "claim_profile_sha256": "sha256:961ea9c8a52e29df4b06439b5930568dd1543f7fe3c9c25d01fa7fb0511badc2",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Helix Orchard Controller",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-02-B",
+          "child_text": "Its emergency override was tested.",
+          "claim_profile_sha256": "sha256:fad6f87e46c2e0a5c9bb68e6b5df53ccb519b8fc4d07ff76261bfee897526eaa",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Its emergency override",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Helix Orchard Controller must have its firmware audit recorded and its emergency override tested."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-03-P01",
+          "semantic_scores": {
+            "C1-03-A": 0.9999492168426514,
+            "C1-03-B": 9.070269879885018e-05
+          },
+          "text": "The Brindle Survey Beacon synchronization log records completion of the coastal check after the designated observation interval, including the end time and observer initials."
+        },
+        {
+          "candidate_id": "C1-03-P02",
+          "semantic_scores": {
+            "C1-03-A": 0.999914288520813,
+            "C1-03-B": 0.00027374280034564435
+          },
+          "text": "A field supervisor's declaration confirms that Brindle Survey Beacon completed the coastal synchronization check at the close of the observation interval."
+        },
+        {
+          "candidate_id": "C1-03-P03",
+          "semantic_scores": {
+            "C1-03-A": 0.8076144456863403,
+            "C1-03-B": 0.0011580747086554766
+          },
+          "text": "The beacon's coastal check worksheet is marked complete and carries the observation window, location code, and reviewer signature."
+        },
+        {
+          "candidate_id": "C1-03-P04",
+          "semantic_scores": {
+            "C1-03-A": 0.9989064931869507,
+            "C1-03-B": 0.00041103188414126635
+          },
+          "text": "The survey database contains a completion event for Brindle Survey Beacon's synchronization check, recorded after the scheduled interval ended."
+        },
+        {
+          "candidate_id": "C1-03-P05",
+          "semantic_scores": {
+            "C1-03-A": 0.7102093696594238,
+            "C1-03-B": 0.9998825788497925
+          },
+          "text": "The enclosure inspection record states that the Brindle Survey Beacon enclosure remained sealed throughout the observation period."
+        },
+        {
+          "candidate_id": "C1-03-P06",
+          "semantic_scores": {
+            "C1-03-A": 0.036487966775894165,
+            "C1-03-B": 0.9986264705657959
+          },
+          "text": "A seal register entry for the beacon's enclosure records an intact closure at both the beginning and end of the survey interval."
+        },
+        {
+          "candidate_id": "C1-03-P07",
+          "semantic_scores": {
+            "C1-03-A": 0.20863132178783417,
+            "C1-03-B": 0.9796889424324036
+          },
+          "text": "A later inspection document notes that the Brindle Survey Beacon enclosure was opened for cleaning and then resealed by the field crew."
+        },
+        {
+          "candidate_id": "C1-03-P08",
+          "semantic_scores": {
+            "C1-03-A": 0.9999428987503052,
+            "C1-03-B": 0.9927922487258911
+          },
+          "text": "The Brindle Coastal Marker Beacon completed a synchronization check after its observation interval, and its enclosure seal was entered in the marker log."
+        },
+        {
+          "candidate_id": "C1-03-P09",
+          "semantic_scores": {
+            "C1-03-A": 0.12868213653564453,
+            "C1-03-B": 0.8956050872802734
+          },
+          "text": "A different survey beacon's enclosure was measured at 18 degrees Celsius while its synchronization equipment was being bench-tested."
+        },
+        {
+          "candidate_id": "C1-03-P10",
+          "semantic_scores": {
+            "C1-03-A": 0.7710620760917664,
+            "C1-03-B": 0.538294792175293
+          },
+          "text": "The coastal survey bulletin sets out the observation intervals and enclosure-handling rules for the beacon network without naming an individual beacon."
+        }
+      ],
+      "case_id": "C1-03",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-03-A",
+          "child_text": "Brindle Survey Beacon completed the coastal synchronization check after the designated observation interval.",
+          "claim_profile_sha256": "sha256:24429d5738489c6c04ba5c823a547cd750cbf416c50780e9dcdcfc67d7617c84",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Brindle Survey Beacon",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-03-B",
+          "child_text": "The beacon's enclosure remained sealed.",
+          "claim_profile_sha256": "sha256:fae8e54a3011ac9d516c3d9aaf5c5e49f5d77398f673132e9c570756b4133bac",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "The beacon's enclosure",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two obligations for the Brindle Survey Beacon are that Brindle Survey Beacon completed the coastal synchronization check and that the beacon's enclosure remained sealed."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C1-04-P01",
+          "semantic_scores": {
+            "C1-04-A": 0.9998430013656616,
+            "C1-04-B": 8.875075582182035e-05
+          },
+          "text": "The Quenby Transit Monitor route-data review record shows that the review specified for the operating period was completed and filed by the route-audit team."
+        },
+        {
+          "candidate_id": "C1-04-P02",
+          "semantic_scores": {
+            "C1-04-A": 0.999845027923584,
+            "C1-04-B": 0.00016933243023231626
+          },
+          "text": "The route-audit manager declared that Quenby Transit Monitor underwent the required route-data review for the operating period."
+        },
+        {
+          "candidate_id": "C1-04-P03",
+          "semantic_scores": {
+            "C1-04-A": 0.980316698551178,
+            "C1-04-B": 0.012605557218194008
+          },
+          "text": "The monitor's review packet contains a dated checklist for the route data, marked complete under the operating-period procedure."
+        },
+        {
+          "candidate_id": "C1-04-P04",
+          "semantic_scores": {
+            "C1-04-A": 0.9997391104698181,
+            "C1-04-B": 0.00024348415900021791
+          },
+          "text": "A review event in the transit operations system records the Quenby Transit Monitor undergoing its route-data review during the specified period."
+        },
+        {
+          "candidate_id": "C1-04-P05",
+          "semantic_scores": {
+            "C1-04-A": 0.9895525574684143,
+            "C1-04-B": 0.999434769153595
+          },
+          "text": "The inspection register states that the Quenby Transit Monitor retained its inspection mark after the route-data review."
+        },
+        {
+          "candidate_id": "C1-04-P06",
+          "semantic_scores": {
+            "C1-04-A": 0.0004526751581579447,
+            "C1-04-B": 0.9979128241539001
+          },
+          "text": "A signed equipment declaration confirms that the monitor's inspection mark remained attached and legible at the period close."
+        },
+        {
+          "candidate_id": "C1-04-P07",
+          "semantic_scores": {
+            "C1-04-A": 0.6751536726951599,
+            "C1-04-B": 0.9865380525588989
+          },
+          "text": "The Quenby Transit Monitor was photographed with its inspection mark visible during a later platform inventory."
+        },
+        {
+          "candidate_id": "C1-04-P08",
+          "semantic_scores": {
+            "C1-04-A": 0.9990119934082031,
+            "C1-04-B": 0.8805074095726013
+          },
+          "text": "The Quenby Transit Display Monitor has a route-data review entry for the operating period and an inspection mark noted in its equipment register."
+        },
+        {
+          "candidate_id": "C1-04-P09",
+          "semantic_scores": {
+            "C1-04-A": 0.20017194747924805,
+            "C1-04-B": 2.443306402710732e-05
+          },
+          "text": "A different transit monitor returned a measured route-data variance of 0.8 percent during a network calibration run."
+        },
+        {
+          "candidate_id": "C1-04-P10",
+          "semantic_scores": {
+            "C1-04-A": 0.9040327668190002,
+            "C1-04-B": 0.24999511241912842
+          },
+          "text": "The transit authority's operating-period circular describes review schedules and inspection-mark handling for monitors across the network without identifying a device."
+        }
+      ],
+      "case_id": "C1-04",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-04-A",
+          "child_text": "Quenby Transit Monitor underwent the route-data review specified for the operating period.",
+          "claim_profile_sha256": "sha256:c26f642b2d0ca187ce432f250ed94e38ae0d6d6e6e8a95806d653a5cf135158e",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Quenby Transit Monitor",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-04-B",
+          "child_text": "The monitor preserved its inspection mark.",
+          "claim_profile_sha256": "sha256:dc61c692f64c9a5c63f4baf2fe7807754ff1883c17f0f05cb9c1e9bee9bb3875",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "The monitor",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The requirements for the Quenby Transit Monitor are that Quenby Transit Monitor underwent its route-data review and that the monitor preserved its inspection mark."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-01-P01",
+          "semantic_scores": {
+            "C2-01-A": 0.9998781681060791,
+            "C2-01-B": 0.03652474656701088
+          },
+          "text": "Kestrel Array relay Rho-3 logged a calibration event on 2031-04-12 during the field verification run."
+        },
+        {
+          "candidate_id": "C2-01-P02",
+          "semantic_scores": {
+            "C2-01-A": 0.9999445676803589,
+            "C2-01-B": 0.030028706416487694
+          },
+          "text": "Maintenance record: Kestrel Array relay Rho-3 confirms a calibration event on 2031-04-12."
+        },
+        {
+          "candidate_id": "C2-01-P03",
+          "semantic_scores": {
+            "C2-01-A": 0.9995701909065247,
+            "C2-01-B": 0.02419753186404705
+          },
+          "text": "Kestrel Array relay Rho-5 logged a calibration event on 2031-04-12 during the same outage window."
+        },
+        {
+          "candidate_id": "C2-01-P04",
+          "semantic_scores": {
+            "C2-01-A": 0.7504342794418335,
+            "C2-01-B": 0.9999575614929199
+          },
+          "text": "Kestrel Array controller Sigma-8 is listed as enrolled in the municipal equipment register as of 2031-04-12."
+        },
+        {
+          "candidate_id": "C2-01-P05",
+          "semantic_scores": {
+            "C2-01-A": 0.35705041885375977,
+            "C2-01-B": 0.999395489692688
+          },
+          "text": "Kestrel Array controller Sigma-8 holds a municipal equipment certificate valid through 2032."
+        },
+        {
+          "candidate_id": "C2-01-P06",
+          "semantic_scores": {
+            "C2-01-A": 0.997763991355896,
+            "C2-01-B": 0.023081908002495766
+          },
+          "text": "Kestrel Array relay Rho-3 was tested for sensor drift after the calibration event."
+        },
+        {
+          "candidate_id": "C2-01-P07",
+          "semantic_scores": {
+            "C2-01-A": 0.04214027151465416,
+            "C2-01-B": 0.9999109506607056
+          },
+          "text": "Kestrel Array controller Sigma-9 is enrolled in the municipal equipment register."
+        },
+        {
+          "candidate_id": "C2-01-P08",
+          "semantic_scores": {
+            "C2-01-A": 0.00013469959958456457,
+            "C2-01-B": 0.9566963315010071
+          },
+          "text": "The municipal equipment register lists the array's controller as active, but the unit name is not specified."
+        },
+        {
+          "candidate_id": "C2-01-P09",
+          "semantic_scores": {
+            "C2-01-A": 0.9998583793640137,
+            "C2-01-B": 0.03880922868847847
+          },
+          "text": "Operator note: the Kestrel Array relay Rho-3 calibration event is recorded as taking place on 2031-04-12."
+        },
+        {
+          "candidate_id": "C2-01-P10",
+          "semantic_scores": {
+            "C2-01-A": 0.2560673654079437,
+            "C2-01-B": 1.1818577149824705e-05
+          },
+          "text": "The relay room observed an outage on 2031-04-12, and the maintenance team logged an inspection."
+        }
+      ],
+      "case_id": "C2-01",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-01-A",
+          "child_text": "Kestrel Array relay Rho-3 confirms that a calibration event occurred on 2031-04-12.",
+          "claim_profile_sha256": "sha256:eb8d6cb65a34a752007823e279ccfe3d509d2724462fe9c4bb897ee6305642bd",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Kestrel Array relay Rho-3",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-01-B",
+          "child_text": "Kestrel Array controller Sigma-8 is enrolled in the municipal equipment register.",
+          "claim_profile_sha256": "sha256:b39255be192274f77c5eb9886f83bca50a6d0aec7a1286453b0a7bd75b2e38c0",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Kestrel Array controller Sigma-8",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both of the following statements about the Kestrel Array must hold: the array's relay confirms a calibration event, and the array's controller is enrolled in the municipal register."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-02-P01",
+          "semantic_scores": {
+            "C2-02-A": 0.999925971031189,
+            "C2-02-B": 0.16170372068881989
+          },
+          "text": "Oriole Transit Grid beacon Lumen-5 reported completion of the quarterly inspection on 2031-05-21."
+        },
+        {
+          "candidate_id": "C2-02-P02",
+          "semantic_scores": {
+            "C2-02-A": 0.9997527003288269,
+            "C2-02-B": 0.07097986340522766
+          },
+          "text": "Inspection completion log for Oriole Transit Grid beacon Lumen-5: quarterly inspection finished."
+        },
+        {
+          "candidate_id": "C2-02-P03",
+          "semantic_scores": {
+            "C2-02-A": 0.9997981190681458,
+            "C2-02-B": 0.15727508068084717
+          },
+          "text": "Oriole Transit Grid beacon Lumen-7 reported completion of the quarterly inspection on 2031-05-21."
+        },
+        {
+          "candidate_id": "C2-02-P04",
+          "semantic_scores": {
+            "C2-02-A": 0.15005868673324585,
+            "C2-02-B": 0.9999523162841797
+          },
+          "text": "Oriole Transit Grid gate unit Nadir-2 is listed as holding an active operating certificate under the route safety register."
+        },
+        {
+          "candidate_id": "C2-02-P05",
+          "semantic_scores": {
+            "C2-02-A": 0.19552399218082428,
+            "C2-02-B": 0.9998959302902222
+          },
+          "text": "Operating certificate for Oriole Transit Grid gate unit Nadir-2 remains active through 2032."
+        },
+        {
+          "candidate_id": "C2-02-P06",
+          "semantic_scores": {
+            "C2-02-A": 0.9955768585205078,
+            "C2-02-B": 0.22329112887382507
+          },
+          "text": "Oriole Transit Grid beacon Lumen-5 is in the scheduled inspection queue."
+        },
+        {
+          "candidate_id": "C2-02-P07",
+          "semantic_scores": {
+            "C2-02-A": 0.20610250532627106,
+            "C2-02-B": 0.9998509883880615
+          },
+          "text": "Oriole Transit Grid gate unit Nadir-4 holds an active operating certificate."
+        },
+        {
+          "candidate_id": "C2-02-P08",
+          "semantic_scores": {
+            "C2-02-A": 0.9834663271903992,
+            "C2-02-B": 0.3377215564250946
+          },
+          "text": "The Oriole Transit Grid control room issued a maintenance bulletin after the quarterly inspection."
+        },
+        {
+          "candidate_id": "C2-02-P09",
+          "semantic_scores": {
+            "C2-02-A": 0.9999457597732544,
+            "C2-02-B": 0.13247762620449066
+          },
+          "text": "Oriole Transit Grid beacon Lumen-5 reported completion of the quarterly inspection on 2031-05-21, matching the dispatch log."
+        },
+        {
+          "candidate_id": "C2-02-P10",
+          "semantic_scores": {
+            "C2-02-A": 0.1757505238056183,
+            "C2-02-B": 4.4256416003918275e-05
+          },
+          "text": "Transit network handbook: beacon units must log inspection completion after servicing."
+        }
+      ],
+      "case_id": "C2-02",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-02-A",
+          "child_text": "Oriole Transit Grid beacon Lumen-5 reports completion of the quarterly inspection.",
+          "claim_profile_sha256": "sha256:0086359874e71c9007a8d9b45620c9aad1b686a7413b231f8b3a539d5d6372db",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Oriole Transit Grid beacon Lumen-5",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-02-B",
+          "child_text": "Oriole Transit Grid gate unit Nadir-2 holds an active operating certificate.",
+          "claim_profile_sha256": "sha256:12c434bde94f5f712cffea9a1ec4688c8bcb8003526ed1e949078c27a759f82a",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "measurement",
+            "registry_entry"
+          ],
+          "subject": "Oriole Transit Grid gate unit Nadir-2",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two propositions below jointly describe the required state of the Oriole Transit Grid: its beacon reports an inspection completion, and its gate unit holds an active operating certificate."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-03-P01",
+          "semantic_scores": {
+            "C2-03-A": 0.9999051094055176,
+            "C2-03-B": 0.028688615188002586
+          },
+          "text": "Bramble Water Network pressure node Vela-7 recorded a 4.8 bar reading during the morning test."
+        },
+        {
+          "candidate_id": "C2-03-P02",
+          "semantic_scores": {
+            "C2-03-A": 0.9998076558113098,
+            "C2-03-B": 0.1005021259188652
+          },
+          "text": "Operations note: Bramble Water Network pressure node Vela-7 recorded 4.8 bar in the morning test log."
+        },
+        {
+          "candidate_id": "C2-03-P03",
+          "semantic_scores": {
+            "C2-03-A": 0.9998732805252075,
+            "C2-03-B": 0.03053969331085682
+          },
+          "text": "Bramble Water Network pressure node Vela-9 recorded a 4.8 bar reading during the morning test."
+        },
+        {
+          "candidate_id": "C2-03-P04",
+          "semantic_scores": {
+            "C2-03-A": 0.05805380269885063,
+            "C2-03-B": 0.9999406337738037
+          },
+          "text": "Bramble Water Network treatment module Cinder-4 has a signed compliance declaration for the current operating period."
+        },
+        {
+          "candidate_id": "C2-03-P05",
+          "semantic_scores": {
+            "C2-03-A": 0.025286247953772545,
+            "C2-03-B": 0.9998123049736023
+          },
+          "text": "The signed compliance declaration for Bramble Water Network treatment module Cinder-4 is filed in the current operating binder."
+        },
+        {
+          "candidate_id": "C2-03-P06",
+          "semantic_scores": {
+            "C2-03-A": 0.0598226860165596,
+            "C2-03-B": 0.9948654770851135
+          },
+          "text": "Bramble Water Network treatment module Cinder-4 shows the latest compliance status in the operations board."
+        },
+        {
+          "candidate_id": "C2-03-P07",
+          "semantic_scores": {
+            "C2-03-A": 0.08040540665388107,
+            "C2-03-B": 0.9998997449874878
+          },
+          "text": "Bramble Water Network treatment module Cinder-8 has a signed compliance declaration for the current operating period."
+        },
+        {
+          "candidate_id": "C2-03-P08",
+          "semantic_scores": {
+            "C2-03-A": 0.8585652112960815,
+            "C2-03-B": 1.8737537175184116e-05
+          },
+          "text": "A nearby pressure gauge showed 4.8 bar in the same water zone, but no node was named."
+        },
+        {
+          "candidate_id": "C2-03-P09",
+          "semantic_scores": {
+            "C2-03-A": 0.9999147653579712,
+            "C2-03-B": 0.0214956346899271
+          },
+          "text": "Bramble Water Network pressure node Vela-7 recorded a 4.8 bar reading during the morning test and the same value appears in a second log."
+        },
+        {
+          "candidate_id": "C2-03-P10",
+          "semantic_scores": {
+            "C2-03-A": 0.00040876687853597105,
+            "C2-03-B": 0.9249677062034607
+          },
+          "text": "Water network bulletin: all treatment modules must keep a signed compliance declaration before the quarterly review."
+        }
+      ],
+      "case_id": "C2-03",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-03-A",
+          "child_text": "Bramble Water Network pressure node Vela-7 records a pressure measurement of 4.8 bar during the morning test.",
+          "claim_profile_sha256": "sha256:56ba46b74a67b29838c17d67063c50ec0f0bb4125b8eecb8dc1ab9bf38ec1ec7",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Bramble Water Network pressure node Vela-7",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-03-B",
+          "child_text": "Bramble Water Network treatment module Cinder-4 has a signed compliance declaration for the current operating period.",
+          "claim_profile_sha256": "sha256:b4020434847ad2a604d994e65176b84a52687fe096a7b9a787c73fcd922d30c4",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "measurement",
+            "registry_entry"
+          ],
+          "subject": "Bramble Water Network treatment module Cinder-4",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The following pair of statements must both be satisfied for the Bramble Water Network: the pressure node records a threshold measurement, and the treatment module has a signed compliance declaration."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C2-04-P01",
+          "semantic_scores": {
+            "C2-04-A": 0.9998846054077148,
+            "C2-04-B": 0.0958087369799614
+          },
+          "text": "Halcyon Storage Cluster cold-store monitor Aster-9 documented a temperature excursion on 2032-09-03."
+        },
+        {
+          "candidate_id": "C2-04-P02",
+          "semantic_scores": {
+            "C2-04-A": 0.9997366070747375,
+            "C2-04-B": 0.03390953317284584
+          },
+          "text": "Temperature excursion record for Halcyon Storage Cluster cold-store monitor Aster-9: 2032-09-03."
+        },
+        {
+          "candidate_id": "C2-04-P03",
+          "semantic_scores": {
+            "C2-04-A": 0.9998106360435486,
+            "C2-04-B": 0.10438369959592819
+          },
+          "text": "Halcyon Storage Cluster cold-store monitor Aster-7 documented a temperature excursion on 2032-09-03."
+        },
+        {
+          "candidate_id": "C2-04-P04",
+          "semantic_scores": {
+            "C2-04-A": 0.1112561747431755,
+            "C2-04-B": 0.9999513626098633
+          },
+          "text": "Halcyon Storage Cluster access service Quill-6 is listed in the authorized-services registry."
+        },
+        {
+          "candidate_id": "C2-04-P05",
+          "semantic_scores": {
+            "C2-04-A": 0.057872068136930466,
+            "C2-04-B": 0.9998722076416016
+          },
+          "text": "Authorized services registry entry for Halcyon Storage Cluster access service Quill-6 was renewed in the last audit."
+        },
+        {
+          "candidate_id": "C2-04-P06",
+          "semantic_scores": {
+            "C2-04-A": 0.17704322934150696,
+            "C2-04-B": 0.9985854625701904
+          },
+          "text": "Halcyon Storage Cluster access service Quill-6 has an active authorization memo on file."
+        },
+        {
+          "candidate_id": "C2-04-P07",
+          "semantic_scores": {
+            "C2-04-A": 0.1052512601017952,
+            "C2-04-B": 0.9998348951339722
+          },
+          "text": "Halcyon Storage Cluster access service Quill-2 is listed in the authorized-services registry."
+        },
+        {
+          "candidate_id": "C2-04-P08",
+          "semantic_scores": {
+            "C2-04-A": 0.830213725566864,
+            "C2-04-B": 0.0005160563159734011
+          },
+          "text": "The storage cluster cooling team logged an alarm after the 2032-09-03 temperature spike."
+        },
+        {
+          "candidate_id": "C2-04-P09",
+          "semantic_scores": {
+            "C2-04-A": 0.9999116659164429,
+            "C2-04-B": 0.07418033480644226
+          },
+          "text": "Halcyon Storage Cluster cold-store monitor Aster-9 documented a temperature excursion on 2032-09-03 in the daily maintenance log."
+        },
+        {
+          "candidate_id": "C2-04-P10",
+          "semantic_scores": {
+            "C2-04-A": 0.013557162135839462,
+            "C2-04-B": 0.008963951840996742
+          },
+          "text": "A different storage site sees the same risk pattern in its cold-store monitor and access service registry."
+        }
+      ],
+      "case_id": "C2-04",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-04-A",
+          "child_text": "Halcyon Storage Cluster cold-store monitor Aster-9 documents a temperature excursion on 2032-09-03.",
+          "claim_profile_sha256": "sha256:7bd919f0cc7961144e87178e6574d744303692e5088b73774e5257e399d4f579",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Halcyon Storage Cluster cold-store monitor Aster-9",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-04-B",
+          "child_text": "Halcyon Storage Cluster access service Quill-6 is listed in the authorized-services registry.",
+          "claim_profile_sha256": "sha256:abf60b1b8728e361e358c0021fe3f08d439abbdf7ddd10e66f466f13fd6e72c1",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Halcyon Storage Cluster access service Quill-6",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both statements are required for the Halcyon Storage Cluster: the cold-store monitor documents a temperature excursion, and the access service is listed in the authorized-services registry."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-01-P01",
+          "semantic_scores": {
+            "C3-01-A": 0.9999287128448486,
+            "C3-01-B": 0.0008106398745439947
+          },
+          "text": "Meridian Relay K8 completed its scheduled calibration in April 2026 under maintenance order 3.7A."
+        },
+        {
+          "candidate_id": "C3-01-P02",
+          "semantic_scores": {
+            "C3-01-A": 0.996619701385498,
+            "C3-01-B": 0.0018543483456596732
+          },
+          "text": "Meridian Relay K8 recorded a 100.0% calibration compliance reading in April 2026 after the scheduled maintenance cycle."
+        },
+        {
+          "candidate_id": "C3-01-P03",
+          "semantic_scores": {
+            "C3-01-A": 0.9934105277061462,
+            "C3-01-B": 0.09401944279670715
+          },
+          "text": "The maintenance log states that Meridian Relay K8 was calibrated in April 2026 and cleared for service."
+        },
+        {
+          "candidate_id": "C3-01-P04",
+          "semantic_scores": {
+            "C3-01-A": 0.005956267472356558,
+            "C3-01-B": 0.9998384714126587
+          },
+          "text": "The system remained available for service throughout May 2026, with no scheduled downtime for Meridian Relay K8."
+        },
+        {
+          "candidate_id": "C3-01-P05",
+          "semantic_scores": {
+            "C3-01-A": 0.00014177440607454628,
+            "C3-01-B": 0.985800564289093
+          },
+          "text": "A service availability report for Meridian Relay K8 shows 100% uptime across May 2026."
+        },
+        {
+          "candidate_id": "C3-01-P06",
+          "semantic_scores": {
+            "C3-01-A": 0.999754011631012,
+            "C3-01-B": 0.0005509447073563933
+          },
+          "text": "The scheduled calibration for Meridian Relay K9 was completed in April 2026, separate from Meridian Relay K8."
+        },
+        {
+          "candidate_id": "C3-01-P07",
+          "semantic_scores": {
+            "C3-01-A": 0.0005790520808659494,
+            "C3-01-B": 0.9998459815979004
+          },
+          "text": "Meridian Relay K9 remained available for service throughout May 2026 after a maintenance cycle."
+        },
+        {
+          "candidate_id": "C3-01-P08",
+          "semantic_scores": {
+            "C3-01-A": 0.9999443292617798,
+            "C3-01-B": 0.004361769184470177
+          },
+          "text": "The scheduled calibration in April 2026 was completed without material deviation."
+        },
+        {
+          "candidate_id": "C3-01-P09",
+          "semantic_scores": {
+            "C3-01-A": 1.239810444531031e-05,
+            "C3-01-B": 1.2237793271197006e-05
+          },
+          "text": "The maintenance record for Meridian Relay K8 lists a replacement thermal sensor before the next deployment."
+        },
+        {
+          "candidate_id": "C3-01-P10",
+          "semantic_scores": {
+            "C3-01-A": 0.0008375032339245081,
+            "C3-01-B": 0.9890609979629517
+          },
+          "text": "A service bulletin for Meridian Relay K7 reported an availability gap in May 2026."
+        }
+      ],
+      "case_id": "C3-01",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-01-A",
+          "child_text": "completed its scheduled calibration in April 2026",
+          "claim_profile_sha256": "sha256:64d61e8cc1d504116260d2ebc4969a99eb0e4511cc9e03bc64b608530cdb84b4",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Meridian Relay K8",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-01-B",
+          "child_text": "remained available for service throughout May 2026",
+          "claim_profile_sha256": "sha256:43d69042ff1a187ee3b6d1ca60dea6a3b5ba502a7f257972deceeb0f9ea7ec48",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Meridian Relay K8",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "For Meridian Relay K8, both of the following statements hold: it completed its scheduled calibration in April 2026, and it remained available for service throughout May 2026."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-02-P01",
+          "semantic_scores": {
+            "C3-02-A": 0.9998880624771118,
+            "C3-02-B": 0.9689355492591858
+          },
+          "text": "Copper Finch Array R3 entered supervised operation on 7 June 2026 under the final commissioning checklist."
+        },
+        {
+          "candidate_id": "C3-02-P02",
+          "semantic_scores": {
+            "C3-02-A": 0.0037785889580845833,
+            "C3-02-B": 0.9999614953994751
+          },
+          "text": "During the supervised operation window, Copper Finch Array R3 remained below the specified temperature threshold for 11.4 hours."
+        },
+        {
+          "candidate_id": "C3-02-P03",
+          "semantic_scores": {
+            "C3-02-A": 0.9998341798782349,
+            "C3-02-B": 0.9486694931983948
+          },
+          "text": "The operations log records that Copper Finch Array R3 entered supervised operation on 7 June 2026 at 08:15."
+        },
+        {
+          "candidate_id": "C3-02-P04",
+          "semantic_scores": {
+            "C3-02-A": 1.3441262126434594e-05,
+            "C3-02-B": 0.999882698059082
+          },
+          "text": "A thermal monitoring summary states that Copper Finch Array R3 stayed below the configured threshold during the operation window."
+        },
+        {
+          "candidate_id": "C3-02-P05",
+          "semantic_scores": {
+            "C3-02-A": 0.9998855590820312,
+            "C3-02-B": 0.9284020066261292
+          },
+          "text": "Copper Finch Array R4 entered supervised operation on 7 June 2026 and was marked ready for testing."
+        },
+        {
+          "candidate_id": "C3-02-P06",
+          "semantic_scores": {
+            "C3-02-A": 1.2892978702438995e-05,
+            "C3-02-B": 0.9996335506439209
+          },
+          "text": "The temperature monitor for Copper Finch Array R4 stayed below the threshold during its operation cycle."
+        },
+        {
+          "candidate_id": "C3-02-P07",
+          "semantic_scores": {
+            "C3-02-A": 0.9998714923858643,
+            "C3-02-B": 0.00028125831158831716
+          },
+          "text": "The supervised operation on 7 June 2026 began on schedule and proceeded without a system-level alarm."
+        },
+        {
+          "candidate_id": "C3-02-P08",
+          "semantic_scores": {
+            "C3-02-A": 0.998414158821106,
+            "C3-02-B": 0.9935698509216309
+          },
+          "text": "Copper Finch Array R3 entered operation at 08:15 on 7 June 2026 with the threshold monitor enabled."
+        },
+        {
+          "candidate_id": "C3-02-P09",
+          "semantic_scores": {
+            "C3-02-A": 0.999744713306427,
+            "C3-02-B": 3.1451931135961786e-05
+          },
+          "text": "Channel 2 was placed in supervised operation on 7 June 2026 after the readiness review."
+        },
+        {
+          "candidate_id": "C3-02-P10",
+          "semantic_scores": {
+            "C3-02-A": 0.9070634245872498,
+            "C3-02-B": 0.9586487412452698
+          },
+          "text": "The temperature probe for Channel 2 remained below threshold during the operation window on 7 June 2026."
+        }
+      ],
+      "case_id": "C3-02",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-02-A",
+          "child_text": "entered supervised operation on 7 June 2026",
+          "claim_profile_sha256": "sha256:73cb36878c76f1f0db5215a32684803a5b7afca312d1b09ce5f66f66caa7c799",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Copper Finch Array R3",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-02-B",
+          "child_text": "Copper Finch Array R3 remained below the specified temperature threshold during that operation",
+          "claim_profile_sha256": "sha256:8f97ccf23a9e4d65d23952c713769b70f693b76803c8f15ef2ad159350b0cd5d",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Copper Finch Array R3",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two propositions about Copper Finch Array R3 are jointly asserted: it entered supervised operation on 7 June 2026, and its temperature remained below the specified threshold during that operation."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-03-P01",
+          "semantic_scores": {
+            "C3-03-A": 0.999862551689148,
+            "C3-03-B": 1.1369028470653575e-05
+          },
+          "text": "Obsidian Gate M4 was registered for the northern test range under site code NT-17 in the range ledger."
+        },
+        {
+          "candidate_id": "C3-03-P02",
+          "semantic_scores": {
+            "C3-03-A": 1.197070196212735e-05,
+            "C3-03-B": 0.9998639822006226
+          },
+          "text": "Obsidian Gate M4 transmitted an authenticated status report at the end of the trial, signed by the operations lead."
+        },
+        {
+          "candidate_id": "C3-03-P03",
+          "semantic_scores": {
+            "C3-03-A": 1.1455660569481552e-05,
+            "C3-03-B": 0.9857289791107178
+          },
+          "text": "Obsidian Gate M4 returned a 99.7% signal confidence during the end-of-trial status transmission."
+        },
+        {
+          "candidate_id": "C3-03-P04",
+          "semantic_scores": {
+            "C3-03-A": 0.9884422421455383,
+            "C3-03-B": 1.1138240552099887e-05
+          },
+          "text": "The official declaration for Obsidian Gate M4 lists the northern test range as its assigned operating area."
+        },
+        {
+          "candidate_id": "C3-03-P05",
+          "semantic_scores": {
+            "C3-03-A": 0.9997990727424622,
+            "C3-03-B": 2.4931707230280153e-05
+          },
+          "text": "Obsidian Gate M5 was registered for the northern test range and logged in the trial roster."
+        },
+        {
+          "candidate_id": "C3-03-P06",
+          "semantic_scores": {
+            "C3-03-A": 1.1518508472363465e-05,
+            "C3-03-B": 0.9981063604354858
+          },
+          "text": "Obsidian Gate M5 transmitted a signed status summary at the end of the trial to the control desk."
+        },
+        {
+          "candidate_id": "C3-03-P07",
+          "semantic_scores": {
+            "C3-03-A": 0.9997264742851257,
+            "C3-03-B": 0.006924104876816273
+          },
+          "text": "The northern test range registration process concluded before the trial began and remained unchanged through the final briefing."
+        },
+        {
+          "candidate_id": "C3-03-P08",
+          "semantic_scores": {
+            "C3-03-A": 0.999642014503479,
+            "C3-03-B": 1.1503118003020063e-05
+          },
+          "text": "Registration for Obsidian Gate M4 in the northern test range was recorded in the test ledger with no exceptions noted."
+        },
+        {
+          "candidate_id": "C3-03-P09",
+          "semantic_scores": {
+            "C3-03-A": 0.9994699358940125,
+            "C3-03-B": 2.6894047550740652e-05
+          },
+          "text": "The test range roster shows Horizon Gate M3 registered to the northern test range during the same trial window."
+        },
+        {
+          "candidate_id": "C3-03-P10",
+          "semantic_scores": {
+            "C3-03-A": 0.0014307063538581133,
+            "C3-03-B": 0.999704897403717
+          },
+          "text": "A separate relay at the eastern range transmitted an authenticated report at the end of the trial."
+        }
+      ],
+      "case_id": "C3-03",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-03-A",
+          "child_text": "was registered for the northern test range",
+          "claim_profile_sha256": "sha256:56eab31897c7c2113b91e304e5208d5c9c859e68bf88bd89937a9ddf717a61e3",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Obsidian Gate M4",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-03-B",
+          "child_text": "transmitted an authenticated status report at the end of the trial",
+          "claim_profile_sha256": "sha256:610f71013eda88f9a317cb05947f5f9da7b6a51fc4ae2a6ab068f79bec188fca",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Obsidian Gate M4",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "With respect to Obsidian Gate M4, both conditions apply: it was registered for the northern test range, and it transmitted an authenticated status report at the end of the trial."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C3-04-P01",
+          "semantic_scores": {
+            "C3-04-A": 0.999893307685852,
+            "C3-04-B": 0.7294679880142212
+          },
+          "text": "Saffron Beacon T11 was inspected after the west-sector incident and logged with no unresolved safety flags."
+        },
+        {
+          "candidate_id": "C3-04-P02",
+          "semantic_scores": {
+            "C3-04-A": 0.0015777391381561756,
+            "C3-04-B": 0.27456992864608765
+          },
+          "text": "Maintenance measurement for Saffron Beacon T11 showed zero thermal deviation during the post-incident inspection."
+        },
+        {
+          "candidate_id": "C3-04-P03",
+          "semantic_scores": {
+            "C3-04-A": 1.271873406949453e-05,
+            "C3-04-B": 0.9999616146087646
+          },
+          "text": "A maintenance record confirms Saffron Beacon T11 received a replacement power module before the next deployment."
+        },
+        {
+          "candidate_id": "C3-04-P04",
+          "semantic_scores": {
+            "C3-04-A": 1.3029127330810297e-05,
+            "C3-04-B": 0.9998501539230347
+          },
+          "text": "The official procurement declaration states Saffron Beacon T11 was issued a replacement power module before deployment."
+        },
+        {
+          "candidate_id": "C3-04-P05",
+          "semantic_scores": {
+            "C3-04-A": 0.9998797178268433,
+            "C3-04-B": 0.6590496897697449
+          },
+          "text": "Saffron Beacon T12 was inspected after the west-sector incident and scheduled for follow-up review."
+        },
+        {
+          "candidate_id": "C3-04-P06",
+          "semantic_scores": {
+            "C3-04-A": 1.2414124284987338e-05,
+            "C3-04-B": 0.9999569654464722
+          },
+          "text": "Saffron Beacon T12 received a replacement power module before the next deployment under the same maintenance window."
+        },
+        {
+          "candidate_id": "C3-04-P07",
+          "semantic_scores": {
+            "C3-04-A": 0.9992823004722595,
+            "C3-04-B": 4.599557360052131e-05
+          },
+          "text": "The west-sector incident prompted an inspection of several beacons across the operational grid."
+        },
+        {
+          "candidate_id": "C3-04-P08",
+          "semantic_scores": {
+            "C3-04-A": 0.9896447658538818,
+            "C3-04-B": 0.999879002571106
+          },
+          "text": "Saffron Beacon T11 was serviced after the west-sector incident and had a power module replaced before the next deployment."
+        },
+        {
+          "candidate_id": "C3-04-P09",
+          "semantic_scores": {
+            "C3-04-A": 0.9918757677078247,
+            "C3-04-B": 0.0005864709964953363
+          },
+          "text": "The inspection docket for the west sector includes Ember Beacon T8 and notes a follow-up maintenance action."
+        },
+        {
+          "candidate_id": "C3-04-P10",
+          "semantic_scores": {
+            "C3-04-A": 1.2710949704342056e-05,
+            "C3-04-B": 0.9963697195053101
+          },
+          "text": "A different unit, Ember Beacon T8, was fitted with a replacement power module before the next deployment."
+        }
+      ],
+      "case_id": "C3-04",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-04-A",
+          "child_text": "was inspected after the west-sector incident",
+          "claim_profile_sha256": "sha256:d9c5d695028eb5d1a1236b8709372f42185ba6475fa4ef944c85d312d6fc77a3",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Saffron Beacon T11",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-04-B",
+          "child_text": "Saffron Beacon T11 received a replacement power module before the next deployment",
+          "claim_profile_sha256": "sha256:d0866e879a160042c72aefa2c8ce21cacbaca20b2a0e03cdb7267137210cf6c8",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Saffron Beacon T11",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both claims concern Saffron Beacon T11: it was inspected after the west-sector incident, and Saffron Beacon T11 received a replacement power module before the next deployment."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-01-P01",
+          "semantic_scores": {
+            "C4-01-A": 0.9997051358222961,
+            "C4-01-B": 0.797054648399353
+          },
+          "text": "Facility compliance ledger records Module Zeta-31 met the specified thermal-safety standard on the final commissioning audit."
+        },
+        {
+          "candidate_id": "C4-01-P02",
+          "semantic_scores": {
+            "C4-01-A": 0.7513099312782288,
+            "C4-01-B": 0.999115526676178
+          },
+          "text": "Module Zeta-31's calibration packet notes a spring service-cycle inspection with signed technician acknowledgment."
+        },
+        {
+          "candidate_id": "C4-01-P03",
+          "semantic_scores": {
+            "C4-01-A": 0.99782395362854,
+            "C4-01-B": 0.30891162157058716
+          },
+          "text": "The thermal-safety compliance statement for Module Zeta-31 is archived in the vendor approval file."
+        },
+        {
+          "candidate_id": "C4-01-P04",
+          "semantic_scores": {
+            "C4-01-A": 0.8009195327758789,
+            "C4-01-B": 0.46739956736564636
+          },
+          "text": "On-site maintenance summary states the cooling loop in Module Zeta-31 was reset after an overnight temperature excursion."
+        },
+        {
+          "candidate_id": "C4-01-P05",
+          "semantic_scores": {
+            "C4-01-A": 0.9996572732925415,
+            "C4-01-B": 0.2164890617132187
+          },
+          "text": "A sensor log from Module Zeta-31 shows a safe thermal profile under the specified standard."
+        },
+        {
+          "candidate_id": "C4-01-P06",
+          "semantic_scores": {
+            "C4-01-A": 0.9986783862113953,
+            "C4-01-B": 9.019967546919361e-05
+          },
+          "text": "Module Alpha-22 satisfies the specified thermal-safety standard under the same site policy."
+        },
+        {
+          "candidate_id": "C4-01-P07",
+          "semantic_scores": {
+            "C4-01-A": 0.0008579444256611168,
+            "C4-01-B": 0.9984793066978455
+          },
+          "text": "A neighboring unit, Module Theta-44, had a documented calibration inspection during the spring service cycle."
+        },
+        {
+          "candidate_id": "C4-01-P08",
+          "semantic_scores": {
+            "C4-01-A": 0.0005620417650789022,
+            "C4-01-B": 0.9862697720527649
+          },
+          "text": "The maintenance ledger for Module Theta-44 records a spring service-cycle calibration with a technician signature."
+        },
+        {
+          "candidate_id": "C4-01-P09",
+          "semantic_scores": {
+            "C4-01-A": 0.9992467164993286,
+            "C4-01-B": 0.9977171421051025
+          },
+          "text": "The final commissioning report confirms Module Zeta-31 passed the thermal-safety standard and completed the spring calibration package."
+        },
+        {
+          "candidate_id": "C4-01-P10",
+          "semantic_scores": {
+            "C4-01-A": 1.1823638487840071e-05,
+            "C4-01-B": 1.4800718417973258e-05
+          },
+          "text": "The campus transfer log lists a delivery of spare gauge parts for the plant."
+        }
+      ],
+      "case_id": "C4-01",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-01-A",
+          "child_text": "Module Zeta-31 satisfies the specified thermal-safety standard.",
+          "claim_profile_sha256": "sha256:a320797b4a2e0c0813db91f35cec87746d387541a2f93f01c3b10a5fc85164a9",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "measurement",
+            "registry_entry"
+          ],
+          "subject": "Module Zeta-31",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C4-01-B",
+          "child_text": "Module Zeta-31 underwent a documented calibration inspection during the spring service cycle.",
+          "claim_profile_sha256": "sha256:7f6780c8a96441dd278dd6e56280902decccbd3e18179b97cd1c50a2c34a7108",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Module Zeta-31",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Module Zeta-31 is the subject of two independent propositions: it satisfies the specified thermal-safety standard, and it underwent a documented calibration inspection during the spring service cycle."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-02-P01",
+          "semantic_scores": {
+            "C4-02-A": 0.9995368719100952,
+            "C4-02-B": 1.160731972049689e-05
+          },
+          "text": "The asset registry shows Orion Mesh Node Q-58 has an active equipment registration and no lapsed compliance flag."
+        },
+        {
+          "candidate_id": "C4-02-P02",
+          "semantic_scores": {
+            "C4-02-A": 1.1367683327989653e-05,
+            "C4-02-B": 0.804125189781189
+          },
+          "text": "A test report measures Orion Mesh Node Q-58 latency at 12.8 milliseconds across the primary relay path."
+        },
+        {
+          "candidate_id": "C4-02-P03",
+          "semantic_scores": {
+            "C4-02-A": 0.9688900113105774,
+            "C4-02-B": 1.2025956493744161e-05
+          },
+          "text": "Orion Mesh Node Q-58 is listed as active in the network equipment registry with a current maintenance status."
+        },
+        {
+          "candidate_id": "C4-02-P04",
+          "semantic_scores": {
+            "C4-02-A": 0.995912492275238,
+            "C4-02-B": 1.176210935227573e-05
+          },
+          "text": "The equipment register for Orion Mesh Node Q-58 lists a temporary outage notice but confirms registration remains active."
+        },
+        {
+          "candidate_id": "C4-02-P05",
+          "semantic_scores": {
+            "C4-02-A": 0.9772375226020813,
+            "C4-02-B": 0.9825038313865662
+          },
+          "text": "Deployment notes say Orion Mesh Node Q-59 has an active registration and a measured latency below 14 ms."
+        },
+        {
+          "candidate_id": "C4-02-P06",
+          "semantic_scores": {
+            "C4-02-A": 1.0874157851503696e-05,
+            "C4-02-B": 0.010235106572508812
+          },
+          "text": "The signal log for Orion Mesh Node Q-59 shows a 13.1 ms delay on the primary path during a traffic burst."
+        },
+        {
+          "candidate_id": "C4-02-P07",
+          "semantic_scores": {
+            "C4-02-A": 1.1382654520275537e-05,
+            "C4-02-B": 0.48872482776641846
+          },
+          "text": "A maintenance bulletin describes the signal path for Orion Mesh Node Q-58 and records a latency of 13.2 ms during peak traffic."
+        },
+        {
+          "candidate_id": "C4-02-P08",
+          "semantic_scores": {
+            "C4-02-A": 1.0719925739977043e-05,
+            "C4-02-B": 1.1907123734999914e-05
+          },
+          "text": "Orion Mesh Node Q-58 was removed from the maintenance schedule after a failed inspection."
+        },
+        {
+          "candidate_id": "C4-02-P09",
+          "semantic_scores": {
+            "C4-02-A": 0.9691959619522095,
+            "C4-02-B": 0.23808260262012482
+          },
+          "text": "Orion Mesh Node P-11 has an active registration in the registry and a measured latency of 15.4 ms."
+        },
+        {
+          "candidate_id": "C4-02-P10",
+          "semantic_scores": {
+            "C4-02-A": 1.0738383934949525e-05,
+            "C4-02-B": 1.1957408787566237e-05
+          },
+          "text": "A training memo describes the campus network topology and routing changes."
+        }
+      ],
+      "case_id": "C4-02",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-02-A",
+          "child_text": "has an active equipment registration.",
+          "claim_profile_sha256": "sha256:69464be466829b00fb543c0c477aa3784947ad3fe59dc0461cba226f6e7685ea",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "registry_entry"
+          ],
+          "subject": "Orion Mesh Node Q-58",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C4-02-B",
+          "child_text": "has a measured signal latency below 14 milliseconds.",
+          "claim_profile_sha256": "sha256:15f6143dffe68e05f6819734086d33830e785361de95295f7fab5c19cea61b42",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Orion Mesh Node Q-58",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Orion Mesh Node Q-58 is the system under consideration: it has an active equipment registration, and its measured signal latency is below 14 milliseconds."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-03-P01",
+          "semantic_scores": {
+            "C4-03-A": 0.9995393753051758,
+            "C4-03-B": 0.33094874024391174
+          },
+          "text": "SCADA export shows Turbine Array Rho-204 produced 8.4 MW during the noon dispatch window."
+        },
+        {
+          "candidate_id": "C4-03-P02",
+          "semantic_scores": {
+            "C4-03-A": 0.7045432329177856,
+            "C4-03-B": 0.9997424483299255
+          },
+          "text": "Maintenance incident report states Turbine Array Rho-204 shut down after a coolant-pressure excursion at 03:12."
+        },
+        {
+          "candidate_id": "C4-03-P03",
+          "semantic_scores": {
+            "C4-03-A": 0.9999533891677856,
+            "C4-03-B": 0.26772791147232056
+          },
+          "text": "The turbine output log for Turbine Array Rho-204 records 8.4 megawatts and a brief load spike."
+        },
+        {
+          "candidate_id": "C4-03-P04",
+          "semantic_scores": {
+            "C4-03-A": 0.8544063568115234,
+            "C4-03-B": 0.9994744658470154
+          },
+          "text": "Turbine Array Rho-204 was taken offline after coolant pressure rose above the emergency threshold."
+        },
+        {
+          "candidate_id": "C4-03-P05",
+          "semantic_scores": {
+            "C4-03-A": 0.9989915490150452,
+            "C4-03-B": 0.99888676404953
+          },
+          "text": "Turbine Array Rho-203 reported 8.4 MW before a coolant-pressure excursion triggered a shutdown."
+        },
+        {
+          "candidate_id": "C4-03-P06",
+          "semantic_scores": {
+            "C4-03-A": 0.6834877133369446,
+            "C4-03-B": 0.9998999834060669
+          },
+          "text": "The emergency log for Turbine Array Rho-204 notes a shutdown following a coolant-pressure excursion during a manual restart."
+        },
+        {
+          "candidate_id": "C4-03-P07",
+          "semantic_scores": {
+            "C4-03-A": 0.9961420893669128,
+            "C4-03-B": 0.02139027789235115
+          },
+          "text": "A neighboring turbine, Turbine Array Rho-402, produced 8.4 MW during the same start-up sequence."
+        },
+        {
+          "candidate_id": "C4-03-P08",
+          "semantic_scores": {
+            "C4-03-A": 0.7801377177238464,
+            "C4-03-B": 0.9958963394165039
+          },
+          "text": "The operator briefing mentions that the pump room pressure at Turbine Array Rho-204 was reviewed after a shutdown."
+        },
+        {
+          "candidate_id": "C4-03-P09",
+          "semantic_scores": {
+            "C4-03-A": 2.1228692276054062e-05,
+            "C4-03-B": 0.895426332950592
+          },
+          "text": "Regional safety bulletin lists an emergency shutdown at a different site after coolant-pressure anomalies."
+        },
+        {
+          "candidate_id": "C4-03-P10",
+          "semantic_scores": {
+            "C4-03-A": 0.000624202482867986,
+            "C4-03-B": 5.8868376072496176e-05
+          },
+          "text": "A standard inspection sheet records daily housekeeping checks in the turbine hall."
+        }
+      ],
+      "case_id": "C4-03",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-03-A",
+          "child_text": "Turbine Array Rho-204 had a recorded output of 8.4 megawatts.",
+          "claim_profile_sha256": "sha256:676b50554670aae6ec54890af021bd805a983b07351973114090ab5e6523f518",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Turbine Array Rho-204",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C4-03-B",
+          "child_text": "Turbine Array Rho-204 experienced an emergency shutdown after a coolant-pressure excursion.",
+          "claim_profile_sha256": "sha256:36183e9d6f0264f88cdde8a8bc90c47f1801cb602a6c15f9c9f9bf6d4194cfc3",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Turbine Array Rho-204",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Turbine Array Rho-204 is assessed on two separate points: its recorded output reached 8.4 megawatts, and an emergency shutdown occurred after a coolant-pressure excursion."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C4-04-P01",
+          "semantic_scores": {
+            "C4-04-A": 0.999790370464325,
+            "C4-04-B": 1.837757918110583e-05
+          },
+          "text": "The facility assessor certified Helix Archive Cluster K-77 for archival preservation under the regional preservation standard."
+        },
+        {
+          "candidate_id": "C4-04-P02",
+          "semantic_scores": {
+            "C4-04-A": 4.5389082515612245e-05,
+            "C4-04-B": 0.9996280670166016
+          },
+          "text": "Helix Archive Cluster K-77 appears in the regional infrastructure directory with an active registration and no suspended status."
+        },
+        {
+          "candidate_id": "C4-04-P03",
+          "semantic_scores": {
+            "C4-04-A": 0.996002733707428,
+            "C4-04-B": 1.068877008947311e-05
+          },
+          "text": "The preservation audit memo states Helix Archive Cluster K-77 met the archival standards set by the facility assessor."
+        },
+        {
+          "candidate_id": "C4-04-P04",
+          "semantic_scores": {
+            "C4-04-A": 5.6377644796157256e-05,
+            "C4-04-B": 0.9997604489326477
+          },
+          "text": "A maintenance notice says Helix Archive Cluster K-77 remains in active registration in the regional infrastructure directory."
+        },
+        {
+          "candidate_id": "C4-04-P05",
+          "semantic_scores": {
+            "C4-04-A": 0.999862551689148,
+            "C4-04-B": 1.0736633157648612e-05
+          },
+          "text": "Helix Archive Cluster K-77 was certified for archival preservation by a contractor assessor, not the facility assessor."
+        },
+        {
+          "candidate_id": "C4-04-P06",
+          "semantic_scores": {
+            "C4-04-A": 4.054432065458968e-05,
+            "C4-04-B": 0.9974629878997803
+          },
+          "text": "The regional infrastructure directory lists Helix Archive Cluster K-99 as active while K-77 remains unregistered."
+        },
+        {
+          "candidate_id": "C4-04-P07",
+          "semantic_scores": {
+            "C4-04-A": 0.00011434318003011867,
+            "C4-04-B": 0.9998779296875
+          },
+          "text": "A neighboring archive cluster, Helix Archive Cluster K-82, has an active registration in the regional infrastructure directory."
+        },
+        {
+          "candidate_id": "C4-04-P08",
+          "semantic_scores": {
+            "C4-04-A": 0.01081833615899086,
+            "C4-04-B": 1.3603164916276e-05
+          },
+          "text": "Helix Archive Cluster K-77 was flagged for relocation during a preservation review but remains registered."
+        },
+        {
+          "candidate_id": "C4-04-P09",
+          "semantic_scores": {
+            "C4-04-A": 0.9523150324821472,
+            "C4-04-B": 1.1082804121542722e-05
+          },
+          "text": "The assessor's certification for Helix Archive Cluster K-77 was renewed after a compliance follow-up."
+        },
+        {
+          "candidate_id": "C4-04-P10",
+          "semantic_scores": {
+            "C4-04-A": 0.00010194489732384682,
+            "C4-04-B": 1.0629384632920846e-05
+          },
+          "text": "The campus network map shows the archive wing and its backup vault schedule."
+        }
+      ],
+      "case_id": "C4-04",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-04-A",
+          "child_text": "was certified for archival preservation by the facility assessor.",
+          "claim_profile_sha256": "sha256:b29e0fb7e23c2027922390ebf80acc1dc2e2bdb051d6eddee25a8b671d4731dc",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "Helix Archive Cluster K-77",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C4-04-B",
+          "child_text": "has an active registration in the regional infrastructure directory.",
+          "claim_profile_sha256": "sha256:03dab4d2dc24f00d0e8fa9861b86e58af70ca0e5a5a7f943980e1b74a58953c8",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "registry_entry"
+          ],
+          "subject": "Helix Archive Cluster K-77",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Helix Archive Cluster K-77 is the referenced installation: it was certified for archival preservation by the facility assessor, and it has an active registration in the regional infrastructure directory."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-01-P01",
+          "semantic_scores": {
+            "C5-01-A": 0.9996080994606018,
+            "C5-01-B": 0.7062689661979675
+          },
+          "text": "Lumen Transit Hub 19 received the official compliance declaration confirming it meets the regional access standard."
+        },
+        {
+          "candidate_id": "C5-01-P02",
+          "semantic_scores": {
+            "C5-01-A": 0.7419499754905701,
+            "C5-01-B": 0.9999337196350098
+          },
+          "text": "The winter operations log records a service interruption at Lumen Transit Hub 19 from 02:10 to 03:40 during the winter operating period."
+        },
+        {
+          "candidate_id": "C5-01-P03",
+          "semantic_scores": {
+            "C5-01-A": 0.10947924107313156,
+            "C5-01-B": 1.2686703485087492e-05
+          },
+          "text": "Harbor Line Gate 6 received the official compliance declaration confirming it meets the regional access standard."
+        },
+        {
+          "candidate_id": "C5-01-P04",
+          "semantic_scores": {
+            "C5-01-A": 1.0615850442263763e-05,
+            "C5-01-B": 0.9334781169891357
+          },
+          "text": "The winter operations log records a service interruption at North Quay Relay 3 from 02:10 to 03:40 during the winter operating period."
+        },
+        {
+          "candidate_id": "C5-01-P05",
+          "semantic_scores": {
+            "C5-01-A": 0.9992213249206543,
+            "C5-01-B": 0.7177897095680237
+          },
+          "text": "Lumen Transit Hub 19 is listed in the regional access compliance register with an active status."
+        },
+        {
+          "candidate_id": "C5-01-P06",
+          "semantic_scores": {
+            "C5-01-A": 0.00168379838578403,
+            "C5-01-B": 1.1967882528551854e-05
+          },
+          "text": "North Quay Relay 3 is listed in the regional access compliance register with an active status."
+        },
+        {
+          "candidate_id": "C5-01-P07",
+          "semantic_scores": {
+            "C5-01-A": 0.7545799612998962,
+            "C5-01-B": 0.9997679591178894
+          },
+          "text": "The maintenance board noted that Lumen Transit Hub 19 experienced a winter outage and resumed service after a thirty-minute reset."
+        },
+        {
+          "candidate_id": "C5-01-P08",
+          "semantic_scores": {
+            "C5-01-A": 0.894804060459137,
+            "C5-01-B": 0.4486057460308075
+          },
+          "text": "A quarterly output summary showed the installation at Lumen Transit Hub 19 was 98.2% of plan."
+        },
+        {
+          "candidate_id": "C5-01-P09",
+          "semantic_scores": {
+            "C5-01-A": 0.12023373693227768,
+            "C5-01-B": 1.2366669579932932e-05
+          },
+          "text": "A public notice described Harbor Line Gate 6 as compliant with the regional access standard."
+        },
+        {
+          "candidate_id": "C5-01-P10",
+          "semantic_scores": {
+            "C5-01-A": 1.228451856150059e-05,
+            "C5-01-B": 1.3125780242262408e-05
+          },
+          "text": "The tenant bulletin describes a temporary suspension of elevator access at South Lantern Annex 8."
+        }
+      ],
+      "case_id": "C5-01",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-01-A",
+          "child_text": "Lumen Transit Hub 19 complies with the regional access standard.",
+          "claim_profile_sha256": "sha256:4d1cd8fdd741b795f0507befa214db4f7c8c4c342739692554477d8270cd85e5",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "measurement",
+            "registry_entry"
+          ],
+          "subject": "Lumen Transit Hub 19",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-01-B",
+          "child_text": "Lumen Transit Hub 19 experienced a service interruption during the winter operating period.",
+          "claim_profile_sha256": "sha256:d17f2da5de9d43c1f79e316b7ef370d2e37647e39600a5c1e9d68c12caa969db",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Lumen Transit Hub 19",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Lumen Transit Hub 19 complies with the regional access standard and experienced a service interruption during the winter operating period."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-02-P01",
+          "semantic_scores": {
+            "C5-02-A": 0.9999252557754517,
+            "C5-02-B": 0.8851537108421326
+          },
+          "text": "Copper Finch Array 38 is entered in the coastal equipment ledger as an active installation."
+        },
+        {
+          "candidate_id": "C5-02-P02",
+          "semantic_scores": {
+            "C5-02-A": 0.9247989654541016,
+            "C5-02-B": 0.9996423721313477
+          },
+          "text": "Copper Finch Array 38 generated 118% of the operating baseline over the overnight cycle."
+        },
+        {
+          "candidate_id": "C5-02-P03",
+          "semantic_scores": {
+            "C5-02-A": 0.825080394744873,
+            "C5-02-B": 2.5525852834107354e-05
+          },
+          "text": "The coastal equipment ledger lists Harbor Crest Array 12 as an active installation."
+        },
+        {
+          "candidate_id": "C5-02-P04",
+          "semantic_scores": {
+            "C5-02-A": 7.610370812471956e-05,
+            "C5-02-B": 0.2882726490497589
+          },
+          "text": "Harbor Crest Array 12 generated 118% of the operating baseline over the overnight cycle."
+        },
+        {
+          "candidate_id": "C5-02-P05",
+          "semantic_scores": {
+            "C5-02-A": 0.9999433755874634,
+            "C5-02-B": 0.8102660775184631
+          },
+          "text": "A procurement memo described Copper Finch Array 38 as registered in the coastal equipment ledger."
+        },
+        {
+          "candidate_id": "C5-02-P06",
+          "semantic_scores": {
+            "C5-02-A": 1.1478199667180888e-05,
+            "C5-02-B": 0.6488590240478516
+          },
+          "text": "The field log cites that Sandbar Relay 9 produced a measured output above its operating baseline."
+        },
+        {
+          "candidate_id": "C5-02-P07",
+          "semantic_scores": {
+            "C5-02-A": 0.947817325592041,
+            "C5-02-B": 0.9988264441490173
+          },
+          "text": "Copper Finch Array 38 was noted in the installation brochure as operating above the expected baseline."
+        },
+        {
+          "candidate_id": "C5-02-P08",
+          "semantic_scores": {
+            "C5-02-A": 0.7469384074211121,
+            "C5-02-B": 2.6607436666381545e-05
+          },
+          "text": "The coastal equipment ledger recorded a maintenance status change at Cedar Loom Array 7."
+        },
+        {
+          "candidate_id": "C5-02-P09",
+          "semantic_scores": {
+            "C5-02-A": 0.9784923195838928,
+            "C5-02-B": 3.394318264327012e-05
+          },
+          "text": "A service bulletin says Hornbeam Array 11 was registered in the coastal equipment ledger."
+        },
+        {
+          "candidate_id": "C5-02-P10",
+          "semantic_scores": {
+            "C5-02-A": 1.1251031537540257e-05,
+            "C5-02-B": 1.1614816685323603e-05
+          },
+          "text": "The weather summary from Cape Morrow noted low humidity and calm seas."
+        }
+      ],
+      "case_id": "C5-02",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-02-A",
+          "child_text": "Copper Finch Array 38 is registered in the coastal equipment ledger.",
+          "claim_profile_sha256": "sha256:9f3e0448230baef7c4fa286e6bf25fd46b61167cd21b3f3d3c3f0f94f4a5f3fd",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Copper Finch Array 38",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-02-B",
+          "child_text": "Copper Finch Array 38 produced a measured output above its operating baseline.",
+          "claim_profile_sha256": "sha256:140de36488ce16a7a0a6cd0029e1cc74a8c48b7eaf7322e32437acb28fe30093",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Copper Finch Array 38",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Copper Finch Array 38 is registered in the coastal equipment ledger and produced a measured output above its operating baseline."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-03-P01",
+          "semantic_scores": {
+            "C5-03-A": 0.9999548196792603,
+            "C5-03-B": 0.9090967774391174
+          },
+          "text": "Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record."
+        },
+        {
+          "candidate_id": "C5-03-P02",
+          "semantic_scores": {
+            "C5-03-A": 0.3468489944934845,
+            "C5-03-B": 0.9999567270278931
+          },
+          "text": "The spring test alarm log shows Northstar Relay 62 triggered an alert at 14:42."
+        },
+        {
+          "candidate_id": "C5-03-P03",
+          "semantic_scores": {
+            "C5-03-A": 0.9883468747138977,
+            "C5-03-B": 0.00014521033153869212
+          },
+          "text": "Meridian Signal Group assigned Dune Lattice Relay 17 in the deployment record."
+        },
+        {
+          "candidate_id": "C5-03-P04",
+          "semantic_scores": {
+            "C5-03-A": 5.15169303980656e-05,
+            "C5-03-B": 0.9914653897285461
+          },
+          "text": "The spring test alarm log shows Dune Lattice Relay 17 triggered an alert at 14:42."
+        },
+        {
+          "candidate_id": "C5-03-P05",
+          "semantic_scores": {
+            "C5-03-A": 0.9997289776802063,
+            "C5-03-B": 0.8382076621055603
+          },
+          "text": "The deployment ledger records Northstar Relay 62 under the Meridian Signal Group."
+        },
+        {
+          "candidate_id": "C5-03-P06",
+          "semantic_scores": {
+            "C5-03-A": 1.8588052626000717e-05,
+            "C5-03-B": 0.9860109090805054
+          },
+          "text": "A calibration report says Lantern Echo Unit 51 triggered an alert during the spring test."
+        },
+        {
+          "candidate_id": "C5-03-P07",
+          "semantic_scores": {
+            "C5-03-A": 0.999584972858429,
+            "C5-03-B": 0.8759480714797974
+          },
+          "text": "Northstar Relay 62 was listed as a Meridian Signal Group asset in the launch summary."
+        },
+        {
+          "candidate_id": "C5-03-P08",
+          "semantic_scores": {
+            "C5-03-A": 0.9323701858520508,
+            "C5-03-B": 0.00013376917922869325
+          },
+          "text": "The field note for Pine Harbor Relay 9 mentions an attribution to the Meridian Signal Group."
+        },
+        {
+          "candidate_id": "C5-03-P09",
+          "semantic_scores": {
+            "C5-03-A": 0.6366885304450989,
+            "C5-03-B": 0.9985461235046387
+          },
+          "text": "The maintenance dashboard recorded a measured voltage spike at Northstar Relay 62 during the spring test."
+        },
+        {
+          "candidate_id": "C5-03-P10",
+          "semantic_scores": {
+            "C5-03-A": 1.2545611753012054e-05,
+            "C5-03-B": 1.264638194697909e-05
+          },
+          "text": "The local cafe board posted weekend hours and a menu update."
+        }
+      ],
+      "case_id": "C5-03",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-03-A",
+          "child_text": "Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record.",
+          "claim_profile_sha256": "sha256:33cdffd9ec5bfd9c6d2840a1a08b5d5d6b4b79892ea620a74fb9d342d0fec043",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Northstar Relay 62",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-03-B",
+          "child_text": "Northstar Relay 62 triggered an alert during the spring test.",
+          "claim_profile_sha256": "sha256:28cce24d96be1810d87f6468231a0896c31cd76be5d0bd7a5d482ccce1fafb1e",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Northstar Relay 62",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record and triggered an alert during the spring test."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C5-04-P01",
+          "semantic_scores": {
+            "C5-04-A": 0.9999496936798096,
+            "C5-04-B": 0.827523410320282
+          },
+          "text": "Silver Morrow Unit 74 received a conformity declaration for its revised design."
+        },
+        {
+          "candidate_id": "C5-04-P02",
+          "semantic_scores": {
+            "C5-04-A": 0.9770522117614746,
+            "C5-04-B": 0.999974250793457
+          },
+          "text": "The design review summary states Silver Morrow Unit 74 has a rated capacity of 1,420 units, exceeding the installation threshold."
+        },
+        {
+          "candidate_id": "C5-04-P03",
+          "semantic_scores": {
+            "C5-04-A": 0.9911822080612183,
+            "C5-04-B": 3.9507220208179206e-05
+          },
+          "text": "Harbor Finch Unit 91 received a conformity declaration for its revised design."
+        },
+        {
+          "candidate_id": "C5-04-P04",
+          "semantic_scores": {
+            "C5-04-A": 5.3225612646201625e-05,
+            "C5-04-B": 0.9594323635101318
+          },
+          "text": "The design review summary states Harbor Finch Unit 91 has a rated capacity of 1,420 units, exceeding the installation threshold."
+        },
+        {
+          "candidate_id": "C5-04-P05",
+          "semantic_scores": {
+            "C5-04-A": 0.9998114705085754,
+            "C5-04-B": 0.835654616355896
+          },
+          "text": "The compliance register lists Silver Morrow Unit 74 under a valid revised-design conformity declaration."
+        },
+        {
+          "candidate_id": "C5-04-P06",
+          "semantic_scores": {
+            "C5-04-A": 0.9216103553771973,
+            "C5-04-B": 3.8804751966381446e-05
+          },
+          "text": "The compliance register lists Eastmarsh Unit 17 under a valid revised-design conformity declaration."
+        },
+        {
+          "candidate_id": "C5-04-P07",
+          "semantic_scores": {
+            "C5-04-A": 0.7897896766662598,
+            "C5-04-B": 0.9998341798782349
+          },
+          "text": "A procurement note described the rated capacity of Silver Morrow Unit 74 as above the installation threshold."
+        },
+        {
+          "candidate_id": "C5-04-P08",
+          "semantic_scores": {
+            "C5-04-A": 3.483505133772269e-05,
+            "C5-04-B": 0.9276111125946045
+          },
+          "text": "A field memo says Crescent Vale Unit 26 had a rated capacity above the installation threshold."
+        },
+        {
+          "candidate_id": "C5-04-P09",
+          "semantic_scores": {
+            "C5-04-A": 0.9872790575027466,
+            "C5-04-B": 4.085719774593599e-05
+          },
+          "text": "The engineering bulletin confirms Graywater Unit 53 received a conformity declaration for its revised design."
+        },
+        {
+          "candidate_id": "C5-04-P10",
+          "semantic_scores": {
+            "C5-04-A": 1.1341846402501687e-05,
+            "C5-04-B": 1.1447109500295483e-05
+          },
+          "text": "The public notice about a school fundraiser listed event times and volunteer shifts."
+        }
+      ],
+      "case_id": "C5-04",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-04-A",
+          "child_text": "Silver Morrow Unit 74 received a conformity declaration for its revised design.",
+          "claim_profile_sha256": "sha256:43256dd124a7a4444f97cec8a4a622dfa1c2c661149a69d074a73308c5e2a9de",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Silver Morrow Unit 74",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-04-B",
+          "child_text": "Silver Morrow Unit 74 has a rated capacity exceeding the installation threshold.",
+          "claim_profile_sha256": "sha256:a57980c79e76dc55b2034c4fa3f41df5d48b5daf269cfa3ef311c5c2c5318d2f",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "Silver Morrow Unit 74",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Silver Morrow Unit 74 received a conformity declaration for its revised design and has a rated capacity exceeding the installation threshold."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-01-P01",
+          "semantic_scores": {
+            "C6-01-A": 0.9999299049377441,
+            "C6-01-B": 0.9562815427780151
+          },
+          "text": "The North Basin Operations Ledger lists the Kestrel Array 41 as a registered installation."
+        },
+        {
+          "candidate_id": "C6-01-P02",
+          "semantic_scores": {
+            "C6-01-A": 0.8597069978713989,
+            "C6-01-B": 0.9999676942825317
+          },
+          "text": "A commissioning notice states that the Kestrel Array 41 entered service on 14 March 2024."
+        },
+        {
+          "candidate_id": "C6-01-P03",
+          "semantic_scores": {
+            "C6-01-A": 0.9967436790466309,
+            "C6-01-B": 0.9811636805534363
+          },
+          "text": "The Kestrel Array 41 registration record identifies its ledger status as active."
+        },
+        {
+          "candidate_id": "C6-01-P04",
+          "semantic_scores": {
+            "C6-01-A": 0.9792879223823547,
+            "C6-01-B": 0.9996366500854492
+          },
+          "text": "An operations summary records the Kestrel Array 41 as having begun service in March 2024."
+        },
+        {
+          "candidate_id": "C6-01-P05",
+          "semantic_scores": {
+            "C6-01-A": 0.9998764991760254,
+            "C6-01-B": 0.8869917988777161
+          },
+          "text": "The North Basin Operations Ledger lists the Kestrel Array 39 as a registered installation."
+        },
+        {
+          "candidate_id": "C6-01-P06",
+          "semantic_scores": {
+            "C6-01-A": 0.7363089323043823,
+            "C6-01-B": 0.9999475479125977
+          },
+          "text": "A commissioning notice states that the Kestrel Array 39 entered service on 14 March 2024."
+        },
+        {
+          "candidate_id": "C6-01-P07",
+          "semantic_scores": {
+            "C6-01-A": 0.921699583530426,
+            "C6-01-B": 0.9952599406242371
+          },
+          "text": "The Kestrel Array 41 was transferred to the eastern maintenance yard in August 2025."
+        },
+        {
+          "candidate_id": "C6-01-P08",
+          "semantic_scores": {
+            "C6-01-A": 0.11306130886077881,
+            "C6-01-B": 1.1519980034790933e-05
+          },
+          "text": "A quarterly ledger report describes the North Basin Operations Ledger's archival schedule."
+        },
+        {
+          "candidate_id": "C6-01-P09",
+          "semantic_scores": {
+            "C6-01-A": 3.3654094295343384e-05,
+            "C6-01-B": 0.016935065388679504
+          },
+          "text": "The Harbor Relay 22 was entered into the Coastal Equipment Register in 2023."
+        },
+        {
+          "candidate_id": "C6-01-P10",
+          "semantic_scores": {
+            "C6-01-A": 0.0004113393952138722,
+            "C6-01-B": 1.1532412827364169e-05
+          },
+          "text": "A weather station near the North Basin recorded 18 millimeters of rain during the inspection week."
+        }
+      ],
+      "case_id": "C6-01",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-01-A",
+          "child_text": "The Kestrel Array 41 is registered with the North Basin Operations Ledger.",
+          "claim_profile_sha256": "sha256:6c2c02cc1fbc4fa951c4d5a202fead2185919590f4e93db6ca6d4a11c8a598d1",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Kestrel Array 41",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-01-B",
+          "child_text": "The Kestrel Array 41 entered service on 14 March 2024.",
+          "claim_profile_sha256": "sha256:fea43b582e95f8bed4331c9db95ed59296a1d6dc005abfe8baebd527860ce9f3",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Kestrel Array 41",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Kestrel Array 41 is registered with the North Basin Operations Ledger and entered service on 14 March 2024."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-02-P01",
+          "semantic_scores": {
+            "C6-02-A": 0.9999198913574219,
+            "C6-02-B": 0.9951238036155701
+          },
+          "text": "The Westhaven Safety Office inspection record names the Oriole Signal Node 58 and records its inspection by that office."
+        },
+        {
+          "candidate_id": "C6-02-P02",
+          "semantic_scores": {
+            "C6-02-A": 0.9948031306266785,
+            "C6-02-B": 0.9996994733810425
+          },
+          "text": "The signed inspection determination declares the Oriole Signal Node 58 compliant for the reviewed operating period."
+        },
+        {
+          "candidate_id": "C6-02-P03",
+          "semantic_scores": {
+            "C6-02-A": 0.9999337196350098,
+            "C6-02-B": 0.9968275427818298
+          },
+          "text": "The Oriole Signal Node 58 appears in the Westhaven Safety Office inspection register with a completed inspection entry."
+        },
+        {
+          "candidate_id": "C6-02-P04",
+          "semantic_scores": {
+            "C6-02-A": 0.997940719127655,
+            "C6-02-B": 0.9985427856445312
+          },
+          "text": "A maintenance log records that the Oriole Signal Node 58 was inspected during the spring review."
+        },
+        {
+          "candidate_id": "C6-02-P05",
+          "semantic_scores": {
+            "C6-02-A": 0.999854564666748,
+            "C6-02-B": 0.9911226034164429
+          },
+          "text": "The Westhaven Safety Office inspection record names the Oriole Signal Node 57 and records its inspection by that office."
+        },
+        {
+          "candidate_id": "C6-02-P06",
+          "semantic_scores": {
+            "C6-02-A": 0.9826396703720093,
+            "C6-02-B": 0.9994341731071472
+          },
+          "text": "The signed inspection determination declares the Oriole Signal Node 57 compliant for the reviewed operating period."
+        },
+        {
+          "candidate_id": "C6-02-P07",
+          "semantic_scores": {
+            "C6-02-A": 0.978084921836853,
+            "C6-02-B": 0.9979310035705566
+          },
+          "text": "The Oriole Signal Node 58 produced a signal strength reading of 91 decibels during a bench test."
+        },
+        {
+          "candidate_id": "C6-02-P08",
+          "semantic_scores": {
+            "C6-02-A": 0.5264503955841064,
+            "C6-02-B": 6.685383414151147e-05
+          },
+          "text": "A Westhaven Safety Office bulletin explains the schedule for its next regional inspection cycle."
+        },
+        {
+          "candidate_id": "C6-02-P09",
+          "semantic_scores": {
+            "C6-02-A": 4.312449163990095e-05,
+            "C6-02-B": 0.08655073493719101
+          },
+          "text": "The Lark Communications Mast 16 received a compliant rating from the South Ridge Standards Board."
+        },
+        {
+          "candidate_id": "C6-02-P10",
+          "semantic_scores": {
+            "C6-02-A": 0.9785295724868774,
+            "C6-02-B": 0.942268431186676
+          },
+          "text": "The Oriole Signal Node 58 was moved to a storage enclosure after a cable replacement."
+        }
+      ],
+      "case_id": "C6-02",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-02-A",
+          "child_text": "The Oriole Signal Node 58 was inspected by the Westhaven Safety Office.",
+          "claim_profile_sha256": "sha256:1dd8d4369f37b69dae520493c2cffa3a67d1da10fc14a0c477e277f940d024b2",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Oriole Signal Node 58",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-02-B",
+          "child_text": "The Oriole Signal Node 58 received a compliant rating during that inspection.",
+          "claim_profile_sha256": "sha256:5bc3154f91c42a70747748cc5f4d9ae4e6c93f1082b070326adc4e112591808f",
+          "expected_evidence_forms": [
+            "authoritative_declaration",
+            "database_record",
+            "document_text",
+            "measurement",
+            "registry_entry"
+          ],
+          "subject": "The Oriole Signal Node 58",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Oriole Signal Node 58 was inspected by the Westhaven Safety Office and received a compliant rating during that inspection."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-03-P01",
+          "semantic_scores": {
+            "C6-03-A": 0.9999685287475586,
+            "C6-03-B": 1.6645768482703716e-05
+          },
+          "text": "A municipal opening notice records that the Juniper Transit Hub 73 opened for public service on 2 June 2025."
+        },
+        {
+          "candidate_id": "C6-03-P02",
+          "semantic_scores": {
+            "C6-03-A": 0.9814035892486572,
+            "C6-03-B": 0.9994350075721741
+          },
+          "text": "The Juniper Transit Hub 73 platform inventory lists three passenger platforms in operation."
+        },
+        {
+          "candidate_id": "C6-03-P03",
+          "semantic_scores": {
+            "C6-03-A": 0.999919056892395,
+            "C6-03-B": 1.8654858649824746e-05
+          },
+          "text": "A facilities summary states that the Juniper Transit Hub 73 began public service in early June 2025."
+        },
+        {
+          "candidate_id": "C6-03-P04",
+          "semantic_scores": {
+            "C6-03-A": 0.9743504524230957,
+            "C6-03-B": 0.9960344433784485
+          },
+          "text": "The current site inventory records three passenger platforms at the Juniper Transit Hub 73."
+        },
+        {
+          "candidate_id": "C6-03-P05",
+          "semantic_scores": {
+            "C6-03-A": 0.9999626874923706,
+            "C6-03-B": 1.585249265190214e-05
+          },
+          "text": "A municipal opening notice records that the Juniper Transit Hub 72 opened for public service on 2 June 2025."
+        },
+        {
+          "candidate_id": "C6-03-P06",
+          "semantic_scores": {
+            "C6-03-A": 0.9748585224151611,
+            "C6-03-B": 0.9994499087333679
+          },
+          "text": "The Juniper Transit Hub 72 platform inventory lists three passenger platforms in operation."
+        },
+        {
+          "candidate_id": "C6-03-P07",
+          "semantic_scores": {
+            "C6-03-A": 0.998996913433075,
+            "C6-03-B": 2.6638768758857623e-05
+          },
+          "text": "The Juniper Transit Hub 73 hosted its first evening service after a schedule change in September 2025."
+        },
+        {
+          "candidate_id": "C6-03-P08",
+          "semantic_scores": {
+            "C6-03-A": 9.00498780538328e-05,
+            "C6-03-B": 0.0002675738651305437
+          },
+          "text": "The transit authority's annual report describes its process for assigning platform numbers."
+        },
+        {
+          "candidate_id": "C6-03-P09",
+          "semantic_scores": {
+            "C6-03-A": 0.003445360576733947,
+            "C6-03-B": 0.909139096736908
+          },
+          "text": "The Cedar Exchange Terminal 31 opened with two passenger platforms and a temporary bus bay."
+        },
+        {
+          "candidate_id": "C6-03-P10",
+          "semantic_scores": {
+            "C6-03-A": 3.375643791514449e-05,
+            "C6-03-B": 0.0685676783323288
+          },
+          "text": "A platform counter recorded three active boarding positions during a morning service check."
+        }
+      ],
+      "case_id": "C6-03",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-03-A",
+          "child_text": "The Juniper Transit Hub 73 opened for public service on 2 June 2025.",
+          "claim_profile_sha256": "sha256:b8863f937c8df5ab58d6a9d1b80da1875ef0dab6ea1140c5d238fce8efe59bb1",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Juniper Transit Hub 73",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-03-B",
+          "child_text": "It operates three passenger platforms.",
+          "claim_profile_sha256": "sha256:0c9ad4fb634b68ce7a3357c272cb5195e83cc34ac0b8313eebc62928404cd023",
+          "expected_evidence_forms": [
+            "unknown"
+          ],
+          "subject": "The Juniper Transit Hub 73",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Juniper Transit Hub 73 opened for public service on 2 June 2025 and operates three passenger platforms."
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "C6-04-P01",
+          "semantic_scores": {
+            "C6-04-A": 0.9999310970306396,
+            "C6-04-B": 0.9855809807777405
+          },
+          "text": "Meridian Instruments' calibration certificate identifies the Solace Water Monitor 86 as calibrated."
+        },
+        {
+          "candidate_id": "C6-04-P02",
+          "semantic_scores": {
+            "C6-04-A": 0.9933295845985413,
+            "C6-04-B": 0.9999343156814575
+          },
+          "text": "The calibration worksheet records a flow rate of 18.6 liters per minute for the Solace Water Monitor 86."
+        },
+        {
+          "candidate_id": "C6-04-P03",
+          "semantic_scores": {
+            "C6-04-A": 0.9999071359634399,
+            "C6-04-B": 0.9835478663444519
+          },
+          "text": "A service report states that Meridian Instruments completed calibration of the Solace Water Monitor 86."
+        },
+        {
+          "candidate_id": "C6-04-P04",
+          "semantic_scores": {
+            "C6-04-A": 0.9977419376373291,
+            "C6-04-B": 0.9998910427093506
+          },
+          "text": "The instrument log records the Solace Water Monitor 86 at 18.6 liters per minute during the calibration check."
+        },
+        {
+          "candidate_id": "C6-04-P05",
+          "semantic_scores": {
+            "C6-04-A": 0.9998396635055542,
+            "C6-04-B": 0.9634966850280762
+          },
+          "text": "Meridian Instruments' calibration certificate identifies the Solace Water Monitor 85 as calibrated."
+        },
+        {
+          "candidate_id": "C6-04-P06",
+          "semantic_scores": {
+            "C6-04-A": 0.9518908858299255,
+            "C6-04-B": 0.9997339844703674
+          },
+          "text": "The calibration worksheet records a flow rate of 18.6 liters per minute for the Solace Water Monitor 85."
+        },
+        {
+          "candidate_id": "C6-04-P07",
+          "semantic_scores": {
+            "C6-04-A": 0.9996387958526611,
+            "C6-04-B": 0.9122705459594727
+          },
+          "text": "The Solace Water Monitor 86 was shipped to Meridian Instruments for recalibration after a field visit."
+        },
+        {
+          "candidate_id": "C6-04-P08",
+          "semantic_scores": {
+            "C6-04-A": 0.01797267235815525,
+            "C6-04-B": 0.005414274521172047
+          },
+          "text": "Meridian Instruments' laboratory handbook describes its procedure for checking flow sensors."
+        },
+        {
+          "candidate_id": "C6-04-P09",
+          "semantic_scores": {
+            "C6-04-A": 0.002735727932304144,
+            "C6-04-B": 0.907455325126648
+          },
+          "text": "The Bracken Flow Gauge 44 was calibrated at a recorded rate of 21.2 liters per minute."
+        },
+        {
+          "candidate_id": "C6-04-P10",
+          "semantic_scores": {
+            "C6-04-A": 0.6198358535766602,
+            "C6-04-B": 0.9089831113815308
+          },
+          "text": "A service ticket records replacement of the Solace Water Monitor 86's intake seal."
+        }
+      ],
+      "case_id": "C6-04",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-04-A",
+          "child_text": "The Solace Water Monitor 86 was calibrated by Meridian Instruments.",
+          "claim_profile_sha256": "sha256:4a8d34c881058ccb32b7fbbec39b26778e84f2d69db00d88afd8cdbe6539e766",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Solace Water Monitor 86",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-04-B",
+          "child_text": "The Solace Water Monitor 86 recorded a flow rate of 18.6 liters per minute during the calibration check.",
+          "claim_profile_sha256": "sha256:1903fe54bc904a6e2bbe45bc2cb42feec3f64491f86874a3861a96f3ab656761",
+          "expected_evidence_forms": [
+            "document_text",
+            "measurement"
+          ],
+          "subject": "The Solace Water Monitor 86",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Solace Water Monitor 86 was calibrated by Meridian Instruments and recorded a flow rate of 18.6 liters per minute during the calibration check."
+    }
+  ],
+  "classification": "FRESH_CONTEXT_FREE_FIXED_POOL_INPUT",
+  "fresh_input_sha256": "edd824c7f8c02a9d923a54809ccf65d5e137f39473aeba48a8772bd7e656b3a9",
+  "schema": "eb-composite-obligation-rc1-fresh-input",
+  "semantic_model": {
+    "max_length": 512,
+    "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "transform": "sigmoid_one_logit"
+  },
+  "source_corpus_sha256": "b0d76c627384247d52efa09ef3632ebe212ee998d5a0c4ea6f6cc15a5ed96320",
+  "source_descriptors_sha256": "f430f2735dcc64b23cd8068881bebaf31249b5483a9f9c6eb0d5c5abc35d5b92"
+}
