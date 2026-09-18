@@ -1,0 +1,1997 @@
+{
+  "arms": {
+    "child_coverage": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P01",
+          "C3-01-P07"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "form_only": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P07",
+          "C3-01-P02"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P02",
+          "C4-01-P06"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "rc1_candidate": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "reverse_order": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P02",
+          "C4-01-P06"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "semantic_top3": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P08"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P02"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P04"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P01",
+          "C3-01-P07"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P09"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P05"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P03"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "subject_only": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P06"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "wrong_both": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P08"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P08",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P05",
+          "C1-03-P04"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P07",
+          "C2-01-P03"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P09",
+          "C2-02-P07",
+          "C2-02-P03"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P09",
+          "C2-03-P07",
+          "C2-03-P03"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P09",
+          "C2-04-P07",
+          "C2-04-P03"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P04",
+          "C3-01-P06"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P01",
+          "C3-02-P05",
+          "C3-02-P06"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P01",
+          "C3-03-P05",
+          "C3-03-P06"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P05"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P07"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P07",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P07",
+          "C5-04-P05"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P05"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P01",
+          "C6-02-P05",
+          "C6-02-P06"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P01",
+          "C6-04-P05",
+          "C6-04-P06"
+        ]
+      }
+    ],
+    "wrong_form": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P04",
+          "C1-03-P06"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P04"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P07",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P07",
+          "C5-04-P05"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ]
+      }
+    ],
+    "wrong_subject": [
+      {
+        "case_id": "C1-01",
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P08"
+        ]
+      },
+      {
+        "case_id": "C1-02",
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ]
+      },
+      {
+        "case_id": "C1-03",
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ]
+      },
+      {
+        "case_id": "C1-04",
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ]
+      },
+      {
+        "case_id": "C2-01",
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P07",
+          "C2-01-P03"
+        ]
+      },
+      {
+        "case_id": "C2-02",
+        "selected_candidate_ids": [
+          "C2-02-P09",
+          "C2-02-P07",
+          "C2-02-P03"
+        ]
+      },
+      {
+        "case_id": "C2-03",
+        "selected_candidate_ids": [
+          "C2-03-P09",
+          "C2-03-P07",
+          "C2-03-P03"
+        ]
+      },
+      {
+        "case_id": "C2-04",
+        "selected_candidate_ids": [
+          "C2-04-P09",
+          "C2-04-P07",
+          "C2-04-P03"
+        ]
+      },
+      {
+        "case_id": "C3-01",
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P04",
+          "C3-01-P06"
+        ]
+      },
+      {
+        "case_id": "C3-02",
+        "selected_candidate_ids": [
+          "C3-02-P01",
+          "C3-02-P05",
+          "C3-02-P06"
+        ]
+      },
+      {
+        "case_id": "C3-03",
+        "selected_candidate_ids": [
+          "C3-03-P01",
+          "C3-03-P05",
+          "C3-03-P06"
+        ]
+      },
+      {
+        "case_id": "C3-04",
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P05"
+        ]
+      },
+      {
+        "case_id": "C4-01",
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P06",
+          "C4-01-P07"
+        ]
+      },
+      {
+        "case_id": "C4-02",
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ]
+      },
+      {
+        "case_id": "C4-03",
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ]
+      },
+      {
+        "case_id": "C4-04",
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ]
+      },
+      {
+        "case_id": "C5-01",
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ]
+      },
+      {
+        "case_id": "C5-02",
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ]
+      },
+      {
+        "case_id": "C5-03",
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ]
+      },
+      {
+        "case_id": "C5-04",
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ]
+      },
+      {
+        "case_id": "C6-01",
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P05"
+        ]
+      },
+      {
+        "case_id": "C6-02",
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P05",
+          "C6-02-P06"
+        ]
+      },
+      {
+        "case_id": "C6-03",
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ]
+      },
+      {
+        "case_id": "C6-04",
+        "selected_candidate_ids": [
+          "C6-04-P01",
+          "C6-04-P05",
+          "C6-04-P06"
+        ]
+      }
+    ]
+  },
+  "fresh_input_sha256": "edd824c7f8c02a9d923a54809ccf65d5e137f39473aeba48a8772bd7e656b3a9",
+  "negative_control_bindings": {
+    "C1-01": {
+      "wrong_form": {
+        "C1-01-A": "authoritative_declaration",
+        "C1-01-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C1-01-A": "Asterion Relay Cabinet",
+        "C1-01-B": "relay console"
+      }
+    },
+    "C1-02": {
+      "wrong_form": {
+        "C1-02-A": "event_record",
+        "C1-02-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C1-02-A": "Another orchard controller",
+        "C1-02-B": "a measured override"
+      }
+    },
+    "C1-03": {
+      "wrong_form": {
+        "C1-03-A": "registry_entry",
+        "C1-03-B": "event_record"
+      },
+      "wrong_subject": {
+        "C1-03-A": "different survey beacon",
+        "C1-03-B": "survey beacon s enclosure"
+      }
+    },
+    "C1-04": {
+      "wrong_form": {
+        "C1-04-A": "event_record",
+        "C1-04-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C1-04-A": "different transit monitor",
+        "C1-04-B": "transit monitor"
+      }
+    },
+    "C2-01": {
+      "wrong_form": {
+        "C2-01-A": "authoritative_declaration",
+        "C2-01-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C2-01-A": "Kestrel Array relay Rho-5",
+        "C2-01-B": "Kestrel Array controller Sigma-9"
+      }
+    },
+    "C2-02": {
+      "wrong_form": {
+        "C2-02-A": "authoritative_declaration",
+        "C2-02-B": "event_record"
+      },
+      "wrong_subject": {
+        "C2-02-A": "Oriole Transit Grid beacon Lumen-7",
+        "C2-02-B": "Oriole Transit Grid gate unit Nadir-4"
+      }
+    },
+    "C2-03": {
+      "wrong_form": {
+        "C2-03-A": "authoritative_declaration",
+        "C2-03-B": "event_record"
+      },
+      "wrong_subject": {
+        "C2-03-A": "Bramble Water Network pressure node Vela-9",
+        "C2-03-B": "Bramble Water Network treatment module Cinder-8"
+      }
+    },
+    "C2-04": {
+      "wrong_form": {
+        "C2-04-A": "authoritative_declaration",
+        "C2-04-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C2-04-A": "Halcyon Storage Cluster cold-store monitor Aster-7",
+        "C2-04-B": "Halcyon Storage Cluster access service Quill-2"
+      }
+    },
+    "C3-01": {
+      "wrong_form": {
+        "C3-01-A": "event_record",
+        "C3-01-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C3-01-A": "Meridian Relay K8.",
+        "C3-01-B": "Meridian Relay K8."
+      }
+    },
+    "C3-02": {
+      "wrong_form": {
+        "C3-02-A": "authoritative_declaration",
+        "C3-02-B": "measurement"
+      },
+      "wrong_subject": {
+        "C3-02-A": "Copper Finch Array R4",
+        "C3-02-B": "Copper Finch Array R4"
+      }
+    },
+    "C3-03": {
+      "wrong_form": {
+        "C3-03-A": "authoritative_declaration",
+        "C3-03-B": "measurement"
+      },
+      "wrong_subject": {
+        "C3-03-A": "Obsidian Gate M5",
+        "C3-03-B": "Obsidian Gate M5"
+      }
+    },
+    "C3-04": {
+      "wrong_form": {
+        "C3-04-A": "authoritative_declaration",
+        "C3-04-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C3-04-A": "Saffron Beacon T12",
+        "C3-04-B": "Saffron Beacon T12"
+      }
+    },
+    "C4-01": {
+      "wrong_form": {
+        "C4-01-A": "event_record",
+        "C4-01-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C4-01-A": "Module Theta-44",
+        "C4-01-B": "Module Theta-44"
+      }
+    },
+    "C4-02": {
+      "wrong_form": {
+        "C4-02-A": "event_record",
+        "C4-02-B": "event_record"
+      },
+      "wrong_subject": {
+        "C4-02-A": "Orion Mesh Node Q-59",
+        "C4-02-B": "Orion Mesh Node Q-59"
+      }
+    },
+    "C4-03": {
+      "wrong_form": {
+        "C4-03-A": "authoritative_declaration",
+        "C4-03-B": "event_record"
+      },
+      "wrong_subject": {
+        "C4-03-A": "Turbine Array Rho-203",
+        "C4-03-B": "Turbine Array Rho-203"
+      }
+    },
+    "C4-04": {
+      "wrong_form": {
+        "C4-04-A": "authoritative_declaration",
+        "C4-04-B": "event_record"
+      },
+      "wrong_subject": {
+        "C4-04-A": "Helix Archive Cluster K-82",
+        "C4-04-B": "Helix Archive Cluster K-82"
+      }
+    },
+    "C5-01": {
+      "wrong_form": {
+        "C5-01-A": "event_record",
+        "C5-01-B": "event_record"
+      },
+      "wrong_subject": {
+        "C5-01-A": "The winter operations log",
+        "C5-01-B": "The winter operations log"
+      }
+    },
+    "C5-02": {
+      "wrong_form": {
+        "C5-02-A": "authoritative_declaration",
+        "C5-02-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C5-02-A": "Cedar Loom Array 7.",
+        "C5-02-B": "Cedar Loom Array 7."
+      }
+    },
+    "C5-03": {
+      "wrong_form": {
+        "C5-03-A": "registry_entry",
+        "C5-03-B": "event_record"
+      },
+      "wrong_subject": {
+        "C5-03-A": "Harbor Relay 9",
+        "C5-03-B": "Harbor Relay 9"
+      }
+    },
+    "C5-04": {
+      "wrong_form": {
+        "C5-04-A": "registry_entry",
+        "C5-04-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C5-04-A": "lists Eastmarsh Unit 17",
+        "C5-04-B": "lists Eastmarsh Unit 17"
+      }
+    },
+    "C6-01": {
+      "wrong_form": {
+        "C6-01-A": "authoritative_declaration",
+        "C6-01-B": "event_record"
+      },
+      "wrong_subject": {
+        "C6-01-A": "the Kestrel Array 39",
+        "C6-01-B": "the Kestrel Array 39"
+      }
+    },
+    "C6-02": {
+      "wrong_form": {
+        "C6-02-A": "event_record",
+        "C6-02-B": "event_record"
+      },
+      "wrong_subject": {
+        "C6-02-A": "the Oriole Signal Node 57",
+        "C6-02-B": "the Oriole Signal Node 57"
+      }
+    },
+    "C6-03": {
+      "wrong_form": {
+        "C6-03-A": "event_record",
+        "C6-03-B": "authoritative_declaration"
+      },
+      "wrong_subject": {
+        "C6-03-A": "The Juniper Transit Hub 72",
+        "C6-03-B": "The Juniper Transit Hub 72"
+      }
+    },
+    "C6-04": {
+      "wrong_form": {
+        "C6-04-A": "event_record",
+        "C6-04-B": "event_record"
+      },
+      "wrong_subject": {
+        "C6-04-A": "the Solace Water Monitor 85",
+        "C6-04-B": "the Solace Water Monitor 85"
+      }
+    }
+  },
+  "schema": "eb-obligation-selector-rc1-fresh-selections",
+  "selections_sha256": "e314b119ab82ea33d787fce8d45e4abdeec4ed5db402ae8c472d0a5ea1b16ea9",
+  "selector_budget": 3,
+  "selector_semantic_loss_cap": 0.01
+}

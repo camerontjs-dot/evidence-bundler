@@ -1,0 +1,10 @@
+{
+  "schema": "eb-obligation-selector-rc1-fresh-pre-gold",
+  "execution_head": "6691f8461e6d4d2ae5a598ecb25c5aaf5424aa4c",
+  "fresh_input_sha256": "da553e3081afdd403dfb4cab24e3a37399baced017b14576b1605714b676307a",
+  "corpus_sha256": "b0d76c627384247d52efa09ef3632ebe212ee998d5a0c4ea6f6cc15a5ed96320",
+  "selector_sha256": "31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f",
+  "selection_file_sha256": "a51eef43bf50a84788a6680eb55babe9ace879624291520eab98552c54b60fcb",
+  "exact_replay": true,
+  "gold_checked_out": false
+}
