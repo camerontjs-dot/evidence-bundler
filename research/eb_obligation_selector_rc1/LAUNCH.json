@@ -11,5 +11,9 @@
     "subject_identity"
   ],
   "fresh_qualification": false,
-  "production_authority": false
+  "production_authority": false,
+  "retry": 2,
+  "prior_run_id": 35352099736,
+  "prior_run_disposition": "MECHANICAL_TEST_EXPECTATION_INVALID",
+  "selector_source_changed": false
 }
