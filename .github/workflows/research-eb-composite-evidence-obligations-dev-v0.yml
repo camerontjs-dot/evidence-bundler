@@ -1,0 +1,203 @@
+name: Research - EB Composite Evidence Obligations Dev V0
+
+on:
+  push:
+    branches:
+      - research/eb-composite-evidence-obligations-dev-v0-20260918
+    paths:
+      - research/eb_composite_evidence_obligations_dev_v0/LAUNCH.json
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  SURFACE: research/eb_composite_evidence_obligations_dev_v0
+  SOURCE_SHA: 55d158f829f4aad1ed8ad69b19d9e39d445c953d
+  SOURCE_RUN: "33286415682"
+  SOURCE_ARTIFACT: contract-a-decomposition-retrieval-sensitivity-dev-rc1-55d158f829f4aad1ed8ad69b19d9e39d445c953d
+  RAW_SHA: b7522a147f1dccd1614bb8dcb4565b8a8834bee4cf2d47695befeb311ebd6680
+  DECOMP_SHA: 2120228c81466471214ca8b56a6eba2fa5bc498cd0b0243ff3b8fe24c9da2144
+  GOLD_SHA: da5b06d78060897f85dc78a8ff45c9622c697a10fe43942ea74a688115c7fac3
+  PROP_SHA: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+  PRE_GOLD_BRANCH: research/eb-composite-evidence-obligations-dev-v0-selections-20260918
+  RESULT_BRANCH: research/eb-composite-evidence-obligations-dev-v0-result-20260918
+
+jobs:
+  pressure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout study
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - name: Checkout exact decomposition source
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: 55d158f829f4aad1ed8ad69b19d9e39d445c953d
+          path: source
+          fetch-depth: 1
+
+      - name: Checkout exact shadow Claim Profile subject
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/proposition-authoring
+          ref: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+          path: proposition-authoring
+          fetch-depth: 1
+
+      - name: Download exact frozen retrieval artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: contract-a-decomposition-retrieval-sensitivity-dev-rc1-55d158f829f4aad1ed8ad69b19d9e39d445c953d
+          path: frozen-output
+          github-token: ${{ github.token }}
+          repository: camerontjs-dot/evidence-bundler
+          run-id: 33286415682
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify pre-evaluation frozen identities
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          test "$(git -C proposition-authoring rev-parse HEAD)" = "$PROP_SHA"
+          test "$(sha256sum frozen-output/raw.json | awk '{print $1}')" = "$RAW_SHA"
+          test "$(sha256sum source/benchmarks/eb-challenge-corpus-v1/decompositions/dev_decompositions.jsonl | awk '{print $1}')" = "$DECOMP_SHA"
+
+      - name: Install study dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ./proposition-authoring
+          python -m pip install 'ruff>=0.15,<1'
+
+      - name: Static checks
+        run: |
+          python -m ruff check \
+            study/$SURFACE/run_obligation_pressure.py \
+            study/$SURFACE/evaluate_obligation_pressure.py
+          python -m py_compile \
+            study/$SURFACE/run_obligation_pressure.py \
+            study/$SURFACE/evaluate_obligation_pressure.py
+
+      - name: Generate obligation selections without gold
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python study/$SURFACE/run_obligation_pressure.py \
+            --raw frozen-output/raw.json \
+            --decompositions source/benchmarks/eb-challenge-corpus-v1/decompositions/dev_decompositions.jsonl \
+            --out out/SELECTIONS.json
+
+      - name: Replay selection generation exactly
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/run_obligation_pressure.py \
+            --raw frozen-output/raw.json \
+            --decompositions source/benchmarks/eb-challenge-corpus-v1/decompositions/dev_decompositions.jsonl \
+            --out out/SELECTIONS-REPLAY.json
+          cmp out/SELECTIONS.json out/SELECTIONS-REPLAY.json
+
+      - name: Freeze selections before evaluation
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$PRE_GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "pre-gold branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$PRE_GOLD_BRANCH"
+          dest=study/$SURFACE/frozen_selection
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          {
+            echo "study_head=$(git -C study rev-parse HEAD)"
+            echo "raw_sha256=$RAW_SHA"
+            echo "decomposition_sha256=$DECOMP_SHA"
+            echo "selection_sha256=$(sha256sum out/SELECTIONS.json | awk '{print $1}')"
+            echo "gold_evaluated=false"
+          } > "$dest/PRE-EVALUATION-RECEIPT.txt"
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study add "$SURFACE/frozen_selection"
+          git -C study commit -m "Research: freeze composite obligation selections before evaluation"
+          git -C study push origin "HEAD:refs/heads/$PRE_GOLD_BRANCH"
+
+      - name: Verify exact exposed development relevance
+        run: |
+          set -euo pipefail
+          gold=source/benchmarks/eb-challenge-corpus-v1/gold/dev_relevance.jsonl
+          test "$(sha256sum "$gold" | awk '{print $1}')" = "$GOLD_SHA"
+
+      - name: Evaluate obligation arms
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/evaluate_obligation_pressure.py \
+            --selections out/SELECTIONS.json \
+            --benchmark-root source/benchmarks/eb-challenge-corpus-v1 \
+            --gold source/benchmarks/eb-challenge-corpus-v1/gold/dev_relevance.jsonl \
+            --cases source/benchmarks/eb-challenge-corpus-v1/cases/dev_cases.jsonl \
+            --out out/EVALUATION.json
+
+      - name: Build result receipt
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          selections=json.loads(Path("out/SELECTIONS.json").read_text())
+          evaluation=json.loads(Path("out/EVALUATION.json").read_text())
+          receipt={
+              "schema":"eb-composite-evidence-obligations-dev-v0-receipt",
+              "status":"EXPOSED_DEVELOPMENT_PRESSURE_COMPLETE",
+              "study_head":subprocess.check_output(
+                  ["git","-C","study","rev-parse","HEAD"], text=True
+              ).strip(),
+              "source_retrieval_sha256":selections["raw_sha256"],
+              "selection_sha256":sha("out/SELECTIONS.json"),
+              "evaluation_sha256":sha("out/EVALUATION.json"),
+              "evaluation_internal_sha256":evaluation["evaluation_sha256"],
+              "claim_count":selections["claim_count"],
+              "descriptor_count":selections["descriptor_count"],
+              "fresh_qualification":False,
+              "production_authority":False,
+          }
+          Path("out/RECEIPT.json").write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+"\n"
+          )
+          PY
+
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-composite-evidence-obligations-dev-v0-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+
+      - name: Freeze result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$RESULT_BRANCH"
+          dest=study/$SURFACE/result
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C study add "$SURFACE/result"
+          git -C study commit -m "Research: freeze composite evidence obligation pressure result"
+          git -C study push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
