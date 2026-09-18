@@ -1,0 +1,5 @@
+study_head=494ff6b126e79771ed6bb7b4a10d1365d2faf91e
+study_tree=22a459915e65301c0e70c4d74a2ecdcd87488578
+proposition_authoring=e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+cohort=a15a336e61f99b97fb9ea284761e1952fc1289cf
+gold_opened=false
