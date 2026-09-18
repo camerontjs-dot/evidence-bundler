@@ -1,0 +1,143 @@
+name: Research - EB Composite Obligation Targeted Stress V1
+
+on:
+  push:
+    branches:
+      - research/eb-composite-obligation-targeted-stress-v1-20260918
+    paths:
+      - research/eb_composite_obligation_targeted_stress_v1/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_composite_obligation_targeted_stress_v1
+  PRE_GOLD_BRANCH: research/eb-composite-obligation-targeted-stress-v1-selections-20260918
+  RESULT_BRANCH: research/eb-composite-obligation-targeted-stress-v1-result-20260918
+  TOKENIZERS_PARALLELISM: "false"
+
+jobs:
+  stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install exact semantic runtime
+        run: |
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0' \
+            'ruff>=0.15,<1'
+
+      - name: Static checks
+        run: |
+          python -m ruff check study/$SURFACE/run_stress.py
+          python -m py_compile study/$SURFACE/run_stress.py
+
+      - name: Generate selections without evaluation
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python study/$SURFACE/run_stress.py \
+            --mode select \
+            --selection-out out/SELECTIONS.json
+          python study/$SURFACE/run_stress.py \
+            --mode select \
+            --selection-out out/SELECTIONS-REPLAY.json
+          cmp out/SELECTIONS.json out/SELECTIONS-REPLAY.json
+
+      - name: Freeze non-gold selections
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$PRE_GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "pre-gold branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$PRE_GOLD_BRANCH"
+          dest=study/$SURFACE/frozen_selection
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/SELECTIONS.json"
+          cat > "$dest/PRE-EVALUATION-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-targeted-stress-v1-pre-evaluation",
+            "study_head": "$(git -C study rev-parse HEAD)",
+            "selection_sha256": "$(sha256sum out/SELECTIONS.json | awk '{print $1}')",
+            "exact_replay": true,
+            "evaluation_run": false,
+            "fresh_qualification": false
+          }
+          EOF
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study add "$SURFACE/frozen_selection"
+          git -C study commit -m "Research: freeze targeted stress selections before evaluation"
+          git -C study push origin "HEAD:refs/heads/$PRE_GOLD_BRANCH"
+
+      - name: Evaluate frozen selections
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/run_stress.py \
+            --mode evaluate \
+            --selection-in out/SELECTIONS.json \
+            --evaluation-out out/EVALUATION.json
+
+      - name: Build result receipt
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          ev=json.loads(Path("out/EVALUATION.json").read_text())
+          receipt={
+              "schema":"eb-composite-obligation-targeted-stress-v1-receipt",
+              "status":"EXPOSED_TARGETED_STRESS_COMPLETE",
+              "study_head":subprocess.check_output(
+                  ["git","-C","study","rev-parse","HEAD"],text=True
+              ).strip(),
+              "selection_sha256":sha("out/SELECTIONS.json"),
+              "evaluation_sha256":sha("out/EVALUATION.json"),
+              "evaluation_internal_sha256":ev["evaluation_sha256"],
+              "fresh_qualification":False,
+              "production_authority":False
+          }
+          Path("out/RECEIPT.json").write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+"\n"
+          )
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eb-composite-obligation-targeted-stress-v1-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Freeze result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$RESULT_BRANCH"
+          dest=study/$SURFACE/result
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C study add "$SURFACE/result"
+          git -C study commit -m "Research: freeze composite obligation targeted stress result"
+          git -C study push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
