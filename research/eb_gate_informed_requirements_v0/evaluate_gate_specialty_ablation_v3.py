@@ -55,7 +55,13 @@ def delta(a: dict[str,Any], b: dict[str,Any]) -> dict[str,float|int]:
     }
 
 
-def subset(evaluator: ModuleType, arm: str, selections: dict[str,list[str]], lanes: dict[str,Any], ids: list[str]) -> dict[str,Any]:
+def subset(
+    evaluator: ModuleType,
+    arm: str,
+    selections: dict[str, list[str]],
+    lanes: dict[str, Any],
+    ids: list[str],
+) -> dict[str, Any]:
     return evaluator._arm_metrics(
         arm,
         {i:selections[i] for i in ids},
