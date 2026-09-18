@@ -1,0 +1,289 @@
+name: Research - EB Composite Obligation RC1 Continue Run 7
+
+on:
+  push:
+    branches:
+      - research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918
+    paths:
+      - research/eb_composite_obligation_rc1_context_free/CONTINUE-RUN7.json
+
+permissions:
+  actions: read
+  contents: write
+  copilot-requests: write
+
+env:
+  SURFACE: research/eb_composite_obligation_rc1_context_free
+  SOURCE_RUN_ID: "35355397511"
+  SOURCE_ARTIFACT: eb-composite-obligation-rc1-prereveal-35355397511
+  CLAIMS_COMMIT: 739332eac80d9aac92a2cae573f6173e7485c24a
+  DESCRIPTORS_COMMIT: afb65df0988ac09d49a6ee0d8eeba826c5bbfb87
+  CORPUS_BRANCH: research/eb-composite-obligation-rc1-corpus-freeze-35355397511
+  FRESH_BASE_BRANCH: research/eb-composite-obligation-rc1-fresh-input-base-35355397511
+  FRESH_FINAL_BRANCH: research/eb-composite-obligation-rc1-fresh-input-final-20260918
+  GOLD_BRANCH: research/eb-composite-obligation-rc1-sealed-gold-final-20260918
+  TOKENIZERS_PARALLELISM: "false"
+
+jobs:
+  continue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout corrected prereveal apparatus
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install apparatus and isolated Copilot transport
+        run: |
+          set -euo pipefail
+          npm install -g @github/copilot
+          python -m pip install PyYAML 'ruff>=0.15,<1'
+          python -m ruff check study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py study/$SURFACE/copilot_isolation.py
+          python -m py_compile study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py study/$SURFACE/copilot_isolation.py
+          copilot --version
+
+      - name: Download exact run-7 prereveal artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SOURCE_ARTIFACT }}
+          path: out
+          github-token: ${{ github.token }}
+          repository: camerontjs-dot/evidence-bundler
+          run-id: ${{ env.SOURCE_RUN_ID }}
+
+      - name: Verify run-7 artifact file identities
+        run: |
+          set -euo pipefail
+          cat > expected.sha256 <<'EOF'
+          28710490f29de9b17833afa0a3b19fcb247ffd97405ecea1caad8565e0502441  out/CLAIMS.json
+          f430f2735dcc64b23cd8068881bebaf31249b5483a9f9c6eb0d5c5abc35d5b92  out/CLAIMS-AND-DESCRIPTORS.json
+          99cec40ac4df6609863306e8b6e4c2eac7b59742f04f3619198f3e4a929bb1c9  out/SOURCE-ACCESS.json
+          3024e60b5ea65a6975a221580a14a0f0e56b3f396b1a033cfe032a479eaa3c67  out/corpus/C1.json
+          776b0b7475496c7b22084b410e7758e1066d39fc0c4267e75074ab35ad08b4aa  out/corpus/C2.json
+          1a414a9d29a90156d505592090328cf89193fd6afe0b1483036f9c0a8f2404ab  out/corpus/C3.json
+          d326b82c05ba2d5c2b3697d36b03d86a4b787f0033011105748f0570dec77425  out/corpus/C4.json
+          f382f723abadf6f4e9baf6b465d2840f52e2db8ad40c6f85cf7baf85955bb847  out/corpus/C5.json
+          fda5df2c480fd623cfd5327e0c7fb730f01ee300ab0058d66b8d8bb5ea215984  out/corpus/C6.json
+          EOF
+          sha256sum -c expected.sha256
+
+      - name: Revalidate exact candidate pools under corrected subject rule
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py combine-corpus \
+            --parts out/corpus/C1.json out/corpus/C2.json out/corpus/C3.json out/corpus/C4.json out/corpus/C5.json out/corpus/C6.json \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --out out/CORPUS.json
+
+      - name: Freeze exact run-7 candidate corpus
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$CORPUS_BRANCH" >/dev/null 2>&1; then
+            echo "corpus branch already exists"
+            exit 1
+          fi
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study checkout -b "$CORPUS_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          mkdir -p "$dest"
+          cp out/CORPUS.json "$dest/CORPUS.json"
+          cat > "$dest/CORPUS-FREEZE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-corpus-freeze-continuation",
+            "source_run_id": 35355397511,
+            "source_artifact_id": 10551377921,
+            "source_artifact_digest": "sha256:caf5c01e9ce9d7d37f87a4f1d3c12e6ee3bdc583a82be6fd9d59309ae343c2ee",
+            "claims_commit": "$CLAIMS_COMMIT",
+            "descriptors_commit": "$DESCRIPTORS_COMMIT",
+            "corpus_file_sha256": "$(sha256sum out/CORPUS.json | awk '{print $1}')",
+            "validator_correction": "casefolded target-subject substring matching",
+            "full_run7_corpus_revalidation": "PASS",
+            "gold_adjudicated": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/CORPUS.json" "$SURFACE/fresh_authoring/CORPUS-FREEZE-RECEIPT.json"
+          git -C study commit -m "Research: freeze exact fresh RC1 candidate corpus"
+          git -C study push origin "HEAD:refs/heads/$CORPUS_BRANCH"
+          echo "CORPUS_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Install exact semantic scorer runtime
+        run: |
+          set -euo pipefail
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+
+      - name: Score and replay fresh candidate pools
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py score \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --out out/FRESH-INPUT.json
+          python study/$SURFACE/apparatus.py score \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --out out/FRESH-INPUT-REPLAY.json
+          cmp out/FRESH-INPUT.json out/FRESH-INPUT-REPLAY.json
+          python study/$SURFACE/apparatus.py prepare-gold \
+            --fresh-input out/FRESH-INPUT.json \
+            --out-dir out/gold-inputs
+
+      - name: Freeze fresh input before gold
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FRESH_BASE_BRANCH" >/dev/null 2>&1; then
+            echo "fresh-input base branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$FRESH_BASE_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/FRESH-INPUT.json "$dest/FRESH-INPUT.json"
+          cp out/SOURCE-ACCESS.json "$dest/SOURCE-ACCESS.json"
+          cat > "$dest/FRESH-INPUT-BASE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-fresh-input-base",
+            "corpus_commit": "$CORPUS_COMMIT",
+            "fresh_input_file_sha256": "$(sha256sum out/FRESH-INPUT.json | awk '{print $1}')",
+            "semantic_replay_exact": true,
+            "gold_adjudicated": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/FRESH-INPUT.json" "$SURFACE/fresh_authoring/SOURCE-ACCESS.json" "$SURFACE/fresh_authoring/FRESH-INPUT-BASE-RECEIPT.json"
+          git -C study commit -m "Research: freeze fresh RC1 semantic input before gold"
+          git -C study push origin "HEAD:refs/heads/$FRESH_BASE_BRANCH"
+          echo "FRESH_BASE_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Adjudicate sealed gold in fresh isolated sessions
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation
+          for cat in C1 C2 C3 C4 C5 C6; do
+            prompt="out/prompts/gold-$cat.txt"
+            python study/$SURFACE/copilot_isolation.py render \
+              --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+              --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+              --file-var gold_input=out/gold-inputs/$cat.json \
+              --out "$prompt"
+            iso="$GITHUB_WORKSPACE/isolation/gold-$cat"
+            home="$RUNNER_TEMP/copilot-home-gold-$cat"
+            mkdir -p "$iso" "$home"
+            printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+            (
+              cd "$iso"
+              COPILOT_HOME="$home" copilot \
+                -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+                -s \
+                --no-ask-user \
+                --no-auto-update \
+                --disable-builtin-mcps \
+                --disallow-temp-dir \
+                --model auto \
+                --deny-tool='read,shell,write,url,memory' \
+                > "$GITHUB_WORKSPACE/out/gold/$cat.raw.txt"
+            )
+            python study/$SURFACE/copilot_isolation.py extract-json \
+              --raw out/gold/$cat.raw.txt \
+              --out out/gold/$cat.json
+          done
+
+      - name: Validate and combine sealed gold
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py combine-gold \
+            --parts out/gold/C1.json out/gold/C2.json out/gold/C3.json out/gold/C4.json out/gold/C5.json out/gold/C6.json \
+            --fresh-input out/FRESH-INPUT.json \
+            --out out/GOLD.json
+
+      - name: Validate cohort eligibility without repair
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py eligibility \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --fresh-input out/FRESH-INPUT.json \
+            --gold out/GOLD.json \
+            --out out/ELIGIBILITY.json
+
+      - name: Seal gold on separate ref
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "sealed gold branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$GOLD_BRANCH" "$FRESH_BASE_COMMIT"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/GOLD.json "$dest/GOLD.json"
+          cp out/ELIGIBILITY.json "$dest/ELIGIBILITY.json"
+          cat > "$dest/SEALED-GOLD-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-sealed-gold-receipt",
+            "fresh_base_commit": "$FRESH_BASE_COMMIT",
+            "gold_file_sha256": "$(sha256sum out/GOLD.json | awk '{print $1}')",
+            "eligibility_file_sha256": "$(sha256sum out/ELIGIBILITY.json | awk '{print $1}')",
+            "eligibility_passed": true,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/GOLD.json" "$SURFACE/fresh_authoring/ELIGIBILITY.json" "$SURFACE/fresh_authoring/SEALED-GOLD-RECEIPT.json"
+          git -C study commit -m "Research: seal fresh RC1 gold"
+          git -C study push origin "HEAD:refs/heads/$GOLD_BRANCH"
+          echo "GOLD_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Publish READY_FOR_REVEAL fresh-input ref without gold
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FRESH_FINAL_BRANCH" >/dev/null 2>&1; then
+            echo "fresh final branch already exists"
+            exit 1
+          fi
+          git -C study checkout --detach "$FRESH_BASE_COMMIT"
+          git -C study checkout -b "$FRESH_FINAL_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/ELIGIBILITY.json "$dest/ELIGIBILITY.json"
+          cat > "$dest/READY-FOR-REVEAL.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-ready-for-reveal",
+            "status": "READY_FOR_REVEAL",
+            "source_run_id": 35355397511,
+            "fresh_input_base_commit": "$FRESH_BASE_COMMIT",
+            "fresh_input_file_sha256": "$(sha256sum out/FRESH-INPUT.json | awk '{print $1}')",
+            "fresh_input_internal_sha256": "$(python -c 'import json; print(json.load(open("out/FRESH-INPUT.json"))["fresh_input_sha256"])')",
+            "sealed_gold_ref": "$GOLD_BRANCH",
+            "sealed_gold_commit": "$GOLD_COMMIT",
+            "sealed_gold_file_sha256": "$(sha256sum out/GOLD.json | awk '{print $1}')",
+            "sealed_gold_internal_sha256": "$(python -c 'import json; print(json.load(open("out/GOLD.json"))["gold_sha256"])')",
+            "evaluator_sha256": "$(sha256sum study/$SURFACE/evaluator.py | awk '{print $1}')",
+            "eligibility_passed": true,
+            "isolation_provider": "GitHub Copilot CLI",
+            "isolation_model_selection": "auto",
+            "target_revealed_prereveal": false,
+            "development_results_exposed_prereveal": false,
+            "fresh_qualification_execution_complete": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/ELIGIBILITY.json" "$SURFACE/fresh_authoring/READY-FOR-REVEAL.json"
+          git -C study commit -m "Research: freeze RC1 fresh input ready for reveal"
+          git -C study push origin "HEAD:refs/heads/$FRESH_FINAL_BRANCH"
+
+      - name: Upload continuation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-composite-obligation-rc1-continuation-${{ github.run_id }}
+          path: out/
+          if-no-files-found: error
