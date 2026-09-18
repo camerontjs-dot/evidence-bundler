@@ -1,0 +1,16 @@
+{
+  "schema": "eb-composite-evidence-obligations-dev-v0-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_STATIC_LOOP_BINDING",
+      "workflow_run_id": 35343489534,
+      "classification": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+      "observed": "Ruff B023 flagged closure over child_id and desc inside the deterministic repair loop.",
+      "frozen_artifact_verified": true,
+      "selection_generation_started": false,
+      "evaluation_started": false,
+      "scientific_effect": false,
+      "correction": "Bound child_id and desc as keyword-only default arguments inside the local score helper. No descriptor, arm, cap, budget, pool, or evaluator logic changed."
+    }
+  ]
+}
