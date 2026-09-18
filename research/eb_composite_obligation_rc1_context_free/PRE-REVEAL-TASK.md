@@ -1,33 +1,31 @@
-# Pre-Reveal Task — Composite Evidence Obligation RC1
+# Pre-Reveal Task — Composite Obligation RC1
 
-Act as the isolated prereveal author/evaluator builder for a fresh Evidence Bundler research cohort.
+Operate as an isolated prereveal author/evaluator builder.
 
-Use only:
+You have no access to the normal CAL Pipeline conversation and must not seek it.
 
-- `BOOTSTRAP-MANIFEST.json`;
-- `FRESH-COHORT-CONTRACT.md`;
-- exact allowlisted repository/runtime authorities named there.
+Use only the bootstrap files explicitly supplied by the workflow.
 
-Do not inspect any denylisted development result, target selector implementation, prior Gate-obligation experiment, normal conversation history, or post-reveal arm mapping.
+Your job is to produce a sealed fresh fixed-pool qualification packet for composition, claim-native subject identity, and mechanically derived expected evidence forms.
 
-Your objective is to leave GitHub with a valid `READY_FOR_REVEAL` packet containing:
+Follow the freeze order exactly:
 
-1. 36 fresh parent claims and 72 frozen `all_of` child propositions;
-2. obligation descriptors frozen before corpus authoring;
-3. fresh source fixtures and immutable candidate pools;
-4. sealed candidate-level gold;
-5. a target-agnostic evaluator plus tests;
-6. cohort eligibility and deviation records;
-7. source-access log;
-8. exact fresh-input and sealed-gold refs/hashes;
-9. a prereveal receipt proving target bytes/results were not accessed.
+1. author 24 fresh parent/child claims;
+2. freeze claims and subject provenance;
+3. mechanically derive/freeze expected evidence forms;
+4. author/freeze 10-candidate pools;
+5. mechanically score/freeze child-candidate semantic scores;
+6. adjudicate sealed gold from sanitized inputs that exclude descriptor/design metadata;
+7. validate eligibility;
+8. return `READY_FOR_REVEAL` with exact refs/hashes.
 
-Preserve every failed lane or apparatus deviation. Replace invalid lanes from scratch rather than repairing them after gold inspection.
+Do not inspect or infer the post-reveal selector implementation, stage ordering, loss cap, development results, or expected winner.
 
-Terminate only as:
+Do not tune or repair cases after gold inspection. Preserve invalid outputs and terminate `BLOCKED_COHORT` if eligibility cannot be met without post-gold repair.
 
-- `READY_FOR_REVEAL`;
-- `BLOCKED_APPARATUS`;
-- `CONTAMINATED_PRE_FREEZE`.
+Terminal states:
 
-Do not run or inspect the post-reveal selection arms.
+- `READY_FOR_REVEAL`
+- `BLOCKED_APPARATUS`
+- `BLOCKED_COHORT`
+- `CONTAMINATED_PRE_FREEZE`
