@@ -1,0 +1,15 @@
+{
+  "schema": "eb-obligation-selector-rc1-freeze-receipt",
+  "status": "FROZEN_FOR_FRESH_QUALIFICATION",
+  "candidate_head": "e009b696936653afe59797ea0e94b1538e3fa2cd",
+  "candidate_tree": "a73957a90477ce092d9c3ccc99283e207ad229e4",
+  "selector_git_blob": "8119934ef6f934a6617757d6799f3f80b05488c6",
+  "selector_sha256": "31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f",
+  "budget": 3,
+  "semantic_loss_cap": 0.01,
+  "stage_order": ["semantic_topk","child_coverage","expected_evidence_form","subject_identity"],
+  "unit_tests_passed": true,
+  "exact_replay_passed": true,
+  "production_authority": false,
+  "fresh_qualification_complete": false
+}

@@ -1,0 +1,59 @@
+{
+  "after_child_coverage_ids": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "after_expected_form_ids": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "budget": 3,
+  "coverage_receipt": [],
+  "form_receipt": [
+    {
+      "action": "NO_MATCH_IMPROVEMENT",
+      "child_id": "a"
+    },
+    {
+      "action": "NO_MATCH_IMPROVEMENT",
+      "child_id": "b"
+    }
+  ],
+  "output_sha256": "9470a579301c8af7356ce9e92e29192d8e431738aee585b4447e449b33152c3f",
+  "parent_id": "freeze-smoke",
+  "schema": "eb-obligation-selector-rc1-output",
+  "selected_candidate_ids": [
+    "c1",
+    "c2",
+    "c4"
+  ],
+  "semantic_loss_cap": 0.01,
+  "semantic_topk_ids": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "stage_order": [
+    "semantic_topk",
+    "child_coverage",
+    "expected_evidence_form",
+    "subject_identity"
+  ],
+  "subject_receipt": [
+    {
+      "action": "NO_MATCH_IMPROVEMENT",
+      "child_id": "a"
+    },
+    {
+      "action": "SWAP",
+      "challenger": "c4",
+      "challenger_match": 1,
+      "child_id": "b",
+      "semantic_loss": 0.0050000000000000044,
+      "victim": "c3",
+      "victim_match": 0
+    }
+  ]
+}
