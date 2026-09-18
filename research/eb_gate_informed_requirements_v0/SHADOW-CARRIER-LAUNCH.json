@@ -1,0 +1,10 @@
+{
+  "schema": "eb-gate-shadow-carrier-launch-v0",
+  "status": "AUTHORIZED_RESEARCH_APPARATUS_PRESSURE",
+  "pr": 93,
+  "design_parent": "349d0438c906b1c8b34742aa93eefd4aebbae8e6",
+  "field_registry_count": 92,
+  "scope": "shadow_carrier_apparatus_only",
+  "causal_eb_authority": false,
+  "retrieval_selection_admission_changes": false
+}
