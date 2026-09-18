@@ -1,0 +1,47 @@
+{
+  "schema": "eb-composite-obligation-rc1-context-free-bootstrap-v0",
+  "classification": "RESEARCH_INFRASTRUCTURE_ONLY",
+  "status": "READY_FOR_CONTEXT_FREE_AUTHORING",
+  "objective": "Author and freeze a fresh composite all_of challenge that discriminates child coverage, claim-native subject binding, scope binding, and expected evidence form without exposing development outcomes or post-reveal selection rules.",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "bootstrap_base": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "bootstrap_branch": "research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918",
+  "prereveal_allowed_knowledge": [
+    "Each fresh parent has exactly two declared child propositions under all_of.",
+    "Evidence-obligation descriptors may copy exact subject/scope terms from the parent or child and may include a separately frozen experimental expected-evidence-form label.",
+    "The cohort must contain same-topic wrong-entity, wrong-scope, and wrong-form hard negatives.",
+    "Gold usefulness must not be defined by descriptor match.",
+    "Post-reveal selection budget is bounded and identical across arms."
+  ],
+  "prereveal_denylist": [
+    "PR #109 and PR #110 bodies, diffs, comments, artifacts, checks, result branches, or source files",
+    "research/eb_composite_evidence_obligations_dev_v0/**",
+    "all Gate-specialty development/result PRs #95 through #108 and their answer-bearing artifacts",
+    "normal conversation or saved summaries describing which descriptor fields helped or failed",
+    "post-reveal selector implementation, cap choice, arm bindings, or expected winner"
+  ],
+  "required_freeze_order": [
+    "author fresh parent claims",
+    "author and freeze exactly two meaning-preserving child propositions per parent with explicit all_of lineage",
+    "derive and freeze claim-native obligation descriptors before corpus authoring",
+    "author fresh corpora and intended-form metadata",
+    "freeze corpus bytes",
+    "run frozen retrieval and freeze candidate pools/scores",
+    "adjudicate candidate-level gold independently of descriptor match",
+    "freeze gold",
+    "freeze evaluator and eligibility report",
+    "commit prereveal information-aperture receipt"
+  ],
+  "terminal_states": [
+    "READY_FOR_REVEAL",
+    "BLOCKED_APPARATUS",
+    "CONTAMINATED_PRE_FREEZE"
+  ],
+  "contamination_rule": "Any denylisted development result or post-reveal selector information opened before the prereveal freeze terminates the run as CONTAMINATED_PRE_FREEZE.",
+  "nonclaims": [
+    "This bootstrap does not establish that subject, scope, form, or child coverage helps.",
+    "Claim-native identifiers are scope bindings, not answer labels.",
+    "Expected evidence form remains an experimental research field unless separately qualified.",
+    "READY_FOR_REVEAL authorizes only blinded execution."
+  ]
+}
