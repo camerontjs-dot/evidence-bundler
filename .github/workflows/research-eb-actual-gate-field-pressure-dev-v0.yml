@@ -60,6 +60,54 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Materialize exact frozen Proposition Authoring runtime dependencies
+        run: |
+          set -euo pipefail
+          mkdir -p vendor/frozen
+          python - <<'PY'
+          import hashlib
+          import urllib.request
+          from pathlib import Path
+
+          files = {
+              "proposers.py": {
+                  "url": (
+                      "https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/"
+                      "b25fa4743e16f40186d29bec3757c378733b7791/"
+                      "research/proposition_compiler_multiproposer_rc0/proposers.py"
+                  ),
+                  "blob": "b2684f1752a1eb841dd6ee85b1e81ae523b03810",
+              },
+              "evaluator.py": {
+                  "url": (
+                      "https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/"
+                      "26539c53781148543e980fe1f07b25f1ad9c2005/"
+                      "research/proposition_compiler_evaluator_rc1/evaluator.py"
+                  ),
+                  "blob": "e675b55559af17d50b65cd6af01ac23b0881bb43",
+                  "sha256": "1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d",
+              },
+          }
+
+          def git_blob(data):
+              return hashlib.sha1(
+                  f"blob {len(data)}\0".encode("ascii") + data
+              ).hexdigest()
+
+          dest = Path("vendor/frozen")
+          for name, spec in files.items():
+              with urllib.request.urlopen(spec["url"], timeout=60) as response:
+                  data = response.read()
+              actual_blob = git_blob(data)
+              assert actual_blob == spec["blob"], (name, actual_blob, spec["blob"])
+              if "sha256" in spec:
+                  assert hashlib.sha256(data).hexdigest() == spec["sha256"]
+              (dest / name).write_bytes(data)
+              print(name, actual_blob)
+          PY
+          test "$(find vendor/frozen -maxdepth 1 -type f | wc -l)" -eq 2
+          test ! -e vendor/frozen/predecessor_fresh_gold.jsonl
+
       - name: Install exact study runtime
         run: |
           python -m pip install --upgrade pip
