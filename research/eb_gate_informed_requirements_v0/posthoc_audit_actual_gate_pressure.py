@@ -147,8 +147,12 @@ def main() -> int:
     baseline = metrics[baseline_name]
     if baseline_rows != arms[placebo_name]:
         raise AssertionError("placebo selections differ from no-Gate baseline")
-    if metrics[placebo_name] != baseline:
-        raise AssertionError("placebo metrics differ from no-Gate baseline")
+    baseline_compare = dict(baseline)
+    placebo_compare = dict(metrics[placebo_name])
+    baseline_compare.pop("arm", None)
+    placebo_compare.pop("arm", None)
+    if placebo_compare != baseline_compare:
+        raise AssertionError("placebo metric payload differs from no-Gate baseline")
 
     pairs: list[dict[str, Any]] = []
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
