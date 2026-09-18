@@ -1,0 +1,17 @@
+{
+  "schema": "eb-actual-gate-field-pressure-deviation-log-v0",
+  "deviations": [
+    {
+      "id": "RUN_01_RUNTIME_HUB_PIN_TYPO",
+      "workflow_run_id": 35297121548,
+      "classification": "MECHANICAL_PRE_STUDY_RUNTIME_FAILURE",
+      "observed": "workflow pinned huggingface_hub 1.3.1, which conflicts with transformers 5.17.0",
+      "authoritative_runtime_receipt": "research/eb_typed_selector_rc1_execution/frozen/RUNTIME_IDENTITY.txt@04523e52606ce47bb3c2eec16c18a5de66b2f277",
+      "corrected_value": "huggingface-hub==1.31.0",
+      "study_code_executed": false,
+      "gate_pressure_executed": false,
+      "gold_opened": false,
+      "scientific_effect": false
+    }
+  ]
+}
