@@ -1,0 +1,123 @@
+name: Research - EB Gate Field Pressure Posthoc Audit V0
+
+on:
+  push:
+    branches:
+      - research/eb-gate-field-pressure-dev-v0-posthoc-audit-20260917
+    paths:
+      - research/eb_gate_informed_requirements_v0/POSTHOC-AUDIT-LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_gate_informed_requirements_v0
+  GOLD_SHA: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+  EVALUATOR_REF: research/eb-typed-selector-rc1-successor-fresh-input-final-20260917
+  RESULT_BRANCH: research/eb-gate-field-pressure-dev-v0-posthoc-audit-result-20260917
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout posthoc analysis branch
+        uses: actions/checkout@v4
+        with:
+          path: audit
+          fetch-depth: 0
+
+      - name: Checkout exact exposed development gold
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+          path: gold
+          fetch-depth: 1
+
+      - name: Checkout exact frozen RC1 evaluator
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: research/eb-typed-selector-rc1-successor-fresh-input-final-20260917
+          path: frozen-evaluator
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify frozen input identities
+        run: |
+          set -euo pipefail
+          test "$(git -C gold rev-parse HEAD)" = "$GOLD_SHA"
+          gold_file=gold/research/eb_typed_selector_rc1_successor/GOLD.json
+          test "$(sha256sum "$gold_file" | awk '{print $1}')" = "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592"
+          evaluator=frozen-evaluator/research/eb_typed_selector_rc1_successor/evaluator.py
+          test "$(sha256sum "$evaluator" | awk '{print $1}')" = "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2"
+          selections=audit/research/eb_gate_informed_requirements_v0/actual_field_pressure_result/SELECTIONS-PRE-GOLD.json
+          test "$(sha256sum "$selections" | awk '{print $1}')" = "4796677d060a1c84a852e86a70b4e1eea209091cdccd057073238a9bae7368cc"
+
+      - name: Static check posthoc analyzer
+        run: |
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check audit/$SURFACE/posthoc_audit_actual_gate_pressure.py
+          python -m py_compile audit/$SURFACE/posthoc_audit_actual_gate_pressure.py
+
+      - name: Run exact-metric posthoc audit
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python audit/$SURFACE/posthoc_audit_actual_gate_pressure.py \
+            --selections audit/$SURFACE/actual_field_pressure_result/SELECTIONS-PRE-GOLD.json \
+            --gold gold/research/eb_typed_selector_rc1_successor/GOLD.json \
+            --frozen-evaluator frozen-evaluator/research/eb_typed_selector_rc1_successor/evaluator.py \
+            --out out/POSTHOC-AUDIT.json
+
+      - name: Build receipt
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+
+          p=Path("out/POSTHOC-AUDIT.json")
+          audit=json.loads(p.read_text())
+          receipt={
+              "schema":"eb-gate-field-pressure-posthoc-audit-receipt-v0",
+              "status":"POSTHOC_AUDIT_COMPLETE",
+              "analysis_head":subprocess.check_output(
+                  ["git","-C","audit","rev-parse","HEAD"],text=True
+              ).strip(),
+              "source_result_commit":"f2a51a4a3b803df4b416887e6b6e0ff4e957ed40",
+              "source_selection_sha256":audit["source_selection_sha256"],
+              "gold_sha256":audit["gold_sha256"],
+              "frozen_evaluator_sha256":audit["frozen_evaluator_sha256"],
+              "audit_sha256":hashlib.sha256(p.read_bytes()).hexdigest(),
+              "classification":"POST_HOC_EXPOSED_DEVELOPMENT_DIAGNOSTIC",
+              "selections_changed":False,
+              "fresh_qualification":False,
+              "production_authority":False,
+          }
+          Path("out/POSTHOC-RECEIPT.json").write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+"\n"
+          )
+          PY
+
+      - name: Freeze compact posthoc result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "posthoc result branch already exists"
+            exit 1
+          fi
+          git -C audit checkout -b "$RESULT_BRANCH"
+          dest=audit/$SURFACE/posthoc_audit_result
+          mkdir -p "$dest"
+          cp out/POSTHOC-AUDIT.json "$dest/"
+          cp out/POSTHOC-RECEIPT.json "$dest/"
+          git -C audit config user.name "github-actions[bot]"
+          git -C audit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C audit add "$SURFACE/posthoc_audit_result"
+          git -C audit commit -m "Research: freeze Gate field pressure posthoc audit"
+          git -C audit push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C audit rev-parse HEAD
+          git -C audit rev-parse HEAD^{tree}
