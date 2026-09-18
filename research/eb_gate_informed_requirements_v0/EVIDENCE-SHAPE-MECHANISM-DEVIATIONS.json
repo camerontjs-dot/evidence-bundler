@@ -11,6 +11,17 @@
       "gold_opened": false,
       "scientific_effect": false,
       "correction": "Removed unused imports and added defaultdict import only. No mechanism, control, cap, classifier, or evaluator logic changed."
+    },
+    {
+      "id": "RUN_02_STATIC_ONLY_CALLABLE_IMPORT",
+      "workflow_run_id": 35298532896,
+      "classification": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+      "observed": "Ruff UP035 required Callable to be imported from collections.abc.",
+      "mechanism_selection_started": false,
+      "pre_gold_selection_frozen": false,
+      "gold_opened": false,
+      "scientific_effect": false,
+      "correction": "Moved Callable import from typing to collections.abc only. No scientific logic changed."
     }
   ]
 }
