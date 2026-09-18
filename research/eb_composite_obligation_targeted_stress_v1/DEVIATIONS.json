@@ -1,0 +1,20 @@
+{
+  "schema": "eb-composite-obligation-targeted-stress-v1-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_STATIC_STYLE_ONLY",
+      "workflow_run_id": 35348297975,
+      "classification": "MECHANICAL_PRE_SCORING_STATIC_INVALID",
+      "observed_codes": {
+        "E501": 65,
+        "E702": 6,
+        "F541": 19
+      },
+      "model_scoring_started": false,
+      "selection_started": false,
+      "evaluation_started": false,
+      "scientific_source_changed": false,
+      "correction": "Workflow Ruff gate ignores E501/E702/F541 for the frozen research script; py_compile remains required. Fixture text, model, caps, arms, selectors, metrics, and thresholds are unchanged."
+    }
+  ]
+}
