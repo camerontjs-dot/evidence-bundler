@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from selector import select
+from selector import candidate_specialty_forms, select
 
 
 def sha256_file(path: str | Path) -> str:
@@ -20,7 +20,11 @@ def selected_map(rows: list[dict[str, Any]]) -> dict[str, list[str]]:
     }
 
 
-def payload_for_lane(lane_id: str, diag: dict[str, Any]) -> dict[str, Any]:
+def payload_for_lane(
+    lane_id: str,
+    diag: dict[str, Any],
+    pool_by_id: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     return {
         "claim_id": lane_id,
         "expected_evidence_forms": list(diag["expected_forms"]),
@@ -28,7 +32,7 @@ def payload_for_lane(lane_id: str, diag: dict[str, Any]) -> dict[str, Any]:
             {
                 "candidate_id": str(row["candidate_id"]),
                 "rank": int(row["rank"]),
-                "text": str(row["text"]) if "text" in row else "",
+                "text": str(pool_by_id[str(row["candidate_id"])]["text"]),
                 "semantic_score": float(row["semantic_score"]),
             }
             for row in diag["candidates"]
@@ -39,11 +43,21 @@ def payload_for_lane(lane_id: str, diag: dict[str, Any]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--v1-selections", required=True)
+    parser.add_argument("--pools", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
 
     path = Path(args.v1_selections)
+    pools_path = Path(args.pools)
     source = json.loads(path.read_text(encoding="utf-8"))
+    pools = json.loads(pools_path.read_text(encoding="utf-8"))
+    pool_by_lane = {
+        str(lane["lane_id"]): {
+            str(candidate["candidate_id"]): candidate
+            for candidate in lane["candidates"]
+        }
+        for lane in pools["lanes"]
+    }
     expected = selected_map(
         source["selections"]["gate_fraction_loose_correct_cap_0.010"]
     )
@@ -51,28 +65,26 @@ def main() -> int:
     rows: list[dict[str, Any]] = []
     exact = True
     permutation = True
+    classifier_exact = True
 
     for lane_id in sorted(source["diagnostics"]):
         diag = source["diagnostics"][lane_id]
-        payload = payload_for_lane(lane_id, diag)
+        payload = payload_for_lane(lane_id, diag, pool_by_lane[lane_id])
 
-        # The frozen development diagnostics intentionally omit text because the
-        # already-derived specialty labels are what were frozen pre-gold. RC0
-        # therefore cannot be reclassified from those diagnostics alone.
-        # This script reconstructs representative text tokens from the frozen
-        # loose-form observations solely to verify the selector decision rule.
-        for candidate, frozen in zip(payload["candidates"], diag["candidates"], strict=True):
-            forms = set(frozen["loose_forms"])
-            tokens: list[str] = []
-            if "authoritative_declaration" in forms:
-                tokens.append("policy states that")
-            if "event_record" in forms:
-                tokens.append("incident event record")
-            if "registry_entry" in forms:
-                tokens.append("registry certificate")
-            if not tokens:
-                tokens.append("plain narrative")
-            candidate["text"] = " ".join(tokens)
+        lane_classifier_exact = True
+        for candidate, frozen in zip(
+            payload["candidates"], diag["candidates"], strict=True
+        ):
+            expected_specialties = sorted(
+                set(frozen["loose_forms"])
+                & {"authoritative_declaration", "event_record", "registry_entry"}
+            )
+            observed_specialties = sorted(
+                candidate_specialty_forms(str(candidate["text"]))
+            )
+            if observed_specialties != expected_specialties:
+                lane_classifier_exact = False
+        classifier_exact = classifier_exact and lane_classifier_exact
 
         first = select(payload)
         reversed_payload = {
@@ -96,6 +108,7 @@ def main() -> int:
                 "observed": observed,
                 "exact_match": lane_exact,
                 "permutation_invariant": lane_permutation,
+                "classifier_exact": lane_classifier_exact,
                 "action": first["action"],
                 "expected_specialty_forms": first["expected_specialty_forms"],
             }
@@ -104,14 +117,16 @@ def main() -> int:
     report = {
         "schema": "eb-gate-specialty-selector-rc0-development-equivalence",
         "source_v1_selection_sha256": sha256_file(path),
+        "source_pools_sha256": sha256_file(pools_path),
         "target_arm": "gate_fraction_loose_correct_cap_0.010",
+        "classifier_exact_all_lanes": classifier_exact,
         "exact_all_lanes": exact,
         "permutation_all_lanes": permutation,
         "lane_count": len(rows),
         "rows": rows,
         "nonclaims": [
             "this is exposed-development implementation equivalence only",
-            "reconstructed form tokens verify decision-rule equivalence, not classifier fidelity",
+            "actual frozen passage text is used for classifier and selector equivalence",
             "fresh qualification remains required",
         ],
     }
@@ -120,7 +135,7 @@ def main() -> int:
         encoding="utf-8",
     )
     print(json.dumps(report, indent=2, sort_keys=True))
-    if not exact or not permutation:
+    if not classifier_exact or not exact or not permutation:
         return 1
     return 0
 
