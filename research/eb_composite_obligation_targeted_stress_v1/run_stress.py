@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import math
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -699,14 +698,34 @@ def evaluate(payload: dict[str,Any]) -> dict[str,Any]:
 
 def main() -> int:
     parser=argparse.ArgumentParser()
-    parser.add_argument("--selection-out",required=True)
-    parser.add_argument("--evaluation-out",required=True)
+    parser.add_argument("--mode",choices=("select","evaluate"),required=True)
+    parser.add_argument("--selection-out")
+    parser.add_argument("--selection-in")
+    parser.add_argument("--evaluation-out")
     args=parser.parse_args()
-    cases=build_cases()
-    selections=score_cases(cases)
-    Path(args.selection_out).write_text(json.dumps(selections,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+
+    if args.mode=="select":
+        if not args.selection_out:
+            raise SystemExit("--selection-out is required in select mode")
+        selections=score_cases(build_cases())
+        Path(args.selection_out).write_text(
+            json.dumps(selections,indent=2,sort_keys=True)+"\n",
+            encoding="utf-8",
+        )
+        print(json.dumps({
+            "selection_sha256":sha256_json(selections),
+            "case_count":selections["case_count"],
+        },indent=2,sort_keys=True))
+        return 0
+
+    if not args.selection_in or not args.evaluation_out:
+        raise SystemExit("--selection-in and --evaluation-out are required in evaluate mode")
+    selections=json.loads(Path(args.selection_in).read_text(encoding="utf-8"))
     evaluation=evaluate(selections)
-    Path(args.evaluation_out).write_text(json.dumps(evaluation,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    Path(args.evaluation_out).write_text(
+        json.dumps(evaluation,indent=2,sort_keys=True)+"\n",
+        encoding="utf-8",
+    )
     print(json.dumps({
         "selection_sha256":sha256_json(selections),
         "evaluation_sha256":evaluation["evaluation_sha256"],
