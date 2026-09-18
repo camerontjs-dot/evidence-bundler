@@ -1,0 +1,113 @@
+name: Research - EB Obligation Selector RC1 Freeze
+
+on:
+  push:
+    branches:
+      - research/eb-obligation-selector-rc1-candidate-20260918
+    paths:
+      - research/eb_obligation_selector_rc1/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_obligation_selector_rc1
+  FROZEN_BRANCH: research/eb-obligation-selector-rc1-frozen-20260918
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Static and unit gates
+        env:
+          PYTHONPATH: candidate/research/eb_obligation_selector_rc1
+        run: |
+          set -euo pipefail
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check candidate/$SURFACE/selector.py candidate/$SURFACE/test_selector.py
+          python -m py_compile candidate/$SURFACE/selector.py candidate/$SURFACE/test_selector.py
+          python -m unittest candidate/$SURFACE/test_selector.py
+
+      - name: Exact deterministic smoke replay
+        env:
+          PYTHONPATH: candidate/research/eb_obligation_selector_rc1
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python - <<'PY'
+          import json
+          from selector import select
+          payload={
+            "parent_id":"freeze-smoke",
+            "children":[
+              {"child_id":"a","subject":"Valve 2","expected_evidence_forms":["event_record"]},
+              {"child_id":"b","subject":"Valve 2","expected_evidence_forms":["registry_entry"]}
+            ],
+            "candidates":[
+              {"candidate_id":"c1","text":"Policy requires Valve 2 closure verification.","semantic_scores":{"a":0.99,"b":0.20}},
+              {"candidate_id":"c2","text":"Event log recorded Valve 2 closure.","semantic_scores":{"a":0.985,"b":0.18}},
+              {"candidate_id":"c3","text":"Registry entry lists Valve 3 as active.","semantic_scores":{"a":0.10,"b":0.98}},
+              {"candidate_id":"c4","text":"Registry entry lists Valve 2 as active.","semantic_scores":{"a":0.11,"b":0.975}},
+              {"candidate_id":"c5","text":"General narrative about Valve 2.","semantic_scores":{"a":0.97,"b":0.30}}
+            ]
+          }
+          first=select(payload)
+          second=select(json.loads(json.dumps(payload)))
+          assert first==second
+          open("out/SMOKE.json","w").write(json.dumps(first,indent=2,sort_keys=True)+"\n")
+          PY
+
+      - name: Build freeze receipt
+        run: |
+          set -euo pipefail
+          selector=candidate/$SURFACE/selector.py
+          cat > out/FREEZE-RECEIPT.json <<EOF
+          {
+            "schema": "eb-obligation-selector-rc1-freeze-receipt",
+            "status": "FROZEN_FOR_FRESH_QUALIFICATION",
+            "candidate_head": "$(git -C candidate rev-parse HEAD)",
+            "candidate_tree": "$(git -C candidate rev-parse HEAD^{tree})",
+            "selector_git_blob": "$(git -C candidate hash-object $SURFACE/selector.py)",
+            "selector_sha256": "$(sha256sum "$selector" | awk '{print $1}')",
+            "budget": 3,
+            "semantic_loss_cap": 0.01,
+            "stage_order": ["semantic_topk","child_coverage","expected_evidence_form","subject_identity"],
+            "unit_tests_passed": true,
+            "exact_replay_passed": true,
+            "production_authority": false,
+            "fresh_qualification_complete": false
+          }
+          EOF
+
+      - name: Freeze exact candidate
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FROZEN_BRANCH" >/dev/null 2>&1; then
+            echo "frozen branch already exists"
+            exit 1
+          fi
+          git -C candidate checkout -b "$FROZEN_BRANCH"
+          cp out/SMOKE.json candidate/$SURFACE/SMOKE.json
+          cp out/FREEZE-RECEIPT.json candidate/$SURFACE/FREEZE-RECEIPT.json
+          git -C candidate config user.name "github-actions[bot]"
+          git -C candidate config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C candidate add "$SURFACE/SMOKE.json" "$SURFACE/FREEZE-RECEIPT.json"
+          git -C candidate commit -m "Research: freeze obligation selector RC1"
+          git -C candidate push origin "HEAD:refs/heads/$FROZEN_BRANCH"
+          git -C candidate rev-parse HEAD
+          git -C candidate rev-parse HEAD^{tree}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eb-obligation-selector-rc1-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
