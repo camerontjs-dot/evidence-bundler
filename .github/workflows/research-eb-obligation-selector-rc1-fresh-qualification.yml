@@ -1,0 +1,192 @@
+name: Research - EB Obligation Selector RC1 Fresh Qualification
+
+on:
+  push:
+    branches:
+      - research/eb-obligation-selector-rc1-fresh-execution-20260918
+    paths:
+      - research/eb_obligation_selector_rc1_fresh_execution/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  FRESH_REF: 1bd4b14172d5201ec8687fba621fce4b6637a147
+  CORPUS_REF: research/eb-composite-obligation-rc1-corpus-freeze-35355397511
+  SELECTOR_REF: df6e0af3732fc08e9db330741b9b99113247a40c
+  GOLD_REF: 4814144caf6d5fdb3e8038bf5f77c46d6ef46964
+  FRESH_SHA256: da553e3081afdd403dfb4cab24e3a37399baced017b14576b1605714b676307a
+  CORPUS_SHA256: b0d76c627384247d52efa09ef3632ebe212ee998d5a0c4ea6f6cc15a5ed96320
+  SELECTOR_SHA256: 31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f
+  GOLD_SHA256: 9e521d0010836ec66dc76c5fa21abd1d7fc343e271b2d18029300021f217d801
+  EVALUATOR_SHA256: 78dadeb6aa217a19b1681f8fe9f4c48e9fe9971d43439d1dbe0280b11029c0de
+  SELECTION_BRANCH: research/eb-obligation-selector-rc1-fresh-selections-20260918
+  RESULT_BRANCH: research/eb-obligation-selector-rc1-fresh-result-20260918
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout execution apparatus
+        uses: actions/checkout@v4
+        with:
+          path: execution
+          fetch-depth: 0
+
+      - name: Checkout frozen fresh input
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.FRESH_REF }}
+          path: fresh
+          fetch-depth: 1
+
+      - name: Checkout frozen candidate corpus
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.CORPUS_REF }}
+          path: corpus
+          fetch-depth: 1
+
+      - name: Checkout frozen RC1 selector
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.SELECTOR_REF }}
+          path: selector
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify prereveal identities and static apparatus
+        run: |
+          set -euo pipefail
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check execution/research/eb_obligation_selector_rc1_fresh_execution/run.py
+          python -m py_compile execution/research/eb_obligation_selector_rc1_fresh_execution/run.py
+          test "$(sha256sum fresh/research/eb_composite_obligation_rc1_context_free/fresh_authoring/FRESH-INPUT.json | awk '{print $1}')" = "$FRESH_SHA256"
+          test "$(sha256sum corpus/research/eb_composite_obligation_rc1_context_free/fresh_authoring/CORPUS.json | awk '{print $1}')" = "$CORPUS_SHA256"
+          test "$(sha256sum selector/research/eb_obligation_selector_rc1/selector.py | awk '{print $1}')" = "$SELECTOR_SHA256"
+          test "$(sha256sum fresh/research/eb_composite_obligation_rc1_context_free/evaluator.py | awk '{print $1}')" = "$EVALUATOR_SHA256"
+
+      - name: Generate and replay all post-reveal selections without gold
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python execution/research/eb_obligation_selector_rc1_fresh_execution/run.py select \
+            --fresh fresh/research/eb_composite_obligation_rc1_context_free/fresh_authoring/FRESH-INPUT.json \
+            --corpus corpus/research/eb_composite_obligation_rc1_context_free/fresh_authoring/CORPUS.json \
+            --selector selector/research/eb_obligation_selector_rc1/selector.py \
+            --out out/SELECTIONS.json
+          python execution/research/eb_obligation_selector_rc1_fresh_execution/run.py select \
+            --fresh fresh/research/eb_composite_obligation_rc1_context_free/fresh_authoring/FRESH-INPUT.json \
+            --corpus corpus/research/eb_composite_obligation_rc1_context_free/fresh_authoring/CORPUS.json \
+            --selector selector/research/eb_obligation_selector_rc1/selector.py \
+            --out out/SELECTIONS-REPLAY.json
+          cmp out/SELECTIONS.json out/SELECTIONS-REPLAY.json
+
+      - name: Freeze all selections before gold checkout
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$SELECTION_BRANCH" >/dev/null 2>&1; then
+            echo "selection branch already exists"
+            exit 1
+          fi
+          git -C execution config user.name "github-actions[bot]"
+          git -C execution config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C execution checkout -b "$SELECTION_BRANCH"
+          dest=execution/research/eb_obligation_selector_rc1_fresh_execution/frozen_selection
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/SELECTIONS.json"
+          cat > "$dest/PRE-GOLD-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-obligation-selector-rc1-fresh-pre-gold",
+            "execution_head": "$(git -C execution rev-parse HEAD)",
+            "fresh_input_sha256": "$FRESH_SHA256",
+            "corpus_sha256": "$CORPUS_SHA256",
+            "selector_sha256": "$SELECTOR_SHA256",
+            "selection_file_sha256": "$(sha256sum out/SELECTIONS.json | awk '{print $1}')",
+            "exact_replay": true,
+            "gold_checked_out": false
+          }
+          EOF
+          git -C execution add research/eb_obligation_selector_rc1_fresh_execution/frozen_selection
+          git -C execution commit -m "Research: freeze RC1 fresh selections before gold"
+          git -C execution push origin "HEAD:refs/heads/$SELECTION_BRANCH"
+          echo "SELECTION_COMMIT=$(git -C execution rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Checkout sealed gold only after selection freeze
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: ${{ env.GOLD_REF }}
+          path: gold
+          fetch-depth: 1
+
+      - name: Verify sealed gold and evaluate
+        run: |
+          set -euo pipefail
+          test "$(sha256sum gold/research/eb_composite_obligation_rc1_context_free/fresh_authoring/GOLD.json | awk '{print $1}')" = "$GOLD_SHA256"
+          python fresh/research/eb_composite_obligation_rc1_context_free/evaluator.py \
+            --fresh-input fresh/research/eb_composite_obligation_rc1_context_free/fresh_authoring/FRESH-INPUT.json \
+            --selections out/SELECTIONS.json \
+            --gold gold/research/eb_composite_obligation_rc1_context_free/fresh_authoring/GOLD.json \
+            --out out/EVALUATION.json
+          python execution/research/eb_obligation_selector_rc1_fresh_execution/run.py disposition \
+            --evaluation out/EVALUATION.json \
+            --out out/DISPOSITION.json
+
+      - name: Build terminal receipt
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          d=json.loads(Path("out/DISPOSITION.json").read_text())
+          receipt={
+            "schema":"eb-obligation-selector-rc1-fresh-terminal-receipt",
+            "status":d["status"],
+            "execution_head":subprocess.check_output(["git","-C","execution","rev-parse","HEAD"],text=True).strip(),
+            "selection_commit":os.environ["SELECTION_COMMIT"],
+            "fresh_input_sha256":os.environ["FRESH_SHA256"],
+            "corpus_sha256":os.environ["CORPUS_SHA256"],
+            "selector_sha256":os.environ["SELECTOR_SHA256"],
+            "gold_sha256":os.environ["GOLD_SHA256"],
+            "selection_file_sha256":sha("out/SELECTIONS.json"),
+            "evaluation_file_sha256":sha("out/EVALUATION.json"),
+            "disposition_file_sha256":sha("out/DISPOSITION.json"),
+            "production_authority":False
+          }
+          Path("out/RECEIPT.json").write_text(json.dumps(receipt,indent=2,sort_keys=True)+"\n")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eb-obligation-selector-rc1-fresh-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+
+      - name: Freeze terminal result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "result branch already exists"
+            exit 1
+          fi
+          git -C execution checkout -b "$RESULT_BRANCH"
+          dest=execution/research/eb_obligation_selector_rc1_fresh_execution/result
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/DISPOSITION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C execution add research/eb_obligation_selector_rc1_fresh_execution/result
+          git -C execution commit -m "Research: freeze RC1 fresh qualification result"
+          git -C execution push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C execution rev-parse HEAD
+          git -C execution rev-parse HEAD^{tree}
