@@ -87,6 +87,23 @@
       "scientific_contract_changed": false,
       "observed": "C1 raw response contained the requested claim payload nested in the echoed JSON-schema envelope and was missing exactly one final object-closing brace.",
       "correction": "Generic adapter only: permit one missing final object brace when brace balance proves exactly one is missing, then if an embedded JSON schema declares required top-level fields and those fields exist, project only those required fields. Do not inspect or edit scientific values."
+    },
+    {
+      "id": "AUTHORING_RUN_07_VALIDATOR_CASE_SENSITIVITY",
+      "workflow_run_id": 35355397511,
+      "artifact_id": 10551377921,
+      "artifact_digest": "sha256:caf5c01e9ce9d7d37f87a4f1d3c12e6ee3bdc583a82be6fd9d59309ae343c2ee",
+      "classification": "APPARATUS_VALIDATOR_INVALID_AFTER_AUTHORING_BEFORE_CORPUS_FREEZE",
+      "claims_frozen_commit": "739332eac80d9aac92a2cae573f6173e7485c24a",
+      "descriptors_frozen_commit": "afb65df0988ac09d49a6ee0d8eeba826c5bbfb87",
+      "candidate_author_calls_complete": true,
+      "corpus_frozen": false,
+      "semantic_scoring_started": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": "C1-01-P06 used `the console` while the frozen child subject anchor was `The console`. The selector itself matches subjects case-insensitively, but the corpus validator required case-sensitive substring identity.",
+      "full_artifact_replay_under_corrected_rule": "PASS_ZERO_OTHER_GEOMETRY_VIOLATIONS",
+      "correction": "Change only target-subject construction validation to casefolded substring matching. Reuse the exact run-7 authored claims, descriptors, and candidate pools; do not regenerate them."
     }
   ]
 }
