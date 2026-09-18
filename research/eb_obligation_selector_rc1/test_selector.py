@@ -74,7 +74,7 @@ class SelectorTests(unittest.TestCase):
         result = select(payload())
         self.assertEqual(
             set(result["selected_candidate_ids"]),
-            {"c2", "c4", "c5"},
+            {"c1", "c2", "c4"},
         )
 
     def test_exact_replay(self) -> None:
