@@ -1,0 +1,15 @@
+{
+  "schema": "eb-subject-form-interaction-v2-launch",
+  "status": "AUTHORIZED_EXPOSED_INTERACTION_PRESSURE",
+  "pr": 114,
+  "frozen_v1_selection_ref": "392a9c713558a6952947a3e4074be3957c648021",
+  "frozen_v1_selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+  "questions": [
+    "Does exact claim-native subject identity retain causal value under mixed-field controls?",
+    "Does expected evidence form retain causal value when subject identity is held fixed?",
+    "Does combining subject and expected evidence form add value beyond either alone?"
+  ],
+  "semantic_model_rerun": false,
+  "fresh_qualification": false,
+  "production_authority": false
+}
