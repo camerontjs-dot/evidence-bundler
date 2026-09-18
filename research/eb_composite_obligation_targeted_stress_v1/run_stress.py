@@ -527,8 +527,6 @@ def score_cases(cases: list[Case]) -> dict[str,Any]:
             rows.append({
                 "candidate_id":cand.candidate_id,
                 "text":cand.text,
-                "gold_class":cand.gold_class,
-                "required_for":list(cand.required_for),
                 "child_scores":child_scores,
                 "best_child":best_child,
                 "best_score":child_scores[best_child],
@@ -566,9 +564,17 @@ def score_cases(cases: list[Case]) -> dict[str,Any]:
 
 
 def evaluate(payload: dict[str,Any]) -> dict[str,Any]:
+    gold_cases={case.case_id:case for case in build_cases()}
     per_case=[]
     for case in payload["cases"]:
         by_id={r["candidate_id"]:r for r in case["candidates"]}
+        gold_by_id={
+            cand.candidate_id: {
+                "gold_class": cand.gold_class,
+                "required_for": list(cand.required_for),
+            }
+            for cand in gold_cases[str(case["case_id"])].candidates
+        }
         child_ids=[x["child_id"] for x in case["children"]]
         caps={}
         for cap,arms in case["arms"].items():
@@ -577,14 +583,14 @@ def evaluate(payload: dict[str,Any]) -> dict[str,Any]:
                 selected=[by_id[x] for x in ids]
                 required_covered=set()
                 for row in selected:
-                    required_covered.update(row["required_for"])
+                    required_covered.update(gold_by_id[str(row["candidate_id"])]["required_for"])
                 arm_eval[arm]={
                     "selected_ids":ids,
                     "required_children_covered":len(required_covered),
                     "complete_parent_coverage":set(child_ids)<=required_covered,
-                    "unsafe":sum(r["gold_class"]=="UNSAFE_OR_MISLEADING" for r in selected),
-                    "non_useful":sum(r["gold_class"] not in {"REQUIRED","REDUNDANT"} for r in selected),
-                    "required_selected":sum(r["gold_class"]=="REQUIRED" for r in selected),
+                    "unsafe":sum(gold_by_id[str(r["candidate_id"])]["gold_class"]=="UNSAFE_OR_MISLEADING" for r in selected),
+                    "non_useful":sum(gold_by_id[str(r["candidate_id"])]["gold_class"] not in {"REQUIRED","REDUNDANT"} for r in selected),
+                    "required_selected":sum(gold_by_id[str(r["candidate_id"])]["gold_class"]=="REQUIRED" for r in selected),
                     "semantic_child_coverage":len({r["best_child"] for r in selected}),
                 }
             caps[cap]=arm_eval
