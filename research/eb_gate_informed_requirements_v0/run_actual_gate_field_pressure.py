@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import math
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -13,9 +12,8 @@ import torch
 from proposition_authoring.model import AuthoringRequest, SourceRepresentation
 from proposition_authoring.preflight import run_paired_preflight
 from proposition_authoring.shadow_models import TaskMetadata
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
-
 from shadow_carrier import build_shadow_carrier, registry_field_ids, sha256_json
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 SEMANTIC_MODEL = "cross-encoder/ms-marco-MiniLM-L6-v2"
 SEMANTIC_REVISION = "233902d25c440f23af6f7d6e94d2946bac0bee0a"
@@ -399,7 +397,9 @@ def representation_summary(
     }
 
 
-def gate_family_scores(gate: dict[str, Any], claim: str, candidate_text: str) -> dict[str, float | None]:
+def gate_family_scores(
+    gate: dict[str, Any], claim: str, candidate_text: str
+) -> dict[str, float | None]:
     profile = gate["claim_profile"]
     families = {str(x).lower() for x in profile.get("claim_families", [])}
 
@@ -408,7 +408,9 @@ def gate_family_scores(gate: dict[str, Any], claim: str, candidate_text: str) ->
         family_quantitative = numeric_compatibility(claim, candidate_text)
 
     return {
-        "evidence_shape": form_compatibility(profile.get("expected_evidence_forms"), candidate_text),
+        "evidence_shape": form_compatibility(
+            profile.get("expected_evidence_forms"), candidate_text
+        ),
         "entities": phrase_coverage(profile.get("entities"), candidate_text),
         "relation_targets": phrase_coverage(profile.get("relation_targets"), candidate_text),
         "temporal": phrase_coverage(profile.get("temporal_scope"), candidate_text),
