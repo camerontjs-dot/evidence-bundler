@@ -1,0 +1,10 @@
+{
+  "schema": "eb-gate-field-pressure-posthoc-audit-launch-v0",
+  "status": "AUTHORIZED_POSTHOC_EXPOSED_DIAGNOSTIC",
+  "pr": 97,
+  "source_result_commit": "f2a51a4a3b803df4b416887e6b6e0ff4e957ed40",
+  "source_selection_sha256": "4796677d060a1c84a852e86a70b4e1eea209091cdccd057073238a9bae7368cc",
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "selections_changed": false,
+  "fresh_qualification": false
+}
