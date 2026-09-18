@@ -53,8 +53,14 @@ def bounded_repair(
         value = scores.get(str(row["candidate_id"]))
         return -1.0 if value is None else float(value)
 
-    victim = min(selected, key=lambda row: (s(row), float(row["semantic_score"]), -int(row["rank"])))
-    challenger = max(outside, key=lambda row: (s(row), float(row["semantic_score"]), -int(row["rank"])))
+    victim = min(
+        selected,
+        key=lambda row: (s(row), float(row["semantic_score"]), -int(row["rank"])),
+    )
+    challenger = max(
+        outside,
+        key=lambda row: (s(row), float(row["semantic_score"]), -int(row["rank"])),
+    )
     if s(challenger) <= s(victim):
         return [str(row["candidate_id"]) for row in selected]
     loss = float(victim["semantic_score"]) - float(challenger["semantic_score"])
@@ -156,7 +162,11 @@ def main() -> int:
                 }
 
             for arm, scores in arms.items():
-                chosen = baseline if not any(v is not None for v in scores.values()) else bounded_repair(rows, scores, cap)
+                chosen = (
+                    baseline
+                    if not any(v is not None for v in scores.values())
+                    else bounded_repair(rows, scores, cap)
+                )
                 add(arm, lane, chosen)
 
             original = selection_map(source_arms[f"gate_fraction_loose_correct_cap_{label}"])[lane]
