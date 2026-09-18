@@ -9,7 +9,7 @@ on:
 
 permissions:
   contents: write
-  models: read
+  copilot-requests: write
 
 env:
   SURFACE: research/eb_composite_obligation_rc1_context_free
@@ -37,6 +37,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install isolated Copilot CLI transport
+        run: |
+          set -euo pipefail
+          npm install -g @github/copilot
+          python -m pip install PyYAML
+          copilot --version
+
       - name: Bootstrap static gates and source-access declaration
         run: |
           set -euo pipefail
@@ -49,12 +56,13 @@ jobs:
             "schema": "eb-composite-obligation-rc1-source-access",
             "bootstrap_head": "$(git -C study rev-parse HEAD)",
             "allowed_repository_reads": [
-              "bootstrap branch files supplied explicitly to GitHub Models",
+              "bootstrap files rendered explicitly into Copilot CLI prompts",
               "proposition-authoring@$PROP_REF after claim freeze"
             ],
-            "github_models_provider": "actions/ai-inference@v2.1.1",
-            "github_models_model": "openai/gpt-4o",
-            "github_mcp_enabled": false,
+            "isolation_provider": "GitHub Copilot CLI with Actions GITHUB_TOKEN",
+            "isolation_model": "gpt-5-mini",
+            "copilot_builtin_mcp_disabled": true,
+            "copilot_tool_policy": "read,shell,write,url,memory denied",
             "normal_conversation_context_available": false,
             "target_bytes_available_prereveal": false,
             "development_results_available_prereveal": false
@@ -63,75 +71,207 @@ jobs:
 
 
       - name: Author C1 fresh claims
-        id: claims_c1
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C1
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C1
+          prompt="out/prompts/claims-C1.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C1 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C1"
+          home="$RUNNER_TEMP/copilot-home-claims-C1"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C1.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C1.raw.txt \
+            --out out/claims/C1.json
 
       - name: Author C2 fresh claims
-        id: claims_c2
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C2
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C2
+          prompt="out/prompts/claims-C2.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C2 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C2"
+          home="$RUNNER_TEMP/copilot-home-claims-C2"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C2.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C2.raw.txt \
+            --out out/claims/C2.json
 
       - name: Author C3 fresh claims
-        id: claims_c3
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C3
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C3
+          prompt="out/prompts/claims-C3.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C3 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C3"
+          home="$RUNNER_TEMP/copilot-home-claims-C3"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C3.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C3.raw.txt \
+            --out out/claims/C3.json
 
       - name: Author C4 fresh claims
-        id: claims_c4
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C4
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C4
+          prompt="out/prompts/claims-C4.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C4 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C4"
+          home="$RUNNER_TEMP/copilot-home-claims-C4"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C4.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C4.raw.txt \
+            --out out/claims/C4.json
 
       - name: Author C5 fresh claims
-        id: claims_c5
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C5
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C5
+          prompt="out/prompts/claims-C5.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C5 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C5"
+          home="$RUNNER_TEMP/copilot-home-claims-C5"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C5.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C5.raw.txt \
+            --out out/claims/C5.json
 
       - name: Author C6 fresh claims
-        id: claims_c6
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
-          input: |
-            category_id: C6
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims out/prompts isolation/claims-C6
+          prompt="out/prompts/claims-C6.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CLAIMS.prompt.yml \
+            --var category_id=C6 \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/claims-C6"
+          home="$RUNNER_TEMP/copilot-home-claims-C6"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/claims/C6.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/claims/C6.raw.txt \
+            --out out/claims/C6.json
 
       - name: Validate and combine fresh claims
         run: |
           set -euo pipefail
           mkdir -p out/claims
-          cp "${{ steps.claims_c1.outputs.response-file }}" out/claims/C1.json
-          cp "${{ steps.claims_c2.outputs.response-file }}" out/claims/C2.json
-          cp "${{ steps.claims_c3.outputs.response-file }}" out/claims/C3.json
-          cp "${{ steps.claims_c4.outputs.response-file }}" out/claims/C4.json
-          cp "${{ steps.claims_c5.outputs.response-file }}" out/claims/C5.json
-          cp "${{ steps.claims_c6.outputs.response-file }}" out/claims/C6.json
           python study/$SURFACE/apparatus.py combine-claims \
             --parts out/claims/C1.json out/claims/C2.json out/claims/C3.json out/claims/C4.json out/claims/C5.json out/claims/C6.json \
             --out out/CLAIMS.json
@@ -198,69 +338,207 @@ jobs:
 
 
       - name: Author C1 candidate pool
-        id: corpus_c1
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C1.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C1
+          prompt="out/prompts/corpus-C1.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C1.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C1"
+          home="$RUNNER_TEMP/copilot-home-corpus-C1"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C1.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C1.raw.txt \
+            --out out/corpus/C1.json
 
       - name: Author C2 candidate pool
-        id: corpus_c2
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C2.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C2
+          prompt="out/prompts/corpus-C2.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C2.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C2"
+          home="$RUNNER_TEMP/copilot-home-corpus-C2"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C2.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C2.raw.txt \
+            --out out/corpus/C2.json
 
       - name: Author C3 candidate pool
-        id: corpus_c3
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C3.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C3
+          prompt="out/prompts/corpus-C3.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C3.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C3"
+          home="$RUNNER_TEMP/copilot-home-corpus-C3"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C3.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C3.raw.txt \
+            --out out/corpus/C3.json
 
       - name: Author C4 candidate pool
-        id: corpus_c4
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C4.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C4
+          prompt="out/prompts/corpus-C4.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C4.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C4"
+          home="$RUNNER_TEMP/copilot-home-corpus-C4"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C4.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C4.raw.txt \
+            --out out/corpus/C4.json
 
       - name: Author C5 candidate pool
-        id: corpus_c5
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C5.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C5
+          prompt="out/prompts/corpus-C5.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C5.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C5"
+          home="$RUNNER_TEMP/copilot-home-corpus-C5"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C5.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C5.raw.txt \
+            --out out/corpus/C5.json
 
       - name: Author C6 candidate pool
-        id: corpus_c6
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            descriptors: out/descriptor-parts/C6.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus out/prompts isolation/corpus-C6
+          prompt="out/prompts/corpus-C6.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/AUTHOR-CORPUS.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var descriptors=out/descriptor-parts/C6.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/corpus-C6"
+          home="$RUNNER_TEMP/copilot-home-corpus-C6"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/corpus/C6.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/corpus/C6.raw.txt \
+            --out out/corpus/C6.json
 
       - name: Validate and combine candidate pools
         run: |
           set -euo pipefail
           mkdir -p out/corpus
-          cp "${{ steps.corpus_c1.outputs.response-file }}" out/corpus/C1.json
-          cp "${{ steps.corpus_c2.outputs.response-file }}" out/corpus/C2.json
-          cp "${{ steps.corpus_c3.outputs.response-file }}" out/corpus/C3.json
-          cp "${{ steps.corpus_c4.outputs.response-file }}" out/corpus/C4.json
-          cp "${{ steps.corpus_c5.outputs.response-file }}" out/corpus/C5.json
-          cp "${{ steps.corpus_c6.outputs.response-file }}" out/corpus/C6.json
           python study/$SURFACE/apparatus.py combine-corpus \
             --parts out/corpus/C1.json out/corpus/C2.json out/corpus/C3.json out/corpus/C4.json out/corpus/C5.json out/corpus/C6.json \
             --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
@@ -333,69 +611,207 @@ jobs:
 
 
       - name: Adjudicate C1 sealed gold
-        id: gold_c1
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C1.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C1
+          prompt="out/prompts/gold-C1.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C1.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C1"
+          home="$RUNNER_TEMP/copilot-home-gold-C1"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C1.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C1.raw.txt \
+            --out out/gold/C1.json
 
       - name: Adjudicate C2 sealed gold
-        id: gold_c2
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C2.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C2
+          prompt="out/prompts/gold-C2.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C2.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C2"
+          home="$RUNNER_TEMP/copilot-home-gold-C2"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C2.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C2.raw.txt \
+            --out out/gold/C2.json
 
       - name: Adjudicate C3 sealed gold
-        id: gold_c3
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C3.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C3
+          prompt="out/prompts/gold-C3.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C3.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C3"
+          home="$RUNNER_TEMP/copilot-home-gold-C3"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C3.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C3.raw.txt \
+            --out out/gold/C3.json
 
       - name: Adjudicate C4 sealed gold
-        id: gold_c4
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C4.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C4
+          prompt="out/prompts/gold-C4.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C4.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C4"
+          home="$RUNNER_TEMP/copilot-home-gold-C4"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C4.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C4.raw.txt \
+            --out out/gold/C4.json
 
       - name: Adjudicate C5 sealed gold
-        id: gold_c5
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C5.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C5
+          prompt="out/prompts/gold-C5.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C5.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C5"
+          home="$RUNNER_TEMP/copilot-home-gold-C5"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C5.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C5.raw.txt \
+            --out out/gold/C5.json
 
       - name: Adjudicate C6 sealed gold
-        id: gold_c6
-        uses: actions/ai-inference@v2.1.1
-        with:
-          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
-          file_input: |
-            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
-            gold_input: out/gold-inputs/C6.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold out/prompts isolation/gold-C6
+          prompt="out/prompts/gold-C6.txt"
+          python study/$SURFACE/copilot_isolation.py render \
+            --prompt study/$SURFACE/ADJUDICATE-GOLD.prompt.yml \
+            --file-var contract=study/$SURFACE/FRESH-COHORT-CONTRACT.md \
+            --file-var gold_input=out/gold-inputs/C6.json \
+            --out "$prompt"
+          iso="$GITHUB_WORKSPACE/isolation/gold-C6"
+          home="$RUNNER_TEMP/copilot-home-gold-C6"
+          mkdir -p "$home"
+          printf '{"trustedFolders":["%s"]}\n' "$iso" > "$home/config.json"
+          (
+            cd "$iso"
+            COPILOT_HOME="$home" copilot \
+              -p "$(cat "$GITHUB_WORKSPACE/$prompt")" \
+              -s \
+              --no-ask-user \
+              --no-auto-update \
+              --disable-builtin-mcps \
+              --disallow-temp-dir \
+              --model gpt-5-mini \
+              --deny-tool='read,shell,write,url,memory' \
+              > "$GITHUB_WORKSPACE/out/gold/C6.raw.txt"
+          )
+          python study/$SURFACE/copilot_isolation.py extract-json \
+            --raw out/gold/C6.raw.txt \
+            --out out/gold/C6.json
 
       - name: Validate and combine sealed gold
         run: |
           set -euo pipefail
           mkdir -p out/gold
-          cp "${{ steps.gold_c1.outputs.response-file }}" out/gold/C1.json
-          cp "${{ steps.gold_c2.outputs.response-file }}" out/gold/C2.json
-          cp "${{ steps.gold_c3.outputs.response-file }}" out/gold/C3.json
-          cp "${{ steps.gold_c4.outputs.response-file }}" out/gold/C4.json
-          cp "${{ steps.gold_c5.outputs.response-file }}" out/gold/C5.json
-          cp "${{ steps.gold_c6.outputs.response-file }}" out/gold/C6.json
           python study/$SURFACE/apparatus.py combine-gold \
             --parts out/gold/C1.json out/gold/C2.json out/gold/C3.json out/gold/C4.json out/gold/C5.json out/gold/C6.json \
             --fresh-input out/FRESH-INPUT.json \
@@ -461,7 +877,8 @@ jobs:
             "sealed_gold_internal_sha256": "$(python -c 'import json; print(json.load(open("out/GOLD.json"))["gold_sha256"])')",
             "evaluator_sha256": "$(sha256sum study/$SURFACE/evaluator.py | awk '{print $1}')",
             "eligibility_passed": true,
-            "github_models_model": "openai/gpt-4o",
+            "isolation_provider": "GitHub Copilot CLI",
+            "isolation_model": "gpt-5-mini",
             "target_revealed_prereveal": false,
             "development_results_exposed_prereveal": false,
             "fresh_qualification_execution_complete": false
