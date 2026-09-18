@@ -8,9 +8,10 @@
   "cohort_subject": "a15a336e61f99b97fb9ea284761e1952fc1289cf",
   "first_stage_retrieval_changed": false,
   "production_authority": false,
-  "retry": 3,
-  "prior_run_id": 35297189758,
-  "prior_run_disposition": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+  "retry": 4,
+  "prior_run_id": 35297378113,
+  "prior_run_disposition": "MECHANICAL_PRE_SELECTION_RUNTIME_DEPENDENCY",
   "gold_opened": false,
-  "scientific_logic_changed": false
+  "scientific_logic_changed": false,
+  "pre_gold_selection_frozen": false
 }
