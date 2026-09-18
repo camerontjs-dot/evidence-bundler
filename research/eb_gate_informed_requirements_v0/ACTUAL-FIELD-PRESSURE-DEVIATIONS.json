@@ -24,6 +24,19 @@
       "gold_opened": false,
       "scientific_effect": false,
       "correction": "Removed unused import, applied Ruff import ordering, wrapped two lines. No scientific logic changed."
+    },
+    {
+      "id": "RUN_03_MISSING_FROZEN_VENDOR",
+      "workflow_run_id": 35297378113,
+      "classification": "MECHANICAL_PRE_SELECTION_RUNTIME_DEPENDENCY",
+      "observed": "run_paired_preflight constructed the exact Proposition Authoring frozen engine, which failed because vendor/frozen/proposers.py and evaluator.py were absent from the installed wheel/runtime.",
+      "scientific_program_entered": true,
+      "first_lane_gate_completed": false,
+      "selection_output_created": false,
+      "pre_gold_selection_frozen": false,
+      "gold_opened": false,
+      "scientific_result": false,
+      "correction": "Materialize only the two exact code artifacts loaded by FrozenPredecessorBackend, verified against the blob/SHA identities frozen in proposition-authoring's own fetch script. Do not fetch predecessor gold."
     }
   ]
 }
