@@ -57,6 +57,20 @@
       "scientific_contract_changed": false,
       "observed": "Copilot CLI returned `Model \"gpt-5-mini\" from --model flag is not available.`",
       "correction": "Use gpt-5.4, a current Copilot CLI-supported model. No prompt, contract, target, eligibility, or evaluator logic changed."
+    },
+    {
+      "id": "AUTHORING_RUN_05_COPILOT_MODEL_UNAVAILABLE",
+      "workflow_run_id": 35354075846,
+      "classification": "EXTERNAL_MODEL_SELECTION_PRE_OUTPUT",
+      "copilot_cli_authenticated": true,
+      "requested_model": "gpt-5.4",
+      "model_output_produced": false,
+      "claims_authored": false,
+      "corpus_authored": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": "Copilot CLI returned `Model \"gpt-5.4\" from --model flag is not available.`",
+      "correction": "Use Copilot CLI `--model auto`; record provider/model selection mode in receipts. No prompt, contract, target, eligibility, or evaluator logic changed."
     }
   ]
 }
