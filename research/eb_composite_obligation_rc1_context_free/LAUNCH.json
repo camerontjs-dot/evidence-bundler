@@ -16,5 +16,9 @@
   "candidate_frozen_before_launch": true,
   "candidate_frozen_commit": "df6e0af3732fc08e9db330741b9b99113247a40c",
   "candidate_selector_sha256": "31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f",
-  "note": "Target identity is recorded for governance but target bytes, stage order, cap, development results, and expected winner are not supplied to any prereveal model invocation."
+  "note": "Target identity is recorded for governance but target bytes, stage order, cap, development results, and expected winner are not supplied to any prereveal model invocation.",
+  "retry": 2,
+  "prior_run_id": 35353038383,
+  "prior_run_disposition": "MECHANICAL_PRE_MODEL_STATIC_INVALID",
+  "scientific_contract_changed": false
 }
