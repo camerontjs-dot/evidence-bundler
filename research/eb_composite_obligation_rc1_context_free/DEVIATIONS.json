@@ -30,6 +30,19 @@
       "scientific_contract_changed": false,
       "observed": "GitHub Models endpoint returned HTTP 410 github_models_retirement_brownout before C1 output. GitHub Models was fully retired 2026-07-30.",
       "correction": "Migrate isolated inference transport to GitHub Copilot CLI in Actions using GITHUB_TOKEN. Preserve prompts, contract, frozen target, category design, and no-tool/no-MCP aperture."
+    },
+    {
+      "id": "AUTHORING_RUN_03_ADAPTER_B904",
+      "workflow_run_id": 35353761694,
+      "classification": "MECHANICAL_PRE_MODEL_STATIC_INVALID",
+      "copilot_cli_installed": true,
+      "model_prompt_sent": false,
+      "claims_authored": false,
+      "corpus_authored": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": "Ruff B904 in the JSON-response adapter exception branch.",
+      "correction": "Add explicit exception chaining suppression (`from None`) only. No prompt, cohort, target, eligibility, or evaluator logic changed."
     }
   ]
 }
