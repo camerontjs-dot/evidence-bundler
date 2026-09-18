@@ -1,0 +1,3650 @@
+{
+  "arm_ids": [
+    "child_coverage",
+    "form_only",
+    "rc1_candidate",
+    "reverse_order",
+    "semantic_top3",
+    "subject_only",
+    "wrong_both",
+    "wrong_form",
+    "wrong_subject"
+  ],
+  "classification": "FRESH_CONTEXT_FREE_FIXED_POOL_EVALUATION",
+  "evaluation_sha256": "c3715a01b8cf2ef2f836448f2d482f3194258c9c2849945bcd1185a89ca09626",
+  "fresh_input_internal_sha256": "edd824c7f8c02a9d923a54809ccf65d5e137f39473aeba48a8772bd7e656b3a9",
+  "gold_internal_sha256": "338f45124d0106355e33dd1d003cd840cbd600e854ea5ac60203e8865f62167e",
+  "per_arm": {
+    "child_coverage": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P01",
+          "C3-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "form_only": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P07",
+          "C3-01-P02"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P02",
+          "C4-01-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "rc1_candidate": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "reverse_order": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P02",
+          "C4-01-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "semantic_top3": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P08"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P02"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P01",
+          "C3-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P01"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P03"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "subject_only": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P02",
+          "C1-03-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-03-P02",
+          "C5-03-P01",
+          "C5-03-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "wrong_both": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P08"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P08",
+          "C1-02-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P05",
+          "C1-03-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P07",
+          "C2-01-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-02-P09",
+          "C2-02-P07",
+          "C2-02-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-03-P09",
+          "C2-03-P07",
+          "C2-03-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-04-P09",
+          "C2-04-P07",
+          "C2-04-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P04",
+          "C3-01-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-02-P01",
+          "C3-02-P05",
+          "C3-02-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-03-P01",
+          "C3-03-P05",
+          "C3-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P05"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P07"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 0,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P07",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P07",
+          "C5-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P05"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-02-P01",
+          "C6-02-P05",
+          "C6-02-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-04-P01",
+          "C6-04-P05",
+          "C6-04-P06"
+        ],
+        "unsafe": 2
+      }
+    ],
+    "wrong_form": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P01",
+          "C1-01-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P04",
+          "C1-03-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P02",
+          "C2-01-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-02-P04",
+          "C2-02-P09",
+          "C2-02-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-03-P04",
+          "C2-03-P09",
+          "C2-03-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C2-04-P04",
+          "C2-04-P09",
+          "C2-04-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-01-P01",
+          "C3-01-P04",
+          "C3-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-02-P02",
+          "C3-02-P01",
+          "C3-02-P03"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C3-03-P02",
+          "C3-03-P01",
+          "C3-03-P08"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P01",
+          "C3-04-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P05",
+          "C4-01-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C4-03-P03",
+          "C4-03-P06",
+          "C4-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-04-P05",
+          "C4-04-P01",
+          "C4-04-P04"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 0,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P07",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P07",
+          "C5-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P01",
+          "C6-01-P04"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P01",
+          "C6-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P03",
+          "C6-03-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C6-04-P02",
+          "C6-04-P01",
+          "C6-04-P03"
+        ],
+        "unsafe": 0
+      }
+    ],
+    "wrong_subject": [
+      {
+        "case_id": "C1-01",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-01-P02",
+          "C1-01-P05",
+          "C1-01-P08"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-02",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-02-P01",
+          "C1-02-P02",
+          "C1-02-P06"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C1-03",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C1-03-P01",
+          "C1-03-P08",
+          "C1-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C1-04",
+        "category": "C1",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 3,
+        "selected_candidate_ids": [
+          "C1-04-P02",
+          "C1-04-P01",
+          "C1-04-P05"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C2-01",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C2-01-P04",
+          "C2-01-P07",
+          "C2-01-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-02",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-02-P09",
+          "C2-02-P07",
+          "C2-02-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-03",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-03-P09",
+          "C2-03-P07",
+          "C2-03-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C2-04",
+        "category": "C2",
+        "complete_parent_coverage": false,
+        "non_useful": 3,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C2-04-P09",
+          "C2-04-P07",
+          "C2-04-P03"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-01",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-01-P08",
+          "C3-01-P04",
+          "C3-01-P06"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C3-02",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-02-P01",
+          "C3-02-P05",
+          "C3-02-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-03",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-03-P01",
+          "C3-03-P05",
+          "C3-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C3-04",
+        "category": "C3",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C3-04-P03",
+          "C3-04-P06",
+          "C3-04-P05"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C4-01",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-01-P01",
+          "C4-01-P06",
+          "C4-01-P07"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C4-02",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-02-P01",
+          "C4-02-P04",
+          "C4-02-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-03",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C4-03-P06",
+          "C4-03-P02",
+          "C4-03-P05"
+        ],
+        "unsafe": 1
+      },
+      {
+        "case_id": "C4-04",
+        "category": "C4",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C4-04-P07",
+          "C4-04-P05",
+          "C4-04-P01"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C5-01",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-01-P02",
+          "C5-01-P07",
+          "C5-01-P01"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-02",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 1,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-02-P05",
+          "C5-02-P01",
+          "C5-02-P02"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-03",
+        "category": "C5",
+        "complete_parent_coverage": false,
+        "non_useful": 1,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C5-03-P01",
+          "C5-03-P05",
+          "C5-03-P09"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C5-04",
+        "category": "C5",
+        "complete_parent_coverage": true,
+        "non_useful": 0,
+        "required_children_covered": 2,
+        "required_selected": 2,
+        "selected_candidate_ids": [
+          "C5-04-P02",
+          "C5-04-P01",
+          "C5-04-P07"
+        ],
+        "unsafe": 0
+      },
+      {
+        "case_id": "C6-01",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-01-P02",
+          "C6-01-P06",
+          "C6-01-P05"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-02",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 0,
+        "required_selected": 0,
+        "selected_candidate_ids": [
+          "C6-02-P03",
+          "C6-02-P05",
+          "C6-02-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-03",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-03-P01",
+          "C6-03-P05",
+          "C6-03-P06"
+        ],
+        "unsafe": 2
+      },
+      {
+        "case_id": "C6-04",
+        "category": "C6",
+        "complete_parent_coverage": false,
+        "non_useful": 2,
+        "required_children_covered": 1,
+        "required_selected": 1,
+        "selected_candidate_ids": [
+          "C6-04-P01",
+          "C6-04-P05",
+          "C6-04-P06"
+        ],
+        "unsafe": 2
+      }
+    ]
+  },
+  "schema": "eb-composite-obligation-rc1-evaluation",
+  "selection_internal_sha256": "e314b119ab82ea33d787fce8d45e4abdeec4ed5db402ae8c472d0a5ea1b16ea9",
+  "summaries": {
+    "child_coverage": {
+      "ALL": {
+        "complete_parent_coverage": 19,
+        "non_useful": 18,
+        "parents": 24,
+        "required_children_covered": 43,
+        "required_children_total": 48,
+        "required_selected": 49,
+        "unsafe": 12
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 11,
+        "unsafe": 1
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 5,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 1
+      },
+      "C3": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 4
+      },
+      "C4": {
+        "complete_parent_coverage": 2,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 9,
+        "unsafe": 3
+      },
+      "C5": {
+        "complete_parent_coverage": 4,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 3,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 3
+      }
+    },
+    "form_only": {
+      "ALL": {
+        "complete_parent_coverage": 16,
+        "non_useful": 21,
+        "parents": 24,
+        "required_children_covered": 40,
+        "required_children_total": 48,
+        "required_selected": 45,
+        "unsafe": 14
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 11,
+        "unsafe": 1
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 5,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 1
+      },
+      "C3": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 4
+      },
+      "C4": {
+        "complete_parent_coverage": 1,
+        "non_useful": 5,
+        "parents": 4,
+        "required_children_covered": 5,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 5
+      },
+      "C5": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 2,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 6,
+        "unsafe": 3
+      }
+    },
+    "rc1_candidate": {
+      "ALL": {
+        "complete_parent_coverage": 20,
+        "non_useful": 9,
+        "parents": 24,
+        "required_children_covered": 44,
+        "required_children_total": 48,
+        "required_selected": 55,
+        "unsafe": 2
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 12,
+        "unsafe": 0
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C3": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 12,
+        "unsafe": 0
+      },
+      "C4": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 10,
+        "unsafe": 2
+      },
+      "C5": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 3,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      }
+    },
+    "reverse_order": {
+      "ALL": {
+        "complete_parent_coverage": 19,
+        "non_useful": 11,
+        "parents": 24,
+        "required_children_covered": 43,
+        "required_children_total": 48,
+        "required_selected": 53,
+        "unsafe": 4
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 12,
+        "unsafe": 0
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C3": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 12,
+        "unsafe": 0
+      },
+      "C4": {
+        "complete_parent_coverage": 2,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 4
+      },
+      "C5": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 3,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      }
+    },
+    "semantic_top3": {
+      "ALL": {
+        "complete_parent_coverage": 15,
+        "non_useful": 20,
+        "parents": 24,
+        "required_children_covered": 39,
+        "required_children_total": 48,
+        "required_selected": 46,
+        "unsafe": 13
+      },
+      "C1": {
+        "complete_parent_coverage": 1,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 5,
+        "required_children_total": 8,
+        "required_selected": 9,
+        "unsafe": 2
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 5,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 1
+      },
+      "C3": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 4
+      },
+      "C4": {
+        "complete_parent_coverage": 2,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 9,
+        "unsafe": 3
+      },
+      "C5": {
+        "complete_parent_coverage": 4,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 2,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 6,
+        "unsafe": 3
+      }
+    },
+    "subject_only": {
+      "ALL": {
+        "complete_parent_coverage": 22,
+        "non_useful": 9,
+        "parents": 24,
+        "required_children_covered": 46,
+        "required_children_total": 48,
+        "required_selected": 56,
+        "unsafe": 3
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 12,
+        "unsafe": 0
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C3": {
+        "complete_parent_coverage": 4,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 11,
+        "unsafe": 1
+      },
+      "C4": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 10,
+        "unsafe": 2
+      },
+      "C5": {
+        "complete_parent_coverage": 4,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 0
+      }
+    },
+    "wrong_both": {
+      "ALL": {
+        "complete_parent_coverage": 6,
+        "non_useful": 36,
+        "parents": 24,
+        "required_children_covered": 27,
+        "required_children_total": 48,
+        "required_selected": 31,
+        "unsafe": 30
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 3,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 9,
+        "unsafe": 2
+      },
+      "C2": {
+        "complete_parent_coverage": 0,
+        "non_useful": 11,
+        "parents": 4,
+        "required_children_covered": 1,
+        "required_children_total": 8,
+        "required_selected": 1,
+        "unsafe": 8
+      },
+      "C3": {
+        "complete_parent_coverage": 0,
+        "non_useful": 7,
+        "parents": 4,
+        "required_children_covered": 4,
+        "required_children_total": 8,
+        "required_selected": 4,
+        "unsafe": 7
+      },
+      "C4": {
+        "complete_parent_coverage": 0,
+        "non_useful": 5,
+        "parents": 4,
+        "required_children_covered": 4,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 5
+      },
+      "C5": {
+        "complete_parent_coverage": 2,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 6,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 0,
+        "non_useful": 8,
+        "parents": 4,
+        "required_children_covered": 4,
+        "required_children_total": 8,
+        "required_selected": 4,
+        "unsafe": 8
+      }
+    },
+    "wrong_form": {
+      "ALL": {
+        "complete_parent_coverage": 20,
+        "non_useful": 10,
+        "parents": 24,
+        "required_children_covered": 44,
+        "required_children_total": 48,
+        "required_selected": 53,
+        "unsafe": 2
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 11,
+        "unsafe": 0
+      },
+      "C2": {
+        "complete_parent_coverage": 3,
+        "non_useful": 4,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C3": {
+        "complete_parent_coverage": 4,
+        "non_useful": 1,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 11,
+        "unsafe": 0
+      },
+      "C4": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 10,
+        "unsafe": 2
+      },
+      "C5": {
+        "complete_parent_coverage": 2,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 6,
+        "required_children_total": 8,
+        "required_selected": 6,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 4,
+        "non_useful": 0,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 8,
+        "unsafe": 0
+      }
+    },
+    "wrong_subject": {
+      "ALL": {
+        "complete_parent_coverage": 7,
+        "non_useful": 36,
+        "parents": 24,
+        "required_children_covered": 27,
+        "required_children_total": 48,
+        "required_selected": 31,
+        "unsafe": 31
+      },
+      "C1": {
+        "complete_parent_coverage": 4,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 8,
+        "required_children_total": 8,
+        "required_selected": 10,
+        "unsafe": 2
+      },
+      "C2": {
+        "complete_parent_coverage": 0,
+        "non_useful": 11,
+        "parents": 4,
+        "required_children_covered": 1,
+        "required_children_total": 8,
+        "required_selected": 1,
+        "unsafe": 8
+      },
+      "C3": {
+        "complete_parent_coverage": 0,
+        "non_useful": 7,
+        "parents": 4,
+        "required_children_covered": 4,
+        "required_children_total": 8,
+        "required_selected": 4,
+        "unsafe": 7
+      },
+      "C4": {
+        "complete_parent_coverage": 0,
+        "non_useful": 6,
+        "parents": 4,
+        "required_children_covered": 4,
+        "required_children_total": 8,
+        "required_selected": 6,
+        "unsafe": 6
+      },
+      "C5": {
+        "complete_parent_coverage": 3,
+        "non_useful": 2,
+        "parents": 4,
+        "required_children_covered": 7,
+        "required_children_total": 8,
+        "required_selected": 7,
+        "unsafe": 0
+      },
+      "C6": {
+        "complete_parent_coverage": 0,
+        "non_useful": 8,
+        "parents": 4,
+        "required_children_covered": 3,
+        "required_children_total": 8,
+        "required_selected": 3,
+        "unsafe": 8
+      }
+    }
+  }
+}
