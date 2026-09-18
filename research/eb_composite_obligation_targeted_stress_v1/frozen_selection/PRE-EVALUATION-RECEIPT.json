@@ -1,0 +1,8 @@
+{
+  "schema": "eb-composite-obligation-targeted-stress-v1-pre-evaluation",
+  "study_head": "d63aff58a53b16bdf22ab773356f1fc576fbab3c",
+  "selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+  "exact_replay": true,
+  "evaluation_run": false,
+  "fresh_qualification": false
+}
