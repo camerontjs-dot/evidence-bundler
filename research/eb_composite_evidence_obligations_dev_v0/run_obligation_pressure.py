@@ -324,8 +324,13 @@ def repair_for_children(
     ):
         desc = descriptor_assignment[child_id]
 
-        def score(row: dict[str, Any]) -> float:
-            value = feature_score(row, child_id, desc, family)
+        def score(
+            row: dict[str, Any],
+            *,
+            bound_child_id: str = child_id,
+            bound_desc: dict[str, Any] = desc,
+        ) -> float:
+            value = feature_score(row, bound_child_id, bound_desc, family)
             return -1.0 if value is None else float(value)
 
         if not outside:
