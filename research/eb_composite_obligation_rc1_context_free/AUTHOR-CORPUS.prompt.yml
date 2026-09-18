@@ -1,0 +1,79 @@
+messages:
+  - role: system
+    content: |-
+      You are an isolated research-fixture author. You are authoring candidate passages for already-frozen claims and descriptors. You do not know the downstream selector, development results, arm order, loss cap, or expected winner. Do not label usefulness or truth.
+  - role: user
+    content: |-
+      Cohort contract:
+
+      {{contract}}
+
+      Frozen claims/descriptors for one category:
+
+      {{descriptors}}
+
+      Author exactly ten candidate passages for each of the four supplied cases.
+
+      Obey the category geometry in the contract. Use expected_evidence_forms only to create genuine form conflicts; do not treat form match as correctness. Include semantically competitive wrong-subject and/or wrong-form passages where required by the category.
+
+      Construction metadata is audit-only:
+      - intended_form describes the passage's surface evidentiary form;
+      - design_role describes the crossed construction cell only.
+      It is not gold and must not say useful/correct/support/refute.
+
+      Candidate IDs must be <case>-P01 through <case>-P10.
+
+      Return JSON only according to the response schema.
+model: openai/gpt-4o
+modelParameters:
+  maxCompletionTokens: 10000
+  temperature: 0.55
+responseFormat: json_schema
+jsonSchema: |-
+  {
+    "name": "fresh_candidate_pools",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "category_id": {"type": "string"},
+        "cases": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "case_id": {"type": "string"},
+              "candidates": {
+                "type": "array",
+                "minItems": 10,
+                "maxItems": 10,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "candidate_id": {"type": "string"},
+                    "text": {"type": "string"},
+                    "intended_form": {
+                      "type": "string",
+                      "enum": ["document_text", "authoritative_declaration", "event_record", "registry_entry", "measurement"]
+                    },
+                    "design_role": {
+                      "type": "string",
+                      "enum": ["target_subject_target_form", "target_subject_other_form", "other_subject_target_form", "other_subject_other_form", "neutral_distractor", "redundant_target"]
+                    }
+                  },
+                  "required": ["candidate_id", "text", "intended_form", "design_role"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["case_id", "candidates"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["category_id", "cases"],
+      "additionalProperties": false
+    }
+  }
