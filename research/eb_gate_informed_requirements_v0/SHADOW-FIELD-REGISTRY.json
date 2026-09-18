@@ -1,0 +1,767 @@
+{
+  "schema": "eb-gate-informed-shadow-field-registry-v0",
+  "classification": "RESEARCH_DESIGN_NON_EXECUTABLE",
+  "governing_rule": "broad capability, narrow authority",
+  "evidence_snapshot": {
+    "proposition_authoring_field_sweep_subject": "e29a165b682d060f5dc2a0f3c7d64a7f29b172b4",
+    "field_sweep_pr": 39,
+    "field_sweep_result": {
+      "supported": 26,
+      "falsified": 14,
+      "inconclusive": 1,
+      "cases": 118
+    },
+    "gate_rc2_subject": "8c10bd703a747f5448c424fbe7ce1e2521b7647e",
+    "gate_rc2_pressure_pr": 46,
+    "gate_rc2_pressure_result": {
+      "supported_surface": 27,
+      "falsified_surface": 14,
+      "inconclusive_design": 3,
+      "cases": 44
+    },
+    "evidence_taxonomy_subject": "e30773f24719b835b5efc0640b705a3e6a68a2be",
+    "evidence_taxonomy_result": "8/8_frozen_matrix_agreement",
+    "eb_rc1_result": "FALSIFIED",
+    "eb_rc1_result_commit": "80ed2cad8a25dec268d2830f466cfff8126a90a0"
+  },
+  "default_eb_consumption_state": "VISIBLE_SHADOW",
+  "promotion_rule": "upstream qualification is necessary but never sufficient; EB causal value must be separately established against frozen controls",
+  "entries": [
+    {
+      "field_id": "claim.domain",
+      "layer": "claim",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "claim.verification_world",
+      "layer": "claim",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "claim.jurisdiction",
+      "layer": "claim",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "claim.expected_evidence_forms",
+      "layer": "claim",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_FIELD_SWEEP_AND_PR32_8_OF_8_TAXONOMY",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "replace_flat_set_with_shadow_expression_before_causal_test"
+    },
+    {
+      "field_id": "claim.claim_families",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_FALSE_POSITIVE_STANDARD_DEVIATION_COMPLIANCE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "split_mechanical_cues_from_semantic_dimensions"
+    },
+    {
+      "field_id": "claim.claim_structure_shape",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_PROPER_NAME_COORDINATION_COUNTEREXAMPLE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "split_surface_coordination_from_semantic_structure"
+    },
+    {
+      "field_id": "claim.entities",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_NARROW_COMPARATIVE_PARSE_APERTURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "broaden_characterizer_without_widening_authoring_authority"
+    },
+    {
+      "field_id": "claim.relation_targets",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_NARROW_COMPARATIVE_PARSE_APERTURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "broaden_characterizer_without_widening_authoring_authority"
+    },
+    {
+      "field_id": "claim.temporal_scope",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_INTERVAL_COLLAPSED_TO_ENDPOINT_LIST",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "replace_string_with_typed_temporal_structure"
+    },
+    {
+      "field_id": "claim.context_dependence",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_CONTEXT_PRESENCE_NOT_DEPENDENCE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "split_context_supplied_from_context_required"
+    },
+    {
+      "field_id": "claim.scope_ambiguity",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_PROPER_NAME_COORDINATION_FALSE_AMBIGUITY",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "split_surface_scope_markers_from_ambiguity_assessment"
+    },
+    {
+      "field_id": "claim.negation",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_MISSED_CANNOT",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "cue_span_then_interpretation"
+    },
+    {
+      "field_id": "claim.modality",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_MISSED_FUTURE_MODALITY",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "cue_span_then_interpretation"
+    },
+    {
+      "field_id": "claim.attribution",
+      "layer": "claim",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_MISSED_ACCORDING_TO",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "cue_span_then_interpretation"
+    },
+    {
+      "field_id": "claim.numeric_token_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR46_IDENTIFIER_DATE_CITATION_MASKING_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_as_mechanical_observation"
+    },
+    {
+      "field_id": "claim.identifier_like_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR43_PR46_IDENTIFIER_COUNTEREXAMPLES",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_identifier_vs_quantity_discrimination"
+    },
+    {
+      "field_id": "claim.regulatory_citation_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR46_ISO_CFR_COUNTEREXAMPLES",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_as_mechanical_observation"
+    },
+    {
+      "field_id": "claim.date_expression_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR46_DATE_AS_QUANTITATIVE_COUNTEREXAMPLE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_as_mechanical_observation"
+    },
+    {
+      "field_id": "claim.comparative_cue_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_RELATION_PARSE_APERTURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_mechanical_recall"
+    },
+    {
+      "field_id": "claim.causal_cue_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_FAMILY_CONCEPT_RETAINED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_mechanical_recall"
+    },
+    {
+      "field_id": "claim.status_cue_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR43_PR44_STATUS_CASES",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_mechanical_recall"
+    },
+    {
+      "field_id": "claim.entity_mention_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_ENTITY_APERTURE_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_broader_parser_model"
+    },
+    {
+      "field_id": "claim.measure_unit_threshold_spans",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_PR46_NUMERIC_DISAMBIGUATION_NEED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_for_quantitative_intent"
+    },
+    {
+      "field_id": "claim.context_supplied",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_CONTEXT_DEPENDENCE_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "mechanical_replacement_candidate"
+    },
+    {
+      "field_id": "claim.context_required",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_CONTEXT_DEPENDENCE_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "separately_qualify_semantic_need"
+    },
+    {
+      "field_id": "claim.surface_coordination_present",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_STRUCTURE_SCOPE_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "mechanical_replacement_candidate"
+    },
+    {
+      "field_id": "claim.surface_scope_marker_present",
+      "layer": "claim",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_SCOPE_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "mechanical_replacement_candidate"
+    },
+    {
+      "field_id": "requirement.op.unknown",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_EXPECTED_FORMS_FLAT_SET_LIMIT",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "include_in_expression_pressure"
+    },
+    {
+      "field_id": "requirement.op.form",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_EXPECTED_FORMS_SUPPORTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "include_in_expression_pressure"
+    },
+    {
+      "field_id": "requirement.op.any_of",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_ALTERNATIVE_VS_JOINT_REQUIREMENT_GAP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "include_in_expression_pressure"
+    },
+    {
+      "field_id": "requirement.op.all_of",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_ALTERNATIVE_VS_JOINT_REQUIREMENT_GAP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "include_in_expression_pressure"
+    },
+    {
+      "field_id": "requirement.op.optional",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR39_ALTERNATIVE_VS_JOINT_REQUIREMENT_GAP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "include_in_expression_pressure"
+    },
+    {
+      "field_id": "requirement.op.at_least_n_of",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "requirement.op.distinct_sources",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "requirement.op.distinct_forms",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "requirement.op.corroborative",
+      "layer": "requirement",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "evidence.source_identity",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.content_identity",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_AND_RC2_MUTATION_PRESSURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.provenance",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.issuer",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.source_role",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_finite_vocab"
+    },
+    {
+      "field_id": "evidence.authority_basis",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION_WITH_OPEN_SEMANTIC_BOUNDARY",
+      "evidence_basis": "PR39_SUPPORTED_PR46_SMUGGLING_DESIGN_OPEN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "rename_or_constrain_before_hint_use"
+    },
+    {
+      "field_id": "evidence.document_type",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "broaden_vocab_shadow_only"
+    },
+    {
+      "field_id": "evidence.evidence_form",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "broaden_vocab_shadow_only"
+    },
+    {
+      "field_id": "evidence.temporal_coverage",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "move_to_typed_structure"
+    },
+    {
+      "field_id": "evidence.jurisdictional_coverage",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "move_to_hierarchical_structure"
+    },
+    {
+      "field_id": "evidence.version",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_and_expand_shadow_states"
+    },
+    {
+      "field_id": "evidence.currency_state",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_and_expand_shadow_states"
+    },
+    {
+      "field_id": "evidence.duplicate_source_groups",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_exact_duplicate_only"
+    },
+    {
+      "field_id": "evidence.verification_world",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.corpus_scope",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.completeness_state",
+      "layer": "evidence",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "evidence.known_gaps",
+      "layer": "evidence",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_INCONCLUSIVE_ABSENT_VS_DECLARED_NONE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "tri_state_or_structured_gap_declaration"
+    },
+    {
+      "field_id": "evidence.conflict_observations",
+      "layer": "evidence",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_SELF_CONFLICT_ACCEPTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "validated_graph_no_self_edges"
+    },
+    {
+      "field_id": "evidence.supersession_observations",
+      "layer": "evidence",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_SELF_SUPERSESSION_ACCEPTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "validated_directed_graph_no_self_edges"
+    },
+    {
+      "field_id": "evidence.origin_type",
+      "layer": "evidence",
+      "evidence_status": "BOUNDARY_SUPPORTED_DESIGN_OPEN",
+      "evidence_basis": "PR44_RC2_TYPED_ORIGIN_PR46_VOCAB_OPEN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_finite_vs_open_vocab"
+    },
+    {
+      "field_id": "evidence.source_locator",
+      "layer": "evidence",
+      "evidence_status": "BOUNDARY_SUPPORTED_DESIGN_OPEN",
+      "evidence_basis": "PR44_SOURCE_URI_SPLIT_PR46_URI_VALIDATION_FAILURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "pressure_test_true_uri_vs_generic_locator"
+    },
+    {
+      "field_id": "evidence.media_type_identity_role",
+      "layer": "evidence",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "PR46_MEDIA_TYPE_IDENTITY_OPEN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_intrinsic_identity_vs_characterization"
+    },
+    {
+      "field_id": "evidence.near_duplicate_groups",
+      "layer": "evidence",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "evidence.mirrored_copy_groups",
+      "layer": "evidence",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "BROAD_PRESSURE_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "evidence.effective_date",
+      "layer": "evidence",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "VERSION_TEMPORAL_COVERAGE_ADJACENT",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "evidence.expiry_or_supersession_date",
+      "layer": "evidence",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "VERSION_CURRENCY_ADJACENT",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "preflight.evidence_forms",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "preflight.missing_expected_evidence_forms",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "adapt_to_requirement_expression"
+    },
+    {
+      "field_id": "preflight.verification_world",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "preflight.corpus_aperture",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "preflight.corpus_completeness",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "keep_as_baseline"
+    },
+    {
+      "field_id": "preflight.known_gaps",
+      "layer": "preflight",
+      "evidence_status": "SUPPORTED_REPRESENTATION",
+      "evidence_basis": "PR39_118_CASE_FIELD_SWEEP",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "rebind_to_repaired_gap_model"
+    },
+    {
+      "field_id": "preflight.temporal_scope",
+      "layer": "preflight",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_STRING_EQUALITY_FALSE_MISMATCH",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "replace_with_typed_relation"
+    },
+    {
+      "field_id": "preflight.jurisdiction",
+      "layer": "preflight",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR39_PARENT_CHILD_FALSE_MISMATCH",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "replace_with_hierarchical_relation"
+    },
+    {
+      "field_id": "preflight.required_branches_observed",
+      "layer": "preflight",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "STRUCTURED_REQUIREMENT_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "preflight.required_branches_missing",
+      "layer": "preflight",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "STRUCTURED_REQUIREMENT_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "preflight.optional_branches_observed",
+      "layer": "preflight",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "STRUCTURED_REQUIREMENT_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "preflight.partially_coverable",
+      "layer": "preflight",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "STRUCTURED_REQUIREMENT_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "preflight.impossible_under_declared_corpus",
+      "layer": "preflight",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "CORPUS_COMPLETENESS_GAP_DESIGN",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "candidate.semantic_relevance",
+      "layer": "candidate",
+      "evidence_status": "INCUMBENT_EXPERIMENTAL_SIGNAL",
+      "evidence_basis": "RC1_SEMANTIC_ARM_BEST_PRIMARY_COVERAGE",
+      "eb_consumption_state": "PRESSURE_TEST_ELIGIBLE",
+      "next_action": "retain_as_incumbent"
+    },
+    {
+      "field_id": "candidate.evidence_posture",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS_WITH_RC1_SIGNAL",
+      "evidence_basis": "RC1_4_FEWER_UNSAFE_VS_ABLATION",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "requalify_independently"
+    },
+    {
+      "field_id": "candidate.local_span_relevance",
+      "layer": "candidate",
+      "evidence_status": "REPAIR_OR_ABLATE",
+      "evidence_basis": "RC0_C06_COUNTEREXAMPLE_LOCAL_SPAN_HURT",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_independently"
+    },
+    {
+      "field_id": "candidate.evidence_form_coverage",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "GATE_EXPECTED_FORM_EVIDENCE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "primary_next_causal_test"
+    },
+    {
+      "field_id": "candidate.temporal_compatibility",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "TYPED_TEMPORAL_REPAIR_DIRECTION",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "candidate.jurisdiction_compatibility",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "HIERARCHICAL_JURISDICTION_REPAIR_DIRECTION",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "candidate.source_role",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "EVIDENCE_SOURCE_ROLE_SUPPORTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_redundancy_vs_semantic"
+    },
+    {
+      "field_id": "candidate.version_currency_fit",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "VERSION_CURRENCY_SUPPORTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_then_prune"
+    },
+    {
+      "field_id": "candidate.redundancy_group",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "DUPLICATE_GROUP_SUPPORTED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "test_exact_then_near_duplicate"
+    },
+    {
+      "field_id": "candidate.conflict_graph_position",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "CONFLICT_CONCEPT_RETAINED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "only_after_graph_repair"
+    },
+    {
+      "field_id": "candidate.supersession_graph_position",
+      "layer": "candidate",
+      "evidence_status": "DESIGN_HYPOTHESIS",
+      "evidence_basis": "SUPERSESSION_CONCEPT_RETAINED",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "only_after_graph_repair"
+    },
+    {
+      "field_id": "boundary.claim_independent_evidence_world",
+      "layer": "boundary",
+      "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+      "evidence_basis": "PR44_AND_PR46_SUPPORTED_ARCHITECTURE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "treat_as_design_invariant"
+    },
+    {
+      "field_id": "boundary.source_origin_not_retention_locator",
+      "layer": "boundary",
+      "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+      "evidence_basis": "PR44_PR46",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "treat_as_design_invariant"
+    },
+    {
+      "field_id": "boundary.reconstruction_inputs",
+      "layer": "boundary",
+      "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+      "evidence_basis": "PR44_PR46",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "treat_as_design_invariant"
+    },
+    {
+      "field_id": "boundary.validator_schema_parity",
+      "layer": "boundary",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR46_PYTHON_WEAKER_THAN_SCHEMA",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "hard_requirement_before_consumer"
+    },
+    {
+      "field_id": "boundary.cross_artifact_verifier",
+      "layer": "boundary",
+      "evidence_status": "REPAIR_REQUIRED",
+      "evidence_basis": "PR46_NO_CANONICAL_BUNDLE_VERIFIER",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "hard_requirement_before_consumer"
+    },
+    {
+      "field_id": "boundary.contract_a_media_type_conformance",
+      "layer": "boundary",
+      "evidence_status": "REPAIR_REQUIRED_UPSTREAM",
+      "evidence_basis": "PR41_EXTERNAL_PIPELINE_TEXT_HTML_COUNTEREXAMPLE",
+      "eb_consumption_state": "VISIBLE_SHADOW",
+      "next_action": "do_not_widen_eb_or_contract_a"
+    }
+  ]
+}
