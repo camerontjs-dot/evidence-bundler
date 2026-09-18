@@ -36,6 +36,48 @@
   },
   "evidence": [
     {
+      "pr": 82,
+      "head": "98ddfb4f2e9623da6b44009abf921657b9445955",
+      "role": "typed selector RC0 development",
+      "status": "DEVELOPMENT_PREDECESSOR"
+    },
+    {
+      "pr": 84,
+      "head": "14632b157d271fafc7fc31287ff0a053267dc282",
+      "role": "typed selector RC1 context-free bootstrap",
+      "status": "PREREVEAL_INFRA"
+    },
+    {
+      "pr": 85,
+      "head": "1c1e4daedfc80673bf15d93cecf481f4117e42ff",
+      "role": "typed selector RC1 successor apparatus",
+      "status": "PREREVEAL_INFRA"
+    },
+    {
+      "pr": 87,
+      "head": "e347ce655f7cb2c0e5b60dc20579ff7367245344",
+      "role": "typed selector RC1 freeze completion",
+      "status": "PREREVEAL_INFRA"
+    },
+    {
+      "pr": 88,
+      "head": "21bb31c7174387b4e60e056428dd576ec203b45c",
+      "role": "typed selector RC1 blind execution",
+      "status": "BLIND_EXECUTION"
+    },
+    {
+      "pr": 89,
+      "head": "04deefc5d78ac0dac61755c5fbc5f35ea9d95cdf",
+      "role": "typed selector RC1 sealed-gold evaluation",
+      "status": "DECISIVE_EVALUATION"
+    },
+    {
+      "pr": 90,
+      "head": "80ed2cad8a25dec268d2830f466cfff8126a90a0",
+      "role": "typed selector RC1 terminal result",
+      "status": "FALSIFIED"
+    },
+    {
       "pr": 92,
       "head": "349d0438c906b1c8b34742aa93eefd4aebbae8e6",
       "role": "broad design surface",
@@ -247,5 +289,19 @@
       "unsafe": 30,
       "non_useful": 36
     }
-  }
+  },
+  "predecessor_tracking_issue": {
+    "issue": 80,
+    "status": "CLOSED_COMPLETED_TYPED_SELECTOR_QUESTION"
+  },
+  "intentionally_open_outside_cycle": [
+    {
+      "pr": 79,
+      "reason": "EB V1 integration baseline"
+    },
+    {
+      "pr": 86,
+      "reason": "separate provenance-architecture documentation pointer"
+    }
+  ]
 }
