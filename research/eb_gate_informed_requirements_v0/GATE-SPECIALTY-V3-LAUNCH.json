@@ -8,5 +8,10 @@
   "rerun_model": false,
   "rerun_gate": false,
   "fresh_qualification": false,
-  "production_authority": false
+  "production_authority": false,
+  "retry": 2,
+  "prior_run_id": 35300093498,
+  "prior_run_disposition": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+  "gold_opened": false,
+  "scientific_logic_changed": false
 }
