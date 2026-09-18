@@ -74,6 +74,59 @@ def render(
     return "\n\n".join(rendered) + "\n"
 
 
+def _parse_json_envelope(raw: str) -> dict[str, Any]:
+    attempts = [raw]
+    if raw.count("{") == raw.count("}") + 1:
+        attempts.append(raw + "}")
+
+    parsed: Any = None
+    last_error: json.JSONDecodeError | None = None
+    for attempt in attempts:
+        try:
+            parsed = json.loads(attempt)
+            break
+        except json.JSONDecodeError as error:
+            last_error = error
+
+    if parsed is None:
+        start = raw.find("{")
+        end = raw.rfind("}")
+        if start >= 0 and end > start:
+            fragment = raw[start : end + 1]
+            fragments = [fragment]
+            if fragment.count("{") == fragment.count("}") + 1:
+                fragments.append(fragment + "}")
+            for attempt in fragments:
+                try:
+                    parsed = json.loads(attempt)
+                    break
+                except json.JSONDecodeError as error:
+                    last_error = error
+
+    if parsed is None:
+        raise IsolationPromptError(
+            f"Copilot response is not mechanically recoverable JSON: "
+            f"{last_error}"
+        ) from None
+    if not isinstance(parsed, dict):
+        raise IsolationPromptError(
+            "Copilot JSON output must be an object"
+        )
+
+    embedded_schema = parsed.get("schema")
+    if isinstance(embedded_schema, dict):
+        required = embedded_schema.get("required")
+        if (
+            isinstance(required, list)
+            and required
+            and all(isinstance(key, str) for key in required)
+            and all(key in parsed for key in required)
+        ):
+            return {key: parsed[key] for key in required}
+
+    return parsed
+
+
 def extract_json(raw_path: str, out_path: str) -> None:
     raw = Path(raw_path).read_text(encoding="utf-8").strip()
     fence = chr(96) * 3
@@ -85,21 +138,7 @@ def extract_json(raw_path: str, out_path: str) -> None:
             lines = lines[:-1]
         raw = "\n".join(lines).strip()
 
-    try:
-        value = json.loads(raw)
-    except json.JSONDecodeError:
-        start = raw.find("{")
-        end = raw.rfind("}")
-        if start < 0 or end <= start:
-            raise IsolationPromptError(
-                "Copilot response contains no JSON object"
-            ) from None
-        value = json.loads(raw[start : end + 1])
-
-    if not isinstance(value, dict):
-        raise IsolationPromptError(
-            "Copilot JSON output must be an object"
-        )
+    value = _parse_json_envelope(raw)
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(
