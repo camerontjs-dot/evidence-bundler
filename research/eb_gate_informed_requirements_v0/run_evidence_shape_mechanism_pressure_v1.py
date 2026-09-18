@@ -5,8 +5,9 @@ import hashlib
 import json
 import re
 from collections import Counter, defaultdict
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from run_actual_gate_field_pressure import (
     NEG_RE,
