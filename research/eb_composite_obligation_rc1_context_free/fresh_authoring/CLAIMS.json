@@ -1,0 +1,489 @@
+{
+  "case_count": 24,
+  "cases": [
+    {
+      "case_id": "C1-01",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-01-A",
+          "child_text": "Asterion Relay Console completed its scheduled thermal inspection under the current maintenance cycle.",
+          "subject_anchor": "Asterion Relay Console",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-01-B",
+          "child_text": "The console retained its calibration seal.",
+          "subject_anchor": "The console",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The dual obligations for the Asterion Relay Console are that Asterion Relay Console completed its scheduled thermal inspection and that the console retained its calibration seal."
+    },
+    {
+      "case_id": "C1-02",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-02-A",
+          "child_text": "Helix Orchard Controller has its firmware audit recorded following the designated review procedure.",
+          "subject_anchor": "Helix Orchard Controller",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-02-B",
+          "child_text": "Its emergency override was tested.",
+          "subject_anchor": "Its emergency override",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Helix Orchard Controller must have its firmware audit recorded and its emergency override tested."
+    },
+    {
+      "case_id": "C1-03",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-03-A",
+          "child_text": "Brindle Survey Beacon completed the coastal synchronization check after the designated observation interval.",
+          "subject_anchor": "Brindle Survey Beacon",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-03-B",
+          "child_text": "The beacon's enclosure remained sealed.",
+          "subject_anchor": "The beacon's enclosure",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two obligations for the Brindle Survey Beacon are that Brindle Survey Beacon completed the coastal synchronization check and that the beacon's enclosure remained sealed."
+    },
+    {
+      "case_id": "C1-04",
+      "category": "C1",
+      "children": [
+        {
+          "child_id": "C1-04-A",
+          "child_text": "Quenby Transit Monitor underwent the route-data review specified for the operating period.",
+          "subject_anchor": "Quenby Transit Monitor",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C1-04-B",
+          "child_text": "The monitor preserved its inspection mark.",
+          "subject_anchor": "The monitor",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The requirements for the Quenby Transit Monitor are that Quenby Transit Monitor underwent its route-data review and that the monitor preserved its inspection mark."
+    },
+    {
+      "case_id": "C2-01",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-01-A",
+          "child_text": "Kestrel Array relay Rho-3 confirms that a calibration event occurred on 2031-04-12.",
+          "subject_anchor": "Kestrel Array relay Rho-3",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-01-B",
+          "child_text": "Kestrel Array controller Sigma-8 is enrolled in the municipal equipment register.",
+          "subject_anchor": "Kestrel Array controller Sigma-8",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both of the following statements about the Kestrel Array must hold: the array's relay confirms a calibration event, and the array's controller is enrolled in the municipal register."
+    },
+    {
+      "case_id": "C2-02",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-02-A",
+          "child_text": "Oriole Transit Grid beacon Lumen-5 reports completion of the quarterly inspection.",
+          "subject_anchor": "Oriole Transit Grid beacon Lumen-5",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-02-B",
+          "child_text": "Oriole Transit Grid gate unit Nadir-2 holds an active operating certificate.",
+          "subject_anchor": "Oriole Transit Grid gate unit Nadir-2",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two propositions below jointly describe the required state of the Oriole Transit Grid: its beacon reports an inspection completion, and its gate unit holds an active operating certificate."
+    },
+    {
+      "case_id": "C2-03",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-03-A",
+          "child_text": "Bramble Water Network pressure node Vela-7 records a pressure measurement of 4.8 bar during the morning test.",
+          "subject_anchor": "Bramble Water Network pressure node Vela-7",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-03-B",
+          "child_text": "Bramble Water Network treatment module Cinder-4 has a signed compliance declaration for the current operating period.",
+          "subject_anchor": "Bramble Water Network treatment module Cinder-4",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The following pair of statements must both be satisfied for the Bramble Water Network: the pressure node records a threshold measurement, and the treatment module has a signed compliance declaration."
+    },
+    {
+      "case_id": "C2-04",
+      "category": "C2",
+      "children": [
+        {
+          "child_id": "C2-04-A",
+          "child_text": "Halcyon Storage Cluster cold-store monitor Aster-9 documents a temperature excursion on 2032-09-03.",
+          "subject_anchor": "Halcyon Storage Cluster cold-store monitor Aster-9",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C2-04-B",
+          "child_text": "Halcyon Storage Cluster access service Quill-6 is listed in the authorized-services registry.",
+          "subject_anchor": "Halcyon Storage Cluster access service Quill-6",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both statements are required for the Halcyon Storage Cluster: the cold-store monitor documents a temperature excursion, and the access service is listed in the authorized-services registry."
+    },
+    {
+      "case_id": "C3-01",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-01-A",
+          "child_text": "completed its scheduled calibration in April 2026",
+          "subject_anchor": "Meridian Relay K8",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-01-B",
+          "child_text": "remained available for service throughout May 2026",
+          "subject_anchor": "Meridian Relay K8",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "For Meridian Relay K8, both of the following statements hold: it completed its scheduled calibration in April 2026, and it remained available for service throughout May 2026."
+    },
+    {
+      "case_id": "C3-02",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-02-A",
+          "child_text": "entered supervised operation on 7 June 2026",
+          "subject_anchor": "Copper Finch Array R3",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-02-B",
+          "child_text": "Copper Finch Array R3 remained below the specified temperature threshold during that operation",
+          "subject_anchor": "Copper Finch Array R3",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The two propositions about Copper Finch Array R3 are jointly asserted: it entered supervised operation on 7 June 2026, and its temperature remained below the specified threshold during that operation."
+    },
+    {
+      "case_id": "C3-03",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-03-A",
+          "child_text": "was registered for the northern test range",
+          "subject_anchor": "Obsidian Gate M4",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-03-B",
+          "child_text": "transmitted an authenticated status report at the end of the trial",
+          "subject_anchor": "Obsidian Gate M4",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "With respect to Obsidian Gate M4, both conditions apply: it was registered for the northern test range, and it transmitted an authenticated status report at the end of the trial."
+    },
+    {
+      "case_id": "C3-04",
+      "category": "C3",
+      "children": [
+        {
+          "child_id": "C3-04-A",
+          "child_text": "was inspected after the west-sector incident",
+          "subject_anchor": "Saffron Beacon T11",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C3-04-B",
+          "child_text": "Saffron Beacon T11 received a replacement power module before the next deployment",
+          "subject_anchor": "Saffron Beacon T11",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Both claims concern Saffron Beacon T11: it was inspected after the west-sector incident, and Saffron Beacon T11 received a replacement power module before the next deployment."
+    },
+    {
+      "case_id": "C4-01",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-01-A",
+          "child_text": "Module Zeta-31 satisfies the specified thermal-safety standard.",
+          "subject_anchor": "Module Zeta-31",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C4-01-B",
+          "child_text": "Module Zeta-31 underwent a documented calibration inspection during the spring service cycle.",
+          "subject_anchor": "Module Zeta-31",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Module Zeta-31 is the subject of two independent propositions: it satisfies the specified thermal-safety standard, and it underwent a documented calibration inspection during the spring service cycle."
+    },
+    {
+      "case_id": "C4-02",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-02-A",
+          "child_text": "has an active equipment registration.",
+          "subject_anchor": "Orion Mesh Node Q-58",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C4-02-B",
+          "child_text": "has a measured signal latency below 14 milliseconds.",
+          "subject_anchor": "Orion Mesh Node Q-58",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Orion Mesh Node Q-58 is the system under consideration: it has an active equipment registration, and its measured signal latency is below 14 milliseconds."
+    },
+    {
+      "case_id": "C4-03",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-03-A",
+          "child_text": "Turbine Array Rho-204 had a recorded output of 8.4 megawatts.",
+          "subject_anchor": "Turbine Array Rho-204",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C4-03-B",
+          "child_text": "Turbine Array Rho-204 experienced an emergency shutdown after a coolant-pressure excursion.",
+          "subject_anchor": "Turbine Array Rho-204",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Turbine Array Rho-204 is assessed on two separate points: its recorded output reached 8.4 megawatts, and an emergency shutdown occurred after a coolant-pressure excursion."
+    },
+    {
+      "case_id": "C4-04",
+      "category": "C4",
+      "children": [
+        {
+          "child_id": "C4-04-A",
+          "child_text": "was certified for archival preservation by the facility assessor.",
+          "subject_anchor": "Helix Archive Cluster K-77",
+          "subject_source": "parent"
+        },
+        {
+          "child_id": "C4-04-B",
+          "child_text": "has an active registration in the regional infrastructure directory.",
+          "subject_anchor": "Helix Archive Cluster K-77",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Helix Archive Cluster K-77 is the referenced installation: it was certified for archival preservation by the facility assessor, and it has an active registration in the regional infrastructure directory."
+    },
+    {
+      "case_id": "C5-01",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-01-A",
+          "child_text": "Lumen Transit Hub 19 complies with the regional access standard.",
+          "subject_anchor": "Lumen Transit Hub 19",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-01-B",
+          "child_text": "Lumen Transit Hub 19 experienced a service interruption during the winter operating period.",
+          "subject_anchor": "Lumen Transit Hub 19",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Lumen Transit Hub 19 complies with the regional access standard and experienced a service interruption during the winter operating period."
+    },
+    {
+      "case_id": "C5-02",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-02-A",
+          "child_text": "Copper Finch Array 38 is registered in the coastal equipment ledger.",
+          "subject_anchor": "Copper Finch Array 38",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-02-B",
+          "child_text": "Copper Finch Array 38 produced a measured output above its operating baseline.",
+          "subject_anchor": "Copper Finch Array 38",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Copper Finch Array 38 is registered in the coastal equipment ledger and produced a measured output above its operating baseline."
+    },
+    {
+      "case_id": "C5-03",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-03-A",
+          "child_text": "Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record.",
+          "subject_anchor": "Northstar Relay 62",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-03-B",
+          "child_text": "Northstar Relay 62 triggered an alert during the spring test.",
+          "subject_anchor": "Northstar Relay 62",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Northstar Relay 62 was attributed to the Meridian Signal Group in the deployment record and triggered an alert during the spring test."
+    },
+    {
+      "case_id": "C5-04",
+      "category": "C5",
+      "children": [
+        {
+          "child_id": "C5-04-A",
+          "child_text": "Silver Morrow Unit 74 received a conformity declaration for its revised design.",
+          "subject_anchor": "Silver Morrow Unit 74",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C5-04-B",
+          "child_text": "Silver Morrow Unit 74 has a rated capacity exceeding the installation threshold.",
+          "subject_anchor": "Silver Morrow Unit 74",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "Silver Morrow Unit 74 received a conformity declaration for its revised design and has a rated capacity exceeding the installation threshold."
+    },
+    {
+      "case_id": "C6-01",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-01-A",
+          "child_text": "The Kestrel Array 41 is registered with the North Basin Operations Ledger.",
+          "subject_anchor": "The Kestrel Array 41",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-01-B",
+          "child_text": "The Kestrel Array 41 entered service on 14 March 2024.",
+          "subject_anchor": "The Kestrel Array 41",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Kestrel Array 41 is registered with the North Basin Operations Ledger and entered service on 14 March 2024."
+    },
+    {
+      "case_id": "C6-02",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-02-A",
+          "child_text": "The Oriole Signal Node 58 was inspected by the Westhaven Safety Office.",
+          "subject_anchor": "The Oriole Signal Node 58",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-02-B",
+          "child_text": "The Oriole Signal Node 58 received a compliant rating during that inspection.",
+          "subject_anchor": "The Oriole Signal Node 58",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Oriole Signal Node 58 was inspected by the Westhaven Safety Office and received a compliant rating during that inspection."
+    },
+    {
+      "case_id": "C6-03",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-03-A",
+          "child_text": "The Juniper Transit Hub 73 opened for public service on 2 June 2025.",
+          "subject_anchor": "The Juniper Transit Hub 73",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-03-B",
+          "child_text": "It operates three passenger platforms.",
+          "subject_anchor": "The Juniper Transit Hub 73",
+          "subject_source": "parent"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Juniper Transit Hub 73 opened for public service on 2 June 2025 and operates three passenger platforms."
+    },
+    {
+      "case_id": "C6-04",
+      "category": "C6",
+      "children": [
+        {
+          "child_id": "C6-04-A",
+          "child_text": "The Solace Water Monitor 86 was calibrated by Meridian Instruments.",
+          "subject_anchor": "The Solace Water Monitor 86",
+          "subject_source": "child"
+        },
+        {
+          "child_id": "C6-04-B",
+          "child_text": "The Solace Water Monitor 86 recorded a flow rate of 18.6 liters per minute during the calibration check.",
+          "subject_anchor": "The Solace Water Monitor 86",
+          "subject_source": "child"
+        }
+      ],
+      "logic": "all_of",
+      "parent_text": "The Solace Water Monitor 86 was calibrated by Meridian Instruments and recorded a flow rate of 18.6 liters per minute during the calibration check."
+    }
+  ],
+  "child_count": 48,
+  "claims_sha256": "ce5a653eb826dd938fd9014cf7e17f2f4f1602c79cc540ea812e6089e867f579",
+  "classification": "FRESH_CONTEXT_FREE_CLAIMS",
+  "schema": "eb-composite-obligation-rc1-claims"
+}

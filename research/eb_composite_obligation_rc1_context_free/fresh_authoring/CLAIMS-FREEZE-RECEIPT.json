@@ -1,0 +1,7 @@
+{
+  "schema": "eb-composite-obligation-rc1-claims-freeze",
+  "bootstrap_head": "8f520b4b89bbf06e36ce4e63eac98b643d55f9eb",
+  "claims_file_sha256": "28710490f29de9b17833afa0a3b19fcb247ffd97405ecea1caad8565e0502441",
+  "corpus_authored": false,
+  "target_revealed": false
+}
