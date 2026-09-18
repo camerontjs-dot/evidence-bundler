@@ -1,0 +1,12 @@
+{
+  "schema": "eb-evidence-shape-mechanism-pressure-v1-launch",
+  "status": "AUTHORIZED_EXPOSED_DEVELOPMENT_MECHANISM_PRESSURE",
+  "pr": 99,
+  "bm25_control": "control_bm25_rank_top3_no_gates",
+  "semantic_control": "control_semantic_top3_no_gates",
+  "placebo": "control_gate_present_ignored",
+  "prior_result_commit": "04ed7dfb448f54c4795d60e2b6f1b8e25fe69682",
+  "first_stage_retrieval_changed": false,
+  "fresh_qualification": false,
+  "production_authority": false
+}
