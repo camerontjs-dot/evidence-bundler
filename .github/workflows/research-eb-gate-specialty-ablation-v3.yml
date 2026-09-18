@@ -1,0 +1,167 @@
+name: Research - EB Gate Specialty Ablation V3
+
+on:
+  push:
+    branches:
+      - research/eb-gate-specialty-ablation-v3-20260917
+    paths:
+      - research/eb_gate_informed_requirements_v0/GATE-SPECIALTY-V3-LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_gate_informed_requirements_v0
+  SOURCE_SELECTION_SHA: 095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4
+  GOLD_SHA: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+  PRE_GOLD_BRANCH: research/eb-gate-specialty-v3-selections-20260917
+  RESULT_BRANCH: research/eb-gate-specialty-v3-result-20260917
+
+jobs:
+  ablation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout V3 study branch
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify immutable pre-gold source
+        run: |
+          set -euo pipefail
+          source=study/$SURFACE/evidence_shape_mechanism_v1/SELECTIONS.json
+          test "$(sha256sum "$source" | awk '{print $1}')" = "$SOURCE_SELECTION_SHA"
+          git -C study merge-base --is-ancestor \
+            29e78586e512729f91be2c811ebba1557b119ba5 \
+            "$(git -C study rev-parse HEAD)"
+          test ! -e study/$SURFACE/gate_specificity_v2_result/EVALUATION.json
+          test ! -e study/research/eb_typed_selector_rc1_successor/GOLD.json
+
+      - name: Static checks
+        run: |
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check \
+            study/$SURFACE/run_gate_specialty_ablation_v3.py \
+            study/$SURFACE/evaluate_gate_specialty_ablation_v3.py
+          python -m py_compile \
+            study/$SURFACE/run_gate_specialty_ablation_v3.py \
+            study/$SURFACE/evaluate_gate_specialty_ablation_v3.py
+
+      - name: Derive V3 selections without gold
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python study/$SURFACE/run_gate_specialty_ablation_v3.py \
+            --v1-selections study/$SURFACE/evidence_shape_mechanism_v1/SELECTIONS.json \
+            --out out/SELECTIONS.json
+
+      - name: Freeze V3 selections before gold
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$PRE_GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "V3 selection branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$PRE_GOLD_BRANCH"
+          dest=study/$SURFACE/gate_specialty_v3
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          {
+            echo "study_head=$(git -C study rev-parse HEAD)"
+            echo "source_selection_sha256=$SOURCE_SELECTION_SHA"
+            echo "gold_opened=false"
+          } > "$dest/PRE-GOLD-RECEIPT.txt"
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study add "$SURFACE/gate_specialty_v3"
+          git -C study commit -m "Research: freeze Gate specialty V3 selections before gold"
+          git -C study push origin "HEAD:refs/heads/$PRE_GOLD_BRANCH"
+
+      - name: Checkout exact exposed gold
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee
+          path: gold
+          fetch-depth: 1
+
+      - name: Checkout exact frozen RC1 evaluator
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: research/eb-typed-selector-rc1-successor-fresh-input-final-20260917
+          path: frozen-evaluator
+          fetch-depth: 1
+
+      - name: Verify evaluation identities
+        run: |
+          set -euo pipefail
+          test "$(git -C gold rev-parse HEAD)" = "$GOLD_SHA"
+          gold_file=gold/research/eb_typed_selector_rc1_successor/GOLD.json
+          test "$(sha256sum "$gold_file" | awk '{print $1}')" = "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592"
+          evaluator=frozen-evaluator/research/eb_typed_selector_rc1_successor/evaluator.py
+          test "$(sha256sum "$evaluator" | awk '{print $1}')" = "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2"
+
+      - name: Evaluate V3 specialty ablations
+        run: |
+          python study/$SURFACE/evaluate_gate_specialty_ablation_v3.py \
+            --selections out/SELECTIONS.json \
+            --gold gold/research/eb_typed_selector_rc1_successor/GOLD.json \
+            --frozen-evaluator frozen-evaluator/research/eb_typed_selector_rc1_successor/evaluator.py \
+            --out out/EVALUATION.json
+
+      - name: Build V3 receipt
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          sel=json.loads(Path("out/SELECTIONS.json").read_text())
+          receipt={
+              "schema":"eb-gate-specialty-v3-receipt",
+              "status":"EXPOSED_DEVELOPMENT_SPECIALTY_ABLATION_COMPLETE",
+              "study_head":subprocess.check_output(
+                  ["git","-C","study","rev-parse","HEAD"],text=True
+              ).strip(),
+              "selection_sha256":sha("out/SELECTIONS.json"),
+              "evaluation_sha256":sha("out/EVALUATION.json"),
+              "exceptional_lane_count":len(sel["exceptional_lanes"]),
+              "fresh_qualification":False,
+              "production_authority":False,
+          }
+          Path("out/RECEIPT.json").write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+"\n"
+          )
+          PY
+
+      - name: Upload V3 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-gate-specialty-v3-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+
+      - name: Freeze V3 result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "V3 result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$RESULT_BRANCH"
+          dest=study/$SURFACE/gate_specialty_v3_result
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C study add "$SURFACE/gate_specialty_v3_result"
+          git -C study commit -m "Research: freeze Gate specialty V3 result"
+          git -C study push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
