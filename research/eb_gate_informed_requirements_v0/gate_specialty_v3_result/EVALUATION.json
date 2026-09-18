@@ -1,0 +1,1105 @@
+{
+  "baseline_exceptional": {
+    "coverage": 4,
+    "coverage_total": 8,
+    "deep_useful_rescue": 2,
+    "nonuseful": 17,
+    "unsafe": 17,
+    "useful_available": 16,
+    "useful_recall": 0.4375,
+    "useful_retained": 7
+  },
+  "classification": "EXPOSED_DEVELOPMENT_SPECIALTY_ABLATION_DIAGNOSTIC",
+  "evaluation_sha256": "c4d917ba0bd204d619108305ff4126107793ac7309731fa377de73350daab76b",
+  "exceptional_lanes": [
+    "L001",
+    "L011",
+    "L019",
+    "L021",
+    "L022",
+    "L023",
+    "L024",
+    "L027"
+  ],
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "nonclaims": [
+    "exposed development ablation only",
+    "no Gate field or EB behavior qualified",
+    "no model or Gate runtime rerun",
+    "fresh independent reproduction remains required"
+  ],
+  "results": [
+    {
+      "changed_lanes_vs_full": {
+        "ablate_authoritative": [
+          "L019",
+          "L021"
+        ],
+        "ablate_event": [
+          "L022"
+        ],
+        "ablate_registry": [
+          "L027"
+        ],
+        "generic_any": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "shuffled": [
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "specialty_anyof": [],
+        "specialty_fraction": []
+      },
+      "exceptional_8": {
+        "ablate_authoritative": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "ablate_event": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "ablate_registry": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "full": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_any": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "shuffled": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "specialty_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "specialty_fraction": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        }
+      },
+      "exceptional_deltas_vs_full": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 1,
+          "useful_recall": 0.0
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 2,
+          "useful_recall": -0.0625
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_deltas_vs_semantic": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -2,
+          "useful_recall": 0.125
+        },
+        "full": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        }
+      },
+      "full_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 2,
+        "nonuseful": -2,
+        "unsafe": -3,
+        "useful_recall": 0.04878048780487809
+      },
+      "loss_cap": 0.005,
+      "overall": {
+        "ablate_authoritative": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "ablate_event": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "ablate_registry": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "full": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "generic_any": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "shuffled": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "specialty_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "specialty_fraction": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        }
+      }
+    },
+    {
+      "changed_lanes_vs_full": {
+        "ablate_authoritative": [
+          "L019",
+          "L021"
+        ],
+        "ablate_event": [
+          "L022",
+          "L024"
+        ],
+        "ablate_registry": [
+          "L027"
+        ],
+        "generic_any": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "shuffled": [
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "specialty_anyof": [],
+        "specialty_fraction": []
+      },
+      "exceptional_8": {
+        "ablate_authoritative": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "ablate_event": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "ablate_registry": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "full": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "generic_any": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "shuffled": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "specialty_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "specialty_fraction": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        }
+      },
+      "exceptional_deltas_vs_full": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 2,
+          "useful_recall": -0.125
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 1,
+          "useful_recall": 0.0
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_deltas_vs_semantic": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -3,
+          "useful_recall": 0.1875
+        },
+        "full": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        }
+      },
+      "full_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "loss_cap": 0.01,
+      "overall": {
+        "ablate_authoritative": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "ablate_event": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "ablate_registry": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "full": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_any": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 57,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "shuffled": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "specialty_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "specialty_fraction": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        }
+      }
+    },
+    {
+      "changed_lanes_vs_full": {
+        "ablate_authoritative": [
+          "L019",
+          "L021"
+        ],
+        "ablate_event": [
+          "L022",
+          "L024"
+        ],
+        "ablate_registry": [
+          "L027"
+        ],
+        "generic_any": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "shuffled": [
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "specialty_anyof": [],
+        "specialty_fraction": []
+      },
+      "exceptional_8": {
+        "ablate_authoritative": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "ablate_event": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "ablate_registry": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "full": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "generic_any": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "shuffled": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "specialty_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "specialty_fraction": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        }
+      },
+      "exceptional_deltas_vs_full": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 2,
+          "useful_recall": -0.125
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 1,
+          "useful_recall": 0.0
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_deltas_vs_semantic": {
+        "ablate_authoritative": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "ablate_event": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "ablate_registry": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -3,
+          "useful_recall": 0.1875
+        },
+        "full": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "generic_any": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "specialty_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "specialty_fraction": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        }
+      },
+      "full_vs_semantic": {
+        "coverage": 0,
+        "deep_useful_rescue": 3,
+        "nonuseful": -3,
+        "unsafe": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "loss_cap": 0.02,
+      "overall": {
+        "ablate_authoritative": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "ablate_event": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "ablate_registry": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "full": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_any": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 57,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "shuffled": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "specialty_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "specialty_fraction": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        }
+      }
+    }
+  ],
+  "schema": "eb-gate-specialty-ablation-v3-evaluation",
+  "selection_sha256": "4f225266be6b4f95f06b05648c548ffdc62c4ad573059e0c40904afcf1aebb8d",
+  "specialty_by_lane": {
+    "L001": [
+      "authoritative_declaration"
+    ],
+    "L011": [
+      "authoritative_declaration"
+    ],
+    "L019": [
+      "authoritative_declaration"
+    ],
+    "L021": [
+      "authoritative_declaration"
+    ],
+    "L022": [
+      "event_record"
+    ],
+    "L023": [
+      "authoritative_declaration",
+      "registry_entry"
+    ],
+    "L024": [
+      "event_record"
+    ],
+    "L027": [
+      "authoritative_declaration",
+      "registry_entry"
+    ]
+  },
+  "union_specialty": [
+    "authoritative_declaration",
+    "event_record",
+    "registry_entry"
+  ]
+}

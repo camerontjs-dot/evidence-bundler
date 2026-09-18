@@ -1,0 +1,10 @@
+{
+  "evaluation_sha256": "271a5702a1397f652161516798c304282b4f585519acc2ffca98c0e1bcb208ab",
+  "exceptional_lane_count": 8,
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-gate-specialty-v3-receipt",
+  "selection_sha256": "4f225266be6b4f95f06b05648c548ffdc62c4ad573059e0c40904afcf1aebb8d",
+  "status": "EXPOSED_DEVELOPMENT_SPECIALTY_ABLATION_COMPLETE",
+  "study_head": "81914a445386a0658931a6b16ace2e8a86d23de8"
+}
