@@ -7,10 +7,11 @@
   "bootstrap_base": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
   "bootstrap_branch": "research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918",
   "isolation_surface": {
-    "provider": "GitHub Models via actions/ai-inference",
-    "model": "openai/gpt-4o",
+    "provider": "GitHub Copilot CLI via GitHub Actions GITHUB_TOKEN",
+    "model": "gpt-5-mini",
     "github_mcp_enabled": false,
-    "rule": "Each model invocation receives only explicitly supplied prereveal files/variables. It has no GitHub MCP access and no conversation-memory context."
+    "tool_policy": "deny shell, write, url, and memory; disable builtin MCP; invoke from fresh trusted empty directory with a fresh COPILOT_HOME per call",
+    "rule": "Each invocation receives only one fully rendered prompt containing explicitly allowlisted prereveal content. It starts a fresh Copilot session and cannot access the repository checkout through its working-directory path permissions."
   },
   "claim_profile_authority": {
     "repository": "camerontjs-dot/proposition-authoring",
