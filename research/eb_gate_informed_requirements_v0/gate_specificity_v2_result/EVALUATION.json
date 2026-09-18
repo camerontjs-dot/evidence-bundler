@@ -1,0 +1,1308 @@
+{
+  "classification": "EXPOSED_DEVELOPMENT_SPECIFICITY_DIAGNOSTIC",
+  "comparisons": [
+    {
+      "changed_lanes": {
+        "constant_vs_semantic": [],
+        "document_vs_semantic": [],
+        "measurement_vs_constant": [],
+        "true_supported_vs_true": [],
+        "true_vs_constant": [
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "true_vs_constant_exceptional": [
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "true_vs_rare_shuffled_exceptional": [
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "true_vs_semantic": [
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ]
+      },
+      "default_22_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_8_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        }
+      },
+      "loss_cap": 0.005,
+      "overall": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "constant_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "document_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "document_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "measurement_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "true_supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.024390243902439046
+        },
+        "true_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        }
+      }
+    },
+    {
+      "changed_lanes": {
+        "constant_vs_semantic": [],
+        "document_vs_semantic": [],
+        "measurement_vs_constant": [],
+        "true_supported_vs_true": [],
+        "true_vs_constant": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_constant_exceptional": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_rare_shuffled_exceptional": [
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_semantic": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ]
+      },
+      "default_22_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_8_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        }
+      },
+      "loss_cap": 0.01,
+      "overall": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "constant_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "document_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "document_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "measurement_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        },
+        "true_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        }
+      }
+    },
+    {
+      "changed_lanes": {
+        "constant_vs_semantic": [],
+        "document_vs_semantic": [],
+        "measurement_vs_constant": [],
+        "true_supported_vs_true": [],
+        "true_vs_constant": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_constant_exceptional": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_rare_shuffled_exceptional": [
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "true_vs_semantic": [
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ]
+      },
+      "default_22_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 0
+          },
+          "coverage": 17,
+          "coverage_total": 19,
+          "deep_useful_rescue": 4,
+          "nonuseful": 49,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 45,
+          "useful_available": 25,
+          "useful_recall": 0.68,
+          "useful_retained": 17
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_8_lanes": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "ordinary_easy_coverage": 0,
+          "redundant": 0,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "ordinary_easy_coverage": 0,
+          "redundant": 1,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        }
+      },
+      "loss_cap": 0.02,
+      "overall": {
+        "constant_default": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "constant_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "document_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "document_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "measurement_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "measurement_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "rare_shuffled_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "rare_shuffled_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "semantic": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "ordinary_easy_coverage": 1,
+          "redundant": 2,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true_gate": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_supported_only": {
+          "complementary_coverage": {
+            "covered": 0,
+            "total": 3
+          },
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "ordinary_easy_coverage": 1,
+          "redundant": 3,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_supported_vs_true": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "true_vs_constant": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "true_vs_rare_shuffled": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        },
+        "true_vs_semantic": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        }
+      }
+    }
+  ],
+  "default_expected_forms": [
+    "document_text",
+    "measurement"
+  ],
+  "default_lanes": [
+    "L002",
+    "L003",
+    "L004",
+    "L005",
+    "L006",
+    "L007",
+    "L008",
+    "L009",
+    "L010",
+    "L012",
+    "L013",
+    "L014",
+    "L015",
+    "L016",
+    "L017",
+    "L018",
+    "L020",
+    "L025",
+    "L026",
+    "L028",
+    "L029",
+    "L030"
+  ],
+  "evaluation_sha256": "26709c9bfe18d8a746c885c19e484ea0c60d719a584e651a558d5fc521273dd9",
+  "exceptional_lanes": [
+    "L001",
+    "L011",
+    "L019",
+    "L021",
+    "L022",
+    "L023",
+    "L024",
+    "L027"
+  ],
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "nonclaims": [
+    "exposed development specificity diagnostic only",
+    "no Gate field or EB behavior is qualified",
+    "no model or Gate runtime was rerun",
+    "no first-stage retrieval change",
+    "fresh independent evidence remains required for any successor"
+  ],
+  "schema": "eb-gate-specificity-v2-evaluation",
+  "selection_sha256": "4fea24ab527f42435cac0c9909579bdb2afc4f1e4b719616e1a690efcd0fd35b",
+  "unsupported_expected_forms_by_lane": {
+    "L001": [],
+    "L002": [],
+    "L003": [],
+    "L004": [],
+    "L005": [],
+    "L006": [],
+    "L007": [],
+    "L008": [],
+    "L009": [],
+    "L010": [],
+    "L011": [],
+    "L012": [],
+    "L013": [],
+    "L014": [],
+    "L015": [],
+    "L016": [],
+    "L017": [],
+    "L018": [],
+    "L019": [],
+    "L020": [],
+    "L021": [],
+    "L022": [],
+    "L023": [
+      "database_record"
+    ],
+    "L024": [],
+    "L025": [],
+    "L026": [],
+    "L027": [
+      "database_record"
+    ],
+    "L028": [],
+    "L029": [],
+    "L030": []
+  }
+}

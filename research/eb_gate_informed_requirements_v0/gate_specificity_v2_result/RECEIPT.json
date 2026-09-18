@@ -1,0 +1,12 @@
+{
+  "default_lane_count": 22,
+  "evaluation_sha256": "a5cc3842f124d215bc9e7a4a4100b5ef5bcaa7bcd56598fc1558d0f93ceccd09",
+  "exceptional_lane_count": 8,
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-gate-specificity-v2-receipt",
+  "selection_sha256": "4fea24ab527f42435cac0c9909579bdb2afc4f1e4b719616e1a690efcd0fd35b",
+  "source_v1_selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "status": "EXPOSED_DEVELOPMENT_SPECIFICITY_COMPLETE",
+  "study_head": "29e78586e512729f91be2c811ebba1557b119ba5"
+}
