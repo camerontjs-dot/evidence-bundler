@@ -1,0 +1,14 @@
+{
+  "analysis_head": "70a618c11dc9e549f12aa69e4d70dc44e3db861d",
+  "audit_sha256": "49022b3831677398b85f25853e0f6b08afe48803ccb7aeeeea023c7497445da0",
+  "classification": "POST_HOC_EXPOSED_DEVELOPMENT_DIAGNOSTIC",
+  "fresh_qualification": false,
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "production_authority": false,
+  "schema": "eb-gate-field-pressure-posthoc-audit-receipt-v0",
+  "selections_changed": false,
+  "source_result_commit": "f2a51a4a3b803df4b416887e6b6e0ff4e957ed40",
+  "source_selection_sha256": "4796677d060a1c84a852e86a70b4e1eea209091cdccd057073238a9bae7368cc",
+  "status": "POSTHOC_AUDIT_COMPLETE"
+}

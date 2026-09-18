@@ -1,0 +1,5461 @@
+{
+  "audit_sha256": "4e2f03aa6205d0864c844055ba947d3419b850ff06b864aa53bc31f7e50b7016",
+  "baseline": {
+    "arm": "baseline_no_gates_semantic_top3",
+    "metrics": {
+      "category10_burden": 9,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    }
+  },
+  "classification": "POST_HOC_EXPOSED_DEVELOPMENT_DIAGNOSTIC",
+  "family_availability": {
+    "attribution": {
+      "lanes_with_candidate_discrimination": 25,
+      "lanes_with_known_candidate_scores": 30
+    },
+    "entities": {
+      "lanes_with_candidate_discrimination": 0,
+      "lanes_with_known_candidate_scores": 0
+    },
+    "evidence_shape": {
+      "lanes_with_candidate_discrimination": 16,
+      "lanes_with_known_candidate_scores": 30
+    },
+    "jurisdiction": {
+      "lanes_with_candidate_discrimination": 0,
+      "lanes_with_known_candidate_scores": 0
+    },
+    "modality": {
+      "lanes_with_candidate_discrimination": 3,
+      "lanes_with_known_candidate_scores": 30
+    },
+    "negation": {
+      "lanes_with_candidate_discrimination": 27,
+      "lanes_with_known_candidate_scores": 30
+    },
+    "posture": {
+      "lanes_with_candidate_discrimination": 10,
+      "lanes_with_known_candidate_scores": 30
+    },
+    "quantitative_signature": {
+      "lanes_with_candidate_discrimination": 0,
+      "lanes_with_known_candidate_scores": 0
+    },
+    "relation_targets": {
+      "lanes_with_candidate_discrimination": 0,
+      "lanes_with_known_candidate_scores": 0
+    },
+    "temporal": {
+      "lanes_with_candidate_discrimination": 2,
+      "lanes_with_known_candidate_scores": 2
+    }
+  },
+  "family_summary": {
+    "attribution": {
+      "best_correct_coverage": 17,
+      "best_correct_nonuseful": 69,
+      "best_correct_unsafe": 67,
+      "best_correct_useful_recall": 0.5121951219512195,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 16,
+      "screens": [
+        "HARMFUL_PRIMARY"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "entities": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 0,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "evidence_shape": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 63,
+      "best_correct_unsafe": 58,
+      "best_correct_useful_recall": 0.6585365853658537,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 5,
+      "screens": [
+        "PROMISING_CORRECT_OVER_SHUFFLED"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "jurisdiction": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 0,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "modality": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 0,
+      "screens": [
+        "MIXED_OR_NULL"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "negation": {
+      "best_correct_coverage": 22,
+      "best_correct_nonuseful": 65,
+      "best_correct_unsafe": 63,
+      "best_correct_useful_recall": 0.6097560975609756,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 7,
+      "screens": [
+        "PROMISING_CORRECT_OVER_SHUFFLED"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "posture": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 63,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 1,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "quantitative_signature": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 0,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "relation_targets": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 0,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "staged_structural": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 63,
+      "best_correct_unsafe": 58,
+      "best_correct_useful_recall": 0.6585365853658537,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 7,
+      "screens": [
+        "PROMISING_CORRECT_OVER_SHUFFLED"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    },
+    "temporal": {
+      "best_correct_coverage": 21,
+      "best_correct_nonuseful": 66,
+      "best_correct_unsafe": 62,
+      "best_correct_useful_recall": 0.5853658536585366,
+      "correct_distinct_selection_sets_across_caps": 1,
+      "max_correct_changed_lanes": 2,
+      "screens": [
+        "NO_CORRECT_SIGNAL_DISCRIMINATION"
+      ],
+      "shuffled_distinct_selection_sets_across_caps": 1
+    }
+  },
+  "fields_by_representation_disposition": {
+    "CONSTANT": [
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.context_dependence",
+        "layer": "claim",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.document_type",
+        "layer": "evidence",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.evidence_form",
+        "layer": "evidence",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.corpus_completeness",
+        "layer": "preflight",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "preflight.jurisdiction",
+        "layer": "preflight",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.known_gaps",
+        "layer": "preflight",
+        "unique_known_values": 1
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.verification_world",
+        "layer": "preflight",
+        "unique_known_values": 1
+      }
+    ],
+    "NONTRIVIAL": [
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.attribution",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.claim_families",
+        "layer": "claim",
+        "unique_known_values": 8
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.claim_structure_shape",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "claim.expected_evidence_forms",
+        "layer": "claim",
+        "unique_known_values": 5
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.modality",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.negation",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.scope_ambiguity",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 2,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.temporal_scope",
+        "layer": "claim",
+        "unique_known_values": 2
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION_WITH_OPEN_SEMANTIC_BOUNDARY",
+        "field_id": "evidence.authority_basis",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.content_identity",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.corpus_scope",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.provenance",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.source_identity",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.version",
+        "layer": "evidence",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.corpus_aperture",
+        "layer": "preflight",
+        "unique_known_values": 30
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.evidence_forms",
+        "layer": "preflight",
+        "unique_known_values": 5
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "preflight.missing_expected_evidence_forms",
+        "layer": "preflight",
+        "unique_known_values": 5
+      },
+      {
+        "cases_known": 30,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "preflight.temporal_scope",
+        "layer": "preflight",
+        "unique_known_values": 3
+      }
+    ],
+    "UNMATERIALIZED_OR_UNKNOWN": [
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+        "field_id": "boundary.claim_independent_evidence_world",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "REPAIR_REQUIRED_UPSTREAM",
+        "field_id": "boundary.contract_a_media_type_conformance",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "boundary.cross_artifact_verifier",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+        "field_id": "boundary.reconstruction_inputs",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "SUPPORTED_BOUNDARY_MECHANISM",
+        "field_id": "boundary.source_origin_not_retention_locator",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "boundary.validator_schema_parity",
+        "layer": "boundary",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.conflict_graph_position",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.evidence_form_coverage",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS_WITH_RC1_SIGNAL",
+        "field_id": "candidate.evidence_posture",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.jurisdiction_compatibility",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "REPAIR_OR_ABLATE",
+        "field_id": "candidate.local_span_relevance",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.redundancy_group",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "INCUMBENT_EXPERIMENTAL_SIGNAL",
+        "field_id": "candidate.semantic_relevance",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.source_role",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.supersession_graph_position",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.temporal_compatibility",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "candidate.version_currency_fit",
+        "layer": "candidate",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.causal_cue_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.comparative_cue_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.context_required",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.context_supplied",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.date_expression_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "claim.domain",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.entities",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.entity_mention_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.identifier_like_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "claim.jurisdiction",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.measure_unit_threshold_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.numeric_token_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.regulatory_citation_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "claim.relation_targets",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.status_cue_spans",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.surface_coordination_present",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "claim.surface_scope_marker_present",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "claim.verification_world",
+        "layer": "claim",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.completeness_state",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "evidence.conflict_observations",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.currency_state",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.duplicate_source_groups",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "evidence.effective_date",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "evidence.expiry_or_supersession_date",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.issuer",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.jurisdictional_coverage",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "evidence.known_gaps",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "evidence.media_type_identity_role",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "evidence.mirrored_copy_groups",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "evidence.near_duplicate_groups",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "BOUNDARY_SUPPORTED_DESIGN_OPEN",
+        "field_id": "evidence.origin_type",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "BOUNDARY_SUPPORTED_DESIGN_OPEN",
+        "field_id": "evidence.source_locator",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.source_role",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "REPAIR_REQUIRED",
+        "field_id": "evidence.supersession_observations",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.temporal_coverage",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 30,
+        "evidence_status": "SUPPORTED_REPRESENTATION",
+        "field_id": "evidence.verification_world",
+        "layer": "evidence",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "preflight.impossible_under_declared_corpus",
+        "layer": "preflight",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "preflight.optional_branches_observed",
+        "layer": "preflight",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "preflight.partially_coverable",
+        "layer": "preflight",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "preflight.required_branches_missing",
+        "layer": "preflight",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "preflight.required_branches_observed",
+        "layer": "preflight",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.all_of",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.any_of",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.at_least_n_of",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.corroborative",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.distinct_forms",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.distinct_sources",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.form",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.optional",
+        "layer": "requirement",
+        "unique_known_values": 0
+      },
+      {
+        "cases_known": 0,
+        "cases_present": 0,
+        "evidence_status": "DESIGN_HYPOTHESIS",
+        "field_id": "requirement.op.unknown",
+        "layer": "requirement",
+        "unique_known_values": 0
+      }
+    ]
+  },
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "nonclaims": [
+    "post-hoc exposed-development diagnostic only",
+    "does not qualify Gate fields or EB behavior",
+    "does not alter any frozen selection",
+    "uses exact frozen RC1 evaluator semantics for metrics",
+    "survivors require fresh independent qualification"
+  ],
+  "pairs": [
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "correct_arm": "attribution_correct_cap_0.02",
+      "correct_changed_lanes": 16,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "attribution",
+      "loss_cap": 0.02,
+      "posthoc_screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "shuffled_arm": "attribution_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 15,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "correct_arm": "attribution_correct_cap_0.05",
+      "correct_changed_lanes": 16,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "attribution",
+      "loss_cap": 0.05,
+      "posthoc_screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "shuffled_arm": "attribution_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 15,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "correct_arm": "attribution_correct_cap_0.10",
+      "correct_changed_lanes": 16,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "attribution",
+      "loss_cap": 0.1,
+      "posthoc_screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "shuffled_arm": "attribution_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 15,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "correct_arm": "attribution_correct_cap_0.20",
+      "correct_changed_lanes": 16,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "attribution",
+      "loss_cap": 0.2,
+      "posthoc_screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "shuffled_arm": "attribution_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 15,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "correct_arm": "attribution_correct_cap_1.00",
+      "correct_changed_lanes": 16,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "attribution",
+      "loss_cap": 1.0,
+      "posthoc_screen": "HARMFUL_PRIMARY",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 17,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 69,
+        "ordinary_easy_coverage": 1,
+        "redundant": 0,
+        "unsafe": 67,
+        "useful_available": 41,
+        "useful_recall": 0.5121951219512195,
+        "useful_retained": 21
+      },
+      "shuffled_arm": "attribution_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 15,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": 3,
+        "redundant_retention": -2,
+        "required_lane_coverage": -4,
+        "unsafe_retention": 5,
+        "useful_recall": -0.07317073170731703
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "entities_correct_cap_0.02",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "entities",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "entities_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "entities_correct_cap_0.05",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "entities",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "entities_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "entities_correct_cap_0.10",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "entities",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "entities_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "entities_correct_cap_0.20",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "entities",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "entities_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "entities_correct_cap_1.00",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "entities",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "entities_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "evidence_shape_correct_cap_0.02",
+      "correct_changed_lanes": 5,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "evidence_shape",
+      "loss_cap": 0.02,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "evidence_shape_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "evidence_shape_correct_cap_0.05",
+      "correct_changed_lanes": 5,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "evidence_shape",
+      "loss_cap": 0.05,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "evidence_shape_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "evidence_shape_correct_cap_0.10",
+      "correct_changed_lanes": 5,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "evidence_shape",
+      "loss_cap": 0.1,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "evidence_shape_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "evidence_shape_correct_cap_0.20",
+      "correct_changed_lanes": 5,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "evidence_shape",
+      "loss_cap": 0.2,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "evidence_shape_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "evidence_shape_correct_cap_1.00",
+      "correct_changed_lanes": 5,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "evidence_shape",
+      "loss_cap": 1.0,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "evidence_shape_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "jurisdiction_correct_cap_0.02",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "jurisdiction",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "jurisdiction_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "jurisdiction_correct_cap_0.05",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "jurisdiction",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "jurisdiction_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "jurisdiction_correct_cap_0.10",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "jurisdiction",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "jurisdiction_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "jurisdiction_correct_cap_0.20",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "jurisdiction",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "jurisdiction_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "jurisdiction_correct_cap_1.00",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "jurisdiction",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "jurisdiction_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "modality_correct_cap_0.02",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": -0.024390243902439046
+      },
+      "family": "modality",
+      "loss_cap": 0.02,
+      "posthoc_screen": "MIXED_OR_NULL",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "modality_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 3,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "modality_correct_cap_0.05",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": -0.024390243902439046
+      },
+      "family": "modality",
+      "loss_cap": 0.05,
+      "posthoc_screen": "MIXED_OR_NULL",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "modality_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 3,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "modality_correct_cap_0.10",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": -0.024390243902439046
+      },
+      "family": "modality",
+      "loss_cap": 0.1,
+      "posthoc_screen": "MIXED_OR_NULL",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "modality_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 3,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "modality_correct_cap_0.20",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": -0.024390243902439046
+      },
+      "family": "modality",
+      "loss_cap": 0.2,
+      "posthoc_screen": "MIXED_OR_NULL",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "modality_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 3,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "modality_correct_cap_1.00",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": -1,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": -0.024390243902439046
+      },
+      "family": "modality",
+      "loss_cap": 1.0,
+      "posthoc_screen": "MIXED_OR_NULL",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 7,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 61,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "shuffled_arm": "modality_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 3,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "correct_arm": "negation_correct_cap_0.02",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 2,
+        "unsafe_retention": 0,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "negation",
+      "loss_cap": 0.02,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "negation_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "correct_arm": "negation_correct_cap_0.05",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 2,
+        "unsafe_retention": 0,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "negation",
+      "loss_cap": 0.05,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "negation_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "correct_arm": "negation_correct_cap_0.10",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 2,
+        "unsafe_retention": 0,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "negation",
+      "loss_cap": 0.1,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "negation_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "correct_arm": "negation_correct_cap_0.20",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 2,
+        "unsafe_retention": 0,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "negation",
+      "loss_cap": 0.2,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "negation_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 22,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 65,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.6097560975609756,
+        "useful_retained": 25
+      },
+      "correct_arm": "negation_correct_cap_1.00",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 2,
+        "unsafe_retention": 0,
+        "useful_recall": 0.024390243902439046
+      },
+      "family": "negation",
+      "loss_cap": 1.0,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 2,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "negation_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 12,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "posture_correct_cap_0.02",
+      "correct_changed_lanes": 1,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "posture",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "posture_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "posture_correct_cap_0.05",
+      "correct_changed_lanes": 1,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "posture",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "posture_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "posture_correct_cap_0.10",
+      "correct_changed_lanes": 1,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "posture",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "posture_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "posture_correct_cap_0.20",
+      "correct_changed_lanes": 1,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "posture",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "posture_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "posture_correct_cap_1.00",
+      "correct_changed_lanes": 1,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "posture",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 63,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "posture_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 1,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 1,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "quantitative_signature_correct_cap_0.02",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "quantitative_signature",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "quantitative_signature_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "quantitative_signature_correct_cap_0.05",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "quantitative_signature",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "quantitative_signature_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "quantitative_signature_correct_cap_0.10",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "quantitative_signature",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "quantitative_signature_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "quantitative_signature_correct_cap_0.20",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "quantitative_signature",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "quantitative_signature_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "quantitative_signature_correct_cap_1.00",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "quantitative_signature",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "quantitative_signature_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "relation_targets_correct_cap_0.02",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "relation_targets",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "relation_targets_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "relation_targets_correct_cap_0.05",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "relation_targets",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "relation_targets_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "relation_targets_correct_cap_0.10",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "relation_targets",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "relation_targets_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "relation_targets_correct_cap_0.20",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "relation_targets",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "relation_targets_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "relation_targets_correct_cap_1.00",
+      "correct_changed_lanes": 0,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "relation_targets",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "relation_targets_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "staged_structural_correct_cap_0.02",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "staged_structural",
+      "loss_cap": 0.02,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "staged_structural_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "staged_structural_correct_cap_0.05",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "staged_structural",
+      "loss_cap": 0.05,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "staged_structural_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "staged_structural_correct_cap_0.10",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "staged_structural",
+      "loss_cap": 0.1,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "staged_structural_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "staged_structural_correct_cap_0.20",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "staged_structural",
+      "loss_cap": 0.2,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "staged_structural_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 9,
+        "nonuseful": 63,
+        "ordinary_easy_coverage": 1,
+        "redundant": 3,
+        "unsafe": 58,
+        "useful_available": 41,
+        "useful_recall": 0.6585365853658537,
+        "useful_retained": 27
+      },
+      "correct_arm": "staged_structural_correct_cap_1.00",
+      "correct_changed_lanes": 7,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -4,
+        "redundant_retention": 1,
+        "required_lane_coverage": 1,
+        "unsafe_retention": -6,
+        "useful_recall": 0.09756097560975607
+      },
+      "family": "staged_structural",
+      "loss_cap": 1.0,
+      "posthoc_screen": "PROMISING_CORRECT_OVER_SHUFFLED",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 20,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 67,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 64,
+        "useful_available": 41,
+        "useful_recall": 0.5609756097560976,
+        "useful_retained": 23
+      },
+      "shuffled_arm": "staged_structural_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 2,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 1,
+        "redundant_retention": 0,
+        "required_lane_coverage": -1,
+        "unsafe_retention": 2,
+        "useful_recall": -0.024390243902438935
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "temporal_correct_cap_0.02",
+      "correct_changed_lanes": 2,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "temporal",
+      "loss_cap": 0.02,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "temporal_shuffled_cap_0.02",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "temporal_correct_cap_0.05",
+      "correct_changed_lanes": 2,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "temporal",
+      "loss_cap": 0.05,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "temporal_shuffled_cap_0.05",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "temporal_correct_cap_0.10",
+      "correct_changed_lanes": 2,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "temporal",
+      "loss_cap": 0.1,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "temporal_shuffled_cap_0.10",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "temporal_correct_cap_0.20",
+      "correct_changed_lanes": 2,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "temporal",
+      "loss_cap": 0.2,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "temporal_shuffled_cap_0.20",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    },
+    {
+      "correct": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "correct_arm": "temporal_correct_cap_1.00",
+      "correct_changed_lanes": 2,
+      "correct_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "correct_vs_shuffled": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "family": "temporal",
+      "loss_cap": 1.0,
+      "posthoc_screen": "NO_CORRECT_SIGNAL_DISCRIMINATION",
+      "shuffled": {
+        "category10_burden": 9,
+        "complementary_coverage": {
+          "covered": 0,
+          "total": 3
+        },
+        "coverage": 21,
+        "coverage_total": 27,
+        "deep_useful_rescue": 6,
+        "nonuseful": 66,
+        "ordinary_easy_coverage": 1,
+        "redundant": 2,
+        "unsafe": 62,
+        "useful_available": 41,
+        "useful_recall": 0.5853658536585366,
+        "useful_retained": 24
+      },
+      "shuffled_arm": "temporal_shuffled_cap_1.00",
+      "shuffled_changed_lanes": 0,
+      "shuffled_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      }
+    }
+  ],
+  "placebo_exact_equal": true,
+  "representation_counts": {
+    "constant": 7,
+    "field_count": 92,
+    "nontrivial": 18,
+    "unmaterialized_or_unknown": 67
+  },
+  "schema": "eb-gate-field-pressure-dev-posthoc-audit-v0",
+  "source_selection_sha256": "4796677d060a1c84a852e86a70b4e1eea209091cdccd057073238a9bae7368cc",
+  "top_arms": [
+    {
+      "arm": "negation_correct_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 22,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 2,
+      "redundant": 2,
+      "unsafe": 63,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "negation_correct_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 22,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 2,
+      "redundant": 2,
+      "unsafe": 63,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "negation_correct_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 22,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 2,
+      "redundant": 2,
+      "unsafe": 63,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "negation_correct_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 22,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 2,
+      "redundant": 2,
+      "unsafe": 63,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "negation_correct_cap_1.00",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 22,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 1,
+        "unsafe_retention": 1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 2,
+      "redundant": 2,
+      "unsafe": 63,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "evidence_shape_correct_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 5,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "evidence_shape_correct_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 5,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "evidence_shape_correct_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 5,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "evidence_shape_correct_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 5,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "evidence_shape_correct_cap_1.00",
+      "category10_burden": 9,
+      "changed_lanes": 5,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "staged_structural_correct_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "staged_structural_correct_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "staged_structural_correct_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "staged_structural_correct_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "staged_structural_correct_cap_1.00",
+      "category10_burden": 9,
+      "changed_lanes": 7,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 9,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 3,
+        "nonuseful_burden": -3,
+        "redundant_retention": 1,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -4,
+        "useful_recall": 0.07317073170731714
+      },
+      "nonuseful": 63,
+      "ordinary_easy_coverage": 1,
+      "redundant": 3,
+      "unsafe": 58,
+      "useful_available": 41,
+      "useful_recall": 0.6585365853658537,
+      "useful_retained": 27
+    },
+    {
+      "arm": "modality_shuffled_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 3,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 7,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 61,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "modality_shuffled_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 3,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 7,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 61,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "modality_shuffled_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 3,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 7,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 61,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "modality_shuffled_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 3,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 7,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 61,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "modality_shuffled_cap_1.00",
+      "category10_burden": 9,
+      "changed_lanes": 3,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 7,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 1,
+        "nonuseful_burden": -1,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": -1,
+        "useful_recall": 0.024390243902439046
+      },
+      "nonuseful": 65,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 61,
+      "useful_available": 41,
+      "useful_recall": 0.6097560975609756,
+      "useful_retained": 25
+    },
+    {
+      "arm": "baseline_no_gates_semantic_top3",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_correct_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_correct_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_correct_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_correct_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_correct_cap_1.00",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_shuffled_cap_0.02",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_shuffled_cap_0.05",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_shuffled_cap_0.10",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    },
+    {
+      "arm": "entities_shuffled_cap_0.20",
+      "category10_burden": 9,
+      "changed_lanes": 0,
+      "complementary_coverage": {
+        "covered": 0,
+        "total": 3
+      },
+      "coverage": 21,
+      "coverage_total": 27,
+      "deep_useful_rescue": 6,
+      "delta_vs_baseline": {
+        "deep_useful_rescue": 0,
+        "nonuseful_burden": 0,
+        "redundant_retention": 0,
+        "required_lane_coverage": 0,
+        "unsafe_retention": 0,
+        "useful_recall": 0.0
+      },
+      "nonuseful": 66,
+      "ordinary_easy_coverage": 1,
+      "redundant": 2,
+      "unsafe": 62,
+      "useful_available": 41,
+      "useful_recall": 0.5853658536585366,
+      "useful_retained": 24
+    }
+  ]
+}
