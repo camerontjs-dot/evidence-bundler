@@ -17,9 +17,9 @@
   "candidate_frozen_commit": "df6e0af3732fc08e9db330741b9b99113247a40c",
   "candidate_selector_sha256": "31cd6680111147412b766a832c7de4d8ffa8a6adc9c2c234b223111a79cf0a8f",
   "note": "Target identity is recorded for governance but target bytes, stage order, cap, development results, and expected winner are not supplied to any prereveal model invocation.",
-  "retry": 6,
-  "prior_run_id": 35354075846,
-  "prior_run_disposition": "EXTERNAL_MODEL_SELECTION_PRE_OUTPUT",
+  "retry": 7,
+  "prior_run_id": 35354707935,
+  "prior_run_disposition": "PREREVEAL_AUTHOR_OUTPUT_INVALID_ENVELOPE",
   "scientific_contract_changed": false,
   "copilot_tools_denied": [
     "read",
@@ -27,5 +27,8 @@
     "write",
     "url",
     "memory"
-  ]
+  ],
+  "response_envelope_normalizer": "single-missing-final-brace + schema-declared-field projection",
+  "normalizer_replayed_on_preserved_run6_raw": true,
+  "normalizer_replay_result": "C1 payload mechanically recovers exactly category_id + 4 cases"
 }
