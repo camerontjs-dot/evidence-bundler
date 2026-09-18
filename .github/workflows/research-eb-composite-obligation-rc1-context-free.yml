@@ -1,0 +1,482 @@
+name: Research - EB Composite Obligation RC1 Context-Free Authoring
+
+on:
+  push:
+    branches:
+      - research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918
+    paths:
+      - research/eb_composite_obligation_rc1_context_free/LAUNCH.json
+
+permissions:
+  contents: write
+  models: read
+
+env:
+  SURFACE: research/eb_composite_obligation_rc1_context_free
+  PROP_REF: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+  CLAIMS_BRANCH: research/eb-composite-obligation-rc1-claims-freeze-${{ github.run_id }}
+  DESCRIPTORS_BRANCH: research/eb-composite-obligation-rc1-descriptors-freeze-${{ github.run_id }}
+  CORPUS_BRANCH: research/eb-composite-obligation-rc1-corpus-freeze-${{ github.run_id }}
+  FRESH_BASE_BRANCH: research/eb-composite-obligation-rc1-fresh-input-base-${{ github.run_id }}
+  FRESH_FINAL_BRANCH: research/eb-composite-obligation-rc1-fresh-input-final-20260918
+  GOLD_BRANCH: research/eb-composite-obligation-rc1-sealed-gold-final-20260918
+  TOKENIZERS_PARALLELISM: "false"
+
+jobs:
+  author:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout isolated bootstrap only
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Bootstrap static gates and source-access declaration
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py
+          python -m py_compile study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py
+          cat > out/SOURCE-ACCESS.json <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-source-access",
+            "bootstrap_head": "$(git -C study rev-parse HEAD)",
+            "allowed_repository_reads": [
+              "bootstrap branch files supplied explicitly to GitHub Models",
+              "proposition-authoring@$PROP_REF after claim freeze"
+            ],
+            "github_models_provider": "actions/ai-inference@v2.1.1",
+            "github_models_model": "openai/gpt-4o",
+            "github_mcp_enabled": false,
+            "normal_conversation_context_available": false,
+            "target_bytes_available_prereveal": false,
+            "development_results_available_prereveal": false
+          }
+          EOF
+
+
+      - name: Author C1 fresh claims
+        id: claims_c1
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C1
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Author C2 fresh claims
+        id: claims_c2
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C2
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Author C3 fresh claims
+        id: claims_c3
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C3
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Author C4 fresh claims
+        id: claims_c4
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C4
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Author C5 fresh claims
+        id: claims_c5
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C5
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Author C6 fresh claims
+        id: claims_c6
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CLAIMS.prompt.yml
+          input: |
+            category_id: C6
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+
+      - name: Validate and combine fresh claims
+        run: |
+          set -euo pipefail
+          mkdir -p out/claims
+          cp "${{ steps.claims_c1.outputs.response-file }}" out/claims/C1.json
+          cp "${{ steps.claims_c2.outputs.response-file }}" out/claims/C2.json
+          cp "${{ steps.claims_c3.outputs.response-file }}" out/claims/C3.json
+          cp "${{ steps.claims_c4.outputs.response-file }}" out/claims/C4.json
+          cp "${{ steps.claims_c5.outputs.response-file }}" out/claims/C5.json
+          cp "${{ steps.claims_c6.outputs.response-file }}" out/claims/C6.json
+          python study/$SURFACE/apparatus.py combine-claims \
+            --parts out/claims/C1.json out/claims/C2.json out/claims/C3.json out/claims/C4.json out/claims/C5.json out/claims/C6.json \
+            --out out/CLAIMS.json
+
+      - name: Freeze claims before descriptor derivation
+        run: |
+          set -euo pipefail
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study checkout -b "$CLAIMS_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          mkdir -p "$dest"
+          cp out/CLAIMS.json "$dest/CLAIMS.json"
+          cat > "$dest/CLAIMS-FREEZE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-claims-freeze",
+            "bootstrap_head": "$(git -C study rev-parse HEAD)",
+            "claims_file_sha256": "$(sha256sum out/CLAIMS.json | awk '{print $1}')",
+            "corpus_authored": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/CLAIMS.json" "$SURFACE/fresh_authoring/CLAIMS-FREEZE-RECEIPT.json"
+          git -C study commit -m "Research: freeze fresh RC1 claims before corpus"
+          git -C study push origin "HEAD:refs/heads/$CLAIMS_BRANCH"
+          echo "CLAIMS_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Checkout exact Claim Profile authority after claims freeze
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/proposition-authoring
+          ref: e29a165b682d060f5dc2a0f3c7d64a7f29b172b4
+          path: proposition-authoring
+          fetch-depth: 1
+
+      - name: Derive and freeze expected evidence forms
+        run: |
+          set -euo pipefail
+          test "$(git -C proposition-authoring rev-parse HEAD)" = "$PROP_REF"
+          python -m pip install ./proposition-authoring
+          python study/$SURFACE/apparatus.py derive-descriptors \
+            --claims out/CLAIMS.json \
+            --out out/CLAIMS-AND-DESCRIPTORS.json
+          python study/$SURFACE/apparatus.py split-categories \
+            --input out/CLAIMS-AND-DESCRIPTORS.json \
+            --out-dir out/descriptor-parts
+          git -C study checkout -b "$DESCRIPTORS_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/CLAIMS-AND-DESCRIPTORS.json "$dest/CLAIMS-AND-DESCRIPTORS.json"
+          cat > "$dest/DESCRIPTORS-FREEZE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-descriptors-freeze",
+            "claims_commit": "$CLAIMS_COMMIT",
+            "claim_profile_authority": "$PROP_REF",
+            "descriptors_file_sha256": "$(sha256sum out/CLAIMS-AND-DESCRIPTORS.json | awk '{print $1}')",
+            "corpus_authored": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/CLAIMS-AND-DESCRIPTORS.json" "$SURFACE/fresh_authoring/DESCRIPTORS-FREEZE-RECEIPT.json"
+          git -C study commit -m "Research: freeze fresh RC1 obligation descriptors"
+          git -C study push origin "HEAD:refs/heads/$DESCRIPTORS_BRANCH"
+          echo "DESCRIPTORS_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+
+      - name: Author C1 candidate pool
+        id: corpus_c1
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C1.json
+
+      - name: Author C2 candidate pool
+        id: corpus_c2
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C2.json
+
+      - name: Author C3 candidate pool
+        id: corpus_c3
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C3.json
+
+      - name: Author C4 candidate pool
+        id: corpus_c4
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C4.json
+
+      - name: Author C5 candidate pool
+        id: corpus_c5
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C5.json
+
+      - name: Author C6 candidate pool
+        id: corpus_c6
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/AUTHOR-CORPUS.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            descriptors: out/descriptor-parts/C6.json
+
+      - name: Validate and combine candidate pools
+        run: |
+          set -euo pipefail
+          mkdir -p out/corpus
+          cp "${{ steps.corpus_c1.outputs.response-file }}" out/corpus/C1.json
+          cp "${{ steps.corpus_c2.outputs.response-file }}" out/corpus/C2.json
+          cp "${{ steps.corpus_c3.outputs.response-file }}" out/corpus/C3.json
+          cp "${{ steps.corpus_c4.outputs.response-file }}" out/corpus/C4.json
+          cp "${{ steps.corpus_c5.outputs.response-file }}" out/corpus/C5.json
+          cp "${{ steps.corpus_c6.outputs.response-file }}" out/corpus/C6.json
+          python study/$SURFACE/apparatus.py combine-corpus \
+            --parts out/corpus/C1.json out/corpus/C2.json out/corpus/C3.json out/corpus/C4.json out/corpus/C5.json out/corpus/C6.json \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --out out/CORPUS.json
+
+      - name: Freeze candidate pools before semantic scoring and gold
+        run: |
+          set -euo pipefail
+          git -C study checkout -b "$CORPUS_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/CORPUS.json "$dest/CORPUS.json"
+          cat > "$dest/CORPUS-FREEZE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-corpus-freeze",
+            "descriptors_commit": "$DESCRIPTORS_COMMIT",
+            "corpus_file_sha256": "$(sha256sum out/CORPUS.json | awk '{print $1}')",
+            "gold_adjudicated": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/CORPUS.json" "$SURFACE/fresh_authoring/CORPUS-FREEZE-RECEIPT.json"
+          git -C study commit -m "Research: freeze fresh RC1 candidate pools"
+          git -C study push origin "HEAD:refs/heads/$CORPUS_BRANCH"
+          echo "CORPUS_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Install exact semantic scorer runtime
+        run: |
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+
+      - name: Score and replay fresh candidate pools
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py score \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --out out/FRESH-INPUT.json
+          python study/$SURFACE/apparatus.py score \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --out out/FRESH-INPUT-REPLAY.json
+          cmp out/FRESH-INPUT.json out/FRESH-INPUT-REPLAY.json
+          python study/$SURFACE/apparatus.py prepare-gold \
+            --fresh-input out/FRESH-INPUT.json \
+            --out-dir out/gold-inputs
+
+      - name: Freeze fresh input base before gold
+        run: |
+          set -euo pipefail
+          dest=study/$SURFACE/fresh_authoring
+          cp out/FRESH-INPUT.json "$dest/FRESH-INPUT.json"
+          cp out/SOURCE-ACCESS.json "$dest/SOURCE-ACCESS.json"
+          cat > "$dest/FRESH-INPUT-BASE-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-fresh-input-base",
+            "corpus_commit": "$CORPUS_COMMIT",
+            "fresh_input_file_sha256": "$(sha256sum out/FRESH-INPUT.json | awk '{print $1}')",
+            "semantic_replay_exact": true,
+            "gold_adjudicated": false,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/FRESH-INPUT.json" "$SURFACE/fresh_authoring/SOURCE-ACCESS.json" "$SURFACE/fresh_authoring/FRESH-INPUT-BASE-RECEIPT.json"
+          git -C study commit -m "Research: freeze fresh RC1 semantic input before gold"
+          git -C study push origin "HEAD:refs/heads/$FRESH_BASE_BRANCH"
+          echo "FRESH_BASE_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+
+      - name: Adjudicate C1 sealed gold
+        id: gold_c1
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C1.json
+
+      - name: Adjudicate C2 sealed gold
+        id: gold_c2
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C2.json
+
+      - name: Adjudicate C3 sealed gold
+        id: gold_c3
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C3.json
+
+      - name: Adjudicate C4 sealed gold
+        id: gold_c4
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C4.json
+
+      - name: Adjudicate C5 sealed gold
+        id: gold_c5
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C5.json
+
+      - name: Adjudicate C6 sealed gold
+        id: gold_c6
+        uses: actions/ai-inference@v2.1.1
+        with:
+          prompt-file: study/${{ env.SURFACE }}/ADJUDICATE-GOLD.prompt.yml
+          file_input: |
+            contract: study/${{ env.SURFACE }}/FRESH-COHORT-CONTRACT.md
+            gold_input: out/gold-inputs/C6.json
+
+      - name: Validate and combine sealed gold
+        run: |
+          set -euo pipefail
+          mkdir -p out/gold
+          cp "${{ steps.gold_c1.outputs.response-file }}" out/gold/C1.json
+          cp "${{ steps.gold_c2.outputs.response-file }}" out/gold/C2.json
+          cp "${{ steps.gold_c3.outputs.response-file }}" out/gold/C3.json
+          cp "${{ steps.gold_c4.outputs.response-file }}" out/gold/C4.json
+          cp "${{ steps.gold_c5.outputs.response-file }}" out/gold/C5.json
+          cp "${{ steps.gold_c6.outputs.response-file }}" out/gold/C6.json
+          python study/$SURFACE/apparatus.py combine-gold \
+            --parts out/gold/C1.json out/gold/C2.json out/gold/C3.json out/gold/C4.json out/gold/C5.json out/gold/C6.json \
+            --fresh-input out/FRESH-INPUT.json \
+            --out out/GOLD.json
+
+      - name: Validate cohort eligibility without repair
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/apparatus.py eligibility \
+            --descriptors out/CLAIMS-AND-DESCRIPTORS.json \
+            --corpus out/CORPUS.json \
+            --fresh-input out/FRESH-INPUT.json \
+            --gold out/GOLD.json \
+            --out out/ELIGIBILITY.json
+
+      - name: Seal gold on a separate ref
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$GOLD_BRANCH" >/dev/null 2>&1; then
+            echo "sealed-gold final ref already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$GOLD_BRANCH" "$FRESH_BASE_COMMIT"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/GOLD.json "$dest/GOLD.json"
+          cp out/ELIGIBILITY.json "$dest/ELIGIBILITY.json"
+          cat > "$dest/SEALED-GOLD-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-sealed-gold-receipt",
+            "fresh_base_commit": "$FRESH_BASE_COMMIT",
+            "gold_file_sha256": "$(sha256sum out/GOLD.json | awk '{print $1}')",
+            "eligibility_file_sha256": "$(sha256sum out/ELIGIBILITY.json | awk '{print $1}')",
+            "eligibility_passed": true,
+            "target_revealed": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/GOLD.json" "$SURFACE/fresh_authoring/ELIGIBILITY.json" "$SURFACE/fresh_authoring/SEALED-GOLD-RECEIPT.json"
+          git -C study commit -m "Research: seal fresh RC1 gold"
+          git -C study push origin "HEAD:refs/heads/$GOLD_BRANCH"
+          echo "GOLD_COMMIT=$(git -C study rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Publish READY_FOR_REVEAL fresh-input final ref without gold
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$FRESH_FINAL_BRANCH" >/dev/null 2>&1; then
+            echo "fresh-input final ref already exists"
+            exit 1
+          fi
+          git -C study checkout --detach "$FRESH_BASE_COMMIT"
+          git -C study checkout -b "$FRESH_FINAL_BRANCH"
+          dest=study/$SURFACE/fresh_authoring
+          cp out/ELIGIBILITY.json "$dest/ELIGIBILITY.json"
+          cat > "$dest/READY-FOR-REVEAL.json" <<EOF
+          {
+            "schema": "eb-composite-obligation-rc1-ready-for-reveal",
+            "status": "READY_FOR_REVEAL",
+            "fresh_input_base_commit": "$FRESH_BASE_COMMIT",
+            "fresh_input_file_sha256": "$(sha256sum out/FRESH-INPUT.json | awk '{print $1}')",
+            "fresh_input_internal_sha256": "$(python -c 'import json; print(json.load(open("out/FRESH-INPUT.json"))["fresh_input_sha256"])')",
+            "sealed_gold_ref": "$GOLD_BRANCH",
+            "sealed_gold_commit": "$GOLD_COMMIT",
+            "sealed_gold_file_sha256": "$(sha256sum out/GOLD.json | awk '{print $1}')",
+            "sealed_gold_internal_sha256": "$(python -c 'import json; print(json.load(open("out/GOLD.json"))["gold_sha256"])')",
+            "evaluator_sha256": "$(sha256sum study/$SURFACE/evaluator.py | awk '{print $1}')",
+            "eligibility_passed": true,
+            "github_models_model": "openai/gpt-4o",
+            "target_revealed_prereveal": false,
+            "development_results_exposed_prereveal": false,
+            "fresh_qualification_execution_complete": false
+          }
+          EOF
+          git -C study add "$SURFACE/fresh_authoring/ELIGIBILITY.json" "$SURFACE/fresh_authoring/READY-FOR-REVEAL.json"
+          git -C study commit -m "Research: freeze RC1 fresh input ready for reveal"
+          git -C study push origin "HEAD:refs/heads/$FRESH_FINAL_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
+
+      - name: Upload prereveal artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-composite-obligation-rc1-prereveal-${{ github.run_id }}
+          path: out/
+          if-no-files-found: warn
