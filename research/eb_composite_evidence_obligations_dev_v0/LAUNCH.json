@@ -1,0 +1,21 @@
+{
+  "schema": "eb-composite-evidence-obligations-dev-v0-launch",
+  "status": "AUTHORIZED_EXPOSED_DEVELOPMENT_PRESSURE",
+  "pr": 109,
+  "frozen_retrieval_run": 33286415682,
+  "frozen_retrieval_artifact_id": 9724593640,
+  "raw_sha256": "b7522a147f1dccd1614bb8dcb4565b8a8834bee4cf2d47695befeb311ebd6680",
+  "decomposition_variant": "A1",
+  "budgets": [
+    3,
+    6
+  ],
+  "semantic_loss_caps": [
+    0.01,
+    0.03,
+    0.05
+  ],
+  "first_stage_retrieval_changed": false,
+  "fresh_qualification": false,
+  "production_authority": false
+}
