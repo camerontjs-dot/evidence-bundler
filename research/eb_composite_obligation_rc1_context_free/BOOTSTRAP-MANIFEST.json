@@ -8,7 +8,7 @@
   "bootstrap_branch": "research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918",
   "isolation_surface": {
     "provider": "GitHub Copilot CLI via GitHub Actions GITHUB_TOKEN",
-    "model": "gpt-5-mini",
+    "model": "gpt-5.4",
     "github_mcp_enabled": false,
     "tool_policy": "deny shell, write, url, and memory; disable builtin MCP; invoke from fresh trusted empty directory with a fresh COPILOT_HOME per call",
     "rule": "Each invocation receives only one fully rendered prompt containing explicitly allowlisted prereveal content. It starts a fresh Copilot session and cannot access the repository checkout through its working-directory path permissions."
