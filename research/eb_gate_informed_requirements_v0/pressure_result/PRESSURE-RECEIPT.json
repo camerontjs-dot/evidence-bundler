@@ -1,0 +1,16 @@
+{
+  "carrier_sha256": "cef8703699d60023f1547381a10d229b1b984974e960539ae6e6e5bb448eea03",
+  "causal_eb_authority": false,
+  "field_count": 92,
+  "pressure_result_sha256": "93863c60c007a6a608e44c65b001006886f51287f896809f3cab56bfe752ca68",
+  "pressure_runner_sha256": "21eeb60b93874bbfc33cf3a9ed276a983fc765cec9bfa4ade4f7e70e3e1426df",
+  "registry_sha256": "d0f85c383f7b2e30fdde2bee6e3c875a3ab27fa448b695da94f4ff6c6177f77d",
+  "retrieval_or_selection_changed": false,
+  "schema": "eb-gate-shadow-carrier-pressure-receipt-v0",
+  "semantic_field_qualification": false,
+  "status": "SUPPORTED_SHADOW_CARRIER_APPARATUS",
+  "subject_commit": "55afb27e3b506f4320c72068483a9ee90bd0b546",
+  "subject_tree": "c08df6fe886ee3f1765bed570cae1486ec749d41",
+  "total_assertions": 1177,
+  "unit_tests_sha256": "69fd82f49b8d2ef0843812588a981002022a6b7899c2dd4bff69990bd1dff217"
+}

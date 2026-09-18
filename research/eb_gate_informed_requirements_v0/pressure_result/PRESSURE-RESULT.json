@@ -1,0 +1,68 @@
+{
+  "assertion_counts": {
+    "bound_hash_tamper_rejection": 4,
+    "causal_registry_rejection": 1,
+    "causal_smuggling_rejections": 21,
+    "duplicate_mask_rejection": 1,
+    "exact_replay_and_mask_order": 5,
+    "layer_masks": 30,
+    "masked_mutation_isolation": 1,
+    "masked_substitution_rejection": 1,
+    "no_invention_for_missing_fields": 92,
+    "no_product_runtime_imports": 1,
+    "packet_order_invariance": 5,
+    "registry_order_invariance": 1,
+    "single_field_masks": 460,
+    "unknown_preservation": 92,
+    "unregistered_field_rejection": 1,
+    "upstream_metadata_isolation": 1,
+    "wrong_hint_substitutions": 460
+  },
+  "boundary_results": {
+    "causal_instruction_smuggling_rejected": "PASS",
+    "causal_registry_state_rejected": "PASS",
+    "exact_replay": "PASS",
+    "input_order_invariance": "PASS",
+    "layer_isolation": "PASS",
+    "mask_order_invariance": "PASS",
+    "masked_mutation_isolation": "PASS",
+    "missing_field_no_invention_all_92": "PASS",
+    "product_runtime_imports_absent": "PASS",
+    "registry_order_invariance": "PASS",
+    "single_field_isolation_all_92": "PASS",
+    "tamper_detection": "PASS",
+    "unknown_preservation_all_92": "PASS",
+    "wrong_hint_rotation_all_92_x_5_cases": "PASS"
+  },
+  "next_authorized_step": "pressure actual field representations through the shadow carrier while all retrieval and selection behavior remains frozen",
+  "nonclaims": [
+    "does not qualify any of the 92 fields as semantically correct",
+    "does not authorize any field for causal Evidence Bundler use",
+    "does not test retrieval, ranking, retention, admission, CAL, Decision, or Authorization",
+    "does not supersede Proposition Authoring pressure results"
+  ],
+  "pressure_cases": [
+    "CASE-A",
+    "CASE-B",
+    "CASE-C",
+    "CASE-D",
+    "CASE-E"
+  ],
+  "registry": {
+    "field_count": 92,
+    "layers": {
+      "boundary": 6,
+      "candidate": 11,
+      "claim": 27,
+      "evidence": 26,
+      "preflight": 13,
+      "requirement": 9
+    },
+    "registry_sha256": "3834548419dda1132130d26f2aca91db3113070418d6b3715dc414dded6c68a2"
+  },
+  "result_sha256": "b1a23b936cda0ccc5dfba0cf3fbe42af067cbeeb88ac6bb08592915fa538b2e8",
+  "schema": "eb-gate-shadow-carrier-pressure-result-v0",
+  "scope": "carrier_apparatus_only_not_field_semantics",
+  "status": "SUPPORTED_SHADOW_CARRIER_APPARATUS",
+  "total_assertions": 1177
+}
