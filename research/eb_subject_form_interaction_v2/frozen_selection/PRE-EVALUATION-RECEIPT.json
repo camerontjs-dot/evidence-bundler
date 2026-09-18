@@ -1,0 +1,11 @@
+{
+  "schema": "eb-subject-form-interaction-v2-pre-evaluation",
+  "study_head": "b0467920f042670afe89ef135e170b4df74bd6e5",
+  "v1_selection_ref": "392a9c713558a6952947a3e4074be3957c648021",
+  "v1_selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+  "v2_selection_sha256": "50f07d0fdae78c4bdde50bf3e31c438b07aaa2c083e747e00b1e9617114832d7",
+  "exact_replay": true,
+  "gold_bearing_v1_source_checked_out": false,
+  "evaluation_run": false,
+  "fresh_qualification": false
+}
