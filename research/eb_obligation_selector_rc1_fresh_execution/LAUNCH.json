@@ -1,0 +1,10 @@
+{
+  "schema": "eb-obligation-selector-rc1-fresh-launch",
+  "status": "AUTHORIZED_FINAL_POST_REVEAL_QUALIFICATION",
+  "pr": 118,
+  "selector_commit": "df6e0af3732fc08e9db330741b9b99113247a40c",
+  "fresh_input_commit": "1bd4b14172d5201ec8687fba621fce4b6637a147",
+  "gold_commit": "4814144caf6d5fdb3e8038bf5f77c46d6ef46964",
+  "stop_after_terminal_result": true,
+  "production_authority": false
+}
