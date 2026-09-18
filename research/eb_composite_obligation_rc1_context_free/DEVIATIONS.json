@@ -71,6 +71,22 @@
       "scientific_contract_changed": false,
       "observed": "Copilot CLI returned `Model \"gpt-5.4\" from --model flag is not available.`",
       "correction": "Use Copilot CLI `--model auto`; record provider/model selection mode in receipts. No prompt, contract, target, eligibility, or evaluator logic changed."
+    },
+    {
+      "id": "AUTHORING_RUN_06_RESPONSE_ENVELOPE_INVALID",
+      "workflow_run_id": 35354707935,
+      "artifact_id": 10551063731,
+      "artifact_digest": "sha256:efc220887ebb8feec7f83fe6e9010dc37f75542b6da37ef6214047ce823fb184",
+      "classification": "PREREVEAL_AUTHOR_OUTPUT_INVALID_ENVELOPE",
+      "copilot_auto_invocation_succeeded": true,
+      "raw_c1_response_produced": true,
+      "validated_claim_artifact_produced": false,
+      "claims_frozen": false,
+      "corpus_authored": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": "C1 raw response contained the requested claim payload nested in the echoed JSON-schema envelope and was missing exactly one final object-closing brace.",
+      "correction": "Generic adapter only: permit one missing final object brace when brace balance proves exactly one is missing, then if an embedded JSON schema declares required top-level fields and those fields exist, project only those required fields. Do not inspect or edit scientific values."
     }
   ]
 }
