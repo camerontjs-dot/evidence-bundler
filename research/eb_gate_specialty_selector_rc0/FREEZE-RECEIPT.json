@@ -1,0 +1,15 @@
+{
+  "schema": "eb-gate-specialty-selector-rc0-freeze-receipt",
+  "status": "FROZEN_FOR_FRESH_QUALIFICATION",
+  "candidate_head": "fcbd6f5caead87d7377a68416ca031fb88a05d9d",
+  "candidate_tree": "f0a589ac4b2f676708915ef83be1ece2be7aabcc",
+  "selector_git_blob": "62d2740c41165b0a4f6170e953a85ebebab8534c",
+  "selector_sha256": "dc0540514c1b0f8fb48997a6194e88e5a0261c4b59a69cdcab1b72d49583693e",
+  "development_selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "candidate_pools_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "equivalence_sha256": "ee28b281f86e53219e35502eaa9c314ae4c346923e6d5be567f2057e9b156b5b",
+  "unit_tests_passed": true,
+  "exact_replay_passed": true,
+  "production_authority": false,
+  "fresh_qualification_complete": false
+}
