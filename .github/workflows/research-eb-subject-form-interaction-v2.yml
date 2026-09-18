@@ -1,0 +1,177 @@
+name: Research - EB Subject Form Interaction V2
+
+on:
+  push:
+    branches:
+      - research/eb-subject-form-interaction-v2-20260918
+    paths:
+      - research/eb_subject_form_interaction_v2/LAUNCH.json
+
+permissions:
+  contents: write
+
+env:
+  SURFACE: research/eb_subject_form_interaction_v2
+  V1_SELECTION_REF: 392a9c713558a6952947a3e4074be3957c648021
+  V1_SELECTION_PATH: research/eb_composite_obligation_targeted_stress_v1/frozen_selection/SELECTIONS.json
+  V1_SELECTION_SHA256: 869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016
+  PRE_EVAL_BRANCH: research/eb-subject-form-interaction-v2-selections-20260918
+  RESULT_BRANCH: research/eb-subject-form-interaction-v2-result-20260918
+
+jobs:
+  interaction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout V2 study
+        uses: actions/checkout@v4
+        with:
+          path: study
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Static checks
+        run: |
+          python -m pip install 'ruff>=0.15,<1'
+          python -m ruff check study/$SURFACE/run_interaction.py
+          python -m py_compile study/$SURFACE/run_interaction.py
+
+      - name: Fetch only exact frozen non-gold V1 selection artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p input out
+          gh api \
+            "repos/camerontjs-dot/evidence-bundler/contents/$V1_SELECTION_PATH?ref=$V1_SELECTION_REF" \
+            --jq .content \
+            | tr -d '\n' \
+            | base64 -d \
+            > input/V1-SELECTIONS.json
+          test "$(sha256sum input/V1-SELECTIONS.json | awk '{print $1}')" = "$V1_SELECTION_SHA256"
+
+      - name: Generate V2 selections without gold
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/run_interaction.py \
+            --mode select \
+            --v1-selection input/V1-SELECTIONS.json \
+            --selection-out out/SELECTIONS.json
+          python study/$SURFACE/run_interaction.py \
+            --mode select \
+            --v1-selection input/V1-SELECTIONS.json \
+            --selection-out out/SELECTIONS-REPLAY.json
+          cmp out/SELECTIONS.json out/SELECTIONS-REPLAY.json
+
+      - name: Freeze V2 selections before gold-bearing source checkout
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$PRE_EVAL_BRANCH" >/dev/null 2>&1; then
+            echo "pre-evaluation branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$PRE_EVAL_BRANCH"
+          dest=study/$SURFACE/frozen_selection
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/SELECTIONS.json"
+          cat > "$dest/PRE-EVALUATION-RECEIPT.json" <<EOF
+          {
+            "schema": "eb-subject-form-interaction-v2-pre-evaluation",
+            "study_head": "$(git -C study rev-parse HEAD)",
+            "v1_selection_ref": "$V1_SELECTION_REF",
+            "v1_selection_sha256": "$V1_SELECTION_SHA256",
+            "v2_selection_sha256": "$(sha256sum out/SELECTIONS.json | awk '{print $1}')",
+            "exact_replay": true,
+            "gold_bearing_v1_source_checked_out": false,
+            "evaluation_run": false,
+            "fresh_qualification": false
+          }
+          EOF
+          git -C study config user.name "github-actions[bot]"
+          git -C study config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C study add "$SURFACE/frozen_selection"
+          git -C study commit -m "Research: freeze subject-form V2 selections before evaluation"
+          git -C study push origin "HEAD:refs/heads/$PRE_EVAL_BRANCH"
+
+      - name: Checkout exact V1 fixture source after V2 selection freeze
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/evidence-bundler
+          ref: 392a9c713558a6952947a3e4074be3957c648021
+          path: v1-eval
+          fetch-depth: 1
+
+      - name: Install evaluator import dependencies
+        run: |
+          python -m pip install \
+            'torch==2.14.0' \
+            'transformers==5.17.0' \
+            'tokenizers==0.23.2' \
+            'huggingface-hub==1.31.0'
+
+      - name: Evaluate frozen V2 selections
+        run: |
+          set -euo pipefail
+          python study/$SURFACE/run_interaction.py \
+            --mode evaluate \
+            --selection-in out/SELECTIONS.json \
+            --v1-module v1-eval/research/eb_composite_obligation_targeted_stress_v1/run_stress.py \
+            --evaluation-out out/EVALUATION.json
+
+      - name: Build result receipt
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          evaluation = json.loads(Path("out/EVALUATION.json").read_text())
+          receipt = {
+              "schema": "eb-subject-form-interaction-v2-receipt",
+              "status": "EXPOSED_INTERACTION_PRESSURE_COMPLETE",
+              "study_head": subprocess.check_output(
+                  ["git", "-C", "study", "rev-parse", "HEAD"],
+                  text=True,
+              ).strip(),
+              "v1_selection_sha256": "869e1fc98847bf9eeff17f89f69da658f37adb835cdff516636cfc8ad0c37016",
+              "v2_selection_sha256": sha("out/SELECTIONS.json"),
+              "evaluation_sha256": sha("out/EVALUATION.json"),
+              "evaluation_internal_sha256": evaluation["evaluation_sha256"],
+              "fresh_qualification": False,
+              "production_authority": False,
+          }
+          Path("out/RECEIPT.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eb-subject-form-interaction-v2-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+
+      - name: Freeze V2 result
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/$RESULT_BRANCH" >/dev/null 2>&1; then
+            echo "result branch already exists"
+            exit 1
+          fi
+          git -C study checkout -b "$RESULT_BRANCH"
+          dest=study/$SURFACE/result
+          mkdir -p "$dest"
+          cp out/SELECTIONS.json "$dest/"
+          cp out/EVALUATION.json "$dest/"
+          cp out/RECEIPT.json "$dest/"
+          git -C study add "$SURFACE/result"
+          git -C study commit -m "Research: freeze subject-form interaction V2 result"
+          git -C study push origin "HEAD:refs/heads/$RESULT_BRANCH"
+          git -C study rev-parse HEAD
+          git -C study rev-parse HEAD^{tree}
