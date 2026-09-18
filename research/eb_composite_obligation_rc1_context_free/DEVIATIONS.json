@@ -1,0 +1,21 @@
+{
+  "schema": "eb-composite-obligation-rc1-prereveal-deviations",
+  "deviations": [
+    {
+      "id": "AUTHORING_RUN_01_STATIC_HYGIENE",
+      "workflow_run_id": 35353038383,
+      "classification": "MECHANICAL_PRE_MODEL_STATIC_INVALID",
+      "model_invocations_started": false,
+      "claims_authored": false,
+      "corpus_authored": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": [
+        "unused import re",
+        "five Ruff E501 line-length findings",
+        "unused local gold_map"
+      ],
+      "correction": "Static hygiene only. No cohort contract, prompts, eligibility criteria, model, target aperture, or scientific logic changed."
+    }
+  ]
+}
