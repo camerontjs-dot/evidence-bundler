@@ -1,0 +1,16 @@
+{
+  "schema": "eb-gate-specialty-v3-deviations",
+  "deviations": [
+    {
+      "id": "RUN_01_STATIC_LINE_LENGTH_ONLY",
+      "workflow_run_id": 35300093498,
+      "classification": "MECHANICAL_PRE_STUDY_STATIC_INVALID",
+      "observed": "Ruff rejected four E501 line-length violations before selection generation.",
+      "selection_generation_started": false,
+      "pre_gold_selection_frozen": false,
+      "gold_opened": false,
+      "scientific_effect": false,
+      "correction": "Wrapped four lines only. No arm, cap, scorer, control, or evaluator logic changed."
+    }
+  ]
+}
