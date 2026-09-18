@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import re
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -229,7 +228,10 @@ def _validate_corpus_case(
     case_id = str(case.get("case_id", ""))
     ensure(case_id == descriptor_case["case_id"], f"corpus case mismatch: {case_id}")
     candidates = case.get("candidates")
-    ensure(isinstance(candidates, list) and len(candidates) == 10, f"{case_id}: exactly 10 candidates")
+    ensure(
+        isinstance(candidates, list) and len(candidates) == 10,
+        f"{case_id}: exactly 10 candidates",
+    )
     target_subjects = {
         str(child["subject_anchor"])
         for child in descriptor_case["children"]
@@ -313,7 +315,10 @@ def combine_corpus(parts: list[str], descriptors_path: str, out: str) -> None:
             combined.append(row)
 
     ensure(len(combined) == 24, f"expected 24 corpus cases, got {len(combined)}")
-    ensure(len(seen_candidate_ids) == 240, f"expected 240 candidates, got {len(seen_candidate_ids)}")
+    ensure(
+        len(seen_candidate_ids) == 240,
+        f"expected 240 candidates, got {len(seen_candidate_ids)}",
+    )
     combined.sort(key=lambda row: row["case_id"])
     payload = {
         "schema": "eb-composite-obligation-rc1-corpus",
@@ -486,7 +491,10 @@ def combine_gold(parts: list[str], fresh_input_path: str, out: str) -> None:
         for case in cases:
             case_id = str(case.get("case_id", ""))
             ensure(case_id in fresh_by_case, f"unknown gold case {case_id}")
-            ensure(fresh_by_case[case_id]["category"] == category, f"{case_id}: gold category drift")
+            ensure(
+                fresh_by_case[case_id]["category"] == category,
+                f"{case_id}: gold category drift",
+            )
             ensure(case_id not in seen_cases, f"duplicate gold case {case_id}")
             seen_cases.add(case_id)
 
@@ -499,7 +507,10 @@ def combine_gold(parts: list[str], fresh_input_path: str, out: str) -> None:
                 for child in fresh_by_case[case_id]["children"]
             }
             candidates = case.get("candidates")
-            ensure(isinstance(candidates, list) and len(candidates) == 10, f"{case_id}: 10 gold candidates")
+            ensure(
+                isinstance(candidates, list) and len(candidates) == 10,
+                f"{case_id}: 10 gold candidates",
+            )
             observed_ids = {
                 str(candidate.get("candidate_id", ""))
                 for candidate in candidates
@@ -523,7 +534,10 @@ def combine_gold(parts: list[str], fresh_input_path: str, out: str) -> None:
                     unresolved += 1
             ensure(
                 required_children == children,
-                f"{case_id}: each child needs at least one REQUIRED candidate; got {required_children}",
+                (
+                    f"{case_id}: each child needs at least one REQUIRED "
+                    f"candidate; got {required_children}"
+                ),
             )
             row = dict(case)
             row["category"] = category
@@ -572,10 +586,6 @@ def eligibility(
 
     for case_id, fresh_case in fresh_by_case.items():
         gold_case = gold_by_case[case_id]
-        gold_map = {
-            str(row["candidate_id"]): row
-            for row in gold_case["candidates"]
-        }
         if any(row["gold_class"] == "UNSAFE_OR_MISLEADING" for row in gold_case["candidates"]):
             unsafe_parents += 1
 
