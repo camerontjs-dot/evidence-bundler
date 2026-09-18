@@ -16,6 +16,20 @@
         "unused local gold_map"
       ],
       "correction": "Static hygiene only. No cohort contract, prompts, eligibility criteria, model, target aperture, or scientific logic changed."
+    },
+    {
+      "id": "AUTHORING_RUN_02_GITHUB_MODELS_RETIRED",
+      "workflow_run_id": 35353295796,
+      "classification": "EXTERNAL_PROVIDER_RETIRED_PRE_OUTPUT",
+      "static_gates_passed": true,
+      "first_inference_request_attempted": true,
+      "model_output_produced": false,
+      "claims_authored": false,
+      "corpus_authored": false,
+      "gold_adjudicated": false,
+      "scientific_contract_changed": false,
+      "observed": "GitHub Models endpoint returned HTTP 410 github_models_retirement_brownout before C1 output. GitHub Models was fully retired 2026-07-30.",
+      "correction": "Migrate isolated inference transport to GitHub Copilot CLI in Actions using GITHUB_TOKEN. Preserve prompts, contract, frozen target, category design, and no-tool/no-MCP aperture."
     }
   ]
 }
