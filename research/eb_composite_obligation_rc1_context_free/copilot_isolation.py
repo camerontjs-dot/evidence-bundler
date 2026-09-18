@@ -115,6 +115,17 @@ def _parse_json_envelope(raw: str) -> dict[str, Any]:
 
     embedded_schema = parsed.get("schema")
     if isinstance(embedded_schema, dict):
+        properties = embedded_schema.get("properties")
+        if isinstance(properties, dict):
+            nested_values = {
+                key: embedded_schema[key]
+                for key in properties
+                if key in embedded_schema
+                and key not in {"required", "additionalProperties"}
+            }
+            if nested_values:
+                return nested_values
+
         required = embedded_schema.get("required")
         if (
             isinstance(required, list)
