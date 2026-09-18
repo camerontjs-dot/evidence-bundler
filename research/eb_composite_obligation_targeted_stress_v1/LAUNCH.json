@@ -1,0 +1,21 @@
+{
+  "schema": "eb-composite-obligation-targeted-stress-v1-launch",
+  "status": "AUTHORIZED_EXPOSED_TARGETED_STRESS",
+  "pr": 112,
+  "questions": [
+    "Does explicit child coverage prevent composite-claim starvation?",
+    "After child coverage, do correct subject/scope/form obligations improve discrimination over wrong-value controls?"
+  ],
+  "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "case_count": 24,
+  "caps": [
+    0.01,
+    0.03,
+    0.05,
+    0.1
+  ],
+  "no_post_run_tuning": true,
+  "fresh_qualification": false,
+  "production_authority": false
+}
