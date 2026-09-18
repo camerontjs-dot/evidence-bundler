@@ -182,10 +182,14 @@ def repair(
         if not owned or not outside:
             continue
 
-        def score(row: dict[str, Any]) -> float:
+        def score(
+            row: dict[str, Any],
+            *,
+            bound_child: dict[str, Any] = child,
+        ) -> float:
             return descriptor_score(
                 row,
-                child,
+                bound_child,
                 field,
                 wrong_subject=wrong_subject,
                 wrong_form=wrong_form,
