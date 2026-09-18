@@ -1,0 +1,15 @@
+{
+  "schema": "eb-obligation-selector-rc1-launch",
+  "status": "AUTHORIZED_CANDIDATE_FREEZE",
+  "pr": 116,
+  "budget": 3,
+  "semantic_loss_cap": 0.01,
+  "stage_order": [
+    "semantic_topk",
+    "child_coverage",
+    "expected_evidence_form",
+    "subject_identity"
+  ],
+  "fresh_qualification": false,
+  "production_authority": false
+}
