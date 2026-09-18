@@ -251,9 +251,16 @@ def _validate_corpus_case(
         ensure(design_role in DESIGN_ROLES, f"{candidate_id}: design role")
         roles[design_role] += 1
         if design_role.startswith("target_subject"):
+            folded_text = text.casefold()
             ensure(
-                any(subject in text for subject in target_subjects),
-                f"{candidate_id}: target-subject role lacks frozen subject anchor",
+                any(
+                    subject.casefold() in folded_text
+                    for subject in target_subjects
+                ),
+                (
+                    f"{candidate_id}: target-subject role lacks "
+                    "case-insensitive frozen subject anchor"
+                ),
             )
 
     category = str(descriptor_case["category"])
