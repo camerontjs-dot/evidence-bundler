@@ -1,0 +1,16 @@
+{
+  "baseline_arm": "baseline_no_gates_semantic_top3",
+  "cohort_subject": "a15a336e61f99b97fb9ea284761e1952fc1289cf",
+  "evaluation_sha256": "9a9b1006ab65b7fc001184bcc5a1b9517c09bf6bf25999a9581ba5a59ca33668",
+  "fresh_qualification": false,
+  "gold_subject": "cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee",
+  "placebo_equal": true,
+  "production_authority": false,
+  "proposition_authoring_subject": "e29a165b682d060f5dc2a0f3c7d64a7f29b172b4",
+  "registry_field_count": 92,
+  "schema": "eb-actual-gate-field-pressure-dev-receipt-v0",
+  "selection_arm_count": 112,
+  "selection_sha256": "4796677d060a1c84a852e86a70b4e1eea209091cdccd057073238a9bae7368cc",
+  "status": "DEVELOPMENT_PRESSURE_COMPLETE",
+  "study_subject": "bc2540baf7f15f0d4a88667054b0a0ae8540ba5d"
+}
