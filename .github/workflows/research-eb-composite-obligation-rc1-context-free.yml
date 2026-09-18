@@ -60,7 +60,7 @@ jobs:
               "proposition-authoring@$PROP_REF after claim freeze"
             ],
             "isolation_provider": "GitHub Copilot CLI with Actions GITHUB_TOKEN",
-            "isolation_model": "gpt-5-mini",
+            "isolation_model": "gpt-5.4",
             "copilot_builtin_mcp_disabled": true,
             "copilot_tool_policy": "read,shell,write,url,memory denied",
             "normal_conversation_context_available": false,
@@ -95,7 +95,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C1.raw.txt"
           )
@@ -128,7 +128,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C2.raw.txt"
           )
@@ -161,7 +161,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C3.raw.txt"
           )
@@ -194,7 +194,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C4.raw.txt"
           )
@@ -227,7 +227,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C5.raw.txt"
           )
@@ -260,7 +260,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/claims/C6.raw.txt"
           )
@@ -362,7 +362,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C1.raw.txt"
           )
@@ -395,7 +395,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C2.raw.txt"
           )
@@ -428,7 +428,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C3.raw.txt"
           )
@@ -461,7 +461,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C4.raw.txt"
           )
@@ -494,7 +494,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C5.raw.txt"
           )
@@ -527,7 +527,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/corpus/C6.raw.txt"
           )
@@ -635,7 +635,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C1.raw.txt"
           )
@@ -668,7 +668,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C2.raw.txt"
           )
@@ -701,7 +701,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C3.raw.txt"
           )
@@ -734,7 +734,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C4.raw.txt"
           )
@@ -767,7 +767,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C5.raw.txt"
           )
@@ -800,7 +800,7 @@ jobs:
               --no-auto-update \
               --disable-builtin-mcps \
               --disallow-temp-dir \
-              --model gpt-5-mini \
+              --model gpt-5.4 \
               --deny-tool='read,shell,write,url,memory' \
               > "$GITHUB_WORKSPACE/out/gold/C6.raw.txt"
           )
@@ -878,7 +878,7 @@ jobs:
             "evaluator_sha256": "$(sha256sum study/$SURFACE/evaluator.py | awk '{print $1}')",
             "eligibility_passed": true,
             "isolation_provider": "GitHub Copilot CLI",
-            "isolation_model": "gpt-5-mini",
+            "isolation_model": "gpt-5.4",
             "target_revealed_prereveal": false,
             "development_results_exposed_prereveal": false,
             "fresh_qualification_execution_complete": false
