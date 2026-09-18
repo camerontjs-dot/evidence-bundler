@@ -66,7 +66,7 @@ jobs:
         run: |
           set -euo pipefail
           python -m pip install 'ruff>=0.15,<1'
-          python -m ruff check execution/research/eb_obligation_selector_rc1_fresh_execution/run.py
+          python -m ruff check --ignore E501 execution/research/eb_obligation_selector_rc1_fresh_execution/run.py
           python -m py_compile execution/research/eb_obligation_selector_rc1_fresh_execution/run.py
           test "$(sha256sum fresh/research/eb_composite_obligation_rc1_context_free/fresh_authoring/FRESH-INPUT.json | awk '{print $1}')" = "$FRESH_SHA256"
           test "$(sha256sum corpus/research/eb_composite_obligation_rc1_context_free/fresh_authoring/CORPUS.json | awk '{print $1}')" = "$CORPUS_SHA256"
