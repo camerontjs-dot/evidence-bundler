@@ -1,0 +1,3471 @@
+{
+  "baseline_exceptional": {
+    "coverage": 4,
+    "coverage_total": 8,
+    "deep_useful_rescue": 2,
+    "nonuseful": 17,
+    "unsafe": 17,
+    "useful_available": 16,
+    "useful_recall": 0.4375,
+    "useful_retained": 7
+  },
+  "classification": "EXPOSED_DEVELOPMENT_COMPLEMENT_DIAGNOSTIC",
+  "comparisons": [
+    {
+      "changed_lanes_vs_true": {
+        "authoritative_only": [
+          "L022",
+          "L027"
+        ],
+        "complement": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "complement_anyof": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ],
+        "event_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L027"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "generic_union_anyof": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "registry_only": [
+          "L019",
+          "L021",
+          "L022"
+        ],
+        "true_anyof": [],
+        "wrong_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L027"
+        ]
+      },
+      "exceptional_8": {
+        "authoritative_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "complement": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "complement_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "event_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_union_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "registry_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "true": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "true_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "wrong_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        }
+      },
+      "exceptional_vs_semantic": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -2,
+          "useful_recall": 0.0625
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_vs_true": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 2,
+          "useful_recall": -0.0625
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 2,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 2,
+          "useful_recall": -0.125
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        }
+      },
+      "lane_outcomes": {
+        "complement": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        },
+        "generic_union": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "true": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:0d87347513f054fbb07f095b5bb38ae0"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              2
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "wrong_only": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        }
+      },
+      "loss_cap": 0.005,
+      "overall": {
+        "authoritative_only": {
+          "coverage": 19,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 67,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5609756097560976,
+          "useful_retained": 23
+        },
+        "complement": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "complement_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "event_only": {
+          "coverage": 22,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 64,
+          "unsafe": 60,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "generic_union_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 7,
+          "nonuseful": 65,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6097560975609756,
+          "useful_retained": 25
+        },
+        "registry_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "true_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "wrong_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        }
+      },
+      "overall_vs_semantic": {
+        "authoritative_only": {
+          "coverage": -2,
+          "deep_useful_rescue": 0,
+          "nonuseful": 1,
+          "unsafe": 0,
+          "useful_recall": -0.024390243902438935
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 1,
+          "deep_useful_rescue": 1,
+          "nonuseful": -2,
+          "unsafe": -2,
+          "useful_recall": 0.04878048780487809
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -4,
+          "useful_recall": 0.04878048780487809
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -3,
+          "useful_recall": 0.024390243902439046
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.04878048780487809
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      }
+    },
+    {
+      "changed_lanes_vs_true": {
+        "authoritative_only": [
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "complement": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "complement_anyof": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "event_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L027"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "generic_union_anyof": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "registry_only": [
+          "L019",
+          "L021",
+          "L022",
+          "L024"
+        ],
+        "true_anyof": [],
+        "wrong_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ]
+      },
+      "exceptional_8": {
+        "authoritative_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "complement": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "complement_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "event_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "generic_union_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "registry_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "true": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "wrong_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        }
+      },
+      "exceptional_vs_semantic": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -2,
+          "useful_recall": 0.125
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_vs_true": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 2,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 3,
+          "useful_recall": -0.1875
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        }
+      },
+      "lane_outcomes": {
+        "complement": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        },
+        "generic_union": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:3523fe718b15e6caee3a52599ca40f3b"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "true": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:0d87347513f054fbb07f095b5bb38ae0"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              2
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:3523fe718b15e6caee3a52599ca40f3b"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "wrong_only": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        }
+      },
+      "loss_cap": 0.01,
+      "overall": {
+        "authoritative_only": {
+          "coverage": 19,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 67,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5609756097560976,
+          "useful_retained": 23
+        },
+        "complement": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "complement_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "event_only": {
+          "coverage": 22,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 63,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 57,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_union_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "registry_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "wrong_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        }
+      },
+      "overall_vs_semantic": {
+        "authoritative_only": {
+          "coverage": -2,
+          "deep_useful_rescue": 0,
+          "nonuseful": 1,
+          "unsafe": 0,
+          "useful_recall": -0.024390243902438935
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 1,
+          "deep_useful_rescue": 2,
+          "nonuseful": -3,
+          "unsafe": -3,
+          "useful_recall": 0.07317073170731714
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -5,
+          "useful_recall": 0.07317073170731714
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -4,
+          "useful_recall": 0.04878048780487809
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      }
+    },
+    {
+      "changed_lanes_vs_true": {
+        "authoritative_only": [
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "complement": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "complement_anyof": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ],
+        "event_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L027"
+        ],
+        "generic_union": [
+          "L001"
+        ],
+        "generic_union_anyof": [
+          "L001",
+          "L019",
+          "L021"
+        ],
+        "registry_only": [
+          "L019",
+          "L021",
+          "L022",
+          "L024"
+        ],
+        "true_anyof": [],
+        "wrong_only": [
+          "L001",
+          "L019",
+          "L021",
+          "L022",
+          "L024",
+          "L027"
+        ]
+      },
+      "exceptional_8": {
+        "authoritative_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 3,
+          "nonuseful": 16,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.5,
+          "useful_retained": 8
+        },
+        "complement": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "complement_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "event_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 15,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "generic_union": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "generic_union_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 4,
+          "nonuseful": 15,
+          "unsafe": 14,
+          "useful_available": 16,
+          "useful_recall": 0.5625,
+          "useful_retained": 9
+        },
+        "registry_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 16,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        },
+        "true": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "true_anyof": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 5,
+          "nonuseful": 14,
+          "unsafe": 13,
+          "useful_available": 16,
+          "useful_recall": 0.625,
+          "useful_retained": 10
+        },
+        "wrong_only": {
+          "coverage": 4,
+          "coverage_total": 8,
+          "deep_useful_rescue": 2,
+          "nonuseful": 17,
+          "unsafe": 17,
+          "useful_available": 16,
+          "useful_recall": 0.4375,
+          "useful_retained": 7
+        }
+      },
+      "exceptional_vs_semantic": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 1,
+          "nonuseful": -1,
+          "unsafe": -1,
+          "useful_recall": 0.0625
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -2,
+          "useful_recall": 0.125
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -3,
+          "useful_recall": 0.125
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.1875
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      },
+      "exceptional_vs_true": {
+        "authoritative_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -2,
+          "nonuseful": 2,
+          "unsafe": 3,
+          "useful_recall": -0.125
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        },
+        "event_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 2,
+          "useful_recall": -0.0625
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": -1,
+          "nonuseful": 1,
+          "unsafe": 1,
+          "useful_recall": -0.0625
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 3,
+          "useful_recall": -0.1875
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": -3,
+          "nonuseful": 3,
+          "unsafe": 4,
+          "useful_recall": -0.1875
+        }
+      },
+      "lane_outcomes": {
+        "complement": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        },
+        "generic_union": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:3523fe718b15e6caee3a52599ca40f3b"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "true": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:0d87347513f054fbb07f095b5bb38ae0"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              2
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7ca96a3cb4d63c1ce5c83b743d296551"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "USEFUL_DISTINCT"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:4824484315219b3e505c8f45fbcc46c2"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:56a44168738aa0a4681e824d1d2ff3a8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 1,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:3523fe718b15e6caee3a52599ca40f3b"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              7
+            ],
+            "unsafe_selected": 1,
+            "useful_selected": 2
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:450f2c599732b96f8dd7c225456d21da"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REDUNDANT"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              4
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 0
+          }
+        },
+        "wrong_only": {
+          "L001": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c24b1300ce37f88a99018097ab7f4caa",
+              "passage:626109d9696146e50cb3b3be03a321e6",
+              "passage:7892a09d2276122a0ea90cbbda85cd7b"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              4,
+              1,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L011": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:888ea49a5be17b0d5f50d825adf6b09c",
+              "passage:6a32039d1959ce66f36a18735e113aa9",
+              "passage:231c89c1f731f6081f85e709de3eb021"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED"
+            ],
+            "selected_ranks": [
+              2,
+              1,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L019": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:c0ed95db5f594dc9bd7a6320a07f6bd9",
+              "passage:f003768a8099ea90a96397fe4e339ad1",
+              "passage:7c139226c44472b522e1f4f082197bb7"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              5,
+              2,
+              3
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L021": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:57c41d38ff804c06073747f3a80f7774",
+              "passage:33032957998aed0fd53e367192ce09bd",
+              "passage:f64e31a3549fc80cfc7dd6a87f3bbd57"
+            ],
+            "selected_classes": [
+              "REQUIRED",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L022": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:85477b1f6258062ccb8cc16c4a546a2d",
+              "passage:b92d6b512f3dfa52f5e00b42f34c67e6",
+              "passage:862eb72c5e278db582e78b295b0a6d76"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              4,
+              9
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L023": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:d8f70d4e50a0e192f30f0b9e6da3693d",
+              "passage:b4c7daaffcdd2c70506b8f0c77ac6af7",
+              "passage:787907d8f2929a04348bd96b354d7fa8"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              3,
+              2,
+              6
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L024": {
+            "nonuseful_selected": 2,
+            "selected_candidate_ids": [
+              "passage:7de01e397cb8d03488180e56753a1492",
+              "passage:62d04ecd83721c53c2ab4e842d0ac3d9",
+              "passage:a2f2184ebb49d67b913b73a9aa1320d3"
+            ],
+            "selected_classes": [
+              "USEFUL_DISTINCT",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              8
+            ],
+            "unsafe_selected": 2,
+            "useful_selected": 1
+          },
+          "L027": {
+            "nonuseful_selected": 3,
+            "selected_candidate_ids": [
+              "passage:a095cc6042692a30378d6172c497fd13",
+              "passage:9ee5a0b276a0d95019fd0ffa72d8d234",
+              "passage:c364d1ef0470fb2bae0394c4976b8fb0"
+            ],
+            "selected_classes": [
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING",
+              "UNSAFE_OR_MISLEADING"
+            ],
+            "selected_ranks": [
+              1,
+              3,
+              2
+            ],
+            "unsafe_selected": 3,
+            "useful_selected": 0
+          }
+        }
+      },
+      "loss_cap": 0.02,
+      "overall": {
+        "authoritative_only": {
+          "coverage": 19,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 67,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5609756097560976,
+          "useful_retained": 23
+        },
+        "complement": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "complement_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "event_only": {
+          "coverage": 22,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 63,
+          "unsafe": 59,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_union": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 57,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "generic_union_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 8,
+          "nonuseful": 64,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6341463414634146,
+          "useful_retained": 26
+        },
+        "registry_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 61,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        },
+        "true": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "true_anyof": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 9,
+          "nonuseful": 63,
+          "unsafe": 58,
+          "useful_available": 41,
+          "useful_recall": 0.6585365853658537,
+          "useful_retained": 27
+        },
+        "wrong_only": {
+          "coverage": 21,
+          "coverage_total": 27,
+          "deep_useful_rescue": 6,
+          "nonuseful": 66,
+          "unsafe": 62,
+          "useful_available": 41,
+          "useful_recall": 0.5853658536585366,
+          "useful_retained": 24
+        }
+      },
+      "overall_vs_semantic": {
+        "authoritative_only": {
+          "coverage": -2,
+          "deep_useful_rescue": 0,
+          "nonuseful": 1,
+          "unsafe": 0,
+          "useful_recall": -0.024390243902438935
+        },
+        "complement": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "complement_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        },
+        "event_only": {
+          "coverage": 1,
+          "deep_useful_rescue": 2,
+          "nonuseful": -3,
+          "unsafe": -3,
+          "useful_recall": 0.07317073170731714
+        },
+        "generic_union": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -5,
+          "useful_recall": 0.07317073170731714
+        },
+        "generic_union_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 2,
+          "nonuseful": -2,
+          "unsafe": -4,
+          "useful_recall": 0.04878048780487809
+        },
+        "registry_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": -1,
+          "useful_recall": 0.0
+        },
+        "true": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "true_anyof": {
+          "coverage": 0,
+          "deep_useful_rescue": 3,
+          "nonuseful": -3,
+          "unsafe": -4,
+          "useful_recall": 0.07317073170731714
+        },
+        "wrong_only": {
+          "coverage": 0,
+          "deep_useful_rescue": 0,
+          "nonuseful": 0,
+          "unsafe": 0,
+          "useful_recall": 0.0
+        }
+      }
+    }
+  ],
+  "complement_by_lane": {
+    "L001": [
+      "event_record",
+      "registry_entry"
+    ],
+    "L011": [
+      "event_record",
+      "registry_entry"
+    ],
+    "L019": [
+      "event_record",
+      "registry_entry"
+    ],
+    "L021": [
+      "event_record",
+      "registry_entry"
+    ],
+    "L022": [
+      "authoritative_declaration",
+      "registry_entry"
+    ],
+    "L023": [
+      "event_record"
+    ],
+    "L024": [
+      "authoritative_declaration",
+      "registry_entry"
+    ],
+    "L027": [
+      "event_record"
+    ]
+  },
+  "evaluation_sha256": "7f6bd608c7a772c09d54501342efdeec61c5cf885cdb4792a90745a76bfc9391",
+  "exceptional_lanes": [
+    "L001",
+    "L011",
+    "L019",
+    "L021",
+    "L022",
+    "L023",
+    "L024",
+    "L027"
+  ],
+  "frozen_evaluator_sha256": "a13cb5fbe7ad3da0a7480defba2d0f0cf63a824b93818eda8a26b1e038c83eb2",
+  "gold_sha256": "bf29fb9e2f182c73bbc67e7ea2d51615203eed0258e58914943eb07c56a1e592",
+  "nonclaims": [
+    "exposed development complement diagnostic only",
+    "no Gate field or EB behavior qualified",
+    "no model or Gate runtime rerun",
+    "fresh independent reproduction remains required"
+  ],
+  "schema": "eb-gate-specialty-complement-v4-evaluation",
+  "selection_sha256": "40265d8b8d02f41330b10b31c2e17471849c6d15f3bb09200dee69ef8b433e7e",
+  "true_specialty_by_lane": {
+    "L001": [
+      "authoritative_declaration"
+    ],
+    "L011": [
+      "authoritative_declaration"
+    ],
+    "L019": [
+      "authoritative_declaration"
+    ],
+    "L021": [
+      "authoritative_declaration"
+    ],
+    "L022": [
+      "event_record"
+    ],
+    "L023": [
+      "authoritative_declaration",
+      "registry_entry"
+    ],
+    "L024": [
+      "event_record"
+    ],
+    "L027": [
+      "authoritative_declaration",
+      "registry_entry"
+    ]
+  },
+  "wrong_only_by_lane": {
+    "L001": [
+      "event_record"
+    ],
+    "L011": [
+      "event_record"
+    ],
+    "L019": [
+      "event_record"
+    ],
+    "L021": [
+      "event_record"
+    ],
+    "L022": [
+      "authoritative_declaration"
+    ],
+    "L023": [
+      "event_record"
+    ],
+    "L024": [
+      "authoritative_declaration"
+    ],
+    "L027": [
+      "event_record"
+    ]
+  }
+}

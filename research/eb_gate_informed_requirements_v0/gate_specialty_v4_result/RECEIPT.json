@@ -1,0 +1,10 @@
+{
+  "evaluation_sha256": "f5f027bef4f91c70a1c382d08eb6159cc327968e6c92297b97eec8835bd49131",
+  "exceptional_lane_count": 8,
+  "fresh_qualification": false,
+  "production_authority": false,
+  "schema": "eb-gate-specialty-v4-receipt",
+  "selection_sha256": "40265d8b8d02f41330b10b31c2e17471849c6d15f3bb09200dee69ef8b433e7e",
+  "status": "EXPOSED_DEVELOPMENT_COMPLEMENT_COMPLETE",
+  "study_head": "1af74eda9ee85ff798dfbdad68181e106d4ad040"
+}
