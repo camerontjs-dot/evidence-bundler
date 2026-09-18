@@ -128,6 +128,33 @@ Therefore the earlier exposed specialty-form signal is preserved as real develop
 
 ## Evidence lineage
 
+### 0. Typed-selector predecessor
+
+Issue #80 and PRs #82, #84, #85, #87, #88, #89, and #90 form the immediate predecessor chain.
+
+The typed-selector RC1 decisive fresh result in PR #90 was **FALSIFIED**:
+
+| Arm | required-lane coverage | useful recall@3 | unsafe | non-useful |
+| --- | ---: | ---: | ---: | ---: |
+| BM25 rank-only | 16/27 | 0.536585 | 62 | 68 |
+| semantic-only | 21/27 | 0.585366 | 62 | 66 |
+| typed candidate | 17/27 | 0.536585 | 58 | 68 |
+| typed without posture | 17/27 | 0.536585 | 62 | 68 |
+
+Exact terminal result:
+
+- commit `80ed2cad8a25dec268d2830f466cfff8126a90a0`;
+- tree `964df556b3c1c5b1c397d115e9f0958fbbeec7c9`;
+- frozen candidate pool SHA-256 `4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6`;
+- arm-output freeze `04523e52606ce47bb3c2eec16c18a5de66b2f277`;
+- sealed gold commit `cfab42bf37af3c29893f5aeaa2d145a9e91bc2ee`.
+
+The weighted typed selector lost four required lanes versus semantic-only, crossing its preregistered falsifier. Evidence posture reduced unsafe retention but did not recover coverage.
+
+This predecessor matters to the current convergence: it is why the successor programme did not simply add more typed fields or weights. The Gate-informed cycle instead decomposed the problem into separately falsifiable structural and identity mechanisms.
+
+PR #86 is intentionally not part of this closure. It is a separate provenance-architecture documentation pointer with its own cross-repository qualification condition.
+
 ### 1. Broad search surface
 
 PR #92 widened the research surface deliberately rather than guessing a narrow Gate-to-EB interface.
