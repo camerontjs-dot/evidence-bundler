@@ -1,0 +1,72 @@
+messages:
+  - role: system
+    content: |-
+      You are an isolated research-fixture author. Use only the supplied contract and category ID. Do not use outside repository knowledge, prior experiments, hidden target behavior, or imagined gold. Author fresh synthetic claims only.
+  - role: user
+    content: |-
+      Read the cohort contract below.
+
+      {{contract}}
+
+      Author exactly four fresh cases for category {{category_id}}.
+
+      Requirements:
+      - exactly two meaning-preserving child propositions per parent;
+      - logic must be all_of;
+      - use synthetic identifiers/names that are not copied from examples in the contract;
+      - freeze one exact subject_anchor per child;
+      - subject_source=child means the anchor occurs verbatim in child_text;
+      - subject_source=parent means the anchor occurs verbatim in parent_text and is intentionally omitted from child_text;
+      - do not author evidence, candidate passages, expected evidence forms, labels, verdicts, queries, sources, or answer keys;
+      - case IDs must be {{category_id}}-01 through {{category_id}}-04 and child IDs must be <case>-A and <case>-B.
+
+      Return JSON only according to the response schema.
+model: openai/gpt-4o
+modelParameters:
+  maxCompletionTokens: 5000
+  temperature: 0.55
+responseFormat: json_schema
+jsonSchema: |-
+  {
+    "name": "fresh_claim_cases",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "category_id": {"type": "string"},
+        "cases": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "case_id": {"type": "string"},
+              "parent_text": {"type": "string"},
+              "logic": {"type": "string", "enum": ["all_of"]},
+              "children": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "child_id": {"type": "string"},
+                    "child_text": {"type": "string"},
+                    "subject_anchor": {"type": "string"},
+                    "subject_source": {"type": "string", "enum": ["child", "parent"]}
+                  },
+                  "required": ["child_id", "child_text", "subject_anchor", "subject_source"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["case_id", "parent_text", "logic", "children"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["category_id", "cases"],
+      "additionalProperties": false
+    }
+  }
