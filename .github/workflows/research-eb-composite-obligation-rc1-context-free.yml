@@ -49,8 +49,8 @@ jobs:
           set -euo pipefail
           mkdir -p out
           python -m pip install 'ruff>=0.15,<1'
-          python -m ruff check study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py
-          python -m py_compile study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py
+          python -m ruff check study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py study/$SURFACE/copilot_isolation.py
+          python -m py_compile study/$SURFACE/apparatus.py study/$SURFACE/evaluator.py study/$SURFACE/copilot_isolation.py
           cat > out/SOURCE-ACCESS.json <<EOF
           {
             "schema": "eb-composite-obligation-rc1-source-access",
