@@ -17,5 +17,9 @@
   ],
   "no_post_run_tuning": true,
   "fresh_qualification": false,
-  "production_authority": false
+  "production_authority": false,
+  "retry": 2,
+  "prior_run_id": 35348297975,
+  "prior_run_disposition": "MECHANICAL_PRE_SCORING_STATIC_INVALID",
+  "scientific_source_changed": false
 }
