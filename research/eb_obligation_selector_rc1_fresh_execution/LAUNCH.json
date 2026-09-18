@@ -6,5 +6,9 @@
   "fresh_input_commit": "1bd4b14172d5201ec8687fba621fce4b6637a147",
   "gold_commit": "4814144caf6d5fdb3e8038bf5f77c46d6ef46964",
   "stop_after_terminal_result": true,
-  "production_authority": false
+  "production_authority": false,
+  "retry": 2,
+  "prior_run_id": 35361302562,
+  "prior_run_disposition": "MECHANICAL_PRE_SELECTION_STATIC_INVALID",
+  "scientific_logic_changed": false
 }
