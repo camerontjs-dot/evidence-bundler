@@ -1,0 +1,8 @@
+{
+  "schema": "eb-composite-obligation-rc1-descriptors-freeze",
+  "claims_commit": "739332eac80d9aac92a2cae573f6173e7485c24a",
+  "claim_profile_authority": "e29a165b682d060f5dc2a0f3c7d64a7f29b172b4",
+  "descriptors_file_sha256": "f430f2735dcc64b23cd8068881bebaf31249b5483a9f9c6eb0d5c5abc35d5b92",
+  "corpus_authored": false,
+  "target_revealed": false
+}
