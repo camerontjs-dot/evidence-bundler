@@ -1,0 +1,16 @@
+{
+  "schema": "eb-composite-obligation-rc1-run7-continuation",
+  "status": "AUTHORIZED_CONTINUATION_FROM_EXACT_PREREVEAL_ARTIFACT",
+  "source_run_id": 35355397511,
+  "source_artifact_id": 10551377921,
+  "source_artifact_digest": "sha256:caf5c01e9ce9d7d37f87a4f1d3c12e6ee3bdc583a82be6fd9d59309ae343c2ee",
+  "claims_commit": "739332eac80d9aac92a2cae573f6173e7485c24a",
+  "descriptors_commit": "afb65df0988ac09d49a6ee0d8eeba826c5bbfb87",
+  "validator_correction": "case-insensitive target-subject anchor check, matching frozen selector semantics",
+  "full_candidate_pool_replay": "PASS_ZERO_OTHER_GEOMETRY_VIOLATIONS",
+  "regenerate_claims": false,
+  "regenerate_candidates": false,
+  "gold_seen": false,
+  "selector_revealed": false,
+  "scientific_contract_changed": false
+}
