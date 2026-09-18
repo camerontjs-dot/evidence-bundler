@@ -1,0 +1,16 @@
+{
+  "schema": "eb-gate-specialty-selector-rc0-launch",
+  "status": "AUTHORIZED_DEVELOPMENT_EQUIVALENCE_AND_FREEZE",
+  "pr": 107,
+  "target_semantic_loss_cap": 0.01,
+  "supported_specialty_forms": [
+    "authoritative_declaration",
+    "event_record",
+    "registry_entry"
+  ],
+  "source_v1_pre_gold_commit": "c8839068feaaecf1d904a93be22dcf4f60dec6a4",
+  "source_v1_selection_sha256": "095d953e6cc017a4dc0e880b445e951db2034ab01c70aaa7be157dcb3014d2f4",
+  "candidate_pools_sha256": "4171d50b53374ef67fd877ac9f0ada5d1998b0de43993be8540ff9ea053b84f6",
+  "fresh_qualification": false,
+  "production_authority": false
+}
