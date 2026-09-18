@@ -8,10 +8,11 @@
   "bootstrap_branch": "research-infra/eb-composite-obligation-rc1-context-free-bootstrap-20260918",
   "isolation_surface": {
     "provider": "GitHub Copilot CLI via GitHub Actions GITHUB_TOKEN",
-    "model": "gpt-5.4",
+    "model": "auto",
     "github_mcp_enabled": false,
     "tool_policy": "deny shell, write, url, and memory; disable builtin MCP; invoke from fresh trusted empty directory with a fresh COPILOT_HOME per call",
-    "rule": "Each invocation receives only one fully rendered prompt containing explicitly allowlisted prereveal content. It starts a fresh Copilot session and cannot access the repository checkout through its working-directory path permissions."
+    "rule": "Each invocation receives only one fully rendered prompt containing explicitly allowlisted prereveal content. It starts a fresh Copilot session and cannot access the repository checkout through its working-directory path permissions.",
+    "model_selection_note": "Copilot CLI selects an available model at execution time; receipts must preserve the CLI version and auto-selection mode. No target/result context is supplied."
   },
   "claim_profile_authority": {
     "repository": "camerontjs-dot/proposition-authoring",
