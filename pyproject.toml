@@ -44,9 +44,13 @@ dev = [
 
 [project.scripts]
 evidence-bundler = "evidence_bundler.cli:cli"
+evidence-bundler-v1 = "evidence_bundler.production_v1.cli:cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+evidence_bundler = ["production_v1/data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

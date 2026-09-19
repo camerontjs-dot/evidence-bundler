@@ -44,7 +44,7 @@
     "commit": "61cab64149cb6119e4dbe1fe18496f3ccf89002f",
     "disposition": "QUALIFIED_FOR_LOCAL_PIPELINE_RUNS"
   },
-  "invocation": "python scripts/run_v1_integration_candidate.py CONTRACT_A.json --admission ADMISSION.json --compatibility-carrier config/eb_v1_slice/contract_b_compatibility_carrier.json --out-dir RUN_DIR/eb",
+  "invocation": "evidence-bundler-v1 run CONTRACT_A.json --admission ADMISSION.json --out-dir RUN_DIR/eb",
   "release_posture": {
     "current_package_version": "0.1.0",
     "package_version_changed_in_slice": false,
@@ -65,5 +65,17 @@
     "contract_c",
     "decision_engine",
     "authorization"
-  ]
+  ],
+  "cli_surface": {
+    "command": "evidence-bundler-v1",
+    "surface_version": "1",
+    "commands": [
+      "inspect --json",
+      "run"
+    ],
+    "legacy_command_unchanged": "evidence-bundler",
+    "default_profile": "eb-v1-integration-10x3-rc0",
+    "packaged_carrier": "evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json",
+    "package_version": "0.1.0"
+  }
 }

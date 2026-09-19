@@ -8,11 +8,14 @@ on:
     branches:
       - main
     paths:
+      - 'pyproject.toml'
       - 'src/evidence_bundler/v1/**'
+      - 'src/evidence_bundler/production_v1/**'
       - 'scripts/run_v1_integration_candidate.py'
       - 'config/eb_v1_slice/**'
       - 'tests/test_v1_package.py'
       - 'tests/test_v1_contract_b_projection.py'
+      - 'tests/test_production_v1_cli.py'
       - 'docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_20260918.md'
       - 'docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_MANIFEST.json'
       - '.github/workflows/promotion-eb-v1-slice.yml'
@@ -55,14 +58,17 @@ jobs:
           from pathlib import Path
           allowed_exact = {
               ".github/workflows/promotion-eb-v1-slice.yml",
+              "pyproject.toml",
               "scripts/run_v1_integration_candidate.py",
               "tests/test_v1_package.py",
               "tests/test_v1_contract_b_projection.py",
+              "tests/test_production_v1_cli.py",
               "docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_20260918.md",
               "docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_MANIFEST.json",
           }
           allowed_prefixes = (
               "src/evidence_bundler/v1/",
+              "src/evidence_bundler/production_v1/",
               "config/eb_v1_slice/",
           )
           changed = [line for line in Path("/tmp/changed.txt").read_text().splitlines() if line]
@@ -72,8 +78,8 @@ jobs:
           ]
           if unexpected:
               raise SystemExit(f"unexpected production-slice paths: {unexpected}")
-          if "pyproject.toml" in changed or "src/evidence_bundler/__init__.py" in changed:
-              raise SystemExit("package/version identity must remain unchanged in slice assembly")
+          if "src/evidence_bundler/__init__.py" in changed:
+              raise SystemExit("package version token must remain unchanged in slice assembly")
           PY
 
       - name: Verify exact frozen runtime and configuration blobs
@@ -99,6 +105,17 @@ jobs:
           check_blob scripts/run_v1_integration_candidate.py d756f98ad410a2491be89bb73bbb9c7963724e50
           check_blob config/eb_v1_slice/INTEGRATION_PROFILE.json d29a9e5a6331ff9075bb520885e1ce201c6a1710
           check_blob config/eb_v1_slice/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
+          check_blob pyproject.toml a62f7d5970b218427ed1768db6365c77eac09647
+          check_blob src/evidence_bundler/production_v1/__init__.py fc8ad595a1018eed953f72b9c180d659674c9b0f
+          check_blob src/evidence_bundler/production_v1/execution.py 1b7229c4a8410fb2bd9cb31ccceb9e7179d1c13e
+          check_blob src/evidence_bundler/production_v1/cli.py 993db290e5182499a3b115a8eb9d241132b7f3d3
+          check_blob src/evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
+          test "$(python - <<'PY'
+          import tomllib
+          from pathlib import Path
+          print(tomllib.loads(Path("pyproject.toml").read_text())["project"]["version"])
+          PY
+          )" = "0.1.0"
 
       - name: Install Evidence Bundler
         run: |
@@ -106,10 +123,53 @@ jobs:
           python -m pip install -e ".[dev]"
 
       - name: Dedicated slice tests
-        run: python -m pytest -q tests/test_v1_package.py tests/test_v1_contract_b_projection.py
+        run: >-
+          python -m pytest -q
+          tests/test_v1_package.py
+          tests/test_v1_contract_b_projection.py
+          tests/test_production_v1_cli.py
 
       - name: Operator surface smoke
-        run: python scripts/run_v1_integration_candidate.py --help
+        run: |
+          python scripts/run_v1_integration_candidate.py --help
+          evidence-bundler-v1 --version
+          evidence-bundler-v1 inspect --json
+
+      - name: Built-wheel installed CLI smoke
+        if: matrix.python-version == '3.11'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/eb-wheel /tmp/eb-v1-wheel /tmp/eb-v1-wheel-run
+          mkdir -p /tmp/eb-wheel
+          python -m pip wheel --no-deps --wheel-dir /tmp/eb-wheel .
+          wheel="$(find /tmp/eb-wheel -maxdepth 1 -name 'evidence_bundler-0.1.0-*.whl' -print -quit)"
+          test -n "$wheel"
+          python -m venv --system-site-packages /tmp/eb-v1-wheel
+          /tmp/eb-v1-wheel/bin/python -m pip install --no-deps "$wheel"
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 --version
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 inspect --json > /tmp/eb-v1-inspect.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("/tmp/eb-v1-inspect.json").read_text())
+          assert data["slice_id"] == "eb-v1-slice-1"
+          assert data["profile_id"] == "eb-v1-integration-10x3-rc0"
+          assert data["package_version"] == "0.1.0"
+          assert data["config"]["candidate_depth"] == 10
+          assert data["config"]["retained_k"] == 3
+          PY
+          PYTHONPATH=tests python - <<'PY'
+          import json
+          from pathlib import Path
+          from test_v1_contract_b_projection import _contract_a
+          Path("/tmp/eb-v1-contract-a.json").write_text(
+              json.dumps(_contract_a(), sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 run             /tmp/eb-v1-contract-a.json             --out-dir /tmp/eb-v1-wheel-run
+          test "$(cat /tmp/eb-v1-wheel-run/contract_b/CONTRACT_VERSION)" = "1.2.0"
 
       - name: Maintained quality gates
         run: |
@@ -163,44 +223,63 @@ jobs:
           python -m pip install -e ".[dev]"
           python -m pip install -e _deps/claim-audit-lab
 
-      - name: Re-run EB projection against exact current CAL intake
-        run: python -m pytest -q tests/test_v1_contract_b_projection.py
+      - name: Re-run EB projection and production CLI tests against exact current CAL intake
+        run: >-
+          python -m pytest -q
+          tests/test_v1_contract_b_projection.py
+          tests/test_production_v1_cli.py
 
-      - name: Validate emitted factual-context bytes with canonical Apparatus validator
+      - name: Execute installed V1 CLI subject
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/eb-v1-cross
+          PYTHONPATH=tests python - <<'PY'
+          import json
+          from pathlib import Path
+          from test_v1_contract_b_projection import _contract_a
+          Path("/tmp/eb-v1-cross-contract-a.json").write_text(
+              json.dumps(_contract_a(), sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          evidence-bundler-v1 run             /tmp/eb-v1-cross-contract-a.json             --out-dir /tmp/eb-v1-cross
+
+      - name: Validate CLI-emitted Contract B with canonical Apparatus and exact CAL intake
         env:
           APPARATUS_ROOT: _deps/apparatus-contracts
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH="tests:$APPARATUS_ROOT" python - <<'PY'
-          import os
-          import tempfile
+          PYTHONPATH="$APPARATUS_ROOT" python - <<'PY'
           from pathlib import Path
-
-          from test_v1_contract_b_projection import _carrier, _package
-          from evidence_bundler.v1.contract_b import project_contract_b
           from validators.contract_b_factual_context import load_extension
 
-          with tempfile.TemporaryDirectory() as tmp:
-              out = Path(tmp)
-              project_contract_b(
-                  package=_package(),
-                  compatibility_carrier=_carrier(),
-                  out_dir=out,
-              )
-              bundle = out / "contract_b"
-              claim_ids = {p.stem for p in (bundle / "claims").glob("*.yaml")}
-              source_ids = {p.name for p in (bundle / "evidence").iterdir() if p.is_dir()}
-              passage_ids = {
-                  p.stem
-                  for source in (bundle / "evidence").iterdir()
-                  if source.is_dir()
-                  for p in (source / "passages").glob("*.yaml")
-              }
-              load_extension(
-                  bundle / "extensions" / "contract-b-factual-context-v1.json",
-                  claim_ids=claim_ids,
-                  source_ids=source_ids,
-                  passage_ids=passage_ids,
-              )
+          bundle = Path("/tmp/eb-v1-cross/contract_b")
+          claim_ids = {p.stem for p in (bundle / "claims").glob("*.yaml")}
+          source_ids = {p.name for p in (bundle / "evidence").iterdir() if p.is_dir()}
+          passage_ids = {
+              p.stem
+              for source in (bundle / "evidence").iterdir()
+              if source.is_dir()
+              for p in (source / "passages").glob("*.yaml")
+          }
+          load_extension(
+              bundle / "extensions" / "contract-b-factual-context-v1.json",
+              claim_ids=claim_ids,
+              source_ids=source_ids,
+              passage_ids=passage_ids,
+          )
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          from claim_audit_lab.contracts.factual_context import load_contract_b_intake
+
+          view = load_contract_b_intake(
+              Path("/tmp/eb-v1-cross/contract_b"),
+              deviations_dir=Path("/tmp/eb-v1-cross/cal-deviations"),
+          )
+          assert view.extension_state == "present"
+          assert view.intake_ledger is not None
+          assert view.semantic_context is not None
           PY

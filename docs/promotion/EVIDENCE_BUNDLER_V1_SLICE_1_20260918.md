@@ -23,17 +23,18 @@ exact non-semantic Contract B 1.2 compatibility projection
 released Contract B 1.2 bundle + projection receipt
 ```
 
-The operator surface remains the already-qualified runner:
+The production-shaped operator surface is a dedicated installed CLI, leaving the legacy `evidence-bundler` command unchanged:
 
 ```bash
-python scripts/run_v1_integration_candidate.py \
+evidence-bundler-v1 inspect --json
+
+evidence-bundler-v1 run \
   CONTRACT_A.json \
   --admission ADMISSION.json \
-  --compatibility-carrier config/eb_v1_slice/contract_b_compatibility_carrier.json \
   --out-dir RUN_DIR/eb
 ```
 
-This is intentionally a clean-checkout surface. A packaged V1 pipeline CLI can be considered later only if it is justified and requalified as a separate public-surface change.
+The `run` command defaults to a packaged byte-identical copy of the frozen Contract B compatibility carrier. An explicit `--compatibility-carrier` override remains available for controlled reproduction. The historical `scripts/run_v1_integration_candidate.py` runner remains byte-identical to the frozen research authority and is retained as provenance/control surface rather than the primary installed interface.
 
 ## Why this subject
 
@@ -59,7 +60,9 @@ Only the qualified runtime/configuration closure is copied from the frozen subje
 - `scripts/run_v1_integration_candidate.py`;
 - exact frozen integration profile;
 - exact Contract B compatibility carrier;
-- the two direct V1 regression/conformance test surfaces.
+- dedicated `evidence-bundler-v1` installed CLI wrapper around the exact frozen V1 runtime;
+- a packaged byte-identical compatibility carrier for repository-independent CLI execution;
+- the direct V1 regression/conformance and production-CLI test surfaces.
 
 The V1 runtime files and operator runner remain byte-identical to their frozen research blobs.
 
@@ -111,11 +114,12 @@ Before this slice is called ready for local pipeline runs, one exact head must e
 4. integration profile and compatibility carrier bytes match the frozen authority;
 5. dedicated V1 package/projection tests pass;
 6. full Evidence Bundler regression passes on Python 3.11 and 3.12;
-7. Ruff, strict mypy, compileall, and dependency checks pass;
-8. the operator runner is invocable from a clean checkout;
-9. exact Contract B 1.2 authority is present and its factual-context validator accepts the emitted extension;
-10. exact current CAL V1 Slice 1 candidate accepts the emitted Contract B bundle;
-11. known fail-closed controls remain green.
+7. Ruff, strict mypy on the maintained Python 3.11 lane, compileall, and dependency checks pass;
+8. the historical runner remains invocable and the installed `evidence-bundler-v1` entry point exposes deterministic authority via `inspect --json`;
+9. a built wheel installed into a fresh environment exposes `evidence-bundler-v1` and can execute the qualified V1 route;
+10. exact Contract B 1.2 authority is present and its factual-context validator accepts the CLI-emitted extension;
+11. exact current CAL V1 Slice 1 candidate accepts the CLI-emitted Contract B bundle;
+12. known fail-closed controls remain green.
 
 A repository-local green check alone is not the disposition.
 
