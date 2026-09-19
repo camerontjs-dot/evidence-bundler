@@ -1,0 +1,137 @@
+name: Qualification - EB V1 0.2.0 pressure
+
+on:
+  push:
+    branches:
+      - qualification/eb-v1-0.2.0-pressure-20260919
+    paths:
+      - 'qualification/EB_V1_0_2_0_PRESSURE_PLAN.md'
+      - 'qualification/eb_v1_0_2_0_pressure.py'
+      - '.github/workflows/qualification-eb-v1-0.2.0-pressure.yml'
+
+permissions:
+  contents: read
+
+env:
+  SUBJECT_SHA: 08ca896debd6d16fa21be2f178ed7cbe62395d00
+  APPARATUS_LOCK: c314e53bd91c0736aa4370a364673b069aceb43e
+  CAL_V1_SLICE: 61cab64149cb6119e4dbe1fe18496f3ccf89002f
+
+jobs:
+  installed-cli-pressure:
+    name: Installed CLI pressure / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - name: Checkout pressure harness
+        uses: actions/checkout@v4
+
+      - name: Checkout exact frozen subject
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SUBJECT_SHA }}
+          path: _subject
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Verify exact subject identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C _subject rev-parse HEAD)" = "$SUBJECT_SHA"
+          test "$(python - <<'PY'
+          import tomllib
+          from pathlib import Path
+          print(tomllib.loads(Path("_subject/pyproject.toml").read_text())["project"]["version"])
+          PY
+          )" = "0.2.0"
+
+      - name: Build and install exact wheel
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          rm -rf /tmp/eb-pressure-wheel
+          mkdir -p /tmp/eb-pressure-wheel
+          python -m pip wheel --no-deps --wheel-dir /tmp/eb-pressure-wheel ./_subject
+          wheel="$(find /tmp/eb-pressure-wheel -maxdepth 1 -name 'evidence_bundler-0.2.0-*.whl' -print -quit)"
+          test -n "$wheel"
+          python -m pip install "$wheel"
+          python -m pip check
+
+      - name: Run installed CLI adversarial pressure
+        env:
+          SUBJECT_ROOT: ${{ github.workspace }}/_subject
+        run: python qualification/eb_v1_0_2_0_pressure.py --mode installed
+
+  cross-repository-pressure:
+    name: Apparatus + CAL negative-boundary pressure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout pressure harness
+        uses: actions/checkout@v4
+
+      - name: Checkout exact frozen subject
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SUBJECT_SHA }}
+          path: _subject
+          fetch-depth: 1
+
+      - name: Checkout exact Apparatus authority
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: ${{ env.APPARATUS_LOCK }}
+          path: _deps/apparatus-contracts
+          fetch-depth: 1
+
+      - name: Checkout exact CAL consumer
+        uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: ${{ env.CAL_V1_SLICE }}
+          path: _deps/claim-audit-lab
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Verify external identities
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C _subject rev-parse HEAD)" = "$SUBJECT_SHA"
+          test "$(git -C _deps/apparatus-contracts rev-parse HEAD)" = "$APPARATUS_LOCK"
+          test "$(git -C _deps/claim-audit-lab rev-parse HEAD)" = "$CAL_V1_SLICE"
+
+      - name: Install exact subject wheel and CAL consumer
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          rm -rf /tmp/eb-cross-pressure-wheel
+          mkdir -p /tmp/eb-cross-pressure-wheel
+          python -m pip wheel --no-deps --wheel-dir /tmp/eb-cross-pressure-wheel ./_subject
+          wheel="$(find /tmp/eb-cross-pressure-wheel -maxdepth 1 -name 'evidence_bundler-0.2.0-*.whl' -print -quit)"
+          test -n "$wheel"
+          python -m pip install "$wheel"
+          python -m pip install -e ./_deps/claim-audit-lab
+          python -m pip check
+
+      - name: Run cross-repository mutation pressure
+        env:
+          SUBJECT_ROOT: ${{ github.workspace }}/_subject
+          APPARATUS_ROOT: ${{ github.workspace }}/_deps/apparatus-contracts
+        run: python qualification/eb_v1_0_2_0_pressure.py --mode cross
