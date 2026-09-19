@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "evidence-bundler"
-version = "0.1.0"
+version = "0.2.0"
 description = "Prepare traceable evidence bundles from scaffolded research corpora."
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
@@ -44,9 +44,13 @@ dev = [
 
 [project.scripts]
 evidence-bundler = "evidence_bundler.cli:cli"
+evidence-bundler-v1 = "evidence_bundler.production_v1.cli:cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+evidence_bundler = ["production_v1/data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

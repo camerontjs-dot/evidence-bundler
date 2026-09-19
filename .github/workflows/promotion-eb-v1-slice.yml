@@ -1,0 +1,299 @@
+name: Promotion - EB V1 Slice 1 qualification
+
+on:
+  push:
+    branches:
+      - promotion/eb-v1-slice-1-20260918
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'pyproject.toml'
+      - 'src/evidence_bundler/v1/**'
+      - 'src/evidence_bundler/production_v1/**'
+      - 'scripts/run_v1_integration_candidate.py'
+      - 'config/eb_v1_slice/**'
+      - 'tests/test_v1_package.py'
+      - 'tests/test_v1_contract_b_projection.py'
+      - 'tests/test_production_v1_cli.py'
+      - 'docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_20260918.md'
+      - 'docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_MANIFEST.json'
+      - '.github/workflows/promotion-eb-v1-slice.yml'
+
+permissions:
+  contents: read
+
+env:
+  PRODUCTION_BASE: c26fbd4bfc8ba5c2604a784af158594b59fcae37
+  FROZEN_SUBJECT: 4e1f6fe00e7c350b28f52bfea14f1f8988847884
+  CONTRACT_B_LOCK: c314e53bd91c0736aa4370a364673b069aceb43e
+  CAL_V1_SLICE: 61cab64149cb6119e4dbe1fe18496f3ccf89002f
+
+jobs:
+  identity-and-regression:
+    name: Identity + regression / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Verify main-based minimal slice boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor "$PRODUCTION_BASE" HEAD
+          git diff --name-only "$PRODUCTION_BASE"...HEAD | tee /tmp/changed.txt
+          python - <<'PY'
+          from pathlib import Path
+          allowed_exact = {
+              ".github/workflows/promotion-eb-v1-slice.yml",
+              "pyproject.toml",
+              "src/evidence_bundler/__init__.py",
+              "scripts/run_v1_integration_candidate.py",
+              "tests/test_v1_package.py",
+              "tests/test_v1_contract_b_projection.py",
+              "tests/test_production_v1_cli.py",
+              "docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_20260918.md",
+              "docs/promotion/EVIDENCE_BUNDLER_V1_SLICE_1_MANIFEST.json",
+          }
+          allowed_prefixes = (
+              "src/evidence_bundler/v1/",
+              "src/evidence_bundler/production_v1/",
+              "config/eb_v1_slice/",
+          )
+          changed = [line for line in Path("/tmp/changed.txt").read_text().splitlines() if line]
+          unexpected = [
+              path for path in changed
+              if path not in allowed_exact and not path.startswith(allowed_prefixes)
+          ]
+          if unexpected:
+              raise SystemExit(f"unexpected production-slice paths: {unexpected}")
+          PY
+
+      - name: Verify exact frozen runtime and configuration blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_blob() {
+            path="$1"
+            expected="$2"
+            observed="$(git hash-object "$path")"
+            test "$observed" = "$expected" || {
+              echo "$path drift: expected $expected observed $observed" >&2
+              exit 1
+            }
+          }
+          check_blob src/evidence_bundler/v1/__init__.py 8a074feeb4a6338b9291d4f6fdc667b96a9a17d7
+          check_blob src/evidence_bundler/v1/__main__.py fa64b3f551a338a9ac61b0b66ba00f9198198dd6
+          check_blob src/evidence_bundler/v1/builder.py b64416c222c03b5ce472275d86f801beff7e7380
+          check_blob src/evidence_bundler/v1/contract_a.py 5799750389b1fbe8ec2da58af371242c161f6e13
+          check_blob src/evidence_bundler/v1/contract_b.py 67c4ea3ce6e4680187743b12e42bdbff34e0d9bf
+          check_blob src/evidence_bundler/v1/package.py b2fc2459123fcceae63775c7851b0ca6ed38770b
+          check_blob src/evidence_bundler/v1/retrieval.py 0258bacd085d83997ad43526c9173f9045e92e3b
+          check_blob scripts/run_v1_integration_candidate.py d756f98ad410a2491be89bb73bbb9c7963724e50
+          check_blob config/eb_v1_slice/INTEGRATION_PROFILE.json d29a9e5a6331ff9075bb520885e1ce201c6a1710
+          check_blob config/eb_v1_slice/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
+          check_blob pyproject.toml b8106163c55c4bd6d7a7ca708c5b30b820cd8260
+          check_blob src/evidence_bundler/__init__.py 2f34fabe940089796042d5700ef783142f685c43
+          check_blob src/evidence_bundler/production_v1/__init__.py fc8ad595a1018eed953f72b9c180d659674c9b0f
+          check_blob src/evidence_bundler/production_v1/execution.py 1b7229c4a8410fb2bd9cb31ccceb9e7179d1c13e
+          check_blob src/evidence_bundler/production_v1/cli.py 95f0b6cb545a5cd35b65c41dac256f0ca542fa73
+          check_blob src/evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
+          test "$(python - <<'PY'
+          import tomllib
+          from pathlib import Path
+          print(tomllib.loads(Path("pyproject.toml").read_text())["project"]["version"])
+          PY
+          )" = "0.2.0"
+          test "$(python - <<'PY'
+          import ast
+          from pathlib import Path
+          module = ast.parse(Path("src/evidence_bundler/__init__.py").read_text(encoding="utf-8"))
+          values = {
+              node.targets[0].id: ast.literal_eval(node.value)
+              for node in module.body
+              if isinstance(node, ast.Assign)
+              and len(node.targets) == 1
+              and isinstance(node.targets[0], ast.Name)
+          }
+          print(values["__version__"])
+          PY
+          )" = "0.2.0"
+
+      - name: Install Evidence Bundler
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Dedicated slice tests
+        run: >-
+          python -m pytest -q
+          tests/test_v1_package.py
+          tests/test_v1_contract_b_projection.py
+          tests/test_production_v1_cli.py
+
+      - name: Operator surface smoke
+        run: |
+          python scripts/run_v1_integration_candidate.py --help
+          evidence-bundler-v1 --version
+          evidence-bundler-v1 inspect --json
+
+      - name: Built-wheel installed CLI smoke
+        if: matrix.python-version == '3.11'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/eb-wheel /tmp/eb-v1-wheel /tmp/eb-v1-wheel-run
+          mkdir -p /tmp/eb-wheel
+          python -m pip wheel --no-deps --wheel-dir /tmp/eb-wheel .
+          wheel="$(find /tmp/eb-wheel -maxdepth 1 -name 'evidence_bundler-0.2.0-*.whl' -print -quit)"
+          test -n "$wheel"
+          python -m venv --system-site-packages /tmp/eb-v1-wheel
+          /tmp/eb-v1-wheel/bin/python -m pip install --no-deps "$wheel"
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 --version
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 inspect --json > /tmp/eb-v1-inspect.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("/tmp/eb-v1-inspect.json").read_text())
+          assert data["slice_id"] == "eb-v1-slice-1"
+          assert data["profile_id"] == "eb-v1-integration-10x3-rc0"
+          assert data["package_version"] == "0.2.0"
+          assert data["config"]["candidate_depth"] == 10
+          assert data["config"]["retained_k"] == 3
+          PY
+          PYTHONPATH=tests python - <<'PY'
+          import json
+          from pathlib import Path
+          from test_v1_contract_b_projection import _contract_a
+          Path("/tmp/eb-v1-contract-a.json").write_text(
+              json.dumps(_contract_a(), sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          /tmp/eb-v1-wheel/bin/evidence-bundler-v1 run             /tmp/eb-v1-contract-a.json             --out-dir /tmp/eb-v1-wheel-run
+          test "$(cat /tmp/eb-v1-wheel-run/contract_b/CONTRACT_VERSION)" = "1.2.0"
+
+      - name: Maintained quality gates
+        run: |
+          python -m ruff check src tests scripts
+          if [ "${{ matrix.python-version }}" = "3.11" ]; then
+            python -m mypy src
+          fi
+          python -m compileall -q src
+          python -m pip check
+          python -m pytest -q
+
+  cross-repository:
+    name: Contract B 1.2 + current CAL V1 consumer
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: ${{ env.CONTRACT_B_LOCK }}
+          path: _deps/apparatus-contracts
+          fetch-depth: 1
+
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: ${{ env.CAL_V1_SLICE }}
+          path: _deps/claim-audit-lab
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Verify exact external authorities
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C _deps/apparatus-contracts rev-parse HEAD)" = "$CONTRACT_B_LOCK"
+          test "$(cat _deps/apparatus-contracts/schema/.contract-version)" = "1.2.0"
+          test "$(git -C _deps/claim-audit-lab rev-parse HEAD)" = "$CAL_V1_SLICE"
+
+      - name: Install producer and exact current consumer
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -e _deps/claim-audit-lab
+
+      - name: Re-run EB projection and production CLI tests against exact current CAL intake
+        run: >-
+          python -m pytest -q
+          tests/test_v1_contract_b_projection.py
+          tests/test_production_v1_cli.py
+
+      - name: Execute installed V1 CLI subject
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/eb-v1-cross
+          PYTHONPATH=tests python - <<'PY'
+          import json
+          from pathlib import Path
+          from test_v1_contract_b_projection import _contract_a
+          Path("/tmp/eb-v1-cross-contract-a.json").write_text(
+              json.dumps(_contract_a(), sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          evidence-bundler-v1 run             /tmp/eb-v1-cross-contract-a.json             --out-dir /tmp/eb-v1-cross
+
+      - name: Validate CLI-emitted Contract B with canonical Apparatus and exact CAL intake
+        env:
+          APPARATUS_ROOT: _deps/apparatus-contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$APPARATUS_ROOT" python - <<'PY'
+          from pathlib import Path
+          from validators.contract_b_factual_context import load_extension
+
+          bundle = Path("/tmp/eb-v1-cross/contract_b")
+          claim_ids = {p.stem for p in (bundle / "claims").glob("*.yaml")}
+          source_ids = {p.name for p in (bundle / "evidence").iterdir() if p.is_dir()}
+          passage_ids = {
+              p.stem
+              for source in (bundle / "evidence").iterdir()
+              if source.is_dir()
+              for p in (source / "passages").glob("*.yaml")
+          }
+          load_extension(
+              bundle / "extensions" / "contract-b-factual-context-v1.json",
+              claim_ids=claim_ids,
+              source_ids=source_ids,
+              passage_ids=passage_ids,
+          )
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          from claim_audit_lab.contracts.factual_context import load_contract_b_intake
+
+          view = load_contract_b_intake(
+              Path("/tmp/eb-v1-cross/contract_b"),
+              deviations_dir=Path("/tmp/eb-v1-cross/cal-deviations"),
+          )
+          assert view.extension_state == "present"
+          assert view.intake_ledger is not None
+          assert view.semantic_context is not None
+          PY
