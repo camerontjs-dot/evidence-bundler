@@ -117,13 +117,18 @@ def run_cli(args: list[str], *, cwd: Path, expect_ok: bool) -> subprocess.Comple
         cwd=cwd,
         text=True,
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
+        stderr=subprocess.PIPE,
         check=False,
     )
     if expect_ok and proc.returncode != 0:
-        raise AssertionError(f"CLI unexpectedly failed: {args}\n{proc.stdout}")
+        raise AssertionError(
+            f"CLI unexpectedly failed: {args}\nstdout={proc.stdout}\nstderr={proc.stderr}"
+        )
     if not expect_ok and proc.returncode == 0:
-        raise AssertionError(f"negative control unexpectedly succeeded: {args}\n{proc.stdout}")
+        raise AssertionError(
+            f"negative control unexpectedly succeeded: {args}\n"
+            f"stdout={proc.stdout}\nstderr={proc.stderr}"
+        )
     return proc
 
 
@@ -154,12 +159,20 @@ def installed_pressure() -> None:
 
         version = run_cli(["--version"], cwd=cwd, expect_ok=True)
         if version.stdout.strip() != EXPECTED_VERSION_LINE:
-            raise AssertionError(f"unexpected version output: {version.stdout!r}")
+            raise AssertionError(
+                f"unexpected version stdout: {version.stdout!r}; stderr={version.stderr!r}"
+            )
+        if version.stderr:
+            print("PRESSURE_OBSERVATION_VERSION_STDERR=" + json.dumps(version.stderr))
 
         inspect1 = run_cli(["inspect", "--json"], cwd=cwd, expect_ok=True)
         inspect2 = run_cli(["inspect", "--json"], cwd=cwd, expect_ok=True)
         if inspect1.stdout != inspect2.stdout:
-            raise AssertionError("inspect output is not byte deterministic")
+            raise AssertionError("inspect stdout is not byte deterministic")
+        if inspect1.stderr != inspect2.stderr:
+            raise AssertionError("inspect stderr is not byte deterministic")
+        if inspect1.stderr:
+            print("PRESSURE_OBSERVATION_INSPECT_STDERR=" + json.dumps(inspect1.stderr))
         authority = json.loads(inspect1.stdout)
         assert authority["package_version"] == EXPECTED_VERSION
         assert authority["profile_id"] == EXPECTED_PROFILE
@@ -169,7 +182,7 @@ def installed_pressure() -> None:
         }
 
         missing_flag = run_cli(["inspect"], cwd=cwd, expect_ok=False)
-        if "inspect requires --json" not in missing_flag.stdout:
+        if "inspect requires --json" not in (missing_flag.stdout + missing_flag.stderr):
             raise AssertionError("inspect fail-closed message changed unexpectedly")
 
         legacy = subprocess.run(
@@ -389,7 +402,7 @@ def installed_pressure() -> None:
             cwd=cwd,
             expect_ok=False,
         )
-        if "refusing non-empty output directory" not in rerun.stdout:
+        if "refusing non-empty output directory" not in (rerun.stdout + rerun.stderr):
             raise AssertionError("completed-run directory reuse did not fail at the expected boundary")
 
     print("INSTALLED_PRESSURE_PASS")

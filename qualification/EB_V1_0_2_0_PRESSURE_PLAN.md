@@ -37,3 +37,11 @@ Git-data trigger receipt: branch ref advanced through the Git data path used by 
 ## Preserved harness deviation
 
 Initial pressure runs failed before exercising the subject because the external harness imported the repository's pytest-based fixture module without installing pytest. Classification: **HARNESS_INVALID_PRE_SUBJECT**. The fix removes that dependency and defines the Contract A pressure specimen inside the external harness. No frozen Evidence Bundler bytes changed.
+
+### Installed CLI stderr observation
+
+The first independent installed-wheel run reached the subject and exposed the existing Pydantic warning:
+
+`Field name "schema" in "ContractBFactualContext" shadows an attribute in parent "_Strict"`.
+
+The warning is emitted on **stderr** during CLI module import. The first harness merged stderr into stdout and therefore misclassified `--version` as malformed. The successor harness separates streams: exact stdout remains a hard gate, while non-empty deterministic stderr is preserved as operator-noise evidence. This does not change the frozen subject.
