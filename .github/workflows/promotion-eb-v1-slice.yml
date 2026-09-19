@@ -108,7 +108,7 @@ jobs:
           check_blob pyproject.toml a62f7d5970b218427ed1768db6365c77eac09647
           check_blob src/evidence_bundler/production_v1/__init__.py fc8ad595a1018eed953f72b9c180d659674c9b0f
           check_blob src/evidence_bundler/production_v1/execution.py 1b7229c4a8410fb2bd9cb31ccceb9e7179d1c13e
-          check_blob src/evidence_bundler/production_v1/cli.py 993db290e5182499a3b115a8eb9d241132b7f3d3
+          check_blob src/evidence_bundler/production_v1/cli.py 95f0b6cb545a5cd35b65c41dac256f0ca542fa73
           check_blob src/evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
           test "$(python - <<'PY'
           import tomllib

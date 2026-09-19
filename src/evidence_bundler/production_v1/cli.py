@@ -8,7 +8,11 @@ from pathlib import Path
 import click
 
 from evidence_bundler import __version__
-from evidence_bundler.production_v1.execution import ProductionV1Error, inspect_record, run_contract_a
+from evidence_bundler.production_v1.execution import (
+    ProductionV1Error,
+    inspect_record,
+    run_contract_a,
+)
 from evidence_bundler.v1.contract_a import ContractAValidationError
 from evidence_bundler.v1.contract_b import ContractBProjectionError
 from evidence_bundler.v1.package import EvidencePackageValidationError
