@@ -117,8 +117,17 @@ jobs:
           PY
           )" = "0.2.0"
           test "$(python - <<'PY'
-          from evidence_bundler import __version__
-          print(__version__)
+          import ast
+          from pathlib import Path
+          module = ast.parse(Path("src/evidence_bundler/__init__.py").read_text(encoding="utf-8"))
+          values = {
+              node.targets[0].id: ast.literal_eval(node.value)
+              for node in module.body
+              if isinstance(node, ast.Assign)
+              and len(node.targets) == 1
+              and isinstance(node.targets[0], ast.Name)
+          }
+          print(values["__version__"])
           PY
           )" = "0.2.0"
 
