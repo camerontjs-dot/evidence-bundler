@@ -1,6 +1,6 @@
 {
   "schema": "eb-v1-production-slice-candidate-v1",
-  "status": "ASSEMBLED_AWAITING_CROSS_REPOSITORY_QUALIFICATION",
+  "status": "VERSIONED_0_2_0_CANDIDATE_AWAITING_QUALIFICATION",
   "production_base": {
     "repository": "camerontjs-dot/evidence-bundler",
     "commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37"
@@ -46,11 +46,12 @@
   },
   "invocation": "evidence-bundler-v1 run CONTRACT_A.json --admission ADMISSION.json --out-dir RUN_DIR/eb",
   "release_posture": {
-    "current_package_version": "0.1.0",
-    "package_version_changed_in_slice": false,
-    "expected_release_compatibility_class": "pre-1.0 MINOR",
-    "expected_future_release_version": "0.2.0",
-    "reason_version_not_changed_yet": "producer_version participates in native package identity; qualify copied slice before creating a new versioned subject"
+    "current_package_version": "0.2.0",
+    "package_version_changed_in_slice": true,
+    "compatibility_class": "pre-1.0 MINOR",
+    "candidate_release_version": "0.2.0",
+    "evidence_basis": "new public installed evidence-bundler-v1 CLI capability",
+    "release_authorized": false
   },
   "deferred": [
     "gate_informed_obligation_selector",
@@ -76,6 +77,6 @@
     "legacy_command_unchanged": "evidence-bundler",
     "default_profile": "eb-v1-integration-10x3-rc0",
     "packaged_carrier": "evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json",
-    "package_version": "0.1.0"
+    "package_version": "0.2.0"
   }
 }

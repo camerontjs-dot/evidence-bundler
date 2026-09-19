@@ -59,6 +59,7 @@ jobs:
           allowed_exact = {
               ".github/workflows/promotion-eb-v1-slice.yml",
               "pyproject.toml",
+              "src/evidence_bundler/__init__.py",
               "scripts/run_v1_integration_candidate.py",
               "tests/test_v1_package.py",
               "tests/test_v1_contract_b_projection.py",
@@ -78,8 +79,6 @@ jobs:
           ]
           if unexpected:
               raise SystemExit(f"unexpected production-slice paths: {unexpected}")
-          if "src/evidence_bundler/__init__.py" in changed:
-              raise SystemExit("package version token must remain unchanged in slice assembly")
           PY
 
       - name: Verify exact frozen runtime and configuration blobs
@@ -105,7 +104,8 @@ jobs:
           check_blob scripts/run_v1_integration_candidate.py d756f98ad410a2491be89bb73bbb9c7963724e50
           check_blob config/eb_v1_slice/INTEGRATION_PROFILE.json d29a9e5a6331ff9075bb520885e1ce201c6a1710
           check_blob config/eb_v1_slice/contract_b_compatibility_carrier.json ddb16cd58baed833adfc4e81d7aef3745a5900f3
-          check_blob pyproject.toml a62f7d5970b218427ed1768db6365c77eac09647
+          check_blob pyproject.toml b8106163c55c4bd6d7a7ca708c5b30b820cd8260
+          check_blob src/evidence_bundler/__init__.py 2f34fabe940089796042d5700ef783142f685c43
           check_blob src/evidence_bundler/production_v1/__init__.py fc8ad595a1018eed953f72b9c180d659674c9b0f
           check_blob src/evidence_bundler/production_v1/execution.py 1b7229c4a8410fb2bd9cb31ccceb9e7179d1c13e
           check_blob src/evidence_bundler/production_v1/cli.py 95f0b6cb545a5cd35b65c41dac256f0ca542fa73
@@ -115,7 +115,12 @@ jobs:
           from pathlib import Path
           print(tomllib.loads(Path("pyproject.toml").read_text())["project"]["version"])
           PY
-          )" = "0.1.0"
+          )" = "0.2.0"
+          test "$(python - <<'PY'
+          from evidence_bundler import __version__
+          print(__version__)
+          PY
+          )" = "0.2.0"
 
       - name: Install Evidence Bundler
         run: |
@@ -143,7 +148,7 @@ jobs:
           rm -rf /tmp/eb-wheel /tmp/eb-v1-wheel /tmp/eb-v1-wheel-run
           mkdir -p /tmp/eb-wheel
           python -m pip wheel --no-deps --wheel-dir /tmp/eb-wheel .
-          wheel="$(find /tmp/eb-wheel -maxdepth 1 -name 'evidence_bundler-0.1.0-*.whl' -print -quit)"
+          wheel="$(find /tmp/eb-wheel -maxdepth 1 -name 'evidence_bundler-0.2.0-*.whl' -print -quit)"
           test -n "$wheel"
           python -m venv --system-site-packages /tmp/eb-v1-wheel
           /tmp/eb-v1-wheel/bin/python -m pip install --no-deps "$wheel"
@@ -155,7 +160,7 @@ jobs:
           data = json.loads(Path("/tmp/eb-v1-inspect.json").read_text())
           assert data["slice_id"] == "eb-v1-slice-1"
           assert data["profile_id"] == "eb-v1-integration-10x3-rc0"
-          assert data["package_version"] == "0.1.0"
+          assert data["package_version"] == "0.2.0"
           assert data["config"]["candidate_depth"] == 10
           assert data["config"]["retained_k"] == 3
           PY

@@ -116,7 +116,7 @@ def test_inspect_record_pins_exact_qualified_profile_and_contracts() -> None:
     assert record["cli"] == "evidence-bundler-v1"
     assert record["cli_surface_version"] == CLI_SURFACE_VERSION == "1"
     assert record["slice_id"] == SLICE_ID == "eb-v1-slice-1"
-    assert record["package_version"] == __version__ == "0.1.0"
+    assert record["package_version"] == __version__ == "0.2.0"
     assert record["profile_id"] == INTEGRATION_PROFILE_ID == "eb-v1-integration-10x3-rc0"
     assert record["config_sha256"] == INTEGRATION_CONFIG_SHA256
     assert record["config"]["candidate_depth"] == 10
@@ -126,6 +126,13 @@ def test_inspect_record_pins_exact_qualified_profile_and_contracts() -> None:
         "version": "1.2.0",
         "production_lock": CONTRACT_B_PRODUCTION_LOCK,
     }
+
+
+def test_cli_version_reports_versioned_v1_slice() -> None:
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--version"])
+    assert result.exit_code == 0
+    assert result.output == "evidence-bundler-v1, version 0.2.0 (EB V1 Slice 1)\n"
 
 
 def test_cli_inspect_json_is_deterministic() -> None:

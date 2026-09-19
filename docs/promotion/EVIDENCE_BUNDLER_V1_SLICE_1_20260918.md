@@ -125,11 +125,13 @@ A repository-local green check alone is not the disposition.
 
 ## Version posture
 
-No package-version mutation is made in this slice assembly.
+This promotion introduces a new public installed CLI capability, `evidence-bundler-v1`. Under the project's strict pre-1.0 policy, that is a **MINOR** compatibility change.
 
-Evidence Bundler is currently `0.1.0`, and the native V1 package records `evidence_bundler.__version__` inside its producer identity. Changing that token now would change emitted package identity and create a new subject before the copied slice has been qualified.
+The versioned promotion candidate is therefore `0.2.0`.
 
-If this capability is later released as a supported public surface, the strict pre-1.0 compatibility class is **MINOR**, so the expected release line is `0.2.0`. That version change must be qualified on its own exact candidate before tag/release.
+The native V1 package records `evidence_bundler.__version__` inside its producer identity, so this version assignment intentionally creates a new exact subject. Qualification must therefore run on the exact `0.2.0` tree, including built-wheel CLI smoke and cross-repository Contract B / CAL conformance, before any tag or GitHub Release is authorized.
+
+The version change does not authorize broader retrieval, selector, Contract, CAL, Decision, or Authorization behavior.
 
 ## Preserved limitations and nonclaims
 
