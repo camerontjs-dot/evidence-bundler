@@ -31,3 +31,5 @@
 Any unexpected success on a negative control, artifact-byte replay mismatch, wrong installed provenance/version, partial artifact leakage after a rejected run, or downstream acceptance of a malformed Contract B subject blocks the local-pipeline disposition until explained.
 
 Harness trigger receipt: this commit exists only to execute the pressure workflow after the workflow file was present on the branch.
+
+Git-data trigger receipt: branch ref advanced through the Git data path used by prior qualification workflows.
