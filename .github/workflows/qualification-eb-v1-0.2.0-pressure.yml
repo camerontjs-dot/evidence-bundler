@@ -1,13 +1,7 @@
 name: Qualification - EB V1 0.2.0 pressure
 
 on:
-  push:
-    branches:
-      - qualification/eb-v1-0.2.0-pressure-20260919
-    paths:
-      - 'qualification/EB_V1_0_2_0_PRESSURE_PLAN.md'
-      - 'qualification/eb_v1_0_2_0_pressure.py'
-      - '.github/workflows/qualification-eb-v1-0.2.0-pressure.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

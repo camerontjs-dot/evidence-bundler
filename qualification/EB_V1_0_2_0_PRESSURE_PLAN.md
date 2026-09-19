@@ -33,3 +33,7 @@ Any unexpected success on a negative control, artifact-byte replay mismatch, wro
 Harness trigger receipt: this commit exists only to execute the pressure workflow after the workflow file was present on the branch.
 
 Git-data trigger receipt: branch ref advanced through the Git data path used by prior qualification workflows.
+
+## Preserved harness deviation
+
+Initial pressure runs failed before exercising the subject because the external harness imported the repository's pytest-based fixture module without installing pytest. Classification: **HARNESS_INVALID_PRE_SUBJECT**. The fix removes that dependency and defines the Contract A pressure specimen inside the external harness. No frozen Evidence Bundler bytes changed.

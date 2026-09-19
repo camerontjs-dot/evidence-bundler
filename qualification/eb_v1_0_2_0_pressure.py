@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from hashlib import sha256
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
@@ -22,12 +23,77 @@ EXPECTED_CONTRACT_B = "1.2.0"
 EXPECTED_CONTRACT_B_LOCK = "c314e53bd91c0736aa4370a364673b069aceb43e"
 
 SUBJECT_ROOT = Path(os.environ["SUBJECT_ROOT"]).resolve()
-sys.path.insert(0, str(SUBJECT_ROOT / "tests"))
 
-from test_v1_contract_b_projection import _contract_a  # noqa: E402
 from evidence_bundler.v1 import build_package  # noqa: E402
+from evidence_bundler.v1.contract_a import compute_handoff_sha256  # noqa: E402
 from evidence_bundler.v1.contract_b import INTEGRATION_CONFIG  # noqa: E402
 from evidence_bundler.v1.package import ADMISSION_SCHEMA  # noqa: E402
+
+
+def _hash_text(value: str) -> str:
+    return "sha256:" + sha256(value.encode("utf-8")).hexdigest()
+
+
+def _contract_a() -> dict[str, Any]:
+    root_text = "Alpha beta gamma delta and omega theta are both documented."
+    child_one = "alpha beta gamma delta"
+    child_two = "omega theta"
+    source_texts = [
+        "alpha appears in calibration note A.",
+        "alpha appears in calibration note B.",
+        "beta appears in calibration note A.",
+        "beta appears in calibration note B.",
+        "gamma appears in calibration note A.",
+        "gamma appears in calibration note B.",
+        "delta appears in calibration note A.",
+        "delta appears in calibration note B.",
+        "omega theta appears together in source nine.",
+        "omega theta appears together in source ten.",
+        "unrelated cobalt orchard material.",
+        "unrelated marine quartz material.",
+    ]
+    value: dict[str, Any] = {
+        "schema": "contract-a-wire-candidate-rc2",
+        "handoff_id": "handoff-v1-pressure",
+        "producer": {"producer_id": "pressure-harness", "producer_version": "1"},
+        "work": {"work_id": "work-v1-pressure"},
+        "root_proposition": {
+            "proposition_id": "ROOT",
+            "text": root_text,
+            "text_sha256": _hash_text(root_text),
+        },
+        "decomposition": {
+            "state": "declared",
+            "decomposition_id": "D1",
+            "operator": "all_of",
+            "children": [
+                {
+                    "proposition_id": "C1",
+                    "text": child_one,
+                    "text_sha256": _hash_text(child_one),
+                    "sequence": 1,
+                },
+                {
+                    "proposition_id": "C2",
+                    "text": child_two,
+                    "text_sha256": _hash_text(child_two),
+                    "sequence": 2,
+                },
+            ],
+        },
+        "sources": [
+            {
+                "source_id": f"S{index:02d}",
+                "media_type": "text/plain; charset=utf-8",
+                "content": text,
+                "content_sha256": _hash_text(text),
+            }
+            for index, text in enumerate(source_texts, start=1)
+        ],
+        "handoff_sha256": "sha256:" + "0" * 64,
+    }
+    value["handoff_sha256"] = compute_handoff_sha256(value)
+    return value
 
 CLI = shutil.which("evidence-bundler-v1")
 LEGACY_CLI = shutil.which("evidence-bundler")
