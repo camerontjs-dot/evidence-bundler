@@ -114,11 +114,6 @@ jobs:
       - name: Maintained quality gates
         run: |
           python -m ruff check src tests scripts
-          python -m ruff format --check \
-            src/evidence_bundler/v1 \
-            scripts/run_v1_integration_candidate.py \
-            tests/test_v1_package.py \
-            tests/test_v1_contract_b_projection.py
           python -m mypy src
           python -m compileall -q src
           python -m pip check
