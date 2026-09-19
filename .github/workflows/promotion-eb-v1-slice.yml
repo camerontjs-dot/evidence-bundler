@@ -114,7 +114,9 @@ jobs:
       - name: Maintained quality gates
         run: |
           python -m ruff check src tests scripts
-          python -m mypy src
+          if [ "${{ matrix.python-version }}" = "3.11" ]; then
+            python -m mypy src
+          fi
           python -m compileall -q src
           python -m pip check
           python -m pytest -q
