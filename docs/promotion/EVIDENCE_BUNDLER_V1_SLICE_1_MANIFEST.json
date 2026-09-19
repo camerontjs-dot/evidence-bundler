@@ -1,0 +1,69 @@
+{
+  "schema": "eb-v1-production-slice-candidate-v1",
+  "status": "ASSEMBLED_AWAITING_CROSS_REPOSITORY_QUALIFICATION",
+  "production_base": {
+    "repository": "camerontjs-dot/evidence-bundler",
+    "commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37"
+  },
+  "frozen_research_authority": {
+    "pr": 79,
+    "commit": "4e1f6fe00e7c350b28f52bfea14f1f8988847884",
+    "tree": "11fa35d4d3eeb5ece07269a3f3040fa23df982e4",
+    "tested_head": "8e1e15a96308d20be24b0bd0f0a4d554b0f020cc",
+    "profile_id": "eb-v1-integration-10x3-rc0",
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc"
+  },
+  "runtime_blob_pins": {
+    "src/evidence_bundler/v1/__init__.py": "8a074feeb4a6338b9291d4f6fdc667b96a9a17d7",
+    "src/evidence_bundler/v1/__main__.py": "fa64b3f551a338a9ac61b0b66ba00f9198198dd6",
+    "src/evidence_bundler/v1/builder.py": "b64416c222c03b5ce472275d86f801beff7e7380",
+    "src/evidence_bundler/v1/contract_a.py": "5799750389b1fbe8ec2da58af371242c161f6e13",
+    "src/evidence_bundler/v1/contract_b.py": "67c4ea3ce6e4680187743b12e42bdbff34e0d9bf",
+    "src/evidence_bundler/v1/package.py": "b2fc2459123fcceae63775c7851b0ca6ed38770b",
+    "src/evidence_bundler/v1/retrieval.py": "0258bacd085d83997ad43526c9173f9045e92e3b",
+    "scripts/run_v1_integration_candidate.py": "d756f98ad410a2491be89bb73bbb9c7963724e50",
+    "config/eb_v1_slice/INTEGRATION_PROFILE.json": "d29a9e5a6331ff9075bb520885e1ce201c6a1710",
+    "config/eb_v1_slice/contract_b_compatibility_carrier.json": "ddb16cd58baed833adfc4e81d7aef3745a5900f3"
+  },
+  "contracts": {
+    "input": {
+      "name": "Contract A",
+      "version": "2.0.0",
+      "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332"
+    },
+    "output": {
+      "name": "Contract B",
+      "version": "1.2.0",
+      "production_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+      "tag": "contract-b-v1.2.0"
+    }
+  },
+  "qualification_consumer": {
+    "repository": "camerontjs-dot/claim-audit-lab",
+    "pr": 181,
+    "commit": "61cab64149cb6119e4dbe1fe18496f3ccf89002f",
+    "disposition": "QUALIFIED_FOR_LOCAL_PIPELINE_RUNS"
+  },
+  "invocation": "python scripts/run_v1_integration_candidate.py CONTRACT_A.json --admission ADMISSION.json --compatibility-carrier config/eb_v1_slice/contract_b_compatibility_carrier.json --out-dir RUN_DIR/eb",
+  "release_posture": {
+    "current_package_version": "0.1.0",
+    "package_version_changed_in_slice": false,
+    "expected_release_compatibility_class": "pre-1.0 MINOR",
+    "expected_future_release_version": "0.2.0",
+    "reason_version_not_changed_yet": "producer_version participates in native package identity; qualify copied slice before creating a new versioned subject"
+  },
+  "deferred": [
+    "gate_informed_obligation_selector",
+    "subject_extractor_or_subject_production",
+    "expected_evidence_form_routing",
+    "typed_selector_rc1_falsified",
+    "semantic_reranker",
+    "query_rewrite",
+    "adaptive_k",
+    "contract_changes",
+    "cal_semantics",
+    "contract_c",
+    "decision_engine",
+    "authorization"
+  ]
+}
