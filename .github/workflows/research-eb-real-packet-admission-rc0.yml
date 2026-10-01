@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - research/eb-real-packet-admission-discrimination-rc0-20261001
+      - research-infra/eb-real-packet-admission-apparatus-a1-20261001
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify protected predecessor bytes
+        run: git diff --exit-code aad7206f49c94714f4664dccf4b32daa6039cb50 HEAD -- src scripts/run_v1_integration_candidate.py config pyproject.toml research/eb_real_packet_admission_discrimination_rc0_20261001/PREREGISTRATION.md
 
       - uses: actions/setup-python@v5
         with:

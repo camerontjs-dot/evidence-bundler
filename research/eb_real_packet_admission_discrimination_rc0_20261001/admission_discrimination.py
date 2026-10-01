@@ -16,18 +16,21 @@ import json
 from pathlib import Path
 from typing import Any
 
-SCHEMA_FREEZE = "eb-real-packet-admission-freeze-rc0-v1"
-SCHEMA_MAPPING = "eb-real-packet-admission-mapping-rc0-v1"
+SCHEMA_FREEZE = "eb-real-packet-admission-freeze-rc0-a1-v1"
+SCHEMA_MAPPING = "eb-real-packet-admission-mapping-rc0-a1-v1"
 SCHEMA_REVIEW_PACKET = "eb-real-packet-admission-review-packet-rc0-v1"
 SCHEMA_REVIEW = "eb-real-packet-admission-review-rc0-v1"
-SCHEMA_SUMMARY = "eb-real-packet-admission-summary-rc0-v1"
-SCHEMA_REPLAY = "eb-real-packet-admission-replay-rc0-v1"
+SCHEMA_SUMMARY = "eb-real-packet-admission-summary-rc0-a1-v1"
+SCHEMA_REPLAY = "eb-real-packet-admission-replay-rc0-a1-v1"
 ADMISSION_SCHEMA = "evidence-bundler-admission-v1"
 
 EB_SUBJECT = "08ca896debd6d16fa21be2f178ed7cbe62395d00"
 EB_VERSION = "0.2.0"
-EXPECTED_PACKAGE_SHA256 = (
+EXPECTED_RAW_FILE_SHA256 = (
     "sha256:8240ca5845b883068c1c9ba6a02e415989fb8d5162664024936d02e677bbd791"
+)
+EXPECTED_INTRINSIC_PACKAGE_SHA256 = (
+    "sha256:b9ddf8ecb735a31ba50011832bc462a4bd9c97ebc9105d537c9bfad8bfea16ba"
 )
 EXPECTED_CONTRACT_A_HANDOFF_SHA256 = (
     "sha256:b59ba3b35d2b1d8b0378ac277703cd4a8867ec1e88b8ea34be577df0c3eeb843"
@@ -92,13 +95,16 @@ def package_content_sha256(package: dict[str, Any]) -> str:
 
 
 def _validate_baseline_package(package: dict[str, Any]) -> list[dict[str, Any]]:
-    if package.get("package_sha256") != EXPECTED_PACKAGE_SHA256:
+    if package_content_sha256(package) != package.get("package_sha256"):
         raise ApparatusError(
-            "baseline package identity mismatch: "
-            f"expected {EXPECTED_PACKAGE_SHA256}, got {package.get('package_sha256')!r}"
+            "baseline intrinsic payload digest does not reproduce embedded package_sha256"
         )
-    if package_content_sha256(package) != EXPECTED_PACKAGE_SHA256:
-        raise ApparatusError("baseline package bytes do not reproduce package_sha256")
+    if package.get("package_sha256") != EXPECTED_INTRINSIC_PACKAGE_SHA256:
+        raise ApparatusError(
+            "baseline intrinsic package identity mismatch: "
+            f"expected {EXPECTED_INTRINSIC_PACKAGE_SHA256}, "
+            f"got {package.get('package_sha256')!r}"
+        )
 
     producer = package.get("producer")
     if not isinstance(producer, dict) or producer.get("producer_version") != EB_VERSION:
@@ -131,6 +137,21 @@ def _validate_baseline_package(package: dict[str, Any]) -> list[dict[str, Any]]:
     return retained
 
 
+def _validate_baseline_file(
+    package_path: Path, package: dict[str, Any]
+) -> list[dict[str, Any]]:
+    raw_bytes = package_path.read_bytes()
+    observed_raw = hash_bytes(raw_bytes)
+    if observed_raw != EXPECTED_RAW_FILE_SHA256:
+        raise ApparatusError(
+            "baseline raw-file identity mismatch: "
+            f"expected {EXPECTED_RAW_FILE_SHA256}, got {observed_raw}"
+        )
+    if raw_bytes != canonical_json_bytes(package):
+        raise ApparatusError("baseline is not canonical V1 package bytes")
+    return _validate_baseline_package(package)
+
+
 def _coordinate_sort_key(row: dict[str, Any]) -> str:
     return hash_json(
         {
@@ -146,7 +167,7 @@ def freeze(package_path: Path, out_dir: Path) -> dict[str, Any]:
     package = load_json(package_path)
     if not isinstance(package, dict):
         raise ApparatusError("baseline package must be a JSON object")
-    retained = _validate_baseline_package(package)
+    retained = _validate_baseline_file(package_path, package)
 
     targets = {
         str(row["proposition_id"]): str(row["text"])
@@ -183,7 +204,8 @@ def freeze(package_path: Path, out_dir: Path) -> dict[str, Any]:
     mapping = {
         "schema": SCHEMA_MAPPING,
         "eb_subject": EB_SUBJECT,
-        "baseline_package_sha256": EXPECTED_PACKAGE_SHA256,
+        "baseline_raw_file_sha256": EXPECTED_RAW_FILE_SHA256,
+        "baseline_intrinsic_package_sha256": EXPECTED_INTRINSIC_PACKAGE_SHA256,
         "rows": mapping_rows,
     }
     review_packet = {
@@ -227,7 +249,8 @@ def freeze(package_path: Path, out_dir: Path) -> dict[str, Any]:
         "status": "FROZEN_FOR_SEPARATE_REVIEW",
         "eb_subject": EB_SUBJECT,
         "eb_version": EB_VERSION,
-        "baseline_package_sha256": EXPECTED_PACKAGE_SHA256,
+        "baseline_raw_file_sha256": EXPECTED_RAW_FILE_SHA256,
+        "baseline_intrinsic_package_sha256": EXPECTED_INTRINSIC_PACKAGE_SHA256,
         "contract_a_handoff_sha256": EXPECTED_CONTRACT_A_HANDOFF_SHA256,
         "candidate_count": EXPECTED_CANDIDATES,
         "retained_count": EXPECTED_RETAINED,
@@ -317,7 +340,9 @@ def evaluate(
         raise ApparatusError("invalid freeze receipt")
     if (
         receipt.get("eb_subject") != EB_SUBJECT
-        or receipt.get("baseline_package_sha256") != EXPECTED_PACKAGE_SHA256
+        or receipt.get("baseline_raw_file_sha256") != EXPECTED_RAW_FILE_SHA256
+        or receipt.get("baseline_intrinsic_package_sha256")
+        != EXPECTED_INTRINSIC_PACKAGE_SHA256
         or receipt.get("contract_a_handoff_sha256")
         != EXPECTED_CONTRACT_A_HANDOFF_SHA256
         or receipt.get("candidate_count") != EXPECTED_CANDIDATES
@@ -329,7 +354,9 @@ def evaluate(
         raise ApparatusError("invalid private mapping")
     if (
         mapping.get("eb_subject") != EB_SUBJECT
-        or mapping.get("baseline_package_sha256") != EXPECTED_PACKAGE_SHA256
+        or mapping.get("baseline_raw_file_sha256") != EXPECTED_RAW_FILE_SHA256
+        or mapping.get("baseline_intrinsic_package_sha256")
+        != EXPECTED_INTRINSIC_PACKAGE_SHA256
     ):
         raise ApparatusError("private mapping authority mismatch")
     if not isinstance(packet, dict) or packet.get("schema") != SCHEMA_REVIEW_PACKET:
@@ -442,7 +469,8 @@ def evaluate(
         "research_state": research_state,
         "bounded_result": bounded_result,
         "eb_subject": EB_SUBJECT,
-        "baseline_package_sha256": EXPECTED_PACKAGE_SHA256,
+        "baseline_raw_file_sha256": EXPECTED_RAW_FILE_SHA256,
+        "baseline_intrinsic_package_sha256": EXPECTED_INTRINSIC_PACKAGE_SHA256,
         "freeze_receipt_sha256": hash_file(freeze_path),
         "review_artifact_sha256": review_hashes,
         "reviewers_distinct": reviewer_names[0] != reviewer_names[1],
@@ -531,7 +559,7 @@ def verify_replay(
         isinstance(value, dict) for value in (baseline, run_one, run_two, admission)
     ):
         raise ApparatusError("replay inputs must be JSON objects")
-    _validate_baseline_package(baseline)
+    _validate_baseline_file(baseline_path, baseline)
 
     for label, package in (("run_one", run_one), ("run_two", run_two)):
         if package_content_sha256(package) != package.get("package_sha256"):
@@ -600,10 +628,13 @@ def verify_replay(
         "schema": SCHEMA_REPLAY,
         "status": "PASS",
         "eb_subject": EB_SUBJECT,
-        "baseline_package_sha256": baseline["package_sha256"],
+        "baseline_raw_file_sha256": EXPECTED_RAW_FILE_SHA256,
+        "baseline_intrinsic_package_sha256": baseline["package_sha256"],
         "admission_sha256": hash_file(admission_path),
-        "run_one_package_sha256": run_one["package_sha256"],
-        "run_two_package_sha256": run_two["package_sha256"],
+        "run_one_intrinsic_package_sha256": run_one["package_sha256"],
+        "run_two_intrinsic_package_sha256": run_two["package_sha256"],
+        "run_one_raw_file_sha256": hash_bytes(run_one_bytes),
+        "run_two_raw_file_sha256": hash_bytes(run_two_bytes),
         "byte_identical_replay": True,
         "only_retained_admission_state_changed": True,
         "admission_states_equal_sidecar": True,
