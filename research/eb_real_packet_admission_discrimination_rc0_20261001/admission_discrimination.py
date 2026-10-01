@@ -141,6 +141,8 @@ def _coordinate_sort_key(row: dict[str, Any]) -> str:
 
 
 def freeze(package_path: Path, out_dir: Path) -> dict[str, Any]:
+    if out_dir.exists() and any(out_dir.iterdir()):
+        raise ApparatusError(f"refusing non-empty freeze output directory: {out_dir}")
     package = load_json(package_path)
     if not isinstance(package, dict):
         raise ApparatusError("baseline package must be a JSON object")
@@ -306,10 +308,30 @@ def evaluate(
     receipt = load_json(freeze_path)
     mapping = load_json(mapping_path)
     packet = load_json(packet_path)
+    if summary_path.exists():
+        raise ApparatusError(f"refusing existing summary output: {summary_path}")
+    if admission_path is not None and admission_path.exists():
+        raise ApparatusError(f"refusing existing admission output: {admission_path}")
+
     if not isinstance(receipt, dict) or receipt.get("schema") != SCHEMA_FREEZE:
         raise ApparatusError("invalid freeze receipt")
+    if (
+        receipt.get("eb_subject") != EB_SUBJECT
+        or receipt.get("baseline_package_sha256") != EXPECTED_PACKAGE_SHA256
+        or receipt.get("contract_a_handoff_sha256")
+        != EXPECTED_CONTRACT_A_HANDOFF_SHA256
+        or receipt.get("candidate_count") != EXPECTED_CANDIDATES
+        or receipt.get("retained_count") != EXPECTED_RETAINED
+        or receipt.get("accepted_count") != EXPECTED_ACCEPTED
+    ):
+        raise ApparatusError("freeze receipt authority/count mismatch")
     if not isinstance(mapping, dict) or mapping.get("schema") != SCHEMA_MAPPING:
         raise ApparatusError("invalid private mapping")
+    if (
+        mapping.get("eb_subject") != EB_SUBJECT
+        or mapping.get("baseline_package_sha256") != EXPECTED_PACKAGE_SHA256
+    ):
+        raise ApparatusError("private mapping authority mismatch")
     if not isinstance(packet, dict) or packet.get("schema") != SCHEMA_REVIEW_PACKET:
         raise ApparatusError("invalid private review packet")
     if hash_file(mapping_path) != receipt.get("private_mapping_sha256"):
@@ -323,10 +345,27 @@ def evaluate(
     aliases = {str(row["candidate_alias"]) for row in rows}
     if len(aliases) != EXPECTED_RETAINED:
         raise ApparatusError("mapping aliases must be unique")
+    retained_projection = [
+        {
+            "proposition_id": row["proposition_id"],
+            "passage_id": row["passage_id"],
+            "nomination_rank": row["nomination_rank"],
+        }
+        for row in rows
+    ]
+    if hash_json(retained_projection) != receipt.get("retained_set_sha256"):
+        raise ApparatusError("private mapping retained-set binding mismatch")
 
     packet_rows = packet.get("rows")
     if not isinstance(packet_rows, list):
         raise ApparatusError("review packet rows must be an array")
+    for row in packet_rows:
+        if not isinstance(row, dict) or set(row) != {
+            "candidate_alias",
+            "proposition_text",
+            "passage_text",
+        }:
+            raise ApparatusError("review packet leaked or omitted candidate fields")
     packet_aliases = {str(row.get("candidate_alias")) for row in packet_rows}
     if packet_aliases != aliases:
         raise ApparatusError("review packet aliases do not match mapping aliases")
@@ -482,6 +521,8 @@ def verify_replay(
     admission_path: Path,
     receipt_path: Path,
 ) -> dict[str, Any]:
+    if receipt_path.exists():
+        raise ApparatusError(f"refusing existing replay receipt: {receipt_path}")
     baseline = load_json(baseline_path)
     run_one = load_json(run_one_path)
     run_two = load_json(run_two_path)
@@ -509,18 +550,40 @@ def verify_replay(
                 f"{label} changed state outside retained admission_state"
             )
 
-    if canonical_json_bytes(run_one) != canonical_json_bytes(run_two):
-        raise ApparatusError("two admission replays are not byte-identical")
+    run_one_bytes = run_one_path.read_bytes()
+    run_two_bytes = run_two_path.read_bytes()
+    if run_one_bytes != canonical_json_bytes(run_one):
+        raise ApparatusError("run_one is not canonical V1 package bytes")
+    if run_two_bytes != canonical_json_bytes(run_two):
+        raise ApparatusError("run_two is not canonical V1 package bytes")
+    if run_one_bytes != run_two_bytes:
+        raise ApparatusError("two admission replays are not raw-byte-identical")
+    if run_one.get("package_sha256") == baseline.get("package_sha256"):
+        raise ApparatusError("positive admission replay did not change package identity")
 
     if admission.get("schema") != ADMISSION_SCHEMA or not isinstance(
         admission.get("decisions"), list
     ):
         raise ApparatusError("invalid admission sidecar")
-
-    expected = {
-        (str(row["proposition_id"]), str(row["passage_id"])): str(row["decision"])
-        for row in admission["decisions"]
-    }
+    expected: dict[tuple[str, str], str] = {}
+    for index, row in enumerate(admission["decisions"]):
+        if not isinstance(row, dict) or set(row) != {
+            "proposition_id",
+            "passage_id",
+            "decision",
+        }:
+            raise ApparatusError(f"malformed admission decision at index {index}")
+        key = (str(row["proposition_id"]), str(row["passage_id"]))
+        decision = str(row["decision"])
+        if decision not in DECISIONS:
+            raise ApparatusError(f"invalid admission decision at index {index}")
+        if key in expected:
+            raise ApparatusError(f"duplicate admission coordinate: {key!r}")
+        expected[key] = decision
+    if not any(decision == "accepted" for decision in expected.values()):
+        raise ApparatusError("positive replay sidecar must accept at least one candidate")
+    if all(decision == "accepted" for decision in expected.values()):
+        raise ApparatusError("positive replay sidecar must retain a nonaccepted candidate")
     observed = {
         (str(row["proposition_id"]), str(row["passage_id"])): str(
             row["admission_state"]
