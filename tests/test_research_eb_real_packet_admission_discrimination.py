@@ -363,3 +363,85 @@ def test_replay_verifier_proves_only_admission_state_changed(
     assert receipt["byte_identical_replay"] is True
     assert receipt["only_retained_admission_state_changed"] is True
     assert receipt["admission_states_equal_sidecar"] is True
+
+
+def test_evaluate_rejects_review_packet_field_leak(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _package, freeze_path, mapping_path, packet_path, receipt = _freeze(
+        tmp_path, monkeypatch
+    )
+    packet = json.loads(packet_path.read_text())
+    packet["rows"][0]["nomination_rank"] = 1
+    _write(packet_path, packet)
+    receipt["private_review_packet_sha256"] = APP.hash_file(packet_path)
+    _write(freeze_path, receipt)
+
+    with pytest.raises(APP.ApparatusError, match="leaked or omitted"):
+        APP.evaluate(
+            freeze_path,
+            mapping_path,
+            packet_path,
+            [tmp_path / "unused-review-one.json", tmp_path / "unused-review-two.json"],
+            tmp_path / "summary.json",
+            tmp_path / "admission.json",
+        )
+
+
+def test_replay_verifier_rejects_non_admission_drift(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    package, freeze_path, mapping_path, packet_path, _receipt = _freeze(
+        tmp_path, monkeypatch
+    )
+    mapping = json.loads(mapping_path.read_text())
+    non_rank1 = next(
+        row["candidate_alias"] for row in mapping["rows"] if row["nomination_rank"] == 2
+    )
+    one = _review(
+        packet_path,
+        mapping_path,
+        reviewer="reviewer-one",
+        accepted_aliases={non_rank1},
+    )
+    two = _review(
+        packet_path,
+        mapping_path,
+        reviewer="reviewer-two",
+        accepted_aliases={non_rank1},
+    )
+    summary, admission_path = _evaluate(
+        tmp_path, freeze_path, mapping_path, packet_path, one, two
+    )
+    assert summary["research_state"] == "CONTINUE_TO_REPLAY"
+
+    admission = json.loads(admission_path.read_text())
+    decisions = {
+        (row["proposition_id"], row["passage_id"]): row["decision"]
+        for row in admission["decisions"]
+    }
+    admitted = copy.deepcopy(package)
+    for row in admitted["candidates"]:
+        key = (row["proposition_id"], row["passage_id"])
+        if key in decisions:
+            row["admission_state"] = decisions[key]
+    admitted["candidates"][0]["text"] = "mutated non-admission state"
+    admitted["package_sha256"] = APP.package_content_sha256(admitted)
+
+    baseline_path = tmp_path / "baseline-drift.json"
+    run_one_path = tmp_path / "run-one-drift.json"
+    run_two_path = tmp_path / "run-two-drift.json"
+    _write(baseline_path, package)
+    _write(run_one_path, admitted)
+    _write(run_two_path, admitted)
+
+    with pytest.raises(APP.ApparatusError, match="outside retained admission_state"):
+        APP.verify_replay(
+            baseline_path,
+            run_one_path,
+            run_two_path,
+            admission_path,
+            tmp_path / "drift-receipt.json",
+        )
