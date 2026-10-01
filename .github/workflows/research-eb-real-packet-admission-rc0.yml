@@ -1,0 +1,38 @@
+name: Research EB real-packet admission discrimination RC0
+
+on:
+  push:
+    branches:
+      - research/eb-real-packet-admission-discrimination-rc0-20261001
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apparatus:
+    name: Research apparatus / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install development dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Lint research apparatus
+        run: python -m ruff check research/eb_real_packet_admission_discrimination_rc0_20261001/admission_discrimination.py tests/test_research_eb_real_packet_admission_discrimination.py
+
+      - name: Run frozen synthetic controls
+        run: python -m pytest -q tests/test_research_eb_real_packet_admission_discrimination.py
