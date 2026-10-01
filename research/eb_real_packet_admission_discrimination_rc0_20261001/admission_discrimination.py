@@ -374,19 +374,24 @@ def evaluate(
 
     if disagreements:
         primary_disposition = "INCONCLUSIVE"
+        research_state = "TERMINAL"
         bounded_result = "REVIEW_DISAGREEMENT"
     elif not accepted_aliases:
         primary_disposition = "FALSIFIED"
+        research_state = "TERMINAL"
         bounded_result = "ADMISSION_ONLY_FALSIFIED_FOR_FROZEN_PACKET"
     elif accepted_aliases == all_aliases:
         primary_disposition = "INCONCLUSIVE"
+        research_state = "TERMINAL"
         bounded_result = "NO_NEGATIVE_DISCRIMINATION_HEADROOM"
     elif accepted_aliases == rank1_aliases:
         primary_disposition = "INCONCLUSIVE"
+        research_state = "TERMINAL"
         bounded_result = "RANK1_WEAK_CONTROL_NOT_DISCRIMINATED"
     else:
-        primary_disposition = "SUPPORTED FOR PROMOTION"
-        bounded_result = "BOUNDED_POSITIVE_ADMISSION_DISCRIMINATION"
+        primary_disposition = None
+        research_state = "CONTINUE_TO_REPLAY"
+        bounded_result = "POSITIVE_ADMISSION_REVIEW_GATE_PASSED"
 
     counts = {decision: 0 for decision in sorted(DECISIONS)}
     for decision, _reason in consensus.values():
@@ -395,6 +400,7 @@ def evaluate(
     summary = {
         "schema": SCHEMA_SUMMARY,
         "primary_disposition": primary_disposition,
+        "research_state": research_state,
         "bounded_result": bounded_result,
         "eb_subject": EB_SUBJECT,
         "baseline_package_sha256": EXPECTED_PACKAGE_SHA256,
@@ -428,12 +434,13 @@ def evaluate(
                 "review admission does not establish support, refutation, truth, "
                 "authority, or applicability"
             ),
+            "the review gate alone is not SUPPORTED FOR PROMOTION",
             "this result does not qualify automated admission",
             "this result does not promote PR #119 selector machinery",
         ],
     }
 
-    if primary_disposition == "SUPPORTED FOR PROMOTION":
+    if research_state == "CONTINUE_TO_REPLAY":
         if admission_path is None:
             raise ApparatusError("supported result requires --admission-out")
         mapping_by_alias = {str(row["candidate_alias"]): row for row in rows}
