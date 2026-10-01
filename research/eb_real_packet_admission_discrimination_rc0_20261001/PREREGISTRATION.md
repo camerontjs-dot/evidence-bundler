@@ -204,6 +204,8 @@ All of the following are required before the bounded positive result may be assi
 9. the emitted Contract B `1.2` artifacts validate under the exact released Contract B authority;
 10. CAL and Decision outputs are not used to pass, fail, tune, or adjudicate the experiment.
 
+A positive review gate is nonterminal. After conditions 1–5, the evaluator may emit the existing V1 admission sidecar and record `CONTINUE_TO_REPLAY`; it must not assign `SUPPORTED FOR PROMOTION`. Terminal support is available only after the replay and Contract B requirements in conditions 6–10 are also observed.
+
 If all hold, the primary research disposition may be:
 
 `SUPPORTED FOR PROMOTION`
