@@ -37,3 +37,27 @@ Classification:
 - no acceptance threshold, falsifier, weak control, or protected runtime behavior changed.
 
 The earlier commits remain in the branch history rather than being rewritten.
+
+## 2026-10-01 — pre-freeze apparatus hardening gaps
+
+A second adversarial apparatus review found three fail-closed gaps before any private freeze:
+
+1. freeze/evaluation/replay outputs could overwrite an existing path;
+2. review-packet validation checked alias coverage but did not mechanically reject extra fields such as nomination rank;
+3. replay identity compared canonicalized JSON values rather than the exact emitted file bytes.
+
+The research apparatus was hardened to:
+
+- refuse non-empty or pre-existing output targets;
+- bind the private mapping back to the public retained-set hash and exact subject/count authority;
+- reject any reviewer-packet row whose fields differ from `candidate_alias`, `proposition_text`, and `passage_text`;
+- require raw replay bytes to be identical and individually canonical;
+- validate explicit admission rows for shape, allowed decisions, duplicates, and mixed accepted/nonaccepted state;
+- add negative controls for reviewer-field leakage and non-admission replay drift.
+
+Classification:
+
+- evaluator/apparatus hardening;
+- discovered pre-freeze;
+- no private packet, reviewer judgment, CAL output, or Decision output exposed;
+- no scientific criterion or protected EB runtime behavior changed.
