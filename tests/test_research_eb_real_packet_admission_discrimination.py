@@ -196,8 +196,9 @@ def test_mixed_exact_review_that_beats_rank1_supports_bounded_admission(
         tmp_path, freeze_path, mapping_path, packet_path, one, two
     )
 
-    assert summary["primary_disposition"] == "SUPPORTED FOR PROMOTION"
-    assert summary["bounded_result"] == "BOUNDED_POSITIVE_ADMISSION_DISCRIMINATION"
+    assert summary["primary_disposition"] is None
+    assert summary["research_state"] == "CONTINUE_TO_REPLAY"
+    assert summary["bounded_result"] == "POSITIVE_ADMISSION_REVIEW_GATE_PASSED"
     assert summary["exact_review_agreement"] is True
     assert summary["consensus_counts"]["accepted"] == 1
     assert summary["weak_controls"]["rank1_would_match_consensus"] is False
@@ -327,7 +328,8 @@ def test_replay_verifier_proves_only_admission_state_changed(
     summary, admission_path = _evaluate(
         tmp_path, freeze_path, mapping_path, packet_path, one, two
     )
-    assert summary["primary_disposition"] == "SUPPORTED FOR PROMOTION"
+    assert summary["primary_disposition"] is None
+    assert summary["research_state"] == "CONTINUE_TO_REPLAY"
 
     admission = json.loads(admission_path.read_text())
     decisions = {
