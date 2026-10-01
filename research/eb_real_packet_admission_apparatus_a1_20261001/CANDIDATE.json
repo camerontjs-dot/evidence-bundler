@@ -1,0 +1,58 @@
+{
+  "advancement_readiness": "QUALIFICATION_NOT_RUN",
+  "blockers": [],
+  "branch": "research-infra/eb-real-packet-admission-apparatus-a1-20261001",
+  "candidate_id": "eb-real-packet-admission-apparatus-a1-20261001",
+  "component_evidence": {
+    "python": "3.11.15",
+    "ruff": "PASS",
+    "stage": "pre-freeze development",
+    "synthetic_controls_failed": 0,
+    "synthetic_controls_passed": 32,
+    "weak_conflated_control": "FAILS_POSITIVE_FREEZE_GATE_FOR_RAW_INTRINSIC_DOMAIN_ERROR"
+  },
+  "eb_subject": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+  "eb_version": "0.2.0",
+  "excluded_scope": [
+    "RC0 scientific criteria",
+    "private scientific reviewers",
+    "production V1 behavior",
+    "Contract behavior",
+    "retrieval",
+    "version/release/merge/promotion"
+  ],
+  "expected_baseline_intrinsic_package_sha256": "sha256:b9ddf8ecb735a31ba50011832bc462a4bd9c97ebc9105d537c9bfad8bfea16ba",
+  "expected_baseline_raw_file_sha256": "sha256:8240ca5845b883068c1c9ba6a02e415989fb8d5162664024936d02e677bbd791",
+  "expected_contract_a_handoff_sha256": "sha256:b59ba3b35d2b1d8b0378ac277703cd4a8867ec1e88b8ea34be577df0c3eeb843",
+  "external_inputs": [
+    "exact preserved PR #153 baseline native file; raw and intrinsic identities bound separately"
+  ],
+  "freeze_envelope": "External pre-execution receipt binds this manifest commit and final CI without self-reference; evidence may be appended outside the frozen source.",
+  "fresh_scientific_review_evidence": "NOT_RUN",
+  "included_scope": [
+    "research-only identity-domain validation",
+    "explicit identity-domain receipts",
+    "synthetic identity and fail-closed controls",
+    "apparatus CI"
+  ],
+  "lifecycle_state": "frozen",
+  "nonclaims": [
+    "no scientific admission result",
+    "no EB promotion",
+    "no retrieval evidence",
+    "no CAL or Decision evidence",
+    "no production authorization"
+  ],
+  "predecessor_apparatus_blob": "814204dc8b9eafac3f53e64cf2418c7b435f6d3b",
+  "predecessor_blocked_apparatus_head": "aad7206f49c94714f4664dccf4b32daa6039cb50",
+  "private_content_exposed_to_reviewers": false,
+  "private_freeze_boundary_evidence": "NOT_RUN",
+  "project": "evidence-bundler",
+  "replay_evidence": "SYNTHETIC_ONLY",
+  "schema": "eb-research-infrastructure-candidate-v1",
+  "scientific_preregistration_blob": "d1633371951a7d0e1128979e0fc946759b6806db",
+  "source_apparatus_blob": "67ce88d72f5dbff179b4cccff087add48592e347",
+  "source_commit": "24b7f9c59509f3370d127c901caa2fe0daf515f1",
+  "source_tests_blob": "522d429957737378165eee4af443d4d24875202c",
+  "source_tree": "e24964bb2047e63b74258a3bac47fd46e72fee30"
+}
