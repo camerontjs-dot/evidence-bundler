@@ -73,7 +73,7 @@ python research/eb_real_packet_admission_discrimination_rc0_20261001/admission_d
   --admission-out <private-rc0-dir>/admission.json
 ```
 
-The evaluator enforces the preregistered falsifier and weak controls. It emits an admission sidecar only when the bounded support gate clears.
+The evaluator enforces the preregistered falsifier and weak controls. A positive review gate records `CONTINUE_TO_REPLAY` and emits the existing admission sidecar, but it is not a terminal `SUPPORTED FOR PROMOTION` result.
 
 ### 4. Replay the exact V1 subject twice
 
