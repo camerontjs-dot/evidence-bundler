@@ -1,0 +1,39 @@
+name: Research child and subject RC1 apparatus
+
+on:
+  pull_request:
+    branches: [promotion/eb-v1-slice-1-20260918]
+    paths:
+      - research/eb_child_subject_retrieval_rc1_20261001/**
+      - .github/workflows/research-eb-child-subject-rc1.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apparatus:
+    name: Python ${{ matrix.python }} apparatus only
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install mechanical apparatus dependencies
+        run: python -m pip install pytest==9.1.1 ruff==0.16.10
+      - name: Lint isolated research files
+        run: python -m ruff check research/eb_child_subject_retrieval_rc1_20261001
+      - name: Mechanical adversarial and weak controls
+        run: python -m pytest -q research/eb_child_subject_retrieval_rc1_20261001/test_apparatus.py
+      - name: Verify exact frozen source and protected bytes
+        run: python research/eb_child_subject_retrieval_rc1_20261001/verify_freeze.py
+
+# No private sources, embeddings, reviewer service calls or scientific execution.
