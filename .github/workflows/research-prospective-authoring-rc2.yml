@@ -1,0 +1,32 @@
+name: RC2 prospective authoring apparatus
+on:
+  pull_request:
+    paths:
+      - 'research/eb_prospective_authoring_retrieval_rc2_20261002/**'
+      - '.github/workflows/research-prospective-authoring-rc2.yml'
+permissions:
+  contents: read
+jobs:
+  apparatus:
+    name: RC2 Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install mechanical test tools only
+        run: python -m pip install pytest==8.4.2 ruff==0.12.12
+      - name: Ruff
+        run: python -m ruff check research/eb_prospective_authoring_retrieval_rc2_20261002
+      - name: Frozen synthetic apparatus checks
+        run: python -m pytest research/eb_prospective_authoring_retrieval_rc2_20261002/test_population.py -q
+      - name: Protected production bytes
+        run: |
+          git fetch --no-tags origin 08ca896debd6d16fa21be2f178ed7cbe62395d00
+          git diff --exit-code 08ca896debd6d16fa21be2f178ed7cbe62395d00 -- src/evidence_bundler/v1 scripts/run_v1_integration_candidate.py config/eb_v1_slice pyproject.toml
+
