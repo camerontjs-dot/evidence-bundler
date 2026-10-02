@@ -1,0 +1,40 @@
+{
+  "candidate_source_commit": "ee207de859b8fbccdd559084fd96dd3e67f0cb48",
+  "candidate_source_tree": "67138e2d6191128699d21b2298a710a515b4454c",
+  "decisive_execution_authorized": false,
+  "experiment_id": "eb-child-subject-retrieval-rc1-20261001",
+  "failures_and_deviations": "DEVIATIONS.json",
+  "fresh_outcomes_exposed": false,
+  "hypotheses": [
+    "H1 structural+subject headroom",
+    "H2 subject increment only",
+    "H3 child increment only",
+    "H4 generic lexical/query expansion",
+    "H5 historical-only failure to generalize",
+    "H6 no local adequacy in frozen depth"
+  ],
+  "mechanical_evidence": "APPARATUS-RESULTS.PUBLIC.json",
+  "mechanism_dispositions": null,
+  "next_authorized_step": "Bind eligible fresh claims, then exact claim-native subjects, then source bytes and handoffs; no retrieval or reviewers.",
+  "phase": "PREREGISTERED_SOURCE_CANDIDATE",
+  "policy_blob": "61c9be9a070b0ecd996e58becb06bf16a8840a03",
+  "population_design": {
+    "actual_identities": "UNBOUND",
+    "all_of_parents_per_packet": 4,
+    "children": 24,
+    "parents": 12,
+    "real_packets": 3,
+    "required_children_per_parent": 2
+  },
+  "predecessors": {
+    "RC0_infrastructure_only": "cf55ba0128a5cbfc696f4740f9807a2d334c1bff",
+    "convergence": "b40a36e82821f7206243a1c675e2462a20ca0b76",
+    "protected_baseline": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "terminal_RC0": "aad7206f49c94714f4664dccf4b32daa6039cb50"
+  },
+  "preregistration_blob": "519a42bf672c3b8ea9b33e282fbb6ec0e3d71f2a",
+  "primary_disposition": null,
+  "research_class": "Research",
+  "schema": "eb-child-subject-experiment-record-v1",
+  "state": "BLOCKED_BEFORE_FRESH_POPULATION_BINDING"
+}
