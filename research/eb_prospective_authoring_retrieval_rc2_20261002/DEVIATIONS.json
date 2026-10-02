@@ -1,0 +1,48 @@
+{
+  "first_test_failures": [],
+  "records": [
+    {
+      "conclusion_effect": "none; bounded later retry recovered live authority",
+      "continuation": "yes after direct live recovery",
+      "event": "GitHub secondary rate limit on first Proposition Authoring search",
+      "exposure": "public metadata only",
+      "invalidated": "initial incomplete upstream lookup"
+    },
+    {
+      "conclusion_effect": "none",
+      "continuation": "yes; valid checkout/object authority recovered; no cleanup",
+      "event": "Invalid git cache marker and missing historical object in first lookup checkout",
+      "exposure": "metadata only",
+      "invalidated": "those lookup results"
+    },
+    {
+      "conclusion_effect": "catalogue incomplete until reconciliation",
+      "continuation": "live PR114 head b0467920f042670afe89ef135e170b4df74bd6e5 resolved; append-only final catalogue; predecessor untouched",
+      "event": "PR119 evidence index contains invalid PR114 ref b0467920f042670afe59797ea0e94b1538e3fa2cd",
+      "exposure": "historical public code hashes only",
+      "invalidated": "first exclusion catalogue"
+    },
+    {
+      "conclusion_effect": "owner cannot be a fresh author/checker; counts do not select roots",
+      "continuation": "separate qualified fresh role apertures required",
+      "event": "Owner inspected prior naturalistic pool metadata, root bytes, builder and aggregate authorability counts",
+      "exposure": "root text and old aggregate counts; no new source body, per-case label or retrieval outcome",
+      "invalidated": "any owner independence claim"
+    },
+    {
+      "conclusion_effect": "none after recovery",
+      "continuation": "yes; complete captures preserved locally",
+      "event": "Some broad read outputs truncated; required context subsequently recovered",
+      "exposure": "public metadata/private locators; no new outcome",
+      "invalidated": "truncated reads as authority"
+    },
+    {
+      "conclusion_effect": "none",
+      "continuation": "yes; encoding corrected before preregistration commit",
+      "event": "Initial preregistration patch rejected invalid empty trailing hunk before writing files",
+      "exposure": "public proposed policy only",
+      "invalidated": "failed file creation"
+    }
+  ],
+  "schema": "eb-rc2-setup-deviations-v1"
+}
