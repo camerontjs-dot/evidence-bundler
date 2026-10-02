@@ -1,0 +1,53 @@
+{
+  "authorizations": {
+    "later_bounded_public_execution": "ONLY_AFTER_FROZEN_PREREQUISITES",
+    "merge_release_promotion": false,
+    "population_construction": false,
+    "private_transmission": false,
+    "public_qualification_preparation": true,
+    "retrieval": false
+  },
+  "deviations": [],
+  "hosted_ci": "PENDING_PR_CREATION; later CI establishes mechanical setup only",
+  "mechanical_evidence": {
+    "boundary_mutations_rejected": 2,
+    "protected_base_diff": "EMPTY",
+    "python_3_11": "PASS",
+    "python_3_12_local": "NOT_RUN",
+    "python_3_14_4": "PASS",
+    "root_only_capsules_checked": 12,
+    "semantic_evaluator_invocations": 0,
+    "sensitive_path_token_scan": "NO_MATCH_IN_NEW_PUBLIC_FILES",
+    "target_model_invocations": 0,
+    "upstream_three_blobs": "EXACT"
+  },
+  "operator_exposure": "Setup owner authored roots/oracle and has prior context; cannot act as a fresh profile writer, target or semantic evaluator. A new verified fresh writer is required.",
+  "phase": "SETUP_FROZEN_EXECUTION_NOT_RUN",
+  "preregistration_commit": "bc2142049dd43888823fb5a73fda7ab0c90fa964",
+  "root_population": {
+    "eligible": 8,
+    "ineligible": 4,
+    "metamorphic_pairs": 4,
+    "roots": 12,
+    "synthetic": true
+  },
+  "schema": "eb-root-generation-public-setup-receipt-v1",
+  "source_commit": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f",
+  "source_tree": "b1ca0998349f8805c26f2be3bf06f52a897cc8e6",
+  "unknowns": [
+    "actual generation quality",
+    "semantic evaluator qualification",
+    "primary/evaluator prompt/config bytes",
+    "actual model/runtime/destination identity",
+    "operational no-history/aperture/custody",
+    "private population authorability"
+  ],
+  "upstream_pr_124": {
+    "disposition": "BLOCKED_BEFORE_POPULATION_AUTHORING",
+    "live_head": "bc3d887f27991c215e251875b964f205e478df21",
+    "modified": false,
+    "source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+    "source_tree": "6a708e651bafeae2f7f09dab6a95295a4fd38a89",
+    "state": "OPEN_DRAFT"
+  }
+}
