@@ -1,0 +1,141 @@
+{
+  "evidence_layer": "exposed synthetic development controls; actual semantic model calibration NOT_RUN",
+  "gold": {
+    "partial_all_of_aliases": [
+      "c7",
+      "c8"
+    ],
+    "rows": [
+      {
+        "alias": "c1",
+        "decision": "accepted",
+        "reason": "on_target_adequate"
+      },
+      {
+        "alias": "c2",
+        "decision": "rejected",
+        "reason": "insufficient_context"
+      },
+      {
+        "alias": "c3",
+        "decision": "rejected",
+        "reason": "wrong_subject"
+      },
+      {
+        "alias": "c4",
+        "decision": "rejected",
+        "reason": "wrong_target"
+      },
+      {
+        "alias": "c5",
+        "decision": "accepted",
+        "reason": "on_target_adequate"
+      },
+      {
+        "alias": "c6",
+        "decision": "accepted",
+        "reason": "on_target_adequate"
+      },
+      {
+        "alias": "c7",
+        "decision": "accepted",
+        "reason": "on_target_adequate"
+      },
+      {
+        "alias": "c8",
+        "decision": "needs-review",
+        "reason": "uncertain"
+      }
+    ]
+  },
+  "packet": {
+    "rows": [
+      {
+        "alias": "c1",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Cedar completed the pressure check and logged the observed reading in its local run record.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c2",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Cedar pressure-check overview: pressure checks are part of the system.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c3",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Birch completed the pressure check and logged the observed reading in its local run record.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c4",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Cedar issued a software status report; it lists the installed version and update time.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c5",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Cedar did not complete the pressure check; the local run record lists an interruption before the measurement.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c6",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "The entry for Unit Cedar says the pressure-check completion status is unresolved because the completion event is missing; it includes the attempted check and interruption sequence.",
+        "proposition": "Unit Cedar completed the pressure check."
+      },
+      {
+        "alias": "c7",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "For Unit Cedar, the local run record records a completed cooling check, including the check procedure and observed final reading.",
+        "proposition": "Completed the cooling check."
+      },
+      {
+        "alias": "c8",
+        "parent_context": "Unit Cedar completed both the cooling check and the pressure check.",
+        "passage": "Unit Cedar pressure-check notes: ... completion ... [fragment ends].",
+        "proposition": "Completed the pressure check."
+      }
+    ],
+    "rubric": {
+      "adjudication": false,
+      "allowed_pairs": [
+        [
+          "accepted",
+          "on_target_adequate"
+        ],
+        [
+          "rejected",
+          "wrong_subject"
+        ],
+        [
+          "rejected",
+          "wrong_target"
+        ],
+        [
+          "rejected",
+          "insufficient_context"
+        ],
+        [
+          "needs-review",
+          "uncertain"
+        ]
+      ],
+      "evaluator": "agent_llm; semantic qualification NOT_RUN",
+      "instructions": [
+        "Assess each alias separately against its exact child proposition; parent context may resolve an elliptical subject but cannot fill missing passage evidence.",
+        "Different subject is wrong_subject even when the predicate sounds relevant. A same-subject different proposition is wrong_target.",
+        "Topical mentions without assessable local context are insufficient_context. Use uncertain only when the local text genuinely cannot be classified.",
+        "A contrary observation or unresolved result may be locally adequate. Do not decide support, refutation, truth, authority, applicability or completeness.",
+        "Return only reviewer_id, session_id, model_id, packet_raw_sha256 and rows of alias, decision, reason. Do not include rationale, ranks, scores or arm guesses."
+      ],
+      "meaning": "Materially about the proposition, with enough local passage context for a meaningful proposition-specific downstream semantic assessment.",
+      "review_count": 2,
+      "schema": "eb-child-local-adequacy-rubric-v1"
+    },
+    "schema": "eb-child-subject-review-packet-v1"
+  },
+  "schema": "eb-child-subject-evaluator-controls-v1"
+}

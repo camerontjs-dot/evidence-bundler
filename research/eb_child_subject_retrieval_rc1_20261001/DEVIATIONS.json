@@ -1,0 +1,83 @@
+{
+  "schema": "eb-child-subject-prefreeze-deviations-v1",
+  "predecessor_history": {
+    "preserved": true,
+    "pr119": "https://github.com/camerontjs-dot/evidence-bundler/pull/119",
+    "rc0_blocker": "https://github.com/camerontjs-dot/evidence-bundler/pull/121#issuecomment-5939968146",
+    "rc0_terminal": "https://github.com/camerontjs-dot/evidence-bundler/pull/121#issuecomment-5943839272",
+    "a1_apparatus": "https://github.com/camerontjs-dot/evidence-bundler/pull/122",
+    "scope": "The predecessor failures, apparatus successor and terminal falsification remain separate immutable evidence; this research cycle does not rewrite them."
+  },
+  "common_exposure_boundary": "All entries occurred before this successor source freeze. No fresh scientific candidates or reviewer judgments were exposed. Only previously exposed predecessor identities and synthetic development controls were inspected.",
+  "entries": [
+    {
+      "id": "PREFLIGHT-LOOKUPS",
+      "what_happened": "One guessed integration-profile path and missing predecessor Git objects failed direct lookup; preserved exact checkouts and the actual tracked profile resolved authority. A later test-receipt read used the wrong filename and returned missing-file without changing any receipt.",
+      "invalidated": "Those lookups only; no scientific evidence or criteria.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; direct immutable authority was subsequently read."
+    },
+    {
+      "id": "PREFLIGHT-ENVIRONMENT",
+      "what_happened": "Derived repository reconciliation failed sandbox DNS, and process inventory was denied. Local lifecycle indexing reported an unrelated project with missing README. The GitHub connector supplied live repository authority; unrelated state was left untouched.",
+      "invalidated": "Derived synchronization and process-inventory completeness; these remain UNKNOWN.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; isolated resources were used and direct Git/GitHub checks govern publication."
+    },
+    {
+      "id": "ISOLATED-CHECKOUT",
+      "what_happened": "The first isolated clone lacked the exact baseline object, so checkout failed. The exact baseline was fetched locally from the preserved A1 checkout. The old workbench pointed at a missing hook directory; only the new checkout received the existing local pre-commit hook.",
+      "invalidated": "Initial checkout and hook readiness only.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; the new checkout subsequently bound the exact baseline. No existing checkout was repaired or cleaned."
+    },
+    {
+      "id": "CONTEXT-READ-RECOVERY",
+      "what_happened": "Some context batches and source reads were truncated. Required content was reread fully before dependent action.",
+      "invalidated": "Completeness of those initial reads.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; the required reads were recovered."
+    },
+    {
+      "id": "BASELINE-DESCRIPTION-CORRECTION",
+      "what_happened": "Live frozen V1 uses BM25 with child lanes, not semantic top-K. Also the predecessor's arm named subject_only already included coverage. Before implementation, the new protocol retained exact A0, added S0 semantic-only as a matched reference, and specified true independent ablations.",
+      "invalidated": "A causal interpretation that silently treats A0 as semantic or the old subject_only arm as an independent factorial ablation.",
+      "could_alter_conclusion": "YES if ignored; the preregistered gates require both exact A0 and S0 comparisons.",
+      "may_continue": "YES; this was specified in the protocol before code or fresh outcomes."
+    },
+    {
+      "id": "RUFF-FIRST-FAILURE",
+      "what_happened": "The first full lint run failed on 79 import/style issues. An intermediate automatic-fix output was truncated; the original complete failure receipt is retained. Later lint after added UTF-8 controls failed one redundant encoding argument; that failure is also retained. These were fixed before source freeze.",
+      "first_receipt_sha256": "sha256:a71300409f4bda0615f9958c6739c85b337f8de79964fe152a1f7aa7caf36191",
+      "later_receipt_sha256": "sha256:3b0d4c78240799c0b153bf30742b16e971e612b5913ea2c2c3c9ce9c91e2a150",
+      "invalidated": "Pre-freeze lint readiness.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; final lint passes without scientific criteria changes."
+    },
+    {
+      "id": "PREFREEZE-BOUNDARY-HARDENING",
+      "what_happened": "Inspection after the initial 48-control run found insufficient checks for top-level review metadata, same-profile calibration, completion of both replay directories before packet creation, pre-retrieval Contract A handoff binding, unbound extra replay files and UTF-8 byte spans. Implementations and adversarial controls were added against the already committed criteria; the final suite has 62 passing controls.",
+      "invalidated": "Completeness of the earlier 48/59-control mechanical readiness observation.",
+      "could_alter_conclusion": "YES if those unchecked boundaries were used; no decisive input or judgment was exposed or consumed.",
+      "may_continue": "YES; all repairs occurred before source freeze and preserve the protocol."
+    },
+    {
+      "id": "TEST-WRAPPER-SYMLINK",
+      "what_happened": "A verification wrapper resolved the virtualenv Python symlink to the base interpreter, which had no pytest or Ruff. Both invocations failed before tests ran. The wrapper was corrected to invoke the virtualenv executable without resolving its symlink.",
+      "pytest_failure_receipt_sha256": "sha256:d839df4b9d04b891c27b930269aef038a8d1438d7630fd0203230fc8c3b4f0dd",
+      "ruff_failure_receipt_sha256": "sha256:0bc922af2143533620668eefb95a59df988a29e08c9e4dffa8f1a41f3540aec5",
+      "invalidated": "Those verification invocations only; their tests were NOT_RUN.",
+      "could_alter_conclusion": false,
+      "may_continue": "YES; the corrected invocation produced 62 passes and Ruff PASS before freeze."
+    }
+  ],
+  "local_preflight_receipt_sha256": "sha256:2508c4a2c7168e4c83bc86a18107e3effce2823a74a5107435c6e76de08d33f7",
+  "unresolved_blockers": [
+    "No fresh eligible three-packet population has been identified or frozen.",
+    "The pinned supported Python/semantic model runtime has not physically executed this apparatus.",
+    "A new scope-specific reviewer destination authorization, exact profile and adapter remain unbound.",
+    "The semantic evaluator has not passed fresh independent calibration."
+  ],
+  "scientific_execution": "NOT_RUN",
+  "scientific_disposition": null
+}

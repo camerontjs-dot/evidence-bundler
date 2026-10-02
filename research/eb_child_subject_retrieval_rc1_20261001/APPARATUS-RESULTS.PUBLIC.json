@@ -1,0 +1,45 @@
+{
+  "schema": "eb-child-subject-apparatus-development-receipt-v1",
+  "layer": "exposed synthetic mechanical controls only",
+  "preregistration_before_implementation_commit": "c0f88f8aecdbdf344dfb049c29da4a94024d5388",
+  "mechanical_tests": {
+    "passed": 62,
+    "failed": 0,
+    "receipt_sha256": "sha256:b396c3624aded48b0d866f68ead2db018f27bf9a5be77095dab602eacbdc7a5b"
+  },
+  "ruff": {
+    "result": "PASS",
+    "receipt_sha256": "sha256:a21702bd2450541f7d7c88d823738409e653f93386cd3adb8893f9a20e2047d6"
+  },
+  "controls_observed": [
+    "claim-native subject byte spans and parent inheritance; malformed and wrong-origin declarations rejected",
+    "UTF-8 byte-span control discriminates a weak character-offset implementation",
+    "raw-file identity remains distinct from intrinsic payload identity; resealed/substituted inputs rejected",
+    "stage-order, immutable raw input, predecessor exposure and stale-output checks fail closed",
+    "coverage, subject and combined selectors are distinct under fixed depth/K and score-loss bounds",
+    "wrong-subject, swapped-child and lexical controls have separate fixed arms",
+    "review packet rejects arm/rank/score leakage and mapping or retained-set drift",
+    "review schema, model profile, session separation and complete alias coverage checked",
+    "weak accept-all and merely topical evaluators fail the exposed eight-case gate",
+    "weak OR-parent coverage fails the required all_of conjunction gate",
+    "exact-agreement zero-positive result remains FALSIFIED; uncertainty/disagreement remain INCONCLUSIVE",
+    "primary, child-increment, subject-increment, packet-concentration and safety gates retain mixed/negative results",
+    "two complete retrieval replays compare all fourteen scientific artifacts by raw bytes; extra/drifting files rejected"
+  ],
+  "weak_controls": {
+    "accept_all": "REJECTED_BY_CALIBRATION_GATE",
+    "topical_without_local_context": "REJECTED_BY_CALIBRATION_GATE",
+    "OR_instead_of_all_of": "REJECTED_BY_COMPLETE_PARENT_GATE",
+    "character_offsets_instead_of_UTF8_byte_spans": "REJECTED_BY_SUBJECT_BINDING_GATE"
+  },
+  "semantic_evaluator_qualification": "NOT_RUN",
+  "physical_supported_runtime_and_semantic_model_execution": "NOT_RUN",
+  "fresh_population": "UNBOUND",
+  "retrieval_attempts_consumed": 0,
+  "reviewer_sessions_started": 0,
+  "scientific_execution": "NOT_RUN",
+  "scientific_disposition": null,
+  "execution_readiness": "BLOCKED",
+  "privacy": "No fresh real claim, corpus, retrieval result or reviewer judgment was exposed. Public fixtures are synthetic and ineligible for qualification.",
+  "limitations": "Mechanical gate discrimination does not establish natural-language evaluator accuracy, model runtime qualification, retrieval improvement or production authority. CI and final source/object checks are subsequent independent receipts."
+}

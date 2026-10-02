@@ -1,0 +1,65 @@
+{
+  "arms": [
+    "A0",
+    "S0",
+    "A1",
+    "A2",
+    "A3",
+    "WS3",
+    "WC3",
+    "L0",
+    "WS2",
+    "WC1"
+  ],
+  "attempt_budget": {
+    "adjudicators": 0,
+    "calibration_sessions": 2,
+    "cohorts": 1,
+    "consensus_tallies": 1,
+    "decisive_sessions": 2,
+    "replacement_reviewers": 0,
+    "retrieval_executions": 2
+  },
+  "baseline": {
+    "commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+    "engine": "evidence_bundler_okapi_bm25_v1",
+    "version": "0.2.0"
+  },
+  "execution_authorized": false,
+  "fresh_population_state": "UNBOUND",
+  "population": {
+    "children": 24,
+    "children_per_parent": 2,
+    "packets": 3,
+    "parents": 12,
+    "parents_per_packet": 4
+  },
+  "schema": "eb-child-subject-rc1-policy-v1",
+  "search": {
+    "batch_size": 32,
+    "candidate_depth": 10,
+    "chunk_max_chars": 1800,
+    "chunk_overlap_chars": 80,
+    "device": "cpu",
+    "dtype": "float32",
+    "max_seq_length": 256,
+    "normalize_embeddings": true,
+    "retained_k_per_child": 3,
+    "root_diagnostic": false,
+    "score_decimals": 9,
+    "seed": 0,
+    "semantic_loss_cap": 0.01,
+    "threads": 1
+  },
+  "semantic_evaluator_authority": "NOT_RUN",
+  "thresholds": {
+    "complete_parent_gain": 1,
+    "control_margin": 2,
+    "increment_child_gain": 2,
+    "max_non_useful_increase": 0,
+    "max_wrong_subject_increase": 0,
+    "positive_packets": 2,
+    "required_child_gain": 3
+  }
+}
