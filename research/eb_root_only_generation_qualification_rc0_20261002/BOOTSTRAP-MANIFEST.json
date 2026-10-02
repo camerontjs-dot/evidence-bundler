@@ -1,0 +1,28 @@
+{
+  "schema": "eb-root-generation-bootstrap-v1",
+  "role": "fresh_profile_writer",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "upstream_wire_source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+  "pre_freeze_allowlist": [
+    "BOOTSTRAP-MANIFEST.json",
+    "PROFILE-WRITER-TASK.md",
+    "AUTHORING-RUBRIC.json",
+    "SCHEMAS.json",
+    "actual destination/runtime capability metadata supplied without cases"
+  ],
+  "pre_freeze_denylist": [
+    "PREREGISTRATION.md",
+    "ROOTS.PUBLIC.json",
+    "ORACLE.PUBLIC.json",
+    "METAMORPHIC.PUBLIC.json",
+    "REVIEWER-CALIBRATION.PUBLIC.json",
+    "weak-generator source/outputs",
+    "prior PR/issue narrative",
+    "project/conversation/memory history",
+    "any private input/corpus",
+    "target or evaluator outcomes"
+  ],
+  "freeze": "One primary profile and one semantic-evaluator profile, exact prompts/config bytes and observed provider/runtime identity, before cases/control/gold exposure.",
+  "exposure_stop": "CONTAMINATED; preserve the exposure; no clean-room relabeling or same-candidate replacement."
+}

@@ -1,0 +1,130 @@
+{
+  "schema": "eb-root-generation-oracle-v1",
+  "meaning": "Public synthetic eligibility and semantic obligation inventory, not canonical generation strings. Never deliver to primary or decisive evaluators.",
+  "rows": [
+    {
+      "alias": "R01",
+      "expected_status": "declared",
+      "subject_anchor": "Élan Unit",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "Élan Unit must not retain cleartext.",
+        "Élan Unit must encrypt backups."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R02",
+      "expected_status": "declared",
+      "subject_anchor": "Élan Unit",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "Élan Unit must not retain cleartext.",
+        "Élan Unit may encrypt backups."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R03",
+      "expected_status": "declared",
+      "subject_anchor": "Rowan units",
+      "entity_class": "group",
+      "obligation_inventory": [
+        "At most four Rowan units enter Gate 2.",
+        "At most four Rowan units enter Gate 3."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R04",
+      "expected_status": "declared",
+      "subject_anchor": "Rowan units",
+      "entity_class": "group",
+      "obligation_inventory": [
+        "At most five Rowan units enter Gate 2.",
+        "At most five Rowan units enter Gate 3."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R05",
+      "expected_status": "declared",
+      "subject_anchor": "Sable Lab",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "Sable Lab reports a pressure of 12 kPa.",
+        "Sable Lab reports a temperature of 8 °C."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R06",
+      "expected_status": "declared",
+      "subject_anchor": "Sable Lab",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "Sable Lab reports a pressure of 15 kPa.",
+        "Sable Lab reports a temperature of 9 °C."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R07",
+      "expected_status": "declared",
+      "subject_anchor": "North Dock",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "North Dock recorded an alarm on May 2.",
+        "North Dock recorded a reset on May 3."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R08",
+      "expected_status": "declared",
+      "subject_anchor": "North Dock",
+      "entity_class": "organization",
+      "obligation_inventory": [
+        "North Dock recorded an alarm on June 2.",
+        "North Dock recorded a reset on June 3."
+      ],
+      "reason": "two_required_conserved"
+    },
+    {
+      "alias": "R09",
+      "expected_status": "ineligible",
+      "subject_anchor": null,
+      "entity_class": null,
+      "obligation_inventory": [],
+      "reason": "disjunction",
+      "note": "An OR does not assert both alternatives."
+    },
+    {
+      "alias": "R10",
+      "expected_status": "ineligible",
+      "subject_anchor": null,
+      "entity_class": null,
+      "obligation_inventory": [],
+      "reason": "not_two_required",
+      "note": "There are three separately required obligations; two containers cannot hide the third."
+    },
+    {
+      "alias": "R11",
+      "expected_status": "ineligible",
+      "subject_anchor": null,
+      "entity_class": null,
+      "obligation_inventory": [],
+      "reason": "not_two_required",
+      "note": "One obligation cannot become two materially distinct children."
+    },
+    {
+      "alias": "R12",
+      "expected_status": "ineligible",
+      "subject_anchor": null,
+      "entity_class": null,
+      "obligation_inventory": [],
+      "reason": "uncertain",
+      "note": "The subject It is unresolved under the no-additional-context aperture."
+    }
+  ]
+}
