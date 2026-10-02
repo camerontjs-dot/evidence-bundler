@@ -1,0 +1,16 @@
+{
+  "schema": "eb-root-generation-setup-deviations-v1",
+  "records": [
+    {
+      "event": "First branch push failed: sandbox DNS could not resolve github.com.",
+      "phase": "post-source-freeze transport",
+      "source_commit": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f",
+      "first_envelope": "7b8bfaa021b2ad4b0803496789d1b8f4ec850f54",
+      "exit_code": 128,
+      "exposure": "public synthetic setup only; no target output or private material",
+      "invalidated": "first transport invocation",
+      "conclusion_effect": "none on source/mechanical checks",
+      "continuation": "scoped authorized network push; frozen source and initial receipt remain unchanged"
+    }
+  ]
+}
