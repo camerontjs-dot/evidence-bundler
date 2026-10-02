@@ -13,7 +13,7 @@
     "LAUNCH-STATUS.json": "sha256:259eb250d29933d7d984f2108c331959c9e31df6bdeccd2ed3da17a141a5187a",
     "METAMORPHIC.PUBLIC.json": "sha256:3ec2c0c8b4c7418fa293dc020ebe021421010619f4c3c5b141942695827ab711",
     "ORACLE.PUBLIC.json": "sha256:a2be345c71a8809d74f95acd08d427c6e745643149ee8a7a4fb36aa4c76f16cf",
-    "PREREGISTRATION.md": "sha256:697412423baa51d88bb2bea3ffe8ce14cc0a20ede4ab6fde56e8cf1ecaa800c5",
+    "PREREGISTRATION.md": "sha256:fa12354b03338118e3132cb07fd3b42e511ae69da4c6b2b9df84930f012d1f24",
     "PROFILE-WRITER-TASK.md": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1",
     "README.md": "sha256:d7ff12bc53a8276e24bacaa00783b246347c65a9b5249af934b42b53fa341e8c",
     "REVIEWER-CALIBRATION.PUBLIC.json": "sha256:69934c6672c4fb3544852b6c80adacd3a606f3c9dc9697cf8e4eb6f287bff6cf",
@@ -22,7 +22,9 @@
     "validate_setup.py": "sha256:dd2b7baa4a8f337cc68b4008573f287ad2d344aa88eece13201659add89c6799"
   },
   "repository": "camerontjs-dot/evidence-bundler",
+  "revision_reason": "Formatting-only pre-execution successor: remove terminal blank line; all design/roots/oracle/control bytes unchanged except this insignificant protocol newline.",
   "schema": "eb-root-generation-setup-manifest-v1",
+  "supersedes_setup_manifest_blob": "14d4c45be89407e87dee2548788d33ecf0db2e19",
   "upstream_envelope": "bc3d887f27991c215e251875b964f205e478df21",
   "upstream_source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
   "upstream_source_tree": "6a708e651bafeae2f7f09dab6a95295a4fd38a89"

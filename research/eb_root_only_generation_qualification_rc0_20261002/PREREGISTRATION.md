@@ -104,4 +104,3 @@ A supported result may inform a later explicit authority-binding decision for th
 **Tier:** T0 until independently qualified enforcement; frozen hash/schema checks are T1.
 **Check:** setup validator, later frozen execution verifier and independent custody receipt.
 **Escape:** BLOCKED / INCONCLUSIVE / FALSIFIED / CONTAMINATED with preserved first failure; separately identified successor only.
-
