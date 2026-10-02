@@ -1,0 +1,80 @@
+{
+  "first_test_failures": [
+    {
+      "conclusion_effect": "mechanical inventory identity binding invalid until corrected before source-candidate freeze",
+      "continuation": "pre-freeze serialization repair may continue; inventory bytes and source identities must remain unchanged",
+      "event": "Pre-freeze nomination schema probe rejected source-set digest: binder used compact JSON while existing nomination used a different frozen serialization",
+      "exit_code": 2,
+      "exposure": "pre-existing root/hash metadata only; no source body, author judgment or retrieval",
+      "invalidated": "initial population.py source-set verification"
+    },
+    {
+      "conclusion_effect": "stage-chain writer invalid until pre-freeze correction; no scientific conclusion",
+      "continuation": "pre-freeze encoding/fixture/format corrections allowed; first code, tests and full logs preserved",
+      "event": "First synthetic suite: 55 passed/4 failed. Canonical writer emitted literal backslash-n; mutation fixtures attempted writes through intentional read-only permissions. First Ruff check: 63 findings.",
+      "exposure": "synthetic records only; no real authoring, source or retrieval",
+      "first_failure_local_raw_sha256": "sha256:a05197f5e8c5b4f8d2061d15f6e7691ac91e51a29ffc8a307613192c9485e488",
+      "invalidated": "initial writer and two mutation fixtures; no completed real stage"
+    },
+    {
+      "conclusion_effect": "fixture assertion invalid; reserve binding succeeded",
+      "continuation": "pre-freeze test correction by exact packet identity; no gate weakened",
+      "event": "New reserve tests: 64 passed/2 failed; test assumed lexical output packet order matched source-set sampling order",
+      "exposure": "synthetic only",
+      "invalidated": "two fixture assertions, not source sample policy",
+      "receipt_raw_sha256": "sha256:803c22bfce700480032f9477c980c1dfe7b60506ffd4db9caf2372886709aeba"
+    },
+    {
+      "conclusion_effect": "none; test evidence remains from the actual development venv",
+      "continuation": "repeat generation using already verified development venv, no new scientific attempt",
+      "event": "Public receipt generation initially used system Python to import pytest-based control fixtures; pytest unavailable there",
+      "exposure": "none; generation stopped before writing receipt",
+      "invalidated": "that receipt-generation invocation"
+    }
+  ],
+  "records": [
+    {
+      "conclusion_effect": "none; bounded later retry recovered live authority",
+      "continuation": "yes after direct live recovery",
+      "event": "GitHub secondary rate limit on first Proposition Authoring search",
+      "exposure": "public metadata only",
+      "invalidated": "initial incomplete upstream lookup"
+    },
+    {
+      "conclusion_effect": "none",
+      "continuation": "yes; valid checkout/object authority recovered; no cleanup",
+      "event": "Invalid git cache marker and missing historical object in first lookup checkout",
+      "exposure": "metadata only",
+      "invalidated": "those lookup results"
+    },
+    {
+      "conclusion_effect": "catalogue incomplete until reconciliation",
+      "continuation": "live PR114 head b0467920f042670afe89ef135e170b4df74bd6e5 resolved; append-only final catalogue; predecessor untouched",
+      "event": "PR119 evidence index contains invalid PR114 ref b0467920f042670afe59797ea0e94b1538e3fa2cd",
+      "exposure": "historical public code hashes only",
+      "invalidated": "first exclusion catalogue"
+    },
+    {
+      "conclusion_effect": "owner cannot be a fresh author/checker; counts do not select roots",
+      "continuation": "separate qualified fresh role apertures required",
+      "event": "Owner inspected prior naturalistic pool metadata, root bytes, builder and aggregate authorability counts",
+      "exposure": "root text and old aggregate counts; no new source body, per-case label or retrieval outcome",
+      "invalidated": "any owner independence claim"
+    },
+    {
+      "conclusion_effect": "none after recovery",
+      "continuation": "yes; complete captures preserved locally",
+      "event": "Some broad read outputs truncated; required context subsequently recovered",
+      "exposure": "public metadata/private locators; no new outcome",
+      "invalidated": "truncated reads as authority"
+    },
+    {
+      "conclusion_effect": "none",
+      "continuation": "yes; encoding corrected before preregistration commit",
+      "event": "Initial preregistration patch rejected invalid empty trailing hunk before writing files",
+      "exposure": "public proposed policy only",
+      "invalidated": "failed file creation"
+    }
+  ],
+  "schema": "eb-rc2-setup-deviations-v1"
+}

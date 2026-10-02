@@ -1,0 +1,61 @@
+{
+  "actual_authors": 0,
+  "apparatus_claim": "Mechanical local artifact gates pass synthetic tests; operational isolation and semantic authoring remain unqualified. Setup CLI blocks them.",
+  "local_python": "3.11.15; development apparatus only, no scientific runtime qualification",
+  "model_calls": 0,
+  "model_downloads": 0,
+  "preregistration_commit": "4eb0ec09ef89eb2a130154f4a895632f377d70dc",
+  "protected_bytes": {
+    "baseline": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "diff": "EMPTY",
+    "paths": [
+      "src/evidence_bundler/v1",
+      "scripts/run_v1_integration_candidate.py",
+      "config/eb_v1_slice",
+      "pyproject.toml"
+    ]
+  },
+  "pytest": {
+    "failed": 0,
+    "passed": 66,
+    "receipt_raw_sha256": "sha256:dbd83873bfc5d395a6931f8bbe99c87fd923d095fe8cbef97842d4e3705cd7fb"
+  },
+  "real_nomination_schema_probe": {
+    "completed_population_stages": 0,
+    "root_counts": [
+      50,
+      50,
+      8
+    ],
+    "source_body_access": "NOT_RUN",
+    "status": "PASS"
+  },
+  "real_sample_frozen": false,
+  "research_disposition": "BLOCKED_BEFORE_POPULATION_AUTHORING",
+  "retrieval": "NOT_RUN",
+  "reviewers": "NOT_RUN",
+  "ruff": "PASS",
+  "schema": "eb-rc2-apparatus-results-v1",
+  "semantic_authoring_calibration": "NOT_RUN",
+  "source_set_serialization": "compact UTF-8 JSON of sorted raw hashes, no trailing newline; distinct from newline-terminated stage files",
+  "weak_controls": {
+    "accept_all": {
+      "correct": 6,
+      "qualified_gate": false,
+      "semantic_role_authority": "NOT_ESTABLISHED_BY_THIS_FUNCTION",
+      "total": 12
+    },
+    "and_keyword": {
+      "correct": 7,
+      "qualified_gate": false,
+      "semantic_role_authority": "NOT_ESTABLISHED_BY_THIS_FUNCTION",
+      "total": 12
+    },
+    "reject_all": {
+      "correct": 6,
+      "qualified_gate": false,
+      "semantic_role_authority": "NOT_ESTABLISHED_BY_THIS_FUNCTION",
+      "total": 12
+    }
+  }
+}

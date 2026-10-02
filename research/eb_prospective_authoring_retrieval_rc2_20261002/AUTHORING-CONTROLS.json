@@ -1,0 +1,132 @@
+{
+  "actual_model_calibration": "NOT_RUN; synthetic oracle is not semantic role qualification",
+  "cases": [
+    {
+      "alias": "C01",
+      "expected_decision": "accept",
+      "oracle_reason": "faithful conjunction",
+      "proposed_children": [
+        "Aster Office issues permits.",
+        "Aster Office publishes its log."
+      ],
+      "root_text": "Aster Office issues permits and publishes its log."
+    },
+    {
+      "alias": "C02",
+      "expected_decision": "accept",
+      "oracle_reason": "negation and modality retained",
+      "proposed_children": [
+        "Boreal Service must not store cleartext.",
+        "Boreal Service must encrypt backups."
+      ],
+      "root_text": "Boreal Service must not store cleartext and must encrypt backups."
+    },
+    {
+      "alias": "C03",
+      "expected_decision": "accept",
+      "oracle_reason": "quantifiers and values retained",
+      "proposed_children": [
+        "At most five Cedar units enter Gate 2.",
+        "At most five Cedar units enter Gate 3."
+      ],
+      "root_text": "At most five Cedar units enter Gate 2 and at most five Cedar units enter Gate 3."
+    },
+    {
+      "alias": "C04",
+      "expected_decision": "accept",
+      "oracle_reason": "attribution retained",
+      "proposed_children": [
+        "The report states that North Dock closed.",
+        "The report states that North Dock reopened."
+      ],
+      "root_text": "The report states that North Dock closed and North Dock reopened."
+    },
+    {
+      "alias": "C05",
+      "expected_decision": "accept",
+      "oracle_reason": "faithful elliptical child with inherited exact parent subject",
+      "proposed_children": [
+        "Caf\u00e9 Orion collects receipts.",
+        "Archives them."
+      ],
+      "root_text": "Caf\u00e9 Orion collects receipts and archives them."
+    },
+    {
+      "alias": "C06",
+      "expected_decision": "accept",
+      "oracle_reason": "dates retained",
+      "proposed_children": [
+        "Harbor Unit recorded an alarm on May 2.",
+        "Harbor Unit recorded a reset on May 3."
+      ],
+      "root_text": "Harbor Unit recorded an alarm on May 2 and recorded a reset on May 3."
+    },
+    {
+      "alias": "C07",
+      "expected_decision": "reject",
+      "oracle_reason": "OR converted to required AND",
+      "proposed_children": [
+        "Aster Office issues permits.",
+        "Aster Office publishes its log."
+      ],
+      "root_text": "Aster Office issues permits or publishes its log."
+    },
+    {
+      "alias": "C08",
+      "expected_decision": "reject",
+      "oracle_reason": "condition lost",
+      "proposed_children": [
+        "Boreal Service logs.",
+        "Boreal Service sends a notice."
+      ],
+      "root_text": "If Boreal Service starts, it logs and sends a notice."
+    },
+    {
+      "alias": "C09",
+      "expected_decision": "reject",
+      "oracle_reason": "modality strengthened",
+      "proposed_children": [
+        "Cedar Unit logs.",
+        "Cedar Unit sends a notice."
+      ],
+      "root_text": "Cedar Unit may log and may send a notice."
+    },
+    {
+      "alias": "C10",
+      "expected_decision": "reject",
+      "oracle_reason": "subject invented",
+      "proposed_children": [
+        "South Dock closes.",
+        "South Dock reopens."
+      ],
+      "root_text": "North Dock closes and reopens."
+    },
+    {
+      "alias": "C11",
+      "expected_decision": "reject",
+      "oracle_reason": "duplicate and omitted obligation",
+      "proposed_children": [
+        "Harbor Unit logs.",
+        "Harbor Unit logs."
+      ],
+      "root_text": "Harbor Unit logs and sends a notice."
+    },
+    {
+      "alias": "C12",
+      "expected_decision": "reject",
+      "oracle_reason": "third obligation omitted",
+      "proposed_children": [
+        "Caf\u00e9 Orion logs.",
+        "Caf\u00e9 Orion sends a notice."
+      ],
+      "root_text": "Caf\u00e9 Orion logs, sends a notice and archives receipts."
+    }
+  ],
+  "required_correct": 12,
+  "schema": "eb-rc2-authoring-controls-v1",
+  "weak_controls": [
+    "accept_all",
+    "reject_all",
+    "and_keyword"
+  ]
+}

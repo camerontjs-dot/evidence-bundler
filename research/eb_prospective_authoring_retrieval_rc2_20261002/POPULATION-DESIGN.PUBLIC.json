@@ -1,0 +1,50 @@
+{
+  "current_source_body_access": "NOT_RUN",
+  "custody_manifest_raw_sha256": "sha256:40ffe379ad0ce2fc6a3875a4df82bf1e4a6e5036d14e8094863a51e4501dbb47",
+  "historical_exclusion_catalogue_raw_sha256": "sha256:eb6b05fa7b8fd175c7fa3419fe941353b243af9c5da7f22163e0d03aeb342c5c",
+  "historical_exclusion_scope": "Available PR119 convergence-index refs: 118 unique blobs / 5712 exact raw/text exclusion hashes. Invalid indexed PR114 SHA reconciled to live exact head; originals preserved. Zero exact nominated root/source overlap. Unpublished history and semantic near-duplicates UNKNOWN.",
+  "initial_roots_per_packet": 4,
+  "inventory_raw_sha256": "sha256:66a165cd89add0f98841b1345323fb4358f58538695072bf2df81176536344bf",
+  "packet_count": 3,
+  "packets": [
+    {
+      "packet_id": "packet-1755f9de994dbed5c0c8",
+      "root_count": 50,
+      "source_hashes": [
+        "sha256:387a00c3ed5c34fe0528780ae2628488e98c208105ff3d0329528fde1b242ae7",
+        "sha256:3ea57cf44085cf397bee4a9aa93e99ce80b0529d4582e01e577bf40a9c2f6665"
+      ],
+      "source_set_sha256": "sha256:1755f9de994dbed5c0c82a5ce1d880acd97de7dfbf23384310d72fdd598dd0ac"
+    },
+    {
+      "packet_id": "packet-1e72c544a84058c3b498",
+      "root_count": 50,
+      "source_hashes": [
+        "sha256:518e5fc5ec072dad284a666459277bbb7d9a8fa52c1228c3cdcdf53331640ce2",
+        "sha256:fefae24a3e4a7b04328f1222e0925046119dea14cd679c7bd13f99cf5ea35275"
+      ],
+      "source_set_sha256": "sha256:1e72c544a84058c3b4982e46c76071a91d786121de1c70b6a633ea81e9120404"
+    },
+    {
+      "packet_id": "packet-551db7e422c7876d9e69",
+      "root_count": 8,
+      "source_hashes": [
+        "sha256:4607688e5e4c5c8e31fae14bf00ad18bd7503c4589c6c8756bcd9c6f7fda528f"
+      ],
+      "source_set_sha256": "sha256:551db7e422c7876d9e69c6bd5d56038890b73b0a158cc528e787dbad1356fd9f"
+    }
+  ],
+  "pool_raw_sha256": "sha256:d7775c10ce8d2298bb0a4fd4e6c932b5cdcb8666cfe1e5dcb0b95f150d871906",
+  "prior_sealed_at": "2026-10-02T04:34:27.208918+00:00",
+  "private_inventory_artifact": "Nominated private input, not a completed INVENTORY or SAMPLE stage.",
+  "proposed_children": 24,
+  "proposed_parents": 12,
+  "prospective_authoring": "NOT_RUN",
+  "reserve_roots": 96,
+  "root_count": 108,
+  "root_sample_stage": "NOT_RUN",
+  "schema": "eb-rc2-population-design-v1",
+  "seal_raw_sha256": "sha256:b7711dfa645ce3bec3cbe9aa22f32116e0ad2cca27af5397c1dc81066b2e3cdd",
+  "selection": "Packet source-set SHA-256 ascending; within each packet prior pool declaration time, exact root-text SHA-256, root ID ascending. First four roots initially, all remaining roots as fixed ordered reserves. No prior review label is an input.",
+  "source_access_status": "Source bodies NOT_OPENED for RC2; prior custody/hash/span metadata inspected. Current-byte verification deferred until SUBJECTS."
+}

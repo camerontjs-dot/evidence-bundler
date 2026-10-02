@@ -1,0 +1,91 @@
+{
+  "actual_authoring_sessions": 0,
+  "base": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+  "branch": "codex/eb-prospective-authoring-retrieval-rc2-20261002",
+  "ci": "Final-head mechanical CI receipts must be appended to Draft PR; no science or code change.",
+  "files": {
+    ".github/workflows/research-prospective-authoring-rc2.yml": {
+      "blob": "87b37cf09c38b44494a4c1c2ed7a7a9f10212a7f",
+      "raw_sha256": "sha256:e94095cc03ed34a5da255c4f557bc2328562080e68df7020dbdce211f754e171"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/APPARATUS-RESULTS.PUBLIC.json": {
+      "blob": "d9ddbef57436020fb02335fba72cb2d6f8edcc2a",
+      "raw_sha256": "sha256:32de93666befa929991cd62bb7a27c0852d0d5edf5e1062a13f24d0da6641a9e"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/AUTHORING-CONTROLS.json": {
+      "blob": "7501a788862f56ed0d85b3cb12dbfb3315309683",
+      "raw_sha256": "sha256:69934c6672c4fb3544852b6c80adacd3a606f3c9dc9697cf8e4eb6f287bff6cf"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/AUTHORING-RUBRIC.json": {
+      "blob": "f8967244c3864e7b39d12053d226326c5c06908f",
+      "raw_sha256": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/DEVIATIONS.json": {
+      "blob": "b80dae3469502ea0fb4b451654707385b5b39bcf",
+      "raw_sha256": "sha256:7087dd4b47abbe8be48efd2f7bcd080d31295429e8de50463192684a006f5669"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/NEXT-STEPS.md": {
+      "blob": "c022b737048719fbff8568d1ab4e5cb76be38d60",
+      "raw_sha256": "sha256:40b73619bdb0f3bc987ddb28b18cefe131d07a97b8c17f2edf1e196f0d301853"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/POLICY.json": {
+      "blob": "dfe41ee1d2ede596bcafecbac34991f5fe1c0cea",
+      "raw_sha256": "sha256:13bad18c24decd0fd8492a7386b03c9df31003afad1ad143c9c36a9bd34b924b"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/POPULATION-DESIGN.PUBLIC.json": {
+      "blob": "4a70d3855a6c98ff5ae84271244ba99a80e92182",
+      "raw_sha256": "sha256:a5ac8f9bce97da51bf1ddc0c14df11b629e10c377cf896ec572ecd586f21efaa"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/PREREGISTRATION.md": {
+      "blob": "a4edd8b40d605c57a2138b1e613ac2f6337ee063",
+      "raw_sha256": "sha256:ad1c71a100857856eb1ca91d56761f67078626ab0647d400ff81ffabe188006a"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/README.md": {
+      "blob": "9874034f962d73efa9cd283d113354bce4ec1854",
+      "raw_sha256": "sha256:146e46366b328ad4cfa46b8a71fc73c6898eec88c7eacfc087229abe2f1fb29d"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/SCHEMAS.json": {
+      "blob": "937e61b84712b8a7430aafb98d9b8ab16f3440bf",
+      "raw_sha256": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/SCIENTIFIC-CLOSURE.json": {
+      "blob": "d74cf3f5864d49a2dfcb1af75e3424f42b65ecda",
+      "raw_sha256": "sha256:9cd732bc57b3effb0c0ed50703728949064053e53cdc3dbf9768d0194f08039b"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/population.py": {
+      "blob": "73e69857a5f2494359f7679cb8e933d8cedd19c0",
+      "raw_sha256": "sha256:3b882f22d4dd8f8fdf5cd9ed29880003d962b9d6ebc7a4b7231f3baf1ed1d40c"
+    },
+    "research/eb_prospective_authoring_retrieval_rc2_20261002/test_population.py": {
+      "blob": "55440958bc00437ec7ec775bffbcdd56d6a2a0e2",
+      "raw_sha256": "sha256:b737ec342021fe6913abff56895afd3ebfbcb7fe419619a3b0c2fb5302e267b7"
+    }
+  },
+  "frozen": [
+    "scientific policy",
+    "inventory nomination and ordering",
+    "3/12/24 target",
+    "authoring schema/rubric/controls",
+    "reserve and attempt rules",
+    "subject rotations/permutation rules",
+    "mechanical code/tests",
+    "immutable RC1 scientific closure"
+  ],
+  "historical_exclusion_catalogue_raw_sha256": "sha256:eb6b05fa7b8fd175c7fa3419fe941353b243af9c5da7f22163e0d03aeb342c5c",
+  "passage_review_sessions": 0,
+  "population_construction": "BLOCKED_BEFORE_POPULATION_AUTHORING",
+  "population_inventory_raw_sha256": "sha256:66a165cd89add0f98841b1345323fb4358f58538695072bf2df81176536344bf",
+  "preregistration_commit": "4eb0ec09ef89eb2a130154f4a895632f377d70dc",
+  "retrieval_executions": 0,
+  "schema": "eb-rc2-source-candidate-v1",
+  "scientific_execution": "NOT_RUN",
+  "source_commit": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+  "source_tree": "6a708e651bafeae2f7f09dab6a95295a4fd38a89",
+  "unbound": [
+    "operational isolation adapter/profile/destination and semantic authoring calibration",
+    "actual experimental sample/declarations/subjects",
+    "current corpus byte custody and 12 Contract A handoffs",
+    "retrieval integration/runtime/model/semantic calibration",
+    "reviewer profile/adapter/destination/attempt envelope"
+  ]
+}

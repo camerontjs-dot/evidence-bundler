@@ -1,0 +1,48 @@
+{
+  "excluded": [
+    "bind.py pre-existing-all_of prerequisite and stage chain; reference only"
+  ],
+  "files": {
+    "CONTROLS.json": {
+      "blob": "e3eda5708e17f4ec23a7f8b7e64d4bbca853546a",
+      "raw_sha256": "sha256:44dd328fab7875b66ccdb39bf8d1c8e0898833eb0492b4c3803d24902e6d3dcf"
+    },
+    "MODEL.json": {
+      "blob": "4301c7dfecabfcf82adf321a87c19191538d83db",
+      "raw_sha256": "sha256:3c9a65f881f705bf3d3ff9353995b9bb075aa100031a5ed176445f95bfb54dd5"
+    },
+    "RUBRIC.json": {
+      "blob": "a52faaaad1d0412ca6361c55eee91f88990390fe",
+      "raw_sha256": "sha256:ea22be97f3f742f20fb3f24ef814402b93f67403280b47b71678359eaf731d7b"
+    },
+    "SPEC.json": {
+      "blob": "61c9be9a070b0ecd996e58becb06bf16a8840a03",
+      "raw_sha256": "sha256:f8b4dea2f2ef4d22509c03c9dbfc276481001eebfc0cd22b938a94ac0f8dc318"
+    },
+    "bind.py": {
+      "blob": "d9b6ed7c02a60d406b19200081db244fe6e493cd",
+      "raw_sha256": "sha256:5a7ad1e5063cc9ede5e6c810b3267ae3f5aebcf8aa7beed33d1a38d6a547372b"
+    },
+    "retrieval.py": {
+      "blob": "0f8ed35cdfb7113e812c95bee2ebeb5b006ad5a8",
+      "raw_sha256": "sha256:0d051a63220bb6153db3029a98ed1a5a675447ba26c6ec21ba1b84304f7dfff3"
+    },
+    "study.py": {
+      "blob": "72e5ed277387a414ca75811afde235d802a48c94",
+      "raw_sha256": "sha256:ccc8b08fc1d3ccf459687be6b98e420d8cd398f3cf81c5e90c54700a3a4a191d"
+    }
+  },
+  "integration": "UNBOUND: a separate frozen execution adapter must link new receipts without changing scientific policy. No scientific function was executed in setup.",
+  "reuse": [
+    "retrieval.py scientific functions",
+    "study.py metrics/decide/review gates",
+    "SPEC.json search/arms/thresholds/attempts",
+    "MODEL.json file identities",
+    "RUBRIC.json",
+    "CONTROLS.json"
+  ],
+  "schema": "eb-rc2-scientific-closure-v1",
+  "source_commit": "ee207de859b8fbccdd559084fd96dd3e67f0cb48",
+  "source_path": "research/eb_child_subject_retrieval_rc1_20261001",
+  "source_tree": "67138e2d6191128699d21b2298a710a515b4454c"
+}
