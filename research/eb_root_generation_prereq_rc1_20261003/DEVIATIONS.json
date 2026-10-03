@@ -1,0 +1,16 @@
+{
+  "schema": "eb-root-generation-prereq-deviations-rc1-v1",
+  "items": [
+    {
+      "id": "RC1-SETUP-001",
+      "stage": "pre_execution_setup",
+      "observed": "The first frozen RC1 setup defined a custody receipt schema but did not freeze the execution-time checker that would validate a real receipt and returned profile artifacts.",
+      "risk": "Allowing the checker to be invented after writer output would weaken the meaning of the prerequisite result.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the first candidate in Git history, add a frozen execution checker, pin the writer model/digest/destination, tighten machine-readable profile config requirements, and issue a new setup closure.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
+    }
+  ]
+}

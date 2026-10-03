@@ -6,6 +6,13 @@
   "preserved_rc0_envelope": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
   "preserved_rc0_receipt_blob": "5563394a03bbc179fdf0ce4453093bd682a492ef",
   "inherited_rubric_blob": "f8967244c3864e7b39d12053d226326c5c06908f",
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "service_version": "OBSERVE_AND_RECORD",
+    "actual_backend_weight_attestation": "UNKNOWN_UNLESS_INDEPENDENTLY_OBSERVABLE"
+  },
   "pre_freeze_allowlist": [
     "BOOTSTRAP-MANIFEST.json",
     "PROFILE-WRITER-TASK.md",
@@ -17,6 +24,7 @@
     "PREREGISTRATION.md",
     "README.md",
     "CUSTODY-SCHEMA.json",
+    "check_execution.py",
     "CANDIDATE.json",
     "PR or issue narrative",
     "project or conversation memory/history",
@@ -31,7 +39,7 @@
     "any PR #124 private input, population, source body, corpus, retrieval or passage-review material"
   ],
   "freeze": "Freeze the five returned profile artifact bytes plus actual native writer request/response digests and observed runtime identity before any semantic case/control exposure.",
-  "custody": "An external launcher/custodian, not the writer model, emits the bounded custody receipt from observed request/response and source identities.",
+  "custody": "An external launcher/custodian, not the writer model, emits the bounded custody receipt from observed request/response and source identities. A separately frozen checker verifies it.",
   "contamination_stop": "CONTAMINATED; preserve exposure and stop. No same-execution clean-room relabeling.",
   "semantic_attempts_authorized": 0
 }

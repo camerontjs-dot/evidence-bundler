@@ -1,11 +1,11 @@
 {
   "schema": "eb-root-generation-external-custody-rc1-v1",
   "producer": "external_launcher_or_custodian_not_writer_model",
-  "purpose": "Verify writer aperture, chronology, response completeness, runtime facts and extracted profile identity without semantic self-attestation.",
+  "purpose": "Record writer aperture, chronology, response completeness, runtime facts and extracted profile identity without semantic self-attestation.",
   "required_fields": [
     "schema",
     "execution_id",
-    "setup_commit",
+    "setup_source_commit",
     "started_at",
     "completed_at",
     "destination",
@@ -22,11 +22,10 @@
     "response_complete",
     "truncated",
     "done_reason",
-    "extracted_files_sha256",
-    "checker_result"
+    "extracted_files_sha256"
   ],
   "constraints": {
-    "opened_sources": "Only bootstrap allowlist source files plus runtime facts; each source recorded with exact SHA-256.",
+    "opened_sources": "Exactly the four bootstrap source files, each recorded with exact SHA-256. Runtime facts are recorded in dedicated receipt fields.",
     "forbidden_sources_opened": "Must be an empty array for PASS.",
     "actual_backend_weight_attestation": "Use UNKNOWN unless independently observable.",
     "response_complete": true,
@@ -38,7 +37,6 @@
       "EVALUATOR-CONFIG.json",
       "REVIEW-SCHEMA.json"
     ],
-    "checker_result": ["PASS", "FAIL"],
     "receipt_excludes": [
       "source bodies",
       "generated prompt bodies",
@@ -50,5 +48,6 @@
     ]
   },
   "native_bytes": "Preserve native request and native response separately. The receipt references them only by digest and bounded metadata.",
-  "model_generated_custody_receipt": false
+  "model_generated_custody_receipt": false,
+  "checker_output": "Produced separately by frozen check_execution.py; the receipt does not self-assert PASS."
 }

@@ -14,6 +14,13 @@
       "proposal": null,
       "extra_context": false
     },
+    "config_required": {
+      "role": "primary",
+      "input_mode": "root_only_proposal_null",
+      "output_mode": "json_only",
+      "extra_context": false,
+      "proposal_required_null": true
+    },
     "output": {
       "required_fields": ["root_alias", "status", "reason", "children"],
       "status": ["declared", "ineligible"],
@@ -25,6 +32,13 @@
   "evaluator": {
     "shared_semantic_instructions": true,
     "proposal_editing": false,
+    "config_required": {
+      "role": "semantic_evaluator",
+      "modes": ["calibration", "decisive"],
+      "shared_semantic_instructions": true,
+      "proposal_editing": false,
+      "review_schema_file": "REVIEW-SCHEMA.json"
+    },
     "modes": {
       "calibration": {
         "input": ["root_alias", "root_text", "proposal", "rubric", "review_schema"],

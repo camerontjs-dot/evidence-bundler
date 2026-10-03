@@ -45,6 +45,11 @@ def validate() -> dict:
         "EVALUATOR-CONFIG.json",
         "REVIEW-SCHEMA.json",
     }, "exact profile file set")
+    primary_required = surface["primary"]["config_required"]
+    need(primary_required["input_mode"] == "root_only_proposal_null", "primary root-only mode")
+    need(primary_required["extra_context"] is False, "primary extra context")
+    need(primary_required["proposal_required_null"] is True, "primary proposal null")
+
     evaluator = surface["evaluator"]
     need(set(evaluator["modes"]) == {"calibration", "decisive"}, "two evaluator modes")
     need(evaluator["proposal_editing"] is False, "proposal editing prohibited")
@@ -60,6 +65,10 @@ def validate() -> dict:
     need(not allow.intersection(deny), "allow/deny collision")
     need(bootstrap["context_free_required"] is True, "context-free required")
     need(bootstrap["semantic_attempts_authorized"] == 0, "semantic execution prohibited")
+    runtime = bootstrap["writer_runtime"]
+    need(runtime["destination"] == "http://127.0.0.1:11434/api/generate", "pinned destination")
+    need(runtime["reported_model"] == "qwen3.5:9b", "pinned writer model")
+    need(runtime["service_reported_digest"] == "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7", "pinned writer digest")
     for forbidden in (
         "ROOTS.PUBLIC.json",
         "ORACLE.PUBLIC.json",
@@ -67,6 +76,7 @@ def validate() -> dict:
         "REVIEWER-CALIBRATION.PUBLIC.json",
         "RC0 returned profile files",
         "RC0 native writer/custody outputs",
+        "check_execution.py",
     ):
         need(forbidden in deny, "missing denylist item: " + forbidden)
 
@@ -75,6 +85,7 @@ def validate() -> dict:
     need(custody["constraints"]["response_complete"] is True, "complete response required")
     need(custody["constraints"]["truncated"] is False, "truncation prohibited")
     need(custody["constraints"]["extracted_files_sha256"] == required_files, "custody file coverage")
+    need((HERE / "check_execution.py").is_file(), "frozen execution checker missing")
 
     need(status["execution"] == "NOT_RUN", "execution must remain not run")
     need(status["profile_writer_attempts_consumed"] == 0, "writer attempt consumed in setup")
@@ -122,7 +133,9 @@ def validate() -> dict:
         "context_free_required": True,
         "profile_files_required": 5,
         "uncertainty_surface": "EXPLICIT",
+        "writer_runtime": "PINNED",
         "custody_producer": "EXTERNAL",
+        "frozen_execution_checker": True,
         "model_generated_custody_receipt": False,
         "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
         "generation_capability": "UNKNOWN",

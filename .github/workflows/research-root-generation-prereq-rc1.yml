@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Compile frozen RC1 checkers
+        run: python -m py_compile research/eb_root_generation_prereq_rc1_20261003/validate_setup.py research/eb_root_generation_prereq_rc1_20261003/check_execution.py
       - name: Validate RC1 prerequisite setup only
         run: python research/eb_root_generation_prereq_rc1_20261003/validate_setup.py
       - name: Enforce research-only diff

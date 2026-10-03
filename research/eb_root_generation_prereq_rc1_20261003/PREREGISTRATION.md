@@ -13,15 +13,18 @@ If both pass, the bounded result is SUPPORTED_FOR_GENERATION_EXECUTION. This mea
 
 Repository: camerontjs-dot/evidence-bundler.
 
-Pinned live baseline at setup:
+Pinned baseline:
 - protected main: c26fbd4bfc8ba5c2604a784af158594b59fcae37
 - preserved RC0 envelope: 2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc
 - preserved RC0 public receipt blob: 5563394a03bbc179fdf0ce4453093bd682a492ef
 - inherited authoring rubric blob: f8967244c3864e7b39d12053d226326c5c06908f
+- writer model: qwen3.5:9b
+- writer model digest: 6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7
+- writer destination: http://127.0.0.1:11434/api/generate
 
-GitHub and exact immutable artifacts remain authoritative. If these identities move or cannot be established, stop BLOCKED_AUTHORITY.
+The exact model/digest and destination are held fixed from RC0 so this successor does not silently substitute a different writer. Service version and other runtime facts are recorded as observed. If the pinned model/digest or destination cannot be established, stop BLOCKED_AUTHORITY.
 
-RC0 remains immutable evidence. Do not edit PR #125 or reuse its consumed writer/custody attempts.
+GitHub and exact immutable artifacts remain authoritative. RC0 remains immutable evidence. Do not edit PR #125 or reuse its consumed writer/custody attempts.
 
 ## Boundary
 
@@ -32,8 +35,8 @@ In scope:
 - exact byte freezing of returned profile artifacts;
 - mechanical checks of the prerequisite surface.
 
-Allowed mutations before execution freeze:
-- preparation-only corrections to this new RC1 setup before the fresh writer is invoked, with failures preserved.
+Allowed preparation mutations:
+- corrections to this new RC1 setup before the fresh writer is invoked, provided the first setup and deviation are preserved.
 
 Protected / prohibited:
 - production source, config, runner, package/version metadata;
@@ -73,21 +76,24 @@ The custodian is external to the writer model. It captures the actual native req
 
 The custody receipt must remain bounded. It may record token counts and done reason, but it must not contain generated prompts, source bodies, semantic answers, or whole native responses. Native request/response bytes are preserved separately and referenced by digest.
 
+The execution-time checker is frozen before the writer invocation. It verifies the aperture, pinned model/destination identity, native request/response digests, response completeness, exact extracted profile hashes, and mechanically required profile/review surfaces. Do not modify the checker after writer invocation within this candidate.
+
 ## Acceptance
 
 All of the following are required:
 
 - writer request contains only the allowlisted public inputs plus runtime facts;
+- pinned writer model/digest and destination match the bootstrap;
 - no denylisted source was opened or supplied before profile freeze;
 - exactly five required returned profile artifacts are extracted without repair;
-- primary profile is explicitly root-only and proposal-null;
-- evaluator profile defines separate calibration and decisive modes under one semantic instruction surface;
+- primary config is explicitly root-only, extra-context false, and proposal-null;
+- evaluator config defines separate calibration and decisive modes under one semantic instruction surface;
 - decisive review wire contains row_alias, root_status, decision, and the five named Boolean checks;
 - root_status and decision both explicitly admit uncertain;
 - evaluator may not edit proposals;
 - exact prompt/config/schema bytes are frozen before any semantic case/control exposure;
 - external custody receipt is complete, schema-valid, tied to actual native request/response digests and observed runtime facts;
-- custody checker passes without consulting case/control/oracle material;
+- the frozen execution checker passes without consulting case/control/oracle material;
 - protected production bytes are unchanged.
 
 ## Failure / stop states
@@ -96,10 +102,10 @@ BLOCKED_PROFILE_CONFIGURATION:
 the one fresh writer attempt does not return a complete required profile surface.
 
 BLOCKED_CUSTODY_VERIFICATION:
-the external custody route or receipt cannot be completed and checked within the one allowed custody attempt.
+the external custody route, receipt, or frozen checker cannot complete successfully within the one allowed custody attempt.
 
 BLOCKED_AUTHORITY:
-required pinned authority/runtime facts cannot be established.
+required pinned authority/model/destination facts cannot be established.
 
 CONTAMINATED:
 forbidden material is exposed before profile freeze.
