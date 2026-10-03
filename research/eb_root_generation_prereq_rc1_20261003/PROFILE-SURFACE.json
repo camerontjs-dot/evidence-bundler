@@ -1,0 +1,58 @@
+{
+  "schema": "eb-root-generation-profile-surface-rc1-v1",
+  "required_files": [
+    "PRIMARY-PROMPT.txt",
+    "PRIMARY-CONFIG.json",
+    "EVALUATOR-PROMPT.txt",
+    "EVALUATOR-CONFIG.json",
+    "REVIEW-SCHEMA.json"
+  ],
+  "primary": {
+    "input": {
+      "role": "primary",
+      "required_fields": ["schema", "root_alias", "root_text", "rubric", "output_schema", "proposal"],
+      "proposal": null,
+      "extra_context": false
+    },
+    "output": {
+      "required_fields": ["root_alias", "status", "reason", "children"],
+      "status": ["declared", "ineligible"],
+      "declared_children": 2,
+      "ineligible_children": 0,
+      "json_only": true
+    }
+  },
+  "evaluator": {
+    "shared_semantic_instructions": true,
+    "proposal_editing": false,
+    "modes": {
+      "calibration": {
+        "input": ["root_alias", "root_text", "proposal", "rubric", "review_schema"],
+        "output": ["root_alias", "decision"],
+        "decision": ["accept", "reject", "uncertain"]
+      },
+      "decisive": {
+        "input": ["row_alias", "root_text", "proposal", "rubric", "review_schema"],
+        "output": ["row_alias", "root_status", "decision", "checks"],
+        "root_status": ["eligible", "ineligible", "uncertain"],
+        "decision": ["accept", "reject", "uncertain"],
+        "checks": [
+          "two_required_children",
+          "materially_distinct",
+          "conservation",
+          "subject_anchors",
+          "inherited_status"
+        ]
+      }
+    }
+  },
+  "forbidden_profile_content": [
+    "worked examples",
+    "case aliases or case text",
+    "oracle answers",
+    "metamorphic pair identities",
+    "weak-generator outputs",
+    "prior model outputs",
+    "expected scientific disposition"
+  ]
+}
