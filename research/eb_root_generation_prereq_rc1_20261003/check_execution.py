@@ -46,6 +46,7 @@ def check(execution_dir: Path) -> dict:
     bootstrap = read_json(HERE / "BOOTSTRAP-MANIFEST.json")
     surface = read_json(HERE / "PROFILE-SURFACE.json")
     custody_schema = read_json(HERE / "CUSTODY-SCHEMA.json")
+    transport = read_json(HERE / "WRITER-TRANSPORT.json")
     candidate = read_json(HERE / "CANDIDATE.json")
     receipt = read_json(execution_dir / "CUSTODY-RECEIPT.json")
 
@@ -54,10 +55,12 @@ def check(execution_dir: Path) -> dict:
     need(receipt["setup_source_commit"] == candidate["source_commit"], "setup source identity")
     runtime = bootstrap["writer_runtime"]
     need(receipt["destination"] == runtime["destination"], "destination drift")
+    need(receipt["service_version"] == runtime["service_version"], "service version drift")
     need(receipt["reported_model"] == runtime["reported_model"], "writer model drift")
     need(receipt["reported_model_digest"] == runtime["service_reported_digest"], "writer digest drift")
     need(receipt["response_complete"] is True, "incomplete writer response")
     need(receipt["truncated"] is False, "truncated writer response")
+    need(receipt["done_reason"] != "length", "length stop")
     need(receipt["forbidden_sources_opened"] == [], "forbidden source exposure")
 
     opened = receipt["opened_sources"]
@@ -72,6 +75,29 @@ def check(execution_dir: Path) -> dict:
     need(request_path.is_file() and response_path.is_file(), "native request/response missing")
     need(receipt["native_request_sha256"] == sha256(request_path), "native request digest")
     need(receipt["native_response_sha256"] == sha256(response_path), "native response digest")
+
+    request = read_json(request_path)
+    need(request["model"] == transport["model"], "request model")
+    need(request["raw"] == transport["raw"], "request raw")
+    need(request["stream"] == transport["stream"], "request stream")
+    need(request["think"] == transport["think"], "request think")
+    need(request["keep_alive"] == transport["keep_alive"], "request keep_alive")
+    need(request["options"] == transport["options"], "request options")
+    need(request["format"] == transport["response_format"], "request response format")
+
+    prompt = request["prompt"]
+    for name in ALLOWED_SOURCES:
+        need((HERE / name).read_text(encoding="utf-8") in prompt, "allowed source not present: " + name)
+    forbidden_request_markers = [
+        "ROOTS.PUBLIC.json",
+        "ORACLE.PUBLIC.json",
+        "METAMORPHIC.PUBLIC.json",
+        "REVIEWER-CALIBRATION.PUBLIC.json",
+        "CANDIDATE-R0.HISTORY.json",
+        "CANDIDATE-R1.HISTORY.json",
+    ]
+    for marker in forbidden_request_markers:
+        need(marker not in prompt, "forbidden request marker: " + marker)
 
     profiles = execution_dir / "profiles"
     need(profiles.is_dir(), "profiles directory missing")
@@ -113,7 +139,7 @@ def check(execution_dir: Path) -> dict:
     for token in ("uncertain", "calibration", "decisive"):
         need(token in lower_eval, "evaluator prompt missing " + token)
 
-    forbidden_markers = [
+    forbidden_profile_markers = [
         "ROOTS.PUBLIC.json",
         "ORACLE.PUBLIC.json",
         "METAMORPHIC.PUBLIC.json",
@@ -126,7 +152,7 @@ def check(execution_dir: Path) -> dict:
         json.dumps(evaluator, sort_keys=True),
         json.dumps(review, sort_keys=True),
     ])
-    for marker in forbidden_markers:
+    for marker in forbidden_profile_markers:
         need(marker not in joined, "forbidden marker in profile: " + marker)
 
     return {
@@ -136,6 +162,7 @@ def check(execution_dir: Path) -> dict:
         "setup_source_commit": candidate["source_commit"],
         "writer_aperture": "PASS",
         "runtime_binding": "PASS",
+        "transport_binding": "PASS",
         "native_custody": "PASS",
         "profile_file_count": 5,
         "profile_surface": "PASS",
@@ -147,4 +174,15 @@ def check(execution_dir: Path) -> dict:
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit("usage: check_execution.py EXECUTION_DIR")
-    print(json.dumps(check(Path(sys.argv[1]).resolve()), sort_keys=True))
+    try:
+        result = check(Path(sys.argv[1]).resolve())
+    except Exception as exc:
+        result = {
+            "schema": "eb-root-generation-prereq-execution-check-rc1-v1",
+            "result": "FAIL",
+            "reason": str(exc),
+            "generation_capability": "UNKNOWN",
+        }
+        print(json.dumps(result, sort_keys=True))
+        raise SystemExit(2)
+    print(json.dumps(result, sort_keys=True))

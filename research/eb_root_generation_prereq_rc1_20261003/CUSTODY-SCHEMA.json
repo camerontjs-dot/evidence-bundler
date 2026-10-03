@@ -1,6 +1,6 @@
 {
   "schema": "eb-root-generation-external-custody-rc1-v1",
-  "producer": "external_launcher_or_custodian_not_writer_model",
+  "producer": "frozen_external_launcher_not_writer_model",
   "purpose": "Record writer aperture, chronology, response completeness, runtime facts and extracted profile identity without semantic self-attestation.",
   "required_fields": [
     "schema",
@@ -25,7 +25,7 @@
     "extracted_files_sha256"
   ],
   "constraints": {
-    "opened_sources": "Exactly the four bootstrap source files, each recorded with exact SHA-256. Runtime facts are recorded in dedicated receipt fields.",
+    "opened_sources": "Exactly the four source files supplied in the writer prompt, each recorded with exact SHA-256. Runtime facts are recorded separately.",
     "forbidden_sources_opened": "Must be an empty array for PASS.",
     "actual_backend_weight_attestation": "Use UNKNOWN unless independently observable.",
     "response_complete": true,

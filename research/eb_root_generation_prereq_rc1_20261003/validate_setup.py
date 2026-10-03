@@ -30,6 +30,7 @@ def validate() -> dict:
     surface = read("PROFILE-SURFACE.json")
     bootstrap = read("BOOTSTRAP-MANIFEST.json")
     custody = read("CUSTODY-SCHEMA.json")
+    transport = read("WRITER-TRANSPORT.json")
     status = read("LAUNCH-STATUS.json")
 
     need(rubric["schema"] == "eb-rc2-authoring-rubric-v1", "rubric schema")
@@ -65,10 +66,25 @@ def validate() -> dict:
     need(not allow.intersection(deny), "allow/deny collision")
     need(bootstrap["context_free_required"] is True, "context-free required")
     need(bootstrap["semantic_attempts_authorized"] == 0, "semantic execution prohibited")
+
     runtime = bootstrap["writer_runtime"]
-    need(runtime["destination"] == "http://127.0.0.1:11434/api/generate", "pinned destination")
-    need(runtime["reported_model"] == "qwen3.5:9b", "pinned writer model")
-    need(runtime["service_reported_digest"] == "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7", "pinned writer digest")
+    need(runtime["destination"] == transport["destination"], "transport destination binding")
+    need(runtime["reported_model"] == transport["model"], "transport model binding")
+    need(runtime["service_reported_digest"] == transport["service_reported_digest"], "transport digest binding")
+    need(runtime["service_version"] == transport["service_version"], "transport service binding")
+    need(transport["raw"] is True and transport["stream"] is False and transport["think"] is False, "raw transport flags")
+    need(transport["options"] == {
+        "num_ctx": 32768,
+        "num_predict": 8192,
+        "presence_penalty": 1.5,
+        "seed": 502,
+        "temperature": 0,
+        "top_k": 20,
+        "top_p": 0.95,
+    }, "writer options drift")
+    fmt_files = transport["response_format"]["properties"]["files"]
+    need(fmt_files["required"] == required_files, "transport profile file order")
+
     for forbidden in (
         "ROOTS.PUBLIC.json",
         "ORACLE.PUBLIC.json",
@@ -76,15 +92,17 @@ def validate() -> dict:
         "REVIEWER-CALIBRATION.PUBLIC.json",
         "RC0 returned profile files",
         "RC0 native writer/custody outputs",
+        "run_writer.py",
         "check_execution.py",
     ):
         need(forbidden in deny, "missing denylist item: " + forbidden)
 
-    need(custody["producer"] == "external_launcher_or_custodian_not_writer_model", "external custody")
+    need(custody["producer"] == "frozen_external_launcher_not_writer_model", "external custody")
     need(custody["model_generated_custody_receipt"] is False, "no model custody self-report")
     need(custody["constraints"]["response_complete"] is True, "complete response required")
     need(custody["constraints"]["truncated"] is False, "truncation prohibited")
     need(custody["constraints"]["extracted_files_sha256"] == required_files, "custody file coverage")
+    need((HERE / "run_writer.py").is_file(), "frozen writer launcher missing")
     need((HERE / "check_execution.py").is_file(), "frozen execution checker missing")
 
     need(status["execution"] == "NOT_RUN", "execution must remain not run")
@@ -134,7 +152,9 @@ def validate() -> dict:
         "profile_files_required": 5,
         "uncertainty_surface": "EXPLICIT",
         "writer_runtime": "PINNED",
-        "custody_producer": "EXTERNAL",
+        "writer_transport": "PINNED",
+        "frozen_writer_launcher": True,
+        "custody_producer": "FROZEN_EXTERNAL",
         "frozen_execution_checker": True,
         "model_generated_custody_receipt": False,
         "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",

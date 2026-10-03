@@ -11,6 +11,17 @@
       "writer_attempt_consumed": false,
       "custody_attempt_consumed": false,
       "generation_capability": "UNKNOWN"
+    },
+    {
+      "id": "RC1-SETUP-002",
+      "stage": "pre_execution_setup",
+      "observed": "The second frozen setup still left exact writer request options and request construction to the executor rather than freezing the launcher/transport.",
+      "risk": "Executor discretion over request parameters or source packing would add an avoidable controlled-variable and custody ambiguity.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the second candidate in Git history, freeze the RC0 request options and a five-file response schema in WRITER-TRANSPORT.json, and add frozen run_writer.py as the sole authorized launcher/custodian.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
     }
   ]
 }

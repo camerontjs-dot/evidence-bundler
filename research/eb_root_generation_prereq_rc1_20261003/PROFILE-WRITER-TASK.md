@@ -23,8 +23,8 @@ Both root_status and decision must explicitly support uncertain where defined by
 
 Do not include worked examples, case aliases/text, expected answers, oracle material, metamorphic pair identities, weak-system output, previous generated profiles, or scientific outcomes.
 
-Return only the five requested file bodies in a deterministic clearly delimited bundle. Do not return a custody report, narrative explanation, hashes, or extra files. An external custodian will hash and record the native request/response and extracted bytes.
+Return only the five requested file bodies through the transport-enforced files object. Do not return a custody report, narrative explanation, hashes, or extra files. An external frozen launcher/custodian will hash and record the native request/response and extracted bytes.
 
-One writing attempt. No candidate sweep, repair, reroll, replacement writer, semantic execution, or third role. If the required surface cannot be produced from the allowed inputs, return a short BLOCKED marker instead of inventing missing semantics.
+One writing attempt. No candidate sweep, repair, reroll, replacement writer, semantic execution, or third role. If the required surface cannot be produced from the allowed inputs, return the closest schema-valid five-file bundle you can produce without inventing semantic case information; the frozen checker determines whether the prerequisite passes.
 
 Unknown runtime facts remain UNKNOWN. Do not claim capabilities that are not observable.
