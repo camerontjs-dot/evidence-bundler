@@ -1,0 +1,12 @@
+{
+  "schema": "eb-rc2-primary-config-v1",
+  "role": "primary_declaration_generator",
+  "rubric_ref": "AUTHORING-RUBRIC.json",
+  "constraints": {
+    "output_format": "JSON only; no rationale or extra fields",
+    "children_declared": 2,
+    "children_ineligible": 0
+  },
+  "frozen_prompt_bytes": "<frozen>",
+  "frozen_config_bytes": "<frozen>"
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "eb-publication-first-failure-v1",
+  "recorded_at": "2026-10-03T01:44:22.395001+00:00",
+  "operation": "first checkpoint commit",
+  "result": "pre-commit formatting rejection",
+  "finding": "archived PR body Markdown: new blank line at EOF",
+  "preserved_archive_sha256": "sha256:291f82e60bc61eb16d4b5b6002195e2a2c58fc0844235cdf5c02297c0be12aac",
+  "packaging_correction": "exact archive bytes retained as decoded JSON string; no profile, native request/response, or setup bytes changed",
+  "scientific_retry": false
+}

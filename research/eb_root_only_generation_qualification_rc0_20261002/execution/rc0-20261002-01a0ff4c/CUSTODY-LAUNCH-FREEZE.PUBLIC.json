@@ -1,0 +1,11 @@
+{
+  "code_sha256": "sha256:556c17419440890645210f4a5e2853d0c35b25a9dc997a4d7776fa648f93f837",
+  "custody_session_budget": 1,
+  "frozen_at": "2026-10-03T01:28:30.114065+00:00",
+  "request_sha256": "sha256:eb024aefd5c9236f5a65658aeab25be7bfb032a007cac30f344ccaa85c85e89f",
+  "requested_model": "qwen3.5:9b",
+  "route": "new raw stateless API request; no tools, context reuse or role replacement",
+  "scope_sha256": "sha256:49d6f88559a4dbf5cc54853755afcce350ba51689e6489f15dbcde904a8acbbb",
+  "service_reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "task_sha256": "sha256:bddc563109ee2b7fe5016f3c38f4c5b0720f7653ffeabcf074c5baa761cafd68"
+}

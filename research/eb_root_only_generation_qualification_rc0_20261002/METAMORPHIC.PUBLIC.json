@@ -1,0 +1,62 @@
+{
+  "schema": "eb-root-generation-metamorphic-v1",
+  "pairs": [
+    {
+      "pair_id": "M01",
+      "aliases": [
+        "R01",
+        "R02"
+      ],
+      "change": "Second obligation modality must -> may",
+      "invariants": [
+        "prohibition of retaining cleartext",
+        "subject",
+        "two obligations",
+        "backup object"
+      ]
+    },
+    {
+      "pair_id": "M02",
+      "aliases": [
+        "R03",
+        "R04"
+      ],
+      "change": "Both upper bounds four -> five",
+      "invariants": [
+        "at-most direction",
+        "subject",
+        "Gate 2 and Gate 3",
+        "two obligations"
+      ]
+    },
+    {
+      "pair_id": "M03",
+      "aliases": [
+        "R05",
+        "R06"
+      ],
+      "change": "Reported pressure 12 -> 15 kPa and reported temperature 8 -> 9 °C",
+      "invariants": [
+        "attribution to Sable Lab reports",
+        "units",
+        "two obligations",
+        "subject"
+      ]
+    },
+    {
+      "pair_id": "M04",
+      "aliases": [
+        "R07",
+        "R08"
+      ],
+      "change": "Alarm/reset month May -> June",
+      "invariants": [
+        "alarm vs reset",
+        "day 2 vs day 3",
+        "past-tense records",
+        "subject",
+        "two obligations"
+      ]
+    }
+  ]
+}

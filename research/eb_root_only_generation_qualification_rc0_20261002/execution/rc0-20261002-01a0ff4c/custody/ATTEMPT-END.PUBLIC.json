@@ -1,0 +1,8 @@
+{
+  "completed_at": "2026-10-03T01:43:22.684297+00:00",
+  "done": true,
+  "done_reason": "length",
+  "model": "qwen3.5:9b",
+  "native_response_sha256": "sha256:2c7f1477c75f5a14e22e7d64edf79a9dd1ff6f9202d89a921567c186c67a1a46",
+  "output_sha256": "sha256:e9054cec0faab7e3e480b52e5d557f50a376f5b01a13335c7a5edef93fd3bbf4"
+}

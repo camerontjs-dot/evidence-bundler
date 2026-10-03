@@ -1,0 +1,29 @@
+{
+  "aperture_assurance": "observable API request boundary; server internals require custody verification",
+  "capability_sha256": "sha256:91a7f874356093a0fafed9bd1474138be0115db7634095a1762338521a5d6e0d",
+  "frozen_at": "2026-10-03T01:17:45.910407+00:00",
+  "generation_and_evaluator_invocations": 0,
+  "profile_writing_invocations": 0,
+  "request_sha256": "sha256:cc49ffbf28b9995d484eec5648fd57f15455d69849a7f49c71ae9d4303d317c0",
+  "route": "direct local raw stateless API; no agent CLI, memory, tools, history or repository hydration supplied",
+  "route_code_sha256": "sha256:cf82956d160e4aeeb1a67d1dddd79b7aa8e6f5e770668756cd5c6b618f9af616",
+  "schema": "eb-fresh-profile-writer-route-v1",
+  "source_allowlist": [
+    {
+      "name": "BOOTSTRAP-MANIFEST.json",
+      "sha256": "sha256:d994ff9bec2eb1b1afef7520bddc7835a142f87de15120966eb75ce15b210316"
+    },
+    {
+      "name": "PROFILE-WRITER-TASK.md",
+      "sha256": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1"
+    },
+    {
+      "name": "AUTHORING-RUBRIC.json",
+      "sha256": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9"
+    },
+    {
+      "name": "SCHEMAS.json",
+      "sha256": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6"
+    }
+  ]
+}

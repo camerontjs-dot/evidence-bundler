@@ -1,0 +1,24 @@
+{
+  "schema": "eb-observable-writer-aperture-check-v1",
+  "result": "PASS_REQUEST_ALLOWLIST",
+  "transport": "direct local raw /api/generate, no session or agent process",
+  "request_sha256": "sha256:cc49ffbf28b9995d484eec5648fd57f15455d69849a7f49c71ae9d4303d317c0",
+  "serving_process": {
+    "pid": 14638,
+    "name": "ollama",
+    "loopback_destination": "127.0.0.1:11434",
+    "binary_sha256": "bba8b79eac84ab092b9568978c1116e6c950eda588961b14d8608ac683a2af0b"
+  },
+  "prohibited_request_fields_absent": [
+    "context",
+    "messages",
+    "tools",
+    "system",
+    "images",
+    "suffix",
+    "session_id",
+    "previous_response_id"
+  ],
+  "effective_internal_token_sequence": "UNKNOWN",
+  "proof_boundary": "native raw request plus observed serving process and documented raw API behavior; independent custody pending"
+}

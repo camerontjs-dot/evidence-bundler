@@ -1,0 +1,40 @@
+{
+  "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "frozen_blobs": {
+    ".github/workflows/research-root-only-generation-setup-rc0.yml": "4a71509043062ee17c4f6f1a0dd0c588ec52db48",
+    "research/eb_root_only_generation_qualification_rc0_20261002/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_only_generation_qualification_rc0_20261002/BOOTSTRAP-MANIFEST.json": "a5b73a460f89f25c926d767777214ad8b9a3b01b",
+    "research/eb_root_only_generation_qualification_rc0_20261002/LAUNCH-STATUS.json": "449cff77838c2684ab09621521757277e4ccfa61",
+    "research/eb_root_only_generation_qualification_rc0_20261002/METAMORPHIC.PUBLIC.json": "6c4d67431486f5581c1c2278819decb315b7fef0",
+    "research/eb_root_only_generation_qualification_rc0_20261002/ORACLE.PUBLIC.json": "8e2eac61886e08ddabdc462e08fa69ede7014c0a",
+    "research/eb_root_only_generation_qualification_rc0_20261002/PREREGISTRATION.md": "1d1877383291dfee49e0ce0e1fd95c40f1f82818",
+    "research/eb_root_only_generation_qualification_rc0_20261002/PROFILE-WRITER-TASK.md": "c51073993ae50f9606f154ec73322405b2d20818",
+    "research/eb_root_only_generation_qualification_rc0_20261002/README.md": "108d1894c9e86d16aad810ba3817cd73409e4d91",
+    "research/eb_root_only_generation_qualification_rc0_20261002/REVIEWER-CALIBRATION.PUBLIC.json": "7501a788862f56ed0d85b3cb12dbfb3315309683",
+    "research/eb_root_only_generation_qualification_rc0_20261002/ROOTS.PUBLIC.json": "ff75effccb45f0f43a40e8741aec0619e4fa9087",
+    "research/eb_root_only_generation_qualification_rc0_20261002/SCHEMAS.json": "937e61b84712b8a7430aafb98d9b8ab16f3440bf",
+    "research/eb_root_only_generation_qualification_rc0_20261002/SETUP-MANIFEST.json": "14d4c45be89407e87dee2548788d33ecf0db2e19",
+    "research/eb_root_only_generation_qualification_rc0_20261002/validate_setup.py": "35179f450f3670bad1399b55a026bdc2661f53a1"
+  },
+  "frozen_raw_sha256": {
+    ".github/workflows/research-root-only-generation-setup-rc0.yml": "sha256:eafa7f011e755027c9bca297d52d1b89b3cbf4b57fb9eadf48bbe9359c80231a",
+    "research/eb_root_only_generation_qualification_rc0_20261002/AUTHORING-RUBRIC.json": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9",
+    "research/eb_root_only_generation_qualification_rc0_20261002/BOOTSTRAP-MANIFEST.json": "sha256:d994ff9bec2eb1b1afef7520bddc7835a142f87de15120966eb75ce15b210316",
+    "research/eb_root_only_generation_qualification_rc0_20261002/LAUNCH-STATUS.json": "sha256:259eb250d29933d7d984f2108c331959c9e31df6bdeccd2ed3da17a141a5187a",
+    "research/eb_root_only_generation_qualification_rc0_20261002/METAMORPHIC.PUBLIC.json": "sha256:3ec2c0c8b4c7418fa293dc020ebe021421010619f4c3c5b141942695827ab711",
+    "research/eb_root_only_generation_qualification_rc0_20261002/ORACLE.PUBLIC.json": "sha256:a2be345c71a8809d74f95acd08d427c6e745643149ee8a7a4fb36aa4c76f16cf",
+    "research/eb_root_only_generation_qualification_rc0_20261002/PREREGISTRATION.md": "sha256:697412423baa51d88bb2bea3ffe8ce14cc0a20ede4ab6fde56e8cf1ecaa800c5",
+    "research/eb_root_only_generation_qualification_rc0_20261002/PROFILE-WRITER-TASK.md": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1",
+    "research/eb_root_only_generation_qualification_rc0_20261002/README.md": "sha256:d7ff12bc53a8276e24bacaa00783b246347c65a9b5249af934b42b53fa341e8c",
+    "research/eb_root_only_generation_qualification_rc0_20261002/REVIEWER-CALIBRATION.PUBLIC.json": "sha256:69934c6672c4fb3544852b6c80adacd3a606f3c9dc9697cf8e4eb6f287bff6cf",
+    "research/eb_root_only_generation_qualification_rc0_20261002/ROOTS.PUBLIC.json": "sha256:2429971542d7f53ddb8394593fb6a4eb8e27410a5ebab0836c0a39e272a419d1",
+    "research/eb_root_only_generation_qualification_rc0_20261002/SCHEMAS.json": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6",
+    "research/eb_root_only_generation_qualification_rc0_20261002/SETUP-MANIFEST.json": "sha256:a8fe2d4e1e0610205a0e4a882ce55d003ab3b5affd2befdf91d9ca1a7547e8f1",
+    "research/eb_root_only_generation_qualification_rc0_20261002/validate_setup.py": "sha256:dd2b7baa4a8f337cc68b4008573f287ad2d344aa88eece13201659add89c6799"
+  },
+  "meaning": "Setup source closure only. Actual primary/profile/adapter/evaluator/runtime/isolation remain UNBOUND. No semantic run.",
+  "preregistration_commit": "bc2142049dd43888823fb5a73fda7ab0c90fa964",
+  "schema": "eb-root-generation-setup-candidate-v1",
+  "source_commit": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f",
+  "source_tree": "b1ca0998349f8805c26f2be3bf06f52a897cc8e6"
+}

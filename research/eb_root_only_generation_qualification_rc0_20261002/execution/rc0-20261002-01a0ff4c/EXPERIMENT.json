@@ -1,0 +1,32 @@
+{
+  "schema": "eb-public-root-generation-experiment-v1",
+  "experiment_id": "rc0-20261002-01a0ff4c",
+  "state": "aborted",
+  "terminal_disposition": "BLOCKED",
+  "candidate_source": "1c94cb82262d6346cf4aef35ff50d8d70c4aacb3",
+  "candidate_tree": "fb629ae75b9924ebfa5968f1862648a788f33639",
+  "study_type": "confirmatory public synthetic diagnostic",
+  "question": "Can the exact primary profile generate faithful declarations from root-only capsules?",
+  "decision": "No generation conclusion without complete profiles, evaluator calibration and verified custody.",
+  "protocol_sha256": "sha256:fa12354b03338118e3132cb07fd3b42e511ae69da4c6b2b9df84930f012d1f24",
+  "inputs": {
+    "AUTHORING-RUBRIC.json": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9",
+    "BOOTSTRAP-MANIFEST.json": "sha256:d994ff9bec2eb1b1afef7520bddc7835a142f87de15120966eb75ce15b210316",
+    "LAUNCH-STATUS.json": "sha256:259eb250d29933d7d984f2108c331959c9e31df6bdeccd2ed3da17a141a5187a",
+    "METAMORPHIC.PUBLIC.json": "sha256:3ec2c0c8b4c7418fa293dc020ebe021421010619f4c3c5b141942695827ab711",
+    "ORACLE.PUBLIC.json": "sha256:a2be345c71a8809d74f95acd08d427c6e745643149ee8a7a4fb36aa4c76f16cf",
+    "PREREGISTRATION.md": "sha256:fa12354b03338118e3132cb07fd3b42e511ae69da4c6b2b9df84930f012d1f24",
+    "PROFILE-WRITER-TASK.md": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1",
+    "README.md": "sha256:d7ff12bc53a8276e24bacaa00783b246347c65a9b5249af934b42b53fa341e8c",
+    "REVIEWER-CALIBRATION.PUBLIC.json": "sha256:69934c6672c4fb3544852b6c80adacd3a606f3c9dc9697cf8e4eb6f287bff6cf",
+    "ROOTS.PUBLIC.json": "sha256:2429971542d7f53ddb8394593fb6a4eb8e27410a5ebab0836c0a39e272a419d1",
+    "SCHEMAS.json": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6",
+    "validate_setup.py": "sha256:dd2b7baa4a8f337cc68b4008573f287ad2d344aa88eece13201659add89c6799"
+  },
+  "primary_metric": "faithful status-correct root-only declaration; NOT_MEASURED",
+  "unit_of_analysis": "root capsule",
+  "planned_n": 12,
+  "executed_generation_n": 0,
+  "primary_factor": "primary generator versus frozen weak generators; NOT_EXECUTED",
+  "terminal_receipt_sha256": "sha256:16b869c6dae9a6f3c8c6351b1d10c69905d35f6a947a1fcc39f4950debbab7b0"
+}

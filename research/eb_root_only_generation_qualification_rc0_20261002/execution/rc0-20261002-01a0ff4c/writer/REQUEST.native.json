@@ -1,0 +1,58 @@
+{
+  "format": {
+    "additionalProperties": false,
+    "properties": {
+      "files": {
+        "additionalProperties": false,
+        "properties": {
+          "EVALUATOR-CONFIG.json": {
+            "type": "string"
+          },
+          "EVALUATOR-PROMPT.txt": {
+            "type": "string"
+          },
+          "PRIMARY-CONFIG.json": {
+            "type": "string"
+          },
+          "PRIMARY-PROMPT.txt": {
+            "type": "string"
+          },
+          "REVIEW-SCHEMA.json": {
+            "type": "string"
+          },
+          "WRITER-RECEIPT.json": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "PRIMARY-PROMPT.txt",
+          "PRIMARY-CONFIG.json",
+          "EVALUATOR-PROMPT.txt",
+          "EVALUATOR-CONFIG.json",
+          "REVIEW-SCHEMA.json",
+          "WRITER-RECEIPT.json"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "files"
+    ],
+    "type": "object"
+  },
+  "keep_alive": 0,
+  "model": "qwen3.5:9b",
+  "options": {
+    "num_ctx": 32768,
+    "num_predict": 8192,
+    "presence_penalty": 1.5,
+    "seed": 502,
+    "temperature": 0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "prompt": "<|im_start|>user\n{\"sources\": {\"BOOTSTRAP-MANIFEST.json\": \"{\\n  \\\"schema\\\": \\\"eb-root-generation-bootstrap-v1\\\",\\n  \\\"role\\\": \\\"fresh_profile_writer\\\",\\n  \\\"repository\\\": \\\"camerontjs-dot/evidence-bundler\\\",\\n  \\\"protected_main\\\": \\\"c26fbd4bfc8ba5c2604a784af158594b59fcae37\\\",\\n  \\\"upstream_wire_source\\\": \\\"af9cebf187cc5e1f96683bfa1366c6641ea0139c\\\",\\n  \\\"pre_freeze_allowlist\\\": [\\n    \\\"BOOTSTRAP-MANIFEST.json\\\",\\n    \\\"PROFILE-WRITER-TASK.md\\\",\\n    \\\"AUTHORING-RUBRIC.json\\\",\\n    \\\"SCHEMAS.json\\\",\\n    \\\"actual destination/runtime capability metadata supplied without cases\\\"\\n  ],\\n  \\\"pre_freeze_denylist\\\": [\\n    \\\"PREREGISTRATION.md\\\",\\n    \\\"ROOTS.PUBLIC.json\\\",\\n    \\\"ORACLE.PUBLIC.json\\\",\\n    \\\"METAMORPHIC.PUBLIC.json\\\",\\n    \\\"REVIEWER-CALIBRATION.PUBLIC.json\\\",\\n    \\\"weak-generator source/outputs\\\",\\n    \\\"prior PR/issue narrative\\\",\\n    \\\"project/conversation/memory history\\\",\\n    \\\"any private input/corpus\\\",\\n    \\\"target or evaluator outcomes\\\"\\n  ],\\n  \\\"freeze\\\": \\\"One primary profile and one semantic-evaluator profile, exact prompts/config bytes and observed provider/runtime identity, before cases/control/gold exposure.\\\",\\n  \\\"exposure_stop\\\": \\\"CONTAMINATED; preserve the exposure; no clean-room relabeling or same-candidate replacement.\\\"\\n}\\n\", \"PROFILE-WRITER-TASK.md\": \"# Fresh profile-writing task\\n\\nCreate one primary declaration-generation profile and one semantic-evaluator profile from the supplied inherited AUTHORING-RUBRIC.json and SCHEMAS.json. Freeze exact prompt/config bytes and real runtime/destination capability facts. Do not execute either profile in this writing task.\\n\\nThe primary receives only one exact inherited primary capsule: root_alias, root_text, rubric, minimal primary/child/subject schema, role primary, proposal null. It returns the exact inherited primary JSON shape. It produces a faithful two-child declaration only when two materially distinct required obligations are conserved; otherwise an allowed ineligible output. All subject spans use exact half-open UTF-8 bytes. The inherited rubric governs wording and meaning; no truth/source judgment, examples, query expansion or output repair.\\n\\nThe evaluator has two distinct modes under the same frozen semantic judgment instructions: supplied-proposal conservation calibration, and root/proposal evaluation. Calibration returns alias plus accept/reject. Decisive review returns row_alias, root_status (eligible/ineligible/uncertain), decision (accept/reject/uncertain), and exact Boolean checks two_required_children, materially_distinct, conservation, subject_anchors, inherited_status. For a correctly ineligible proposal, the first two checks are false, conservation means it adds no invented obligation, and subject/inheritance checks mean no subjects were emitted. Uncertainty is explicit. Do not edit the proposal. Exact review wire details are a preparation artifact frozen with this profile, before examples/cases.\\n\\nUse only this task, the bootstrap allowlist and actual runtime capability facts. Do not access case, oracle, metamorphic, previous-control, implementation/result or conversational material. Do not invent provider capabilities. Document any unobservable model/config state as UNKNOWN. Stop CONTAMINATED on forbidden exposure and BLOCKED if isolation/runtime facts cannot be established.\\n\\nReturn hashed profile files and an ordered source-access/freeze receipt. One writing session, one candidate each, no examples, sweeps, replacement profile or role execution.\\n\\n**Binds:** fresh profile writer. **Tier:** T0 until a verified route enforces the aperture. **Check:** explicit allowlist and native request/custody receipt. **Escape:** BLOCKED or CONTAMINATED.\\n\", \"AUTHORING-RUBRIC.json\": \"{\\n  \\\"checker_reasons\\\": [\\n    \\\"exact_agreement\\\",\\n    \\\"not_two_required\\\",\\n    \\\"not_distinct\\\",\\n    \\\"not_conserved\\\",\\n    \\\"subject_mismatch\\\",\\n    \\\"inheritance_mismatch\\\",\\n    \\\"uncertain\\\"\\n  ],\\n  \\\"checks\\\": [\\n    \\\"two_required_children\\\",\\n    \\\"materially_distinct\\\",\\n    \\\"conservation\\\",\\n    \\\"subject_anchors\\\",\\n    \\\"inherited_status\\\"\\n  ],\\n  \\\"extra_context\\\": false,\\n  \\\"ineligible_reasons\\\": [\\n    \\\"not_two_required\\\",\\n    \\\"disjunction\\\",\\n    \\\"conditional_or_context\\\",\\n    \\\"not_conserved\\\",\\n    \\\"uncertain\\\"\\n  ],\\n  \\\"meaning\\\": \\\"Experimental declaration authority only; no truth, source or adequacy judgment.\\\",\\n  \\\"rules\\\": [\\n    \\\"Represent only a faithful all_of of exactly two materially distinct required obligations.\\\",\\n    \\\"Preserve modality, negation, quantifiers, values, dates, attribution, scope and references. Add or omit no obligation.\\\",\\n    \\\"Reject OR flattening, conditional loss, duplicate children, context-dependent or non-two-obligation roots.\\\",\\n    \\\"Copy each subject from an exact UTF-8 root span. Explicit subjects additionally match an exact child span. An inherited subject copies the root anchor without a child span.\\\",\\n    \\\"Declare ineligible when unresolved; no repair, third session, other root, evidence, tool or retrieval access.\\\",\\n    \\\"Checker either accepts the exact proposal with all five checks true or rejects it without edits.\\\"\\n  ],\\n  \\\"schema\\\": \\\"eb-rc2-authoring-rubric-v1\\\"\\n}\\n\", \"SCHEMAS.json\": \"{\\n  \\\"authority\\\": \\\"Qualified adapter/profile/destination/calibration and independent custody pins required; unbound in setup.\\\",\\n  \\\"closed_fields\\\": {\\n    \\\"capsule\\\": [\\n      \\\"schema\\\",\\n      \\\"role\\\",\\n      \\\"root_alias\\\",\\n      \\\"root_text\\\",\\n      \\\"rubric\\\",\\n      \\\"output_schema\\\",\\n      \\\"proposal\\\"\\n    ],\\n    \\\"checker\\\": [\\n      \\\"root_alias\\\",\\n      \\\"proposal_sha256\\\",\\n      \\\"decision\\\",\\n      \\\"reason\\\",\\n      \\\"checks\\\"\\n    ],\\n    \\\"child\\\": [\\n      \\\"text\\\",\\n      \\\"subject\\\"\\n    ],\\n    \\\"launch_trace\\\": [\\n      \\\"adapter_sha256\\\",\\n      \\\"session_id\\\",\\n      \\\"profile_sha256\\\",\\n      \\\"destination\\\",\\n      \\\"request\\\",\\n      \\\"output\\\",\\n      \\\"started_at\\\",\\n      \\\"completed_at\\\",\\n      \\\"no_history_receipt_sha256\\\"\\n    ],\\n    \\\"primary\\\": [\\n      \\\"root_alias\\\",\\n      \\\"status\\\",\\n      \\\"reason\\\",\\n      \\\"children\\\"\\n    ],\\n    \\\"subject\\\": [\\n      \\\"anchor\\\",\\n      \\\"entity_class\\\",\\n      \\\"root_span\\\",\\n      \\\"child_span\\\",\\n      \\\"origin\\\"\\n    ]\\n  },\\n  \\\"constraints\\\": {\\n    \\\"accept\\\": \\\"exact_agreement; all five exact Boolean checks true; same unchanged proposal digest\\\",\\n    \\\"checker_decision\\\": [\\n      \\\"accept\\\",\\n      \\\"reject\\\"\\n    ],\\n    \\\"children_declared\\\": 2,\\n    \\\"children_ineligible\\\": 0,\\n    \\\"declared_reason\\\": \\\"two_required_conserved\\\",\\n    \\\"output\\\": \\\"JSON only; no rationale or extra fields\\\",\\n    \\\"primary_status\\\": [\\n      \\\"declared\\\",\\n      \\\"ineligible\\\"\\n    ],\\n    \\\"spans\\\": \\\"UTF-8 half-open byte coordinates, exact literal match; inherited child_span null\\\",\\n    \\\"subject_origin\\\": [\\n      \\\"explicit\\\",\\n      \\\"inherited\\\"\\n    ]\\n  },\\n  \\\"schema\\\": \\\"eb-rc2-authoring-wire-v1\\\"\\n}\\n\"}, \"actual_runtime_capability_metadata\": {\"schema\": \"eb-observed-raw-runtime-capabilities-v1\", \"observed_at\": \"2026-10-03T01:17:45.909936+00:00\", \"destination\": \"http://127.0.0.1:11434\", \"endpoint\": \"/api/generate\", \"service_version\": \"0.34.4\", \"model\": \"qwen3.5:9b\", \"service_reported_model_digest\": \"6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7\", \"native_model_metadata_sha256\": \"sha256:b5ce5b8c4b52c87d27f3b2a9b27c28379d262e493f90e2e2e6022ae2e4a1a12b\", \"template\": \"{{ .Prompt }}\", \"default_system\": \"\", \"capabilities\": [\"completion\", \"vision\", \"tools\", \"thinking\"], \"thinking\": {\"values\": [false, true], \"default\": true}, \"model_details\": {\"parent_model\": \"\", \"format\": \"gguf\", \"family\": \"qwen35\", \"families\": [\"qwen35\"], \"parameter_size\": \"9.7B\", \"quantization_level\": \"Q4_K_M\"}, \"raw_prompt\": true, \"history_field\": \"ABSENT\", \"session_resume\": \"ABSENT\", \"tool_dispatch\": \"ABSENT\", \"format_capability\": \"JSON schema transport; returned profile file strings are extracted verbatim and hashed by the collector\", \"allowed_output_artifacts\": [\"PRIMARY-PROMPT.txt\", \"PRIMARY-CONFIG.json\", \"EVALUATOR-PROMPT.txt\", \"EVALUATOR-CONFIG.json\", \"REVIEW-SCHEMA.json\", \"WRITER-RECEIPT.json\"], \"observable_parameters\": {\"raw\": true, \"stream\": false, \"think\": false, \"options\": {\"num_ctx\": 32768, \"num_predict\": 8192, \"temperature\": 0, \"seed\": 502, \"top_k\": 20, \"top_p\": 0.95, \"presence_penalty\": 1.5}}, \"backend_weight_attestation\": \"UNKNOWN\", \"server_internal_effective_token_sequence\": \"UNKNOWN\", \"documented_raw_api\": \"https://docs.ollama.com/api/generate\"}}\n<|im_end|>\n<|im_start|>assistant\n",
+  "raw": true,
+  "stream": false,
+  "think": false
+}

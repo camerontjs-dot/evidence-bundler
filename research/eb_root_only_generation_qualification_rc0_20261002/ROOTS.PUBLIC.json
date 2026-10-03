@@ -1,0 +1,53 @@
+{
+  "schema": "eb-root-generation-public-roots-v1",
+  "rows": [
+    {
+      "alias": "R01",
+      "root_text": "Élan Unit must not retain cleartext and must encrypt backups."
+    },
+    {
+      "alias": "R02",
+      "root_text": "Élan Unit must not retain cleartext and may encrypt backups."
+    },
+    {
+      "alias": "R03",
+      "root_text": "At most four Rowan units enter Gate 2 and at most four Rowan units enter Gate 3."
+    },
+    {
+      "alias": "R04",
+      "root_text": "At most five Rowan units enter Gate 2 and at most five Rowan units enter Gate 3."
+    },
+    {
+      "alias": "R05",
+      "root_text": "Sable Lab reports a pressure of 12 kPa and reports a temperature of 8 °C."
+    },
+    {
+      "alias": "R06",
+      "root_text": "Sable Lab reports a pressure of 15 kPa and reports a temperature of 9 °C."
+    },
+    {
+      "alias": "R07",
+      "root_text": "North Dock recorded an alarm on May 2 and recorded a reset on May 3."
+    },
+    {
+      "alias": "R08",
+      "root_text": "North Dock recorded an alarm on June 2 and recorded a reset on June 3."
+    },
+    {
+      "alias": "R09",
+      "root_text": "Aster Office issues permits or publishes its log."
+    },
+    {
+      "alias": "R10",
+      "root_text": "Juniper Unit logs, sends a notice and archives receipts."
+    },
+    {
+      "alias": "R11",
+      "root_text": "Cedar Unit logs each alarm."
+    },
+    {
+      "alias": "R12",
+      "root_text": "It records the result and sends a notice."
+    }
+  ]
+}

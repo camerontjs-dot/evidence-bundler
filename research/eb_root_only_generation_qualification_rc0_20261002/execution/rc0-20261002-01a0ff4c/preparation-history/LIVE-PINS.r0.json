@@ -1,0 +1,28 @@
+{
+  "schema": "eb-live-pins-observation-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "checked_at": "2026-10-03T01:14:18Z",
+  "pr_125": {
+    "state": "OPEN",
+    "draft": true,
+    "head": "0988ee8756ce595477695d0cd451fb8d82002e88",
+    "source": "1c94cb82262d6346cf4aef35ff50d8d70c4aacb3",
+    "source_tree": "fb629ae75b9924ebfa5968f1862648a788f33639"
+  },
+  "main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "pr_120": {
+    "state": "OPEN",
+    "draft": true,
+    "head": "08ca896debd6d16fa21be2f178ed7cbe62395d00"
+  },
+  "pr_124": {
+    "state": "OPEN",
+    "draft": true,
+    "head": "bc3d887f27991c215e251875b964f205e478df21",
+    "source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+    "source_tree": "6a708e651bafeae2f7f09dab6a95295a4fd38a89",
+    "attempt_budgets_consumed_by_this_run": 0
+  },
+  "authority_observation": "live GitHub connector/API and isolated Git object inspection; no private source or population access",
+  "protected_diff_from_base": "only authorized setup research subtree and research-only workflow at initial envelope"
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "eb-public-root-generation-qualification-receipt-v1",
+  "execution_id": "rc0-20261002-01a0ff4c",
+  "recorded_at": "2026-10-03T01:49:04.714267+00:00",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "pr": 125,
+  "disposition": "BLOCKED",
+  "bounded_label": "BLOCKED_PROFILE_CONFIGURATION_AND_CUSTODY",
+  "generation_capability": "UNKNOWN",
+  "authority": {
+    "starting_envelope": "0988ee8756ce595477695d0cd451fb8d82002e88",
+    "source_commit": "1c94cb82262d6346cf4aef35ff50d8d70c4aacb3",
+    "source_tree": "fb629ae75b9924ebfa5968f1862648a788f33639",
+    "preregistration_sha256": "sha256:fa12354b03338118e3132cb07fd3b42e511ae69da4c6b2b9df84930f012d1f24",
+    "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+    "protected_eb_subject": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "pr_124_envelope": "bc3d887f27991c215e251875b964f205e478df21",
+    "pr_124_source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+    "profile_checkpoint_commit": "d66a95a9507ecaf2d51a6041b9e3a14b1c205017",
+    "profile_checkpoint_tree": "255adb87b8cdfafcf7d23685a4c98eaa57adaf97"
+  },
+  "blockers": [
+    "Frozen evaluator/review decision constraints omit uncertain; required decisive row/root-status wire is absent; separate review modes are not defined in returned artifacts.",
+    "Independent custody invocation stopped at its 8192-token output limit; returned JSON is incomplete and its checker was not executed."
+  ],
+  "profile_bytes": {
+    "EVALUATOR-CONFIG.json": "sha256:173c1b4d8ead8a81207e25f58ac034c91e9336824b80bafab0760d4fd75593f5",
+    "EVALUATOR-PROMPT.txt": "sha256:97f3b433a39e706989521de479aef7bf1b71f8c0040f301ef3db80074507f904",
+    "PRIMARY-CONFIG.json": "sha256:3a86dfa8b30d34f2dbd7da0e07be8faf372eb9dd6ab22e1076677c1e0415b028",
+    "PRIMARY-PROMPT.txt": "sha256:47c80709c6064d8864db67e6f4f449e2b60788d69d180ad0ba1575d7ccdd1d06",
+    "REVIEW-SCHEMA.json": "sha256:7edfd8b6cea80ffb8774d70f289f79ed4d92857d2aad0c65c552d3a57d084141",
+    "WRITER-RECEIPT.json": "sha256:320bd4bef978d9fc37a1ada6c8709ed253b7e703b67140e172d4f044f4fae126"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.34.4",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "actual_backend_weight_attestation": "UNKNOWN",
+    "effective_internal_token_sequence": "UNKNOWN",
+    "observed_writer_request_allowlist": "PASS_REQUEST_ALLOWLIST",
+    "independent_operational_isolation": "UNVERIFIED"
+  },
+  "budget": {
+    "profile_writing": 1,
+    "semantic_calibration": 2,
+    "target_generation": 12,
+    "deterministic_weak_generators": 3,
+    "decisive_review": 2,
+    "tally": 1,
+    "custody_verification": 1
+  },
+  "consumed": {
+    "profile_writing": 1,
+    "semantic_calibration": 0,
+    "target_generation": 0,
+    "deterministic_weak_generators": 0,
+    "decisive_review": 0,
+    "tally": 0,
+    "custody_verification": 1
+  },
+  "primary_and_evaluator_runtime_binding": "UNBOUND; only writer/custody service calls occurred",
+  "qualification_adapter": "NOT_BUILT; blocked before calibration",
+  "semantic_evaluator": "NOT_RUN",
+  "primary_generation": "NOT_RUN",
+  "weak_system_discrimination": "NOT_RUN",
+  "decisive_review": "NOT_RUN",
+  "tally": "NOT_RUN",
+  "subject_coverage": {
+    "explicit_valid_observed": 0,
+    "inherited_valid_observed": 0,
+    "generation_sessions": 0,
+    "inherited_qualification": "INHERITANCE_NOT_EXERCISED"
+  },
+  "case_status_receipt": "CASE-STATUS.PUBLIC.json",
+  "custody_receipt": "CUSTODY-TERMINAL.PUBLIC.json",
+  "native_writer_response_sha256": "sha256:472f07a0ddb27c4b184aa9da5a7a41259ad086638b877f8c5224fe64bf513917",
+  "native_custody_response_sha256": "sha256:2c7f1477c75f5a14e22e7d64edf79a9dd1ff6f9202d89a921567c186c67a1a46",
+  "first_failures_preserved": [
+    "upstream copied-control filename lookup",
+    "hand-entered receipt time corrected with original preserved",
+    "publication Markdown EOF formatting rejection",
+    "metadata-probe temporary-file storage failure",
+    "incomplete frozen writer artifacts",
+    "custody output length and JSON parse failure"
+  ],
+  "pr_124_attempts_consumed": 0,
+  "private_roots_transmitted": 0,
+  "private_population_or_corpus_access": "NOT_RUN",
+  "retrieval_or_passage_review": "NOT_RUN",
+  "production_changes": "NONE",
+  "merge_release_promotion": "NOT_AUTHORIZED_NOT_RUN",
+  "next_permitted_boundary": "Separately authorize a public successor with a fresh allowlisted writer, complete review/configuration artifacts, and a custody envelope that produces a complete verifiable receipt. Preserve this candidate and its consumed writing/custody attempts; no repair or reroll inside RC0. PR 124 private prerequisites remain independently blocked."
+}

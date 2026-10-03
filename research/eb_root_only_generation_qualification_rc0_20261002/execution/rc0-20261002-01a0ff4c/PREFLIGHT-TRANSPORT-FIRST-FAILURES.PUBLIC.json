@@ -1,0 +1,18 @@
+{
+  "schema": "eb-preflight-transport-failures-v1",
+  "recorded_at": "2026-10-03T01:54:10.287868+00:00",
+  "observations": [
+    {
+      "operation": "initial live GitHub metadata reads through sandboxed CLI",
+      "error": "error connecting to api.github.com",
+      "recovery": "authorized network route and GitHub connector; exact live pins then verified"
+    },
+    {
+      "operation": "initial local inference-service metadata reads in sandbox",
+      "error": "operation not permitted connecting to 127.0.0.1:11434",
+      "recovery": "authorized metadata-only local network route before writing"
+    }
+  ],
+  "model_invocations_from_these_failed_probes": 0,
+  "scientific_attempts_consumed_from_these_probes": 0
+}
