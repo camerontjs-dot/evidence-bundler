@@ -20,6 +20,8 @@ ALLOWED_SOURCES = [
     "AUTHORING-RUBRIC.json",
     "PROFILE-SURFACE.json",
 ]
+PROMPT_PREFIX = "<|im_start|>user\n"
+PROMPT_SUFFIX = "\n<|im_end|>\n<|im_start|>assistant\n"
 
 
 def need(condition: bool, message: str) -> None:
@@ -40,6 +42,19 @@ def read_json(path: Path) -> dict:
 
 def sha256(path: Path) -> str:
     return "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def parse_writer_prompt(prompt: str) -> dict:
+    need(prompt.startswith(PROMPT_PREFIX), "writer prompt prefix")
+    need(prompt.endswith(PROMPT_SUFFIX), "writer prompt suffix")
+    inner = prompt[len(PROMPT_PREFIX):-len(PROMPT_SUFFIX)]
+    payload = json.loads(inner)
+    need(set(payload) == {"sources", "actual_runtime_capability_metadata"}, "writer prompt top-level fields")
+    sources = payload["sources"]
+    need(set(sources) == set(ALLOWED_SOURCES), "writer prompt source set")
+    for name in ALLOWED_SOURCES:
+        need(sources[name] == (HERE / name).read_text(encoding="utf-8"), "writer source bytes: " + name)
+    return payload
 
 
 def check(execution_dir: Path) -> dict:
@@ -84,20 +99,12 @@ def check(execution_dir: Path) -> dict:
     need(request["keep_alive"] == transport["keep_alive"], "request keep_alive")
     need(request["options"] == transport["options"], "request options")
     need(request["format"] == transport["response_format"], "request response format")
-
-    prompt = request["prompt"]
-    for name in ALLOWED_SOURCES:
-        need((HERE / name).read_text(encoding="utf-8") in prompt, "allowed source not present: " + name)
-    forbidden_request_markers = [
-        "ROOTS.PUBLIC.json",
-        "ORACLE.PUBLIC.json",
-        "METAMORPHIC.PUBLIC.json",
-        "REVIEWER-CALIBRATION.PUBLIC.json",
-        "CANDIDATE-R0.HISTORY.json",
-        "CANDIDATE-R1.HISTORY.json",
-    ]
-    for marker in forbidden_request_markers:
-        need(marker not in prompt, "forbidden request marker: " + marker)
+    prompt_payload = parse_writer_prompt(request["prompt"])
+    runtime_payload = prompt_payload["actual_runtime_capability_metadata"]
+    need(runtime_payload["destination"] == receipt["destination"], "prompt runtime destination")
+    need(runtime_payload["service_version"] == receipt["service_version"], "prompt runtime service")
+    need(runtime_payload["model"] == receipt["reported_model"], "prompt runtime model")
+    need(runtime_payload["service_reported_model_digest"] == receipt["reported_model_digest"], "prompt runtime digest")
 
     profiles = execution_dir / "profiles"
     need(profiles.is_dir(), "profiles directory missing")

@@ -5,6 +5,9 @@ import json
 import subprocess
 from pathlib import Path
 
+import check_execution
+import run_writer
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
@@ -105,6 +108,23 @@ def validate() -> dict:
     need((HERE / "run_writer.py").is_file(), "frozen writer launcher missing")
     need((HERE / "check_execution.py").is_file(), "frozen execution checker missing")
 
+    fake_runtime = {
+        "destination": transport["destination"],
+        "service_version": transport["service_version"],
+        "model": transport["model"],
+        "service_reported_model_digest": transport["service_reported_digest"],
+        "actual_backend_weight_attestation": "UNKNOWN",
+        "raw_api_history_field": "ABSENT",
+        "session_resume": "ABSENT",
+    }
+    prompt, opened = run_writer.build_prompt(fake_runtime)
+    parsed = check_execution.parse_writer_prompt(prompt)
+    need(parsed["actual_runtime_capability_metadata"] == fake_runtime, "prompt runtime packing")
+    need({row["name"] for row in opened} == set(check_execution.ALLOWED_SOURCES), "prompt source receipt set")
+    request = run_writer.build_request(transport, prompt)
+    need(request["options"] == transport["options"], "request builder options")
+    need(request["format"] == transport["response_format"], "request builder format")
+
     need(status["execution"] == "NOT_RUN", "execution must remain not run")
     need(status["profile_writer_attempts_consumed"] == 0, "writer attempt consumed in setup")
     need(status["custody_attempts_consumed"] == 0, "custody attempt consumed in setup")
@@ -153,6 +173,7 @@ def validate() -> dict:
         "uncertainty_surface": "EXPLICIT",
         "writer_runtime": "PINNED",
         "writer_transport": "PINNED",
+        "writer_prompt_selftest": "PASS",
         "frozen_writer_launcher": True,
         "custody_producer": "FROZEN_EXTERNAL",
         "frozen_execution_checker": True,

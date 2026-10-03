@@ -5,7 +5,6 @@ import argparse
 import hashlib
 import json
 import sys
-import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -97,9 +96,9 @@ def build_prompt(runtime: dict) -> tuple[str, list[dict]]:
         "actual_runtime_capability_metadata": runtime,
     }
     prompt = (
-        "<|im_start|>user\n"
+        check_execution.PROMPT_PREFIX
         + json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
-        + "\n<|im_end|>\n<|im_start|>assistant\n"
+        + check_execution.PROMPT_SUFFIX
     )
     return prompt, opened
 
@@ -115,6 +114,23 @@ def build_request(transport: dict, prompt: str) -> dict:
         "options": transport["options"],
         "format": transport["response_format"],
     }
+
+
+def write_json(path: Path, value: dict) -> None:
+    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def write_check_failure(execution_dir: Path, disposition: str, reason: str) -> None:
+    write_json(
+        execution_dir / "CUSTODY-CHECK.PUBLIC.json",
+        {
+            "schema": "eb-root-generation-prereq-execution-check-rc1-v1",
+            "result": "FAIL",
+            "reason": reason,
+            "disposition": disposition,
+            "generation_capability": "UNKNOWN",
+        },
+    )
 
 
 def main() -> int:
@@ -134,20 +150,17 @@ def main() -> int:
     try:
         runtime = runtime_preflight(transport)
     except Exception as exc:
-        (execution_dir / "ATTEMPT-STATUS.json").write_text(
-            json.dumps(
-                {
-                    "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
-                    "writer_invocation_started": False,
-                    "writer_attempt_consumed": False,
-                    "status": str(exc),
-                    "recorded_at": now(),
-                },
-                indent=2,
-                sort_keys=True,
-            )
-            + "\n",
-            encoding="utf-8",
+        write_json(
+            execution_dir / "ATTEMPT-STATUS.json",
+            {
+                "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
+                "writer_invocation_started": False,
+                "writer_attempt_consumed": False,
+                "custody_attempt_consumed": False,
+                "status": str(exc),
+                "recorded_at": now(),
+                "generation_capability": "UNKNOWN",
+            },
         )
         raise
 
@@ -158,20 +171,17 @@ def main() -> int:
     request_path.write_bytes(request_bytes)
 
     started = now()
-    (execution_dir / "ATTEMPT-STATUS.json").write_text(
-        json.dumps(
-            {
-                "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
-                "writer_invocation_started": True,
-                "writer_attempt_consumed": True,
-                "status": "IN_PROGRESS",
-                "started_at": started,
-            },
-            indent=2,
-            sort_keys=True,
-        )
-        + "\n",
-        encoding="utf-8",
+    write_json(
+        execution_dir / "ATTEMPT-STATUS.json",
+        {
+            "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
+            "writer_invocation_started": True,
+            "writer_attempt_consumed": True,
+            "custody_attempt_consumed": True,
+            "status": "IN_PROGRESS",
+            "started_at": started,
+            "generation_capability": "UNKNOWN",
+        },
     )
 
     response_path = execution_dir / "writer" / "RESPONSE.native.json"
@@ -181,21 +191,19 @@ def main() -> int:
         )
         response_path.write_bytes(response_bytes)
     except Exception as exc:
-        (execution_dir / "FAILURE.PUBLIC.json").write_text(
-            json.dumps(
-                {
-                    "schema": "eb-root-generation-prereq-failure-rc1-v1",
-                    "disposition": "BLOCKED_CUSTODY_VERIFICATION",
-                    "reason": "writer transport/runtime failure after invocation began",
-                    "exception": type(exc).__name__,
-                    "recorded_at": now(),
-                },
-                indent=2,
-                sort_keys=True,
-            )
-            + "\n",
-            encoding="utf-8",
+        reason = "writer transport/runtime failure after invocation began"
+        write_json(
+            execution_dir / "FAILURE.PUBLIC.json",
+            {
+                "schema": "eb-root-generation-prereq-failure-rc1-v1",
+                "disposition": "BLOCKED_CUSTODY_VERIFICATION",
+                "reason": reason,
+                "exception": type(exc).__name__,
+                "recorded_at": now(),
+                "generation_capability": "UNKNOWN",
+            },
         )
+        write_check_failure(execution_dir, "BLOCKED_CUSTODY_VERIFICATION", reason)
         raise
 
     completed = now()
@@ -207,14 +215,14 @@ def main() -> int:
     extraction_error = None
     try:
         parsed = json.loads(response_obj["response"])
-        files = parsed["files"]
-        if set(files) != set(PROFILE_FILES):
+        output_files = parsed["files"]
+        if set(output_files) != set(PROFILE_FILES):
             raise ValueError("returned file set mismatch")
         for name in PROFILE_FILES:
-            if not isinstance(files[name], str):
+            if not isinstance(output_files[name], str):
                 raise ValueError("profile file is not string: " + name)
             path = execution_dir / "profiles" / name
-            path.write_text(files[name], encoding="utf-8")
+            path.write_text(output_files[name], encoding="utf-8")
             extracted[name] = sha256_file(path)
     except Exception as exc:
         extraction_error = str(exc)
@@ -241,16 +249,16 @@ def main() -> int:
         "done_reason": done_reason,
         "extracted_files_sha256": extracted,
     }
-    (execution_dir / "CUSTODY-RECEIPT.json").write_text(
-        json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
+    write_json(execution_dir / "CUSTODY-RECEIPT.json", receipt)
 
     if not complete:
         disposition = "BLOCKED_CUSTODY_VERIFICATION"
         reason = "writer response incomplete or length-truncated"
+        write_check_failure(execution_dir, disposition, reason)
     elif extraction_error is not None:
         disposition = "BLOCKED_PROFILE_CONFIGURATION"
-        reason = "writer response could not be extracted as exact five-file profile bundle"
+        reason = "writer response could not be extracted as exact five-file profile bundle: " + extraction_error
+        write_check_failure(execution_dir, disposition, reason)
     else:
         try:
             result = check_execution.check(execution_dir)
@@ -268,24 +276,13 @@ def main() -> int:
                 if any(term in message for term in profile_terms)
                 else "BLOCKED_CUSTODY_VERIFICATION"
             )
-            result = {
-                "schema": "eb-root-generation-prereq-execution-check-rc1-v1",
-                "result": "FAIL",
-                "reason": message,
-                "disposition": disposition,
-                "generation_capability": "UNKNOWN",
-            }
-            (execution_dir / "CUSTODY-CHECK.PUBLIC.json").write_text(
-                json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-            )
             reason = message
+            write_check_failure(execution_dir, disposition, reason)
         else:
             disposition = "SUPPORTED_FOR_GENERATION_EXECUTION"
             reason = "frozen prerequisite checker passed"
             result["disposition"] = disposition
-            (execution_dir / "CUSTODY-CHECK.PUBLIC.json").write_text(
-                json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-            )
+            write_json(execution_dir / "CUSTODY-CHECK.PUBLIC.json", result)
 
     final_status = {
         "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
@@ -298,9 +295,7 @@ def main() -> int:
         "generation_capability": "UNKNOWN",
         "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
     }
-    (execution_dir / "ATTEMPT-STATUS.json").write_text(
-        json.dumps(final_status, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
+    write_json(execution_dir / "ATTEMPT-STATUS.json", final_status)
 
     print(json.dumps(final_status, sort_keys=True))
     return 0 if disposition == "SUPPORTED_FOR_GENERATION_EXECUTION" else 2

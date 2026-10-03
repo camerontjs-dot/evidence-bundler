@@ -22,6 +22,17 @@
       "writer_attempt_consumed": false,
       "custody_attempt_consumed": false,
       "generation_capability": "UNKNOWN"
+    },
+    {
+      "id": "RC1-SETUP-003",
+      "stage": "pre_execution_setup",
+      "observed": "Review of the third setup found that the checker searched the whole allowed prompt for forbidden filenames, even though BOOTSTRAP-MANIFEST.json legitimately contains those names in its denylist.",
+      "risk": "A valid writer request would be falsely classified as contaminated.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the third candidate in Git history, replace string scanning with exact structural parsing of the writer prompt/source bundle, and add a setup self-test that exercises the frozen prompt/request builder.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
     }
   ]
 }
