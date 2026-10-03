@@ -1,0 +1,148 @@
+{
+  "observed_at": "2026-10-03T17:36:20.138539+00:00",
+  "preserved_rc0_envelope": {
+    "parents": [
+      "d66a95a9507ecaf2d51a6041b9e3a14b1c205017"
+    ],
+    "sha": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+    "tree": {
+      "sha": "f4fab81d62ae3d753364f1e294b58f883ae2451b"
+    }
+  },
+  "protected_main": {
+    "object": {
+      "sha": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+      "type": "commit",
+      "url": "https://api.github.com/repos/camerontjs-dot/evidence-bundler/git/commits/c26fbd4bfc8ba5c2604a784af158594b59fcae37"
+    },
+    "ref": "refs/heads/main"
+  },
+  "pull_request": {
+    "base": {
+      "ref": "main",
+      "repo": "camerontjs-dot/evidence-bundler",
+      "sha": "c26fbd4bfc8ba5c2604a784af158594b59fcae37"
+    },
+    "draft": true,
+    "head": {
+      "ref": "research/eb-root-generation-prereq-rc1-20261003",
+      "repo": "camerontjs-dot/evidence-bundler",
+      "sha": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855"
+    },
+    "html_url": "https://github.com/camerontjs-dot/evidence-bundler/pull/126",
+    "number": 126,
+    "state": "open"
+  },
+  "rc0_to_frozen_head_scope": {
+    "ahead_by": 8,
+    "base_commit": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+    "behind_by": 8,
+    "files": [
+      {
+        "filename": ".github/workflows/research-root-generation-prereq-rc1.yml",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/AUTHORING-RUBRIC.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/BOOTSTRAP-MANIFEST.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R0.HISTORY.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R1.HISTORY.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R2.HISTORY.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/CUSTODY-SCHEMA.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/DEVIATIONS.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/LAUNCH-STATUS.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/PREREGISTRATION.md",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/PROFILE-SURFACE.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/PROFILE-WRITER-TASK.md",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/README.md",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/WRITER-TRANSPORT.json",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/check_execution.py",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/run_writer.py",
+        "status": "added"
+      },
+      {
+        "filename": "research/eb_root_generation_prereq_rc1_20261003/validate_setup.py",
+        "status": "added"
+      }
+    ],
+    "merge_base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+    "status": "diverged"
+  },
+  "schema": "rc1-supervisor-authority-preflight-v1",
+  "workflow_runs": [
+    {
+      "conclusion": "success",
+      "created_at": "2026-10-03T16:55:06Z",
+      "event": "pull_request",
+      "head_branch": "research/eb-root-generation-prereq-rc1-20261003",
+      "head_sha": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855",
+      "html_url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37138608454",
+      "id": 37138608454,
+      "name": "Public root-generation prerequisite RC1 checks",
+      "path": ".github/workflows/research-root-generation-prereq-rc1.yml",
+      "run_attempt": 1,
+      "status": "completed",
+      "updated_at": "2026-10-03T16:55:15Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-10-03T16:55:06Z",
+      "event": "pull_request",
+      "head_branch": "research/eb-root-generation-prereq-rc1-20261003",
+      "head_sha": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855",
+      "html_url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37138608474",
+      "id": 37138608474,
+      "name": "CI",
+      "path": ".github/workflows/ci.yml",
+      "run_attempt": 1,
+      "status": "completed",
+      "updated_at": "2026-10-03T16:57:38Z"
+    }
+  ]
+}

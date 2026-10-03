@@ -1,0 +1,30 @@
+{
+  "completion": "Required workflow file materialized byte-for-byte from the exact frozen head before successful validation; no frozen source content was edited.",
+  "first_invocation": {
+    "cause": "Supervisor sparse checkout omitted the required frozen workflow file.",
+    "exit_code": 1,
+    "failure": "ValueError: missing/symlink frozen file: .github/workflows/research-root-generation-prereq-rc1.yml"
+  },
+  "frozen_setup_files_modified_after_pass": false,
+  "interpreter_executable": "python3",
+  "schema": "rc1-supervisor-setup-validation-record-v1",
+  "second_invocation": {
+    "captured_result": {
+      "candidate_closure_checked": true,
+      "context_free_required": true,
+      "custody_producer": "FROZEN_EXTERNAL",
+      "frozen_execution_checker": true,
+      "frozen_writer_launcher": true,
+      "generation_capability": "UNKNOWN",
+      "mechanical_setup": "PASS",
+      "model_generated_custody_receipt": false,
+      "profile_files_required": 5,
+      "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+      "uncertainty_surface": "EXPLICIT",
+      "writer_prompt_selftest": "PASS",
+      "writer_runtime": "PINNED",
+      "writer_transport": "PINNED"
+    },
+    "exit_code": 0
+  }
+}

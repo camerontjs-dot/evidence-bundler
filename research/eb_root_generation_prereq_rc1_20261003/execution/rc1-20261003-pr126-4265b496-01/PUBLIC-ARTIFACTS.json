@@ -1,0 +1,48 @@
+{
+  "files": [
+    {
+      "bytes": 327,
+      "path": "ATTEMPT-STATUS.json",
+      "sha256": "sha256:b696d971ac39f5d942b120a825fc6f6fb83d7aee891104f8399ec5e387f20095"
+    },
+    {
+      "bytes": 4960,
+      "path": "AUTHORITY-PREFLIGHT.PUBLIC.json",
+      "sha256": "sha256:1e339bb9c4a8c35413f65ab7dd4b17ce849ae3079364e330fb2f1f4c2beefa4d"
+    },
+    {
+      "bytes": 593,
+      "path": "LAUNCHER.stderr.PUBLIC.txt",
+      "sha256": "sha256:5696765480ac41f25e2c0854a49d15749c3489faa3dd54421207ed12b71d80a8"
+    },
+    {
+      "bytes": 937,
+      "path": "RUNTIME-OBSERVATION.PUBLIC.json",
+      "sha256": "sha256:25df676ef3c5911edb04eb35e8a6466a31f81de1d5f2ce398adf119052058816"
+    },
+    {
+      "bytes": 1209,
+      "path": "SETUP-VALIDATION.PUBLIC.json",
+      "sha256": "sha256:e6def2473f1b729f052883d84d7d7981b45405f8d3fdc23c02c63bbeb1bf95a8"
+    },
+    {
+      "bytes": 1796,
+      "path": "SUPERVISOR-DEVIATIONS.PUBLIC.json",
+      "sha256": "sha256:5ef7d18c4fa176fa40294c55ff90248df765496f1591ae4a4bc233c79eb8cda0"
+    },
+    {
+      "bytes": 5016,
+      "path": "SUPERVISOR-RECEIPT.PUBLIC.json",
+      "sha256": "sha256:7b898699f6d47af4b31f98236c770afa053978ec436daa8bf4f499c3f8eb27e4"
+    },
+    {
+      "bytes": 785,
+      "path": "VALIDATE-SETUP-FIRST-FAILURE.PUBLIC.txt",
+      "sha256": "sha256:ed35f850493e68f4cc6c3ceaaa47d655fcabb215c3f9c88a8a3f571f2420f241"
+    }
+  ],
+  "manifest_excludes_itself": true,
+  "raw_local_authority_gets_retained_outside_public_record": true,
+  "raw_writer_artifacts_present": false,
+  "schema": "rc1-public-artifact-manifest-v1"
+}
