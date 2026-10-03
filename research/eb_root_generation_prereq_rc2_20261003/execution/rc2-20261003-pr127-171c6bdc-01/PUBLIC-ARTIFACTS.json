@@ -1,0 +1,55 @@
+{
+  "contains_semantic_or_generation_outcomes": false,
+  "excluded_artifacts_preserved_locally": true,
+  "execution_directory": "research/eb_root_generation_prereq_rc2_20261003/execution/rc2-20261003-pr127-171c6bdc-01",
+  "frozen_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "generation_capability": "UNKNOWN",
+  "not_published": [
+    "writer/REQUEST.native.json",
+    "writer/RESPONSE.native.json",
+    "profiles/PRIMARY-PROMPT.txt",
+    "profiles/PRIMARY-CONFIG.json",
+    "profiles/EVALUATOR-PROMPT.txt",
+    "profiles/EVALUATOR-CONFIG.json",
+    "profiles/REVIEW-SCHEMA.json"
+  ],
+  "public_files": [
+    {
+      "path": "ATTEMPT-STATUS.json",
+      "sha256": "sha256:58cc778ccb186525f17173db4d7efd0b7680ecb12acd247492fd52d752dcc8d3"
+    },
+    {
+      "path": "CUSTODY-RECEIPT.json",
+      "sha256": "sha256:f223db5820114dcd39cb7ce11484ea4da55d839a000848208bed61bcac2d5760"
+    },
+    {
+      "path": "CUSTODY-CHECK.PUBLIC.json",
+      "sha256": "sha256:6f3d49440facef57d14dba7a68d9e0f8dfc9d006d827648b33fdd9b3864220be"
+    },
+    {
+      "path": "AUTHORITY-PREFLIGHT.PUBLIC.json",
+      "sha256": "sha256:6086fb5c1bade1156a254d3993adb0931f07036fbfe11d2b4c4606094d61426b"
+    },
+    {
+      "path": "SUCCESSOR-VALIDATION.PUBLIC.json",
+      "sha256": "sha256:cf66cf40afa374f0c98161133b5307fd65f7daa38c9705158e9964bb64e6c404"
+    },
+    {
+      "path": "SETUP-VALIDATION.PUBLIC.json",
+      "sha256": "sha256:db295a01b1bf0382d81c9b9f7e54f22ce5bb3335be79dd589616fb554057e97e"
+    },
+    {
+      "path": "RUNTIME-OBSERVATION.PUBLIC.json",
+      "sha256": "sha256:e21ffc834127fb91a6e41faf7b84a70d78497a373c750193ab3b11532534e0f4"
+    },
+    {
+      "path": "LAUNCHER.stdout.PUBLIC.txt",
+      "sha256": "sha256:ef78e1e1212b75a7265180bf802603090dcd3b391929689c2255b4ce0377f433"
+    },
+    {
+      "path": "SUPERVISOR-RECEIPT.PUBLIC.json",
+      "sha256": "sha256:5a91496abceed2a13e747b7b78cfeba7adcf0c9fe6edcf92721b31ff95feea08"
+    }
+  ],
+  "schema": "eb-rc2-public-execution-artifacts-v1"
+}

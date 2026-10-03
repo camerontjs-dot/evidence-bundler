@@ -1,0 +1,48 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "revision": "RC2_SERVICE_VERSION_0_35_1_SUCCESSOR",
+  "meaning": "Separate public successor to RC1. The frozen RC1 prerequisite apparatus is reused byte-for-byte except that service_version changes from 0.34.4 to 0.35.1 in BOOTSTRAP-MANIFEST.json and WRITER-TRANSPORT.json. One context-free writer attempt and one frozen external custody verification are authorized. No semantic calibration, target generation, weak-system generation, decisive review, tally, private population work, production change, merge, release or promotion is authorized.",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "predecessor_terminal_head": "6d86f145e5e32e72bbd491573d8117f3adb8faba",
+  "predecessor_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "predecessor_source_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+  "source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+  "controlled_substitution": {
+    "field": "service_version",
+    "from": "0.34.4",
+    "to": "0.35.1",
+    "files": [
+      "BOOTSTRAP-MANIFEST.json",
+      "WRITER-TRANSPORT.json"
+    ]
+  },
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc2.yml": "df4c72d0d3794aca2e1c317d1b0b5ad507807022",
+    "research/eb_root_generation_prereq_rc2_20261003/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc2_20261003/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_root_generation_prereq_rc2_20261003/PROFILE-WRITER-TASK.md": "82119a49d8c03bf1405d4ea0d0fc2b5175260998",
+    "research/eb_root_generation_prereq_rc2_20261003/BOOTSTRAP-MANIFEST.json": "bf192aea0a22007ee80264e0f9523459527a97b6",
+    "research/eb_root_generation_prereq_rc2_20261003/CUSTODY-SCHEMA.json": "65cebd20add80e0ff967f3cd1f266cd76f4dead2",
+    "research/eb_root_generation_prereq_rc2_20261003/WRITER-TRANSPORT.json": "3ae2788e3796f6853e17246ff12ae464c497b59e",
+    "research/eb_root_generation_prereq_rc2_20261003/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc2_20261003/run_writer.py": "ca0bfabdafd8b933dcc4e788dae4f909c59742d5",
+    "research/eb_root_generation_prereq_rc2_20261003/check_execution.py": "21a3fe9e9dbb90cb8894e8c1ee36d78a61e99a74",
+    "research/eb_root_generation_prereq_rc2_20261003/validate_setup.py": "e131b86eadfd22cc628cffcde319dae1dd0bfb83",
+    "research/eb_root_generation_prereq_rc2_20261003/validate_successor.py": "21435c05857874de70fe113ae1ab27b2dd94e856",
+    "research/eb_root_generation_prereq_rc2_20261003/PREDECESSOR-CONTROL.json": "7a59da08893ca5d6f4d5b3d336d31e12ed7096ca",
+    "research/eb_root_generation_prereq_rc2_20261003/README.md": "43f2c506bbb0017cb03cbe7520c3f92fa9c42db6",
+    "research/eb_root_generation_prereq_rc2_20261003/PREREGISTRATION.md": "34ce4a4e65bf3f9175d5813aee072665798f01ac",
+    "research/eb_root_generation_prereq_rc2_20261003/DEVIATIONS.json": "0be20ea6c0938724be44bbc48e22f7e4f77dda80"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "execution_state": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "context_free_required": true,
+  "next_authorized_boundary": "After exact-head setup and successor-control CI pass, execute frozen run_writer.py exactly once in context-free execution if the live runtime still matches 0.35.1/model/digest/endpoint. Preserve the terminal result and stop."
+}

@@ -1,0 +1,21 @@
+{
+  "generation_capability": "UNKNOWN",
+  "observation_source": "preserved frozen-launcher native request; source bodies omitted",
+  "observed_runtime": {
+    "actual_backend_weight_attestation": "UNKNOWN",
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "model": "qwen3.5:9b",
+    "raw_api_history_field": "ABSENT",
+    "service_reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "service_version": "0.35.1",
+    "session_resume": "ABSENT"
+  },
+  "schema": "eb-rc2-supervisor-runtime-observation-v1",
+  "writer_context_added_by_supervisor": false,
+  "writer_source_names": [
+    "AUTHORING-RUBRIC.json",
+    "BOOTSTRAP-MANIFEST.json",
+    "PROFILE-SURFACE.json",
+    "PROFILE-WRITER-TASK.md"
+  ]
+}
