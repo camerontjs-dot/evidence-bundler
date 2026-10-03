@@ -1,0 +1,25 @@
+{
+  "schema": "eb-rc2-evaluator-config-v1",
+  "role": "semantic_evaluator",
+  "rubric_ref": "AUTHORING-RUBRIC.json",
+  "checks": [
+    "two_required_children",
+    "materially_distinct",
+    "conservation",
+    "subject_anchors",
+    "inherited_status"
+  ],
+  "ineligible_reasons": [
+    "not_two_required",
+    "disjunction",
+    "conditional_or_context",
+    "not_conserved",
+    "uncertain"
+  ],
+  "constraints": {
+    "output_format": "JSON only; no rationale or extra fields",
+    "decision_values": ["accept", "reject"]
+  },
+  "frozen_prompt_bytes": "<frozen>",
+  "frozen_config_bytes": "<frozen>"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "eb-rc2-review-schema-v1",
+  "checks": [
+    "two_required_children",
+    "materially_distinct",
+    "conservation",
+    "subject_anchors",
+    "inherited_status"
+  ],
+  "ineligible_reasons": [
+    "not_two_required",
+    "disjunction",
+    "conditional_or_context",
+    "not_conserved",
+    "uncertain"
+  ],
+  "constraints": {
+    "output_format": "JSON only; no rationale or extra fields",
+    "decision_values": ["accept", "reject"]
+  }
+}

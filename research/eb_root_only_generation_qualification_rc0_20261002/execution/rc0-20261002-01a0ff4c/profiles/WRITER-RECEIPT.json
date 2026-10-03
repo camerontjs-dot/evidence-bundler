@@ -1,0 +1,9 @@
+{
+  "schema": "eb-rc2-writer-receipt-v1",
+  "session_id": "<generated>",
+  "profile_sha256": "<generated>",
+  "destination": "http://127.0.0.1:11434",
+  "started_at": "2026-10-03T01:17:45.909936+00:00",
+  "completed_at": "<generated>",
+  "no_history_receipt_sha256": "<generated>"
+}

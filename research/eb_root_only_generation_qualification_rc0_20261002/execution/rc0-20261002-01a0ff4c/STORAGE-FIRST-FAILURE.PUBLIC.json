@@ -1,0 +1,11 @@
+{
+  "schema": "eb-operational-first-storage-failure-v1",
+  "recorded_at": "2026-10-03T01:39:46.338451+00:00",
+  "failed_operation": "metadata-only liveness probe: shell could not create its here-document temporary file",
+  "error": "no space left on device",
+  "generation_call_began": false,
+  "custody_session_in_flight": true,
+  "observed_followup_available": "120 MiB reported by df; existing writer receipts and custody start/request remained present",
+  "cleanup": "NONE; no unrelated files removed",
+  "retry_scientific_role": "FORBIDDEN"
+}

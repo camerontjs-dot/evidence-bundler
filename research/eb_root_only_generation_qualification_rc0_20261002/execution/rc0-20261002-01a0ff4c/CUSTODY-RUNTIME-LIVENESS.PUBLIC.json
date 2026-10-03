@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-03T01:41:24.990706+00:00",
+  "endpoint": "/api/ps",
+  "metadata_only": true,
+  "models": [
+    {
+      "name": "qwen3.5:9b",
+      "model": "qwen3.5:9b",
+      "size": 6589608098,
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "expires_at": "2026-10-02T21:41:24.990377-04:00",
+      "size_vram": 6589608098,
+      "context_length": 32768
+    }
+  ]
+}

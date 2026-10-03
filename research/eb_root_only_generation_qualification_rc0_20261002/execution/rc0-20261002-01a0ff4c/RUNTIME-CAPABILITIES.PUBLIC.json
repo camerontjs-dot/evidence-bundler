@@ -1,0 +1,65 @@
+{
+  "allowed_output_artifacts": [
+    "PRIMARY-PROMPT.txt",
+    "PRIMARY-CONFIG.json",
+    "EVALUATOR-PROMPT.txt",
+    "EVALUATOR-CONFIG.json",
+    "REVIEW-SCHEMA.json",
+    "WRITER-RECEIPT.json"
+  ],
+  "backend_weight_attestation": "UNKNOWN",
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "default_system": "",
+  "destination": "http://127.0.0.1:11434",
+  "documented_raw_api": "https://docs.ollama.com/api/generate",
+  "endpoint": "/api/generate",
+  "format_capability": "JSON schema transport; returned profile file strings are extracted verbatim and hashed by the collector",
+  "history_field": "ABSENT",
+  "model": "qwen3.5:9b",
+  "model_details": {
+    "families": [
+      "qwen35"
+    ],
+    "family": "qwen35",
+    "format": "gguf",
+    "parameter_size": "9.7B",
+    "parent_model": "",
+    "quantization_level": "Q4_K_M"
+  },
+  "native_model_metadata_sha256": "sha256:b5ce5b8c4b52c87d27f3b2a9b27c28379d262e493f90e2e2e6022ae2e4a1a12b",
+  "observable_parameters": {
+    "options": {
+      "num_ctx": 32768,
+      "num_predict": 8192,
+      "presence_penalty": 1.5,
+      "seed": 502,
+      "temperature": 0,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "raw": true,
+    "stream": false,
+    "think": false
+  },
+  "observed_at": "2026-10-03T01:17:45.909936+00:00",
+  "raw_prompt": true,
+  "schema": "eb-observed-raw-runtime-capabilities-v1",
+  "server_internal_effective_token_sequence": "UNKNOWN",
+  "service_reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "service_version": "0.34.4",
+  "session_resume": "ABSENT",
+  "template": "{{ .Prompt }}",
+  "thinking": {
+    "default": true,
+    "values": [
+      false,
+      true
+    ]
+  },
+  "tool_dispatch": "ABSENT"
+}
