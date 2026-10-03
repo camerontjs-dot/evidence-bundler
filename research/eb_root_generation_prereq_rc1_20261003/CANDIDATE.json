@@ -1,0 +1,40 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "revision": "R3_FROZEN_ONE_SHOT_LAUNCHER_AND_STRUCTURAL_CUSTODY_CHECK",
+  "meaning": "Frozen public prerequisite setup only. One context-free writer attempt through frozen run_writer.py and one frozen external custody verification are authorized. No semantic calibration, target generation, weak-system generation, decisive review, tally, private population work, production change, merge, release or promotion is authorized.",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "preserved_rc0_envelope": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+  "source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "source_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+  "supersedes_setup_envelope": "a5cb62ccd7c43295e80c6baff8665d77e75b0116",
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc1.yml": "544103b679897ba71c6751e86554935416ee9d4b",
+    "research/eb_root_generation_prereq_rc1_20261003/README.md": "e88b6c66f1df34d0afcdbe2d2f8d7224391b1831",
+    "research/eb_root_generation_prereq_rc1_20261003/PREREGISTRATION.md": "99972120d1eae70ee1f8a118e8b86308cfdea40b",
+    "research/eb_root_generation_prereq_rc1_20261003/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-WRITER-TASK.md": "82119a49d8c03bf1405d4ea0d0fc2b5175260998",
+    "research/eb_root_generation_prereq_rc1_20261003/BOOTSTRAP-MANIFEST.json": "adfe3c7cebc4aeb5c6a2780601b0e2c7d8723871",
+    "research/eb_root_generation_prereq_rc1_20261003/CUSTODY-SCHEMA.json": "65cebd20add80e0ff967f3cd1f266cd76f4dead2",
+    "research/eb_root_generation_prereq_rc1_20261003/WRITER-TRANSPORT.json": "50d89ec5cd8c9d086247b6fb5cdf447c16ca242a",
+    "research/eb_root_generation_prereq_rc1_20261003/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc1_20261003/run_writer.py": "ca0bfabdafd8b933dcc4e788dae4f909c59742d5",
+    "research/eb_root_generation_prereq_rc1_20261003/check_execution.py": "21a3fe9e9dbb90cb8894e8c1ee36d78a61e99a74",
+    "research/eb_root_generation_prereq_rc1_20261003/validate_setup.py": "e131b86eadfd22cc628cffcde319dae1dd0bfb83",
+    "research/eb_root_generation_prereq_rc1_20261003/DEVIATIONS.json": "933063350f3cde800d21041b64248a71313373da",
+    "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R0.HISTORY.json": "7b9468bcd527f46529f7b51efdd99271ad3379fd",
+    "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R1.HISTORY.json": "2a98f58e032b669dba754439e35e8f86dc729e84",
+    "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R2.HISTORY.json": "ee12fb1d5353e9d98a33d1b2a7e9e7979dd9823a"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.34.4",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "transport_blob": "50d89ec5cd8c9d086247b6fb5cdf447c16ca242a"
+  },
+  "execution_state": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "context_free_required": true,
+  "next_authorized_boundary": "Run frozen validate_setup.py, then exactly one context-free run_writer.py invocation if authority/runtime preflight passes. Preserve the result and stop."
+}
