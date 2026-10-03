@@ -1,0 +1,27 @@
+{
+  "schema": "eb-mechanical-execution-package-checks-v1",
+  "checked_at": "2026-10-03T01:54:10.287660+00:00",
+  "checks": [
+    {
+      "name": "mechanical_setup",
+      "code_sha256": "sha256:dd2b7baa4a8f337cc68b4008573f287ad2d344aa88eece13201659add89c6799",
+      "exit_code": 0,
+      "stdout": "{\"boundary_mutations_rejected\": 2, \"eligible\": 8, \"ineligible\": 4, \"isolation\": \"UNBOUND\", \"mechanical_setup\": \"PASS\", \"metamorphic_pairs\": 4, \"root_only_capsules_checked\": 12, \"roots\": 12, \"semantic_evaluator\": \"NOT_RUN\", \"semantic_generation\": \"UNKNOWN\", \"target_execution\": \"NOT_RUN\"}\n",
+      "stderr": "",
+      "scientific_model_calls": 0
+    },
+    {
+      "name": "offline_transport_failure_witnesses",
+      "code_sha256": "sha256:71c8883554b7bc422f0871bd9e9b98dd7db0fb597a012d30af95893fa7f28848",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nOK\n",
+      "scientific_model_calls": 0
+    }
+  ],
+  "profile_bytes_unchanged": true,
+  "new_public_file_scan": "PASS at checkpoint pre-commit; full final scan required again before publication",
+  "semantic_generation": "NOT_RUN",
+  "semantic_evaluator": "NOT_RUN",
+  "independent_custody": "UNVERIFIED"
+}
