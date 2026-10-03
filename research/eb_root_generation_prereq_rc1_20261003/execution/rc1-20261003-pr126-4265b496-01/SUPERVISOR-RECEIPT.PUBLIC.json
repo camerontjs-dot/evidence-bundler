@@ -1,0 +1,110 @@
+{
+  "absent_launcher_artifacts": [
+    "CUSTODY-CHECK.PUBLIC.json",
+    "CUSTODY-RECEIPT.json",
+    "FAILURE.PUBLIC.json",
+    "writer/REQUEST.native.json",
+    "writer/RESPONSE.native.json"
+  ],
+  "actions_not_performed": [
+    "semantic evaluator calibration",
+    "target generation",
+    "deterministic weak generators",
+    "decisive review",
+    "tally",
+    "private population",
+    "corpus access",
+    "retrieval",
+    "passage review",
+    "production changes",
+    "release",
+    "merge",
+    "promotion"
+  ],
+  "attempt_status_sha256": "sha256:b696d971ac39f5d942b120a825fc6f6fb83d7aee891104f8399ec5e387f20095",
+  "branch": "research/eb-root-generation-prereq-rc1-20261003",
+  "candidate_closure_blob": "054f03a87df6bf02e159ec27feec2900bc223740",
+  "checker_result": "NOT_RUN_PRE_INVOCATION_AUTHORITY_BLOCKED",
+  "custody_attempt_consumed": false,
+  "custody_receipt_produced": false,
+  "disposition": "BLOCKED_AUTHORITY",
+  "exact_next_authorized_boundary": "Stop and preserve/reconcile this pre-POST authority block. No retry or generation execution is authorized in this task. Any later prerequisite invocation requires the owner to establish service 0.34.4 with the exact frozen endpoint/model/digest/controls and separately authorize continuation; these attempt budgets remain unconsumed.",
+  "execution_directory": "research/eb_root_generation_prereq_rc1_20261003/execution/rc1-20261003-pr126-4265b496-01",
+  "final_public_record_commit": "The enclosing Git commit; exact SHA/tree recorded in PR #126 and the publication receipt.",
+  "first_experiment_failure": "BLOCKED_AUTHORITY: service version mismatch",
+  "first_preparation_failure": "Sandboxed read-only GitHub connection unavailable; resolved before invocation.",
+  "forbidden_writer_exposure": false,
+  "frozen_setup_files_unchanged": true,
+  "frozen_setup_validation": "PASS_BEFORE_LAUNCHER_INVOCATION",
+  "historical_candidates_unchanged": true,
+  "launcher_exit_code": 1,
+  "launcher_invocations": 1,
+  "launcher_stderr_native_sha256": "sha256:58cb4ce1e276daf1e9a923c7d9678765b00cea491254967dbb82fdfe044a56a2",
+  "native_request_sha256": null,
+  "native_response_sha256": null,
+  "preserved_rc0_envelope": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+  "profile_file_sha256": {},
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "pull_request": 126,
+  "recorded_at": "2026-10-03T17:41:16.015236+00:00",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "required_execution_head": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855",
+  "required_execution_head_tree": "6f1ccc14cc1a53badeed5d26435165d767fda15d",
+  "required_live_ci": [
+    {
+      "conclusion": "success",
+      "head_sha": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855",
+      "id": 37138608454,
+      "run_attempt": 1,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "4265b496aac9da4068c4bcdd7ec7fbd12ff63855",
+      "id": 37138608474,
+      "run_attempt": 1,
+      "status": "completed"
+    }
+  ],
+  "runtime_authority": {
+    "launcher_result": "BLOCKED_AUTHORITY: service version mismatch",
+    "post_terminal_read_only_observation": {
+      "actual_backend_weight_attestation": "UNKNOWN",
+      "destination": "http://127.0.0.1:11434/api/generate",
+      "expected_model": "qwen3.5:9b",
+      "expected_service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "expected_service_version": "0.34.4",
+      "native_authority_get_response_sha256": {
+        "tags": "sha256:cf8df36d43bb55e1f0fdd7562e729c5b3245a74502a0125194928e8dfd99532f",
+        "version": "sha256:396db0946fbcb2896995ef22b1785c54fa7cfae0e03badb57a381f066141cad7"
+      },
+      "observation_kind": "POST_TERMINAL_READ_ONLY_GETS_NOT_LAUNCHER_RECEIPT",
+      "observed_at": "2026-10-03T17:38:55.869710+00:00",
+      "pinned_model_rows": [
+        {
+          "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+          "model": "qwen3.5:9b",
+          "name": "qwen3.5:9b"
+        }
+      ],
+      "schema": "rc1-supervisor-runtime-observation-v1",
+      "service_version": "0.35.1",
+      "writer_post_sent": false
+    }
+  },
+  "schema": "rc1-supervisor-terminal-receipt-v1",
+  "setup_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "setup_source_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+  "unknown": [
+    "ability of the pinned fresh writer to produce the complete five-file profile surface",
+    "ability of the frozen custody/checker route to verify a completed invocation",
+    "generation capability",
+    "actual backend weight attestation"
+  ],
+  "what_result_establishes": "Frozen GitHub/setup authority passed. The frozen launcher blocked before the POST because service version authority did not match. No profile-writing or custody-verification result was obtained.",
+  "writer_attempt_consumed": false,
+  "writer_invocation_started": false,
+  "writer_post_sent": false,
+  "writer_prompt_constructed": false,
+  "writer_sources_supplied": []
+}

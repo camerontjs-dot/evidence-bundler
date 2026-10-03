@@ -1,0 +1,37 @@
+{
+  "alternate_checker_invocations": 0,
+  "alternate_launcher_invocations": 0,
+  "experiment_first_failure": {
+    "launcher_exit_code": 1,
+    "reason": "BLOCKED_AUTHORITY: service version mismatch",
+    "stage": "frozen_launcher_runtime_preflight"
+  },
+  "forbidden_information_entered_writer_aperture": false,
+  "launcher_invocations": 1,
+  "preparation_deviations": [
+    {
+      "event": "sandboxed_github_reads_unavailable",
+      "first_failure": "error connecting to api.github.com\ncheck your internet connection or https://githubstatus.com",
+      "resolution": "Four read-only PR/run/main reads succeeded with authorized network escalation before the launcher invocation."
+    },
+    {
+      "event": "incomplete_sparse_checkout_first_validation",
+      "first_failure": "ValueError: missing/symlink frozen file: .github/workflows/research-root-generation-prereq-rc1.yml",
+      "resolution": "Materialized the pinned workflow file from the same head; the frozen validator then passed before launcher invocation."
+    },
+    {
+      "event": "supervisor_added_nonrequired_ancestry_assertion",
+      "first_failure": "AssertionError",
+      "observed": "The preserved RC0 envelope and RC1 head are separate descendants of protected main. The exact RC0 envelope identity exists and matches the frozen pin.",
+      "resolution": "Removed the supervisor assumption that RC0 must be an RC1 ancestor; no frozen requirement, setup file, or launcher was changed."
+    },
+    {
+      "event": "host_python_command_name",
+      "observed": "python was unavailable; python3 invoked the exact frozen scripts.",
+      "writer_transport_or_runtime_controls_changed": false
+    }
+  ],
+  "retries_after_terminal_result": 0,
+  "schema": "rc1-supervisor-deviations-v1",
+  "writer_post_invocations": 0
+}

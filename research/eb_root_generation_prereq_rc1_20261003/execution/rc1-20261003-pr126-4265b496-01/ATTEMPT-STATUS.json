@@ -1,0 +1,9 @@
+{
+  "custody_attempt_consumed": false,
+  "generation_capability": "UNKNOWN",
+  "recorded_at": "2026-10-03T17:37:45.812447+00:00",
+  "schema": "eb-root-generation-prereq-attempt-status-rc1-v1",
+  "status": "BLOCKED_AUTHORITY: service version mismatch",
+  "writer_attempt_consumed": false,
+  "writer_invocation_started": false
+}

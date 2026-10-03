@@ -1,0 +1,38 @@
+{
+  "schema": "eb-root-generation-prereq-deviations-rc1-v1",
+  "items": [
+    {
+      "id": "RC1-SETUP-001",
+      "stage": "pre_execution_setup",
+      "observed": "The first frozen RC1 setup defined a custody receipt schema but did not freeze the execution-time checker that would validate a real receipt and returned profile artifacts.",
+      "risk": "Allowing the checker to be invented after writer output would weaken the meaning of the prerequisite result.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the first candidate in Git history, add a frozen execution checker, pin the writer model/digest/destination, tighten machine-readable profile config requirements, and issue a new setup closure.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
+    },
+    {
+      "id": "RC1-SETUP-002",
+      "stage": "pre_execution_setup",
+      "observed": "The second frozen setup still left exact writer request options and request construction to the executor rather than freezing the launcher/transport.",
+      "risk": "Executor discretion over request parameters or source packing would add an avoidable controlled-variable and custody ambiguity.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the second candidate in Git history, freeze the RC0 request options and a five-file response schema in WRITER-TRANSPORT.json, and add frozen run_writer.py as the sole authorized launcher/custodian.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
+    },
+    {
+      "id": "RC1-SETUP-003",
+      "stage": "pre_execution_setup",
+      "observed": "Review of the third setup found that the checker searched the whole allowed prompt for forbidden filenames, even though BOOTSTRAP-MANIFEST.json legitimately contains those names in its denylist.",
+      "risk": "A valid writer request would be falsely classified as contaminated.",
+      "correction": "Before any writer invocation or semantic exposure, preserve the third candidate in Git history, replace string scanning with exact structural parsing of the writer prompt/source bundle, and add a setup self-test that exercises the frozen prompt/request builder.",
+      "scientific_output_exposed": false,
+      "writer_attempt_consumed": false,
+      "custody_attempt_consumed": false,
+      "generation_capability": "UNKNOWN"
+    }
+  ]
+}

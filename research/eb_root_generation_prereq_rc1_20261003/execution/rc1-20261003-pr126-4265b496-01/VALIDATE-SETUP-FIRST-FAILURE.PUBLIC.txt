@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/validate_setup.py", line 188, in <module>
+    print(json.dumps(validate(), sort_keys=True))
+                     ~~~~~~~~^^
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/validate_setup.py", line 158, in validate
+    need(path.is_file() and not path.is_symlink(), "missing/symlink frozen file: " + relative)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/validate_setup.py", line 17, in need
+    raise ValueError(message)
+ValueError: missing/symlink frozen file: .github/workflows/research-root-generation-prereq-rc1.yml
