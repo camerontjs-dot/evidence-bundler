@@ -1,0 +1,173 @@
+{
+  "api_generate_called": false,
+  "candidate_closure_blob": "5eaea44e5495df6cfd595c5e111ef59d6ea10964",
+  "candidate_envelope": "9756d3862efaa40a7e2db51adf1d2db2e8a12411",
+  "candidate_envelope_tree": "4010ab5c714940937f5cabfefe22d5403d68c6bd",
+  "deviations": [],
+  "established": "The frozen RC3 apparatus preserves the RC2 profile/runtime/custody contract byte-for-byte, replaces only the falsified diagnostic/classification integration with structured categories/codes, classifies all 18 synthetic cases correctly, preserves structured dispositions through the launcher without message guessing, and reproduces byte-identically across two offline runs. This is sufficient to justify a separate context-free prerequisite execution candidate.",
+  "first_failure": null,
+  "frozen_source_commit": "55c2940d6822a6c666441f61900b2cadcfbde046",
+  "frozen_source_tree": "0dcee5f8b872d74ca754818c2b0535d1698fd8ae",
+  "model_or_network_invocation_count": 0,
+  "next_authorized_boundary": "A separate context-free prerequisite execution candidate may be constructed and frozen. The writer POST is not authorized in this task and was not executed. No RC2 rerun, semantic calibration, generation case, private-population work, production change, merge, release or promotion is authorized.",
+  "non_claims": [
+    "This does not establish successful profile writing.",
+    "Generation capability remains UNKNOWN.",
+    "This does not establish evaluator semantic validity.",
+    "This does not establish private population readiness.",
+    "This does not establish retrieval support.",
+    "This does not establish production readiness.",
+    "This does not establish release readiness.",
+    "RC2 remains BLOCKED_CUSTODY_VERIFICATION with frozen checker reason 'output'.",
+    "No writer/model/network invocation occurred in this task."
+  ],
+  "ollama_called": false,
+  "predecessor_bytes_changed": false,
+  "predecessor_rc2": {
+    "frozen_checker_reason": "'output'",
+    "pull_request": 127,
+    "source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+    "source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+    "terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "terminal_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+    "unchanged": true
+  },
+  "pressure_matrix": {
+    "apparatus_failures": 1,
+    "baseline_passes": 1,
+    "byte_comparison": "IDENTICAL",
+    "cases": 18,
+    "cmp_exit_code": 0,
+    "contamination_failures": 1,
+    "custody_failures": 6,
+    "exception_message_substring_classification": false,
+    "exit_code_run_1": 0,
+    "exit_code_run_2": 0,
+    "generation_capability": "UNKNOWN",
+    "launcher_consumes_structured_disposition": true,
+    "launcher_structured_mapping": "PASS",
+    "missing_calibration_output": {
+      "case": "PROFILE_MISSING_CALIBRATION_OUTPUT",
+      "category": "PROFILE_CONFIGURATION",
+      "code": "PROFILE_CALIBRATION_OUTPUT_MISSING",
+      "disposition": "BLOCKED_PROFILE_CONFIGURATION"
+    },
+    "model_or_network_execution": "NOT_RUN",
+    "profile_failures": 9,
+    "raw_keyerror_output": {
+      "case": "APPARATUS_RAW_KEYERROR_OUTPUT",
+      "category": "APPARATUS_ERROR",
+      "code": "APPARATUS_UNEXPECTED_EXCEPTION",
+      "disposition": "INCONCLUSIVE",
+      "launcher_disposition": "INCONCLUSIVE",
+      "result": "FAIL",
+      "witness": "KeyError(\"output\")"
+    },
+    "result": "PASS",
+    "run_1": {
+      "bytes": 517,
+      "path": "research/eb_root_generation_prereq_rc3_apparatus_20261003/qualification/pressure-result-run-1.json",
+      "sha256": "8a4f1e505f4e1820b36f9248d5767bb884b2b77b5972b4e5c19c9c063e25450b"
+    },
+    "run_2": {
+      "bytes": 517,
+      "path": "research/eb_root_generation_prereq_rc3_apparatus_20261003/qualification/pressure-result-run-2.json",
+      "sha256": "8a4f1e505f4e1820b36f9248d5767bb884b2b77b5972b4e5c19c9c063e25450b"
+    },
+    "stderr_bytes_each_run": 0,
+    "structured_policy": {
+      "APPARATUS_ERROR": "INCONCLUSIVE",
+      "CONTAMINATION": "CONTAMINATED",
+      "CUSTODY_VERIFICATION": "BLOCKED_CUSTODY_VERIFICATION",
+      "PROFILE_CONFIGURATION": "BLOCKED_PROFILE_CONFIGURATION"
+    }
+  },
+  "production_bytes_changed": false,
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "pull_request": 129,
+  "qualified_at": "2026-10-04T01:09:03Z",
+  "qualified_classifier_authority": {
+    "candidate_tree": "36014eed680cf9a34d23231e4258046eac6a16aa",
+    "disposition": "SUPPORTED_FOR_APPARATUS_SUCCESSOR",
+    "evidence_head": "9da73dc3a9d4d413a55dce6ce48f9774d0a9ec07",
+    "frozen_pressure_result_sha256": "bffa198a15d20a2b863abc69952f5fa9706447e1e27d40ec35a1a46b11540925",
+    "pull_request": 128,
+    "qualified_candidate": "8ec8bf0a24e392f9ceb7ba390746b07f96086402",
+    "source_commit": "6e666ab20c02a9b9a7ec5e649d16d282bedccb27",
+    "source_tree": "7685fc0cedad8f9c44339b6227d6ed20cda43106"
+  },
+  "repository": "camerontjs-dot/evidence-bundler",
+  "required_ci": {
+    "dedicated_apparatus": {
+      "conclusion": "success",
+      "head_sha": "9756d3862efaa40a7e2db51adf1d2db2e8a12411",
+      "name": "Root-generation prerequisite RC3 apparatus",
+      "run_id": 37166295183,
+      "status": "completed"
+    },
+    "ordinary_repository_ci": {
+      "conclusion": "success",
+      "head_sha": "9756d3862efaa40a7e2db51adf1d2db2e8a12411",
+      "name": "CI",
+      "run_id": 37166295151,
+      "status": "completed"
+    }
+  },
+  "run_writer_executed_as_command": false,
+  "runtime": {
+    "dedicated_ci_python": [
+      "3.11",
+      "3.12"
+    ],
+    "implementation": "CPython",
+    "local_3_12_rerun": "NOT_RUN",
+    "local_default_python": "3.14.4",
+    "local_interpreter_choice": "CPython 3.11.15, matching the dedicated CI 3.11 job. The host python3 is 3.14.4 and was not used.",
+    "version": "3.11.15",
+    "version_detail": "3.11.15 (main, May 4 2026, 21:04:48) [Clang 22.1.3 ]"
+  },
+  "schema": "eb-root-generation-prereq-rc3-apparatus-qualification-receipt-v1",
+  "setup_validation": {
+    "candidate_closure_checked": true,
+    "exit_code": 0,
+    "generation_capability": "UNKNOWN",
+    "mechanical_setup": "PASS",
+    "preserved_file": "research/eb_root_generation_prereq_rc3_apparatus_20261003/qualification/setup-validation.json",
+    "result": "PASS",
+    "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+    "writer_prompt_selftest": "PASS",
+    "writer_runtime": "PINNED",
+    "writer_transport": "PINNED"
+  },
+  "successor_validation": {
+    "exit_code": 0,
+    "generation_capability": "UNKNOWN",
+    "preserved_file": "research/eb_root_generation_prereq_rc3_apparatus_20261003/qualification/successor-validation.json",
+    "qualified_classifier_authority": "BOUND",
+    "qualified_mutation_matrix": "BOUND",
+    "qualified_mutation_matrix_blob": "e68aed2a3435d783a5e6a4c26656f5d85dde421a",
+    "rc2_identical_files": 8,
+    "rc2_invariant_list": [
+      "AUTHORING-RUBRIC.json",
+      "PROFILE-SURFACE.json",
+      "PROFILE-WRITER-TASK.md",
+      "BOOTSTRAP-MANIFEST.json",
+      "CUSTODY-SCHEMA.json",
+      "WRITER-TRANSPORT.json",
+      "LAUNCH-STATUS.json",
+      "validate_setup.py"
+    ],
+    "result": "PASS",
+    "structured_unexpected_exception": "INCONCLUSIVE",
+    "successor_control": "PASS",
+    "writer_execution_authorized": false
+  },
+  "terminal_disposition": "SUPPORTED_FOR_PREREQUISITE_EXECUTION_CANDIDATE",
+  "weak_controls": {
+    "everything_custody_contamination_boundary": true,
+    "everything_custody_profile_boundary": true,
+    "meaningfully_discriminated": true,
+    "rc2_message_heuristic_raw_output_witness": true
+  },
+  "writer_model_network_invocation": "NOT_RUN"
+}

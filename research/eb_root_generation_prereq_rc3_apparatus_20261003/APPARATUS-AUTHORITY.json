@@ -1,0 +1,27 @@
+{
+  "schema": "eb-root-generation-prereq-rc3-apparatus-authority-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "predecessor_rc2": {
+    "pr": 127,
+    "terminal_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+    "source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+    "source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+    "terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "checker_result": "FAIL",
+    "checker_reason": "'output'"
+  },
+  "failure_classifier_qualification": {
+    "pr": 128,
+    "qualified_candidate": "8ec8bf0a24e392f9ceb7ba390746b07f96086402",
+    "candidate_tree": "36014eed680cf9a34d23231e4258046eac6a16aa",
+    "source_commit": "6e666ab20c02a9b9a7ec5e649d16d282bedccb27",
+    "source_tree": "7685fc0cedad8f9c44339b6227d6ed20cda43106",
+    "evidence_head": "9da73dc3a9d4d413a55dce6ce48f9774d0a9ec07",
+    "disposition": "SUPPORTED_FOR_APPARATUS_SUCCESSOR",
+    "matrix_cases": 18,
+    "result_sha256": "sha256:bffa198a15d20a2b863abc69952f5fa9706447e1e27d40ec35a1a46b11540925"
+  },
+  "authorized_change": "Replace RC2 raw-exception/message-substring failure classification with structured checker categories/codes and launcher consumption of the structured result.",
+  "writer_execution_authorized": false,
+  "generation_capability": "UNKNOWN"
+}
