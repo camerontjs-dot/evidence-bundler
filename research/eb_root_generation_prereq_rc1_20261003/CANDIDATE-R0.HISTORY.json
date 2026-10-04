@@ -1,0 +1,24 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "meaning": "Frozen public prerequisite setup only. No semantic calibration, target generation, weak-system generation, decisive review, tally, private population work, production change, merge, release or promotion is authorized.",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "preserved_rc0_envelope": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+  "source_commit": "29f1a2076539c31242212436f9f572e436044585",
+  "source_tree": "530a4f74306edb78abccb3484706104d18dec61d",
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc1.yml": "a181581783e3a93ff8caaaa76d6f0e39d35833f5",
+    "research/eb_root_generation_prereq_rc1_20261003/README.md": "e88b6c66f1df34d0afcdbe2d2f8d7224391b1831",
+    "research/eb_root_generation_prereq_rc1_20261003/PREREGISTRATION.md": "30e5abdab410aa982a72f2cf59e493faec972ab2",
+    "research/eb_root_generation_prereq_rc1_20261003/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-SURFACE.json": "035ce4b27039dd8e4ce7d978bf0fc64f01c55429",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-WRITER-TASK.md": "84c0514c11015d1f47aadf772ad8f3ddb1db614e",
+    "research/eb_root_generation_prereq_rc1_20261003/BOOTSTRAP-MANIFEST.json": "67575843fe0e2d0b8a1e4be964bdae9741f6cb80",
+    "research/eb_root_generation_prereq_rc1_20261003/CUSTODY-SCHEMA.json": "e4fe218c3f1abe0dac4eb3807743f50da9ef6528",
+    "research/eb_root_generation_prereq_rc1_20261003/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc1_20261003/validate_setup.py": "057091cf2116961dc3e9a8a73e30071b0ba9144d"
+  },
+  "execution_state": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "context_free_required": true,
+  "next_authorized_boundary": "One context-free fresh profile-writing attempt plus one external custody-verification attempt only."
+}

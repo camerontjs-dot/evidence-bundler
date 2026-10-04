@@ -1,0 +1,45 @@
+{
+  "schema": "eb-root-generation-writer-transport-rc1-v1",
+  "destination": "http://127.0.0.1:11434/api/generate",
+  "model": "qwen3.5:9b",
+  "service_version": "0.34.4",
+  "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "raw": true,
+  "stream": false,
+  "think": false,
+  "keep_alive": 0,
+  "options": {
+    "num_ctx": 32768,
+    "num_predict": 8192,
+    "presence_penalty": 1.5,
+    "seed": 502,
+    "temperature": 0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "response_format": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["files"],
+    "properties": {
+      "files": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "PRIMARY-PROMPT.txt",
+          "PRIMARY-CONFIG.json",
+          "EVALUATOR-PROMPT.txt",
+          "EVALUATOR-CONFIG.json",
+          "REVIEW-SCHEMA.json"
+        ],
+        "properties": {
+          "PRIMARY-PROMPT.txt": {"type": "string"},
+          "PRIMARY-CONFIG.json": {"type": "string"},
+          "EVALUATOR-PROMPT.txt": {"type": "string"},
+          "EVALUATOR-CONFIG.json": {"type": "string"},
+          "REVIEW-SCHEMA.json": {"type": "string"}
+        }
+      }
+    }
+  }
+}

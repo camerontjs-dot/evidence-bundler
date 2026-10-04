@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/run_writer.py", line 305, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/run_writer.py", line 151, in main
+    runtime = runtime_preflight(transport)
+  File "<isolated-checkout>/research/eb_root_generation_prereq_rc1_20261003/run_writer.py", line 72, in runtime_preflight
+    raise RuntimeError("BLOCKED_AUTHORITY: service version mismatch")
+RuntimeError: BLOCKED_AUTHORITY: service version mismatch

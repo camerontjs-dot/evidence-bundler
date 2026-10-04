@@ -1,0 +1,34 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "revision": "R1_FROZEN_EXECUTION_CHECKER",
+  "meaning": "Frozen public prerequisite setup only. One context-free writer attempt and one external custody verification are authorized. No semantic calibration, target generation, weak-system generation, decisive review, tally, private population work, production change, merge, release or promotion is authorized.",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "preserved_rc0_envelope": "2ec8408a1549ad44af1c6ef0d95ffaa45c6a3ccc",
+  "source_commit": "31d4bb8879786ec34a964e56090ce2828304d97a",
+  "source_tree": "b6bc605b211090eac50f01da31a7f0f39e2604be",
+  "supersedes_setup_envelope": "0fe0cf1c3c7520289cf83609a6d5a9ac0075c10d",
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc1.yml": "7b6e2cd5559fdc864e0305523634dedbbbd4a384",
+    "research/eb_root_generation_prereq_rc1_20261003/README.md": "e88b6c66f1df34d0afcdbe2d2f8d7224391b1831",
+    "research/eb_root_generation_prereq_rc1_20261003/PREREGISTRATION.md": "017cda045bdfabcdabb67d5f4aeb11d6e1d36d9d",
+    "research/eb_root_generation_prereq_rc1_20261003/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_root_generation_prereq_rc1_20261003/PROFILE-WRITER-TASK.md": "84c0514c11015d1f47aadf772ad8f3ddb1db614e",
+    "research/eb_root_generation_prereq_rc1_20261003/BOOTSTRAP-MANIFEST.json": "6ff3d831fd1b478b4bec57c47ca5bc39ce5aa822",
+    "research/eb_root_generation_prereq_rc1_20261003/CUSTODY-SCHEMA.json": "bd8c39da0f3dbd8cd3d3846bb077dc5a3b79a466",
+    "research/eb_root_generation_prereq_rc1_20261003/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc1_20261003/check_execution.py": "2ba9845dea0f8043d78c8d2cca20bb423beec813",
+    "research/eb_root_generation_prereq_rc1_20261003/validate_setup.py": "9c1c11446476e45aa85e26ff686a479ec187299f",
+    "research/eb_root_generation_prereq_rc1_20261003/DEVIATIONS.json": "b1be271040ebd55abab616e726994b52a0b2a92b",
+    "research/eb_root_generation_prereq_rc1_20261003/CANDIDATE-R0.HISTORY.json": "7b9468bcd527f46529f7b51efdd99271ad3379fd"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "execution_state": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "context_free_required": true,
+  "next_authorized_boundary": "One context-free fresh profile-writing attempt plus one external custody-verification attempt, checked by frozen check_execution.py."
+}

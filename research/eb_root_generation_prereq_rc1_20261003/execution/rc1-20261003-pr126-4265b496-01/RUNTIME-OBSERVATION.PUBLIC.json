@@ -1,0 +1,23 @@
+{
+  "actual_backend_weight_attestation": "UNKNOWN",
+  "destination": "http://127.0.0.1:11434/api/generate",
+  "expected_model": "qwen3.5:9b",
+  "expected_service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "expected_service_version": "0.34.4",
+  "native_authority_get_response_sha256": {
+    "tags": "sha256:cf8df36d43bb55e1f0fdd7562e729c5b3245a74502a0125194928e8dfd99532f",
+    "version": "sha256:396db0946fbcb2896995ef22b1785c54fa7cfae0e03badb57a381f066141cad7"
+  },
+  "observation_kind": "POST_TERMINAL_READ_ONLY_GETS_NOT_LAUNCHER_RECEIPT",
+  "observed_at": "2026-10-03T17:38:55.869710+00:00",
+  "pinned_model_rows": [
+    {
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "model": "qwen3.5:9b",
+      "name": "qwen3.5:9b"
+    }
+  ],
+  "schema": "rc1-supervisor-runtime-observation-v1",
+  "service_version": "0.35.1",
+  "writer_post_sent": false
+}

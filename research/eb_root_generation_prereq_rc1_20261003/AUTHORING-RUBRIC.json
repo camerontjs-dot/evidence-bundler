@@ -1,0 +1,36 @@
+{
+  "checker_reasons": [
+    "exact_agreement",
+    "not_two_required",
+    "not_distinct",
+    "not_conserved",
+    "subject_mismatch",
+    "inheritance_mismatch",
+    "uncertain"
+  ],
+  "checks": [
+    "two_required_children",
+    "materially_distinct",
+    "conservation",
+    "subject_anchors",
+    "inherited_status"
+  ],
+  "extra_context": false,
+  "ineligible_reasons": [
+    "not_two_required",
+    "disjunction",
+    "conditional_or_context",
+    "not_conserved",
+    "uncertain"
+  ],
+  "meaning": "Experimental declaration authority only; no truth, source or adequacy judgment.",
+  "rules": [
+    "Represent only a faithful all_of of exactly two materially distinct required obligations.",
+    "Preserve modality, negation, quantifiers, values, dates, attribution, scope and references. Add or omit no obligation.",
+    "Reject OR flattening, conditional loss, duplicate children, context-dependent or non-two-obligation roots.",
+    "Copy each subject from an exact UTF-8 root span. Explicit subjects additionally match an exact child span. An inherited subject copies the root anchor without a child span.",
+    "Declare ineligible when unresolved; no repair, third session, other root, evidence, tool or retrieval access.",
+    "Checker either accepts the exact proposal with all five checks true or rejects it without edits."
+  ],
+  "schema": "eb-rc2-authoring-rubric-v1"
+}
