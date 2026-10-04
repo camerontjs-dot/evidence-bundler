@@ -1,0 +1,44 @@
+{
+  "decomposition": {
+    "children": [
+      {
+        "proposition_id": "clm-p06-1",
+        "sequence": 1,
+        "text": "Fictional Study Halcyon-2 requires a signed sampling log.",
+        "text_sha256": "sha256:55b6c09dab4d4d3da0628b97fd17dc036ecc41ea6265206e3592c007bda3f3c6"
+      },
+      {
+        "proposition_id": "clm-p06-2",
+        "sequence": 2,
+        "text": "Fictional Study Halcyon-2 records a planned 24-month archive retention period.",
+        "text_sha256": "sha256:0e0b23cf6316ba616b300cf5ac007722183a7182462ebe7488040a39b3ae6f4e"
+      }
+    ],
+    "decomposition_id": "decomp-p06",
+    "operator": "all_of",
+    "state": "declared"
+  },
+  "handoff_id": "handoff-p06",
+  "handoff_sha256": "sha256:fd5360f91d570471ec9fe72143309fbf10e1eaedcfa0bf7cdaa666fdb4003c5d",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p06",
+    "text": "Fictional Study Halcyon-2 requires a signed sampling log and records a planned 24-month archive retention period.",
+    "text_sha256": "sha256:27db3ee29513a7af4a04143cdab9cbd5b6e270c0e3e3aea229f526dd8c49e3a7"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source.\n",
+      "content_sha256": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272",
+      "media_type": "text/plain; charset=utf-8",
+      "source_id": "src-p06-halcyon-log"
+    }
+  ],
+  "work": {
+    "work_id": "work-p06"
+  }
+}

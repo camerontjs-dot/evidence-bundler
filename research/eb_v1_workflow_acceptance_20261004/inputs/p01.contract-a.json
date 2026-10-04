@@ -1,0 +1,28 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "handoff-p01",
+  "handoff_sha256": "sha256:49e24f3531a3a9b7c99e0e361194a8ace84e1c70e8f71cb0a2af2f9c6f8a73d7",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p01",
+    "text": "Fictional Procedure Sable-17 revision 4 became effective on 3 March 2031.",
+    "text_sha256": "sha256:199118ade88d6d78cd3c5badef889e497b2954c8f4da3a1c4782dfcd701fd472"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "# Fictional Sable document register\n\nTraining example only. All names, identifiers and dates in this record are invented.\n\nDocument: Procedure Sable-17\nRevision: 4\nApproval date: 1 March 2031\nEffective date: 3 March 2031\nStatus: current in this fictional register.\n\nThe approval date records when the quality lead signed revision 4. The effective date records when that revision became the working procedure. Revision 3 ceased to be current when revision 4 became effective.\n",
+      "content_sha256": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98",
+      "media_type": "text/markdown; charset=utf-8",
+      "source_id": "src-p01-sable-record"
+    }
+  ],
+  "work": {
+    "work_id": "work-p01"
+  }
+}

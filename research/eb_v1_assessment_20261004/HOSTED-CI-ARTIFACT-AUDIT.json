@@ -1,0 +1,405 @@
+{
+  "all_four_artifact_download_digests_verified": true,
+  "all_four_jobs_succeeded": true,
+  "artifacts": [
+    {
+      "digest": "sha256:4f5481729c5c454b5b1c5298504f349447f96230472cdf96c54a56b0ff579fa6",
+      "downloaded_bytes_match_github_digest": true,
+      "id": 11304757009,
+      "mypy_source_files": null,
+      "name": "eb-v1-containment-maintained-py3.12",
+      "pip_check_passed": true,
+      "pytest": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 281,
+        "skipped": 6,
+        "tests": 287
+      },
+      "ruff_passed": true,
+      "size_in_bytes": 258007,
+      "url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37205630002/artifacts/11304757009"
+    },
+    {
+      "digest": "sha256:09bb84137340c03f30f92450492df1aa83d3698218048985853f55caf6a012cf",
+      "downloaded_bytes_match_github_digest": true,
+      "id": 11304347375,
+      "mypy_source_files": 51,
+      "name": "eb-v1-containment-maintained-py3.11",
+      "pip_check_passed": true,
+      "pytest": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 281,
+        "skipped": 6,
+        "tests": 287
+      },
+      "ruff_passed": true,
+      "size_in_bytes": 256402,
+      "url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37205630002/artifacts/11304347375"
+    },
+    {
+      "cal_positive": {
+        "admitted_pairs": [
+          [
+            "claim-safe",
+            "passage:559fef79b50c7d8968b28e999164d214"
+          ]
+        ],
+        "authority_commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+        "expected_admitted_pairs": [
+          [
+            "claim-safe",
+            "passage:559fef79b50c7d8968b28e999164d214"
+          ]
+        ],
+        "extension_state": "present",
+        "passed": true
+      },
+      "canonical_positive": {
+        "authority_commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/claim-safe.yaml",
+          "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "passed": true
+      },
+      "colon_path_count": 3,
+      "containment_cases": [
+        {
+          "case": "claim_traversal",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "source_traversal",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "absolute_claim",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "absolute_source",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        }
+      ],
+      "digest": "sha256:7189f51445df55a4f5c0ac380a2eae52216b4fe5e27dc574fb2718c1c482bde9",
+      "downloaded_bytes_match_github_digest": true,
+      "id": 11304008794,
+      "inner_tar_sha256": "4903455aebe8de52a7de38aa1d220b1bc6b3581a0c99baa6db59faf197fa0fc2",
+      "name": "eb-v1-containment-installed-py3.12",
+      "negative_fixture_and_preserved_positive_bytes_verified": true,
+      "runtime": {
+        "isolated_venv": true,
+        "module_origins_relative_to_venv": {
+          "claim_audit_lab": "lib/python3.12/site-packages/claim_audit_lab/__init__.py",
+          "evidence_bundler": "lib/python3.12/site-packages/evidence_bundler/__init__.py",
+          "validators": "lib/python3.12/site-packages/validators/__init__.py"
+        },
+        "outside_checkout": true,
+        "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+        "versions": {
+          "apparatus-contracts": "0.1.0",
+          "claim-audit-lab": "0.6.0",
+          "evidence-bundler": "0.2.1.dev0",
+          "faiss-cpu": "1.15.1",
+          "sentence-transformers": "5.7.0",
+          "torch": "2.14.1"
+        }
+      },
+      "size_in_bytes": 618055,
+      "subject": {
+        "candidate_commit": "6be9ab4809440365f9fcdf4aafa6b264cdfdf02c",
+        "candidate_tree": "f9ac8a58457a558205cb06cdcdf7b968784a301a",
+        "changed_paths": [
+          ".github/workflows/eb-v1-output-containment.yml",
+          "pyproject.toml",
+          "research/eb_v1_output_containment_20261004/01-independent-probe-plan.md",
+          "research/eb_v1_output_containment_20261004/02-path-containment-probe.py",
+          "research/eb_v1_output_containment_20261004/03-behavior-probes.py",
+          "research/eb_v1_output_containment_20261004/BASELINE-PORTABLE-REVIEW.md",
+          "research/eb_v1_output_containment_20261004/CONSUMER-AND-COMPATIBILITY.json",
+          "research/eb_v1_output_containment_20261004/EVIDENCE.json",
+          "research/eb_v1_output_containment_20261004/README.md",
+          "research/eb_v1_output_containment_20261004/additional/01-probe-design.md",
+          "research/eb_v1_output_containment_20261004/additional/02-design-freeze.json",
+          "research/eb_v1_output_containment_20261004/additional/03-additional-path-probes.py",
+          "research/eb_v1_output_containment_20261004/additional/04-baseline-findings.md",
+          "research/eb_v1_output_containment_20261004/additional/06-public-baseline-summary.json",
+          "scripts/qualification/eb_v1_output_containment.py",
+          "src/evidence_bundler/__init__.py",
+          "src/evidence_bundler/production_v1/execution.py",
+          "src/evidence_bundler/v1/contract_b.py",
+          "tests/test_production_v1_cli.py",
+          "tests/test_v1_projection_paths.py"
+        ],
+        "corrected_from_commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+        "dependency_metadata_unchanged": true,
+        "external_authorities": {
+          "cal": {
+            "commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+            "tree": "62c32ab15489e6c3b20e63efb500c0fa26d0084d"
+          },
+          "contract_b": {
+            "commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+            "tree": "f3f142ec8cceb9aaf7d0c138c90b35c3576d77a1"
+          }
+        },
+        "frozen_authorities": {
+          ".github/workflows/promotion-eb-v1-slice.yml": "c5b4c8b0c3f06590db1fe34c173d998449ae55ae",
+          "config/eb_v1_slice": "bbf999f02f11cc9f4a37de756ed8864a5b035590",
+          "schema": "0b59a83dfddbc4bebd16f2ec37d402dd50e23564",
+          "src/evidence_bundler/contracts": "bc471c262f1ab1ab1d2cdff6b307994c695099c8",
+          "src/evidence_bundler/models": "b8d77a80fce9d96e003dd0bd8103ce692728ea14",
+          "src/evidence_bundler/production_v1/__init__.py": "fc8ad595a1018eed953f72b9c180d659674c9b0f",
+          "src/evidence_bundler/production_v1/cli.py": "95f0b6cb545a5cd35b65c41dac256f0ca542fa73",
+          "src/evidence_bundler/production_v1/data": "86a18467c7e8d7bc64ddfe971ad1442dad32edec",
+          "src/evidence_bundler/v1/__init__.py": "8a074feeb4a6338b9291d4f6fdc667b96a9a17d7",
+          "src/evidence_bundler/v1/__main__.py": "fa64b3f551a338a9ac61b0b66ba00f9198198dd6",
+          "src/evidence_bundler/v1/builder.py": "b64416c222c03b5ce472275d86f801beff7e7380",
+          "src/evidence_bundler/v1/contract_a.py": "5799750389b1fbe8ec2da58af371242c161f6e13",
+          "src/evidence_bundler/v1/package.py": "b2fc2459123fcceae63775c7851b0ca6ed38770b",
+          "src/evidence_bundler/v1/retrieval.py": "0258bacd085d83997ad43526c9173f9045e92e3b"
+        },
+        "package_version": "0.2.1.dev0",
+        "probe_sha256": "70f18e7c57e3ac6b0e90b358c621a8dd0be44f6fb1ccf69a19d3d6df3eaee52a",
+        "qualification_scope": "New correction qualification; no old receipt is extended.",
+        "schema": "eb-v1-output-containment-subject-v1"
+      },
+      "tampered_passage_negative": {
+        "cal_error": "SHA256SUMS mismatch for evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+        "cal_error_type": "BundleIntegrityError",
+        "cal_intake_returned": false,
+        "cal_rejected": true,
+        "canonical_errors": [
+          "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml: hash mismatch (expected 2b6d3ba7c0ca228738171428891be034835bad839ab5d39eafc2f4ee387aacc7, got 3d3674425a3fc5ef3d271d71b3f91a5c6bc3ceae36c2c77771a7fdec546f325a)"
+        ],
+        "canonical_rejected": true,
+        "original_file_sha256": "2b6d3ba7c0ca228738171428891be034835bad839ab5d39eafc2f4ee387aacc7",
+        "tampered_file_sha256": "3d3674425a3fc5ef3d271d71b3f91a5c6bc3ceae36c2c77771a7fdec546f325a",
+        "tampered_path": "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+        "valid_bundle_preserved": true
+      },
+      "tar_file_count": 74,
+      "url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37205630002/artifacts/11304008794",
+      "wheels": {
+        "apparatus_contracts-0.1.0-py3-none-any.whl": {
+          "bytes": 23198,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "18f44cea3c068130398b857bbd0aef1ac6f9f05ad19f3854e8246491fa0b17f0"
+        },
+        "claim_audit_lab-0.6.0-py3-none-any.whl": {
+          "bytes": 228161,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "654c7827e60e9a232d333c03698b8584eb9f4790ca91e9a1ec774731a00fcec2"
+        },
+        "evidence_bundler-0.2.1.dev0-py3-none-any.whl": {
+          "bytes": 118272,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "722f2b8ce2475cf8f46ef178bdffd6d638f93222c43fcd5059cdfbe88ce9295c"
+        }
+      }
+    },
+    {
+      "cal_positive": {
+        "admitted_pairs": [
+          [
+            "claim-safe",
+            "passage:559fef79b50c7d8968b28e999164d214"
+          ]
+        ],
+        "authority_commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+        "expected_admitted_pairs": [
+          [
+            "claim-safe",
+            "passage:559fef79b50c7d8968b28e999164d214"
+          ]
+        ],
+        "extension_state": "present",
+        "passed": true
+      },
+      "canonical_positive": {
+        "authority_commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/claim-safe.yaml",
+          "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "passed": true
+      },
+      "colon_path_count": 3,
+      "containment_cases": [
+        {
+          "case": "claim_traversal",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "source_traversal",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "absolute_claim",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        },
+        {
+          "case": "absolute_source",
+          "exit_code": 1,
+          "requested_output_contains_no_files": true,
+          "sentinel_sha256_matches_original_bytes": true
+        }
+      ],
+      "digest": "sha256:4080ce807936166297f12dfff34b787863ab41b852bd623f6624e8c4ffc4e005",
+      "downloaded_bytes_match_github_digest": true,
+      "id": 11303684767,
+      "inner_tar_sha256": "ea619737a4934cdc1a5a8d8dfc47a32ac3401be0b753d58317e26428a23143f1",
+      "name": "eb-v1-containment-installed-py3.11",
+      "negative_fixture_and_preserved_positive_bytes_verified": true,
+      "runtime": {
+        "isolated_venv": true,
+        "module_origins_relative_to_venv": {
+          "claim_audit_lab": "lib/python3.11/site-packages/claim_audit_lab/__init__.py",
+          "evidence_bundler": "lib/python3.11/site-packages/evidence_bundler/__init__.py",
+          "validators": "lib/python3.11/site-packages/validators/__init__.py"
+        },
+        "outside_checkout": true,
+        "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+        "versions": {
+          "apparatus-contracts": "0.1.0",
+          "claim-audit-lab": "0.6.0",
+          "evidence-bundler": "0.2.1.dev0",
+          "faiss-cpu": "1.15.1",
+          "sentence-transformers": "5.7.0",
+          "torch": "2.14.1"
+        }
+      },
+      "size_in_bytes": 616343,
+      "subject": {
+        "candidate_commit": "6be9ab4809440365f9fcdf4aafa6b264cdfdf02c",
+        "candidate_tree": "f9ac8a58457a558205cb06cdcdf7b968784a301a",
+        "changed_paths": [
+          ".github/workflows/eb-v1-output-containment.yml",
+          "pyproject.toml",
+          "research/eb_v1_output_containment_20261004/01-independent-probe-plan.md",
+          "research/eb_v1_output_containment_20261004/02-path-containment-probe.py",
+          "research/eb_v1_output_containment_20261004/03-behavior-probes.py",
+          "research/eb_v1_output_containment_20261004/BASELINE-PORTABLE-REVIEW.md",
+          "research/eb_v1_output_containment_20261004/CONSUMER-AND-COMPATIBILITY.json",
+          "research/eb_v1_output_containment_20261004/EVIDENCE.json",
+          "research/eb_v1_output_containment_20261004/README.md",
+          "research/eb_v1_output_containment_20261004/additional/01-probe-design.md",
+          "research/eb_v1_output_containment_20261004/additional/02-design-freeze.json",
+          "research/eb_v1_output_containment_20261004/additional/03-additional-path-probes.py",
+          "research/eb_v1_output_containment_20261004/additional/04-baseline-findings.md",
+          "research/eb_v1_output_containment_20261004/additional/06-public-baseline-summary.json",
+          "scripts/qualification/eb_v1_output_containment.py",
+          "src/evidence_bundler/__init__.py",
+          "src/evidence_bundler/production_v1/execution.py",
+          "src/evidence_bundler/v1/contract_b.py",
+          "tests/test_production_v1_cli.py",
+          "tests/test_v1_projection_paths.py"
+        ],
+        "corrected_from_commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+        "dependency_metadata_unchanged": true,
+        "external_authorities": {
+          "cal": {
+            "commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+            "tree": "62c32ab15489e6c3b20e63efb500c0fa26d0084d"
+          },
+          "contract_b": {
+            "commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+            "tree": "f3f142ec8cceb9aaf7d0c138c90b35c3576d77a1"
+          }
+        },
+        "frozen_authorities": {
+          ".github/workflows/promotion-eb-v1-slice.yml": "c5b4c8b0c3f06590db1fe34c173d998449ae55ae",
+          "config/eb_v1_slice": "bbf999f02f11cc9f4a37de756ed8864a5b035590",
+          "schema": "0b59a83dfddbc4bebd16f2ec37d402dd50e23564",
+          "src/evidence_bundler/contracts": "bc471c262f1ab1ab1d2cdff6b307994c695099c8",
+          "src/evidence_bundler/models": "b8d77a80fce9d96e003dd0bd8103ce692728ea14",
+          "src/evidence_bundler/production_v1/__init__.py": "fc8ad595a1018eed953f72b9c180d659674c9b0f",
+          "src/evidence_bundler/production_v1/cli.py": "95f0b6cb545a5cd35b65c41dac256f0ca542fa73",
+          "src/evidence_bundler/production_v1/data": "86a18467c7e8d7bc64ddfe971ad1442dad32edec",
+          "src/evidence_bundler/v1/__init__.py": "8a074feeb4a6338b9291d4f6fdc667b96a9a17d7",
+          "src/evidence_bundler/v1/__main__.py": "fa64b3f551a338a9ac61b0b66ba00f9198198dd6",
+          "src/evidence_bundler/v1/builder.py": "b64416c222c03b5ce472275d86f801beff7e7380",
+          "src/evidence_bundler/v1/contract_a.py": "5799750389b1fbe8ec2da58af371242c161f6e13",
+          "src/evidence_bundler/v1/package.py": "b2fc2459123fcceae63775c7851b0ca6ed38770b",
+          "src/evidence_bundler/v1/retrieval.py": "0258bacd085d83997ad43526c9173f9045e92e3b"
+        },
+        "package_version": "0.2.1.dev0",
+        "probe_sha256": "70f18e7c57e3ac6b0e90b358c621a8dd0be44f6fb1ccf69a19d3d6df3eaee52a",
+        "qualification_scope": "New correction qualification; no old receipt is extended.",
+        "schema": "eb-v1-output-containment-subject-v1"
+      },
+      "tampered_passage_negative": {
+        "cal_error": "SHA256SUMS mismatch for evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+        "cal_error_type": "BundleIntegrityError",
+        "cal_intake_returned": false,
+        "cal_rejected": true,
+        "canonical_errors": [
+          "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml: hash mismatch (expected 2b6d3ba7c0ca228738171428891be034835bad839ab5d39eafc2f4ee387aacc7, got 3d3674425a3fc5ef3d271d71b3f91a5c6bc3ceae36c2c77771a7fdec546f325a)"
+        ],
+        "canonical_rejected": true,
+        "original_file_sha256": "2b6d3ba7c0ca228738171428891be034835bad839ab5d39eafc2f4ee387aacc7",
+        "tampered_file_sha256": "3d3674425a3fc5ef3d271d71b3f91a5c6bc3ceae36c2c77771a7fdec546f325a",
+        "tampered_path": "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+        "valid_bundle_preserved": true
+      },
+      "tar_file_count": 74,
+      "url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37205630002/artifacts/11303684767",
+      "wheels": {
+        "apparatus_contracts-0.1.0-py3-none-any.whl": {
+          "bytes": 23198,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "ffdbe268f159531b49fbc959bdef9e0e685e67a691095afbdb57f17c48f0c343"
+        },
+        "claim_audit_lab-0.6.0-py3-none-any.whl": {
+          "bytes": 228161,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "4bb59e5e3be14d5bf94ef9bb0d13f9416f79a1afbf248da48d7c2e87ecd4ea0c"
+        },
+        "evidence_bundler-0.2.1.dev0-py3-none-any.whl": {
+          "bytes": 118272,
+          "matches_manifest_and_pip_install_report": true,
+          "sha256": "c677a9a5b8a6fd7a27146cb6f840fff20c02929a24407a84ab53c75534d649ed"
+        }
+      }
+    }
+  ],
+  "candidate_tree": "f9ac8a58457a558205cb06cdcdf7b968784a301a",
+  "run": {
+    "conclusion": "success",
+    "created_at": "2026-10-04T13:26:36Z",
+    "event": "pull_request",
+    "head_sha": "6be9ab4809440365f9fcdf4aafa6b264cdfdf02c",
+    "id": 37205630002,
+    "run_attempt": 1,
+    "status": "completed",
+    "updated_at": "2026-10-04T13:28:43Z",
+    "url": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37205630002"
+  },
+  "schema": "eb-v1-hosted-qualification-artifact-audit-v1",
+  "scope": "Independent read of the completed hosted run, downloaded artifacts, source identities, original containment cases and sentinels, positive consumer receipts, and tampered-passage negative; no new product changes or claim that the historical failed run succeeded.",
+  "wheel_payload_names_and_bytes_match_across_python_matrix": true
+}

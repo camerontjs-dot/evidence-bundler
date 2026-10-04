@@ -1,0 +1,28 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "handoff-p05",
+  "handoff_sha256": "sha256:76d0f09403110ffefe3efda1a9fc660c4e2fd3b2df2ad698b529fe2a7864c0c0",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p05",
+    "text": "For Juniper external lots, the hold-review window is 48 hours after receipt.",
+    "text_sha256": "sha256:ffa3e8eb51cf3f0f302122130404604f4395e53b9b1821777960a1b0169550da"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "Fictional Juniper archive: surviving index fragment\n\nThis invented index card preserves search labels, not a procedure statement.\n\nLabels: Juniper; external lots; hold review; 48; receipt.\n\nThe procedure body and the index column headings are absent. The fragment does not identify the unit attached to 48, does not connect receipt to a clock-start rule, and does not define the applicable lot population. A reader cannot reconstruct those relationships from this card.\n",
+      "content_sha256": "sha256:b8eb135107f0f9dab9966c9e68c72cc30dac0038421eb3866dbcf5d0a4420363",
+      "media_type": "text/plain; charset=utf-8",
+      "source_id": "src-p05-juniper-index"
+    }
+  ],
+  "work": {
+    "work_id": "work-p05"
+  }
+}

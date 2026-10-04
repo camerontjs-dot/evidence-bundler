@@ -24,6 +24,10 @@ Evidence Bundler does not prove that a claim is true. It does not replace audit.
 
 The fixture writer is only a contract-shape smoke path. It copies scaffold-cited passages into bundle shape for local contract checks. It does not retrieve candidate support, determine claim support, or turn chunks into reviewed evidence.
 
+## V1 development
+
+The [V1 purpose and supported-contract proposal](docs/EB_PURPOSE_AND_V1_CONTRACT.md) defines the narrower reviewed text/Markdown workflow. [Issue #132](https://github.com/camerontjs-dot/evidence-bundler/issues/132) owns the plan and the readiness decisions. The [local acceptance guide](docs/EB_V1_LOCAL_ACCEPTANCE.md) and the frozen synthetic kit exercise that installed workflow. They are local apparatus, not the installed command. A V1 label or a successful fixture run does not declare a stable 1.0 release.
+
 ## Installed V1 review cycle
 
 `evidence-bundler-v1` is the installed V1 command. An unreviewed `run` writes the native package, the Contract B 1.2 bundle, `review_context.md`, and a `review_record.json` template. The context file shows each target, the retained passage text, and any preceding heading or table lines needed to read a passage that does not already contain them. Those lines are display context. They are not admitted text, and they do not change passage spans.

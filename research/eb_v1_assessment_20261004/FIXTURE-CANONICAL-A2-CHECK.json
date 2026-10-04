@@ -1,0 +1,48 @@
+{
+  "contract_a_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+  "validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409",
+  "kit_freeze_sha256": "5b868d0c6904a856d9b848e12ae964c7233d2961c42afa4e84f716c0d12a713a",
+  "eb_executed": false,
+  "cases": [
+    {
+      "input": "p01.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf"
+    },
+    {
+      "input": "p02.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8"
+    },
+    {
+      "input": "p03.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14"
+    },
+    {
+      "input": "p04.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62"
+    },
+    {
+      "input": "p05.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe"
+    },
+    {
+      "input": "p06.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376"
+    },
+    {
+      "input": "p07.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c"
+    },
+    {
+      "input": "p08.contract-a.json",
+      "result": "PASS",
+      "raw_sha256": "dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "decomposition": {
+    "children": [
+      {
+        "proposition_id": "clm-p03-1",
+        "sequence": 1,
+        "text": "Fictional Procedure Wren-4 requires two different reviewers before document release.",
+        "text_sha256": "sha256:affb0ed85933158dd1e3237ef4244dea419c2d5b63504d2e32edd9427f0bb85e"
+      },
+      {
+        "proposition_id": "clm-p03-2",
+        "sequence": 2,
+        "text": "Fictional Procedure Wren-4 requires a reconciliation record before document release.",
+        "text_sha256": "sha256:b5c472c7100eeedefcca791bb3428535384ce75c8c0bdc127806536594f5fd9a"
+      }
+    ],
+    "decomposition_id": "decomp-p03",
+    "operator": "all_of",
+    "state": "declared"
+  },
+  "handoff_id": "handoff-p03",
+  "handoff_sha256": "sha256:02a84d58fb4a03461cb1245df0f5e3766250654ed82d1e8bad869fa25d911edc",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p03",
+    "text": "Fictional Procedure Wren-4 requires two different reviewers and a reconciliation record before document release.",
+    "text_sha256": "sha256:31f7696d0d2e7774bf9663d77b42e960b5d4bd528ce69d5d4f527d3ada898709"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "# Fictional Procedure Wren-4: review rule\n\nThis invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied.\n",
+      "content_sha256": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada",
+      "media_type": "text/markdown; charset=utf-8",
+      "source_id": "src-p03-wren-review"
+    },
+    {
+      "content": "# Fictional Procedure Wren-4: reconciliation rule\n\nThis invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release.\n",
+      "content_sha256": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+      "media_type": "text/markdown; charset=utf-8",
+      "source_id": "src-p03-wren-reconcile"
+    }
+  ],
+  "work": {
+    "work_id": "work-p03"
+  }
+}

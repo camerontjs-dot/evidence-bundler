@@ -1,0 +1,32 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:050880675861f07f1784b085b3a46a8067f457e66da181dfce0286404bb72c3a",
+    "native_package_sha256": "sha256:1f8c2a8ad917ec8f37dec09f0acbfe101c06bc42aca2edd87ac138acbb99b842",
+    "review_packet_sha256": "sha256:4599d030085eda91e7e026a36dab248b7a1627aff175724ac716c406a6b77d0f"
+  },
+  "case_id": "p06",
+  "coverage_notes": {
+    "clm-p06-1": "The retained sampling-log passage is accepted: it names Halcyon-2 and explicitly requires a collector signature after each session. This gives locally adequate material for the signed-log child only.",
+    "clm-p06-2": "No retained relationship is accepted for planned 24-month archive retention. The only passage describes log completion and contains no archive schedule, duration, or planning statement. The signed-log child's accepted material cannot cover this child; the composite root therefore lacks complete child-level admission coverage in this packet, without deciding its truth."
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+      "proposition_id": "clm-p06-1",
+      "reason": "The passage explicitly names Halcyon-2 and requires the sampling log to be signed by the collector, with session and signature-field context sufficient for assessment."
+    },
+    {
+      "decision": "rejected",
+      "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+      "proposition_id": "clm-p06-2",
+      "reason": "The passage covers sampling-log signatures and explicitly includes no archive-retention schedule. It supplies no planned archive period or 24-month relationship for this child."
+    }
+  ],
+  "elapsed_seconds": 27,
+  "manual_friction": "The identical retained passage appears under two different child targets, requiring separate manual relationship decisions. The export clearly describes signatures and expressly lacks an archive schedule, so no source lookup or private reconstruction was needed. The incomplete child coverage had to be stated in free text.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": true,
+      "apparatus_summary_only": true,
+      "case_id": "p01",
+      "elapsed_seconds": 36,
+      "manual_friction": "Read the packet and matched its single retained pair to the editable JSON. Manual decision/reason and coverage-note entry was required. No source inspection or private reconstruction was needed; the exported labels distinguish approval from effectiveness.",
+      "targets": {
+        "clm-p01": {
+          "accepted": 1,
+          "gap": false,
+          "manual_note": "One retained relationship is accepted for later assessment. The passage identifies Procedure Sable-17 revision 4 and explicitly labels its effective date, with enough explanation to distinguish that date from approval. The exported passage is locally adequate without a source lookup.",
+          "needs-review": 0,
+          "rejected": 0,
+          "retained": 1
+        }
+      }
+    },
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": true,
+      "apparatus_summary_only": true,
+      "case_id": "p02",
+      "elapsed_seconds": 24,
+      "manual_friction": "Read the packet and matched its retained pair to the editable JSON. The contributing-site count and invitation count required a semantic distinction but were explicitly labeled in the exported passage. No source lookup or private reconstruction was needed; decision and coverage notes were entered manually.",
+      "targets": {
+        "clm-p02": {
+          "accepted": 1,
+          "gap": false,
+          "manual_note": "One retained relationship is accepted for later assessment. The exported passage identifies the Lumen pilot, archived material, contributing sites, and the separate invitation count. Its different contributing-site number is a downstream assessment issue, not a local-context gap.",
+          "needs-review": 0,
+          "rejected": 0,
+          "retained": 1
+        }
+      }
+    },
+    {
+      "all_of": true,
+      "all_targets_have_admitted_evidence": true,
+      "apparatus_summary_only": true,
+      "case_id": "p03",
+      "elapsed_seconds": 36,
+      "manual_friction": "The same two passages appear under both child targets, so each target/passage pair had to be tracked separately and given its own decision. The exported passages distinguish the two requirements sufficiently; no source inspection or private reconstruction was needed. Coverage and reasons were entered manually.",
+      "targets": {
+        "clm-p03-1": {
+          "accepted": 1,
+          "gap": false,
+          "manual_note": "The reviewer-arrangement passage (passage:c310360a9e1800af86c01fd2cc9a461c) is accepted and explicitly identifies two different reviewers before Wren-4 release. The reconciliation-only passage is rejected for this child because it does not describe reviewer number or distinctness. Child-level local context is available.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 2
+        },
+        "clm-p03-2": {
+          "accepted": 1,
+          "gap": false,
+          "manual_note": "The reconciliation passage (passage:db558da33b045594e1b564285d081a54) is accepted and explicitly identifies the required record before Wren-4 release. The reviewer-arrangement passage is rejected for this child because a checklist of reviewer names does not describe reconciliation. Each listed child has its own adequate retained relationship; this is not a semantic verdict on the composite root.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 2
+        }
+      }
+    },
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": false,
+      "apparatus_summary_only": true,
+      "case_id": "p04",
+      "elapsed_seconds": 24,
+      "manual_friction": "The subject mismatch is explicit in the exported passage, so no underlying-source lookup or private reconstruction was needed. The single retained pair and the resulting target-specific gap required manual JSON entry.",
+      "targets": {
+        "clm-p04": {
+          "accepted": 0,
+          "gap": true,
+          "manual_note": "No retained relationship is accepted. The only passage concerns Project Alder and explicitly limits its instruction to Alder; the target concerns Project Cedar. Cedar's deviation-triage deadline remains a target-specific evidence gap in this packet.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 1
+        }
+      }
+    },
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": false,
+      "apparatus_summary_only": true,
+      "case_id": "p05",
+      "elapsed_seconds": 25,
+      "manual_friction": "The export is legible as an index fragment but cannot be interpreted as the target timing rule without inventing missing relationships. No source inspection was needed to identify that local inadequacy; the packet states that the procedure body and headings are absent. No private reconstruction was attempted. Decision and gap notes were entered manually.",
+      "targets": {
+        "clm-p05": {
+          "accepted": 0,
+          "gap": true,
+          "manual_note": "No retained relationship is accepted. The passage supplies search labels, but no unit for 48, no rule linking receipt to the start of a window, and no statement defining the applicable lots. The Juniper external-lot hold-review timing relationship remains unassessable from this exported fragment.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 1
+        }
+      }
+    },
+    {
+      "all_of": true,
+      "all_targets_have_admitted_evidence": false,
+      "apparatus_summary_only": true,
+      "case_id": "p06",
+      "elapsed_seconds": 27,
+      "manual_friction": "The identical retained passage appears under two different child targets, requiring separate manual relationship decisions. The export clearly describes signatures and expressly lacks an archive schedule, so no source lookup or private reconstruction was needed. The incomplete child coverage had to be stated in free text.",
+      "targets": {
+        "clm-p06-1": {
+          "accepted": 1,
+          "gap": false,
+          "manual_note": "The retained sampling-log passage is accepted: it names Halcyon-2 and explicitly requires a collector signature after each session. This gives locally adequate material for the signed-log child only.",
+          "needs-review": 0,
+          "rejected": 0,
+          "retained": 1
+        },
+        "clm-p06-2": {
+          "accepted": 0,
+          "gap": true,
+          "manual_note": "No retained relationship is accepted for planned 24-month archive retention. The only passage describes log completion and contains no archive schedule, duration, or planning statement. The signed-log child's accepted material cannot cover this child; the composite root therefore lacks complete child-level admission coverage in this packet, without deciding its truth.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 1
+        }
+      }
+    },
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": true,
+      "apparatus_summary_only": true,
+      "case_id": "p07",
+      "elapsed_seconds": 112,
+      "manual_friction": "Opened inputs/p07.contract-a.json because the retained decision table omits its subject and unit locally and points to a distant opening header. Source inspection confirmed that the Ilex-9/mg/L header and 0.08 decision table are parts of the same note, with only custody entries between them. Manually matched note 7Q, source_id, source hash, and the retained header/table identities. The packet already exports both ends and their explicit cross-references, so its relationships can be interpreted without private source text or a stitched passage. The table is not self-contained if later displayed alone; this admission uses the visible retained same-note context. No IDs or offsets were changed.",
+      "targets": {
+        "clm-p07": {
+          "accepted": 2,
+          "gap": false,
+          "manual_note": "The opening-header relationship (passage:30c70607c2a17efa80e5359a93928099) and the decision-table relationship (passage:6adcbccf2a04d9c75689ed2f09c7af0a) are accepted. The header identifies Ilex-9, the acceptance-ceiling field, and mg/L; the table gives 0.08 and expressly assigns its subject/unit to that same note's header. Both are exported with matching source identity/hash, so the needed cross-reference is visible rather than a private reconstruction. Neither individual quote contains the whole numerical proposition, and the table must remain interpretable with that retained header. The custody passage is rejected as outside the analytical relationship. Source inspection verified the linkage; no new combined passage was created. Admission leaves semantic conclusions to later assessment.",
+          "needs-review": 0,
+          "rejected": 1,
+          "retained": 3
+        }
+      }
+    },
+    {
+      "all_of": false,
+      "all_targets_have_admitted_evidence": false,
+      "apparatus_summary_only": true,
+      "case_id": "p08",
+      "elapsed_seconds": 22,
+      "manual_friction": "The packet reports no retained candidate and the review JSON has no decision rows. Recorded the target gap manually without manufacturing a row or inspecting unretained source text. The supplied packet does not expose enough workflow-state detail to diagnose why retention is empty.",
+      "targets": {
+        "clm-p08": {
+          "accepted": 0,
+          "gap": true,
+          "manual_note": "No retained candidate is available for the Vale-6 annual-inventory-review target, so the preserved decision set is empty and there is no accepted relationship. The target lacks exported material for later assessment. This gap does not establish that the requirement is absent or false, and its retrieval/retention cause is not determined from this packet.",
+          "needs-review": 0,
+          "rejected": 0,
+          "retained": 0
+        }
+      }
+    }
+  ],
+  "meaning": "Helper-created counts and manual notes; no semantic truth or EB UI."
+}

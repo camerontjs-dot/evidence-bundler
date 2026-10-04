@@ -1,0 +1,12 @@
+{
+  "schema": "eb-workflow-apparatus-deviation-v1",
+  "phase": "prepare-preflight",
+  "status": "SETUP_ERROR_BEFORE_PRODUCT_EXECUTION",
+  "helper_before_sha256": "75799c9d33cd7b344fd751a5276aa1846a376b69bfe9fdc2a6df671ead0525fc",
+  "error": "run inside checkout",
+  "cause": "The path heuristic treated marker presence as proof of a real Git worktree; Git reported the scratch location was not a worktree.",
+  "product_invocations": 0,
+  "output_directory_created": false,
+  "correction": "Use git rev-parse authority at the nearest existing parent; test both real repositories and non-repository marker paths.",
+  "subsequent_run": "Separate fresh run and helper identity; frozen fixture bytes unchanged."
+}
