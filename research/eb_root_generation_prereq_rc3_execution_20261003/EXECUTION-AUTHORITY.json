@@ -1,0 +1,41 @@
+{
+  "schema": "eb-root-generation-prereq-rc3-execution-authority-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "historical_evidence": {
+    "rc2_pr": 127,
+    "rc2_terminal_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+    "rc2_terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "classifier_pr": 128,
+    "classifier_evidence_head": "9da73dc3a9d4d413a55dce6ce48f9774d0a9ec07",
+    "classifier_disposition": "SUPPORTED_FOR_APPARATUS_SUCCESSOR",
+    "rc3_apparatus_pr": 129,
+    "rc3_apparatus_evidence_head": "2990f02c330f1b47b5e1138925f1d7df5bfd1a95",
+    "rc3_apparatus_disposition": "SUPPORTED_FOR_PREREQUISITE_EXECUTION_CANDIDATE"
+  },
+  "qualified_apparatus": {
+    "source_commit": "55c2940d6822a6c666441f61900b2cadcfbde046",
+    "source_tree": "0dcee5f8b872d74ca754818c2b0535d1698fd8ae",
+    "envelope": "9756d3862efaa40a7e2db51adf1d2db2e8a12411",
+    "envelope_tree": "4010ab5c714940937f5cabfefe22d5403d68c6bd",
+    "closure_blob": "5eaea44e5495df6cfd595c5e111ef59d6ea10964"
+  },
+  "runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "future_execution_budget": {
+    "profile_writer_attempts": 1,
+    "custody_attempts": 1,
+    "semantic_calibration_attempts": 0,
+    "target_generation_attempts": 0,
+    "weak_generator_attempts": 0,
+    "decisive_review_attempts": 0,
+    "tally_attempts": 0
+  },
+  "setup_task_writer_invocation_authorized": false,
+  "future_writer_invocation_authorized_only_after_exact_candidate_gates": true,
+  "generation_capability": "UNKNOWN"
+}
