@@ -1,0 +1,30 @@
+{
+  "actual_backend_weights": "UNKNOWN",
+  "created_at": "2026-10-03T01:28:30.113221+00:00",
+  "effective_internal_tokens": "UNKNOWN",
+  "files": {
+    "../../AUTHORING-RUBRIC.json": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9",
+    "../../BOOTSTRAP-MANIFEST.json": "sha256:d994ff9bec2eb1b1afef7520bddc7835a142f87de15120966eb75ce15b210316",
+    "../../PROFILE-WRITER-TASK.md": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1",
+    "../../SCHEMAS.json": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6",
+    "MODEL-IDENTITY-AFTER-WRITING.PUBLIC.json": "sha256:ea5659d46de9fa7521fa6014f34051eeb6c07545ef3403fe6978b0684a97aa88",
+    "PROFILE-FREEZE.PUBLIC.json": "sha256:95868d76ac54548643599c92f8fa09c00014125ec41b35b901d973f8d5ebb634",
+    "RUNTIME-CAPABILITIES.PUBLIC.json": "sha256:91a7f874356093a0fafed9bd1474138be0115db7634095a1762338521a5d6e0d",
+    "WRITER-APERTURE-CHECK.PUBLIC.json": "sha256:30d21fe2215fc73c4175a2e011108056b6ab864de77ca603c9d645a97b97ceba",
+    "WRITER-ROUTE-FREEZE.PUBLIC.json": "sha256:5fb3e2c369bec53fd5d1bda3a200ca9eccec1195b966e44783dddb03365f4f6e",
+    "prepare_writer.py": "sha256:cf82956d160e4aeeb1a67d1dddd79b7aa8e6f5e770668756cd5c6b618f9af616",
+    "profiles/EVALUATOR-CONFIG.json": "sha256:173c1b4d8ead8a81207e25f58ac034c91e9336824b80bafab0760d4fd75593f5",
+    "profiles/EVALUATOR-PROMPT.txt": "sha256:97f3b433a39e706989521de479aef7bf1b71f8c0040f301ef3db80074507f904",
+    "profiles/PRIMARY-CONFIG.json": "sha256:3a86dfa8b30d34f2dbd7da0e07be8faf372eb9dd6ab22e1076677c1e0415b028",
+    "profiles/PRIMARY-PROMPT.txt": "sha256:47c80709c6064d8864db67e6f4f449e2b60788d69d180ad0ba1575d7ccdd1d06",
+    "profiles/REVIEW-SCHEMA.json": "sha256:7edfd8b6cea80ffb8774d70f289f79ed4d92857d2aad0c65c552d3a57d084141",
+    "profiles/WRITER-RECEIPT.json": "sha256:320bd4bef978d9fc37a1ada6c8709ed253b7e703b67140e172d4f044f4fae126",
+    "writer/ATTEMPT-END.PUBLIC.json": "sha256:4b581c20904e6532a9096defc060d93e4891058e92381fc8ea5af50ab6ef44e6",
+    "writer/ATTEMPT-START.PUBLIC.json": "sha256:c4791acd377102841a89d30a7d4ec8d11bf3aa1d3ce79babcca0771d57dfc0dc",
+    "writer/OUTPUT.raw.txt": "sha256:e0c22d5f3ef56e45ba89229e84101915834d919415df8053d53ccd9ce837bfc2",
+    "writer/REQUEST.native.json": "sha256:cc49ffbf28b9995d484eec5648fd57f15455d69849a7f49c71ae9d4303d317c0",
+    "writer/RESPONSE.native.json": "sha256:472f07a0ddb27c4b184aa9da5a7a41259ad086638b877f8c5224fe64bf513917"
+  },
+  "schema": "eb-custody-explicit-receipt-allowlist-v1",
+  "unseen_semantic_answers": "NOT_SUPPLIED"
+}

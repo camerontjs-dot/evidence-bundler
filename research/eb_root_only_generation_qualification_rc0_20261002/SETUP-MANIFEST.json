@@ -1,0 +1,31 @@
+{
+  "base_commit": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "origin_blobs": {
+    "AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "REVIEWER-CALIBRATION.PUBLIC.json": "7501a788862f56ed0d85b3cb12dbfb3315309683",
+    "SCHEMAS.json": "937e61b84712b8a7430aafb98d9b8ab16f3440bf"
+  },
+  "preregistration_commit": "bc2142049dd43888823fb5a73fda7ab0c90fa964",
+  "protected_eb_subject": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+  "raw_sha256": {
+    "AUTHORING-RUBRIC.json": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9",
+    "BOOTSTRAP-MANIFEST.json": "sha256:d994ff9bec2eb1b1afef7520bddc7835a142f87de15120966eb75ce15b210316",
+    "LAUNCH-STATUS.json": "sha256:259eb250d29933d7d984f2108c331959c9e31df6bdeccd2ed3da17a141a5187a",
+    "METAMORPHIC.PUBLIC.json": "sha256:3ec2c0c8b4c7418fa293dc020ebe021421010619f4c3c5b141942695827ab711",
+    "ORACLE.PUBLIC.json": "sha256:a2be345c71a8809d74f95acd08d427c6e745643149ee8a7a4fb36aa4c76f16cf",
+    "PREREGISTRATION.md": "sha256:fa12354b03338118e3132cb07fd3b42e511ae69da4c6b2b9df84930f012d1f24",
+    "PROFILE-WRITER-TASK.md": "sha256:c825a6f48635f91c250816ffcea5d27863bb1f7bf72029933c931d82ec1eb4e1",
+    "README.md": "sha256:d7ff12bc53a8276e24bacaa00783b246347c65a9b5249af934b42b53fa341e8c",
+    "REVIEWER-CALIBRATION.PUBLIC.json": "sha256:69934c6672c4fb3544852b6c80adacd3a606f3c9dc9697cf8e4eb6f287bff6cf",
+    "ROOTS.PUBLIC.json": "sha256:2429971542d7f53ddb8394593fb6a4eb8e27410a5ebab0836c0a39e272a419d1",
+    "SCHEMAS.json": "sha256:b50fc36899fb40f14f54e5bb303dde9cfa7919ae02e4e96438e53542870b51e6",
+    "validate_setup.py": "sha256:dd2b7baa4a8f337cc68b4008573f287ad2d344aa88eece13201659add89c6799"
+  },
+  "repository": "camerontjs-dot/evidence-bundler",
+  "revision_reason": "Formatting-only pre-execution successor: remove terminal blank line; all design/roots/oracle/control bytes unchanged except this insignificant protocol newline.",
+  "schema": "eb-root-generation-setup-manifest-v1",
+  "supersedes_setup_manifest_blob": "14d4c45be89407e87dee2548788d33ecf0db2e19",
+  "upstream_envelope": "bc3d887f27991c215e251875b964f205e478df21",
+  "upstream_source": "af9cebf187cc5e1f96683bfa1366c6641ea0139c",
+  "upstream_source_tree": "6a708e651bafeae2f7f09dab6a95295a4fd38a89"
+}

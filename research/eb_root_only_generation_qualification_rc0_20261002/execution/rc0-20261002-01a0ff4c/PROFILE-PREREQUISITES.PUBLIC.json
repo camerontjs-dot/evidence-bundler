@@ -1,0 +1,46 @@
+{
+  "schema": "eb-generation-profile-prerequisite-check-v1",
+  "checked_at": "2026-10-03T01:24:10.566282+00:00",
+  "engine": "python3 standard-library structural checks",
+  "code_sha256": "sha256:bde41c263bcb5313e60549ca114fff2fe705dd6a8d39e6de6af83b97e873f5b2",
+  "inputs": {
+    "EVALUATOR-CONFIG.json": "sha256:173c1b4d8ead8a81207e25f58ac034c91e9336824b80bafab0760d4fd75593f5",
+    "EVALUATOR-PROMPT.txt": "sha256:97f3b433a39e706989521de479aef7bf1b71f8c0040f301ef3db80074507f904",
+    "PRIMARY-CONFIG.json": "sha256:3a86dfa8b30d34f2dbd7da0e07be8faf372eb9dd6ab22e1076677c1e0415b028",
+    "PRIMARY-PROMPT.txt": "sha256:47c80709c6064d8864db67e6f4f449e2b60788d69d180ad0ba1575d7ccdd1d06",
+    "REVIEW-SCHEMA.json": "sha256:7edfd8b6cea80ffb8774d70f289f79ed4d92857d2aad0c65c552d3a57d084141",
+    "WRITER-RECEIPT.json": "sha256:320bd4bef978d9fc37a1ada6c8709ed253b7e703b67140e172d4f044f4fae126"
+  },
+  "findings": [
+    {
+      "id": "MISSING_UNCERTAIN_REVIEW_DECISION",
+      "required_by": "PROFILE-WRITER-TASK.md evaluator mode paragraph",
+      "observed_config_decisions": [
+        "accept",
+        "reject"
+      ],
+      "observed_schema_decisions": [
+        "accept",
+        "reject"
+      ]
+    },
+    {
+      "id": "DECISIVE_REVIEW_WIRE_UNDEFINED",
+      "required_fields": [
+        "checks",
+        "decision",
+        "root_status",
+        "row_alias"
+      ],
+      "defined_fields": []
+    },
+    {
+      "id": "EVALUATOR_MODES_UNDEFINED",
+      "observed_modes": []
+    }
+  ],
+  "result": "BLOCKED_PROFILE_CONFIGURATION",
+  "semantic_cases_evaluated": 0,
+  "generation_capability": "UNKNOWN",
+  "permitted_repair": false
+}

@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-10-03T01:26:41.810423+00:00",
+  "model": "qwen3.5:9b",
+  "service_reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "matches_pre_writing": true,
+  "scope": "model metadata only; no generation invocation"
+}

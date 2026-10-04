@@ -1,0 +1,70 @@
+{
+  "authority": "Qualified adapter/profile/destination/calibration and independent custody pins required; unbound in setup.",
+  "closed_fields": {
+    "capsule": [
+      "schema",
+      "role",
+      "root_alias",
+      "root_text",
+      "rubric",
+      "output_schema",
+      "proposal"
+    ],
+    "checker": [
+      "root_alias",
+      "proposal_sha256",
+      "decision",
+      "reason",
+      "checks"
+    ],
+    "child": [
+      "text",
+      "subject"
+    ],
+    "launch_trace": [
+      "adapter_sha256",
+      "session_id",
+      "profile_sha256",
+      "destination",
+      "request",
+      "output",
+      "started_at",
+      "completed_at",
+      "no_history_receipt_sha256"
+    ],
+    "primary": [
+      "root_alias",
+      "status",
+      "reason",
+      "children"
+    ],
+    "subject": [
+      "anchor",
+      "entity_class",
+      "root_span",
+      "child_span",
+      "origin"
+    ]
+  },
+  "constraints": {
+    "accept": "exact_agreement; all five exact Boolean checks true; same unchanged proposal digest",
+    "checker_decision": [
+      "accept",
+      "reject"
+    ],
+    "children_declared": 2,
+    "children_ineligible": 0,
+    "declared_reason": "two_required_conserved",
+    "output": "JSON only; no rationale or extra fields",
+    "primary_status": [
+      "declared",
+      "ineligible"
+    ],
+    "spans": "UTF-8 half-open byte coordinates, exact literal match; inherited child_span null",
+    "subject_origin": [
+      "explicit",
+      "inherited"
+    ]
+  },
+  "schema": "eb-rc2-authoring-wire-v1"
+}

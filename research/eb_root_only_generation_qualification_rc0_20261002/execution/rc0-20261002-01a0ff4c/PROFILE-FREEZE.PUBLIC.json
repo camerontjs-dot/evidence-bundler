@@ -1,0 +1,17 @@
+{
+  "schema": "eb-profile-byte-freeze-v1",
+  "frozen_at": "2026-10-03T01:20:41.242575+00:00",
+  "writer_invocations": 1,
+  "extraction": "verbatim UTF-8 file strings from native model response; no editing or prompt repair",
+  "native_response_sha256": "sha256:472f07a0ddb27c4b184aa9da5a7a41259ad086638b877f8c5224fe64bf513917",
+  "file_sha256": {
+    "EVALUATOR-CONFIG.json": "sha256:173c1b4d8ead8a81207e25f58ac034c91e9336824b80bafab0760d4fd75593f5",
+    "EVALUATOR-PROMPT.txt": "sha256:97f3b433a39e706989521de479aef7bf1b71f8c0040f301ef3db80074507f904",
+    "PRIMARY-CONFIG.json": "sha256:3a86dfa8b30d34f2dbd7da0e07be8faf372eb9dd6ab22e1076677c1e0415b028",
+    "PRIMARY-PROMPT.txt": "sha256:47c80709c6064d8864db67e6f4f449e2b60788d69d180ad0ba1575d7ccdd1d06",
+    "REVIEW-SCHEMA.json": "sha256:7edfd8b6cea80ffb8774d70f289f79ed4d92857d2aad0c65c552d3a57d084141",
+    "WRITER-RECEIPT.json": "sha256:320bd4bef978d9fc37a1ada6c8709ed253b7e703b67140e172d4f044f4fae126"
+  },
+  "cases_controls_oracle_delivered_to_writer": false,
+  "configuration_validation": "PENDING; frozen returned bytes are preserved regardless of validation"
+}

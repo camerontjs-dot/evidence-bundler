@@ -1,0 +1,144 @@
+{
+  "schema": "eb-generation-case-execution-status-v1",
+  "execution_id": "rc0-20261002-01a0ff4c",
+  "rows": [
+    {
+      "root_alias": "R01",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R02",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R03",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R04",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R05",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R06",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R07",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R08",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R09",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R10",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R11",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    },
+    {
+      "root_alias": "R12",
+      "primary_attempts": 0,
+      "wire": "NOT_RUN",
+      "root_status_correctness": "NOT_RUN",
+      "semantic_conservation": "NOT_RUN",
+      "subject_origin": "NOT_RUN",
+      "reason": "profile prerequisites blocked before semantic calibration"
+    }
+  ],
+  "weak_systems": [
+    {
+      "arm": "always_ineligible",
+      "records": 0,
+      "wire": "NOT_RUN",
+      "semantic_discrimination": "NOT_RUN"
+    },
+    {
+      "arm": "conjunction_split",
+      "records": 0,
+      "wire": "NOT_RUN",
+      "semantic_discrimination": "NOT_RUN"
+    },
+    {
+      "arm": "duplicate_root",
+      "records": 0,
+      "wire": "NOT_RUN",
+      "semantic_discrimination": "NOT_RUN"
+    }
+  ],
+  "metamorphic_relations": {
+    "evaluated": 0,
+    "status": "NOT_RUN"
+  },
+  "subject_coverage": {
+    "explicit_valid": 0,
+    "inherited_valid": 0,
+    "execution": "NOT_RUN",
+    "inherited_qualification": "INHERITANCE_NOT_EXERCISED"
+  }
+}

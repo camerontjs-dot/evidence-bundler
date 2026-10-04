@@ -1,0 +1,25 @@
+{
+  "records": [
+    {
+      "conclusion_effect": "none on source/mechanical checks",
+      "continuation": "scoped authorized network push; frozen source and initial receipt remain unchanged",
+      "event": "First branch push failed: sandbox DNS could not resolve github.com.",
+      "exit_code": 128,
+      "exposure": "public synthetic setup only; no target output or private material",
+      "first_envelope": "7b8bfaa021b2ad4b0803496789d1b8f4ec850f54",
+      "invalidated": "first transport invocation",
+      "phase": "post-source-freeze transport",
+      "source_commit": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f"
+    },
+    {
+      "change": "one terminal blank line removed; textual protocol otherwise byte-identical; setup manifest hash rebound visibly",
+      "conclusion_effect": "none on scientific design or fixtures; initial Git source, candidate and public receipt preserved",
+      "continuation": "preparation-only formatting successor before all profile/adapter/evaluator freezes and semantic exposure",
+      "event": "Final full-base git diff --check returned 2: PREREGISTRATION.md line 107 new blank line at EOF. Earlier unstaged checks did not inspect that committed preregistration.",
+      "exposure": "zero target, calibration or decisive reviewer outputs",
+      "first_source": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f",
+      "invalidated": "clean formatting check for initial setup source; no scientific result"
+    }
+  ],
+  "schema": "eb-root-generation-setup-deviations-v1"
+}

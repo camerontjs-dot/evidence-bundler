@@ -1,0 +1,25 @@
+{
+  "schema": "eb-independent-custody-terminal-v1",
+  "recorded_at": "2026-10-03T01:46:13.748341+00:00",
+  "evaluator": "agent_llm direct raw API; incomplete output",
+  "model": "qwen3.5:9b",
+  "native_done": true,
+  "native_done_reason": "length",
+  "prompt_eval_count": 17379,
+  "eval_count": 8192,
+  "native_response_sha256": "sha256:2c7f1477c75f5a14e22e7d64edf79a9dd1ff6f9202d89a921567c186c67a1a46",
+  "raw_output_sha256": "sha256:e9054cec0faab7e3e480b52e5d557f50a376f5b01a13335c7a5edef93fd3bbf4",
+  "custody_sessions_consumed": 1,
+  "checker_execution": "NOT_RUN",
+  "operational_isolation": "UNVERIFIED",
+  "disposition": "BLOCKED_CUSTODY_INCOMPLETE",
+  "retry_or_repair_permitted": false,
+  "json_parse": "FAIL",
+  "parse_error": {
+    "message": "Unterminated string starting at",
+    "line": 1,
+    "column": 26606,
+    "position": 26605
+  },
+  "reason": "Native completion stopped at length; partial response is preserved without repaired JSON, checker code, replacement verifier or reroll."
+}

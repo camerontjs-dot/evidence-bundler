@@ -1,0 +1,11 @@
+{
+  "schema": "eb-preparation-first-failure-v1",
+  "phase": "identity preparation, before model invocation",
+  "failed_code_sha256": "sha256:b0ccfd28782a4f3adb5c699fc9597f42b1436149e38108d69e70da868b34074a",
+  "error": "upstream path REVIEWER-CALIBRATION.PUBLIC.json did not exist; Git exit 128",
+  "actual_upstream_name": "AUTHORING-CONTROLS.json",
+  "pinned_blob": "7501a788862f56ed0d85b3cb12dbfb3315309683",
+  "model_invocations": 0,
+  "scientific_attempts_consumed": 0,
+  "engineering_repair_permitted": "pre-profile/adapter/evaluator freeze; no cases or outcomes exposed to a role"
+}

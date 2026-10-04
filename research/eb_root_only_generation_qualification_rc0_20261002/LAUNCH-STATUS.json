@@ -1,0 +1,18 @@
+{
+  "schema": "eb-root-generation-launch-status-v1",
+  "phase": "PUBLIC_SETUP_FROZEN",
+  "execution": "NOT_RUN",
+  "primary_profile": "UNBOUND",
+  "adapter": "UNBOUND",
+  "semantic_evaluator": "UNBOUND",
+  "runtime_destination": "UNBOUND",
+  "isolation_custody": "UNBOUND",
+  "target_calls": 0,
+  "semantic_calibration_calls": 0,
+  "decisive_reviewer_calls": 0,
+  "authorability": "UNKNOWN",
+  "population_construction_authorized": false,
+  "private_transmission_authorized": false,
+  "predecessor_pr_124": "BLOCKED_BEFORE_POPULATION_AUTHORING",
+  "authorized_next": "Build and freeze the separate public execution adapter/profiles/evaluator using the constrained profile-writing route, then execute only this preregistered public experiment if its gates permit."
+}

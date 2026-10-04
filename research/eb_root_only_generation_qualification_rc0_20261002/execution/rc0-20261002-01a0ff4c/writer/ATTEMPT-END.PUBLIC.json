@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-10-03T01:20:12.462651+00:00",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 1131,
+  "http_status": 200,
+  "model": "qwen3.5:9b",
+  "native_response_sha256": "sha256:472f07a0ddb27c4b184aa9da5a7a41259ad086638b877f8c5224fe64bf513917",
+  "output_sha256": "sha256:e0c22d5f3ef56e45ba89229e84101915834d919415df8053d53ccd9ce837bfc2",
+  "prompt_eval_count": 2332,
+  "schema": "eb-profile-writing-attempt-v1"
+}

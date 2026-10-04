@@ -1,0 +1,59 @@
+{
+  "schema": "eb-generation-attempt-ledger-v1",
+  "execution_id": "rc0-20261002-01a0ff4c",
+  "recorded_at": "2026-10-03T01:49:04.714050+00:00",
+  "budget": {
+    "profile_writing": 1,
+    "semantic_calibration": 2,
+    "target_generation": 12,
+    "deterministic_weak_generators": 3,
+    "decisive_review": 2,
+    "tally": 1,
+    "custody_verification": 1
+  },
+  "consumed": {
+    "profile_writing": 1,
+    "semantic_calibration": 0,
+    "target_generation": 0,
+    "deterministic_weak_generators": 0,
+    "decisive_review": 0,
+    "tally": 0,
+    "custody_verification": 1
+  },
+  "ordered_events": [
+    {
+      "kind": "profile_writing_started",
+      "native_receipt": "writer/ATTEMPT-START.PUBLIC.json"
+    },
+    {
+      "kind": "profile_writing_completed",
+      "native_receipt": "writer/ATTEMPT-END.PUBLIC.json"
+    },
+    {
+      "kind": "profile_bytes_frozen",
+      "receipt": "PROFILE-FREEZE.PUBLIC.json"
+    },
+    {
+      "kind": "profile_prerequisite_check_blocked",
+      "receipt": "PROFILE-PREREQUISITES.PUBLIC.json"
+    },
+    {
+      "kind": "custody_session_started",
+      "native_receipt": "custody/ATTEMPT-START.PUBLIC.json"
+    },
+    {
+      "kind": "custody_session_partial_length_completion",
+      "native_receipt": "custody/ATTEMPT-END.PUBLIC.json"
+    },
+    {
+      "kind": "custody_receipt_unparseable",
+      "receipt": "CUSTODY-TERMINAL.PUBLIC.json"
+    },
+    {
+      "kind": "terminal_blocked",
+      "reason": "profile configuration and independent operational custody unavailable"
+    }
+  ],
+  "predecessor_pr_124_attempts_consumed": 0,
+  "continuation": "TERMINAL_BLOCKED; public reconciliation only; no same-candidate role repair or retries"
+}

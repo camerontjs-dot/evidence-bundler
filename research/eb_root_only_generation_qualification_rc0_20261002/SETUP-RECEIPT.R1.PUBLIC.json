@@ -1,0 +1,37 @@
+{
+  "actual_profiles_adapter_runtime_isolation": "UNBOUND",
+  "authorability": "UNKNOWN",
+  "changes": "terminal protocol blank line only plus explicit setup-manifest/failure-lineage rebind; all roots/oracle/pairs/rubric/wire/calibration/validator/workflow bytes unchanged",
+  "first_failures_preserved": [
+    "sandbox DNS push",
+    "full-base formatting check: new blank line at EOF"
+  ],
+  "mechanical_evidence": {
+    "boundary_mutations_rejected": 2,
+    "diff_check": "PASS",
+    "final_head_hosted_ci": "PENDING_FINAL_PUSH",
+    "initial_hosted_mechanical_ci": "https://github.com/camerontjs-dot/evidence-bundler/actions/runs/37068553906",
+    "protected_diff": "EMPTY",
+    "python_3_11": "PASS",
+    "root_only_capsules_checked": 12
+  },
+  "nonclaims": [
+    "semantic generation support",
+    "operational isolation",
+    "semantic evaluator qualification",
+    "private transmission",
+    "population construction",
+    "retrieval",
+    "merge/release/promotion"
+  ],
+  "phase": "SETUP_FROZEN_EXECUTION_NOT_RUN",
+  "private_population_authorized": false,
+  "revision": "R1_FORMATTING_ONLY",
+  "schema": "eb-root-generation-public-setup-receipt-v1",
+  "semantic_evaluator_calls": 0,
+  "source_commit": "1c94cb82262d6346cf4aef35ff50d8d70c4aacb3",
+  "source_tree": "fb629ae75b9924ebfa5968f1862648a788f33639",
+  "supersedes_setup_source": "7e5cc1cef78e63aa4f0bacbd636f9e30bae37a6f",
+  "target_calls": 0,
+  "upstream_pr_124_modified": false
+}
