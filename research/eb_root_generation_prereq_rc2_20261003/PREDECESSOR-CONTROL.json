@@ -1,0 +1,38 @@
+{
+  "schema": "eb-root-generation-prereq-successor-control-rc2-v1",
+  "predecessor": {
+    "pr": 126,
+    "terminal_head": "6d86f145e5e32e72bbd491573d8117f3adb8faba",
+    "frozen_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+    "frozen_source_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+    "disposition": "BLOCKED_AUTHORITY",
+    "required_service_version": "0.34.4",
+    "observed_service_version": "0.35.1",
+    "writer_attempt_consumed": false,
+    "custody_attempt_consumed": false
+  },
+  "controlled_substitution": {
+    "field": "service_version",
+    "from": "0.34.4",
+    "to": "0.35.1",
+    "files": [
+      "BOOTSTRAP-MANIFEST.json",
+      "WRITER-TRANSPORT.json"
+    ]
+  },
+  "must_remain_identical": [
+    "AUTHORING-RUBRIC.json",
+    "PROFILE-SURFACE.json",
+    "PROFILE-WRITER-TASK.md",
+    "CUSTODY-SCHEMA.json",
+    "LAUNCH-STATUS.json",
+    "run_writer.py",
+    "check_execution.py",
+    "validate_setup.py"
+  ],
+  "nonclaims": [
+    "Service-version substitution is not assumed semantically inert.",
+    "RC2 support would qualify only the prerequisite profile/custody boundary at the pinned 0.35.1 runtime.",
+    "Generation capability remains UNKNOWN until a separately authorized generation experiment."
+  ]
+}

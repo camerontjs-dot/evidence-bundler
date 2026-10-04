@@ -1,0 +1,45 @@
+{
+  "actual_backend_weight_attestation": "UNKNOWN",
+  "completed_at": "2026-10-03T21:56:49.574297+00:00",
+  "destination": "http://127.0.0.1:11434/api/generate",
+  "done_reason": "stop",
+  "execution_id": "rc2-20261003-pr127-171c6bdc-01",
+  "extracted_files_sha256": {
+    "EVALUATOR-CONFIG.json": "sha256:b3cc6300a6f1e45bd72e8d3ff36ff54dc14fcf39aa3344c03e562516c2dafadd",
+    "EVALUATOR-PROMPT.txt": "sha256:e4dfb49ff8122dbca7a5785ed6d9d6afbada3b6e54d15f3f87bfac061426acf3",
+    "PRIMARY-CONFIG.json": "sha256:ea85d933341b1728b5bb51e251497bb9dfdc8773cd99b49d8ebb08a123140e77",
+    "PRIMARY-PROMPT.txt": "sha256:aa46441696c3f9fec9c54b363800855fff607f35fe751adf3c7e326c045c861c",
+    "REVIEW-SCHEMA.json": "sha256:c26438454f83ba86185adb04370277eec7faba4dc01351bb76edcf47bbc3a6f5"
+  },
+  "forbidden_sources_opened": [],
+  "native_request_sha256": "sha256:809106cfe6dc4037e1c827174caf06d55cc216915cb70863ede81999cff83510",
+  "native_response_sha256": "sha256:0643ed645b3bb5831736b41e4bc8d7f9a44f206abacc456b9b521a6230f5ac06",
+  "no_history_mechanism": "raw_api_request_contains_only_frozen_source_bundle_and_runtime_metadata",
+  "opened_sources": [
+    {
+      "name": "BOOTSTRAP-MANIFEST.json",
+      "sha256": "sha256:85ef8e08a48de80c04bb3940f300756d71c0ce18857479e7627cfc619b999f50"
+    },
+    {
+      "name": "PROFILE-WRITER-TASK.md",
+      "sha256": "sha256:b4d6e874fe7e74bee3115296971806b8579a435113528f4ccdb920ce256611c8"
+    },
+    {
+      "name": "AUTHORING-RUBRIC.json",
+      "sha256": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9"
+    },
+    {
+      "name": "PROFILE-SURFACE.json",
+      "sha256": "sha256:73c60acc632ab9218d4bc9a77ea590bdffb096c0c4a8e96894cad177b8a75e25"
+    }
+  ],
+  "reported_model": "qwen3.5:9b",
+  "reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "response_complete": true,
+  "schema": "eb-root-generation-external-custody-rc1-v1",
+  "service_version": "0.35.1",
+  "session_id": "STATELESS_RAW_API_NO_RESUME_HANDLE",
+  "setup_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "started_at": "2026-10-03T21:53:50.174333+00:00",
+  "truncated": false
+}

@@ -1,0 +1,11 @@
+{
+  "controlled_substitution": "0.34.4 -> 0.35.1",
+  "generation_capability": "UNKNOWN",
+  "identical_apparatus_files": 8,
+  "predecessor_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "successor_control": "PASS",
+  "version_only_files": [
+    "BOOTSTRAP-MANIFEST.json",
+    "WRITER-TRANSPORT.json"
+  ]
+}

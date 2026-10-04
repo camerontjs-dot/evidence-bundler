@@ -1,0 +1,7 @@
+{
+  "disposition": "BLOCKED_CUSTODY_VERIFICATION",
+  "generation_capability": "UNKNOWN",
+  "reason": "'output'",
+  "result": "FAIL",
+  "schema": "eb-root-generation-prereq-execution-check-rc1-v1"
+}

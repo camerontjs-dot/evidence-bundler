@@ -1,0 +1,62 @@
+{
+  "checkout_clean_before_validation": true,
+  "draft": true,
+  "exact_head_actions": [
+    {
+      "conclusion": "success",
+      "event": "pull_request",
+      "head_branch": "research/eb-root-generation-prereq-rc2-20261003",
+      "head_sha": "171c6bdcb53248fb1ee96785ceea02eb35614a75",
+      "id": 37153135308,
+      "name": "Public root-generation prerequisite RC2 checks",
+      "path": ".github/workflows/research-root-generation-prereq-rc2.yml",
+      "run_attempt": 1,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "pull_request",
+      "head_branch": "research/eb-root-generation-prereq-rc2-20261003",
+      "head_sha": "171c6bdcb53248fb1ee96785ceea02eb35614a75",
+      "id": 37153135390,
+      "name": "CI",
+      "path": ".github/workflows/ci.yml",
+      "run_attempt": 1,
+      "status": "completed"
+    }
+  ],
+  "frozen_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "generation_capability": "UNKNOWN",
+  "head_branch": "research/eb-root-generation-prereq-rc2-20261003",
+  "incidental_directory_inventory": "Initial workspace file-name inventory displayed RC1 file names; no prior file contents were opened, used, or supplied to the writer.",
+  "observation_routes": [
+    "GitHub REST PR metadata projected to refs/state/draft only",
+    "git ls-remote for the two authorized refs",
+    "git rev-parse for the exact source/predecessor trees and candidate blob",
+    "GitHub REST Actions listing filtered to exact head and the two required IDs"
+  ],
+  "observed_candidate_blob": "f72ab247b1124d7dbec7510f33f24c34f6684d48",
+  "observed_head": "171c6bdcb53248fb1ee96785ceea02eb35614a75",
+  "observed_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "observed_predecessor_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+  "observed_source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+  "predecessor_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "prior_material_used_for_orientation": false,
+  "pull_request": 127,
+  "pull_request_state": "open",
+  "recorded_at": "2026-10-03T21:53:26.041831+00:00",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "required_envelope_head": "171c6bdcb53248fb1ee96785ceea02eb35614a75",
+  "resolved_read_transport_failures": [
+    "sandboxed GitHub CLI network unavailable",
+    "GitHub connector ReadTimeout",
+    "individual REST metadata lookups returned HTTP 503; exact-head Actions listing and Git transport established authority"
+  ],
+  "result": "PASS",
+  "runtime_authority": "DEFERRED_TO_FROZEN_LAUNCHER_PREFLIGHT",
+  "schema": "eb-rc2-supervisor-authority-preflight-v1",
+  "source_to_envelope_diff": [
+    "add research/eb_root_generation_prereq_rc2_20261003/CANDIDATE.json"
+  ],
+  "writer_context_supplied_by_supervisor": false
+}

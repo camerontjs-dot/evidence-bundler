@@ -1,0 +1,39 @@
+name: Public root-generation prerequisite RC2 checks
+on:
+  pull_request:
+    paths:
+      - 'research/eb_root_generation_prereq_rc2_20261003/**'
+      - '.github/workflows/research-root-generation-prereq-rc2.yml'
+permissions:
+  contents: read
+jobs:
+  mechanical-prereq:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Fetch immutable RC1 predecessor source
+        run: |
+          git fetch --no-tags origin research/eb-root-generation-prereq-rc1-20261003
+          git cat-file -e ac948782db183bd209f0907cdd7c6e04d13bf15a^{commit}
+      - name: Compile frozen RC2 launcher and validators
+        run: python -m py_compile research/eb_root_generation_prereq_rc2_20261003/validate_setup.py research/eb_root_generation_prereq_rc2_20261003/validate_successor.py research/eb_root_generation_prereq_rc2_20261003/run_writer.py research/eb_root_generation_prereq_rc2_20261003/check_execution.py
+      - name: Prove bounded RC1 to RC2 substitution
+        run: python research/eb_root_generation_prereq_rc2_20261003/validate_successor.py
+      - name: Validate RC2 prerequisite setup
+        run: python research/eb_root_generation_prereq_rc2_20261003/validate_setup.py
+      - name: Enforce research-only diff
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_REF"
+          allowed='^(research/eb_root_generation_prereq_rc2_20261003/|\.github/workflows/research-root-generation-prereq-rc2\.yml$)'
+          bad="$(git diff --name-only "$BASE_REF" HEAD | grep -Ev "$allowed" || true)"
+          test -z "$bad" || { echo "$bad"; exit 1; }

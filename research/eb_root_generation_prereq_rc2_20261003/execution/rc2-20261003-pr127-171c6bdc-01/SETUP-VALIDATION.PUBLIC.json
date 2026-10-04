@@ -1,0 +1,16 @@
+{
+  "candidate_closure_checked": true,
+  "context_free_required": true,
+  "custody_producer": "FROZEN_EXTERNAL",
+  "frozen_execution_checker": true,
+  "frozen_writer_launcher": true,
+  "generation_capability": "UNKNOWN",
+  "mechanical_setup": "PASS",
+  "model_generated_custody_receipt": false,
+  "profile_files_required": 5,
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "uncertainty_surface": "EXPLICIT",
+  "writer_prompt_selftest": "PASS",
+  "writer_runtime": "PINNED",
+  "writer_transport": "PINNED"
+}

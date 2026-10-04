@@ -1,0 +1,91 @@
+{
+  "apparatus_runtime_or_attempt_budget_deviations": [],
+  "candidate_closure_blob": "f72ab247b1124d7dbec7510f33f24c34f6684d48",
+  "custody_attempt_consumed": true,
+  "done_reason": "stop",
+  "established": [
+    "Exact frozen GitHub envelope, source tree, candidate closure blob, predecessor tree and main identities were verified before writer execution.",
+    "Both required exact-head Actions runs were observed completed/success before writer execution.",
+    "Successor control and mechanical setup validators passed.",
+    "The frozen launcher accepted the pinned live runtime; one raw writer request returned a complete response and extracted five files.",
+    "The single frozen external checker returned FAIL; no passing five-file profile surface or custody qualification is established."
+  ],
+  "execution_directory": "research/eb_root_generation_prereq_rc2_20261003/execution/rc2-20261003-pr127-171c6bdc-01",
+  "execution_envelope_head": "171c6bdcb53248fb1ee96785ceea02eb35614a75",
+  "first_execution_failure": {
+    "disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "reason": "'output'",
+    "stage": "frozen_execution_checker"
+  },
+  "frozen_apparatus_changed_after_invocation": false,
+  "frozen_checker": {
+    "disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "generation_capability": "UNKNOWN",
+    "reason": "'output'",
+    "result": "FAIL",
+    "schema": "eb-root-generation-prereq-execution-check-rc1-v1"
+  },
+  "frozen_external_checker_invocations": 1,
+  "frozen_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "frozen_source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+  "generation_capability": "UNKNOWN",
+  "launcher_invocations": 1,
+  "live_runtime_observed": {
+    "actual_backend_weight_attestation": "UNKNOWN",
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "service_version": "0.35.1"
+  },
+  "native_and_profile_bodies": "Preserved locally exactly as produced; omitted from the public evidence commit.",
+  "native_request_sha256": "sha256:809106cfe6dc4037e1c827174caf06d55cc216915cb70863ede81999cff83510",
+  "native_response_sha256": "sha256:0643ed645b3bb5831736b41e4bc8d7f9a44f206abacc456b9b521a6230f5ac06",
+  "next_authorized_boundary": "Stop this RC2 execution. No repair, rerun, semantic calibration or generation is authorized. A new qualification or apparatus successor requires separate owner authorization and a new frozen candidate.",
+  "predecessor_source_commit": "ac948782db183bd209f0907cdd7c6e04d13bf15a",
+  "predecessor_source_tree": "76e46e3c95b04f501e0d56904de95dc2e24dc6f8",
+  "preparatory_supervisor_observations": "See AUTHORITY-PREFLIGHT.PUBLIC.json for resolved read-transport errors and incidental prior file-name inventory; no prior file contents were read or supplied to the writer.",
+  "profile_files_sha256": {
+    "EVALUATOR-CONFIG.json": "sha256:b3cc6300a6f1e45bd72e8d3ff36ff54dc14fcf39aa3344c03e562516c2dafadd",
+    "EVALUATOR-PROMPT.txt": "sha256:e4dfb49ff8122dbca7a5785ed6d9d6afbada3b6e54d15f3f87bfac061426acf3",
+    "PRIMARY-CONFIG.json": "sha256:ea85d933341b1728b5bb51e251497bb9dfdc8773cd99b49d8ebb08a123140e77",
+    "PRIMARY-PROMPT.txt": "sha256:aa46441696c3f9fec9c54b363800855fff607f35fe751adf3c7e326c045c861c",
+    "REVIEW-SCHEMA.json": "sha256:c26438454f83ba86185adb04370277eec7faba4dc01351bb76edcf47bbc3a6f5"
+  },
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "pull_request": 127,
+  "pull_request_intent": "Preserve open draft PR #127 and reconcile it to the frozen terminal disposition; do not merge.",
+  "recorded_at": "2026-10-03T21:58:33.981774+00:00",
+  "remaining_unknown": [
+    "Root-generation capability",
+    "Semantic evaluator effectiveness",
+    "Successful prerequisite profile/custody qualification",
+    "Actual backend weight attestation"
+  ],
+  "repository": "camerontjs-dot/evidence-bundler",
+  "response_complete": true,
+  "schema": "eb-root-generation-prereq-supervisor-receipt-rc2-v1",
+  "setup_validation_result": "PASS",
+  "successor_control_result": "PASS",
+  "terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+  "truncated": false,
+  "unauthorized_stage_attempts": {
+    "decisive_review": 0,
+    "deterministic_weak_generators": 0,
+    "semantic_evaluator_calibration": 0,
+    "tally": 0,
+    "target_generation": 0
+  },
+  "writer_aperture": {
+    "forbidden_sources_opened": [],
+    "native_request_preserved": true,
+    "source_files": [
+      "BOOTSTRAP-MANIFEST.json",
+      "PROFILE-WRITER-TASK.md",
+      "AUTHORING-RUBRIC.json",
+      "PROFILE-SURFACE.json"
+    ],
+    "supervisor_added_context": false
+  },
+  "writer_attempt_consumed": true,
+  "writer_posts": 1
+}
