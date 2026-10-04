@@ -1,0 +1,196 @@
+name: Qualification - EB V1 output containment
+
+on:
+  pull_request:
+    branches:
+      - promotion/eb-v1-slice-1-20260918
+    paths:
+      - pyproject.toml
+      - src/evidence_bundler/**
+      - schema/**
+      - config/eb_v1_slice/**
+      - tests/**
+      - scripts/qualification/eb_v1_output_containment.py
+      - research/eb_v1_output_containment_20261004/**
+      - .github/workflows/eb-v1-output-containment.yml
+  push:
+    branches:
+      - fix/eb-v1-contained-output-20261004
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: eb-v1-output-containment-${{ github.event.pull_request.head.sha || github.sha }}
+  cancel-in-progress: true
+
+env:
+  CONTRACT_B_LOCK: c314e53bd91c0736aa4370a364673b069aceb43e
+  CAL_CONSUMER: 64b6c7702696c851057c1cf0b2c105b1c81db543
+  PIP_NO_CACHE_DIR: "1"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  maintained:
+    name: Maintained gates / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify exact event head and unchanged authorities
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/eb-v1-output-containment"
+          python scripts/qualification/eb_v1_output_containment.py identity \
+            --checkout "$GITHUB_WORKSPACE" --expected-head "$EXPECTED_HEAD" \
+            --probe research/eb_v1_output_containment_20261004/02-path-containment-probe.py \
+            --output "$RUNNER_TEMP/eb-v1-output-containment/subject.json"
+
+      - name: Install full maintained dependency closure
+        id: install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --report "$RUNNER_TEMP/eb-v1-output-containment/install.json" -e ".[dev]"
+
+      - name: Ruff maintained surfaces
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          python -m ruff check src tests scripts 2>&1 | tee "$RUNNER_TEMP/eb-v1-output-containment/ruff.log"
+
+      - name: Mypy against Python 3.11
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && matrix.python-version == '3.11' }}
+        run: |
+          python -m mypy src 2>&1 | tee "$RUNNER_TEMP/eb-v1-output-containment/mypy.log"
+
+      - name: Full pytest suite
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          python -m pytest -q --junitxml="$RUNNER_TEMP/eb-v1-output-containment/pytest.xml" \
+            2>&1 | tee "$RUNNER_TEMP/eb-v1-output-containment/pytest.log"
+
+      - name: Compile maintained package
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          python -m compileall -q src 2>&1 | tee "$RUNNER_TEMP/eb-v1-output-containment/compile.log"
+
+      - name: Check installed dependencies
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          python -m pip check 2>&1 | tee "$RUNNER_TEMP/eb-v1-output-containment/pip-check.log"
+          python -m pip freeze > "$RUNNER_TEMP/eb-v1-output-containment/environment.txt"
+
+      - name: Preserve maintained receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-v1-containment-maintained-py${{ matrix.python-version }}
+          path: ${{ runner.temp }}/eb-v1-output-containment/
+          if-no-files-found: warn
+
+  installed:
+    name: Isolated wheel + pinned consumers / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: ${{ env.CONTRACT_B_LOCK }}
+          path: _qualification_deps/apparatus-contracts
+
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: ${{ env.CAL_CONSUMER }}
+          path: _qualification_deps/claim-audit-lab
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify subject, probe, and exact external authorities
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/eb-v1-output-containment/wheels"
+          python scripts/qualification/eb_v1_output_containment.py identity \
+            --checkout "$GITHUB_WORKSPACE" --expected-head "$EXPECTED_HEAD" \
+            --probe research/eb_v1_output_containment_20261004/02-path-containment-probe.py \
+            --apparatus _qualification_deps/apparatus-contracts \
+            --cal _qualification_deps/claim-audit-lab \
+            --output "$RUNNER_TEMP/eb-v1-output-containment/subject.json"
+
+      - name: Build wheels from the exact producer and consumers
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/eb-v1-output-containment/wheels" \
+            . ./_qualification_deps/apparatus-contracts ./_qualification_deps/claim-audit-lab
+          sha256sum "$RUNNER_TEMP/eb-v1-output-containment/wheels/"*.whl \
+            > "$RUNNER_TEMP/eb-v1-output-containment/wheel-SHA256SUMS"
+
+      - name: Install wheels with full dependencies into a fresh isolated venv
+        id: wheel_install
+        run: |
+          python -m venv "$RUNNER_TEMP/eb-v1-contained-wheel"
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -m pip install \
+            --report "$RUNNER_TEMP/eb-v1-output-containment/wheel-install.json" \
+            "$RUNNER_TEMP/eb-v1-output-containment/wheels/"*.whl
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -m pip check \
+            | tee "$RUNNER_TEMP/eb-v1-output-containment/wheel-pip-check.log"
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -m pip freeze \
+            > "$RUNNER_TEMP/eb-v1-output-containment/wheel-environment.txt"
+          mkdir -p "$RUNNER_TEMP/eb-v1-outside-checkout"
+          cp scripts/qualification/eb_v1_output_containment.py "$RUNNER_TEMP/eb-v1-outside-checkout/qualify.py"
+          cp research/eb_v1_output_containment_20261004/02-path-containment-probe.py \
+            "$RUNNER_TEMP/eb-v1-outside-checkout/probe.py"
+
+      - name: Replay the frozen containment probe against installed CLI
+        if: ${{ !cancelled() && steps.wheel_install.outcome == 'success' }}
+        working-directory: ${{ runner.temp }}/eb-v1-outside-checkout
+        run: |
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -I qualify.py probe \
+            --checkout "$GITHUB_WORKSPACE" --probe "$RUNNER_TEMP/eb-v1-outside-checkout/probe.py" \
+            --output "$RUNNER_TEMP/eb-v1-output-containment/path-probe"
+
+      - name: Exercise installed emission, canonical validator, and actual CAL intake
+        if: ${{ !cancelled() && steps.wheel_install.outcome == 'success' }}
+        working-directory: ${{ runner.temp }}/eb-v1-outside-checkout
+        run: |
+          "$RUNNER_TEMP/eb-v1-contained-wheel/bin/python" -I qualify.py bundle \
+            --checkout "$GITHUB_WORKSPACE" --probe "$RUNNER_TEMP/eb-v1-outside-checkout/probe.py" \
+            --output "$RUNNER_TEMP/eb-v1-output-containment/installed-control"
+
+      - name: Preserve wheel and consumer receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-v1-containment-installed-py${{ matrix.python-version }}
+          path: ${{ runner.temp }}/eb-v1-output-containment/
+          if-no-files-found: warn

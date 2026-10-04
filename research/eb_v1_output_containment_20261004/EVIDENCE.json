@@ -1,0 +1,155 @@
+{
+  "schema": "eb-output-containment-public-evidence-v1",
+  "date": "2026-10-04",
+  "purpose": "Engineering defect correction; no research or release qualification transfer",
+  "baseline": {
+    "commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "tree": "1248dc464c8ac06aa6a5554b9092d1f793a8b2c2",
+    "version": "0.2.0",
+    "wheel_sha256": "76b64db4753594dd62f0c7788507c6c3bf792b27eac63dae08e092bd801f7237",
+    "path_results_raw_sha256": "cc8f78ab9c84ecd47c43fa4934ceaf9d2ec2436f6345a5487ea1a419c0b6cd1a",
+    "review_manifest_raw_sha256": "607454949bf2b3c9d944215cbf3a594095c8d7e55a8f168e0e2753670eac518b"
+  },
+  "probe": {
+    "path": "02-path-containment-probe.py",
+    "sha256": "70f18e7c57e3ac6b0e90b358c621a8dd0be44f6fb1ccf69a19d3d6df3eaee52a",
+    "unchanged_between_subjects": true
+  },
+  "baseline_results": [
+    {
+      "case": "claim_traversal",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:c399237936bfe071badf077148cff8d4ff96a3fe0b4a0c7ffd9b0f16b587a2ce",
+      "sentinel_overwritten": true,
+      "native_written": true,
+      "receipt_written": false
+    },
+    {
+      "case": "source_traversal",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:c107ce0125de3c37b0649597e693a38799b892cecc3a6ed79ed52bda2e40fc7d",
+      "sentinel_overwritten": true,
+      "native_written": true,
+      "receipt_written": false
+    },
+    {
+      "case": "absolute_claim",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:79d7d11d2a26959470e4d7ef39364ad64cdbb07b4590439899d5c17835a68432",
+      "sentinel_overwritten": true,
+      "native_written": true,
+      "receipt_written": false
+    },
+    {
+      "case": "absolute_source",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:43982b7ffed4142342532d2715a55f90f34220840c446d6e7c666e96b86e0882",
+      "sentinel_overwritten": true,
+      "native_written": true,
+      "receipt_written": false
+    }
+  ],
+  "successor": {
+    "base_commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "version": "0.2.1.dev0",
+    "wheel_sha256": "63a1d6a3c89f2fb4daef6825773c024f6dc0f392a889e07d0adf3779f6b90a14",
+    "source_runtime_git_blobs": {
+      "pyproject.toml": "1e95b9148f7f5b3caf3f0c54073b84adc5378e6d",
+      "src/evidence_bundler/__init__.py": "d475c2d776039bbd49d8ad85c7c92244ea130d19",
+      "src/evidence_bundler/production_v1/execution.py": "8c2e8027134807d21efc70a9282963a7b1bbf108",
+      "src/evidence_bundler/v1/contract_b.py": "8fbe80275ea6b89b5133f4f0a39b8b2ec4f76bcf"
+    },
+    "qualification_commit": "Bound by PR and exact-head CI; this pre-publication record binds tested runtime blobs and installed wheel"
+  },
+  "successor_results": [
+    {
+      "case": "claim_traversal",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_overwritten": false,
+      "native_written": false,
+      "receipt_written": false
+    },
+    {
+      "case": "source_traversal",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_overwritten": false,
+      "native_written": false,
+      "receipt_written": false
+    },
+    {
+      "case": "absolute_claim",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_overwritten": false,
+      "native_written": false,
+      "receipt_written": false
+    },
+    {
+      "case": "absolute_source",
+      "exit_code": 1,
+      "outside_output": true,
+      "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+      "sentinel_overwritten": false,
+      "native_written": false,
+      "receipt_written": false
+    }
+  ],
+  "local_regression": {
+    "python": "3.12.14",
+    "platform": "Linux x86_64",
+    "full_suite": {
+      "passed": 281,
+      "skipped": 6,
+      "exit_code": 0,
+      "junit_raw_sha256": "b9541baf3d7b279d95073a30c85ef42b7848bb436c951ff56682079c08ac84ac"
+    },
+    "projection_and_cli_after_pinned_cal_install": {
+      "passed": 18,
+      "skipped": 0,
+      "log_raw_sha256": "5b0affd441dac1793002abb66597d0c0b2d13993deae993a4477300aa63bc616"
+    },
+    "ruff": "PASS",
+    "compileall": "PASS",
+    "full_ml_dependencies": "NOT_INSTALLED_IN_THIS_LANE",
+    "strict_mypy_3_11": "NOT_QUALIFIED_IN_THIS_LANE",
+    "same_native_projection_and_installed_consumer": "See CONSUMER-AND-COMPATIBILITY.json: 27 B files plus receipt byte-identical for the same native input; actual successor emission accepted by canonical B and CAL; tampered bundle refused by both."
+  },
+  "deviations": [
+    "Initial author test Ruff run found two overlong test signatures; formatted new test file before final verification. Runtime was unchanged.",
+    "Initial CAL wheel build using pip25.0.1 failed in its vendored marker evaluator with InvalidVersion dev; upgraded pip to26.2.1 and rebuilt/installed the unchanged exact CAL checkout successfully.",
+    "First manual compatibility-check setup omitted the output subdirectory in a baseline artifact path and stopped before projection; corrected path in a separately recorded attempt, without product/source changes."
+  ],
+  "scope_limits": [
+    "The original independent failure is distinct from author regression tests.",
+    "Summary omits local absolute paths and stderr bodies; raw-file identities are recorded separately.",
+    "No model weights or inference were used.",
+    "Common case/NFC aliases are checked; universal filesystem equivalence and concurrent hostile symlink swaps are not established."
+  ],
+  "additional_independent_controls": {
+    "design_freeze_sha256": "33963eaab4a97555b0c7aef5705e2c57f24afdd4052d7b0e165c45db03928f02",
+    "script_sha256": "5d9543552d2ca024a7106e4fec382605339ca4b20ae4ee74241bef07b4942b1f",
+    "baseline_cases": 21,
+    "baseline_pass": 10,
+    "baseline_fail": 11,
+    "baseline_outside_output_mutations": 5,
+    "portable_alias_policy_failures": 4,
+    "successor_replay": "Pending exact published head; separate receipt will preserve outcomes."
+  }
+}

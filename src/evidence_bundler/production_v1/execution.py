@@ -20,6 +20,7 @@ from evidence_bundler.v1.contract_b import (
     load_compatibility_carrier,
     project_contract_b,
     validate_compatibility_carrier,
+    validate_integration_package,
 )
 from evidence_bundler.v1.package import hash_json
 
@@ -77,12 +78,10 @@ def run_contract_a(
     admission_path: Path | None = None,
     compatibility_carrier_path: Path | None = None,
 ) -> dict[str, Any]:
-    """Run the exact qualified 10/3 V1 profile and emit released Contract B 1.2."""
+    """Run the fixed 10/3 V1 profile and emit released Contract B 1.2."""
     resolved_out = out_dir.resolve()
     if resolved_out.exists() and any(resolved_out.iterdir()):
         raise ProductionV1Error(f"refusing non-empty output directory: {resolved_out}")
-    resolved_out.mkdir(parents=True, exist_ok=True)
-
     contract_a = load_contract_a(contract_a_path)
     admission = load_admission(admission_path)
     carrier = (
@@ -96,6 +95,9 @@ def run_contract_a(
         config=INTEGRATION_CONFIG,
         admission=admission,
     )
+    # Refuse unrepresentable B paths before publishing even the native package.
+    validate_integration_package(package)
+    resolved_out.mkdir(parents=True, exist_ok=True)
     native_path = resolved_out / "native_eb_v1_package.json"
     write_package(package, native_path)
     receipt = project_contract_b(

@@ -1,0 +1,22 @@
+{
+  "same_native_projected_file_count": 27,
+  "same_native_B_bytes_identical": true,
+  "same_native_receipt_bytes_identical": true,
+  "canonical_B_commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+  "canonical_B_passed": true,
+  "canonical_checked_files": [
+    "bundle_manifest.yaml",
+    "audit_config.yaml",
+    "claims/clm-p01.yaml",
+    "evidence/src-p01-sable-record/passages/passage:0422ce28897c2733e3723d3f7175478a.yaml",
+    "extensions/contract-b-factual-context-v1.json"
+  ],
+  "CAL_commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+  "CAL_admitted_pairs_equal": true,
+  "admission_control": "Explicit engineering injection; no reviewer-quality claim",
+  "tampered_bundle_canonical_refused": true,
+  "tampered_bundle_CAL_refused": true,
+  "CAL_tamper_exception": "BundleIntegrityError",
+  "full_ML_closure": "NOT_INSTALLED",
+  "deviation": "Prior supervisor path typo stopped before projection; preserved separately."
+}

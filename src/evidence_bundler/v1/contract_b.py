@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import json
+import unicodedata
 from collections import defaultdict
 from copy import deepcopy
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any, Final, Literal
 from uuid import NAMESPACE_URL, uuid5
 
@@ -102,6 +103,7 @@ def validate_integration_package(value: dict[str, Any]) -> dict[str, Any]:
         raise ContractBProjectionError("native package config identity mismatch")
     if package["diagnostics"]["root_retrieval"] is not None:
         raise ContractBProjectionError("integration candidate forbids root diagnostic retrieval")
+    _validate_projection_names(package)
     return package
 
 
@@ -274,6 +276,57 @@ def _passages(package: dict[str, Any]) -> dict[str, dict[str, Any]]:
             raise ContractBProjectionError("native passage identity collision")
         result[str(row["passage_id"])] = passage
     return result
+
+
+def _projection_component(identifier: str, *, suffix: str, role: str) -> str:
+    """Preserve an opaque ID literally, or refuse its filesystem representation."""
+    component = identifier + suffix
+    windows_path = PureWindowsPath(identifier)
+    if (
+        not identifier
+        or identifier != identifier.strip()
+        or "/" in identifier
+        or "\\" in identifier
+        or windows_path.drive
+        or windows_path.root
+        or component in {".", ".."}
+        or any(unicodedata.category(char) in {"Cc", "Cs", "Zl", "Zp"} for char in identifier)
+    ):
+        raise ContractBProjectionError(
+            f"{role} ID cannot be represented as a literal Contract B path: {identifier!r}"
+        )
+    if len(component.encode("utf-8")) > 255:
+        raise ContractBProjectionError(f"{role} Contract B path component exceeds 255 UTF-8 bytes")
+    return component
+
+
+def _check_sibling_names(identifiers: set[str], *, suffix: str, role: str) -> None:
+    names: dict[str, str] = {}
+    for identifier in sorted(identifiers):
+        component = _projection_component(identifier, suffix=suffix, role=role)
+        key = unicodedata.normalize("NFC", component).casefold()
+        if key in names:
+            raise ContractBProjectionError(
+                f"{role} Contract B path aliases after case/Unicode comparison: "
+                f"{names[key]!r}, {identifier!r}"
+            )
+        names[key] = identifier
+
+
+def _validate_projection_names(package: dict[str, Any]) -> None:
+    # Claims include the root even when only declared children have retrieval lanes.
+    _check_sibling_names(
+        {str(row["proposition_id"]) for row in _claims(package)}, suffix=".yaml", role="claim"
+    )
+    # Every nominated source is written, including rejected/non-retained candidates.
+    _check_sibling_names(
+        {str(row["source_id"]) for row in package["candidates"]}, suffix="", role="source"
+    )
+    passages_by_source: dict[str, set[str]] = defaultdict(set)
+    for passage_id, passage in _passages(package).items():
+        passages_by_source[str(passage["source_id"])].add(passage_id)
+    for passage_ids in passages_by_source.values():
+        _check_sibling_names(passage_ids, suffix=".yaml", role="passage")
 
 
 def _review_decision(candidate: dict[str, Any]) -> str:
@@ -768,11 +821,15 @@ def project_contract_b(
     package = validate_integration_package(package)
     carrier = validate_compatibility_carrier(compatibility_carrier)
     out_dir = out_dir.resolve()
-    out_dir.mkdir(parents=True, exist_ok=True)
     bundle_dir = out_dir / "contract_b"
     receipt_path = out_dir / "projection_receipt.json"
-    if receipt_path.exists() or (bundle_dir.exists() and any(bundle_dir.iterdir())):
+    if bundle_dir.is_symlink() or receipt_path.is_symlink():
+        raise ContractBProjectionError("projection output must not contain symbolic links")
+    if receipt_path.exists() or (
+        bundle_dir.exists() and (not bundle_dir.is_dir() or any(bundle_dir.iterdir()))
+    ):
         raise ContractBProjectionError("projection output already exists")
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     carrier_sha = hash_json(carrier)
     bundle_id = str(

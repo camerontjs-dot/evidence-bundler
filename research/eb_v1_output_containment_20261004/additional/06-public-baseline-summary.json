@@ -1,0 +1,265 @@
+{
+  "bindings": {
+    "baseline_file_manifest_sha256": "31f03217117fe20806352d03b70d38f9fdd99992a8a7ec9d5b1d15e9b72545e3",
+    "baseline_results_sha256": "9f2d71ef6c3b75b8e5a946aa52548c67062a8d8289f666883ef5b5895eee4adf",
+    "design_file": "01-probe-design.md",
+    "design_sha256": "afd94fd03178294f9d2e1bdffe1d8ec5bdd4e080f1196f5abb2bb7cf50ec7e3f",
+    "freeze_file": "02-design-freeze.json",
+    "freeze_sha256": "33963eaab4a97555b0c7aef5705e2c57f24afdd4052d7b0e165c45db03928f02",
+    "script_file": "03-additional-path-probes.py",
+    "script_sha256": "5d9543552d2ca024a7106e4fec382605339ca4b20ae4ee74241bef07b4942b1f"
+  },
+  "cases": [
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "declared_root_traversal",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": true,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "declared_later_child_traversal",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": true,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_case_alias",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "portable_alias_refusal",
+      "host_local_identity_and_containment_pass": true,
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_nfc_alias",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "portable_alias_refusal",
+      "host_local_identity_and_containment_pass": true,
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_case_alias",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "portable_alias_refusal",
+      "host_local_identity_and_containment_pass": true,
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_nfc_alias",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "portable_alias_refusal",
+      "host_local_identity_and_containment_pass": true,
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_unicode",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_ordinary_colons",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_percent_literals",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "same_id_across_roles",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_dot",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_dotdot",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_dot",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_dotdot",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "unprojected_path_source",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "unsafe_nonretained_source",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": true,
+      "rank_four_nonretained_fixture_confirmed": true,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_bundle_symlink",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": true,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_broken_receipt_symlink",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "refuse",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": true,
+      "required_property_pass": false
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_existing_receipt_symlink",
+      "entry": "api",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_bundle_directory",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    },
+    {
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_output_directory",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "required_property_pass": true
+    }
+  ],
+  "counts": {
+    "cases": 21,
+    "existing_receipt_refusal_control_passed": true,
+    "observed_outside_output_mutation_cases": 5,
+    "partial_output_only_failures": 2,
+    "portable_alias_policy_failures": 4,
+    "positive_acceptance_controls_passed": 9,
+    "required_property_failures": 11,
+    "required_property_passes": 10
+  },
+  "design_frozen_at_utc": "2026-10-04T13:09:24.939561+00:00",
+  "environment": "Python 3.12.14, Linux x86_64, lightweight installed-wheel virtual environment",
+  "interpretation_limits": [
+    "All 21 inputs pass the exact canonical Contract A 2.0 validator unchanged.",
+    "Four alias-policy failures also preserve literal identities and containment on the observed Linux host; no macOS overwrite was observed.",
+    "No exhaustive APFS/HFS+ compatibility, concurrent symlink-race protection, semantic usefulness, or release-readiness claim.",
+    "Probe author did not inspect the corrective implementation; agents share task context and model family.",
+    "Raw baseline evidence and original failed controls remain preserved."
+  ],
+  "run_finished_at_utc": "2026-10-04T13:09:50.756880+00:00",
+  "schema": "eb-v1-additional-path-public-baseline-v1",
+  "scope": "Synthetic filesystem publication and identity controls; no models or semantic calls; all effect targets probe-owned.",
+  "subject": {
+    "commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "contract_a_release": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "contract_a_validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409",
+    "contract_b_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+    "package_version": "0.2.0",
+    "repository": "camerontjs-dot/evidence-bundler",
+    "tree": "1248dc464c8ac06aa6a5554b9092d1f793a8b2c2",
+    "wheel_sha256": "76b64db4753594dd62f0c7788507c6c3bf792b27eac63dae08e092bd801f7237"
+  }
+}
