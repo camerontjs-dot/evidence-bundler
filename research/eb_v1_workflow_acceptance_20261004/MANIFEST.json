@@ -1,0 +1,183 @@
+{
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "p01",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 1361,
+      "file_sha256": "sha256:40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf",
+      "handoff_sha256": "sha256:49e24f3531a3a9b7c99e0e361194a8ace84e1c70e8f71cb0a2af2f9c6f8a73d7",
+      "path": "inputs/p01.contract-a.json",
+      "primary_target_ids": [
+        "clm-p01"
+      ],
+      "root_proposition_id": "clm-p01",
+      "sources": [
+        {
+          "content_sha256": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98",
+          "media_type": "text/markdown; charset=utf-8",
+          "source_id": "src-p01-sable-record",
+          "unicode_code_points": 475,
+          "utf8_bytes": 475
+        }
+      ]
+    },
+    {
+      "case_id": "p02",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 1369,
+      "file_sha256": "sha256:b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8",
+      "handoff_sha256": "sha256:88a7be94cbfd8f540a9b836047c987ebf7548bc0c8901b27c199f5d965b886a2",
+      "path": "inputs/p02.contract-a.json",
+      "primary_target_ids": [
+        "clm-p02"
+      ],
+      "root_proposition_id": "clm-p02",
+      "sources": [
+        {
+          "content_sha256": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5",
+          "media_type": "text/plain; charset=utf-8",
+          "source_id": "src-p02-lumen-report",
+          "unicode_code_points": 497,
+          "utf8_bytes": 497
+        }
+      ]
+    },
+    {
+      "case_id": "p03",
+      "decomposition_state": "declared",
+      "file_bytes": 2749,
+      "file_sha256": "sha256:514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14",
+      "handoff_sha256": "sha256:02a84d58fb4a03461cb1245df0f5e3766250654ed82d1e8bad869fa25d911edc",
+      "path": "inputs/p03.contract-a.json",
+      "primary_target_ids": [
+        "clm-p03-1",
+        "clm-p03-2"
+      ],
+      "root_proposition_id": "clm-p03",
+      "sources": [
+        {
+          "content_sha256": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada",
+          "media_type": "text/markdown; charset=utf-8",
+          "source_id": "src-p03-wren-review",
+          "unicode_code_points": 468,
+          "utf8_bytes": 468
+        },
+        {
+          "content_sha256": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+          "media_type": "text/markdown; charset=utf-8",
+          "source_id": "src-p03-wren-reconcile",
+          "unicode_code_points": 483,
+          "utf8_bytes": 483
+        }
+      ]
+    },
+    {
+      "case_id": "p04",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 1281,
+      "file_sha256": "sha256:253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62",
+      "handoff_sha256": "sha256:cefff5c47c6814d88a45941a6f7320fdf662fce5fc19230d00f8aae4dc2170c0",
+      "path": "inputs/p04.contract-a.json",
+      "primary_target_ids": [
+        "clm-p04"
+      ],
+      "root_proposition_id": "clm-p04",
+      "sources": [
+        {
+          "content_sha256": "sha256:a51b98900835c994d02c20c6fe7a67e37346018ea4d0fb658838eb16b2867235",
+          "media_type": "text/plain; charset=utf-8",
+          "source_id": "src-p04-alder-triage",
+          "unicode_code_points": 392,
+          "utf8_bytes": 392
+        }
+      ]
+    },
+    {
+      "case_id": "p05",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 1353,
+      "file_sha256": "sha256:23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe",
+      "handoff_sha256": "sha256:76d0f09403110ffefe3efda1a9fc660c4e2fd3b2df2ad698b529fe2a7864c0c0",
+      "path": "inputs/p05.contract-a.json",
+      "primary_target_ids": [
+        "clm-p05"
+      ],
+      "root_proposition_id": "clm-p05",
+      "sources": [
+        {
+          "content_sha256": "sha256:b8eb135107f0f9dab9966c9e68c72cc30dac0038421eb3866dbcf5d0a4420363",
+          "media_type": "text/plain; charset=utf-8",
+          "source_id": "src-p05-juniper-index",
+          "unicode_code_points": 470,
+          "utf8_bytes": 470
+        }
+      ]
+    },
+    {
+      "case_id": "p06",
+      "decomposition_state": "declared",
+      "file_bytes": 1993,
+      "file_sha256": "sha256:53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376",
+      "handoff_sha256": "sha256:fd5360f91d570471ec9fe72143309fbf10e1eaedcfa0bf7cdaa666fdb4003c5d",
+      "path": "inputs/p06.contract-a.json",
+      "primary_target_ids": [
+        "clm-p06-1",
+        "clm-p06-2"
+      ],
+      "root_proposition_id": "clm-p06",
+      "sources": [
+        {
+          "content_sha256": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272",
+          "media_type": "text/plain; charset=utf-8",
+          "source_id": "src-p06-halcyon-log",
+          "unicode_code_points": 466,
+          "utf8_bytes": 466
+        }
+      ]
+    },
+    {
+      "case_id": "p07",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 7624,
+      "file_sha256": "sha256:e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c",
+      "handoff_sha256": "sha256:0681e83b349dc81eff03f0ce647bdc41e616097a447427fce7588e20eabfab84",
+      "path": "inputs/p07.contract-a.json",
+      "primary_target_ids": [
+        "clm-p07"
+      ],
+      "root_proposition_id": "clm-p07",
+      "sources": [
+        {
+          "content_sha256": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3",
+          "media_type": "text/plain; charset=utf-8",
+          "source_id": "src-p07-archive-7q",
+          "unicode_code_points": 6707,
+          "utf8_bytes": 6707
+        }
+      ]
+    },
+    {
+      "case_id": "p08",
+      "decomposition_state": "not_decomposed",
+      "file_bytes": 636,
+      "file_sha256": "sha256:dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f",
+      "handoff_sha256": "sha256:b3b1e70a8f1fb748565d6466e9169ddf0dfb160e6dcd8f611ab40e9fdbff6bb7",
+      "path": "inputs/p08.contract-a.json",
+      "primary_target_ids": [
+        "clm-p08"
+      ],
+      "root_proposition_id": "clm-p08",
+      "sources": []
+    }
+  ],
+  "contract_a_release_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+  "contract_a_validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409",
+  "design_timestamp_utc": "2026-10-04T12:52:14Z",
+  "handoff_hash_domain": "Sorted compact UTF-8 JSON excluding handoff_sha256; ensure_ascii=false; no NaN",
+  "kit_id": "eb-synthetic-operator-acceptance-rc0",
+  "kit_version": "0.1.0",
+  "raw_file_hash_domain": "Exact UTF-8 JSON bytes including final newline",
+  "schema": "eb-synthetic-operator-kit-manifest-v1",
+  "source_hash_domain": "UTF-8 encoding of exact inline content"
+}

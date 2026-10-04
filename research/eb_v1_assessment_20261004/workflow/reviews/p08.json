@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:4fb66884a43d3212bad3c9579ae6c974d7162dd70bfb3c438df7f2ae251de850",
+    "native_package_sha256": "sha256:0fe104506d12e82f9573466ba3bce2860504655c6136a55e3754cbf7d9ef94e8",
+    "review_packet_sha256": "sha256:a4869cdb0affe498d83d6b2c995e6c7a71b5e6456a54c90301ac8edf7ab01e08"
+  },
+  "case_id": "p08",
+  "coverage_notes": {
+    "clm-p08": "No retained candidate is available for the Vale-6 annual-inventory-review target, so the preserved decision set is empty and there is no accepted relationship. The target lacks exported material for later assessment. This gap does not establish that the requirement is absent or false, and its retrieval/retention cause is not determined from this packet."
+  },
+  "decisions": [],
+  "elapsed_seconds": 22,
+  "manual_friction": "The packet reports no retained candidate and the review JSON has no decision rows. Recorded the target gap manually without manufacturing a row or inspecting unretained source text. The supplied packet does not expose enough workflow-state detail to diagnose why retention is empty.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

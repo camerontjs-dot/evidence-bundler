@@ -1,0 +1,28 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "handoff-p02",
+  "handoff_sha256": "sha256:88a7be94cbfd8f540a9b836047c987ebf7548bc0c8901b27c199f5d965b886a2",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p02",
+    "text": "The fictional Lumen pilot used archived samples from twelve sites.",
+    "text_sha256": "sha256:9adbaacad45d0ba9aa77817d6c9491e1f519696130c42bc339f35145b0ec6fda"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "Fictional Lumen pilot: final sample-accountability note\n\nThis is an invented research record for a software exercise.\n\nThe final Lumen pilot report states that archived samples came from nine sites. Twelve sites were invited, but three provided no samples. These counts refer to contributing sites rather than individual samples. The pilot used only archived material and enrolled no new participants.\n\nThe invitation count and the contributing-site count are separate fields in the final record.\n",
+      "content_sha256": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5",
+      "media_type": "text/plain; charset=utf-8",
+      "source_id": "src-p02-lumen-report"
+    }
+  ],
+  "work": {
+    "work_id": "work-p02"
+  }
+}

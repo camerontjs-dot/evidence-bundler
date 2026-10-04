@@ -1,0 +1,21 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "handoff-p08",
+  "handoff_sha256": "sha256:b3b1e70a8f1fb748565d6466e9169ddf0dfb160e6dcd8f611ab40e9fdbff6bb7",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p08",
+    "text": "Fictional Procedure Vale-6 requires an annual inventory review.",
+    "text_sha256": "sha256:8ad83a9d8094a2be474b87c20e7be15af76681f5148319a929f72f4bb4d4f610"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [],
+  "work": {
+    "work_id": "work-p08"
+  }
+}

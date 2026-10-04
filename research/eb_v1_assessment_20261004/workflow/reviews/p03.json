@@ -1,0 +1,44 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:d3ba8a66db38c13080cb3b13ca9a4cbd44bc58d18adfb51b64abab24d5364ea9",
+    "native_package_sha256": "sha256:4bfa893e03ba65cac6260cac8aee3aaa929726066de7370e0b3ddf5c9870b850",
+    "review_packet_sha256": "sha256:a26019f0053c2f0f6adb9a79ba37cde86d286847a0fb86321d5dbcf617bea0fd"
+  },
+  "case_id": "p03",
+  "coverage_notes": {
+    "clm-p03-1": "The reviewer-arrangement passage (passage:c310360a9e1800af86c01fd2cc9a461c) is accepted and explicitly identifies two different reviewers before Wren-4 release. The reconciliation-only passage is rejected for this child because it does not describe reviewer number or distinctness. Child-level local context is available.",
+    "clm-p03-2": "The reconciliation passage (passage:db558da33b045594e1b564285d081a54) is accepted and explicitly identifies the required record before Wren-4 release. The reviewer-arrangement passage is rejected for this child because a checklist of reviewer names does not describe reconciliation. Each listed child has its own adequate retained relationship; this is not a semantic verdict on the composite root."
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+      "proposition_id": "clm-p03-1",
+      "reason": "It explicitly ties Wren-4 document release to two different reviewers, excludes one person filling both positions, and states the timing before release."
+    },
+    {
+      "decision": "rejected",
+      "passage_id": "passage:db558da33b045594e1b564285d081a54",
+      "proposition_id": "clm-p03-1",
+      "reason": "It describes a reconciliation record before Wren-4 release but provides no reviewer count or distinct-person requirement. Shared procedure and release context do not establish this child's reviewer relationship."
+    },
+    {
+      "decision": "accepted",
+      "passage_id": "passage:db558da33b045594e1b564285d081a54",
+      "proposition_id": "clm-p03-2",
+      "reason": "It names Wren-4, explicitly requires a reconciliation record before document release, and explains what that record contains."
+    },
+    {
+      "decision": "rejected",
+      "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+      "proposition_id": "clm-p03-2",
+      "reason": "It describes two reviewers and a checklist recording their names, with no reconciliation record or resolution-of-comments requirement. The sibling reviewer requirement does not supply this child's missing relationship."
+    }
+  ],
+  "elapsed_seconds": 36,
+  "manual_friction": "The same two passages appear under both child targets, so each target/passage pair had to be tracked separately and given its own decision. The exported passages distinguish the two requirements sufficiently; no source inspection or private reconstruction was needed. Coverage and reasons were entered manually.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

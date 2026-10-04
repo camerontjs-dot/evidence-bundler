@@ -1,0 +1,25 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:7fa116562356967ab84349594e4c50fbadb77bb8c4b2c4a0fdb9394c75776247",
+    "native_package_sha256": "sha256:42fb1e884edcd988bdc8b7f4aff48e85f560cbc6b498a60fe8e6a6e715cfcf1f",
+    "review_packet_sha256": "sha256:8359e9e193af2fab17943027ed422e22f9b6303153609e23a1f333e2edcaeaed"
+  },
+  "case_id": "p01",
+  "coverage_notes": {
+    "clm-p01": "One retained relationship is accepted for later assessment. The passage identifies Procedure Sable-17 revision 4 and explicitly labels its effective date, with enough explanation to distinguish that date from approval. The exported passage is locally adequate without a source lookup."
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:0422ce28897c2733e3723d3f7175478a",
+      "proposition_id": "clm-p01",
+      "reason": "The passage names Sable-17 revision 4, explicitly labels 3 March 2031 as its effective date, and explains the approval/effectiveness distinction. The subject and date relationship are locally assessable."
+    }
+  ],
+  "elapsed_seconds": 36,
+  "manual_friction": "Read the packet and matched its single retained pair to the editable JSON. Manual decision/reason and coverage-note entry was required. No source inspection or private reconstruction was needed; the exported labels distinguish approval from effectiveness.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

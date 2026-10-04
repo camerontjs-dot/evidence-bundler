@@ -1,0 +1,75 @@
+{
+  "disposition": "PASS_SYNTHETIC_OPERATOR_ACCEPTANCE",
+  "fabricated_gate_controls": {
+    "always_accept": {
+      "gaps": {
+        "clm-p04": false,
+        "clm-p05": false,
+        "clm-p06-2": false,
+        "clm-p08": true
+      },
+      "passed": false,
+      "positives": {
+        "clm-p01": true,
+        "clm-p02": true,
+        "clm-p03-1": true,
+        "clm-p03-2": true,
+        "clm-p06-1": true
+      }
+    },
+    "always_reject": {
+      "gaps": {
+        "clm-p04": true,
+        "clm-p05": true,
+        "clm-p06-2": true,
+        "clm-p08": true
+      },
+      "passed": false,
+      "positives": {
+        "clm-p01": false,
+        "clm-p02": false,
+        "clm-p03-1": false,
+        "clm-p03-2": false,
+        "clm-p06-1": false
+      }
+    }
+  },
+  "gate": {
+    "gaps": {
+      "clm-p04": true,
+      "clm-p05": true,
+      "clm-p06-2": true,
+      "clm-p08": true
+    },
+    "passed": true,
+    "positives": {
+      "clm-p01": true,
+      "clm-p02": true,
+      "clm-p03-1": true,
+      "clm-p03-2": true,
+      "clm-p06-1": true
+    }
+  },
+  "kit_closure": "sha256:01cac06293afdb4fd145c3f7b64464799620eac2fcce80ffc2d5bc677553878c",
+  "limitation_observation": {
+    "all_of": false,
+    "all_targets_have_admitted_evidence": true,
+    "apparatus_summary_only": true,
+    "case_id": "p07",
+    "elapsed_seconds": 112,
+    "manual_friction": "Opened inputs/p07.contract-a.json because the retained decision table omits its subject and unit locally and points to a distant opening header. Source inspection confirmed that the Ilex-9/mg/L header and 0.08 decision table are parts of the same note, with only custody entries between them. Manually matched note 7Q, source_id, source hash, and the retained header/table identities. The packet already exports both ends and their explicit cross-references, so its relationships can be interpreted without private source text or a stitched passage. The table is not self-contained if later displayed alone; this admission uses the visible retained same-note context. No IDs or offsets were changed.",
+    "targets": {
+      "clm-p07": {
+        "accepted": 2,
+        "gap": false,
+        "manual_note": "The opening-header relationship (passage:30c70607c2a17efa80e5359a93928099) and the decision-table relationship (passage:6adcbccf2a04d9c75689ed2f09c7af0a) are accepted. The header identifies Ilex-9, the acceptance-ceiling field, and mg/L; the table gives 0.08 and expressly assigns its subject/unit to that same note's header. Both are exported with matching source identity/hash, so the needed cross-reference is visible rather than a private reconstruction. Neither individual quote contains the whole numerical proposition, and the table must remain interpretable with that retained header. The custody passage is rejected as outside the analytical relationship. Source inspection verified the linkage; no new combined passage was created. Admission leaves semantic conclusions to later assessment.",
+        "needs-review": 0,
+        "rejected": 1,
+        "retained": 3
+      }
+    }
+  },
+  "limits": "Mechanical gate over frozen human/agent judgments; no independent semantic validation, population estimate or product snapshot-binding guarantee.",
+  "parent_boundaries": true,
+  "review_freeze_sha256": "sha256:63ebcc6af9f42007f1c4484d43954bf8d0b0af20fb2d35756e2b5c09c575a6d1"
+}

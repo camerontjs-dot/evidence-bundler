@@ -1,0 +1,15 @@
+{
+  "apparatus_bindings_only": true,
+  "frozen_at_utc": "2026-10-04T13:33:25.512604+00:00",
+  "prepared_sha256": "sha256:04c31ff655bfc416c5528eb0401da25dce9d7f51d5e3425d65ecb819b7738cf2",
+  "review_hashes": {
+    "p01.json": "sha256:b436b64ff2ab2a1c7e42b0c94fc54fcdce627e55c107afc328f3f0a8cec95213",
+    "p02.json": "sha256:0428d863873f1729f7333e3c6fc6f985a9d4bb553ae0cd7274d95fe251d25618",
+    "p03.json": "sha256:999a1b360587cc5e7a94e4e9488c9e4742299e9e630e88b99c4e1e8c09e1c2cd",
+    "p04.json": "sha256:d1a3cba4e47a151a1dbc29ff1d12f21d8f02955db8693a445aab9eeaefe50755",
+    "p05.json": "sha256:39afb67a7497fbd4eade6592266a15f5b2b110cb13222b0b2be65dcd0da3ac69",
+    "p06.json": "sha256:bccf02fdf0e790b5239d2e1adca4fcc998d1bbd64796d781371a98df14132250",
+    "p07.json": "sha256:6edc6c08da8e95b22644bcbdf9deeb9c592c564fa909d39465fdffd19d582ea4",
+    "p08.json": "sha256:c3efffb3efd43e6a50345a77fcea36dd1c4ffb3b51246cb914922a8ead31976c"
+  }
+}

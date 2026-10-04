@@ -1,0 +1,359 @@
+{
+  "bindings": {
+    "design_file": "01-probe-design.md",
+    "design_sha256": "afd94fd03178294f9d2e1bdffe1d8ec5bdd4e080f1196f5abb2bb7cf50ec7e3f",
+    "freeze_file": "02-design-freeze.json",
+    "freeze_sha256": "33963eaab4a97555b0c7aef5705e2c57f24afdd4052d7b0e165c45db03928f02",
+    "script_file": "03-additional-path-probes.py",
+    "script_sha256": "5d9543552d2ca024a7106e4fec382605339ca4b20ae4ee74241bef07b4942b1f",
+    "successor_file_manifest_sha256": "3996f0436f4dfd0fb50bdff00adaafe94df605f7ff6389be163469aaf27ac0fe",
+    "successor_results_sha256": "5c811844a5ff3eedaaa591b5bb596896978d640b72388b48719d61701e332335",
+    "successor_runtime_sha256": "c1d662c32ca4d2d90f0d525fe237962a48150ef672b2aac424396502e777b62b",
+    "successor_summary_sha256": "52d41be6dcad7557a3f142d82cc2e4ae01e4384bfa2ebbe8f301926b06ee1f3a"
+  },
+  "cases": [
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "declared_root_traversal",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "declared_later_child_traversal",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_host_local_identity_and_containment_pass": true,
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_case_alias",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "portable_alias_refusal",
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_host_local_safety_pass": true,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_host_local_identity_and_containment_pass": true,
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_nfc_alias",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "portable_alias_refusal",
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_host_local_safety_pass": true,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_host_local_identity_and_containment_pass": true,
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_case_alias",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "portable_alias_refusal",
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_host_local_safety_pass": true,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_host_local_identity_and_containment_pass": true,
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_nfc_alias",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "portable_alias_refusal",
+      "host_pair_actually_aliases": false,
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_host_local_safety_pass": true,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_unicode",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "主張-δ"
+      ],
+      "preserved_source_ids": [
+        "資料-λ"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_ordinary_colons",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "claim:root"
+      ],
+      "preserved_source_ids": [
+        "source:item"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "safe_percent_literals",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "%2e%2e%2fclaim"
+      ],
+      "preserved_source_ids": [
+        "%2e%2e%2fsource"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "same_id_across_roles",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "shared-id"
+      ],
+      "preserved_source_ids": [
+        "shared-id"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_dot",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "."
+      ],
+      "preserved_source_ids": [
+        "source-safe"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "claim_dotdot",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        ".."
+      ],
+      "preserved_source_ids": [
+        "source-safe"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_dot",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "source_dotdot",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "unprojected_path_source",
+      "entry": "cli",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "claim-safe"
+      ],
+      "preserved_source_ids": [
+        "source-safe"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "unsafe_nonretained_source",
+      "entry": "cli",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_bundle_symlink",
+      "entry": "api",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": false,
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_broken_receipt_symlink",
+      "entry": "api",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_existing_receipt_symlink",
+      "entry": "api",
+      "exit_code": 1,
+      "expectation": "refuse",
+      "output_tree_changed": false,
+      "owned_outside_tree_changed": false,
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_bundle_directory",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "claim-safe"
+      ],
+      "preserved_source_ids": [
+        "source-safe"
+      ],
+      "successor_required_property_pass": true
+    },
+    {
+      "baseline_required_property_pass": true,
+      "canonical_a2_valid_unchanged": true,
+      "case": "direct_empty_output_directory",
+      "entry": "api",
+      "exit_code": 0,
+      "expectation": "accept",
+      "output_tree_changed": true,
+      "owned_outside_tree_changed": false,
+      "preserved_claim_ids": [
+        "claim-safe"
+      ],
+      "preserved_source_ids": [
+        "source-safe"
+      ],
+      "successor_required_property_pass": true
+    }
+  ],
+  "checks": {
+    "all_refusals_recognized_as_projection_refusals": true,
+    "all_synthetic_inputs_canonical_a2_valid_unchanged": true,
+    "checkout_clean_at_execution": true,
+    "installed_source_and_carrier_match_subject": true,
+    "same_script_and_design_as_baseline": true,
+    "wheel_bytes_match_installation_receipt": true
+  },
+  "counts": {
+    "cases": 21,
+    "outside_output_mutation_cases": 0,
+    "positive_acceptance_controls_passed": 9,
+    "refusal_cases": 12,
+    "refusal_cases_with_zero_output_and_owned_target_mutations": 12,
+    "required_property_failures": 0,
+    "required_property_passes": 21
+  },
+  "design_frozen_at_utc": "2026-10-04T13:09:24.939561+00:00",
+  "environment": "Python 3.12.14, Linux x86_64, separate lightweight installed-wheel environment; no model calls",
+  "interpretation_limits": [
+    "This replay establishes the bounded synthetic publication/identity properties at the named installed candidate.",
+    "No semantic retrieval usefulness, general security review, merge, promotion, or release-readiness claim.",
+    "No macOS filesystem or concurrent link-swap adversary was exercised; case/Unicode alias policy was checked on Linux.",
+    "All 21 canonical A2 inputs remain valid; projection refusals do not redefine Contract A.",
+    "Implementation separation from the corrective author, with shared task context and model family; no broad clean-room claim.",
+    "Frozen baseline failures and all raw new case outcomes remain preserved."
+  ],
+  "predecessor": {
+    "commit": "08ca896debd6d16fa21be2f178ed7cbe62395d00",
+    "public_summary_sha256": "6fbdc6425ad14b9b002e3997ed71913dcb49f6290ba9e84e211f59212a268789",
+    "tree": "1248dc464c8ac06aa6a5554b9092d1f793a8b2c2",
+    "wheel_sha256": "76b64db4753594dd62f0c7788507c6c3bf792b27eac63dae08e092bd801f7237"
+  },
+  "run_finished_at_utc": "2026-10-04T13:19:10.072554+00:00",
+  "schema": "eb-v1-additional-path-public-successor-v1",
+  "subject": {
+    "commit": "0f5e7d9df2d4fe223b737bea27281c90cdfe0ebb",
+    "contract_a_release": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "contract_a_validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409",
+    "contract_b_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+    "package_version": "0.2.1.dev0",
+    "pull_request": 133,
+    "repository": "camerontjs-dot/evidence-bundler",
+    "tree": "ffaa4e14b14f1863bdc482453e9830d3bc1b0273",
+    "wheel_sha256": "63a1d6a3c89f2fb4daef6825773c024f6dc0f392a889e07d0adf3779f6b90a14"
+  }
+}
