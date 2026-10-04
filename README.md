@@ -26,7 +26,15 @@ The fixture writer is only a contract-shape smoke path. It copies scaffold-cited
 
 ## V1 development
 
-The [V1 purpose and supported-contract proposal](docs/EB_PURPOSE_AND_V1_CONTRACT.md) defines a narrower reviewed text/Markdown workflow using upstream Contract A 2.0 declarations. Its dedicated `evidence-bundler-v1` command is on the separate [corrective candidate, PR #133](https://github.com/camerontjs-dot/evidence-bundler/pull/133); it is not supplied by this main-based documentation checkout. [Issue #132](https://github.com/camerontjs-dot/evidence-bundler/issues/132) owns the plan and readiness decisions. The [local acceptance guide](docs/EB_V1_LOCAL_ACCEPTANCE.md) and frozen synthetic kit prepare the installed workflow checks. A V1 label or successful fixture run does not declare a stable 1.0 release.
+The [V1 purpose and supported-contract proposal](docs/EB_PURPOSE_AND_V1_CONTRACT.md) defines the narrower reviewed text/Markdown workflow. [Issue #132](https://github.com/camerontjs-dot/evidence-bundler/issues/132) owns the plan and the readiness decisions. The [local acceptance guide](docs/EB_V1_LOCAL_ACCEPTANCE.md) and the frozen synthetic kit exercise that installed workflow. They are local apparatus, not the installed command. A V1 label or a successful fixture run does not declare a stable 1.0 release.
+
+## Installed V1 review cycle
+
+`evidence-bundler-v1` is the installed V1 command. An unreviewed `run` writes the native package, the Contract B 1.2 bundle, `review_context.md`, and a `review_record.json` template. The context file shows each target, the retained passage text, and any preceding heading or table lines needed to read a passage that does not already contain them. Those lines are display context. They are not admitted text, and they do not change passage spans.
+
+The template binds the raw input file and the unreviewed package hash. Fill each reason, then rerun with `--review`. A record that does not match the current input or unreviewed package is refused, and nothing is written. `--admission` remains a mechanical decision list with no input binding. Do not pass both.
+
+The command admits passages for later assessment. It does not decide support or truth. The acceptance helper under `scripts/qualification/` is local apparatus, not this command. The review-cycle details are in [`docs/EB_V1_REVIEW_CYCLE.md`](docs/EB_V1_REVIEW_CYCLE.md). A representative workload is not established; see [`docs/EB_V1_REPRESENTATIVE_WORKLOAD.md`](docs/EB_V1_REPRESENTATIVE_WORKLOAD.md).
 
 ## Related work
 

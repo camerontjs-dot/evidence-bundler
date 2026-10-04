@@ -1,0 +1,130 @@
+name: Qualification - EB V1 reviewed workflow candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "pyproject.toml"
+      - "src/evidence_bundler/**"
+      - "config/eb_v1_slice/**"
+      - "tests/test_v1_**"
+      - "tests/test_production_v1_cli.py"
+      - "scripts/run_v1_integration_candidate.py"
+      - "scripts/qualification/eb_v1_output_containment.py"
+      - "research/eb_v1_output_containment_20261004/02-path-containment-probe.py"
+      - "docs/EB_V1_REVIEW_CYCLE.md"
+      - "docs/EB_V1_REPRESENTATIVE_WORKLOAD.md"
+      - "DECISIONS.md"
+      - ".github/workflows/eb-v1-reviewed-candidate.yml"
+  push:
+    branches: ["promotion/eb-v1-reviewed-workflow-0.3.0-dev0-20261004"]
+
+permissions:
+  contents: read
+
+env:
+  CONTRACT_B_LOCK: c314e53bd91c0736aa4370a364673b069aceb43e
+  CAL_CONSUMER: 64b6c7702696c851057c1cf0b2c105b1c81db543
+  REVIEW_PREDECESSOR: 4a6d6cb4e9a7cb62f36f64a2d38774fb22dc41fc
+  PURPOSE_KIT_COMMIT: a622fd70c5c48e826b5f2ec9907754e3a35f2d67
+
+jobs:
+  maintained:
+    name: Maintained gates / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Verify exact candidate and inherited authorities
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git diff --exit-code "$REVIEW_PREDECESSOR" "$EXPECTED_HEAD" --             src/evidence_bundler/production_v1 src/evidence_bundler/v1 config/eb_v1_slice
+          git diff --exit-code "$PURPOSE_KIT_COMMIT" "$EXPECTED_HEAD" --             docs/EB_PURPOSE_AND_V1_CONTRACT.md docs/EB_V1_LOCAL_ACCEPTANCE.md             docs/assessments/EB_V1_20261004.md research/eb_v1_assessment_20261004             research/eb_v1_workflow_acceptance_20261004             scripts/qualification/check_v1_workflow_consumers.py             scripts/qualification/run_v1_workflow_acceptance.py             tests/test_v1_workflow_acceptance_harness.py
+          python scripts/qualification/eb_v1_output_containment.py identity             --checkout "$GITHUB_WORKSPACE" --expected-head "$EXPECTED_HEAD"             --probe research/eb_v1_output_containment_20261004/02-path-containment-probe.py             --output "$RUNNER_TEMP/eb-v1-subject.json"
+      - name: Install full dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Maintained checks
+        run: |
+          python -m ruff check src tests scripts
+          if [ "${{ matrix.python-version }}" = "3.11" ]; then python -m mypy src; fi
+          python -m pytest -q
+          python -m compileall -q src
+          python -m pip check
+
+  installed:
+    name: Isolated wheel + bound review + consumers / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/apparatus-contracts
+          ref: ${{ env.CONTRACT_B_LOCK }}
+          path: _qualification_deps/apparatus-contracts
+      - uses: actions/checkout@v4
+        with:
+          repository: camerontjs-dot/claim-audit-lab
+          ref: ${{ env.CAL_CONSUMER }}
+          path: _qualification_deps/claim-audit-lab
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Verify exact subject and external authorities
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/eb-v1-reviewed/wheels"
+          python scripts/qualification/eb_v1_output_containment.py identity             --checkout "$GITHUB_WORKSPACE" --expected-head "$EXPECTED_HEAD"             --probe research/eb_v1_output_containment_20261004/02-path-containment-probe.py             --apparatus _qualification_deps/apparatus-contracts             --cal _qualification_deps/claim-audit-lab             --output "$RUNNER_TEMP/eb-v1-reviewed/subject.json"
+      - name: Build and install exact wheels
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/eb-v1-reviewed/wheels"             . ./_qualification_deps/apparatus-contracts ./_qualification_deps/claim-audit-lab
+          sha256sum "$RUNNER_TEMP/eb-v1-reviewed/wheels/"*.whl > "$RUNNER_TEMP/eb-v1-reviewed/wheel-SHA256SUMS"
+          python -m venv "$RUNNER_TEMP/eb-v1-reviewed-venv"
+          "$RUNNER_TEMP/eb-v1-reviewed-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/eb-v1-reviewed-venv/bin/python" -m pip install             --report "$RUNNER_TEMP/eb-v1-reviewed/install.json"             "$RUNNER_TEMP/eb-v1-reviewed/wheels/"*.whl
+          "$RUNNER_TEMP/eb-v1-reviewed-venv/bin/python" -m pip check
+          mkdir -p "$RUNNER_TEMP/eb-v1-outside"
+          cp scripts/qualification/eb_v1_output_containment.py "$RUNNER_TEMP/eb-v1-outside/qualify.py"
+          cp research/eb_v1_output_containment_20261004/02-path-containment-probe.py "$RUNNER_TEMP/eb-v1-outside/probe.py"
+      - name: Replay containment and bound-review consumer checks
+        working-directory: ${{ runner.temp }}/eb-v1-outside
+        run: |
+          "$RUNNER_TEMP/eb-v1-reviewed-venv/bin/python" -I qualify.py probe             --checkout "$GITHUB_WORKSPACE" --probe "$RUNNER_TEMP/eb-v1-outside/probe.py"             --output "$RUNNER_TEMP/eb-v1-reviewed/path-probe"
+          "$RUNNER_TEMP/eb-v1-reviewed-venv/bin/python" -I qualify.py bundle             --checkout "$GITHUB_WORKSPACE" --probe "$RUNNER_TEMP/eb-v1-outside/probe.py"             --output "$RUNNER_TEMP/eb-v1-reviewed/installed-control"
+      - name: Archive receipts
+        if: always()
+        run: |
+          if [[ -d "$RUNNER_TEMP/eb-v1-reviewed" ]]; then
+            tar -czf "$RUNNER_TEMP/eb-v1-reviewed.tar.gz" -C "$RUNNER_TEMP" eb-v1-reviewed
+          fi
+      - name: Upload receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eb-v1-reviewed-py${{ matrix.python-version }}
+          path: ${{ runner.temp }}/eb-v1-reviewed.tar.gz
+          if-no-files-found: warn

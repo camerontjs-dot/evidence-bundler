@@ -1,0 +1,43 @@
+{
+  "schema": "eb-v1-integration-profile-v1",
+  "profile_id": "eb-v1-integration-10x3-rc0",
+  "classification": "integration_candidate_not_production_default",
+  "implementation": {
+    "repository": "camerontjs-dot/evidence-bundler",
+    "commit": "c4e3f97ec8f0bd36180954c3aa382418925bf947",
+    "tree": "1d254e38cb0e174635efc7687c2b0ab091aa52b3"
+  },
+  "config": {
+    "candidate_depth": 10,
+    "retained_k": 3,
+    "chunk_max_chars": 1800,
+    "chunk_overlap_chars": 80,
+    "root_diagnostic": false,
+    "retrieval_engine": "evidence_bundler_okapi_bm25_v1",
+    "tokenizer": "lowercase_word_v1",
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "source_scope_policy": "all_contract_a_sources",
+    "query_strategy": "exact_primary_target_text"
+  },
+  "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+  "selection": "deterministic_rank_retention",
+  "admission": "existing_v1_explicit_admission_semantics",
+  "contract_a": {
+    "version": "2.0.0",
+    "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409"
+  },
+  "contract_b": {
+    "version": "1.2.0",
+    "production_lock": "c314e53bd91c0736aa4370a364673b069aceb43e",
+    "projection": "explicit_nonsemantic_compatibility_carrier"
+  },
+  "nonclaims": [
+    "not_a_release",
+    "not_a_qualified_production_retrieval_default",
+    "not_evidence_completeness",
+    "not_cal_semantic_authority",
+    "not_authorization_for_automatic_action"
+  ]
+}
