@@ -1,0 +1,28 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "handoff-p04",
+  "handoff_sha256": "sha256:cefff5c47c6814d88a45941a6f7320fdf662fce5fc19230d00f8aae4dc2170c0",
+  "producer": {
+    "producer_id": "eb-synthetic-operator-acceptance-rc0",
+    "producer_version": "0.1.0"
+  },
+  "root_proposition": {
+    "proposition_id": "clm-p04",
+    "text": "Fictional Project Cedar uses a 48-hour deadline to triage a newly opened deviation.",
+    "text_sha256": "sha256:85cc110c697699e722e73e77c62a74063e3970fdb3abdb53fc21aad320a41eee"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "Fictional Project Alder: deviation-triage instruction\n\nThis invented instruction governs Project Alder only.\n\nProject Alder uses a 48-hour deadline to triage a newly opened deviation. The deadline begins at the creation timestamp in Alder's deviation register. The triage owner records the initial classification and responsible team.\n\nThis source contains no policy for a different project.\n",
+      "content_sha256": "sha256:a51b98900835c994d02c20c6fe7a67e37346018ea4d0fb658838eb16b2867235",
+      "media_type": "text/plain; charset=utf-8",
+      "source_id": "src-p04-alder-triage"
+    }
+  ],
+  "work": {
+    "work_id": "work-p04"
+  }
+}

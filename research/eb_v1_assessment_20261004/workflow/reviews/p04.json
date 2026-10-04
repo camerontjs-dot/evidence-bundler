@@ -1,0 +1,25 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:5938bdb519156e862409074102e2b2a228ce77597b38886937d21ee8403b8ca8",
+    "native_package_sha256": "sha256:aa92befb439fa9d6548b65398f331ae53f5005d56d1f8cdff4908b98d7753679",
+    "review_packet_sha256": "sha256:b6be9f92080a402c51fc12a322e8ccf1cf91cfab58d51f4d1599c89990db046b"
+  },
+  "case_id": "p04",
+  "coverage_notes": {
+    "clm-p04": "No retained relationship is accepted. The only passage concerns Project Alder and explicitly limits its instruction to Alder; the target concerns Project Cedar. Cedar's deviation-triage deadline remains a target-specific evidence gap in this packet."
+  },
+  "decisions": [
+    {
+      "decision": "rejected",
+      "passage_id": "passage:b40c68f3b906c744d45ee38384f9fc86",
+      "proposition_id": "clm-p04",
+      "reason": "The target is Project Cedar, while the passage identifies and expressly limits the 48-hour triage instruction to Project Alder. Shared deadline and triage wording do not resolve the different subject."
+    }
+  ],
+  "elapsed_seconds": 24,
+  "manual_friction": "The subject mismatch is explicit in the exported passage, so no underlying-source lookup or private reconstruction was needed. The single retained pair and the resulting target-specific gap required manual JSON entry.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

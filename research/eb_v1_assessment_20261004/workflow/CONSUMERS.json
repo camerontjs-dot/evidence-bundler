@@ -1,0 +1,344 @@
+{
+  "at_utc": "2026-10-04T13:38:07.720971+00:00",
+  "cases": [
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p01",
+            "passage:0422ce28897c2733e3723d3f7175478a"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p01.yaml",
+          "evidence/src-p01-sable-record/passages/passage:0422ce28897c2733e3723d3f7175478a.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p01",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p01",
+          "passage:0422ce28897c2733e3723d3f7175478a"
+        ]
+      ],
+      "native_file_sha256": "sha256:cf12dce252697020d5d4179e667a222916a986a4393885f09a3cf169bc7333e8",
+      "native_package_sha256": "sha256:882c495677a4af953d408caf1adf50efd66b1189e90a5cc33692107655bee004",
+      "passed": true,
+      "receipt_file_sha256": "sha256:eeb37169a37f503d0f9faeb614a106fd87d2b3337020569c5b3f785355dbc7b7",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:76ff2321a6408a463f6ab0a6169d76b6932bf72eaeb698e72534fa99b638a665"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p02",
+            "passage:2d032bfab20acc5b49eb331ad9db2153"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p02.yaml",
+          "evidence/src-p02-lumen-report/passages/passage:2d032bfab20acc5b49eb331ad9db2153.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p02",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p02",
+          "passage:2d032bfab20acc5b49eb331ad9db2153"
+        ]
+      ],
+      "native_file_sha256": "sha256:8ea91cbf55916449ba14bdea050209f44670a809376ff074fa0961c3e5e11169",
+      "native_package_sha256": "sha256:0a031fe7cc016d890c075db34e15984640ddb1a17f4eedc1d07d7aba765e12ba",
+      "passed": true,
+      "receipt_file_sha256": "sha256:3fdc23909feb825f2259d9177e5c51bfe4ac8f4e873bf076441bc19b24a35ab9",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:3beb019d286c736b6661f1dcc41f5366ea33c35e725e92fd20c6a4c259c170a8"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p03-1",
+            "passage:c310360a9e1800af86c01fd2cc9a461c"
+          ],
+          [
+            "clm-p03-2",
+            "passage:db558da33b045594e1b564285d081a54"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p03-1.yaml",
+          "claims/clm-p03-2.yaml",
+          "claims/clm-p03.yaml",
+          "evidence/src-p03-wren-reconcile/passages/passage:db558da33b045594e1b564285d081a54.yaml",
+          "evidence/src-p03-wren-review/passages/passage:c310360a9e1800af86c01fd2cc9a461c.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p03",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p03-1",
+          "passage:c310360a9e1800af86c01fd2cc9a461c"
+        ],
+        [
+          "clm-p03-2",
+          "passage:db558da33b045594e1b564285d081a54"
+        ]
+      ],
+      "native_file_sha256": "sha256:3d4b2165eaec9babd316cab294c420818bc75807686a2eec3c7d690a9663fffb",
+      "native_package_sha256": "sha256:095d29eab9579331fbcf625348062b440fd619af7b00a183e36e7642f32713af",
+      "passed": true,
+      "receipt_file_sha256": "sha256:f90c3717d9f0f47e9411e3263ead1a58455061ace39767e06f4f3186af0c731d",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:927a6af34f9b9354dfcdb9cb19c2cb2f4851e2e9a3bcb843066425ab3d6f7900"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p04.yaml",
+          "evidence/src-p04-alder-triage/passages/passage:b40c68f3b906c744d45ee38384f9fc86.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p04",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "native_file_sha256": "sha256:d2f8eaec1e4b6fe4bde2dc1688af9edbda4740d256b24dfa636d3b878169e5ff",
+      "native_package_sha256": "sha256:9839e30627f82efc0a09f8f4b297af5d0c63f922895bb96f2ac891049b15e88a",
+      "passed": true,
+      "receipt_file_sha256": "sha256:eaed1221d18e77c00b3589bc4b0c247cec3e648f92c2ec5004135933f953b107",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:a3c6651f7c9ff90892fdd6141d12ac1abea65e10d384ea9569a2c6f2477d1bcb"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p05.yaml",
+          "evidence/src-p05-juniper-index/passages/passage:bfcaa9a2108d56a1c1c78f021bbf7620.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p05",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "native_file_sha256": "sha256:ec0e7baeba1bb59e646dece53ada6912b128a3751b4021473403e7238a5e7320",
+      "native_package_sha256": "sha256:a37e28c3a910afc2c6a10f2618e4d060edc079d682992d8317836a9072ec2732",
+      "passed": true,
+      "receipt_file_sha256": "sha256:9937e8b972b64bf05119c21eb6396f4929307943bae809e1f11ad8289d4d40dc",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:7b67d92ef540872ccbbd1acf7a50b5c03f5e6f87cf39f3ef79a9ed4a9b4b0b6f"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p06-1",
+            "passage:836fbe641896a4af00cb4226e5061c3f"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p06-1.yaml",
+          "claims/clm-p06-2.yaml",
+          "claims/clm-p06.yaml",
+          "evidence/src-p06-halcyon-log/passages/passage:836fbe641896a4af00cb4226e5061c3f.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p06",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p06-1",
+          "passage:836fbe641896a4af00cb4226e5061c3f"
+        ]
+      ],
+      "native_file_sha256": "sha256:00ebd87236048b1b2105093f229a0b5a3311069413f090d9f214e0353883c112",
+      "native_package_sha256": "sha256:d7a8a9d81547b5add94adce6145ea36992cc61fc53c4bf0779f0596da337cdea",
+      "passed": true,
+      "receipt_file_sha256": "sha256:8eb6a56652409f507094ca6942446073c8b1a464007bdd7406fddfa462d7b825",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:5d1c7ad518e6d08f19d0c68f325a0196afe788c43632bb4a8251dc351aa77118"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p07",
+            "passage:30c70607c2a17efa80e5359a93928099"
+          ],
+          [
+            "clm-p07",
+            "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p07.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:01417dd7eefe43b980adc51ab74a4533.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:30c70607c2a17efa80e5359a93928099.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:3df6561eae289c8f24b0440867b7840f.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:5d306cdaa07472969c0ceb55580955d4.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:6adcbccf2a04d9c75689ed2f09c7af0a.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:e1a9be46e92fc95e4b53d0cfc98a6eb0.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p07",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p07",
+          "passage:30c70607c2a17efa80e5359a93928099"
+        ],
+        [
+          "clm-p07",
+          "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+        ]
+      ],
+      "native_file_sha256": "sha256:0c8d878735f73d29fa6f7f60f859a7ca50c12fccae255f4ddb4f533493d3b03e",
+      "native_package_sha256": "sha256:6bd88da454649417405faab776ec7281f0bf9b76aebd558de18aa84b64bbc0c6",
+      "passed": true,
+      "receipt_file_sha256": "sha256:de880aa3128a0552354646dbeb72342ba51255a9c688bb4d9e0ab8a30c27fd5f",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:bcc5c9cfba98c1d9407bd24920e94e5f7c5311f0ceb0f82538998ed23a64c6b1"
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p08.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p08",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "native_file_sha256": "sha256:4fb66884a43d3212bad3c9579ae6c974d7162dd70bfb3c438df7f2ae251de850",
+      "native_package_sha256": "sha256:0fe104506d12e82f9573466ba3bce2860504655c6136a55e3754cbf7d9ef94e8",
+      "passed": true,
+      "receipt_file_sha256": "sha256:a965596980908c906a13da3c6288f8935028fd2b2a75d36d1cbec74a071dbf09",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:f8a1ed934dceeadd24a6a5f68d0fea2e4266bb2d066feaf71264f0b38cd17b2a"
+    }
+  ],
+  "checker_sha256": "sha256:ce01ddf7e9e306d9bcf5d4ff6c45572b990ed3e36dde725c225385f3c178e2a3",
+  "disposition": "PASS_B_CAL_CONSUMER_CHECKS",
+  "errors": [],
+  "expected_authority_commits": {
+    "cal": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+    "contract_b": "c314e53bd91c0736aa4370a364673b069aceb43e"
+  },
+  "identity_limit": "Pins require separately recorded installed artifact identity. This check binds that receipt but does not attest commits from module versions.",
+  "installed_identity_receipt": {
+    "path": "INSTALLED-IDENTITY.json",
+    "sha256": "sha256:f32ea1ea4eb91bedd4c8cd026bd0eabbc188d779324b104a1e9b46e990108f71"
+  },
+  "passed": true,
+  "publication_adaptation": "Machine-local run, identity receipt and virtualenv paths mapped to relative public labels; hashes, runtime versions, per-case checks, pairs and errors unchanged.",
+  "raw_result_sha256": "sha256:73c9cf412e19c5bf296d1757721b18a00b31180af3021cb76325594cf23c60e5",
+  "recorded_output_hashes_verified": true,
+  "replay_result_sha256": "sha256:189537c0f976978484d2cf3cb68bc0e7be5f034620c85f9872a79d44e08a3d9f",
+  "run_dir": "workflow-run-0f5e7d9-b",
+  "runtime": {
+    "executable": "bin/python",
+    "modules": {
+      "claim_audit_lab.contracts.factual_context": {
+        "path": "lib/python3.12/site-packages/claim_audit_lab/contracts/factual_context.py",
+        "sha256": "sha256:ed3d07cc1054188aad66fc67215697fb6fa2c8429e12c0caec79ff7c55dd0c82"
+      },
+      "validators.verify_contract_integrity": {
+        "path": "lib/python3.12/site-packages/validators/verify_contract_integrity.py",
+        "sha256": "sha256:f9ab373d4244b8f996b44157b83ff3caf0a906de96d1a6b5c282628f14560d13"
+      }
+    },
+    "prefix": "ISOLATED_VENV",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "versions": {
+      "apparatus-contracts": "0.1.0",
+      "claim-audit-lab": "0.6.0",
+      "evidence-bundler": "0.2.1.dev0"
+    }
+  },
+  "schema": "eb-v1-workflow-consumer-check-v1",
+  "scope": "Actual B/CAL integrity and admitted-pair checks; no semantic validation."
+}

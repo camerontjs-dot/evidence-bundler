@@ -1,0 +1,213 @@
+{
+  "admission_meaning": "Materially on-target and locally adequate for downstream semantic assessment; never support, refutation, truth, source authority, applicability or completeness.",
+  "candidate_ids_and_ranks": "UNOBSERVED; bind actual retained IDs after the first run without editing these expectations.",
+  "cases": [
+    {
+      "case_id": "p01",
+      "expected_opportunity": "adequate_context_required",
+      "gap_guard": "Do not confuse approval with the effective date.",
+      "reason": "A short source supplies exact procedure, revision and distinct approval/effective dates.",
+      "targets": [
+        "clm-p01"
+      ],
+      "witnesses": [
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 264,
+          "source_char_start": 123,
+          "source_content_sha256": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98",
+          "source_id": "src-p01-sable-record",
+          "text": "Document: Procedure Sable-17\nRevision: 4\nApproval date: 1 March 2031\nEffective date: 3 March 2031\nStatus: current in this fictional register.",
+          "text_sha256": "sha256:3cb18663c7ce2747746d3fed9df984025d4d8b39006d74a4165e0072fb4c5525"
+        }
+      ]
+    },
+    {
+      "case_id": "p02",
+      "expected_opportunity": "adequate_context_required_even_when_claim_number_differs",
+      "gap_guard": "Do not convert EB acceptance into a supports/refutes verdict.",
+      "reason": "The final record distinguishes invited from contributing sites; numerical disagreement is not an EB admission rejection reason.",
+      "targets": [
+        "clm-p02"
+      ],
+      "witnesses": [
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 329,
+          "source_char_start": 119,
+          "source_content_sha256": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5",
+          "source_id": "src-p02-lumen-report",
+          "text": "The final Lumen pilot report states that archived samples came from nine sites. Twelve sites were invited, but three provided no samples. These counts refer to contributing sites rather than individual samples.",
+          "text_sha256": "sha256:7db19d72831e7b9bf0ce08dd40e9f3c815d3ab6ddb396ee98d00d92bfac45f44"
+        }
+      ]
+    },
+    {
+      "case_id": "p03",
+      "expected_opportunity": "both_declared_children_need_adequate_context",
+      "gap_guard": "Shared Wren-4 identity alone does not give one child's passage authority for the other.",
+      "reason": "Each child has an explicit local rule in its own short source.",
+      "targets": [
+        "clm-p03-1",
+        "clm-p03-2"
+      ],
+      "witnesses": [
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 301,
+          "source_char_start": 129,
+          "source_content_sha256": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada",
+          "source_id": "src-p03-wren-review",
+          "target_id": "clm-p03-1",
+          "text": "Before document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release.",
+          "text_sha256": "sha256:7aebe60ce4217cab4429ec82ec20f33f23a7206afbe09c02bf37ca379646cb5f"
+        },
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 316,
+          "source_char_start": 137,
+          "source_content_sha256": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+          "source_id": "src-p03-wren-reconcile",
+          "target_id": "clm-p03-2",
+          "text": "Before document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision.",
+          "text_sha256": "sha256:ff6ecdb562289df44c701fdfd4c372d2eebb4fa5130402326b37450a4ba9a904"
+        }
+      ]
+    },
+    {
+      "case_id": "p04",
+      "empty_admission_is_honest": true,
+      "expected_opportunity": "honest_gap_required",
+      "gap_guard": "Do not infer that Alder's rule applies to Cedar.",
+      "permitted_review_states": [
+        "rejected",
+        "needs-review"
+      ],
+      "reason": "The only source governs Alder; the target concerns Cedar.",
+      "targets": [
+        "clm-p04"
+      ],
+      "witnesses": []
+    },
+    {
+      "case_id": "p05",
+      "empty_admission_is_honest": true,
+      "expected_opportunity": "honest_gap_required",
+      "gap_guard": "Keyword co-occurrence cannot reconstruct an absent qualified rule.",
+      "permitted_review_states": [
+        "rejected",
+        "needs-review"
+      ],
+      "reason": "Only index labels survive; quantity unit, clock-start relationship and governing population statement are absent.",
+      "targets": [
+        "clm-p05"
+      ],
+      "witnesses": []
+    },
+    {
+      "case_id": "p06",
+      "expected_opportunity": "one_child_adequate_other_child_gap",
+      "gap_guard": "Preserve the missing second child and incomplete parent coverage.",
+      "gap_target_id": "clm-p06-2",
+      "reason": "The signed-log child has an explicit witness; no 24-month retention record is supplied.",
+      "targets": [
+        "clm-p06-1",
+        "clm-p06-2"
+      ],
+      "witnesses": [
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 295,
+          "source_char_start": 107,
+          "source_content_sha256": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272",
+          "source_id": "src-p06-halcyon-log",
+          "target_id": "clm-p06-1",
+          "text": "The Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date.",
+          "text_sha256": "sha256:d44eac622cbfbfed308be24c06adf0b1a6bdfb7a3378f3d0f669ed74bc2678ba"
+        }
+      ]
+    },
+    {
+      "accepted_count_expectation": "NOT_FIXED; excluded from mandatory positive targets.",
+      "case_id": "p07",
+      "expected_opportunity": "bounded_context_limitation_observation",
+      "gap_guard": "Do not stitch passages or tune retrieval. Record sufficient context if documented output actually carries it; otherwise preserve an explicit unresolved/empty limitation.",
+      "reason": "The header binds subject/unit; a distant table binds value. Their separation exceeds several ordinary local chunks by construction.",
+      "targets": [
+        "clm-p07"
+      ],
+      "witnesses": [
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 218,
+          "source_char_start": 117,
+          "source_content_sha256": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3",
+          "source_id": "src-p07-archive-7q",
+          "text": "Archive note 7Q concerns the Ilex-9 solvent check. Its acceptance-ceiling field is expressed in mg/L.",
+          "text_sha256": "sha256:b8004c94321507f26fcacf45c61d85a819bb340029ec6d654d6b2f2a98fbe1b6"
+        },
+        {
+          "authority": "Evaluation-only source witness, never a preselected EB runtime passage",
+          "offset_domain": "Unicode code points in exact inline Contract A source content; end exclusive",
+          "source_char_end": 6651,
+          "source_char_start": 6484,
+          "source_content_sha256": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3",
+          "source_id": "src-p07-archive-7q",
+          "text": "Decision table for archive note 7Q\n\nAcceptance ceiling: 0.08.\nThe subject key and measurement unit for this field are defined in the opening header of archive note 7Q.",
+          "text_sha256": "sha256:a24ff983796c116bb5b7a031a28a62170f7da2dcb33d4a27104d0ecf3b92914b"
+        }
+      ]
+    },
+    {
+      "case_id": "p08",
+      "empty_admission_is_honest": true,
+      "expected_opportunity": "honest_empty_corpus_required",
+      "gap_guard": "No invented or silently fetched sources and no coverage claim.",
+      "reason": "Contract A explicitly supplies no source representation.",
+      "targets": [
+        "clm-p08"
+      ],
+      "witnesses": []
+    }
+  ],
+  "evaluation_only": true,
+  "kit_id": "eb-synthetic-operator-acceptance-rc0",
+  "kit_version": "0.1.0",
+  "limitation_targets": [
+    "clm-p07"
+  ],
+  "mandatory_adequate_targets": [
+    "clm-p01",
+    "clm-p02",
+    "clm-p03-1",
+    "clm-p03-2",
+    "clm-p06-1"
+  ],
+  "mandatory_gap_targets": [
+    "clm-p04",
+    "clm-p05",
+    "clm-p06-2",
+    "clm-p08"
+  ],
+  "not_for_runtime_or_initial_operator_aperture": true,
+  "overall_gate": {
+    "all_of_complete_parent": "p03 only, after both child obligations clear",
+    "all_of_incomplete_parent": "p06: the second-child gap must be visible in artifacts and operator record",
+    "always_accept_control": "FAIL: admits wrong-subject, fragment or missing-child relationships when candidates exist",
+    "always_reject_control": "FAIL: misses all five mandatory adequate targets",
+    "empty_admission_policy": "Valid on negative/limitation cases; not a global usefulness pass.",
+    "gap_output_requirement": "For every mandatory gap, cite the emitted target/execution/candidate admission fields and an operator coverage record naming that target; no inferred complete parent.",
+    "mandatory_gap_targets_with_no_unsupported_accepted_relationship": 4,
+    "positive_targets_with_at_least_one_reviewed_adequate_retained_candidate": 5,
+    "product_gate": "Installed workflow plus integrity/admission/provenance checks and the named opportunity/gap conditions.",
+    "scientific_claim": "None: engineering acceptance/development only."
+  },
+  "schema": "eb-synthetic-operator-opportunities-v1",
+  "scope": "Engineered acceptance/development opportunities only; no population-performance estimate."
+}

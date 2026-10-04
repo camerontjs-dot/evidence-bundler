@@ -1,0 +1,93 @@
+{
+  "all_content": "Fictional documents and claims authored for this public software acceptance kit.",
+  "authoring_basis": [
+    "Released Contract A2 wire shape and exact validator",
+    "EB #121 admission meaning only",
+    "Original synthetic authorship",
+    "Earlier scope discussion, without this fixture-output exposure"
+  ],
+  "case_count": 8,
+  "case_plan": [
+    {
+      "case_id": "p01",
+      "shape": "simple root; short document-status opportunity"
+    },
+    {
+      "case_id": "p02",
+      "shape": "simple root; complete context with numerical disagreement"
+    },
+    {
+      "case_id": "p03",
+      "shape": "declared all_of; two explicit opportunities"
+    },
+    {
+      "case_id": "p04",
+      "shape": "simple root; wrong-subject decoy"
+    },
+    {
+      "case_id": "p05",
+      "shape": "simple root; missing qualifier/relationship fragment"
+    },
+    {
+      "case_id": "p06",
+      "shape": "declared all_of; one opportunity and one missing child"
+    },
+    {
+      "case_id": "p07",
+      "shape": "simple root; deliberately distant source context"
+    },
+    {
+      "case_id": "p08",
+      "shape": "simple root; explicit empty source collection"
+    }
+  ],
+  "classification": "engineering_acceptance_development",
+  "contract_a_authority": {
+    "release_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+    "repository": "camerontjs-dot/apparatus-contracts",
+    "validator_blob": "42e5f5b3bf38d677445e9d01ea130ba604e53409",
+    "validator_path": "validators/contract_a_rc2.py",
+    "version": "2.0.0"
+  },
+  "design_timestamp_utc": "2026-10-04T12:52:14Z",
+  "eb_outputs_on_this_kit_before_freeze": "NOT_RUN_NOT_OBSERVED",
+  "input_order": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ],
+  "kit_id": "eb-synthetic-operator-acceptance-rc0",
+  "protected_boundaries": [
+    "No EB runtime, retrieval, profile, admission semantics or historical rubric change.",
+    "No model/API invocation in construction.",
+    "No private #121 packet or #123/#124 population content.",
+    "No replacement, relaxation or relabeling of #121/#123/#124 protocols/results.",
+    "No representative-population, recall, reviewer-accuracy or truth claim.",
+    "Inputs/expectations frozen before observing any EB output on these inputs."
+  ],
+  "review_roles": {
+    "evaluation_aperture_after_operator_review_freeze": [
+      "EVALUATION-GUIDE.md",
+      "EXPECTED-OPPORTUNITIES.json",
+      "MANIFEST.json",
+      "DESIGN.json",
+      "FREEZE.json",
+      "SHA256SUMS"
+    ],
+    "independence_claim": "None implied by separate files; record actual identity and exposure.",
+    "initial_operator_aperture": [
+      "inputs/*.contract-a.json",
+      "OPERATOR-RUN.md",
+      "REVIEWER-GUIDE.md",
+      "supported installed CLI documentation"
+    ]
+  },
+  "schema": "eb-synthetic-operator-kit-design-v1",
+  "subject_under_test": "Separately pinned installed EB V1 candidate; no EB behavior fixed or modified by the kit.",
+  "version": "0.1.0"
+}

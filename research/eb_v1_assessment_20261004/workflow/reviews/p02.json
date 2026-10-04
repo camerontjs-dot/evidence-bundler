@@ -1,0 +1,25 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:ae5cf93d457dc972a62bcd167cfad451b28ea811778d5ab9cb82577b5f7889f4",
+    "native_package_sha256": "sha256:43d9b05931035df0933898b52506195e600d5efa3e64c771b9c0fb8312cb0ccf",
+    "review_packet_sha256": "sha256:22085ed39b0f7bec3876d43dff4018bed771b3d6c8b8445fc445f6f04d6b504b"
+  },
+  "case_id": "p02",
+  "coverage_notes": {
+    "clm-p02": "One retained relationship is accepted for later assessment. The exported passage identifies the Lumen pilot, archived material, contributing sites, and the separate invitation count. Its different contributing-site number is a downstream assessment issue, not a local-context gap."
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:2d032bfab20acc5b49eb331ad9db2153",
+      "proposition_id": "clm-p02",
+      "reason": "The passage directly describes the Lumen pilot's archived samples and distinguishes nine contributing sites from twelve invited sites. The relevant population and count relationship are explicit despite the numerical disagreement."
+    }
+  ],
+  "elapsed_seconds": 24,
+  "manual_friction": "Read the packet and matched its retained pair to the editable JSON. The contributing-site count and invitation count required a semantic distinction but were explicitly labeled in the exported passage. No source lookup or private reconstruction was needed; decision and coverage notes were entered manually.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

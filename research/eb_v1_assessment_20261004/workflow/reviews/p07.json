@@ -1,0 +1,37 @@
+{
+  "bindings": {
+    "input_sha256": "sha256:e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c",
+    "inspect_sha256": "sha256:fec9273b818fd9a917839a720f60cc4890245e2325883bbfcd28a791242671ec",
+    "native_file_sha256": "sha256:75aff1812ebabd204873bfe20edf5b28ed393e1f16329ad97a0ad08cdc8b26c0",
+    "native_package_sha256": "sha256:fd7b1eeb1512179166394096461a0df4e1719d068072ebc39b3f74e42707cbc1",
+    "review_packet_sha256": "sha256:07e0744f9fe649f6826df8abc27189de8b807041989e96b221409310b7c474fb"
+  },
+  "case_id": "p07",
+  "coverage_notes": {
+    "clm-p07": "The opening-header relationship (passage:30c70607c2a17efa80e5359a93928099) and the decision-table relationship (passage:6adcbccf2a04d9c75689ed2f09c7af0a) are accepted. The header identifies Ilex-9, the acceptance-ceiling field, and mg/L; the table gives 0.08 and expressly assigns its subject/unit to that same note's header. Both are exported with matching source identity/hash, so the needed cross-reference is visible rather than a private reconstruction. Neither individual quote contains the whole numerical proposition, and the table must remain interpretable with that retained header. The custody passage is rejected as outside the analytical relationship. Source inspection verified the linkage; no new combined passage was created. Admission leaves semantic conclusions to later assessment."
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:30c70607c2a17efa80e5359a93928099",
+      "proposition_id": "clm-p07",
+      "reason": "It explicitly identifies the Ilex-9 solvent check and its acceptance-ceiling field in mg/L, and points to the same note's decision table. This is interpretable target-specific field context, although the header itself does not state a numerical ceiling."
+    },
+    {
+      "decision": "accepted",
+      "passage_id": "passage:6adcbccf2a04d9c75689ed2f09c7af0a",
+      "proposition_id": "clm-p07",
+      "reason": "It states the acceptance ceiling for note 7Q and explicitly refers its subject/unit to that note's header. The same-source retained header identifies Ilex-9 and mg/L, and source inspection confirmed the linkage. The relationship is assessable in the exported packet with that visible context, though the table alone omits subject and unit."
+    },
+    {
+      "decision": "rejected",
+      "passage_id": "passage:01417dd7eefe43b980adc51ab74a4533",
+      "proposition_id": "clm-p07",
+      "reason": "These entries concern envelope transfers, page counts, and shelf positions. They provide no analytical ceiling value, subject/unit definition, or other material relationship to the Ilex-9 acceptance limit."
+    }
+  ],
+  "elapsed_seconds": 112,
+  "manual_friction": "Opened inputs/p07.contract-a.json because the retained decision table omits its subject and unit locally and points to a distant opening header. Source inspection confirmed that the Ilex-9/mg/L header and 0.08 decision table are parts of the same note, with only custody entries between them. Manually matched note 7Q, source_id, source hash, and the retained header/table identities. The packet already exports both ends and their explicit cross-references, so its relationships can be interpreted without private source text or a stitched passage. The table is not self-contained if later displayed alone; this admission uses the visible retained same-note context. No IDs or offsets were changed.",
+  "reviewer": "fresh-agent-engineering-review",
+  "schema": "eb-workflow-review-v1"
+}

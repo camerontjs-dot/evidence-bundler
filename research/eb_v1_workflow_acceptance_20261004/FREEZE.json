@@ -1,0 +1,98 @@
+{
+  "closure_algorithm": "SHA-256 canonical sorted compact UTF-8 JSON of {schema: eb-synthetic-operator-kit-closure-v1, files: members}; path-sorted members exclude FREEZE.json and SHA256SUMS; SHA256SUMS hash separately bound",
+  "closure_sha256": "sha256:01cac06293afdb4fd145c3f7b64464799620eac2fcce80ffc2d5bc677553878c",
+  "construction_deviations": [
+    "First code-mode script submission failed JavaScript parsing before any file creation, hashing, validation or EB execution; corrected serialization of construction code before freeze."
+  ],
+  "design_sha256": "sha256:0ccfc207a3349f288ff5f58def4254d1fa36ae742c7b4c3c8da4bc1074e7a54a",
+  "design_timestamp_utc": "2026-10-04T12:52:14Z",
+  "eb_execution_before_freeze": "NOT_RUN",
+  "eb_output_exposure_before_freeze": "NONE_FOR_THIS_KIT",
+  "expected_opportunities_sha256": "sha256:007ac4adf16038746d251ac5c099847ac25ed7cc4c3834c7c22bfca6cc1cb0e6",
+  "files": [
+    {
+      "bytes": 3008,
+      "path": "DESIGN.json",
+      "sha256": "sha256:0ccfc207a3349f288ff5f58def4254d1fa36ae742c7b4c3c8da4bc1074e7a54a"
+    },
+    {
+      "bytes": 4076,
+      "path": "EVALUATION-GUIDE.md",
+      "sha256": "sha256:72f3bd8d2683700fe93f40358cb5f899258df9fce071c232f8163c91385a32a3"
+    },
+    {
+      "bytes": 10810,
+      "path": "EXPECTED-OPPORTUNITIES.json",
+      "sha256": "sha256:007ac4adf16038746d251ac5c099847ac25ed7cc4c3834c7c22bfca6cc1cb0e6"
+    },
+    {
+      "bytes": 6752,
+      "path": "MANIFEST.json",
+      "sha256": "sha256:1a880982a126bbd7ff7b23ad3027d6f5e7a982a3f904269a1177dade86ecc4fd"
+    },
+    {
+      "bytes": 1920,
+      "path": "OPERATOR-RUN.md",
+      "sha256": "sha256:28b2cb5661ed9aae5cd71cd71adf35cd1abbe5e31f9e33e54496fd05aacbc0c2"
+    },
+    {
+      "bytes": 2462,
+      "path": "README.md",
+      "sha256": "sha256:bdd1e3058b140e3f965d970666ab52476a865731c9bc2ce094339117798d84c6"
+    },
+    {
+      "bytes": 1763,
+      "path": "REVIEWER-GUIDE.md",
+      "sha256": "sha256:625cd55ee2cd303b4999ca1dfff153813dceadcf9f152e01f4035ad5bdd73a2e"
+    },
+    {
+      "bytes": 1361,
+      "path": "inputs/p01.contract-a.json",
+      "sha256": "sha256:40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf"
+    },
+    {
+      "bytes": 1369,
+      "path": "inputs/p02.contract-a.json",
+      "sha256": "sha256:b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8"
+    },
+    {
+      "bytes": 2749,
+      "path": "inputs/p03.contract-a.json",
+      "sha256": "sha256:514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14"
+    },
+    {
+      "bytes": 1281,
+      "path": "inputs/p04.contract-a.json",
+      "sha256": "sha256:253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62"
+    },
+    {
+      "bytes": 1353,
+      "path": "inputs/p05.contract-a.json",
+      "sha256": "sha256:23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe"
+    },
+    {
+      "bytes": 1993,
+      "path": "inputs/p06.contract-a.json",
+      "sha256": "sha256:53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376"
+    },
+    {
+      "bytes": 7624,
+      "path": "inputs/p07.contract-a.json",
+      "sha256": "sha256:e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c"
+    },
+    {
+      "bytes": 636,
+      "path": "inputs/p08.contract-a.json",
+      "sha256": "sha256:dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f"
+    }
+  ],
+  "frozen_at_utc": "2026-10-04T13:03:21Z",
+  "kit_id": "eb-synthetic-operator-acceptance-rc0",
+  "kit_version": "0.1.0",
+  "manifest_sha256": "sha256:1a880982a126bbd7ff7b23ad3027d6f5e7a982a3f904269a1177dade86ecc4fd",
+  "model_api_invocations_during_construction": 0,
+  "private_research_material_used": false,
+  "schema": "eb-synthetic-operator-kit-freeze-v1",
+  "sha256sums_sha256": "sha256:6139faab33b302adb1d73db65743554ca0ec5dcdadd5b2e7089d151b191e8f23",
+  "verification_posture": "Authoring/hashing only; EB not imported or executed. Root runs canonical/mechanical checks after freeze."
+}

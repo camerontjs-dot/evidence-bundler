@@ -1,0 +1,623 @@
+{
+  "artifacts": [
+    {
+      "all_payload_files_match_installed_and_exact_git_source": true,
+      "distribution": "evidence-bundler",
+      "installed_archive_metadata_hash_matches": true,
+      "payload_files": {
+        "evidence_bundler/__init__.py": {
+          "sha256": "sha256:0f02dbb9b1e0cf7c04b53b2f120f6f3e9c2ab395732be0635269c073fbb7a0e3",
+          "source_path": "src/evidence_bundler/__init__.py"
+        },
+        "evidence_bundler/cli.py": {
+          "sha256": "sha256:ae2691e24a77d607fefd4bea62ae75fe3565c1953d84aa79c7e8942971384fa7",
+          "source_path": "src/evidence_bundler/cli.py"
+        },
+        "evidence_bundler/contracts/__init__.py": {
+          "sha256": "sha256:5eb265db8645d86d869f7d36e3fe745caa3eb40c41a65cfb62a1fde807e65f87",
+          "source_path": "src/evidence_bundler/contracts/__init__.py"
+        },
+        "evidence_bundler/contracts/discovery.py": {
+          "sha256": "sha256:a79b4249a30f7ad2c66e6ee8d21e8e2f8bc411ba64b619f997b73e0a78e48c4a",
+          "source_path": "src/evidence_bundler/contracts/discovery.py"
+        },
+        "evidence_bundler/contracts/factual_context.py": {
+          "sha256": "sha256:4c08d7be196440adfbc6952727c8e6a16a3aaa64fca8c7832ec3a4af4a935548",
+          "source_path": "src/evidence_bundler/contracts/factual_context.py"
+        },
+        "evidence_bundler/contracts/hashing.py": {
+          "sha256": "sha256:3ba75c4ad871e2c23f718e6e1d193f82134f02ed3aefa5832957e26e7996f587",
+          "source_path": "src/evidence_bundler/contracts/hashing.py"
+        },
+        "evidence_bundler/contracts/intake.py": {
+          "sha256": "sha256:5e6afe98bfcb2b8f46f9cb24f7c29e9ddf725d16adfdfb2fbd2d522773e48236",
+          "source_path": "src/evidence_bundler/contracts/intake.py"
+        },
+        "evidence_bundler/contracts/writer.py": {
+          "sha256": "sha256:348229e83227d5d174cbf86846f740f80618fff9fab956abab1c5abc91160242",
+          "source_path": "src/evidence_bundler/contracts/writer.py"
+        },
+        "evidence_bundler/contracts/yaml_io.py": {
+          "sha256": "sha256:44dd1501f8fb1e5eb31a56feae118e646a08a7544f193f180bcc6f6a830310e9",
+          "source_path": "src/evidence_bundler/contracts/yaml_io.py"
+        },
+        "evidence_bundler/ingest/__init__.py": {
+          "sha256": "sha256:78a0adc137fdb09ec4641177035df979f6402ac70f67f5cfc4c77d20a8867bdf",
+          "source_path": "src/evidence_bundler/ingest/__init__.py"
+        },
+        "evidence_bundler/ingest/chunker.py": {
+          "sha256": "sha256:04000c391c857b42e0654a47e26135f6a499db4821208e91f728bb509e60b490",
+          "source_path": "src/evidence_bundler/ingest/chunker.py"
+        },
+        "evidence_bundler/ingest/dedup.py": {
+          "sha256": "sha256:012ad5381c29ea7bcb72a7e632ef08e171d6ed47c1e4bd82e60e7a9227106b23",
+          "source_path": "src/evidence_bundler/ingest/dedup.py"
+        },
+        "evidence_bundler/ingest/loader.py": {
+          "sha256": "sha256:b3b3f9fe24317f615719ac727899a2f97d05020fabcea9f5af6fe96def9c0e9b",
+          "source_path": "src/evidence_bundler/ingest/loader.py"
+        },
+        "evidence_bundler/ingest/pdf_extractor.py": {
+          "sha256": "sha256:83adac9a3d4530e4f68683ed1e09770605643401aa0847c5026d93b52dc165f2",
+          "source_path": "src/evidence_bundler/ingest/pdf_extractor.py"
+        },
+        "evidence_bundler/models/__init__.py": {
+          "sha256": "sha256:d4a48102e135b723905e0c34d865d1a2421f00726dd19d5d22180dc3c019d3ba",
+          "source_path": "src/evidence_bundler/models/__init__.py"
+        },
+        "evidence_bundler/models/ca.py": {
+          "sha256": "sha256:cbb19a366a675612fde5feb8b9f15038750e714e8251573ad3200d3d7c39de10",
+          "source_path": "src/evidence_bundler/models/ca.py"
+        },
+        "evidence_bundler/models/cb.py": {
+          "sha256": "sha256:90b6d3c64d6efcb3adf4ae2ad9a92bce117b5cfb461a2c8337e38bec6e51767c",
+          "source_path": "src/evidence_bundler/models/cb.py"
+        },
+        "evidence_bundler/models/common.py": {
+          "sha256": "sha256:bee90e04da7a149f7e2896960fbc03ee67875bfcf22193569429f0ca750b61c5",
+          "source_path": "src/evidence_bundler/models/common.py"
+        },
+        "evidence_bundler/models/deviation.py": {
+          "sha256": "sha256:5ab0b315fb104d6080b64c041ccb391c568f5592f7dce7174bc66da850e5892f",
+          "source_path": "src/evidence_bundler/models/deviation.py"
+        },
+        "evidence_bundler/models/document.py": {
+          "sha256": "sha256:0b04feda12917c98decb3d83b28be116fd5f3ca0a2849f4d9c66c3d4c883f0f5",
+          "source_path": "src/evidence_bundler/models/document.py"
+        },
+        "evidence_bundler/models/refinement.py": {
+          "sha256": "sha256:487be1d30ac1cb88d124dacf84cda77baa9145e14b4a3d70fa66ecd878d8d178",
+          "source_path": "src/evidence_bundler/models/refinement.py"
+        },
+        "evidence_bundler/models/retrieval.py": {
+          "sha256": "sha256:8ac23a3a920264ece17f4a417294d24a5e20c87a6267e52f3099a7cbfe386eab",
+          "source_path": "src/evidence_bundler/models/retrieval.py"
+        },
+        "evidence_bundler/models/review.py": {
+          "sha256": "sha256:6fae3ad54fdeb159eee37779b10de63dea3490e5d060fc9cf8d526a3559a107a",
+          "source_path": "src/evidence_bundler/models/review.py"
+        },
+        "evidence_bundler/output/__init__.py": {
+          "sha256": "sha256:ab886c498a031e5813e95f8f84e3ab8fe29b4329e2cab409b802a929c83bdebf",
+          "source_path": "src/evidence_bundler/output/__init__.py"
+        },
+        "evidence_bundler/output/finalizer.py": {
+          "sha256": "sha256:48d6f35aed68d627321f8465bb9f94a967d69a8bbd7044a88459cfca677fdefb",
+          "source_path": "src/evidence_bundler/output/finalizer.py"
+        },
+        "evidence_bundler/output/refiner.py": {
+          "sha256": "sha256:e1bcd647446ba8e48d95b2a50c43e0398a7db9b3f49c9bd665330719197f0daf",
+          "source_path": "src/evidence_bundler/output/refiner.py"
+        },
+        "evidence_bundler/production_v1/__init__.py": {
+          "sha256": "sha256:918b3c50b8c21719e20a57b88fceca0924c32a6a31b278b205c3c37fb4a3303b",
+          "source_path": "src/evidence_bundler/production_v1/__init__.py"
+        },
+        "evidence_bundler/production_v1/cli.py": {
+          "sha256": "sha256:3bc157b402293ef89f9dcee972dd140efdfa8b19cd02858a5bd752c9e3c043c4",
+          "source_path": "src/evidence_bundler/production_v1/cli.py"
+        },
+        "evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json": {
+          "sha256": "sha256:7e5f88de38245c74bcda665027ba2bbbeddbe329fc6b632065dfd3cea7d8d2db",
+          "source_path": "src/evidence_bundler/production_v1/data/contract_b_compatibility_carrier.json"
+        },
+        "evidence_bundler/production_v1/execution.py": {
+          "sha256": "sha256:5b38e28094ac25431ffde4e3501194f7e396667bebb558efa5a22f50afa78067",
+          "source_path": "src/evidence_bundler/production_v1/execution.py"
+        },
+        "evidence_bundler/reports/__init__.py": {
+          "sha256": "sha256:9103fa39e2f16adef1bc92dd89aa2cdabf09abecc6f8f19f73f533783862f5f9",
+          "source_path": "src/evidence_bundler/reports/__init__.py"
+        },
+        "evidence_bundler/reports/coverage.py": {
+          "sha256": "sha256:430e5d399a5470b87498c95f566af228a58c9efeeb79da0f9f97374a003a9a71",
+          "source_path": "src/evidence_bundler/reports/coverage.py"
+        },
+        "evidence_bundler/reports/retrieval_comparison.py": {
+          "sha256": "sha256:d1fd2b82edb1c3ed645694f319c90b980f1cf5e31b4fa1ff7af6fea3cc7cb56e",
+          "source_path": "src/evidence_bundler/reports/retrieval_comparison.py"
+        },
+        "evidence_bundler/retrieval/__init__.py": {
+          "sha256": "sha256:2e8ad637850b6ad1c72dce2af4a3178d4247b75dc08be05b28755ccd96b6e22f",
+          "source_path": "src/evidence_bundler/retrieval/__init__.py"
+        },
+        "evidence_bundler/retrieval/_indexable.py": {
+          "sha256": "sha256:0cbba697e79960bb75ee62a0ee913742153e8fa91cd9362188488318dab0aa4f",
+          "source_path": "src/evidence_bundler/retrieval/_indexable.py"
+        },
+        "evidence_bundler/retrieval/bm25_retriever.py": {
+          "sha256": "sha256:f2f309d5b53c44d3232f62ca78ab0dc33b71b4409d04550c4ecbb239dc1be20c",
+          "source_path": "src/evidence_bundler/retrieval/bm25_retriever.py"
+        },
+        "evidence_bundler/retrieval/contradiction.py": {
+          "sha256": "sha256:a2b0ddbeb210ae4fa11e84ead0b86b114b88ac447867d835541fc64102d857f7",
+          "source_path": "src/evidence_bundler/retrieval/contradiction.py"
+        },
+        "evidence_bundler/retrieval/embedding_retriever.py": {
+          "sha256": "sha256:6fd2a40572ef814cb652656e7404e786e976376d71128f3a3148f42c24961635",
+          "source_path": "src/evidence_bundler/retrieval/embedding_retriever.py"
+        },
+        "evidence_bundler/retrieval/hits.py": {
+          "sha256": "sha256:fa0d0b8b8ae9b9b307fbee1f7abd30c9ed3e821f0fbf0fe93f21b19a161c8e51",
+          "source_path": "src/evidence_bundler/retrieval/hits.py"
+        },
+        "evidence_bundler/retrieval/hybrid.py": {
+          "sha256": "sha256:2d0c3b2c3c8a179c96dacdbf3456b67f01b77cc22b15c1c70daaa89d831a6214",
+          "source_path": "src/evidence_bundler/retrieval/hybrid.py"
+        },
+        "evidence_bundler/retrieval/parent_aggregator.py": {
+          "sha256": "sha256:b1a25ca4562fb908b6aa03f6809bcb488a4e3d1630a3a009e3d5c5510aebd961",
+          "source_path": "src/evidence_bundler/retrieval/parent_aggregator.py"
+        },
+        "evidence_bundler/retrieval/reranker.py": {
+          "sha256": "sha256:f18ccf85a9da3c778694fedc1ea8803d448ba3f5e69d9ac5de82fcd46990f22b",
+          "source_path": "src/evidence_bundler/retrieval/reranker.py"
+        },
+        "evidence_bundler/review/__init__.py": {
+          "sha256": "sha256:db3392dee9b4ba3f9d42ac42f181b7e5094eae5b7a8890ec29f717ef86d51779",
+          "source_path": "src/evidence_bundler/review/__init__.py"
+        },
+        "evidence_bundler/review/annotator.py": {
+          "sha256": "sha256:9073f4e9c7d56eb2406f0002df958c705e732ed1762b9fb0b4ae7095b8304450",
+          "source_path": "src/evidence_bundler/review/annotator.py"
+        },
+        "evidence_bundler/review/io.py": {
+          "sha256": "sha256:e3ad4a867d3616628146ae3eecb2001748f4d9763963ccd70193e146fa73936d",
+          "source_path": "src/evidence_bundler/review/io.py"
+        },
+        "evidence_bundler/v1/__init__.py": {
+          "sha256": "sha256:806393664a54decee0baa9b72f45dc7e267a9f88a2908451e5b5c9b8e18a7aa1",
+          "source_path": "src/evidence_bundler/v1/__init__.py"
+        },
+        "evidence_bundler/v1/__main__.py": {
+          "sha256": "sha256:67e4be71268901bb1466317048bc4e94db5fd28349e38f5dc7b2a4152a37f236",
+          "source_path": "src/evidence_bundler/v1/__main__.py"
+        },
+        "evidence_bundler/v1/builder.py": {
+          "sha256": "sha256:eef42bef212a143028aef676f42a1178f1aaf66d2092f2cab4d6afeec068d01a",
+          "source_path": "src/evidence_bundler/v1/builder.py"
+        },
+        "evidence_bundler/v1/contract_a.py": {
+          "sha256": "sha256:0a40ff6e297c15060c67924f31cacb866fb6b445abe300c70124e08b5fa47111",
+          "source_path": "src/evidence_bundler/v1/contract_a.py"
+        },
+        "evidence_bundler/v1/contract_b.py": {
+          "sha256": "sha256:dbc6a9d100f70695bcd74ffcb1fa6cba700f22a822d82b3387ed87e3b9ad5157",
+          "source_path": "src/evidence_bundler/v1/contract_b.py"
+        },
+        "evidence_bundler/v1/package.py": {
+          "sha256": "sha256:a85329bc65afffac7c6701135f7a6c7c054d02a9efe29242aabc1b464f71b985",
+          "source_path": "src/evidence_bundler/v1/package.py"
+        },
+        "evidence_bundler/v1/retrieval.py": {
+          "sha256": "sha256:4018358c2dfab33fb2ed7cbecef7ea70305633d655e5dbeb5065df9a2251f416",
+          "source_path": "src/evidence_bundler/v1/retrieval.py"
+        }
+      },
+      "source_commit": "0f5e7d9df2d4fe223b737bea27281c90cdfe0ebb",
+      "source_tree": "ffaa4e14b14f1863bdc482453e9830d3bc1b0273",
+      "version": "0.2.1.dev0",
+      "wheel_filename": "evidence_bundler-0.2.1.dev0-py3-none-any.whl",
+      "wheel_sha256": "sha256:63a1d6a3c89f2fb4daef6825773c024f6dc0f392a889e07d0adf3779f6b90a14"
+    },
+    {
+      "all_payload_files_match_installed_and_exact_git_source": true,
+      "distribution": "apparatus-contracts",
+      "installed_archive_metadata_hash_matches": true,
+      "payload_files": {
+        "validators/__init__.py": {
+          "sha256": "sha256:d14bd89bf04ba252ece6071ff8e4d4c79c31b29c5334c69f205c9da21ddfa233",
+          "source_path": "validators/__init__.py"
+        },
+        "validators/__main__.py": {
+          "sha256": "sha256:4ef74bb551c2f755b547477feaa8bbc6ea471363ca6dfac2490b5e9e38dd6056",
+          "source_path": "validators/__main__.py"
+        },
+        "validators/_hashing.py": {
+          "sha256": "sha256:94b17f310b90630b21eedf4143ffe9a57b4dfb31486a037e52fec89166af0a5c",
+          "source_path": "validators/_hashing.py"
+        },
+        "validators/_models.py": {
+          "sha256": "sha256:a55871ae74af9943d1b19de62a2c9f7a60044a39759c5915381ba1f93d3a0c27",
+          "source_path": "validators/_models.py"
+        },
+        "validators/_vocabulary.py": {
+          "sha256": "sha256:04b7f616bae2b417a1a660d98539eac9c328c3132b1cac8a7e5b938eb2ce1d8a",
+          "source_path": "validators/_vocabulary.py"
+        },
+        "validators/contract_b_factual_context.py": {
+          "sha256": "sha256:dca5af8712cb64f4312ef5e4474873a0668dc9e2fc34d4edbe4026027f06f0a4",
+          "source_path": "validators/contract_b_factual_context.py"
+        },
+        "validators/verify_contract_integrity.py": {
+          "sha256": "sha256:f9ab373d4244b8f996b44157b83ff3caf0a906de96d1a6b5c282628f14560d13",
+          "source_path": "validators/verify_contract_integrity.py"
+        },
+        "validators/verify_spec_vocabulary.py": {
+          "sha256": "sha256:12fa92fdf10a3e357006fba4697ea464cee219c69052d35509fa08dee149f2e1",
+          "source_path": "validators/verify_spec_vocabulary.py"
+        },
+        "validators/verify_vocabulary.py": {
+          "sha256": "sha256:238219d1aa3cf063cb255188eaa7a302e85e12146653b836bb1f2c48148a9b50",
+          "source_path": "validators/verify_vocabulary.py"
+        }
+      },
+      "source_commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+      "source_tree": "f3f142ec8cceb9aaf7d0c138c90b35c3576d77a1",
+      "version": "0.1.0",
+      "wheel_filename": "apparatus_contracts-0.1.0-py3-none-any.whl",
+      "wheel_sha256": "sha256:01ab5bccc822d2d9787c359bd369045ac670e1a32180e5967d3883505a307a11"
+    },
+    {
+      "all_payload_files_match_installed_and_exact_git_source": true,
+      "distribution": "claim-audit-lab",
+      "installed_archive_metadata_hash_matches": true,
+      "payload_files": {
+        "claim_audit_lab/__init__.py": {
+          "sha256": "sha256:499d8cdee8877734a40c857b4125d67c39c5f7faff8a209e6e296a8d5649c4d1",
+          "source_path": "src/claim_audit_lab/__init__.py"
+        },
+        "claim_audit_lab/assets/report.css": {
+          "sha256": "sha256:a7dcc9e40fe70c4c2ac7f754d7ee770abfffa6d3cb58f6db147443d90f2d17bf",
+          "source_path": "src/claim_audit_lab/assets/report.css"
+        },
+        "claim_audit_lab/auditor.py": {
+          "sha256": "sha256:69b382e00f56aaee9dd1b7a69809ea79fc13fad8e04544115c4b90bf11bc1d71",
+          "source_path": "src/claim_audit_lab/auditor.py"
+        },
+        "claim_audit_lab/claim_extraction.py": {
+          "sha256": "sha256:c272b3c412c2c8b3afbea2711c3b926c0ee173edda2dd4a1e2382a6fde6cbd23",
+          "source_path": "src/claim_audit_lab/claim_extraction.py"
+        },
+        "claim_audit_lab/classifiers.py": {
+          "sha256": "sha256:87b9bff3a9dc178a9851dd0a436d5ed8b82c4a40619e5d3d9644a5549c7d490a",
+          "source_path": "src/claim_audit_lab/classifiers.py"
+        },
+        "claim_audit_lab/cli.py": {
+          "sha256": "sha256:70b584e3bc82cc05a610ea7980051965614508505ff1ed4f26b1fcce4b962274",
+          "source_path": "src/claim_audit_lab/cli.py"
+        },
+        "claim_audit_lab/contracts/__init__.py": {
+          "sha256": "sha256:455b0fd00775d9c373c6bf323ba2dd54998f6ce1cd9960af4bfacd35902152e7",
+          "source_path": "src/claim_audit_lab/contracts/__init__.py"
+        },
+        "claim_audit_lab/contracts/adapter.py": {
+          "sha256": "sha256:d420b53b29c6126b07b77edf6620dd049a566011c0abbf1f88029b873edc5ed0",
+          "source_path": "src/claim_audit_lab/contracts/adapter.py"
+        },
+        "claim_audit_lab/contracts/audit_flags.py": {
+          "sha256": "sha256:fc31ca99356023a36ef3eb352d97066af88eca8a082aa6cfaa8185a2c8fba12d",
+          "source_path": "src/claim_audit_lab/contracts/audit_flags.py"
+        },
+        "claim_audit_lab/contracts/bundle_loader.py": {
+          "sha256": "sha256:9e1b58a2b27b40c4bf920daa84debe15fe7174e63a3a9f12cd069915fbb4bb22",
+          "source_path": "src/claim_audit_lab/contracts/bundle_loader.py"
+        },
+        "claim_audit_lab/contracts/cb_models.py": {
+          "sha256": "sha256:aabe9015f8aae81fb3b31e3269f1218d2fe1176c72dd9177da2729fa67fade1d",
+          "source_path": "src/claim_audit_lab/contracts/cb_models.py"
+        },
+        "claim_audit_lab/contracts/contract_c.py": {
+          "sha256": "sha256:f42ebdd2cbafddbac3beb3b953012c5ae3df13420350b567eda382eea2cada91",
+          "source_path": "src/claim_audit_lab/contracts/contract_c.py"
+        },
+        "claim_audit_lab/contracts/factual_context.py": {
+          "sha256": "sha256:ed3d07cc1054188aad66fc67215697fb6fa2c8429e12c0caec79ff7c55dd0c82",
+          "source_path": "src/claim_audit_lab/contracts/factual_context.py"
+        },
+        "claim_audit_lab/contracts/output_writer.py": {
+          "sha256": "sha256:4dfc4756da978b3b808c41e28d5e2e14facc5dfaece3f6d94fbbc9b1753b4370",
+          "source_path": "src/claim_audit_lab/contracts/output_writer.py"
+        },
+        "claim_audit_lab/contracts/serialization.py": {
+          "sha256": "sha256:0d63a78a26682f8d7a899f84312f2fe1f62cf11765c487f0a4a5cad57761aa30",
+          "source_path": "src/claim_audit_lab/contracts/serialization.py"
+        },
+        "claim_audit_lab/evidence_matching.py": {
+          "sha256": "sha256:6ea676cb6117007fcd9457e547c0021ccdd0b58fc7aa0d0a8b8cc35f40fc052b",
+          "source_path": "src/claim_audit_lab/evidence_matching.py"
+        },
+        "claim_audit_lab/examples/drafts/ai-research-note.md": {
+          "sha256": "sha256:deb220af65f68dd85342f1979819ec8eb660c20a6155bd14b2e8f3cd5274951b",
+          "source_path": "src/claim_audit_lab/examples/drafts/ai-research-note.md"
+        },
+        "claim_audit_lab/examples/evidence/ai-research-evidence.yml": {
+          "sha256": "sha256:7fd9b729f2f734f8d02d6beebd434ae9514e89cc69365bcc7e8713f9623567a3",
+          "source_path": "src/claim_audit_lab/examples/evidence/ai-research-evidence.yml"
+        },
+        "claim_audit_lab/guidance.py": {
+          "sha256": "sha256:45be87f509e47926168114d3a1c7171b5e60e7d263f5ac63223b26803fbf0568",
+          "source_path": "src/claim_audit_lab/guidance.py"
+        },
+        "claim_audit_lab/loader.py": {
+          "sha256": "sha256:37835e5bef20bffe561730873bd845f23baa4ce7960609360dbcce96215438fb",
+          "source_path": "src/claim_audit_lab/loader.py"
+        },
+        "claim_audit_lab/models.py": {
+          "sha256": "sha256:70d405b5c3dee173fb29e6cfff9624590bb7bb1543d5488bd70c111a0d4d267e",
+          "source_path": "src/claim_audit_lab/models.py"
+        },
+        "claim_audit_lab/policy.py": {
+          "sha256": "sha256:1b24c1c8675676f813e544ec35f418588d208c9649caf2a7ee36ae089ed73905",
+          "source_path": "src/claim_audit_lab/policy.py"
+        },
+        "claim_audit_lab/production_v1/__init__.py": {
+          "sha256": "sha256:5378678d3d40bf0f5c9ad448c1a82c13ee86fdf6939c2a04320a7e7c63f521d2",
+          "source_path": "src/claim_audit_lab/production_v1/__init__.py"
+        },
+        "claim_audit_lab/production_v1/bundle_cli.py": {
+          "sha256": "sha256:efa1a96bb1b1bf1e7a89f4e5d20ea4dfdfe8a07064143ad18b13fdbce73e2730",
+          "source_path": "src/claim_audit_lab/production_v1/bundle_cli.py"
+        },
+        "claim_audit_lab/production_v1/bundle_input.py": {
+          "sha256": "sha256:da8fc888301baa4d8793985de1463188c3673581163eb21d59c38af40f68d884",
+          "source_path": "src/claim_audit_lab/production_v1/bundle_input.py"
+        },
+        "claim_audit_lab/production_v1/execution.py": {
+          "sha256": "sha256:e816f8c59552b6b621a1952c2580392812a0c03050b70116ed929ff5f7de9195",
+          "source_path": "src/claim_audit_lab/production_v1/execution.py"
+        },
+        "claim_audit_lab/production_v1/packet.py": {
+          "sha256": "sha256:bc64a8984b70f05454496885d7f70ab4e97715b10c895676897d54c1244e7512",
+          "source_path": "src/claim_audit_lab/production_v1/packet.py"
+        },
+        "claim_audit_lab/production_v1/parent_bound.py": {
+          "sha256": "sha256:75f92be572cdb9ec8c779c24dd6c8e7ecc0c06818d7de1139d742006daf38408",
+          "source_path": "src/claim_audit_lab/production_v1/parent_bound.py"
+        },
+        "claim_audit_lab/production_v1/parent_cli.py": {
+          "sha256": "sha256:84863665ffbbabf12645d212818c26585265f79a3a0c03496620d91bbd82bb6f",
+          "source_path": "src/claim_audit_lab/production_v1/parent_cli.py"
+        },
+        "claim_audit_lab/production_v1/render.py": {
+          "sha256": "sha256:5b3d8cbd569897f6895c504aadbc95858521641030713efc051f3477e2f9adec",
+          "source_path": "src/claim_audit_lab/production_v1/render.py"
+        },
+        "claim_audit_lab/production_v1/schema/manifest-v2.schema.json": {
+          "sha256": "sha256:73cb72121d287a5aeb635e96699bf53fe5476d3b2154d9b8d62a1bad44706460",
+          "source_path": "src/claim_audit_lab/production_v1/schema/manifest-v2.schema.json"
+        },
+        "claim_audit_lab/production_v1/schema/packet.schema.json": {
+          "sha256": "sha256:d33b52364544d623e182434d09b1ace549fbed02e7ec8e5f1a48e9288d9da1a0",
+          "source_path": "src/claim_audit_lab/production_v1/schema/packet.schema.json"
+        },
+        "claim_audit_lab/production_v1/schema/result-v2.schema.json": {
+          "sha256": "sha256:154cca661b4b48e2595658b49090adc9da8bd513902604ee76de8bafddae6ca2",
+          "source_path": "src/claim_audit_lab/production_v1/schema/result-v2.schema.json"
+        },
+        "claim_audit_lab/production_v1/schema/target.schema.json": {
+          "sha256": "sha256:875f0a320699743befd3f61ea41b8f9ef86a520ac7edd4ef07b502b0d3a93798",
+          "source_path": "src/claim_audit_lab/production_v1/schema/target.schema.json"
+        },
+        "claim_audit_lab/production_v1/semantic/__init__.py": {
+          "sha256": "sha256:aa3183ce819384ed6ba520a319f4324e63a3e693be27bb4a23ecdeae89477da6",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/__init__.py"
+        },
+        "claim_audit_lab/production_v1/semantic/authority.py": {
+          "sha256": "sha256:a143c2c718766c0bb1f3b1a2a4ea92c0ba8f94e72927885ac25225e7b274dddb",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/authority.py"
+        },
+        "claim_audit_lab/production_v1/semantic/authority_validation.py": {
+          "sha256": "sha256:75f208eed2f82453743f2a9dc436f6ef008c43b09124b1fa2c9a75652612c719",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/authority_validation.py"
+        },
+        "claim_audit_lab/production_v1/semantic/decomposition.py": {
+          "sha256": "sha256:dc2f548ad6f3dd4f50c256f5d6d776160c921e27a149e2d9f4c1f5c6bfb4a28c",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/decomposition.py"
+        },
+        "claim_audit_lab/production_v1/semantic/engine.py": {
+          "sha256": "sha256:f02c5a8e3e40d6538922b6aaa0464187ca5762b06f0e357a57647007998c0a84",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/engine.py"
+        },
+        "claim_audit_lab/production_v1/semantic/measurement_ledger.py": {
+          "sha256": "sha256:fe2f434450300bfc9ea7f30173ec2f40fcaaba9fce4adc9c36a3860f49a0bdcf",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/measurement_ledger.py"
+        },
+        "claim_audit_lab/production_v1/semantic/measurements.py": {
+          "sha256": "sha256:59f8a18b36ff8ebf78606058d318aa0158678cb0950a4eccfae8ec87d8142c4d",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/measurements.py"
+        },
+        "claim_audit_lab/production_v1/semantic/models.py": {
+          "sha256": "sha256:c7663014fdd611f09f53944ada908a5d5b7cb86ee8d335db006ea30c1b9dc130",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/models.py"
+        },
+        "claim_audit_lab/production_v1/semantic/plugins.py": {
+          "sha256": "sha256:4dc1b92905cc5199506a2885092228813273c820d833859b633040a8d12e3007",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/plugins.py"
+        },
+        "claim_audit_lab/production_v1/semantic/relations.py": {
+          "sha256": "sha256:60a0e842b267193270748e3733a3aaaf051e8586af67286f2dc8fda91db50c9c",
+          "source_path": "src/claim_audit_lab/production_v1/semantic/relations.py"
+        },
+        "claim_audit_lab/production_v1/target_cli.py": {
+          "sha256": "sha256:a17a6b5ecf708591f6096ad88350bc911b3f062fbcc4132cc8c779873747a982",
+          "source_path": "src/claim_audit_lab/production_v1/target_cli.py"
+        },
+        "claim_audit_lab/production_v1/targeting.py": {
+          "sha256": "sha256:894617b8d29da2f07575661b4f74c05de39544b43f0f448f86cc8441d1c93976",
+          "source_path": "src/claim_audit_lab/production_v1/targeting.py"
+        },
+        "claim_audit_lab/py.typed": {
+          "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "source_path": "src/claim_audit_lab/py.typed"
+        },
+        "claim_audit_lab/report.py": {
+          "sha256": "sha256:d4dbc80f1a2d00bbccf0da89eda525d378a92a93cc179ab33b45e8f54a50f9d3",
+          "source_path": "src/claim_audit_lab/report.py"
+        },
+        "claim_audit_lab/report_html.py": {
+          "sha256": "sha256:7361ec87ae3a1bb2ba4dec3e8c950772c2290972060ac206cb8a566915b5aafb",
+          "source_path": "src/claim_audit_lab/report_html.py"
+        },
+        "claim_audit_lab/resources.py": {
+          "sha256": "sha256:66678ec3509ef62ef2476e094ed451f1b493c6ffb6e3687075e66c6bba2a0cb5",
+          "source_path": "src/claim_audit_lab/resources.py"
+        },
+        "claim_audit_lab/rules.py": {
+          "sha256": "sha256:948336bd219e1931b5dd5e102a269888159842d1e45034ff21095d9417a32457",
+          "source_path": "src/claim_audit_lab/rules.py"
+        },
+        "claim_audit_lab/schema/.contract-version": {
+          "sha256": "sha256:1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+          "source_path": "src/claim_audit_lab/schema/.contract-version"
+        },
+        "claim_audit_lab/schema/vocabulary.yaml": {
+          "sha256": "sha256:534fc23319e63caf99a50eaa6503ee05d1a954ba5db2fd1cacfbe4e3ac7d15b9",
+          "source_path": "src/claim_audit_lab/schema/vocabulary.yaml"
+        },
+        "claim_audit_lab/scoring.py": {
+          "sha256": "sha256:02394b94dc6991196cdb657bff8c50a0bc0ffe03c6230954878ea194faa9b4f3",
+          "source_path": "src/claim_audit_lab/scoring.py"
+        },
+        "claim_audit_lab/text.py": {
+          "sha256": "sha256:3bf6bd9e3a1ec2e0748964f7281c818d1a88cdbf557ce3c65e8ddfcc2f25252f",
+          "source_path": "src/claim_audit_lab/text.py"
+        },
+        "claim_audit_lab/ui/app.py": {
+          "sha256": "sha256:880f915db8f8492cee9f1c7317c1f93027a801490c301565573716105a235718",
+          "source_path": "src/claim_audit_lab/ui/app.py"
+        },
+        "claim_audit_lab/ui/reasons.py": {
+          "sha256": "sha256:5a5d48b9579cd91c780368a4baa36d0ad3b2617b47c7a914e71c6a57f30fe253",
+          "source_path": "src/claim_audit_lab/ui/reasons.py"
+        },
+        "claim_audit_lab/ui/server.py": {
+          "sha256": "sha256:e516ed49e3c78c7acf6d30be808a5ac8c319ca0d7c8ec8606224bd9411095536",
+          "source_path": "src/claim_audit_lab/ui/server.py"
+        },
+        "claim_audit_lab/v1/__init__.py": {
+          "sha256": "sha256:2d22a3d9396b603953ba5848f47357eca0e9db816ddbc2bfe9e1e9ae6047cb01",
+          "source_path": "src/claim_audit_lab/v1/__init__.py"
+        },
+        "claim_audit_lab/v1/calibrate.py": {
+          "sha256": "sha256:5ff1f774933ec259775639a535dab4603db8f65afcddbf841d9e69df1992da85",
+          "source_path": "src/claim_audit_lab/v1/calibrate.py"
+        },
+        "claim_audit_lab/v1/cb_writeback.py": {
+          "sha256": "sha256:4c0d5ffebed40262b30aa0b5e3e9c2234b8c8a83e4a684406668194dae576f4a",
+          "source_path": "src/claim_audit_lab/v1/cb_writeback.py"
+        },
+        "claim_audit_lab/v1/config.py": {
+          "sha256": "sha256:12be28e4bf7badacbfc0add5ffd5320d071788effc199d8817c7fed78b967e2a",
+          "source_path": "src/claim_audit_lab/v1/config.py"
+        },
+        "claim_audit_lab/v1/configs/__init__.py": {
+          "sha256": "sha256:6156e670916cb654ae7ebeb71169a4f2ffca8b02e598917c6eaed26e6a773727",
+          "source_path": "src/claim_audit_lab/v1/configs/__init__.py"
+        },
+        "claim_audit_lab/v1/configs/cal-rules-v1.13.0.yaml": {
+          "sha256": "sha256:eac9105b756de64530ff0d345ffb3a29c213281d41ff1ee211090ccdf51d7e2a",
+          "source_path": "src/claim_audit_lab/v1/configs/cal-rules-v1.13.0.yaml"
+        },
+        "claim_audit_lab/v1/configs/v1-default.yaml": {
+          "sha256": "sha256:51d9453a8811ba6f97e5c99627ace578525a9d4faa8ebb5eb38c43e1bfff09a2",
+          "source_path": "src/claim_audit_lab/v1/configs/v1-default.yaml"
+        },
+        "claim_audit_lab/v1/decision_model.py": {
+          "sha256": "sha256:7435564124e8f756c4794d53d40d3df0173218506f14163bea43cf9882408816",
+          "source_path": "src/claim_audit_lab/v1/decision_model.py"
+        },
+        "claim_audit_lab/v1/evidence_state.py": {
+          "sha256": "sha256:3c645ced2421d9ec617a2f3a22494bc47538561059327cb2a78a0d4d53358a39",
+          "source_path": "src/claim_audit_lab/v1/evidence_state.py"
+        },
+        "claim_audit_lab/v1/explanation.py": {
+          "sha256": "sha256:56d8c538401cd3f27c91b57a7778276758484411ab0a9cc2c631768c3aee61d9",
+          "source_path": "src/claim_audit_lab/v1/explanation.py"
+        },
+        "claim_audit_lab/v1/explicit_claims.py": {
+          "sha256": "sha256:8d6424bcdad9742f106d3ce8f74b850a8f7fd70c60560e8fb685432b4aa82f39",
+          "source_path": "src/claim_audit_lab/v1/explicit_claims.py"
+        },
+        "claim_audit_lab/v1/features.py": {
+          "sha256": "sha256:51c6695e04ee81aada7d0a9823142c143f9f3eed0cef6f9bc85879fb0b3d2931",
+          "source_path": "src/claim_audit_lab/v1/features.py"
+        },
+        "claim_audit_lab/v1/impl/__init__.py": {
+          "sha256": "sha256:984a38393bd03699aeb76ef0ef9d3dcec09744aac6530c9e6131a12dc7af0859",
+          "source_path": "src/claim_audit_lab/v1/impl/__init__.py"
+        },
+        "claim_audit_lab/v1/impl/_determinism.py": {
+          "sha256": "sha256:375c0f56402da4e807f3fd8b93d03f4e8b60dbc167e1a91879d7577bb295f64b",
+          "source_path": "src/claim_audit_lab/v1/impl/_determinism.py"
+        },
+        "claim_audit_lab/v1/impl/aggregator.py": {
+          "sha256": "sha256:ea2006b492fff587cc3246ea386e96d628e8099565724e1bc3f517b16f7efddf",
+          "source_path": "src/claim_audit_lab/v1/impl/aggregator.py"
+        },
+        "claim_audit_lab/v1/impl/entailer.py": {
+          "sha256": "sha256:a5126f85a170d3964fa377b1b4b03881348355083aa667eb58c0645fac12b1d2",
+          "source_path": "src/claim_audit_lab/v1/impl/entailer.py"
+        },
+        "claim_audit_lab/v1/impl/features.py": {
+          "sha256": "sha256:40e8f987dc8aaa15a9d22a966e499b2dcb980042246f33c26c66c627b3f304bb",
+          "source_path": "src/claim_audit_lab/v1/impl/features.py"
+        },
+        "claim_audit_lab/v1/impl/retriever.py": {
+          "sha256": "sha256:6e937842269b1c088643603e341e2e864756a7acbce4dd25f84bb2dce2f896ba",
+          "source_path": "src/claim_audit_lab/v1/impl/retriever.py"
+        },
+        "claim_audit_lab/v1/impl/rules.py": {
+          "sha256": "sha256:893c387c604dba3eeb37eeffe93bd49152324a46f22a4bb6a5dd1e7d2f753a2e",
+          "source_path": "src/claim_audit_lab/v1/impl/rules.py"
+        },
+        "claim_audit_lab/v1/intake.py": {
+          "sha256": "sha256:962404fa06a2a9e997eda23800d91159a58cc024354286bdb94424e1b5f844a6",
+          "source_path": "src/claim_audit_lab/v1/intake.py"
+        },
+        "claim_audit_lab/v1/models.py": {
+          "sha256": "sha256:9d30605e374c35746ac61686840e6aeac9caa17d8dad05b9cd3571d574e0360f",
+          "source_path": "src/claim_audit_lab/v1/models.py"
+        },
+        "claim_audit_lab/v1/pipeline.py": {
+          "sha256": "sha256:07007bf09e6e75bfe244fc147785ffd956d7de0e7a8a6148d3d2c5ef8e35ab9e",
+          "source_path": "src/claim_audit_lab/v1/pipeline.py"
+        },
+        "claim_audit_lab/v1/protocols.py": {
+          "sha256": "sha256:8cf0a5507df785ec88a23bfe263f75976e960a9856cd0190a337d23f8dbeefec",
+          "source_path": "src/claim_audit_lab/v1/protocols.py"
+        },
+        "claim_audit_lab/v1/runner.py": {
+          "sha256": "sha256:7db7619fbcb512383fb7a9e3a423b9f8fbc0ff27827d772a325a02fcc81c5843",
+          "source_path": "src/claim_audit_lab/v1/runner.py"
+        },
+        "claim_audit_lab/v1/semantic_operators.py": {
+          "sha256": "sha256:871f634d56bf95c67bfcc468892090546c8d9e6d01dce4f241b69e158c9125ce",
+          "source_path": "src/claim_audit_lab/v1/semantic_operators.py"
+        }
+      },
+      "source_commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+      "source_tree": "62c32ab15489e6c3b20e63efb500c0fa26d0084d",
+      "version": "0.6.0",
+      "wheel_filename": "claim_audit_lab-0.6.0-py3-none-any.whl",
+      "wheel_sha256": "sha256:bd47d9a9636f153026d63c312813abd0736480e579dc585836831b0a540ccf60"
+    }
+  ],
+  "dependency_scope": "Lightweight EB runtime plus exact B/CAL consumer wheels; full ML dependency closure was qualified separately by hosted CI, not this local environment.",
+  "isolated_venv": true,
+  "observed_at_utc": "2026-10-04T13:36:09.385430+00:00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "schema": "eb-v1-local-installed-identity-v1",
+  "scope": "Every non-dist-info wheel payload file was compared with installed bytes and exact Git source bytes; each wheel archive hash matches installed direct_url metadata. This records observed filesystem identity, not a cryptographic execution attestation."
+}
