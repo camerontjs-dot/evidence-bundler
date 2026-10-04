@@ -36,6 +36,8 @@ Naming note: active project docs now use **Local Evidence Bundler**. Historical 
 | 012 | Accept C-A/C-B v1.1.0 vocabulary passthrough (`format_only` workflow condition) | ✅ accepted | 2026-05-17 |
 | 010a | Amendment to ADR-010: Contradiction text gate pattern tightening and truncation order | ✅ accepted | 2026-06-16 |
 | 013 | Parent-context synthesis for plain text and PDF files via numeric section headings | ✅ accepted | 2026-06-16 |
+| 014 | Installed V1 review record stays beside the frozen admission wire | ✅ accepted | 2026-10-04 |
+| 015 | CLI surface 2 advances the pre-1.0 minor line to 0.3.0 | ✅ accepted | 2026-10-04 |
 
 ---
 
@@ -543,6 +545,45 @@ We implement numeric section heading detection. We match lines that start with a
 - The chunk set for PDFs in scaffold runs and tests will change. We must update the verification expectations in the test suite and demo scripts.
 
 ---
+
+## ADR-014 - Installed V1 review record stays beside the frozen admission wire
+
+**Status:** Accepted - 2026-10-04
+
+**Context:**
+The installed `evidence-bundler-v1` command could emit a package and take `--admission`, but the operator then had to review detached passage text. A Markdown table chunk can omit the ATX heading that makes the row readable. A saved review also had no binding to the input bytes or the unreviewed package, so an old decision list could be replayed after the contract changed. The admission schema `evidence-bundler-admission-v1` only carries proposition ID, passage ID, and decision. I did not want reasons or display context to widen that wire.
+
+**Options considered:**
+- A. Add reason and binding fields to the admission wire. That changes a frozen contract and every consumer that validates it.
+- B. Change chunk spans so a table child includes its heading. That changes passage identity and the retrieval candidate that downstream code already hashes.
+- C. Keep the admission wire and the chunk spans. Add a review record and a context file on the V1 command. Refuse a record whose bindings do not match the current input and unreviewed package, and write nothing.
+
+**Decision:** Option C.
+
+**Consequences:**
+- CLI surface version is `2`. Package version is `0.2.2.dev0`, so producer identity and package hashes move.
+- `--review` applies a bound record. `--admission` stays the unbound mechanical transport. Passing both is refused.
+- Display context can show the preceding heading and a few table lines. Admitted passage text remains the original span.
+- Retrieval, Contract A consumption, Contract B 1.2 projection, and the admission schema stay as they were in the `0.2.1.dev0` containment candidate.
+- The synthetic acceptance helper is not part of this command. The representative workload gate remains unestablished.
+
+---
+
+
+## ADR-015 - CLI surface 2 advances the pre-1.0 minor line to 0.3.0
+
+**Status:** Accepted - 2026-10-04
+
+**Context:**
+ADR-014 introduced a supported `--review` entry, a bound review record, new review artifacts, new failure behavior, and CLI surface version 2. The earlier `0.2.2.dev0` label was an unreleased development checkpoint. The repository release policy treats substantial new capability or a meaningful public-contract change below 1.0 as a MINOR change rather than a PATCH.
+
+**Decision:** The integrated reviewed-workflow candidate uses `0.3.0.dev0`. The `0.2.2.dev0` PR #135 remains an immutable development/qualification subject and is not relabelled.
+
+**Consequences:**
+- Producer/package identity changes again and must be qualified on the exact new artifact.
+- Existing `0.2.1.dev0` and `0.2.2.dev0` wheel hashes and package hashes remain historical evidence only.
+- CLI surface version remains `2`; this decision changes version semantics, not the review-cycle behavior.
+- Stable release, tag, carrier compatibility, representative-workload support, and 1.0 remain separate decisions.
 
 <!-- TEMPLATE - copy for new entries
 
