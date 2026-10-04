@@ -1,0 +1,126 @@
+{
+  "schema": "eb-prereq-failure-classifier-qualification-receipt-rc0-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "pull_request": 128,
+  "terminal_disposition": "SUPPORTED_FOR_APPARATUS_SUCCESSOR",
+  "qualified_at": "2026-10-04T00:39:50Z",
+  "candidate_envelope": "8ec8bf0a24e392f9ceb7ba390746b07f96086402",
+  "candidate_tree": "36014eed680cf9a34d23231e4258046eac6a16aa",
+  "candidate_closure_blob": "2560c24fe974fd340bc5f11307f45cc3292b333f",
+  "frozen_source_commit": "6e666ab20c02a9b9a7ec5e649d16d282bedccb27",
+  "frozen_source_tree": "7685fc0cedad8f9c44339b6227d6ed20cda43106",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "predecessor": {
+    "pull_request": 127,
+    "terminal_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+    "source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+    "source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+    "checker_blob": "21a3fe9e9dbb90cb8894e8c1ee36d78a61e99a74",
+    "frozen_checker_result": "FAIL",
+    "frozen_checker_reason": "'output'",
+    "terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+    "unchanged": true
+  },
+  "reused_blobs": {
+    "PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "WRITER-TRANSPORT.json": "3ae2788e3796f6853e17246ff12ae464c497b59e"
+  },
+  "required_ci_before_execution": {
+    "dedicated_classifier": {
+      "run_id": 37165178440,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "8ec8bf0a24e392f9ceb7ba390746b07f96086402"
+    },
+    "ordinary_repository_ci": {
+      "run_id": 37165178366,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "8ec8bf0a24e392f9ceb7ba390746b07f96086402"
+    }
+  },
+  "runtime": {
+    "implementation": "CPython",
+    "version": "3.11.15",
+    "version_detail": "3.11.15 (main, May 4 2026, 21:04:48) [Clang 22.1.3 ]",
+    "local_default_python": "3.14.4",
+    "local_interpreter_choice": "CPython 3.11.15, matching the dedicated CI 3.11 job. The host python3 is 3.14.4 and was not used.",
+    "local_3_12_rerun": "NOT_RUN",
+    "dedicated_ci_python": ["3.11", "3.12"]
+  },
+  "setup_validation": {
+    "result": "PASS",
+    "exit_code": 0,
+    "preserved_file": "research/eb_prereq_failure_classifier_rc0_20261003/qualification/setup-validation.json",
+    "sha256": "93b178a6b142b370f676437cd94ea393d262324c7e620c907a75781e1578dd46",
+    "candidate_closure_checked": true,
+    "matrix_cases": 18,
+    "rc2_witness_bound": true,
+    "rc2_profile_surface_reused": true,
+    "rc2_transport_reused": true,
+    "model_or_network_execution": "NOT_RUN",
+    "generation_capability": "UNKNOWN"
+  },
+  "pressure_matrix": {
+    "result": "PASS",
+    "exit_code_run_1": 0,
+    "exit_code_run_2": 0,
+    "stderr_bytes_each_run": 0,
+    "cases": 18,
+    "baseline_pass": 1,
+    "profile_failures": 9,
+    "custody_failures": 6,
+    "contamination_failures": 1,
+    "apparatus_failures": 1,
+    "raw_keyerror_output": {
+      "witness": "KeyError(\"output\")",
+      "result": "FAIL",
+      "category": "APPARATUS_ERROR",
+      "code": "APPARATUS_UNEXPECTED_EXCEPTION",
+      "disposition": "INCONCLUSIVE"
+    },
+    "unstructured_exception_escape": false,
+    "case_agreement": "The frozen runner emits PASS only after every matrix row matches its preregistered result, category, code, and disposition. Both runs exited 0.",
+    "run_1": {
+      "path": "research/eb_prereq_failure_classifier_rc0_20261003/qualification/pressure-result-run-1.json",
+      "bytes": 452,
+      "sha256": "bffa198a15d20a2b863abc69952f5fa9706447e1e27d40ec35a1a46b11540925"
+    },
+    "run_2": {
+      "path": "research/eb_prereq_failure_classifier_rc0_20261003/qualification/pressure-result-run-2.json",
+      "bytes": 452,
+      "sha256": "bffa198a15d20a2b863abc69952f5fa9706447e1e27d40ec35a1a46b11540925"
+    },
+    "byte_comparison": "IDENTICAL",
+    "cmp_exit_code": 0
+  },
+  "weak_controls": {
+    "rc2_message_substring_heuristic": {
+      "raw_output_witness_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+      "cleared_profile_gate": false,
+      "meaningfully_discriminated": true
+    },
+    "everything_custody": {
+      "profile_boundary_failed": true,
+      "contamination_boundary_failed": true,
+      "meaningfully_discriminated": true
+    }
+  },
+  "first_failure": null,
+  "deviations": [],
+  "production_bytes_changed": false,
+  "predecessor_bytes_changed": false,
+  "model_or_network_generation": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "established": "The frozen structured diagnostic classifier distinguished the 18 preregistered synthetic cases, including missing calibration.output and the raw KeyError(\"output\") witness, and both frozen weak classifiers failed their required boundaries. This is sufficient to justify a separate future prerequisite-apparatus successor.",
+  "non_claims": [
+    "This does not authorize another writer attempt.",
+    "This does not construct the prerequisite-apparatus successor.",
+    "Generation capability remains UNKNOWN.",
+    "RC2 remains BLOCKED_CUSTODY_VERIFICATION. Its checker result remains FAIL with reason 'output'.",
+    "No semantic evaluator calibration, root-generation case, weak-generator stage, corpus, or retrieval execution occurred.",
+    "No production code changed.",
+    "Local determinism was two byte-identical runs on CPython 3.11.15. Python 3.12 evidence is the already-green dedicated CI job, not a third local run."
+  ],
+  "next_authorized_boundary": "A separate task may build a prerequisite-apparatus successor. That task is not authorized here. Writer invocation, RC2 rerun, model or network generation, production changes, merge, release, and promotion remain unauthorized."
+}
