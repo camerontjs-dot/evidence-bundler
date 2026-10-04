@@ -1,0 +1,19 @@
+{
+  "schema": "eb-prereq-failure-classifier-rc2-witness-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "predecessor_pr": 127,
+  "predecessor_final_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+  "predecessor_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "predecessor_source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+  "predecessor_checker_blob": "21a3fe9e9dbb90cb8894e8c1ee36d78a61e99a74",
+  "terminal_disposition": "BLOCKED_CUSTODY_VERIFICATION",
+  "frozen_checker_result": "FAIL",
+  "frozen_checker_reason": "'output'",
+  "response_complete": true,
+  "truncated": false,
+  "five_profile_files_extracted": true,
+  "writer_attempt_consumed": true,
+  "custody_attempt_consumed": true,
+  "generation_capability": "UNKNOWN",
+  "bounded_inference": "The first raw exception witness is consistent with a missing calibration output field in REVIEW-SCHEMA.json. RC2 itself remains preserved and is not reclassified."
+}

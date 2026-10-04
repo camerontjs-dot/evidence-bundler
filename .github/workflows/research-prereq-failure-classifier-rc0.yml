@@ -1,0 +1,39 @@
+name: Prerequisite failure-classifier RC0
+on:
+  pull_request:
+    paths:
+      - 'research/eb_prereq_failure_classifier_rc0_20261003/**'
+      - '.github/workflows/research-prereq-failure-classifier-rc0.yml'
+permissions:
+  contents: read
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile frozen apparatus
+        run: python -m py_compile research/eb_prereq_failure_classifier_rc0_20261003/classifier.py research/eb_prereq_failure_classifier_rc0_20261003/pressure_test.py research/eb_prereq_failure_classifier_rc0_20261003/validate_setup.py
+      - name: Validate frozen setup
+        run: python research/eb_prereq_failure_classifier_rc0_20261003/validate_setup.py
+      - name: Pressure-test classification matrix run 1
+        run: python research/eb_prereq_failure_classifier_rc0_20261003/pressure_test.py | tee /tmp/result-1.json
+      - name: Pressure-test classification matrix run 2
+        run: python research/eb_prereq_failure_classifier_rc0_20261003/pressure_test.py | tee /tmp/result-2.json
+      - name: Require byte-identical deterministic result
+        run: cmp /tmp/result-1.json /tmp/result-2.json
+      - name: Enforce research-infrastructure-only diff
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_REF"
+          allowed='^(research/eb_prereq_failure_classifier_rc0_20261003/|\.github/workflows/research-prereq-failure-classifier-rc0\.yml$)'
+          bad="$(git diff --name-only "$BASE_REF" HEAD | grep -Ev "$allowed" || true)"
+          test -z "$bad" || { echo "$bad"; exit 1; }
