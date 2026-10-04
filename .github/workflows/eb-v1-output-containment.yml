@@ -187,10 +187,18 @@ jobs:
             --checkout "$GITHUB_WORKSPACE" --probe "$RUNNER_TEMP/eb-v1-outside-checkout/probe.py" \
             --output "$RUNNER_TEMP/eb-v1-output-containment/installed-control"
 
+      - name: Archive wheel and consumer receipts
+        if: always()
+        run: |
+          if [[ -d "$RUNNER_TEMP/eb-v1-output-containment" ]]; then
+            tar -czf "$RUNNER_TEMP/eb-v1-output-containment.tar.gz" \
+              -C "$RUNNER_TEMP" eb-v1-output-containment
+          fi
+
       - name: Preserve wheel and consumer receipts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: eb-v1-containment-installed-py${{ matrix.python-version }}
-          path: ${{ runner.temp }}/eb-v1-output-containment/
+          path: ${{ runner.temp }}/eb-v1-output-containment.tar.gz
           if-no-files-found: warn
