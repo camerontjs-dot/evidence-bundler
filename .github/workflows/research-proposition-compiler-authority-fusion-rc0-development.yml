@@ -1,0 +1,73 @@
+name: Research - Proposition Compiler Authority Fusion RC0 Development
+
+on:
+  pull_request:
+    paths:
+      - "research/proposition_compiler_authority_fusion_rc0/**"
+      - ".github/workflows/research-proposition-compiler-authority-fusion-rc0-development.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  development-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install frozen model runtime
+        run: |
+          set -euo pipefail
+          python -m pip install 'torch==2.14.0' 'transformers==5.17.0' 'tokenizers==0.23.2' 'huggingface-hub==1.31.0'
+          python - <<'PY'
+          from importlib.metadata import version
+          for p,v in [('torch','2.14.0'),('transformers','5.17.0'),('tokenizers','0.23.2'),('huggingface-hub','1.31.0')]: assert version(p)==v,(p,version(p))
+          PY
+      - name: Fetch exact predecessor evidence and authority
+        run: |
+          set -euo pipefail
+          mkdir -p work/GOLD
+          curl -fsSL 'https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/26539c53781148543e980fe1f07b25f1ad9c2005/research/proposition_compiler_evaluator_rc1/evaluator.py' -o work/rc1_evaluator.py
+          echo '1091169da8e960cdf93242ee4c629c7a1a814009c8f80554f4a190f5b3fe989d  work/rc1_evaluator.py' | sha256sum -c -
+          base='https://raw.githubusercontent.com/camerontjs-dot/evidence-bundler/b7755caa740245682544282c869dc816670976c0/research/proposition_compiler_reranker_rc0'
+          curl -fsSL "$base/dev_cases.jsonl" -o work/dev_cases.jsonl
+          curl -fsSL "$base/GOLD/dev_gold.jsonl" -o work/GOLD/dev_gold.jsonl
+          curl -fsSL "$base/fresh_cases.jsonl" -o work/previous_fresh_cases.jsonl
+          curl -fsSL "$base/GOLD/fresh_gold.jsonl" -o work/GOLD/previous_fresh_gold.jsonl
+          test "$(git hash-object work/dev_cases.jsonl)" = '8909a1e4cbc2caa496b6eb95a2b536739fa29ad1'
+          test "$(git hash-object work/GOLD/dev_gold.jsonl)" = '04ed7a5d0ba369cf9c779a84039120d73b7269dc'
+          test "$(git hash-object work/previous_fresh_cases.jsonl)" = 'bef1d64c160f4b2ff140bd62caadcc1467a57739'
+          test "$(git hash-object work/GOLD/previous_fresh_gold.jsonl)" = 'bfbc7414f136af421fa98ede59ebbf7c5f6ddd85'
+          cat work/dev_cases.jsonl work/previous_fresh_cases.jsonl > work/historical_cases.jsonl
+          cat work/GOLD/dev_gold.jsonl work/GOLD/previous_fresh_gold.jsonl > work/GOLD/historical_gold.jsonl
+      - name: Compile apparatus
+        run: python -m py_compile research/proposition_compiler_authority_fusion_rc0/fusion.py research/proposition_compiler_authority_fusion_rc0/score.py
+      - name: Execute historical development regression
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          set -euo pipefail
+          python research/proposition_compiler_authority_fusion_rc0/fusion.py --authority work/rc1_evaluator.py --cases work/historical_cases.jsonl --output work/RAW_A.json | tee work/RAW_A_PRINTED_SHA256.txt
+          python research/proposition_compiler_authority_fusion_rc0/fusion.py --authority work/rc1_evaluator.py --cases work/historical_cases.jsonl --output work/RAW_B.json | tee work/RAW_B_PRINTED_SHA256.txt
+          cmp work/RAW_A.json work/RAW_B.json
+          echo 'byte_identical=true' > work/REPLAY.txt
+          python research/proposition_compiler_authority_fusion_rc0/score.py --raw work/RAW_A.json --gold work/GOLD/historical_gold.jsonl --output work/SCORE.json | tee work/SCORE_PRINTED_SHA256.txt
+          python - <<'PY'
+          import json
+          r=json.load(open('work/SCORE.json'))
+          print(json.dumps(r['summaries'],indent=2,sort_keys=True))
+          PY
+          sha256sum work/RAW_A.json work/RAW_B.json work/SCORE.json work/REPLAY.txt | sort > work/SHA256SUMS.txt
+          git rev-parse HEAD > work/HOSTED_HEAD.txt
+          git hash-object research/proposition_compiler_authority_fusion_rc0/fusion.py research/proposition_compiler_authority_fusion_rc0/score.py > work/SCIENTIFIC_BLOBS.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposition-compiler-authority-fusion-rc0-development
+          path: work/
+          retention-days: 90
