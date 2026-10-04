@@ -1,0 +1,23 @@
+{
+  "schema": "eb-prereq-failure-classifier-matrix-v1",
+  "cases": [
+    {"id":"BASELINE_PASS","mutation":"none","expected_result":"PASS","expected_category":null,"expected_code":null,"expected_disposition":null},
+    {"id":"PROFILE_MISSING_CALIBRATION_OUTPUT","mutation":"missing_calibration_output","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_CALIBRATION_OUTPUT_MISSING","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_MISSING_DECISIVE_OUTPUT","mutation":"missing_decisive_output","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_DECISIVE_OUTPUT_MISSING","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_MISSING_CALIBRATION_DECISION","mutation":"missing_calibration_decision","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_CALIBRATION_DECISION_MISSING","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_WRONG_DECISIVE_DECISION_ENUM","mutation":"wrong_decisive_decision_enum","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_DECISIVE_DECISION_ENUM","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_MALFORMED_REVIEW_JSON","mutation":"malformed_review_json","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_REVIEW_JSON_INVALID","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_PRIMARY_CONFIG_DRIFT","mutation":"primary_config_drift","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_PRIMARY_CONFIG_INPUT_MODE","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_EVALUATOR_CONFIG_DRIFT","mutation":"evaluator_config_drift","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_EVALUATOR_CONFIG_MODES","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_EVALUATOR_PROMPT_MISSING_UNCERTAIN","mutation":"evaluator_prompt_missing_uncertain","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_EVALUATOR_PROMPT_UNCERTAIN","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"PROFILE_FILE_MISSING","mutation":"profile_file_missing","expected_result":"FAIL","expected_category":"PROFILE_CONFIGURATION","expected_code":"PROFILE_FILE_MISSING","expected_disposition":"BLOCKED_PROFILE_CONFIGURATION"},
+    {"id":"CUSTODY_REQUEST_HASH_MISMATCH","mutation":"request_hash_mismatch","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_REQUEST_HASH","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CUSTODY_RESPONSE_HASH_MISMATCH","mutation":"response_hash_mismatch","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_RESPONSE_HASH","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CUSTODY_RESPONSE_INCOMPLETE","mutation":"response_incomplete","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_RESPONSE_INCOMPLETE","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CUSTODY_RESPONSE_TRUNCATED","mutation":"response_truncated","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_RESPONSE_TRUNCATED","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CUSTODY_RUNTIME_DIGEST_MISMATCH","mutation":"runtime_digest_mismatch","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_RUNTIME_DIGEST","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CUSTODY_PROFILE_HASH_MISMATCH","mutation":"profile_hash_mismatch","expected_result":"FAIL","expected_category":"CUSTODY_VERIFICATION","expected_code":"CUSTODY_PROFILE_HASH","expected_disposition":"BLOCKED_CUSTODY_VERIFICATION"},
+    {"id":"CONTAMINATION_FORBIDDEN_SOURCE","mutation":"forbidden_source","expected_result":"FAIL","expected_category":"CONTAMINATION","expected_code":"CONTAMINATION_FORBIDDEN_SOURCE","expected_disposition":"CONTAMINATED"},
+    {"id":"APPARATUS_RAW_KEYERROR_OUTPUT","mutation":"raw_keyerror_output","expected_result":"FAIL","expected_category":"APPARATUS_ERROR","expected_code":"APPARATUS_UNEXPECTED_EXCEPTION","expected_disposition":"INCONCLUSIVE"}
+  ]
+}

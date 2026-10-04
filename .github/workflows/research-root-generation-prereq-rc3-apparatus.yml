@@ -1,0 +1,45 @@
+name: Root-generation prerequisite RC3 apparatus
+on:
+  pull_request:
+    paths:
+      - 'research/eb_root_generation_prereq_rc3_apparatus_20261003/**'
+      - '.github/workflows/research-root-generation-prereq-rc3-apparatus.yml'
+permissions:
+  contents: read
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Fetch immutable RC2 source
+        run: |
+          git fetch --no-tags origin research/eb-root-generation-prereq-rc2-20261003
+          git cat-file -e e850d812036d0eca2ab1c79185bf871a9636684a^{commit}
+      - name: Compile frozen apparatus
+        run: python -m py_compile research/eb_root_generation_prereq_rc3_apparatus_20261003/check_execution.py research/eb_root_generation_prereq_rc3_apparatus_20261003/run_writer.py research/eb_root_generation_prereq_rc3_apparatus_20261003/validate_setup.py research/eb_root_generation_prereq_rc3_apparatus_20261003/validate_successor.py research/eb_root_generation_prereq_rc3_apparatus_20261003/pressure_test.py
+      - name: Validate RC2 invariant successor
+        run: python research/eb_root_generation_prereq_rc3_apparatus_20261003/validate_successor.py
+      - name: Validate unchanged prerequisite setup
+        run: python research/eb_root_generation_prereq_rc3_apparatus_20261003/validate_setup.py
+      - name: Integrated pressure run 1
+        run: python research/eb_root_generation_prereq_rc3_apparatus_20261003/pressure_test.py | tee /tmp/rc3-apparatus-1.json
+      - name: Integrated pressure run 2
+        run: python research/eb_root_generation_prereq_rc3_apparatus_20261003/pressure_test.py | tee /tmp/rc3-apparatus-2.json
+      - name: Require deterministic result
+        run: cmp /tmp/rc3-apparatus-1.json /tmp/rc3-apparatus-2.json
+      - name: Enforce research-infrastructure-only diff
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_REF"
+          allowed='^(research/eb_root_generation_prereq_rc3_apparatus_20261003/|\.github/workflows/research-root-generation-prereq-rc3-apparatus\.yml$)'
+          bad="$(git diff --name-only "$BASE_REF" HEAD | grep -Ev "$allowed" || true)"
+          test -z "$bad" || { echo "$bad"; exit 1; }

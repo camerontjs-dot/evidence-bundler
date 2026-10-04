@@ -1,0 +1,14 @@
+{
+  "schema": "eb-root-generation-prereq-launch-status-rc1-v1",
+  "execution": "NOT_RUN",
+  "context_free_required": true,
+  "profile_writer_attempts_consumed": 0,
+  "custody_attempts_consumed": 0,
+  "semantic_calibration_attempts_authorized": 0,
+  "target_generation_attempts_authorized": 0,
+  "weak_generator_attempts_authorized": 0,
+  "decisive_review_attempts_authorized": 0,
+  "tally_attempts_authorized": 0,
+  "generation_capability": "UNKNOWN",
+  "next_boundary": "CONTEXT_FREE_PROFILE_AND_CUSTODY_ONLY"
+}
