@@ -1,0 +1,32 @@
+{
+  "schema": "eb-prereq-failure-classifier-candidate-rc0-v1",
+  "meaning": "Frozen offline research-infrastructure candidate for distinguishing prerequisite profile-configuration failures from custody failures. No model, network, writer, semantic calibration, generation, private population, production change, merge, release or promotion is authorized.",
+  "protected_main": "c26fbd4bfc8ba5c2604a784af158594b59fcae37",
+  "predecessor_pr": 127,
+  "predecessor_terminal_head": "534f6801998d96c72783fa1895d6a404dec7ec1a",
+  "predecessor_source_commit": "e850d812036d0eca2ab1c79185bf871a9636684a",
+  "predecessor_source_tree": "2a115eca48d0ec2e4896b98280d2d4b1fcb4439d",
+  "source_commit": "6e666ab20c02a9b9a7ec5e649d16d282bedccb27",
+  "source_tree": "7685fc0cedad8f9c44339b6227d6ed20cda43106",
+  "frozen_blobs": {
+    ".github/workflows/research-prereq-failure-classifier-rc0.yml": "5b8df2b9fc1a6fe94f09d08ba23cde691cb59028",
+    "research/eb_prereq_failure_classifier_rc0_20261003/README.md": "4e56d6376d1108c95c533cef73cb8bfd200790ad",
+    "research/eb_prereq_failure_classifier_rc0_20261003/RC2-WITNESS.PUBLIC.json": "3ae281f3d36411f1db76d88e59c183932a65bc41",
+    "research/eb_prereq_failure_classifier_rc0_20261003/PREREGISTRATION.md": "525c8c24daf9bfe110a019bb8301a5e8706bbcb7",
+    "research/eb_prereq_failure_classifier_rc0_20261003/MUTATION-MATRIX.json": "e68aed2a3435d783a5e6a4c26656f5d85dde421a",
+    "research/eb_prereq_failure_classifier_rc0_20261003/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_prereq_failure_classifier_rc0_20261003/WRITER-TRANSPORT.json": "3ae2788e3796f6853e17246ff12ae464c497b59e",
+    "research/eb_prereq_failure_classifier_rc0_20261003/classifier.py": "af42ba3ac7cda7c926c3bce62d87d1a32241d450",
+    "research/eb_prereq_failure_classifier_rc0_20261003/pressure_test.py": "3f221b225b04df000b4de38254aa1edfbe10263a",
+    "research/eb_prereq_failure_classifier_rc0_20261003/validate_setup.py": "6ca5ac67e6a726e59b0c7d1450d7ae750a90f4c2",
+    "research/eb_prereq_failure_classifier_rc0_20261003/DEVIATIONS.json": "8e80298405e9536c7d90c191ae7f44369f598b50"
+  },
+  "pressure_matrix_cases": 18,
+  "weak_controls": [
+    "rc2_message_substring_heuristic",
+    "everything_custody"
+  ],
+  "execution_state": "NOT_RUN",
+  "generation_capability": "UNKNOWN",
+  "next_authorized_boundary": "Run only the frozen offline setup validator and pressure matrix. Preserve the terminal apparatus disposition and stop. No writer or semantic/generation execution is authorized."
+}
