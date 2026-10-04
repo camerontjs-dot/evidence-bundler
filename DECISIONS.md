@@ -36,6 +36,7 @@ Naming note: active project docs now use **Local Evidence Bundler**. Historical 
 | 012 | Accept C-A/C-B v1.1.0 vocabulary passthrough (`format_only` workflow condition) | ✅ accepted | 2026-05-17 |
 | 010a | Amendment to ADR-010: Contradiction text gate pattern tightening and truncation order | ✅ accepted | 2026-06-16 |
 | 013 | Parent-context synthesis for plain text and PDF files via numeric section headings | ✅ accepted | 2026-06-16 |
+| 014 | Installed V1 review record stays beside the frozen admission wire | ✅ accepted | 2026-10-04 |
 
 ---
 
@@ -541,6 +542,29 @@ We implement numeric section heading detection. We match lines that start with a
 - Plain text and PDF documents with numeric headings will now produce hierarchical parent-child chunks rather than flat chunks.
 - This enables parent-level cross-encoder reranking and preserves surrounding section context for plain text/PDF evidence.
 - The chunk set for PDFs in scaffold runs and tests will change. We must update the verification expectations in the test suite and demo scripts.
+
+---
+
+## ADR-014 - Installed V1 review record stays beside the frozen admission wire
+
+**Status:** Accepted - 2026-10-04
+
+**Context:**
+The installed `evidence-bundler-v1` command could emit a package and take `--admission`, but the operator then had to review detached passage text. A Markdown table chunk can omit the ATX heading that makes the row readable. A saved review also had no binding to the input bytes or the unreviewed package, so an old decision list could be replayed after the contract changed. The admission schema `evidence-bundler-admission-v1` only carries proposition ID, passage ID, and decision. I did not want reasons or display context to widen that wire.
+
+**Options considered:**
+- A. Add reason and binding fields to the admission wire. That changes a frozen contract and every consumer that validates it.
+- B. Change chunk spans so a table child includes its heading. That changes passage identity and the retrieval candidate that downstream code already hashes.
+- C. Keep the admission wire and the chunk spans. Add a review record and a context file on the V1 command. Refuse a record whose bindings do not match the current input and unreviewed package, and write nothing.
+
+**Decision:** Option C.
+
+**Consequences:**
+- CLI surface version is `2`. Package version is `0.2.2.dev0`, so producer identity and package hashes move.
+- `--review` applies a bound record. `--admission` stays the unbound mechanical transport. Passing both is refused.
+- Display context can show the preceding heading and a few table lines. Admitted passage text remains the original span.
+- Retrieval, Contract A consumption, Contract B 1.2 projection, and the admission schema stay as they were in the `0.2.1.dev0` containment candidate.
+- The synthetic acceptance helper is not part of this command. The representative workload gate remains unestablished.
 
 ---
 

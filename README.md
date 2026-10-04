@@ -24,6 +24,14 @@ Evidence Bundler does not prove that a claim is true. It does not replace audit.
 
 The fixture writer is only a contract-shape smoke path. It copies scaffold-cited passages into bundle shape for local contract checks. It does not retrieve candidate support, determine claim support, or turn chunks into reviewed evidence.
 
+## Installed V1 review cycle
+
+`evidence-bundler-v1` is the installed V1 command. An unreviewed `run` writes the native package, the Contract B 1.2 bundle, `review_context.md`, and a `review_record.json` template. The context file shows each target, the retained passage text, and any preceding heading or table lines needed to read a passage that does not already contain them. Those lines are display context. They are not admitted text, and they do not change passage spans.
+
+The template binds the raw input file and the unreviewed package hash. Fill each reason, then rerun with `--review`. A record that does not match the current input or unreviewed package is refused, and nothing is written. `--admission` remains a mechanical decision list with no input binding. Do not pass both.
+
+The command admits passages for later assessment. It does not decide support or truth. The acceptance helper under `scripts/qualification/` is local apparatus, not this command. The review-cycle details are in [`docs/EB_V1_REVIEW_CYCLE.md`](docs/EB_V1_REVIEW_CYCLE.md). A representative workload is not established; see [`docs/EB_V1_REPRESENTATIVE_WORKLOAD.md`](docs/EB_V1_REPRESENTATIVE_WORKLOAD.md).
+
 ## Related work
 
 Evidence Bundler prepares Contract B bundles for the rest of the pipeline:

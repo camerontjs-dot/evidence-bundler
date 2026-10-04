@@ -13,6 +13,7 @@ from evidence_bundler.production_v1.execution import (
     inspect_record,
     run_contract_a,
 )
+from evidence_bundler.production_v1.review_cycle import ReviewCycleError
 from evidence_bundler.v1.contract_a import ContractAValidationError
 from evidence_bundler.v1.contract_b import ContractBProjectionError
 from evidence_bundler.v1.package import EvidencePackageValidationError
@@ -42,7 +43,19 @@ def cli() -> None:
     "--admission",
     type=click.Path(exists=True, file_okay=True, dir_okay=False, path_type=Path),
     default=None,
-    help="Optional explicit retained-candidate admission JSON.",
+    help=(
+        "Mechanical admission JSON. It does not bind the input file or the unreviewed "
+        "package. Mutually exclusive with --review."
+    ),
+)
+@click.option(
+    "--review",
+    type=click.Path(exists=True, file_okay=True, dir_okay=False, path_type=Path),
+    default=None,
+    help=(
+        "Review record bound to this input file and the unreviewed package. A mismatch "
+        "writes nothing. Mutually exclusive with --admission."
+    ),
 )
 @click.option(
     "--compatibility-carrier",
@@ -54,6 +67,7 @@ def run_command(
     contract_a: Path,
     out_dir: Path,
     admission: Path | None,
+    review: Path | None,
     compatibility_carrier: Path | None,
 ) -> None:
     """Run the exact qualified V1 profile and project released Contract B 1.2."""
@@ -62,6 +76,7 @@ def run_command(
             contract_a,
             out_dir,
             admission_path=admission,
+            review_path=review,
             compatibility_carrier_path=compatibility_carrier,
         )
     except (
@@ -69,6 +84,7 @@ def run_command(
         ContractBProjectionError,
         EvidencePackageValidationError,
         ProductionV1Error,
+        ReviewCycleError,
         OSError,
         UnicodeDecodeError,
         json.JSONDecodeError,

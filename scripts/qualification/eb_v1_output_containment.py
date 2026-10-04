@@ -1,4 +1,4 @@
-"""Qualify the bounded EB V1 output-containment correction at an exact subject."""
+"""Qualify one installed EB V1 candidate, including its authorized review surface."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 BASE = "08ca896debd6d16fa21be2f178ed7cbe62395d00"
-VERSION = "0.2.1.dev0"
+VERSION = "0.2.2.dev0"
 CONTRACT_B = "c314e53bd91c0736aa4370a364673b069aceb43e"
 CAL = "64b6c7702696c851057c1cf0b2c105b1c81db543"
 PROBE_SHA256 = "70f18e7c57e3ac6b0e90b358c621a8dd0be44f6fb1ccf69a19d3d6df3eaee52a"
@@ -31,12 +31,16 @@ FROZEN_PATHS = (
     "src/evidence_bundler/v1/package.py",
     "src/evidence_bundler/v1/contract_a.py",
     "src/evidence_bundler/production_v1/__init__.py",
-    "src/evidence_bundler/production_v1/cli.py",
     "src/evidence_bundler/contracts",
     "src/evidence_bundler/models",
     "schema",
     "config/eb_v1_slice",
     "src/evidence_bundler/production_v1/data",
+)
+REVIEW_SURFACE = (
+    "src/evidence_bundler/production_v1/cli.py",
+    "src/evidence_bundler/production_v1/execution.py",
+    "src/evidence_bundler/production_v1/review_cycle.py",
 )
 
 
@@ -58,6 +62,13 @@ def git(root: Path, *args: str) -> str:
     return subprocess.check_output(["git", "-C", str(root), *args], text=True).strip()
 
 
+def blob(root: Path, spec: str) -> str | None:
+    try:
+        return git(root, "rev-parse", spec)
+    except subprocess.CalledProcessError:
+        return None
+
+
 def verify_probe(path: Path) -> None:
     require(digest(path) == PROBE_SHA256, "independent frozen probe bytes changed")
 
@@ -75,6 +86,14 @@ def identity(args: argparse.Namespace) -> None:
         require(before == after, f"frozen authority changed: {path}")
         git(root, "diff", "--exit-code", "HEAD", "--", path)
         frozen[path] = before
+
+    review_surface = {}
+    for path in REVIEW_SURFACE:
+        head_blob = blob(root, f"{head}:{path}")
+        base_blob = blob(root, f"{BASE}:{path}")
+        require(head_blob is not None, f"review surface missing: {path}")
+        require(head_blob != base_blob, f"review surface did not change: {path}")
+        review_surface[path] = {"base": base_blob, "head": head_blob}
 
     before_project = tomllib.loads(git(root, "show", f"{BASE}:pyproject.toml"))
     current_project = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
@@ -114,6 +133,12 @@ def identity(args: argparse.Namespace) -> None:
         "corrected_from_commit": BASE,
         "package_version": VERSION,
         "frozen_authorities": frozen,
+        "review_surface": review_surface,
+        "review_surface_note": (
+            "cli.py, execution.py, and review_cycle.py are the authorized review-cycle "
+            "difference from 08ca896. Retrieval, package, Contract A, Contract B "
+            "projection, schema, and carrier bytes stay frozen."
+        ),
         "dependency_metadata_unchanged": True,
         "probe_sha256": PROBE_SHA256,
         "external_authorities": authorities,
