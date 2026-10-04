@@ -141,7 +141,10 @@ def identity(args: argparse.Namespace) -> None:
         "probe_sha256": PROBE_SHA256,
         "external_authorities": authorities,
         "changed_paths": git(root, "diff", "--name-only", BASE, head).splitlines(),
-        "qualification_scope": "Integrated reviewed-workflow candidate qualification; predecessor receipts remain historical.",
+        "qualification_scope": (
+            "Integrated reviewed-workflow candidate qualification; predecessor receipts "
+            "remain historical."
+        ),
     }
     write_json(args.output, record)
     print(json.dumps(record, indent=2, sort_keys=True))
@@ -286,8 +289,14 @@ def bundle(args: argparse.Namespace) -> None:
         [cli, "run", str(input_path), "--out-dir", str(reviewed), "--review", str(review_path)],
         args.output / "reviewed-run",
     )
-    require((reviewed / "applied_review_record.json").is_file(), "bound review was not preserved")
-    require(not (reviewed / "review_record.json").exists(), "applied run emitted a new review template")
+    require(
+        (reviewed / "applied_review_record.json").is_file(),
+        "bound review was not preserved",
+    )
+    require(
+        not (reviewed / "review_record.json").exists(),
+        "applied run emitted a new review template",
+    )
 
     stale = json.loads(json.dumps(review_record))
     stale["bindings"]["input_sha256"] = "sha256:" + "ab" * 32
