@@ -1,0 +1,28 @@
+{
+  "schema": "eb-root-generation-prereq-rc4-supervisor-receipt-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "pull_request": 138,
+  "candidate_head": "a82d95aa002b9f70e8f8bfab4128e93ede57aae3",
+  "source_commit": "8071759950407200b40cfc82c4435209dfce1f67",
+  "source_tree": "16f0ae7ad59a37ba5754ecfb82f34b11e2fefd02",
+  "execution_id": "rc4-20261004-pr138-a82d95a-01",
+  "terminal_disposition": "BLOCKED_PROFILE_CONFIGURATION",
+  "checker_category": "PROFILE_CONFIGURATION",
+  "checker_code": "PROFILE_EVALUATOR_CONFIG_MODES",
+  "checker_detail": "evaluator modes mismatch",
+  "writer_attempt_consumed": true,
+  "custody_attempt_consumed": true,
+  "response_complete": true,
+  "truncated": false,
+  "done_reason": "stop",
+  "established": [
+    "Exact review-schema key binding corrected the prior RC3 missing calibration.output failure.",
+    "RC4 REVIEW-SCHEMA.json used the literal input/output/decision/root_status/checks keys required by PROFILE-SURFACE.json.",
+    "PRIMARY-CONFIG.json matched the frozen primary config surface.",
+    "The next first failure was EVALUATOR-CONFIG.json modes shape: the writer embedded detailed mode objects instead of the required string list and omitted required config flags."
+  ],
+  "bounded_inference": "Review-key binding alone is insufficient for the complete profile surface, but the writer demonstrated the required semantic content. A full machine-surface binding successor is justified.",
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "generation_capability": "UNKNOWN",
+  "next_authorized_boundary": "Preserve RC4 and test one final separately frozen full-machine-surface profile-binding successor. No RC4 retry."
+}
