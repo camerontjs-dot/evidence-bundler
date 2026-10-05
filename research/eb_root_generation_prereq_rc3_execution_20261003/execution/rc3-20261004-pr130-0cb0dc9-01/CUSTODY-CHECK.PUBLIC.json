@@ -1,0 +1,9 @@
+{
+  "category": "PROFILE_CONFIGURATION",
+  "code": "PROFILE_CALIBRATION_OUTPUT_MISSING",
+  "detail": "calibration mode missing field: output",
+  "disposition": "BLOCKED_PROFILE_CONFIGURATION",
+  "generation_capability": "UNKNOWN",
+  "result": "FAIL",
+  "schema": "eb-root-generation-prereq-execution-check-rc3-v1"
+}

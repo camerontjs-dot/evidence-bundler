@@ -1,0 +1,41 @@
+{
+  "schema": "eb-root-generation-prereq-rc3-supervisor-receipt-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "pull_request": 130,
+  "execution_candidate_head": "0cb0dc9dffbf701759b55b066c32f5dd6041d5ba",
+  "execution_candidate_source": "b5d379d23fe9d86f04c6fffda0b438097a55d25b",
+  "execution_candidate_source_tree": "7a79c7e1a416bf8d5f4d1c05c8f88db0ddfa4fef",
+  "execution_id": "rc3-20261004-pr130-0cb0dc9-01",
+  "terminal_disposition": "BLOCKED_PROFILE_CONFIGURATION",
+  "checker_category": "PROFILE_CONFIGURATION",
+  "checker_code": "PROFILE_CALIBRATION_OUTPUT_MISSING",
+  "checker_detail": "calibration mode missing field: output",
+  "writer_attempt_consumed": true,
+  "custody_attempt_consumed": true,
+  "response_complete": true,
+  "truncated": false,
+  "done_reason": "stop",
+  "runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "actual_backend_weight_attestation": "UNKNOWN"
+  },
+  "native_request_sha256": "sha256:809106cfe6dc4037e1c827174caf06d55cc216915cb70863ede81999cff83510",
+  "native_response_sha256": "sha256:35f0f586722adb24afaa7746109d67e0fe7180cf162abfc9c0b15fa1d48e910c",
+  "profile_files_sha256": {
+    "PRIMARY-PROMPT.txt": "sha256:aa46441696c3f9fec9c54b363800855fff607f35fe751adf3c7e326c045c861c",
+    "PRIMARY-CONFIG.json": "sha256:ea85d933341b1728b5bb51e251497bb9dfdc8773cd99b49d8ebb08a123140e77",
+    "EVALUATOR-PROMPT.txt": "sha256:e4dfb49ff8122dbca7a5785ed6d9d6afbada3b6e54d15f3f87bfac061426acf3",
+    "EVALUATOR-CONFIG.json": "sha256:b3cc6300a6f1e45bd72e8d3ff36ff54dc14fcf39aa3344c03e562516c2dafadd",
+    "REVIEW-SCHEMA.json": "sha256:c26438454f83ba86185adb04370277eec7faba4dc01351bb76edcf47bbc3a6f5"
+  },
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "generation_capability": "UNKNOWN",
+  "supervisor_deviation": {
+    "observed": "Remote terminal wrapper later reported exit code 92, while the frozen execution directory contains a completed one-shot invocation with consumed-attempt status and complete custody artifacts.",
+    "treatment": "Preserve the wrapper anomaly as supervisor-transport evidence. Treat frozen execution artifacts as authority for experiment chronology and attempt consumption. No retry occurred."
+  },
+  "next_authorized_boundary": "Stop RC3 execution. No retry, semantic calibration, generation execution, merge, release or promotion is authorized. Any successor requires a new frozen candidate."
+}
