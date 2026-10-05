@@ -1,0 +1,13 @@
+{
+  "checker_category": "PROFILE_CONFIGURATION",
+  "checker_code": "PROFILE_EVALUATOR_CONFIG_MODES",
+  "completed_at": "2026-10-05T01:34:31.240425+00:00",
+  "custody_attempt_consumed": true,
+  "generation_capability": "UNKNOWN",
+  "reason": "PROFILE_EVALUATOR_CONFIG_MODES: evaluator modes mismatch",
+  "schema": "eb-root-generation-prereq-attempt-status-rc3-v1",
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "status": "BLOCKED_PROFILE_CONFIGURATION",
+  "writer_attempt_consumed": true,
+  "writer_invocation_started": true
+}

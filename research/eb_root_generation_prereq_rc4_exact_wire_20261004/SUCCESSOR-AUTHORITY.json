@@ -1,0 +1,36 @@
+{
+  "schema": "eb-root-generation-prereq-rc4-exact-wire-authority-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "protected_main": "f605c158a83fa1e17664c14fdf5841e7215a6f27",
+  "predecessor_rc3": {
+    "pr": 130,
+    "terminal_head": "c4ae03e2f650a566dd04e933f654f194315f8c30",
+    "frozen_candidate_head": "0cb0dc9dffbf701759b55b066c32f5dd6041d5ba",
+    "source_commit": "b5d379d23fe9d86f04c6fffda0b438097a55d25b",
+    "terminal_disposition": "BLOCKED_PROFILE_CONFIGURATION",
+    "checker_code": "PROFILE_CALIBRATION_OUTPUT_MISSING"
+  },
+  "qualified_apparatus_source": "55c2940d6822a6c666441f61900b2cadcfbde046",
+  "controlled_change": {
+    "file": "PROFILE-WRITER-TASK.md",
+    "purpose": "Bind REVIEW-SCHEMA.json to the exact literal evaluator mode key names already defined in PROFILE-SURFACE.json.",
+    "forbidden_aliases": [
+      "input_fields",
+      "output_fields",
+      "decision_enum",
+      "root_status_enum",
+      "check_fields"
+    ]
+  },
+  "future_execution_budget": {
+    "profile_writer_attempts": 1,
+    "custody_attempts": 1,
+    "semantic_calibration_attempts": 0,
+    "target_generation_attempts": 0,
+    "weak_generator_attempts": 0,
+    "decisive_review_attempts": 0,
+    "tally_attempts": 0
+  },
+  "setup_writer_invocation_authorized": false,
+  "generation_capability": "UNKNOWN"
+}

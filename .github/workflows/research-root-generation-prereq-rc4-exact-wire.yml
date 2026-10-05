@@ -1,0 +1,43 @@
+name: Root-generation prerequisite RC4 exact-wire
+on:
+  pull_request:
+    paths:
+      - 'research/eb_root_generation_prereq_rc4_exact_wire_20261004/**'
+      - '.github/workflows/research-root-generation-prereq-rc4-exact-wire.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Fetch immutable qualified RC3 apparatus
+        run: |
+          git fetch --no-tags origin research-infra/eb-root-generation-prereq-rc3-apparatus-20261003
+          git cat-file -e 55c2940d6822a6c666441f61900b2cadcfbde046^{commit}
+      - name: Compile frozen candidate
+        run: python -m py_compile research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_successor.py research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_setup.py research/eb_root_generation_prereq_rc4_exact_wire_20261004/check_execution.py research/eb_root_generation_prereq_rc4_exact_wire_20261004/run_writer.py
+      - name: Validate one-variable successor
+        run: python research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_successor.py
+      - name: Validate unchanged prerequisite setup
+        run: python research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_setup.py
+      - name: Prove setup has not executed writer
+        run: |
+          test ! -d research/eb_root_generation_prereq_rc4_exact_wire_20261004/execution
+          echo writer_execution=NOT_RUN
+      - name: Enforce research-only diff
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_REF"
+          allowed='^(research/eb_root_generation_prereq_rc4_exact_wire_20261004/|\.github/workflows/research-root-generation-prereq-rc4-exact-wire\.yml$)'
+          bad="$(git diff --name-only "$BASE_REF" HEAD | grep -Ev "$allowed" || true)"
+          test -z "$bad" || { echo "$bad"; exit 1; }
