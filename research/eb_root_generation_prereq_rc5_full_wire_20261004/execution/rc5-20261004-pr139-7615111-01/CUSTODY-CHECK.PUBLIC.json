@@ -1,0 +1,18 @@
+{
+  "category": null,
+  "code": null,
+  "detail": "frozen prerequisite checker passed",
+  "disposition": "SUPPORTED_FOR_GENERATION_EXECUTION",
+  "execution_id": "rc5-20261004-pr139-7615111-01",
+  "generation_capability": "UNKNOWN",
+  "native_custody": "PASS",
+  "profile_file_count": 5,
+  "profile_surface": "PASS",
+  "result": "PASS",
+  "runtime_binding": "PASS",
+  "schema": "eb-root-generation-prereq-execution-check-rc3-v1",
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "setup_source_commit": "78af0dff51d180a2fa2feddce581d45539b02c7a",
+  "transport_binding": "PASS",
+  "writer_aperture": "PASS"
+}

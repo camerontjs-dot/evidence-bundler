@@ -1,0 +1,54 @@
+{
+  "schema": "eb-root-generation-prereq-rc5-supervisor-receipt-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "pull_request": 139,
+  "frozen_candidate_head": "7615111e34e8459dd4a31c3e4eff81922ebfd7a9",
+  "source_commit": "78af0dff51d180a2fa2feddce581d45539b02c7a",
+  "source_tree": "4efd514890917a502bc77ed4a98c5fbb1dafe34d",
+  "execution_id": "rc5-20261004-pr139-7615111-01",
+  "terminal_disposition": "SUPPORTED_FOR_GENERATION_EXECUTION",
+  "writer_attempt_consumed": true,
+  "custody_attempt_consumed": true,
+  "response_complete": true,
+  "truncated": false,
+  "done_reason": "stop",
+  "runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "actual_backend_weight_attestation": "UNKNOWN"
+  },
+  "checker": {
+    "writer_aperture": "PASS",
+    "runtime_binding": "PASS",
+    "transport_binding": "PASS",
+    "native_custody": "PASS",
+    "profile_surface": "PASS",
+    "profile_file_count": 5
+  },
+  "native_request_sha256": "sha256:f115d991c847045db84e918f28e8f8d081c3908149ab2aef0b90294de8f30bee",
+  "native_response_sha256": "sha256:21a3cc07bc33cb9d5fb1d47e9c782a59f83892cf23a4e3559d7111e9f0ea16dd",
+  "profile_files_sha256": {
+    "PRIMARY-PROMPT.txt": "sha256:533ccdcc093047d0b177382a253fcff97e6c09681eff7b2a89501d7cc02ed150",
+    "PRIMARY-CONFIG.json": "sha256:5f61918e27c18fff433a480b754a3e7ae0e96ad8c4907c48e83fe1af0727fddd",
+    "EVALUATOR-PROMPT.txt": "sha256:34510b02b12027d11dd0cdffaa19c5ba43f1cee5cad354b5f24cd228499f4d73",
+    "EVALUATOR-CONFIG.json": "sha256:651be316f3a833f57618cfec3b699db3648fd92a56e8fa5dad8374653ceecad3",
+    "REVIEW-SCHEMA.json": "sha256:1eeb102baf984407cc515adbff9ef16b92ecbe9414999ec3714d76a484d60130"
+  },
+  "semantic_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "generation_capability": "UNKNOWN",
+  "established": [
+    "A fresh context-free writer can produce the complete frozen five-file primary/evaluator profile surface when the full machine wire is explicitly bound.",
+    "The bounded external custody route and structured execution checker pass against the completed writer response.",
+    "The prerequisite profile/custody boundary is supported for a separately frozen generation execution."
+  ],
+  "nonclaims": [
+    "No semantic evaluator calibration ran.",
+    "No root-generation case ran.",
+    "No weak generator, decisive review or tally ran.",
+    "Generation capability remains UNKNOWN.",
+    "This is not production, release or merge authorization."
+  ],
+  "next_authorized_boundary": "Freeze a separate generation experiment using these exact qualified profile bytes and the already-preregistered semantic cases/controls. Do not execute generation inside this prerequisite PR."
+}
