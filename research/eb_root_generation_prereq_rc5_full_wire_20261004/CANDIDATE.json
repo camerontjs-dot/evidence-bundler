@@ -1,0 +1,57 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "revision": "RC5_FULL_MACHINE_SURFACE_FINAL_SUCCESSOR",
+  "meaning": "Final prompt-binding successor for prerequisite profile authoring. The qualified RC3 runtime, transport, profile surface, checker, launcher, aperture and budgets are preserved. Only PROFILE-WRITER-TASK.md changes to bind the complete machine-readable profile surface and minimal prompt tokens. If the frozen checker still returns PROFILE_CONFIGURATION, stop the prompt-repair sequence as FALSIFIED_PROFILE_AUTHORING_RELIABILITY.",
+  "protected_main": "f605c158a83fa1e17664c14fdf5841e7215a6f27",
+  "predecessor_rc4_terminal_head": "00e85597e219b56d369d7bc7f1cf99871e7bfe51",
+  "predecessor_rc4_checker_code": "PROFILE_EVALUATOR_CONFIG_MODES",
+  "qualified_rc3_apparatus_source": "55c2940d6822a6c666441f61900b2cadcfbde046",
+  "source_commit": "78af0dff51d180a2fa2feddce581d45539b02c7a",
+  "source_tree": "4efd514890917a502bc77ed4a98c5fbb1dafe34d",
+  "controlled_change": {
+    "file": "research/eb_root_generation_prereq_rc5_full_wire_20261004/PROFILE-WRITER-TASK.md",
+    "blob": "49d3a67e0f3d7f1dab7d14838ba72c105958c0ad",
+    "purpose": "Bind exact PRIMARY-CONFIG, EVALUATOR-CONFIG, REVIEW-SCHEMA machine surface and minimum prompt tokens."
+  },
+  "terminal_research_rule": {
+    "checker_pass": "SUPPORTED_FOR_GENERATION_EXECUTION",
+    "profile_configuration_failure": "FALSIFIED_PROFILE_AUTHORING_RELIABILITY"
+  },
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc5-full-wire.yml": "970f47644be53e46b50e2ebb584a2551ee49b626",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/PROFILE-WRITER-TASK.md": "49d3a67e0f3d7f1dab7d14838ba72c105958c0ad",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/BOOTSTRAP-MANIFEST.json": "bf192aea0a22007ee80264e0f9523459527a97b6",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/CUSTODY-SCHEMA.json": "65cebd20add80e0ff967f3cd1f266cd76f4dead2",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/WRITER-TRANSPORT.json": "3ae2788e3796f6853e17246ff12ae464c497b59e",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/validate_setup.py": "e131b86eadfd22cc628cffcde319dae1dd0bfb83",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/check_execution.py": "9eb787f39a3260e7601aafd88e113e4e8dd5a0aa",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/run_writer.py": "5dbb4286631e81e891a4e01bc9d607707c62ac9e",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/SUCCESSOR-AUTHORITY.json": "182ea9e143181997b3a8cc0e0366da8d11bb39d0",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/README.md": "8706f84c9d95331dd61d24f7895d4949056846f1",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/PREREGISTRATION.md": "4e97987ef94c299b9c1f909f25f141cbe23fd303",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/validate_successor.py": "b9bab3c3adc0baaf159643a50950f27da08d1cdd",
+    "research/eb_root_generation_prereq_rc5_full_wire_20261004/DEVIATIONS.json": "c3bb08e0e3e40871b1c2a5e7be570cd218df5b8e"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "execution_state": "NOT_RUN",
+  "writer_attempts_consumed": 0,
+  "custody_attempts_consumed": 0,
+  "future_writer_attempts_authorized_after_exact_head_gates": 1,
+  "future_custody_attempts_authorized_after_exact_head_gates": 1,
+  "semantic_calibration_attempts_authorized": 0,
+  "target_generation_attempts_authorized": 0,
+  "weak_generator_attempts_authorized": 0,
+  "decisive_review_attempts_authorized": 0,
+  "tally_attempts_authorized": 0,
+  "context_free_required": true,
+  "generation_capability": "UNKNOWN",
+  "next_authorized_boundary": "After exact-head dedicated validation and ordinary CI succeed, execute frozen run_writer.py exactly once in a context-free environment. Preserve the first terminal structured disposition. If it is PROFILE_CONFIGURATION, terminate prompt-repair research as FALSIFIED_PROFILE_AUTHORING_RELIABILITY."
+}

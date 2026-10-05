@@ -1,0 +1,33 @@
+{
+  "actual_backend_weight_attestation": "UNKNOWN",
+  "completed_at": "2026-10-05T01:43:28.857603+00:00",
+  "destination": "http://127.0.0.1:11434/api/generate",
+  "done_reason": "stop",
+  "execution_id": "rc5-20261004-pr139-7615111-01",
+  "extracted_files_sha256": {
+    "EVALUATOR-CONFIG.json": "sha256:651be316f3a833f57618cfec3b699db3648fd92a56e8fa5dad8374653ceecad3",
+    "EVALUATOR-PROMPT.txt": "sha256:34510b02b12027d11dd0cdffaa19c5ba43f1cee5cad354b5f24cd228499f4d73",
+    "PRIMARY-CONFIG.json": "sha256:5f61918e27c18fff433a480b754a3e7ae0e96ad8c4907c48e83fe1af0727fddd",
+    "PRIMARY-PROMPT.txt": "sha256:533ccdcc093047d0b177382a253fcff97e6c09681eff7b2a89501d7cc02ed150",
+    "REVIEW-SCHEMA.json": "sha256:1eeb102baf984407cc515adbff9ef16b92ecbe9414999ec3714d76a484d60130"
+  },
+  "forbidden_sources_opened": [],
+  "native_request_sha256": "sha256:f115d991c847045db84e918f28e8f8d081c3908149ab2aef0b90294de8f30bee",
+  "native_response_sha256": "sha256:21a3cc07bc33cb9d5fb1d47e9c782a59f83892cf23a4e3559d7111e9f0ea16dd",
+  "no_history_mechanism": "raw_api_request_contains_only_frozen_source_bundle_and_runtime_metadata",
+  "opened_sources": [
+    {"name": "BOOTSTRAP-MANIFEST.json", "sha256": "sha256:85ef8e08a48de80c04bb3940f300756d71c0ce18857479e7627cfc619b999f50"},
+    {"name": "PROFILE-WRITER-TASK.md", "sha256": "sha256:b04a404d3301299211cebe7a3fd10de5f502aa56b680d19af28dbd22ebf3e562"},
+    {"name": "AUTHORING-RUBRIC.json", "sha256": "sha256:fdf7f1660a0af7811774ed61545899488e09a1fee4d0fea2c881a552a7afd7b9"},
+    {"name": "PROFILE-SURFACE.json", "sha256": "sha256:73c60acc632ab9218d4bc9a77ea590bdffb096c0c4a8e96894cad177b8a75e25"}
+  ],
+  "reported_model": "qwen3.5:9b",
+  "reported_model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "response_complete": true,
+  "schema": "eb-root-generation-external-custody-rc1-v1",
+  "service_version": "0.35.1",
+  "session_id": "STATELESS_RAW_API_NO_RESUME_HANDLE",
+  "setup_source_commit": "78af0dff51d180a2fa2feddce581d45539b02c7a",
+  "started_at": "2026-10-05T01:42:24.378467+00:00",
+  "truncated": false
+}

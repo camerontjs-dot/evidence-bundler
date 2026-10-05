@@ -1,0 +1,34 @@
+{
+  "schema": "eb-root-generation-prereq-rc5-full-wire-authority-v1",
+  "repository": "camerontjs-dot/evidence-bundler",
+  "protected_main": "f605c158a83fa1e17664c14fdf5841e7215a6f27",
+  "predecessor_rc4": {
+    "pr": 138,
+    "terminal_head": "00e85597e219b56d369d7bc7f1cf99871e7bfe51",
+    "frozen_candidate_head": "a82d95aa002b9f70e8f8bfab4128e93ede57aae3",
+    "source_commit": "8071759950407200b40cfc82c4435209dfce1f67",
+    "terminal_disposition": "BLOCKED_PROFILE_CONFIGURATION",
+    "checker_code": "PROFILE_EVALUATOR_CONFIG_MODES"
+  },
+  "qualified_apparatus_source": "55c2940d6822a6c666441f61900b2cadcfbde046",
+  "controlled_change": {
+    "file": "PROFILE-WRITER-TASK.md",
+    "purpose": "Bind the complete machine-readable profile surface and minimal prompt tokens rather than a single review-schema field family."
+  },
+  "terminal_research_rule": {
+    "pass": "SUPPORTED_FOR_GENERATION_EXECUTION",
+    "profile_failure": "FALSIFIED_PROFILE_AUTHORING_RELIABILITY",
+    "meaning": "If the frozen checker still reports PROFILE_CONFIGURATION after full literal machine-surface binding, stop the prompt-repair sequence for this model/runtime configuration."
+  },
+  "future_execution_budget": {
+    "profile_writer_attempts": 1,
+    "custody_attempts": 1,
+    "semantic_calibration_attempts": 0,
+    "target_generation_attempts": 0,
+    "weak_generator_attempts": 0,
+    "decisive_review_attempts": 0,
+    "tally_attempts": 0
+  },
+  "setup_writer_invocation_authorized": false,
+  "generation_capability": "UNKNOWN"
+}
