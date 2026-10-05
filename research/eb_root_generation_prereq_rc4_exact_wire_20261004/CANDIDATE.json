@@ -1,0 +1,53 @@
+{
+  "schema": "eb-root-generation-prereq-candidate-rc1-v1",
+  "revision": "RC4_EXACT_WIRE_PROFILE_SUCCESSOR",
+  "meaning": "Single-variable context-free prerequisite successor. The qualified RC3 runtime, transport, profile surface, checker, launcher, aperture and budgets are preserved. Only PROFILE-WRITER-TASK.md changes to bind REVIEW-SCHEMA.json to the exact literal machine keys already defined in PROFILE-SURFACE.json and to forbid the aliases observed in RC2/RC3.",
+  "protected_main": "f605c158a83fa1e17664c14fdf5841e7215a6f27",
+  "predecessor_rc3_terminal_head": "c4ae03e2f650a566dd04e933f654f194315f8c30",
+  "predecessor_rc3_checker_code": "PROFILE_CALIBRATION_OUTPUT_MISSING",
+  "qualified_rc3_apparatus_source": "55c2940d6822a6c666441f61900b2cadcfbde046",
+  "source_commit": "8071759950407200b40cfc82c4435209dfce1f67",
+  "source_tree": "16f0ae7ad59a37ba5754ecfb82f34b11e2fefd02",
+  "controlled_change": {
+    "file": "research/eb_root_generation_prereq_rc4_exact_wire_20261004/PROFILE-WRITER-TASK.md",
+    "blob": "fed12986970f49191e11abbdb9e639b318d14ef6",
+    "purpose": "Require literal input/output/decision/root_status/checks keys and prohibit observed alias forms."
+  },
+  "frozen_blobs": {
+    ".github/workflows/research-root-generation-prereq-rc4-exact-wire.yml": "8fe6496c2ad681d7f232280115c5f8dee71e0a91",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/AUTHORING-RUBRIC.json": "f8967244c3864e7b39d12053d226326c5c06908f",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/PROFILE-SURFACE.json": "a97d2d196f64960ff5f17c999a3ab70d2309d549",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/PROFILE-WRITER-TASK.md": "fed12986970f49191e11abbdb9e639b318d14ef6",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/BOOTSTRAP-MANIFEST.json": "bf192aea0a22007ee80264e0f9523459527a97b6",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/CUSTODY-SCHEMA.json": "65cebd20add80e0ff967f3cd1f266cd76f4dead2",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/WRITER-TRANSPORT.json": "3ae2788e3796f6853e17246ff12ae464c497b59e",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/LAUNCH-STATUS.json": "a18298c98b4eda3574180e01478c625214bd08f1",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_setup.py": "e131b86eadfd22cc628cffcde319dae1dd0bfb83",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/check_execution.py": "9eb787f39a3260e7601aafd88e113e4e8dd5a0aa",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/run_writer.py": "5dbb4286631e81e891a4e01bc9d607707c62ac9e",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/SUCCESSOR-AUTHORITY.json": "bcb27373ffbf61de5cd1add46c9953dfabe14426",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/README.md": "698b7ad507f44b063854f2f3759a334ce76b8292",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/PREREGISTRATION.md": "28d8aafbff495ed624a36cceeb77aaca7977fb65",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/validate_successor.py": "316188e206084bcf9bde13ea579617bd04ce2446",
+    "research/eb_root_generation_prereq_rc4_exact_wire_20261004/DEVIATIONS.json": "1ff836567d4f9180c887ce21af8cba123bddffd5"
+  },
+  "writer_runtime": {
+    "destination": "http://127.0.0.1:11434/api/generate",
+    "service_version": "0.35.1",
+    "reported_model": "qwen3.5:9b",
+    "service_reported_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+  },
+  "execution_state": "NOT_RUN",
+  "writer_attempts_consumed": 0,
+  "custody_attempts_consumed": 0,
+  "future_writer_attempts_authorized_after_exact_head_gates": 1,
+  "future_custody_attempts_authorized_after_exact_head_gates": 1,
+  "semantic_calibration_attempts_authorized": 0,
+  "target_generation_attempts_authorized": 0,
+  "weak_generator_attempts_authorized": 0,
+  "decisive_review_attempts_authorized": 0,
+  "tally_attempts_authorized": 0,
+  "context_free_required": true,
+  "generation_capability": "UNKNOWN",
+  "next_authorized_boundary": "After exact-head dedicated validation and ordinary CI succeed, execute frozen run_writer.py exactly once in a context-free environment. Preserve the first terminal structured disposition and stop."
+}
