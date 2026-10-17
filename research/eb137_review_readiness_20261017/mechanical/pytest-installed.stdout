@@ -1,0 +1,21 @@
+........................................................................ [ 22%]
+....s................................................sss................ [ 44%]
+......s................................................................. [ 67%]
+........................................................................ [ 89%]
+..................................                                       [100%]
+=============================== warnings summary ===============================
+venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122
+  ${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name "schema" in "ContractBFactualContext" shadows an attribute in parent "_Strict"
+    class ContractBFactualContext(_Strict):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] ../../../Desktop/MainFrame/30_projects/evidence-bundler/.worktrees/eb-v1-137-fresh-review-20261016/tests/test_hashing.py:49: Could not resolve Apparatus Contracts root. Checked locations:
+- ${RUN_ROOT}/venv/apparatus-contracts
+- ${RUN_ROOT}/venv/lib/apparatus-contracts
+To resolve this, set the APPARATUS_CONTRACTS_ROOT environment variable.
+SKIPPED [1] ../../../Desktop/MainFrame/30_projects/evidence-bundler/.worktrees/eb-v1-137-fresh-review-20261016/tests/test_phase4_handoff_demo.py:67: Claim Audit Lab root not available
+SKIPPED [1] ../../../Desktop/MainFrame/30_projects/evidence-bundler/.worktrees/eb-v1-137-fresh-review-20261016/tests/test_phase4_handoff_demo.py:91: Claim Audit Lab root not available
+SKIPPED [1] ../../../Desktop/MainFrame/30_projects/evidence-bundler/.worktrees/eb-v1-137-fresh-review-20261016/tests/test_phase4_handoff_demo.py:108: Claim Audit Lab root not available
+SKIPPED [1] ../../../Desktop/MainFrame/30_projects/evidence-bundler/.worktrees/eb-v1-137-fresh-review-20261016/tests/test_reranker.py:74: set EVIDENCE_BUNDLER_RUN_RERANKER_SMOKE=1 to run real reranker smoke
+317 passed, 5 skipped, 1 warning in 9.27s

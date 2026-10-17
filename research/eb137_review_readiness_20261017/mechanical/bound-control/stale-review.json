@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+    "input_sha256": "sha256:abababababababababababababababababababababababababababababababab",
+    "package_version": "0.3.0.dev0",
+    "profile_id": "eb-v1-integration-10x3-rc0",
+    "unreviewed_native_package_sha256": "sha256:ba71c9501c74faeb17ff9977dc6fee665e18626d4fd779b49769451e8fb25a8a"
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:559fef79b50c7d8968b28e999164d214",
+      "proposition_id": "claim-safe",
+      "reason": "Qualification control: retained passage is accepted for boundary testing."
+    }
+  ],
+  "schema": "evidence-bundler-v1-review-record-v1"
+}

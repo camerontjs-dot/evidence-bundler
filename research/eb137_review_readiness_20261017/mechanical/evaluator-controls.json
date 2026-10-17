@@ -1,0 +1,52 @@
+{
+  "always_reject": {
+    "passed": false,
+    "positives": {
+      "clm-p01": false,
+      "clm-p02": false,
+      "clm-p03-1": false,
+      "clm-p03-2": false,
+      "clm-p06-1": false
+    },
+    "gaps": {
+      "clm-p04": true,
+      "clm-p05": true,
+      "clm-p06-2": true,
+      "clm-p08": true
+    }
+  },
+  "always_accept": {
+    "passed": false,
+    "positives": {
+      "clm-p01": true,
+      "clm-p02": true,
+      "clm-p03-1": true,
+      "clm-p03-2": true,
+      "clm-p06-1": true
+    },
+    "gaps": {
+      "clm-p04": false,
+      "clm-p05": false,
+      "clm-p06-2": false,
+      "clm-p08": true
+    }
+  },
+  "old_gate_with_p07_accepted": {
+    "passed": true,
+    "positives": {
+      "clm-p01": true,
+      "clm-p02": true,
+      "clm-p03-1": true,
+      "clm-p03-2": true,
+      "clm-p06-1": true
+    },
+    "gaps": {
+      "clm-p04": true,
+      "clm-p05": true,
+      "clm-p06-2": true,
+      "clm-p08": true
+    }
+  },
+  "required_137_p07_overlay_pass": false,
+  "scope": "fabricated counts only; exposes older evaluator transfer limit; no reviewer or candidate adequacy result"
+}

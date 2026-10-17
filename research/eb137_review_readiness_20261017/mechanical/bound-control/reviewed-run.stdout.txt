@@ -1,0 +1,14 @@
+{
+  "applied_review_record": "${RUN_ROOT}/checks/bound-control/reviewed/applied_review_record.json",
+  "contract_b_bundle_hash": "sha256:73bba8d52e0e83873ccab11c42d763d4731d250a574f262ecb3f7304d7656489",
+  "contract_b_dir": "${RUN_ROOT}/checks/bound-control/reviewed/contract_b",
+  "input_sha256": "sha256:7107ca87b44108100be8a1835f3ee7e0d0ff3c71960d4dce03e9236f376a765a",
+  "native_package": "${RUN_ROOT}/checks/bound-control/reviewed/native_eb_v1_package.json",
+  "native_package_sha256": "sha256:5a7a12a1ba16e3292e895a5e1136a0e77da48c8b9a64bfdf3fdbb90010c696e4",
+  "profile_id": "eb-v1-integration-10x3-rc0",
+  "projection_receipt": "${RUN_ROOT}/checks/bound-control/reviewed/projection_receipt.json",
+  "projection_receipt_sha256": "sha256:b6f01e9bba358f586a688b5f4635ae676329da2f52e14f1b559faac8217bf8af",
+  "review_context": "${RUN_ROOT}/checks/bound-control/reviewed/review_context.md",
+  "slice_id": "eb-v1-slice-1",
+  "unreviewed_native_package_sha256": "sha256:ba71c9501c74faeb17ff9977dc6fee665e18626d4fd779b49769451e8fb25a8a"
+}

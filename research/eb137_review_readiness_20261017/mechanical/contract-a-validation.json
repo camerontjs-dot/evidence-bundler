@@ -1,0 +1,65 @@
+{
+  "contract_a_commit": "529c92b49a34d5c610618551a8737f019f9fa332",
+  "wheel_sha256": "fce0803afeefd4d23cfd12e78bc7e5d76464393010008b885e0e97460ebfb544",
+  "members": {
+    "validators/__init__.py": "d14bd89bf04ba252ece6071ff8e4d4c79c31b29c5334c69f205c9da21ddfa233",
+    "validators/__main__.py": "4ef74bb551c2f755b547477feaa8bbc6ea471363ca6dfac2490b5e9e38dd6056",
+    "validators/_hashing.py": "94b17f310b90630b21eedf4143ffe9a57b4dfb31486a037e52fec89166af0a5c",
+    "validators/_models.py": "a55871ae74af9943d1b19de62a2c9f7a60044a39759c5915381ba1f93d3a0c27",
+    "validators/_vocabulary.py": "04b7f616bae2b417a1a660d98539eac9c328c3132b1cac8a7e5b938eb2ce1d8a",
+    "validators/contract_a.py": "9eec5c00198cbb6cc440a1b73c2817f1699f4b754c11e70bede51d0ff68729e2",
+    "validators/contract_a_rc2.py": "1f8e94b23af29efef6bf32daf2655a712b4f101e84360988e3755e80fbb19e24",
+    "validators/contract_b_factual_context.py": "dca5af8712cb64f4312ef5e4474873a0668dc9e2fc34d4edbe4026027f06f0a4",
+    "validators/contract_c.py": "0578fdbba567c2fa0c4c7dd926a64aee287be3298d9f161361f50cc21e1218bd",
+    "validators/contract_d_consume.py": "7c20323895e1a07414c4e08ae0bfbb659c83717fe676870c2c28bfeddbd75503",
+    "validators/contract_d_core.py": "80ccc385a7eba3d07afa277befd1461d54ff02a3c0cbd66b47a98aca2386af12",
+    "validators/contract_d_validate.py": "c702c3f728276b43aa7e210facf3447d077a795a1b6a5f346f3a494213f54224",
+    "validators/verify_contract_integrity.py": "f9ab373d4244b8f996b44157b83ff3caf0a906de96d1a6b5c282628f14560d13",
+    "validators/verify_spec_vocabulary.py": "12fa92fdf10a3e357006fba4697ea464cee219c69052d35509fa08dee149f2e1",
+    "validators/verify_vocabulary.py": "238219d1aa3cf063cb255188eaa7a302e85e12146653b836bb1f2c48148a9b50"
+  },
+  "member_payload_matches": true,
+  "cases": [
+    {
+      "case": "p01",
+      "input_sha256": "40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p02",
+      "input_sha256": "b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p03",
+      "input_sha256": "514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p04",
+      "input_sha256": "253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p05",
+      "input_sha256": "23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p06",
+      "input_sha256": "53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p07",
+      "input_sha256": "e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c",
+      "canonical_A2_valid": true
+    },
+    {
+      "case": "p08",
+      "input_sha256": "dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f",
+      "canonical_A2_valid": true
+    }
+  ],
+  "python": "3.11.15 (main, May  4 2026, 21:04:48) [Clang 22.1.3 ]"
+}

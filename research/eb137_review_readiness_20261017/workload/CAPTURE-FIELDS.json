@@ -1,0 +1,38 @@
+{
+  "queue_record": [
+    "queue_identity",
+    "original_order",
+    "owner_authority",
+    "frozen_at",
+    "eligible_or_excluded",
+    "exclusion_reason"
+  ],
+  "records_created": false,
+  "schema": "eb-workload-capture-requirements-v1",
+  "separation": "Witness fields are custodian-only and must never enter the blind reviewer packet.",
+  "source_record": [
+    "permission_basis",
+    "raw_sha256",
+    "converted_text_sha256",
+    "conversion_tool_config",
+    "conversion_timestamp",
+    "source_packet_id"
+  ],
+  "target_record": [
+    "selection_index",
+    "A_declaration_sha256",
+    "proposition_id",
+    "required_child_ids",
+    "source_packet_ids",
+    "witness_label",
+    "retained_pair_ids",
+    "first_decisions_and_reasons",
+    "standalone_adequacy",
+    "complete_parent",
+    "reviewer_actor_identity",
+    "review_start_end",
+    "elapsed_seconds",
+    "raw_lookups",
+    "integrity_deviations"
+  ]
+}

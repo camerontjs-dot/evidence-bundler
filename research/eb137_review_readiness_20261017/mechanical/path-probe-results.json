@@ -1,0 +1,82 @@
+[
+  {
+    "case": "claim_traversal",
+    "command": [
+      "${RUN_ROOT}/venv/bin/evidence-bundler-v1",
+      "run",
+      "${RUN_ROOT}/checks/path-probe/claim_traversal/contract_a.json",
+      "--out-dir",
+      "${RUN_ROOT}/checks/path-probe/claim_traversal/requested-output"
+    ],
+    "exit_code": 1,
+    "outside_target": "${RUN_ROOT}/checks/path-probe/claim_traversal/owned-sentinel.yaml",
+    "requested_output": "${RUN_ROOT}/checks/path-probe/claim_traversal/requested-output",
+    "outside_output": true,
+    "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_overwritten": false,
+    "native_written": false,
+    "receipt_written": false,
+    "stderr_tail": "${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name \"schema\" in \"ContractBFactualContext\" shadows an attribute in parent \"_Strict\"\n  class ContractBFactualContext(_Strict):\nError: claim ID cannot be represented as a literal Contract B path: '../../../owned-sentinel'\n"
+  },
+  {
+    "case": "source_traversal",
+    "command": [
+      "${RUN_ROOT}/venv/bin/evidence-bundler-v1",
+      "run",
+      "${RUN_ROOT}/checks/path-probe/source_traversal/contract_a.json",
+      "--out-dir",
+      "${RUN_ROOT}/checks/path-probe/source_traversal/requested-output"
+    ],
+    "exit_code": 1,
+    "outside_target": "${RUN_ROOT}/checks/path-probe/source_traversal/owned-source/source_profile.yaml",
+    "requested_output": "${RUN_ROOT}/checks/path-probe/source_traversal/requested-output",
+    "outside_output": true,
+    "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_overwritten": false,
+    "native_written": false,
+    "receipt_written": false,
+    "stderr_tail": "${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name \"schema\" in \"ContractBFactualContext\" shadows an attribute in parent \"_Strict\"\n  class ContractBFactualContext(_Strict):\nError: source ID cannot be represented as a literal Contract B path: '../../../owned-source'\n"
+  },
+  {
+    "case": "absolute_claim",
+    "command": [
+      "${RUN_ROOT}/venv/bin/evidence-bundler-v1",
+      "run",
+      "${RUN_ROOT}/checks/path-probe/absolute_claim/contract_a.json",
+      "--out-dir",
+      "${RUN_ROOT}/checks/path-probe/absolute_claim/requested-output"
+    ],
+    "exit_code": 1,
+    "outside_target": "${RUN_ROOT}/checks/path-probe/absolute_claim/owned-sentinel.yaml",
+    "requested_output": "${RUN_ROOT}/checks/path-probe/absolute_claim/requested-output",
+    "outside_output": true,
+    "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_overwritten": false,
+    "native_written": false,
+    "receipt_written": false,
+    "stderr_tail": "${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name \"schema\" in \"ContractBFactualContext\" shadows an attribute in parent \"_Strict\"\n  class ContractBFactualContext(_Strict):\nError: claim ID cannot be represented as a literal Contract B path: '${RUN_ROOT}/checks/path-probe/absolute_claim/owned-sentinel'\n"
+  },
+  {
+    "case": "absolute_source",
+    "command": [
+      "${RUN_ROOT}/venv/bin/evidence-bundler-v1",
+      "run",
+      "${RUN_ROOT}/checks/path-probe/absolute_source/contract_a.json",
+      "--out-dir",
+      "${RUN_ROOT}/checks/path-probe/absolute_source/requested-output"
+    ],
+    "exit_code": 1,
+    "outside_target": "${RUN_ROOT}/checks/path-probe/absolute_source/owned-source/source_profile.yaml",
+    "requested_output": "${RUN_ROOT}/checks/path-probe/absolute_source/requested-output",
+    "outside_output": true,
+    "sentinel_before": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_after": "sha256:8b961912a311eedc34b570fc90fd13d2d8350b47b087cf5980f01c1c2f12f48b",
+    "sentinel_overwritten": false,
+    "native_written": false,
+    "receipt_written": false,
+    "stderr_tail": "${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name \"schema\" in \"ContractBFactualContext\" shadows an attribute in parent \"_Strict\"\n  class ContractBFactualContext(_Strict):\nError: source ID cannot be represented as a literal Contract B path: '${RUN_ROOT}/checks/path-probe/absolute_source/owned-source'\n"
+  }
+]

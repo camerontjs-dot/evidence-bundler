@@ -1,0 +1,22 @@
+{
+  "command": [
+    "uv",
+    "pip",
+    "install",
+    "--python",
+    "${RUN_ROOT}/venv/bin/python",
+    "-c",
+    "${RUN_ROOT}/checks/prior-installed-constraints.txt",
+    "${PRIOR_RUN_ROOT}/wheels/evidence_bundler-0.3.0.dev0-py3-none-any.whl",
+    "pip",
+    "setuptools>=77",
+    "wheel",
+    "pytest>=8,<10",
+    "ruff>=0.15,<1",
+    "mypy>=1.20,<2",
+    "types-PyYAML>=6,<7"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 26.39401958399685,
+  "route": "fresh venv full declared dependencies; pinned prior-installed constraints; no borrowed site-packages"
+}

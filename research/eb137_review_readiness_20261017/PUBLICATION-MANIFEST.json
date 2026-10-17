@@ -1,0 +1,336 @@
+{
+  "schema": "eb137-sanitized-publication-v1",
+  "files": [
+    {
+      "public_path": "fresh-review/CONTENT-FREEZE.json",
+      "raw_sha256": "2f41ded9c12e40ade000ec3082abea468bb3a0ddcf9c2c4f4f331171f4319f90",
+      "public_sha256": "2f41ded9c12e40ade000ec3082abea468bb3a0ddcf9c2c4f4f331171f4319f90",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "fresh-review/EXPORT-IDENTITY.json",
+      "raw_sha256": "ca5fa0fc7c7ad51a55d7fc809e60fd0bf12f8661b93879945010b71841f6594d",
+      "public_sha256": "ca5fa0fc7c7ad51a55d7fc809e60fd0bf12f8661b93879945010b71841f6594d",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "fresh-review/GOVERNING-FRESH-REVIEW-PROTOCOL.md",
+      "raw_sha256": "698435dc1df28ce76750c474c44ae62171f51ed71f15cb58336f2be4526c5564",
+      "public_sha256": "698435dc1df28ce76750c474c44ae62171f51ed71f15cb58336f2be4526c5564",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "fresh-review/APPLICATION-AND-EVALUATION.md",
+      "raw_sha256": "cb0ab05c605407bceb93a2d57b6e0416c8fd342627f95d3f4018774dba150b5b",
+      "public_sha256": "cb0ab05c605407bceb93a2d57b6e0416c8fd342627f95d3f4018774dba150b5b",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "fresh-review/REVIEWER-ONLY.zip",
+      "raw_sha256": "efe9148bd46a211fa6139bdd9ceb5959e0971b87d82d397dc63b2101c88bdf0d",
+      "public_sha256": "efe9148bd46a211fa6139bdd9ceb5959e0971b87d82d397dc63b2101c88bdf0d",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "workload/CONTROLLING-PROTOCOL.md",
+      "raw_sha256": "1d829ba42067c8834a2f63637e604cc949ee095f99aa3db41aaed8bd916ede63",
+      "public_sha256": "1d829ba42067c8834a2f63637e604cc949ee095f99aa3db41aaed8bd916ede63",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "workload/CAPTURE-FIELDS.json",
+      "raw_sha256": "1f3fd1d800f1314767c4d48d0de653b143c1f1c56a37f932d72787f37daf46e8",
+      "public_sha256": "1f3fd1d800f1314767c4d48d0de653b143c1f1c56a37f932d72787f37daf46e8",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "workload/READINESS.json",
+      "raw_sha256": "7fe4cf67a7f6020e3f7d950c2b6ccf5d7943e06d2f47f01fedc353b78b75793f",
+      "public_sha256": "7fe4cf67a7f6020e3f7d950c2b6ccf5d7943e06d2f47f01fedc353b78b75793f",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "workload/EXECUTION-READINESS.md",
+      "raw_sha256": "f7f04699c33ce1eb809373fcd889e12eb65083ca209da94cd4e5e1b090b7ac06",
+      "public_sha256": "f7f04699c33ce1eb809373fcd889e12eb65083ca209da94cd4e5e1b090b7ac06",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/contract-a-validation.json",
+      "raw_sha256": "2cd2debca6df4b1949a1ad6d010df43cd796d145ac73e7a653604876021aad6b",
+      "public_sha256": "2cd2debca6df4b1949a1ad6d010df43cd796d145ac73e7a653604876021aad6b",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/command-results.json",
+      "raw_sha256": "c4bd48d895ff931bd1ee7f0c767ec3e4cbbabe70541344967194488744f3a254",
+      "public_sha256": "0028a6c20d3f48a750ac21b23243528bde548915ffea5a011a52c7c80b6b4223",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/containment-check.json",
+      "raw_sha256": "7f68dcca3f5a412f4b04a727d7d8660ef2a7e45f652d8c16f5f3f9686e4cec42",
+      "public_sha256": "7f68dcca3f5a412f4b04a727d7d8660ef2a7e45f652d8c16f5f3f9686e4cec42",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/evaluator-controls.json",
+      "raw_sha256": "3fc7fa7a4f1df85dd92b2c1d5a039526cde6363294f57d0095e00c46ccd6ca8c",
+      "public_sha256": "3fc7fa7a4f1df85dd92b2c1d5a039526cde6363294f57d0095e00c46ccd6ca8c",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/eight-case-preparation.json",
+      "raw_sha256": "8613e92020f05b1e9a873f3284519c3ff34d2993a52e4261042aaa3ae70680c0",
+      "public_sha256": "8613e92020f05b1e9a873f3284519c3ff34d2993a52e4261042aaa3ae70680c0",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/prior-preparation-integrity.json",
+      "raw_sha256": "229eabf24ef64829c4b64e860aac7076539f5eda7fd406a361cd8d575ac13ec0",
+      "public_sha256": "229eabf24ef64829c4b64e860aac7076539f5eda7fd406a361cd8d575ac13ec0",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/subject.json",
+      "raw_sha256": "5254af4643e67c4b948c7ccd93975088f3fc15566f3db1c49df18e4778058ab8",
+      "public_sha256": "5254af4643e67c4b948c7ccd93975088f3fc15566f3db1c49df18e4778058ab8",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/dependencies.lock",
+      "raw_sha256": "2853a553e698e6e905cef4d53726eda997b8585dd199c9c13c82a3aa32915cbd",
+      "public_sha256": "eb7203fbcbe77acb65582807f61a1c80a9c33a8a4eca8820bd99ebeaee469451",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/pip-check.log",
+      "raw_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "public_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/full-install.json",
+      "raw_sha256": "c3d3d744821de9a08a021397f1e4bd0ffbc049f9d31302968a28491a358f97e6",
+      "public_sha256": "03eefd62670154ddf8e7bdee44ab9c58684d8b3776ee0d8aa69367c7b01fb508",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/offline-install.log",
+      "raw_sha256": "9a2c50b87f606ff077b09a1e2e3c4988bae28b4cb4cfceac0a5c2c4a89a9b5d3",
+      "public_sha256": "9a2c50b87f606ff077b09a1e2e3c4988bae28b4cb4cfceac0a5c2c4a89a9b5d3",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/pinned-offline-install.log",
+      "raw_sha256": "b04d2ace9a32680997d11384e79654e1337159f787b441878e1a96ece44018b0",
+      "public_sha256": "b04d2ace9a32680997d11384e79654e1337159f787b441878e1a96ece44018b0",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/pytest-installed.stdout",
+      "raw_sha256": "c58a2543dc8b7e9761f62a8d98343c80cfd90479b1440f6aea963a15c0702411",
+      "public_sha256": "bc7ebe1ea2081c1cb335b95808a2c1aaaa8cb781348ac4213bad41588b00fc2a",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/ruff.stdout",
+      "raw_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/mypy.stdout",
+      "raw_sha256": "0f0451a70963ae73be675ad208919e74e8bf1cfecdd4689aabe892085d717fc7",
+      "public_sha256": "0f0451a70963ae73be675ad208919e74e8bf1cfecdd4689aabe892085d717fc7",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/identity.stderr",
+      "raw_sha256": "d6d2725116d4090998d4e23ddb97955bf6166692ccf6725c29cf611533e847d0",
+      "public_sha256": "d6d2725116d4090998d4e23ddb97955bf6166692ccf6725c29cf611533e847d0",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/version.stdout.txt",
+      "raw_sha256": "168d94c53f8d608711a789feb2a9b9109c12903c34b6c27652abe516afa53c93",
+      "public_sha256": "168d94c53f8d608711a789feb2a9b9109c12903c34b6c27652abe516afa53c93",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/contract_a.json",
+      "raw_sha256": "7107ca87b44108100be8a1835f3ee7e0d0ff3c71960d4dce03e9236f376a765a",
+      "public_sha256": "7107ca87b44108100be8a1835f3ee7e0d0ff3c71960d4dce03e9236f376a765a",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/runtime.json",
+      "raw_sha256": "e43d49e48bc0f6c5629df3db121d12998b486c52ceb062a8230d9409a136410c",
+      "public_sha256": "e43d49e48bc0f6c5629df3db121d12998b486c52ceb062a8230d9409a136410c",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/stale-review.stdout.txt",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/reviewed-run.stdout.txt",
+      "raw_sha256": "4c571e7c7e8f44948c551e51c8c48952c4082a0eabee9eb6a53d3bc694a108da",
+      "public_sha256": "9499d7abed4bee4bc21020896e52208386394d63b652e2a8a28e948695390577",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/inspect.stdout.txt",
+      "raw_sha256": "8d04bbc4c4b31f61e72ee376b0b33bb0b9bcbf05fd744e57b14bf96467977846",
+      "public_sha256": "8d04bbc4c4b31f61e72ee376b0b33bb0b9bcbf05fd744e57b14bf96467977846",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/tampered-passage-check.json",
+      "raw_sha256": "5996446661315769accc79db7d46557851df132ff336059057203b2ab560007e",
+      "public_sha256": "5996446661315769accc79db7d46557851df132ff336059057203b2ab560007e",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/initial.stderr.txt",
+      "raw_sha256": "04aa40c5f237060cc635b4ca8c92caea27b4316baebbcedf301a3ea39851e1cb",
+      "public_sha256": "f10f820321eccc984b44c91b3d283626fe04ab4d051db8c0fea990da645434a8",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/version.stderr.txt",
+      "raw_sha256": "04aa40c5f237060cc635b4ca8c92caea27b4316baebbcedf301a3ea39851e1cb",
+      "public_sha256": "f10f820321eccc984b44c91b3d283626fe04ab4d051db8c0fea990da645434a8",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/stale-review.json",
+      "raw_sha256": "e0bf8c88439e3ffe7bd5dc9565eada3bfaba578b5e45166e4aea5ba0a0343568",
+      "public_sha256": "e0bf8c88439e3ffe7bd5dc9565eada3bfaba578b5e45166e4aea5ba0a0343568",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/reviewed-run.stderr.txt",
+      "raw_sha256": "04aa40c5f237060cc635b4ca8c92caea27b4316baebbcedf301a3ea39851e1cb",
+      "public_sha256": "f10f820321eccc984b44c91b3d283626fe04ab4d051db8c0fea990da645434a8",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/review.json",
+      "raw_sha256": "c20ba43db06e3ad6ef01651b1bdf6049d5591e113905c3e82ce4aa341e3e26fc",
+      "public_sha256": "c20ba43db06e3ad6ef01651b1bdf6049d5591e113905c3e82ce4aa341e3e26fc",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/cal-intake.json",
+      "raw_sha256": "123a9d15c965de9df2e19a8ef6b7ebf8ca39b4bc60b966996fc184d0fde9533f",
+      "public_sha256": "123a9d15c965de9df2e19a8ef6b7ebf8ca39b4bc60b966996fc184d0fde9533f",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/bound-control/stale-review.stderr.txt",
+      "raw_sha256": "df819229642d861950f7764132093f182392e587babad1b5145a20d2cd0bcf1f",
+      "public_sha256": "efab5abbcc3af98adba2c51aba2b570ace054f5637f906bbd221c9abf634c7fe",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/inspect.stderr.txt",
+      "raw_sha256": "04aa40c5f237060cc635b4ca8c92caea27b4316baebbcedf301a3ea39851e1cb",
+      "public_sha256": "f10f820321eccc984b44c91b3d283626fe04ab4d051db8c0fea990da645434a8",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/initial.stdout.txt",
+      "raw_sha256": "c5670037517f610718da0d60d5a1eb43bff777ff67a97b8d5d45700d91130772",
+      "public_sha256": "7d0ca59172d2a64ba5cd6a4167843ca893428f4ca16575c92f00276a9cccb64f",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "mechanical/bound-control/canonical-validation.json",
+      "raw_sha256": "5672121a9ec8c926f81709611975a9ad111be92417fa6900f19c4076f50ea15d",
+      "public_sha256": "5672121a9ec8c926f81709611975a9ad111be92417fa6900f19c4076f50ea15d",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "mechanical/path-probe-results.json",
+      "raw_sha256": "20101b46f131d342c4a0ba5f94e40f2c68f1e91151b265e1a1edfe596fc7a772",
+      "public_sha256": "382a9dac5bab35d122cd34258b0ab445e05e1ddf4e62cdb78652fdeaf5139f90",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "INSTALLED-IDENTITY.json",
+      "raw_sha256": "ede5848bca00c190b7e351368a6ecd6ea8a4f1de010c9c7242607dc686c14a29",
+      "public_sha256": "8e053761207fa9ae57d48d6df4f9eac83a359974584155e997accb2a4e1917f0",
+      "sanitized": true,
+      "transformation": "named local-path substitutions only"
+    },
+    {
+      "public_path": "MECHANICAL-FREEZE.json",
+      "raw_sha256": "86064d6a07d4f8116da040baddd9fd0aa32988c9eb3a0c6d163f772431fa59a6",
+      "public_sha256": "86064d6a07d4f8116da040baddd9fd0aa32988c9eb3a0c6d163f772431fa59a6",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "inherited-helpers/eb_v1_output_containment.py",
+      "raw_sha256": "a4686a91ed5fc823e3294138e687277b93fb1257a3bf6c302a433cb4b17ebc7b",
+      "public_sha256": "a4686a91ed5fc823e3294138e687277b93fb1257a3bf6c302a433cb4b17ebc7b",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    },
+    {
+      "public_path": "inherited-helpers/check_v1_workflow_consumers.py",
+      "raw_sha256": "ce01ddf7e9e306d9bcf5d4ff6c45572b990ed3e36dde725c225385f3c178e2a3",
+      "public_sha256": "ce01ddf7e9e306d9bcf5d4ff6c45572b990ed3e36dde725c225385f3c178e2a3",
+      "sanitized": false,
+      "transformation": "byte-identical"
+    }
+  ],
+  "raw_receipts_preserved": true,
+  "reviewer_export_only": "fresh-review/REVIEWER-ONLY.zip"
+}
