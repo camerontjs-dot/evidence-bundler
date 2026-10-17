@@ -1,0 +1,108 @@
+[
+  {
+    "name": "identity",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "${RUN_ROOT}/tools/qualify.py",
+      "identity",
+      "--checkout",
+      "${CANDIDATE_CHECKOUT}",
+      "--expected-head",
+      "b09d25828d269a226a7d57a9c3b6d3b11a597b24",
+      "--probe",
+      "${RUN_ROOT}/tools/probe.py",
+      "--apparatus",
+      "${RUN_ROOT}/subjects/contract-b",
+      "--cal",
+      "${RUN_ROOT}/subjects/cal",
+      "--output",
+      "${RUN_ROOT}/checks/subject.json"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.5328947910020361
+  },
+  {
+    "name": "containment",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "${RUN_ROOT}/tools/qualify.py",
+      "probe",
+      "--checkout",
+      "${CANDIDATE_CHECKOUT}",
+      "--probe",
+      "${RUN_ROOT}/tools/probe.py",
+      "--output",
+      "${RUN_ROOT}/checks/path-probe"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.820260207998217
+  },
+  {
+    "name": "bound-review-consumers",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "${RUN_ROOT}/tools/qualify.py",
+      "bundle",
+      "--checkout",
+      "${CANDIDATE_CHECKOUT}",
+      "--probe",
+      "${RUN_ROOT}/tools/probe.py",
+      "--output",
+      "${RUN_ROOT}/checks/bound-control"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 1.4337636249983916
+  },
+  {
+    "name": "pytest-installed",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "-m",
+      "pytest",
+      "-q",
+      "-ra",
+      "-o",
+      "cache_dir=${RUN_ROOT}/pytest-cache",
+      "--basetemp",
+      "${RUN_ROOT}/pytest-tmp",
+      "${CANDIDATE_CHECKOUT}/tests"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 9.636878084013006
+  },
+  {
+    "name": "ruff",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "-m",
+      "ruff",
+      "check",
+      "${CANDIDATE_CHECKOUT}/src",
+      "${CANDIDATE_CHECKOUT}/tests",
+      "${CANDIDATE_CHECKOUT}/scripts"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.35128104098839685
+  },
+  {
+    "name": "mypy",
+    "command": [
+      "${RUN_ROOT}/venv/bin/python",
+      "-I",
+      "-m",
+      "mypy",
+      "--config-file",
+      "${CANDIDATE_CHECKOUT}/pyproject.toml",
+      "--cache-dir",
+      "${RUN_ROOT}/mypy-cache",
+      "${CANDIDATE_CHECKOUT}/src"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 15.886800209002104
+  }
+]

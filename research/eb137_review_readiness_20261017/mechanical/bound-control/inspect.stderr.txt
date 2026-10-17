@@ -1,0 +1,2 @@
+${RUN_ROOT}/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name "schema" in "ContractBFactualContext" shadows an attribute in parent "_Strict"
+  class ContractBFactualContext(_Strict):

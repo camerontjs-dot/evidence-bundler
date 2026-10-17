@@ -1,0 +1,12 @@
+{
+  "authority_commit": "c314e53bd91c0736aa4370a364673b069aceb43e",
+  "checked_files": [
+    "bundle_manifest.yaml",
+    "audit_config.yaml",
+    "claims/claim-safe.yaml",
+    "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+    "extensions/contract-b-factual-context-v1.json"
+  ],
+  "errors": [],
+  "passed": true
+}

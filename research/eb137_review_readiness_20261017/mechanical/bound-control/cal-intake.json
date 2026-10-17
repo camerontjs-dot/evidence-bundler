@@ -1,0 +1,17 @@
+{
+  "admitted_pairs": [
+    [
+      "claim-safe",
+      "passage:559fef79b50c7d8968b28e999164d214"
+    ]
+  ],
+  "authority_commit": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+  "expected_admitted_pairs": [
+    [
+      "claim-safe",
+      "passage:559fef79b50c7d8968b28e999164d214"
+    ]
+  ],
+  "extension_state": "present",
+  "passed": true
+}

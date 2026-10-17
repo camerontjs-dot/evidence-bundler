@@ -1,0 +1,25 @@
+{
+  "case_count": 4,
+  "failed_cases": [],
+  "passed": true,
+  "probe_sha256": "70f18e7c57e3ac6b0e90b358c621a8dd0be44f6fb1ccf69a19d3d6df3eaee52a",
+  "runtime": {
+    "isolated_venv": true,
+    "module_origins_relative_to_venv": {
+      "claim_audit_lab": "lib/python3.11/site-packages/claim_audit_lab/__init__.py",
+      "evidence_bundler": "lib/python3.11/site-packages/evidence_bundler/__init__.py",
+      "validators": "lib/python3.11/site-packages/validators/__init__.py"
+    },
+    "outside_checkout": true,
+    "python": "3.11.15 (main, May  4 2026, 21:04:48) [Clang 22.1.3 ]",
+    "versions": {
+      "apparatus-contracts": "0.1.0",
+      "claim-audit-lab": "0.6.0",
+      "evidence-bundler": "0.3.0.dev0",
+      "faiss-cpu": "1.14.2",
+      "sentence-transformers": "5.5.1",
+      "torch": "2.12.0"
+    }
+  },
+  "schema": "eb-v1-installed-containment-replay-v1"
+}

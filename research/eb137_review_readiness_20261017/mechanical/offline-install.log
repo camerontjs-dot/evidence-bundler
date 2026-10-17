@@ -1,0 +1,9 @@
+Using Python 3.11.15 environment at: venv
+Resolved 54 packages in 21ms
+  × Failed to download `torch==2.14.1`
+  ╰─▶ Network connectivity is disabled, but the
+      requested data wasn't found in the cache for:
+      `https://files.pythonhosted.org/packages/5d/9b/fd1cd143a7bda5abc1fc352ed7b431f6f52aa3c454293211a33656db2cb5/torch-2.14.1-cp311-cp311-macosx_14_0_arm64.whl`
+  help: `torch` (v2.14.1) was included because `evidence-bundler`
+        (v0.3.0.dev0) depends on `sentence-transformers` (v5.7.0) which
+        depends on `torch`

@@ -1,0 +1,12 @@
+Using Python 3.11.15 environment at: venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because pypdf==6.13.2 needs to be downloaded from a registry and
+      evidence-bundler==0.3.0.dev0 depends on pypdf==6.13.2, we can conclude
+      that evidence-bundler==0.3.0.dev0 cannot be used.
+      And because only evidence-bundler==0.3.0.dev0 is available and you
+      require evidence-bundler, we can conclude that your requirements are
+      unsatisfiable.
+
+      hint: Packages were unavailable because the network was disabled. When
+      the network is disabled, registry packages may only be read from the
+      cache.
