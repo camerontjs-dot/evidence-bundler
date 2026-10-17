@@ -1,0 +1,35 @@
+{
+  "actions_observed": [
+    "deliver fixed context",
+    "receive model JSON",
+    "validate exact record"
+  ],
+  "backend_metrics": {
+    "created_at": "2026-10-17T15:19:55.465366Z",
+    "done": true,
+    "done_reason": "stop",
+    "eval_count": 442,
+    "eval_duration": 29302069000,
+    "load_duration": 2066689167,
+    "model": "qwen3.5:9b",
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_count": 972,
+    "prompt_eval_duration": 6060258000,
+    "total_duration": 37433105167
+  },
+  "case": "p02",
+  "child_time_separately_observed": true,
+  "elapsed_seconds": 37.43639033399813,
+  "ended_utc": "2026-10-17T15:19:55.493954+00:00",
+  "external_raw_lookups": 0,
+  "first_content_sha256": "dc017a230f3b79e534b17667ff44b95a32b74afe3ab6669448cd2bf5e28d099b",
+  "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+  "request_sha256": "40a1419919f614a17c5893b457306d442f245120e5792e1ab65038e0ae53537b",
+  "required_target_ids": [
+    "clm-p02"
+  ],
+  "response_sha256": "ea5657dbbccfd4754d6ee39ab1b88bfcc11a5bf4e98fa6a5a0fb88696bcae809",
+  "started_utc": "2026-10-17T15:19:18.030866+00:00",
+  "timing_unit": "one upstream target incl. required children",
+  "tool_calls_executed": 0
+}

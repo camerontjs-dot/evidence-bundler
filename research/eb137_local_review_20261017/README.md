@@ -1,3 +1,9 @@
+## Terminal result, 2026-10-17
+
+**FALSIFIED_REVIEW_CONTEXT_BOUNDARY.** The separately admitted local model completed all eight first reviews. It accepted nine pairs, four of which fail the frozen adequacy rule; p06 gap/parent and p07 standalone-context obligations fail. Mechanical bound-review/native/B/CAL equality passed 8/8. No re-review, repair or promotion. [Results and first evidence](RESULTS.md). The pre-exposure protocol below remains preserved at commit 16ad4402403e7fb212dbdc7c3145259448855f64.
+
+---
+
 # EB137 local-agent review: prospective execution record
 
 ## Subject and unchanged gate

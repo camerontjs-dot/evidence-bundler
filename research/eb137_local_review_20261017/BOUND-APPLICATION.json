@@ -1,0 +1,551 @@
+{
+  "at_utc": "2026-10-17T15:26:47.529799+00:00",
+  "cases": [
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p01",
+            "passage:0422ce28897c2733e3723d3f7175478a"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p01.yaml",
+          "evidence/src-p01-sable-record/passages/passage:0422ce28897c2733e3723d3f7175478a.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p01",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p01",
+          "passage:0422ce28897c2733e3723d3f7175478a"
+        ]
+      ],
+      "first_decision_counts": {
+        "accepted": 1,
+        "needs-review": 0,
+        "rejected": 0
+      },
+      "native_file_sha256": "sha256:06d52a4c86740118faff0a61a83d6d224e5d7e2d40e85ea37aac3de0d7935633",
+      "native_package_sha256": "sha256:f82043e730ae367ceecb45517790d073a4804f61f5fe2abcdeea0c961cdcfed1",
+      "passed": true,
+      "receipt_file_sha256": "sha256:ed2ec83c2064da579568236694f4dff97c3d1c62506dbd2a63dfdab95a4e4ef6",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:6909a669596210a4cb1c6120f9f5d2fc30f061efec191a1e0e97af922decdaec",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p02",
+            "passage:2d032bfab20acc5b49eb331ad9db2153"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p02.yaml",
+          "evidence/src-p02-lumen-report/passages/passage:2d032bfab20acc5b49eb331ad9db2153.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p02",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p02",
+          "passage:2d032bfab20acc5b49eb331ad9db2153"
+        ]
+      ],
+      "first_decision_counts": {
+        "accepted": 1,
+        "needs-review": 0,
+        "rejected": 0
+      },
+      "native_file_sha256": "sha256:a7373d667b678e091dc8ffd5ab5411360eaa425c0fb4a965174c5229a17ba86b",
+      "native_package_sha256": "sha256:45035284e7ab01bd945f2fdcad78a00866d0963930872bca62cc3b1c9888560b",
+      "passed": true,
+      "receipt_file_sha256": "sha256:0c4d12744b09e4e8bf9adccb067405c8701a3fcd06da08f990c6c3165e33ecd5",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:e0ce8b93b4778bfed2ae2e04c27f0aea4f8c752cba3270cda35e84390b76f8d8",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p03-1",
+            "passage:c310360a9e1800af86c01fd2cc9a461c"
+          ],
+          [
+            "clm-p03-2",
+            "passage:db558da33b045594e1b564285d081a54"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p03-1.yaml",
+          "claims/clm-p03-2.yaml",
+          "claims/clm-p03.yaml",
+          "evidence/src-p03-wren-reconcile/passages/passage:db558da33b045594e1b564285d081a54.yaml",
+          "evidence/src-p03-wren-review/passages/passage:c310360a9e1800af86c01fd2cc9a461c.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p03",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p03-1",
+          "passage:c310360a9e1800af86c01fd2cc9a461c"
+        ],
+        [
+          "clm-p03-2",
+          "passage:db558da33b045594e1b564285d081a54"
+        ]
+      ],
+      "first_decision_counts": {
+        "accepted": 2,
+        "needs-review": 0,
+        "rejected": 2
+      },
+      "native_file_sha256": "sha256:e836019e1b06a09b4c88c381ca48ef617a311b9c9f64e8d69ced1f570f72a49d",
+      "native_package_sha256": "sha256:739b33c6fc37f6c6197745d937793718c41bf5d8cee33e81f5178e302ec9866f",
+      "passed": true,
+      "receipt_file_sha256": "sha256:635c3388c1430336f7f6994c40090e607334e1d4cd69c9baf5082787a7c918ce",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:bff6ddb35f90031e8134af5ba0d14692ea22d5958756190370518bc2af77fa7a",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p04.yaml",
+          "evidence/src-p04-alder-triage/passages/passage:b40c68f3b906c744d45ee38384f9fc86.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p04",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "first_decision_counts": {
+        "accepted": 0,
+        "needs-review": 0,
+        "rejected": 1
+      },
+      "native_file_sha256": "sha256:633f09cf7ada4dacd7ab935d2c68656fc06903d1af0a4fad6fd6dadd75ea1ed9",
+      "native_package_sha256": "sha256:a7ef7fd4e7135402239a3c2a9c97d02d6081c9db26fce6033197fd89d094fe9f",
+      "passed": true,
+      "receipt_file_sha256": "sha256:adb1061d349d03f7b6c0bcb5f5b565c3391e1591fdbb8d256045c2c60cf05301",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:09793109352081ed6daca8da0f478e28615dc0d42e9320da5523bbc65173dc5f",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p05.yaml",
+          "evidence/src-p05-juniper-index/passages/passage:bfcaa9a2108d56a1c1c78f021bbf7620.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p05",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "first_decision_counts": {
+        "accepted": 0,
+        "needs-review": 0,
+        "rejected": 1
+      },
+      "native_file_sha256": "sha256:1fe1c4aeb3042a40f6b9eb05fdbc73ff08a75591d75b68fa9afb9761a45aa98e",
+      "native_package_sha256": "sha256:bb527732ac93c8bba5560c31233dccb50ad7c790d0439be96143922d0fb25054",
+      "passed": true,
+      "receipt_file_sha256": "sha256:79b0bf4180a9b225dc4d791a70043c99cc737ddf4cf1a6409ef959ef5bcdf70f",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:3a94c11be8587e5e696ceca9d09df1b237e41a3fb572eb148366e15aec00f860",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p06-1",
+            "passage:836fbe641896a4af00cb4226e5061c3f"
+          ],
+          [
+            "clm-p06-2",
+            "passage:836fbe641896a4af00cb4226e5061c3f"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p06-1.yaml",
+          "claims/clm-p06-2.yaml",
+          "claims/clm-p06.yaml",
+          "evidence/src-p06-halcyon-log/passages/passage:836fbe641896a4af00cb4226e5061c3f.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p06",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p06-1",
+          "passage:836fbe641896a4af00cb4226e5061c3f"
+        ],
+        [
+          "clm-p06-2",
+          "passage:836fbe641896a4af00cb4226e5061c3f"
+        ]
+      ],
+      "first_decision_counts": {
+        "accepted": 2,
+        "needs-review": 0,
+        "rejected": 0
+      },
+      "native_file_sha256": "sha256:5320ffe021abb22173805a5c73e5d0b81fb3d438fca12a4cd803d522a3cebe87",
+      "native_package_sha256": "sha256:d0df20272b9d5ef599c3515e79762101e1e5bfa5fd487275a1630c64092a0b6b",
+      "passed": true,
+      "receipt_file_sha256": "sha256:bf4fb45a2da11815d236123d3c42ac9f1b5f13f9c87c2a72151bad7533044d5f",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:2f8303e3e721e81d972e1a01e5d7a8596a0f082eff420138867fa118fe6a3841",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [
+          [
+            "clm-p07",
+            "passage:01417dd7eefe43b980adc51ab74a4533"
+          ],
+          [
+            "clm-p07",
+            "passage:30c70607c2a17efa80e5359a93928099"
+          ],
+          [
+            "clm-p07",
+            "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+          ]
+        ],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p07.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:01417dd7eefe43b980adc51ab74a4533.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:30c70607c2a17efa80e5359a93928099.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:3df6561eae289c8f24b0440867b7840f.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:5d306cdaa07472969c0ceb55580955d4.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:6adcbccf2a04d9c75689ed2f09c7af0a.yaml",
+          "evidence/src-p07-archive-7q/passages/passage:e1a9be46e92fc95e4b53d0cfc98a6eb0.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p07",
+      "errors": [],
+      "expected_admitted_pairs": [
+        [
+          "clm-p07",
+          "passage:01417dd7eefe43b980adc51ab74a4533"
+        ],
+        [
+          "clm-p07",
+          "passage:30c70607c2a17efa80e5359a93928099"
+        ],
+        [
+          "clm-p07",
+          "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+        ]
+      ],
+      "first_decision_counts": {
+        "accepted": 3,
+        "needs-review": 0,
+        "rejected": 0
+      },
+      "native_file_sha256": "sha256:d4201809e683331e80a5389408be38f8a1b14aea94abccfc464e49dfb8c42573",
+      "native_package_sha256": "sha256:2e8a9861d64e35fe3efa2b14a44f1949231b416626b2678725877b3fe2ffe3f2",
+      "passed": true,
+      "receipt_file_sha256": "sha256:dbfb00a1cfb139b67f137bcafcb1e36196526c63b394631795f00fd9be718dff",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:47832a497f632b24f859b327ea395da8618a0bb1b6cae422a96d7d3fd3e7aa78",
+      "review_to_native_pairs_equal": true
+    },
+    {
+      "cal": {
+        "actual_admitted_pairs": [],
+        "exact_pair_match": true,
+        "extension_state": "present"
+      },
+      "canonical": {
+        "checked_files": [
+          "bundle_manifest.yaml",
+          "audit_config.yaml",
+          "claims/clm-p08.yaml",
+          "extensions/contract-b-factual-context-v1.json"
+        ],
+        "errors": [],
+        "extension_checked": true,
+        "passed": true
+      },
+      "case_id": "p08",
+      "errors": [],
+      "expected_admitted_pairs": [],
+      "first_decision_counts": {
+        "accepted": 0,
+        "needs-review": 0,
+        "rejected": 0
+      },
+      "native_file_sha256": "sha256:04e2a2d142b6fb823fe5783325b1dde53f5a26b2821d4d5b90584bda9058105f",
+      "native_package_sha256": "sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6",
+      "passed": true,
+      "receipt_file_sha256": "sha256:76e7971a3a5ffbf9770a31ee214ea5166ab57a748a4d7b8f4e987c880b4a65de",
+      "receipt_native_binding": true,
+      "receipt_sha256": "sha256:7b2a4121f25c996b3d6c95560e4f20e0617bb2609c8002cf09b2cd0557d13fa0",
+      "review_to_native_pairs_equal": true
+    }
+  ],
+  "count_gate": {
+    "gaps": {
+      "clm-p04": true,
+      "clm-p05": true,
+      "clm-p06-2": false,
+      "clm-p08": true
+    },
+    "passed": false,
+    "positives": {
+      "clm-p01": true,
+      "clm-p02": true,
+      "clm-p03-1": true,
+      "clm-p03-2": true,
+      "clm-p06-1": true
+    }
+  },
+  "counts": {
+    "clm-p01": 1,
+    "clm-p02": 1,
+    "clm-p03-1": 1,
+    "clm-p03-2": 1,
+    "clm-p04": 0,
+    "clm-p05": 0,
+    "clm-p06-1": 1,
+    "clm-p06-2": 1,
+    "clm-p07": 3,
+    "clm-p08": 0
+  },
+  "mechanical_passed": true,
+  "output_file_hashes": {
+    "p01/applied_review_record.json": "fb09baae51c5d6637893363383bab4c089143764674af3a6d61f06dbdb4e37e5",
+    "p01/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p01/contract_b/SHA256SUMS": "3006ab91f2e75af9126d0ba3960ff2947c0eeb3454bd814e6fb37c0264b7bdb7",
+    "p01/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p01/contract_b/bundle_manifest.yaml": "4a69c3d90c15f49183b7792449ff909fbd45b760cb11fa4fdda6cc832679b367",
+    "p01/contract_b/claims/clm-p01.yaml": "8a0e994552d71dddb45321bf85597b9a890bb879141677285567393dc8be453c",
+    "p01/contract_b/evidence/src-p01-sable-record/passages/passage:0422ce28897c2733e3723d3f7175478a.yaml": "f10e3342f618e383909dd62d3d697e02e5ee6490c42ff202cb115cc251f6c4ab",
+    "p01/contract_b/evidence/src-p01-sable-record/source_profile.yaml": "e590a286bd1fd1626196a16692b4e3ecaeeeed894d4d1fddd9fab319adb96702",
+    "p01/contract_b/extensions/contract-b-factual-context-v1.json": "0910372326f0a5fbfcf8644b85388ff469ee167e73ba9ed5b3d13cd51b6a300f",
+    "p01/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p01/native_eb_v1_package.json": "06d52a4c86740118faff0a61a83d6d224e5d7e2d40e85ea37aac3de0d7935633",
+    "p01/projection_receipt.json": "ed2ec83c2064da579568236694f4dff97c3d1c62506dbd2a63dfdab95a4e4ef6",
+    "p01/review_context.md": "d2083dae2012e73b9ed15ba4714b3e615ff5a9f27cc461877dd8ff73985a3b91",
+    "p02/applied_review_record.json": "27d9e9e82007e0b4e6d7c7903eb53d8313a3c70d10340cb42931a3612934d059",
+    "p02/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p02/contract_b/SHA256SUMS": "59bbf7283ed8c9b2498dfb3307d0cb52c310b15a4e0966644b543f6ba2f62d9a",
+    "p02/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p02/contract_b/bundle_manifest.yaml": "cdfc4cb5c1121e836565ebc5741988f71239c7371f983f1e42fa6f7b2cb20783",
+    "p02/contract_b/claims/clm-p02.yaml": "973b99b1921d439e92bdd64468abd736fbe94c8be98f1fd22d5c2ef90a3855d7",
+    "p02/contract_b/evidence/src-p02-lumen-report/passages/passage:2d032bfab20acc5b49eb331ad9db2153.yaml": "bb1848b302c67e9cab7bc1134776338f2251faaa1988ff290fcf5737d5748e7f",
+    "p02/contract_b/evidence/src-p02-lumen-report/source_profile.yaml": "fb3472e25911375fcba9c9072854fe7a0056e87f737d97eb499cb93dfe0e0516",
+    "p02/contract_b/extensions/contract-b-factual-context-v1.json": "1f01940c2aed73c6fe5a43271a143beee1bc5ab7123431aefb04f79f248d681b",
+    "p02/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p02/native_eb_v1_package.json": "a7373d667b678e091dc8ffd5ab5411360eaa425c0fb4a965174c5229a17ba86b",
+    "p02/projection_receipt.json": "0c4d12744b09e4e8bf9adccb067405c8701a3fcd06da08f990c6c3165e33ecd5",
+    "p02/review_context.md": "f5493064fc81020e1e3f1b22011d9976328620f8c11938cf1da04a5396070a02",
+    "p03/applied_review_record.json": "6c1d87eded412cd2ff6450ae4ae8ce973db833fe2d208e14cd1ee30e93278969",
+    "p03/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p03/contract_b/SHA256SUMS": "8e6d7c22d65521dabe41b764b328822ef669dac15417f302cfef94b3d1c284f7",
+    "p03/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p03/contract_b/bundle_manifest.yaml": "d0baae92ce6859aacd5d082f289a488905c5d63d99d16f265c98961b8832e722",
+    "p03/contract_b/claims/clm-p03-1.yaml": "0f9b44bafb9b422d6472ec79f94739d36ebca731399f33052d62fc2c35f66331",
+    "p03/contract_b/claims/clm-p03-2.yaml": "8e056c0847561cdbc3b8689ecc4f5321d0d35b6e70ed8429dc43b0b5b81c9d34",
+    "p03/contract_b/claims/clm-p03.yaml": "93053a284490c3d4123b4b05db21a971f8254b43f90498284daec03b6a0058c8",
+    "p03/contract_b/evidence/src-p03-wren-reconcile/passages/passage:db558da33b045594e1b564285d081a54.yaml": "51c325cb4bfd108d4fef7ed231239b5cad8ba1be535dcdaa7ae359696a84130e",
+    "p03/contract_b/evidence/src-p03-wren-reconcile/source_profile.yaml": "9455b1a94fe3a008c5f263408ccee1295fa9f2cdd76751919f70fc7f56bfc38d",
+    "p03/contract_b/evidence/src-p03-wren-review/passages/passage:c310360a9e1800af86c01fd2cc9a461c.yaml": "9efc55df287a6a33a93df4581de3528e2462f986c1af6a862710a12f2f9a58a0",
+    "p03/contract_b/evidence/src-p03-wren-review/source_profile.yaml": "ef025106fb60a1fe4765ca302a4af6a54ee6d8cba44bfc1117a0cea57a198c2f",
+    "p03/contract_b/extensions/contract-b-factual-context-v1.json": "48d26e06fa4a0e97cfe80685cd8bf8e7447e17de2bdb321819acc6461edfc8f1",
+    "p03/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p03/native_eb_v1_package.json": "e836019e1b06a09b4c88c381ca48ef617a311b9c9f64e8d69ced1f570f72a49d",
+    "p03/projection_receipt.json": "635c3388c1430336f7f6994c40090e607334e1d4cd69c9baf5082787a7c918ce",
+    "p03/review_context.md": "619ac74f91ea1565b2f25b16943a821f19a5d0eb066e0005e6ec3aa4afc8615e",
+    "p04/applied_review_record.json": "a2e6f8f7355e0b3869f584b4f483e5facee7ca8bb441c87acb377d1084067853",
+    "p04/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p04/contract_b/SHA256SUMS": "1278f85da55d1bba089b87f2d9ae5d43205d0ec1dda8d03daeb57df9eca1829b",
+    "p04/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p04/contract_b/bundle_manifest.yaml": "b51afbe2d828cf657a1b946eb69efd88be10944b5cfbd9ef719ee7f404447c75",
+    "p04/contract_b/claims/clm-p04.yaml": "7bf250ad40a5cb14d8ef8ed7724baebd9566f175031234dcd87001965e63ff51",
+    "p04/contract_b/evidence/src-p04-alder-triage/passages/passage:b40c68f3b906c744d45ee38384f9fc86.yaml": "989fd8b881f4aaed362f6d3a9b5de5680d6234d2563cceaf9ebc41531cadb91f",
+    "p04/contract_b/evidence/src-p04-alder-triage/source_profile.yaml": "0df237f362cebb3af08fdc4495ca0aa5984f106ec940f671b32e3cff8ce68334",
+    "p04/contract_b/extensions/contract-b-factual-context-v1.json": "9755e5d0a5753de8fed72a30d111bd6b0f075024e1486b33468623152d739e6e",
+    "p04/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p04/native_eb_v1_package.json": "633f09cf7ada4dacd7ab935d2c68656fc06903d1af0a4fad6fd6dadd75ea1ed9",
+    "p04/projection_receipt.json": "adb1061d349d03f7b6c0bcb5f5b565c3391e1591fdbb8d256045c2c60cf05301",
+    "p04/review_context.md": "15ac8ab72fab263b6f4f0a7a3065cfe0fb61adc44bfc0cf8660a7bb895b7fcda",
+    "p05/applied_review_record.json": "23480a9e9313f827b638d91a95d49dd442100108e6186a18b2708cd91b00ed87",
+    "p05/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p05/contract_b/SHA256SUMS": "5264cfe19748c78cd5ea12aacf961234aefac37778ad4aa7270e54d66de6689a",
+    "p05/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p05/contract_b/bundle_manifest.yaml": "428986157aa0b78019024334b56ddd913796ea9ed8035d50fe8268fb486d5501",
+    "p05/contract_b/claims/clm-p05.yaml": "378c3c3176dbbec1863004d76e4cef9e8fd1f186f06e06ba59fd01d6ce800700",
+    "p05/contract_b/evidence/src-p05-juniper-index/passages/passage:bfcaa9a2108d56a1c1c78f021bbf7620.yaml": "8f2989959cf7d4a72437f501710428bec795cdb602f5afd789ed9ca095422548",
+    "p05/contract_b/evidence/src-p05-juniper-index/source_profile.yaml": "5c09a5fffbdca366bbbfa0810073f4221d41f475776be274f5d7c7c22bdd5723",
+    "p05/contract_b/extensions/contract-b-factual-context-v1.json": "8ebe6eb71faddca920a834c5b1243a6e3c2f2db1df584c621ec86ef7b043af01",
+    "p05/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p05/native_eb_v1_package.json": "1fe1c4aeb3042a40f6b9eb05fdbc73ff08a75591d75b68fa9afb9761a45aa98e",
+    "p05/projection_receipt.json": "79b0bf4180a9b225dc4d791a70043c99cc737ddf4cf1a6409ef959ef5bcdf70f",
+    "p05/review_context.md": "0a4e73b1bd3c87f1138156988003bd7c16cfd40ca35214e94070be88e7d35be1",
+    "p06/applied_review_record.json": "d31379352cdd65946a5d43e5057c7e43072d1a07f49a1fb2f03d5578fa28e497",
+    "p06/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p06/contract_b/SHA256SUMS": "bde79ce52e3582de223fc4f9528fe4d26bffbcb1ff81b2a315f9075663054e79",
+    "p06/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p06/contract_b/bundle_manifest.yaml": "0afee27d7bf4923dc1ebff9dc7cd515e50073aaee101e536c8a2bee985bb587a",
+    "p06/contract_b/claims/clm-p06-1.yaml": "23a144e24cd5980bb4599944268e2822c1b2da8efaf93ef0f746512974fc2938",
+    "p06/contract_b/claims/clm-p06-2.yaml": "66a96a22c34e3d5d86c8cd712fad7194d235f100e3b2809434770e61010a0482",
+    "p06/contract_b/claims/clm-p06.yaml": "8e7705584705fe9e20f0b34d7e13d9cf98a0f6a11da8ba0d63c0d013eea48f29",
+    "p06/contract_b/evidence/src-p06-halcyon-log/passages/passage:836fbe641896a4af00cb4226e5061c3f.yaml": "61d9f203dc2d808f01c9a04cf52ca37b98d9898fc68ada7cacae56d9019afae3",
+    "p06/contract_b/evidence/src-p06-halcyon-log/source_profile.yaml": "d433c8d8f0751eeb6aaba19c073055c14d5a57e45922de7f8c8c816d193125d7",
+    "p06/contract_b/extensions/contract-b-factual-context-v1.json": "6decb9d491c61f270f3ad758bcea62b87b390a0c9b8ebeec1486d55e1614893b",
+    "p06/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p06/native_eb_v1_package.json": "5320ffe021abb22173805a5c73e5d0b81fb3d438fca12a4cd803d522a3cebe87",
+    "p06/projection_receipt.json": "bf4fb45a2da11815d236123d3c42ac9f1b5f13f9c87c2a72151bad7533044d5f",
+    "p06/review_context.md": "e30b9b77f7c074342feb6a12162a67cf598af8b9b264f8213c9159c9f764ae05",
+    "p07/applied_review_record.json": "d2637e068ed410d4e308d20345d1c531817252865623c2cbda2080e7895da6ce",
+    "p07/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p07/contract_b/SHA256SUMS": "0c6093d3a2046430481d8accbd4bafa6994f7a0e030f6adda3fff25becdaa690",
+    "p07/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p07/contract_b/bundle_manifest.yaml": "6116e016cc539aa7edb66b17c488cdecb899fac90510bbd3451bd3adbe947592",
+    "p07/contract_b/claims/clm-p07.yaml": "71c6c35c5c67523634bc007e06ca07cc282c584c9ee3a1076215c5f39efa404d",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:01417dd7eefe43b980adc51ab74a4533.yaml": "b63eb0c1575551e256307d122392a592fc91368f88447ffe40fd60e01c9ff23c",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:30c70607c2a17efa80e5359a93928099.yaml": "f26291d22f7c28821b60dc6039f6ba6544c73c121460c612b175f1e5138ed8b2",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:3df6561eae289c8f24b0440867b7840f.yaml": "5544fcb197c72838a42d88f054dd894b212767b3a5ee551fcacdd6a826ed8191",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:5d306cdaa07472969c0ceb55580955d4.yaml": "2b7cf15b03b1c4672e205f44d34eb3c43c91544154688ed3cdee33326b829593",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:6adcbccf2a04d9c75689ed2f09c7af0a.yaml": "3cc0390e5434853e702190cc00f3a45ecf8e1fc2f3783a6a7f5e200a113e45f1",
+    "p07/contract_b/evidence/src-p07-archive-7q/passages/passage:e1a9be46e92fc95e4b53d0cfc98a6eb0.yaml": "e8092261ac4808666b20c0557131ffacc475adbe275381d5c3006e1703d4d127",
+    "p07/contract_b/evidence/src-p07-archive-7q/source_profile.yaml": "b02f9db13968f4d8bfa8c73bd79935971785d0baa42f7e88631be8c4ce93c1c8",
+    "p07/contract_b/extensions/contract-b-factual-context-v1.json": "51aa27cc5c241325123c6ff371162c24d851e14fc7df799eca142b1c639286b5",
+    "p07/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p07/native_eb_v1_package.json": "d4201809e683331e80a5389408be38f8a1b14aea94abccfc464e49dfb8c42573",
+    "p07/projection_receipt.json": "dbfb00a1cfb139b67f137bcafcb1e36196526c63b394631795f00fd9be718dff",
+    "p07/review_context.md": "b1bee272f4afa10fdd6663b899f645faffd211be695f4a53156d88544149374c",
+    "p08/applied_review_record.json": "559970c027d9bec4f310a4f91e5573884e559399258d8f4829554fa1e344c52a",
+    "p08/contract_b/CONTRACT_VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "p08/contract_b/SHA256SUMS": "8f8cfd0a0cf8c050de817dcacffba4a1162652ec20859879193fd1b659d975f9",
+    "p08/contract_b/audit_config.yaml": "3a5140c838aa62503a9af54190987e193eb9c3b7c2eaa77e65fedc20dfee2a7f",
+    "p08/contract_b/bundle_manifest.yaml": "e559eb7d88123c22bfecd6d8cbccec9308e62b7848ea990d6caf7474c4797e7a",
+    "p08/contract_b/claims/clm-p08.yaml": "612a9dcfe75bc0680bca56a3743074d55db1a0546e2dc3c5f9a9e6af06a8de4d",
+    "p08/contract_b/extensions/contract-b-factual-context-v1.json": "57dbf455f3140a383c4696aa9388192da8139a9f2283478ba84a6d2c853aa8bd",
+    "p08/contract_b/validation_set_ref.yaml": "e511f23a27d09d8d0eaa7f78e72f00d47993fc67d1a285328bc74e56d4d0e84d",
+    "p08/native_eb_v1_package.json": "04e2a2d142b6fb823fe5783325b1dde53f5a26b2821d4d5b90584bda9058105f",
+    "p08/projection_receipt.json": "76e7971a3a5ffbf9770a31ee214ea5166ab57a748a4d7b8f4e987c880b4a65de",
+    "p08/review_context.md": "04cea149b5817398c53c9d6466b7f235777eccdf3c2c279d8981fb0a5c426e3e"
+  },
+  "p07_zero_admitted": false,
+  "parent_boundaries": false,
+  "review_freeze_sha256": "6bb577c859407b0a7328189c6856ef729c90987f92a23837c98736ab32dc013c",
+  "schema": "eb137-bound-local-model-review-application-v1",
+  "standalone_adequacy": "PENDING_INFORMED_SUPERVISOR_ASSESSMENT",
+  "weak_controls": {
+    "always_accept": {
+      "gaps": {
+        "clm-p04": false,
+        "clm-p05": false,
+        "clm-p06-2": false,
+        "clm-p08": true
+      },
+      "passed": false,
+      "positives": {
+        "clm-p01": true,
+        "clm-p02": true,
+        "clm-p03-1": true,
+        "clm-p03-2": true,
+        "clm-p06-1": true
+      }
+    },
+    "always_reject": {
+      "gaps": {
+        "clm-p04": true,
+        "clm-p05": true,
+        "clm-p06-2": true,
+        "clm-p08": true
+      },
+      "passed": false,
+      "positives": {
+        "clm-p01": false,
+        "clm-p02": false,
+        "clm-p03-1": false,
+        "clm-p03-2": false,
+        "clm-p06-1": false
+      }
+    }
+  }
+}

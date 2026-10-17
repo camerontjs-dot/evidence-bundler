@@ -1,0 +1,34 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p05.yaml",
+      "evidence/src-p05-juniper-index/passages/passage:bfcaa9a2108d56a1c1c78f021bbf7620.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p05",
+  "errors": [],
+  "expected_admitted_pairs": [],
+  "first_decision_counts": {
+    "accepted": 0,
+    "needs-review": 0,
+    "rejected": 1
+  },
+  "native_file_sha256": "sha256:1fe1c4aeb3042a40f6b9eb05fdbc73ff08a75591d75b68fa9afb9761a45aa98e",
+  "native_package_sha256": "sha256:bb527732ac93c8bba5560c31233dccb50ad7c790d0439be96143922d0fb25054",
+  "passed": true,
+  "receipt_file_sha256": "sha256:79b0bf4180a9b225dc4d791a70043c99cc737ddf4cf1a6409ef959ef5bcdf70f",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:3a94c11be8587e5e696ceca9d09df1b237e41a3fb572eb148366e15aec00f860",
+  "review_to_native_pairs_equal": true
+}

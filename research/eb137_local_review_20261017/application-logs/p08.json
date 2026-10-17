@@ -1,0 +1,14 @@
+{
+  "command": [
+    "<PREPARATION_RUN>/venv/bin/evidence-bundler-v1",
+    "run",
+    "<PREPARATION_RUN>/fresh-review/inputs/p08.contract-a.json",
+    "--review",
+    "<LOCAL_REVIEW_RUN>/execution/reviews/p08/review_record.json",
+    "--out-dir",
+    "<LOCAL_REVIEW_RUN>/application/outputs/p08"
+  ],
+  "returncode": 0,
+  "stderr": "<PREPARATION_RUN>/venv/lib/python3.11/site-packages/evidence_bundler/contracts/factual_context.py:122: UserWarning: Field name \"schema\" in \"ContractBFactualContext\" shadows an attribute in parent \"_Strict\"\n  class ContractBFactualContext(_Strict):\n",
+  "stdout": "{\n  \"applied_review_record\": \"<LOCAL_REVIEW_RUN>/application/outputs/p08/applied_review_record.json\",\n  \"contract_b_bundle_hash\": \"sha256:f16a5b9ad5924b9424e5d293c417177a8e703ff0fa95869d086f71d8de26fb25\",\n  \"contract_b_dir\": \"<LOCAL_REVIEW_RUN>/application/outputs/p08/contract_b\",\n  \"input_sha256\": \"sha256:dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f\",\n  \"native_package\": \"<LOCAL_REVIEW_RUN>/application/outputs/p08/native_eb_v1_package.json\",\n  \"native_package_sha256\": \"sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6\",\n  \"profile_id\": \"eb-v1-integration-10x3-rc0\",\n  \"projection_receipt\": \"<LOCAL_REVIEW_RUN>/application/outputs/p08/projection_receipt.json\",\n  \"projection_receipt_sha256\": \"sha256:7b2a4121f25c996b3d6c95560e4f20e0617bb2609c8002cf09b2cd0557d13fa0\",\n  \"review_context\": \"<LOCAL_REVIEW_RUN>/application/outputs/p08/review_context.md\",\n  \"slice_id\": \"eb-v1-slice-1\",\n  \"unreviewed_native_package_sha256\": \"sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6\"\n}\n"
+}

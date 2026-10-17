@@ -1,0 +1,115 @@
+{
+  "adequate_accepted_pairs": 5,
+  "application_result_sha256": "1daa710ef2039812d34c0be3389043e3377d0605bba5faef7c74eaafa7db6afd",
+  "candidate_commit": "b09d25828d269a226a7d57a9c3b6d3b11a597b24",
+  "candidate_wheel_sha256": "cf22a25c74dce2b46e6562caeb67df69168fa026ab085a0d234198e501876405",
+  "case_decisions": [
+    {
+      "accepted": 1,
+      "case": "p01",
+      "needs-review": 0,
+      "rejected": 0
+    },
+    {
+      "accepted": 1,
+      "case": "p02",
+      "needs-review": 0,
+      "rejected": 0
+    },
+    {
+      "accepted": 2,
+      "case": "p03",
+      "needs-review": 0,
+      "rejected": 2
+    },
+    {
+      "accepted": 0,
+      "case": "p04",
+      "needs-review": 0,
+      "rejected": 1
+    },
+    {
+      "accepted": 0,
+      "case": "p05",
+      "needs-review": 0,
+      "rejected": 1
+    },
+    {
+      "accepted": 2,
+      "case": "p06",
+      "needs-review": 0,
+      "rejected": 0
+    },
+    {
+      "accepted": 3,
+      "case": "p07",
+      "needs-review": 0,
+      "rejected": 0
+    },
+    {
+      "accepted": 0,
+      "case": "p08",
+      "needs-review": 0,
+      "rejected": 0
+    }
+  ],
+  "completed_utc": "2026-10-17T15:31:44.270236+00:00",
+  "existing_post_review_stale_tamper_control": "PASS",
+  "first_decisions": {
+    "accepted": 9,
+    "needs-review": 0,
+    "rejected": 4
+  },
+  "fresh_review_disposition": "FALSIFIED_REVIEW_CONTEXT_BOUNDARY",
+  "inadequate_accepted_pairs": 4,
+  "machine_timing": {
+    "human_throughput_established": false,
+    "median_case_seconds": 61.469214145996375,
+    "per_case_seconds": [
+      38.977142042000196,
+      37.43639033399813,
+      88.23634079100157,
+      62.03532733299653,
+      60.90310095899622,
+      68.33817650000856,
+      79.2101106249902,
+      43.495952500001295
+    ],
+    "sum_case_seconds": 478.6325410839927,
+    "unit": "upstream target/case including required children; not independent child time"
+  },
+  "mandatory_gap_targets_satisfied": 3,
+  "mandatory_gap_targets_total": 4,
+  "mandatory_positive_targets_satisfied": 5,
+  "mandatory_positive_targets_total": 5,
+  "model": "qwen3.5:9b",
+  "model_calls": {
+    "scientific_review": 8,
+    "transport_preflight": 1
+  },
+  "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+  "p03_complete_boundary": true,
+  "p06_required_incomplete_boundary": false,
+  "p07_accepted_pairs": 3,
+  "p07_zero_accepted_boundary": false,
+  "preregistration_commit": "16ad4402403e7fb212dbdc7c3145259448855f64",
+  "product_changed": false,
+  "provider": "Ollama 0.40.5",
+  "raw_lookups_by_reviewer": 0,
+  "released_or_merged": false,
+  "research_disposition": "FALSIFIED",
+  "review_attempts_per_case": 1,
+  "review_freeze_sha256": "6bb577c859407b0a7328189c6856ef729c90987f92a23837c98736ab32dc013c",
+  "reviewer_native_B_CAL_pair_equality": {
+    "passed": 8,
+    "total": 8
+  },
+  "reviewer_tools_executed": 0,
+  "schema": "eb137-local-review-terminal-v1",
+  "scope": "This exact local-model review of this frozen candidate fails its semantic acceptance gate. Binding/intake succeeded independently. No universal retriever, human performance, source authority or CAL-semantic conclusion.",
+  "supervisor_adequacy_sha256": "f18fe98e9b2212533ac391e854d3a9cc20491ffac0ac159e2b64f5031eb67037",
+  "weak_always_accept_and_always_reject_controls": "BOTH FAIL AS REQUIRED",
+  "workload_disposition": "WORKLOAD_GATE_UNESTABLISHED",
+  "workload_executed": false,
+  "workload_reason": "Pre-existing ordered queue and source permissions still not identified. Earlier apparatus152 lead is single-item authority, not permission to reconstruct a three-packet cohort."
+}

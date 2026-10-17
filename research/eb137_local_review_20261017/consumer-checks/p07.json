@@ -1,0 +1,65 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [
+      [
+        "clm-p07",
+        "passage:01417dd7eefe43b980adc51ab74a4533"
+      ],
+      [
+        "clm-p07",
+        "passage:30c70607c2a17efa80e5359a93928099"
+      ],
+      [
+        "clm-p07",
+        "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+      ]
+    ],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p07.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:01417dd7eefe43b980adc51ab74a4533.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:30c70607c2a17efa80e5359a93928099.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:3df6561eae289c8f24b0440867b7840f.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:5d306cdaa07472969c0ceb55580955d4.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:6adcbccf2a04d9c75689ed2f09c7af0a.yaml",
+      "evidence/src-p07-archive-7q/passages/passage:e1a9be46e92fc95e4b53d0cfc98a6eb0.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p07",
+  "errors": [],
+  "expected_admitted_pairs": [
+    [
+      "clm-p07",
+      "passage:01417dd7eefe43b980adc51ab74a4533"
+    ],
+    [
+      "clm-p07",
+      "passage:30c70607c2a17efa80e5359a93928099"
+    ],
+    [
+      "clm-p07",
+      "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+    ]
+  ],
+  "first_decision_counts": {
+    "accepted": 3,
+    "needs-review": 0,
+    "rejected": 0
+  },
+  "native_file_sha256": "sha256:d4201809e683331e80a5389408be38f8a1b14aea94abccfc464e49dfb8c42573",
+  "native_package_sha256": "sha256:2e8a9861d64e35fe3efa2b14a44f1949231b416626b2678725877b3fe2ffe3f2",
+  "passed": true,
+  "receipt_file_sha256": "sha256:dbfb00a1cfb139b67f137bcafcb1e36196526c63b394631795f00fd9be718dff",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:47832a497f632b24f859b327ea395da8618a0bb1b6cae422a96d7d3fd3e7aa78",
+  "review_to_native_pairs_equal": true
+}

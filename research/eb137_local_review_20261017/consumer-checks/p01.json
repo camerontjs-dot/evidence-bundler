@@ -1,0 +1,44 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [
+      [
+        "clm-p01",
+        "passage:0422ce28897c2733e3723d3f7175478a"
+      ]
+    ],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p01.yaml",
+      "evidence/src-p01-sable-record/passages/passage:0422ce28897c2733e3723d3f7175478a.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p01",
+  "errors": [],
+  "expected_admitted_pairs": [
+    [
+      "clm-p01",
+      "passage:0422ce28897c2733e3723d3f7175478a"
+    ]
+  ],
+  "first_decision_counts": {
+    "accepted": 1,
+    "needs-review": 0,
+    "rejected": 0
+  },
+  "native_file_sha256": "sha256:06d52a4c86740118faff0a61a83d6d224e5d7e2d40e85ea37aac3de0d7935633",
+  "native_package_sha256": "sha256:f82043e730ae367ceecb45517790d073a4804f61f5fe2abcdeea0c961cdcfed1",
+  "passed": true,
+  "receipt_file_sha256": "sha256:ed2ec83c2064da579568236694f4dff97c3d1c62506dbd2a63dfdab95a4e4ef6",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:6909a669596210a4cb1c6120f9f5d2fc30f061efec191a1e0e97af922decdaec",
+  "review_to_native_pairs_equal": true
+}

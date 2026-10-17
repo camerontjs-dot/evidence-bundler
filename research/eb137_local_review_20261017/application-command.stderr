@@ -1,0 +1,4 @@
+<PREPARATION_RUN>/venv/lib/python3.11/site-packages/validators/contract_b_factual_context.py:106: UserWarning: Field name "schema" in "FactualContextExtension" shadows an attribute in parent "_Strict"
+  class FactualContextExtension(_Strict):
+<PREPARATION_RUN>/venv/lib/python3.11/site-packages/claim_audit_lab/contracts/factual_context.py:121: UserWarning: Field name "schema" in "ContractBFactualContext" shadows an attribute in parent "_Strict"
+  class ContractBFactualContext(_Strict):

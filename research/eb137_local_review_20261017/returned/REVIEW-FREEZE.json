@@ -1,0 +1,341 @@
+{
+  "actor_admission_sha256": "2de27e9506d321ab2c980fc2ca650b359a8541aac9b4bea3c4e56eb3b7e5d54f",
+  "cases": [
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:19:17.985688Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 439,
+        "eval_duration": 28890737000,
+        "load_duration": 3841910792,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 1037,
+        "prompt_eval_duration": 6234159000,
+        "total_duration": 38974908167
+      },
+      "case": "p01",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 38.977142042000196,
+      "ended_utc": "2026-10-17T15:19:18.010955+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "2b23951abe7fbcede5205039e487015b7f73b9f162387e89e25a843238e85d94",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "31fc0b1f506f135e2a8b2fe09447173997c75441b7d84a26f561f54c1de9bdce",
+      "required_target_ids": [
+        "clm-p01"
+      ],
+      "response_sha256": "2b22169c2f86b8119bd7cedafd1a47c19aed4e5ef7099fd294963a2490493129",
+      "started_utc": "2026-10-17T15:18:39.010277+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:19:55.465366Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 442,
+        "eval_duration": 29302069000,
+        "load_duration": 2066689167,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 972,
+        "prompt_eval_duration": 6060258000,
+        "total_duration": 37433105167
+      },
+      "case": "p02",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 37.43639033399813,
+      "ended_utc": "2026-10-17T15:19:55.493954+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "dc017a230f3b79e534b17667ff44b95a32b74afe3ab6669448cd2bf5e28d099b",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "40a1419919f614a17c5893b457306d442f245120e5792e1ab65038e0ae53537b",
+      "required_target_ids": [
+        "clm-p02"
+      ],
+      "response_sha256": "ea5657dbbccfd4754d6ee39ab1b88bfcc11a5bf4e98fa6a5a0fb88696bcae809",
+      "started_utc": "2026-10-17T15:19:18.030866+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:21:23.766969Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 987,
+        "eval_duration": 73340210000,
+        "load_duration": 2056201250,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 1859,
+        "prompt_eval_duration": 12816547000,
+        "total_duration": 88230198209
+      },
+      "case": "p03",
+      "child_time_separately_observed": false,
+      "elapsed_seconds": 88.23634079100157,
+      "ended_utc": "2026-10-17T15:21:23.818612+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "1fea42381513341915214cab9404790c23ee763c9ba2c03dee3d7ec9b7ee678a",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "3a15b2bc72204fd08da375cc8600e729b5e6f620d6739846cdad2a0a34806f45",
+      "required_target_ids": [
+        "clm-p03-1",
+        "clm-p03-2"
+      ],
+      "response_sha256": "210b538e8af90217ae553d80d6278b477ff14e471accc3bdc2b4472689c6988c",
+      "started_utc": "2026-10-17T15:19:55.534989+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:22:25.890299Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 538,
+        "eval_duration": 52134136000,
+        "load_duration": 3124634083,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 978,
+        "prompt_eval_duration": 6764485000,
+        "total_duration": 62032746208
+      },
+      "case": "p04",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 62.03532733299653,
+      "ended_utc": "2026-10-17T15:22:25.915550+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "efebb23e6d27b79f49818b6d884de7de90f85b0b12e1a32d09b4b385a58d0997",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "3d189451aceadd84da818db6e989e3d50201690f7c198346bb8adcc6437511d5",
+      "required_target_ids": [
+        "clm-p04"
+      ],
+      "response_sha256": "621945cc60bfe084582744c72640c39e2c62b33f229f165cec9337e9e05688a8",
+      "started_utc": "2026-10-17T15:21:23.856146+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:23:26.862688Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 447,
+        "eval_duration": 48050803000,
+        "load_duration": 1819986083,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 990,
+        "prompt_eval_duration": 11017347000,
+        "total_duration": 60894047166
+      },
+      "case": "p05",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 60.90310095899622,
+      "ended_utc": "2026-10-17T15:23:26.894050+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "f98797be4c896aaaf618cdcf01f7e4f868af2bcd3814aea8b2bfdef637ac52a5",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "2fc082df2c0ebd774e11f3cb3d092e573ce783ca6b8e049c2278c94f57501673",
+      "required_target_ids": [
+        "clm-p05"
+      ],
+      "response_sha256": "5a4716b79acca3d0117a7af6d7a4b770ea4f7bc683225297d667533154ec93ac",
+      "started_utc": "2026-10-17T15:22:25.967086+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:24:35.249091Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 557,
+        "eval_duration": 56372944000,
+        "load_duration": 2321103417,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 1285,
+        "prompt_eval_duration": 9624020000,
+        "total_duration": 68334122333
+      },
+      "case": "p06",
+      "child_time_separately_observed": false,
+      "elapsed_seconds": 68.33817650000856,
+      "ended_utc": "2026-10-17T15:24:35.276644+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "037c951abe1d0dbdf0d607b3e78ade64c734167854db4ec0e383b99c243de646",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "cf254550142b07191b588f267ee9d360f7b76dc59e23ee5a717d3b0518a3645e",
+      "required_target_ids": [
+        "clm-p06-1",
+        "clm-p06-2"
+      ],
+      "response_sha256": "ac69dd6a031f36decfc20827752a6fe13adf2e358e4ec39df63027dc1994bac1",
+      "started_utc": "2026-10-17T15:23:26.913228+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:25:54.523274Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 643,
+        "eval_duration": 64723700000,
+        "load_duration": 2058935041,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 1679,
+        "prompt_eval_duration": 12406299000,
+        "total_duration": 79207866583
+      },
+      "case": "p07",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 79.2101106249902,
+      "ended_utc": "2026-10-17T15:25:54.545188+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "530c67c18cefc4996a91fc6b3e5dc70ad79b4802e2be07d33931ec7cffc1756d",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "c974f070ee1ed56d9e8906592262f04796c97a6097f440bc39d2192dba023af6",
+      "required_target_ids": [
+        "clm-p07"
+      ],
+      "response_sha256": "84c87aae438e5b02e5525a44dcae71095f587d5ac74840a6b0588e42e9302aea",
+      "started_utc": "2026-10-17T15:24:35.313579+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    },
+    {
+      "actions_observed": [
+        "deliver fixed context",
+        "receive model JSON",
+        "validate exact record"
+      ],
+      "backend_metrics": {
+        "created_at": "2026-10-17T15:26:38.081963Z",
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 344,
+        "eval_duration": 35571565000,
+        "load_duration": 2307064042,
+        "model": "qwen3.5:9b",
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_count": 731,
+        "prompt_eval_duration": 5590394000,
+        "total_duration": 43494319292
+      },
+      "case": "p08",
+      "child_time_separately_observed": true,
+      "elapsed_seconds": 43.495952500001295,
+      "ended_utc": "2026-10-17T15:26:38.102408+00:00",
+      "external_raw_lookups": 0,
+      "first_content_sha256": "146e6c1d02681509820f70334e7772280ab44f83396fd2683ecb719eeab75c9d",
+      "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+      "request_sha256": "b2c468d27e3ed61b86fe3336497d11ab6fba4f7aa2afdb3f356ea7ae65c20bbd",
+      "required_target_ids": [
+        "clm-p08"
+      ],
+      "response_sha256": "f12ffaf257ef152d5eaadf3ddbbebd10e1c8fa22e8625a08c9e149a467c1a077",
+      "started_utc": "2026-10-17T15:25:54.585500+00:00",
+      "timing_unit": "one upstream target incl. required children",
+      "tool_calls_executed": 0
+    }
+  ],
+  "files": {
+    "raw/p01/LAUNCH.json": "07844bede77cd2c447d5c6f62e9d2b529803bdef316bf91790cfb625fc71a9da",
+    "raw/p01/first-content.json": "2b23951abe7fbcede5205039e487015b7f73b9f162387e89e25a843238e85d94",
+    "raw/p01/response.json": "2b22169c2f86b8119bd7cedafd1a47c19aed4e5ef7099fd294963a2490493129",
+    "raw/p02/LAUNCH.json": "bf5479b9846e511c1d88c287489174e6645b83405acfc37aa7adabf0f2fe1be7",
+    "raw/p02/first-content.json": "dc017a230f3b79e534b17667ff44b95a32b74afe3ab6669448cd2bf5e28d099b",
+    "raw/p02/response.json": "ea5657dbbccfd4754d6ee39ab1b88bfcc11a5bf4e98fa6a5a0fb88696bcae809",
+    "raw/p03/LAUNCH.json": "c9878d58d930effa007699b0cf2f82e6d6ac4f7865ae88e8553c159ff4bf404d",
+    "raw/p03/first-content.json": "1fea42381513341915214cab9404790c23ee763c9ba2c03dee3d7ec9b7ee678a",
+    "raw/p03/response.json": "210b538e8af90217ae553d80d6278b477ff14e471accc3bdc2b4472689c6988c",
+    "raw/p04/LAUNCH.json": "72bf22092ef1aa5b24f970d14c7e7841d9ab8e5855b93b8e574d68e63627875b",
+    "raw/p04/first-content.json": "efebb23e6d27b79f49818b6d884de7de90f85b0b12e1a32d09b4b385a58d0997",
+    "raw/p04/response.json": "621945cc60bfe084582744c72640c39e2c62b33f229f165cec9337e9e05688a8",
+    "raw/p05/LAUNCH.json": "a3975f21e37ce96bfedfadd7f2d85dceee6997349d70f5cf2e50555e93fa26af",
+    "raw/p05/first-content.json": "f98797be4c896aaaf618cdcf01f7e4f868af2bcd3814aea8b2bfdef637ac52a5",
+    "raw/p05/response.json": "5a4716b79acca3d0117a7af6d7a4b770ea4f7bc683225297d667533154ec93ac",
+    "raw/p06/LAUNCH.json": "7d033790112461408d97c89cb92835f3125a30e95edc2d68e4058e8adbb4f2b3",
+    "raw/p06/first-content.json": "037c951abe1d0dbdf0d607b3e78ade64c734167854db4ec0e383b99c243de646",
+    "raw/p06/response.json": "ac69dd6a031f36decfc20827752a6fe13adf2e358e4ec39df63027dc1994bac1",
+    "raw/p07/LAUNCH.json": "ceb0db05142b40eb50ed2581f6bd352968ab831342d105abf9a283f1727d4222",
+    "raw/p07/first-content.json": "530c67c18cefc4996a91fc6b3e5dc70ad79b4802e2be07d33931ec7cffc1756d",
+    "raw/p07/response.json": "84c87aae438e5b02e5525a44dcae71095f587d5ac74840a6b0588e42e9302aea",
+    "raw/p08/LAUNCH.json": "50bb7ab6418cc19741a2807ea265a66d8ba9550f89652de6f6d6696cf8c23557",
+    "raw/p08/first-content.json": "146e6c1d02681509820f70334e7772280ab44f83396fd2683ecb719eeab75c9d",
+    "raw/p08/response.json": "f12ffaf257ef152d5eaadf3ddbbebd10e1c8fa22e8625a08c9e149a467c1a077",
+    "reviews/p01/RECEIPT.json": "3a9c88bf6258df30b3ad6dfff3344e0c239bdf953a2737c346fb3d9f38140844",
+    "reviews/p01/review_record.json": "fb09baae51c5d6637893363383bab4c089143764674af3a6d61f06dbdb4e37e5",
+    "reviews/p01/target_notes.json": "12a5c5edaf32bf6da72265c00176c3dbf70742ebb5e3851e44193ebd9159bd68",
+    "reviews/p02/RECEIPT.json": "ea5bbf1310649682dda3d785d030dd9df8e03339d9d2c1b4a96fc6ad8bf4dcc4",
+    "reviews/p02/review_record.json": "27d9e9e82007e0b4e6d7c7903eb53d8313a3c70d10340cb42931a3612934d059",
+    "reviews/p02/target_notes.json": "bdba138d3db04692761a40c593bbb3dcf5d674c7d9f62c13e836ac0ddd2a8e54",
+    "reviews/p03/RECEIPT.json": "59a3a04fc2472f0ff148bb877272fc212950b7bdf5b3b1d2f9183f4391073159",
+    "reviews/p03/review_record.json": "6c1d87eded412cd2ff6450ae4ae8ce973db833fe2d208e14cd1ee30e93278969",
+    "reviews/p03/target_notes.json": "654b8f7f95d6cc4f7741de319dd08655e9d06b6090ca673fde65cc9e92313202",
+    "reviews/p04/RECEIPT.json": "7f987c8c6b12b0f82c25938357e328ff7708bebba4e1f706bf94f378d02d8c34",
+    "reviews/p04/review_record.json": "a2e6f8f7355e0b3869f584b4f483e5facee7ca8bb441c87acb377d1084067853",
+    "reviews/p04/target_notes.json": "0489d96055fd23d692694b2af7e42c902f09091497fc5885caaad29192adb0e4",
+    "reviews/p05/RECEIPT.json": "a69dd8e64e68534d71a3a8c3624761e583e05cf80bb81271d75634cfed7a934c",
+    "reviews/p05/review_record.json": "23480a9e9313f827b638d91a95d49dd442100108e6186a18b2708cd91b00ed87",
+    "reviews/p05/target_notes.json": "61588d9d7f3766cfe9fb99aca3696bbfdef5338908ddd254446570538215a40f",
+    "reviews/p06/RECEIPT.json": "258eeb3f356515f09440286638127a66e82697ef546b8d5d516b8df1006742a2",
+    "reviews/p06/review_record.json": "d31379352cdd65946a5d43e5057c7e43072d1a07f49a1fb2f03d5578fa28e497",
+    "reviews/p06/target_notes.json": "527e68c501c790a4e181c0af61a3b1f32c6516b4f2c14b629c94e7318b0a9438",
+    "reviews/p07/RECEIPT.json": "ecbf4764d0497e20d15ea97583ea4e6dc6a3debdd5cd16784355fc15a293eb37",
+    "reviews/p07/review_record.json": "d2637e068ed410d4e308d20345d1c531817252865623c2cbda2080e7895da6ce",
+    "reviews/p07/target_notes.json": "fca6adddb1e033b9f1d13dad8e34c6dfa04ca30f773600349607eb5ae8bf22b8",
+    "reviews/p08/RECEIPT.json": "855d5156ce7dcd9a951fc4b892fa1190227c44aae00fe009d79e8249e7797534",
+    "reviews/p08/review_record.json": "559970c027d9bec4f310a4f91e5573884e559399258d8f4829554fa1e344c52a",
+    "reviews/p08/target_notes.json": "5aa03dec0f22b28f65fd4d505c552b8758e1a8925816bdb9e60320b17e96c04c"
+  },
+  "frozen_utc": "2026-10-17T15:26:38.118050+00:00",
+  "schema": "eb137-local-first-decisions-v1",
+  "semantic_evaluation": "NOT_RUN",
+  "started_utc": "2026-10-17T15:18:38.983762+00:00"
+}

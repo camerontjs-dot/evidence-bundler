@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+    "input_sha256": "sha256:b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8",
+    "package_version": "0.3.0.dev0",
+    "profile_id": "eb-v1-integration-10x3-rc0",
+    "unreviewed_native_package_sha256": "sha256:a69d09f78d5410f9b4823eb5d9fdab80d6ccd6220486933c8709537cfbccade4"
+  },
+  "decisions": [
+    {
+      "decision": "accepted",
+      "passage_id": "passage:2d032bfab20acc5b49eb331ad9db2153",
+      "proposition_id": "clm-p02",
+      "reason": "The passage text explicitly states 'The final Lumen pilot report states that archived samples came from nine sites,' which directly contradicts the claim that samples came from twelve sites. The passage provides sufficient local evidence to refute the claim, satisfying the acceptance criteria for evidence suitability."
+    }
+  ],
+  "schema": "evidence-bundler-v1-review-record-v1"
+}

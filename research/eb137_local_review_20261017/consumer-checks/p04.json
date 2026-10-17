@@ -1,0 +1,34 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p04.yaml",
+      "evidence/src-p04-alder-triage/passages/passage:b40c68f3b906c744d45ee38384f9fc86.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p04",
+  "errors": [],
+  "expected_admitted_pairs": [],
+  "first_decision_counts": {
+    "accepted": 0,
+    "needs-review": 0,
+    "rejected": 1
+  },
+  "native_file_sha256": "sha256:633f09cf7ada4dacd7ab935d2c68656fc06903d1af0a4fad6fd6dadd75ea1ed9",
+  "native_package_sha256": "sha256:a7ef7fd4e7135402239a3c2a9c97d02d6081c9db26fce6033197fd89d094fe9f",
+  "passed": true,
+  "receipt_file_sha256": "sha256:adb1061d349d03f7b6c0bcb5f5b565c3391e1591fdbb8d256045c2c60cf05301",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:09793109352081ed6daca8da0f478e28615dc0d42e9320da5523bbc65173dc5f",
+  "review_to_native_pairs_equal": true
+}
