@@ -1,0 +1,104 @@
+{
+  "checks": [
+    {
+      "check": "exact_member_allowlist",
+      "passed": true
+    },
+    {
+      "check": "wrong_zip_identity",
+      "passed": true
+    },
+    {
+      "check": "extra_file",
+      "passed": true
+    },
+    {
+      "check": "missing_file",
+      "passed": true
+    },
+    {
+      "check": "duplicate_member",
+      "passed": true
+    },
+    {
+      "check": "traversal_member",
+      "passed": true
+    },
+    {
+      "check": "symlink_member",
+      "passed": true
+    },
+    {
+      "check": "invalid_case",
+      "passed": true
+    },
+    {
+      "check": "no_history_tools_other_cases_or_context",
+      "passed": true
+    },
+    {
+      "check": "unapproved_endpoint",
+      "passed": true
+    },
+    {
+      "check": "redirect",
+      "passed": true
+    },
+    {
+      "check": "permits_accepted",
+      "passed": true
+    },
+    {
+      "check": "permits_rejected",
+      "passed": true
+    },
+    {
+      "check": "permits_needs-review",
+      "passed": true
+    },
+    {
+      "check": "binding_change",
+      "passed": true
+    },
+    {
+      "check": "id_change",
+      "passed": true
+    },
+    {
+      "check": "blank_reason",
+      "passed": true
+    },
+    {
+      "check": "extra_decision",
+      "passed": true
+    },
+    {
+      "check": "missing_decision",
+      "passed": true
+    },
+    {
+      "check": "illegal_decision",
+      "passed": true
+    },
+    {
+      "check": "missing_target_note",
+      "passed": true
+    },
+    {
+      "check": "extra_field",
+      "passed": true
+    },
+    {
+      "check": "duplicate_json_keys",
+      "passed": true
+    },
+    {
+      "check": "nonfinite_json",
+      "passed": true
+    }
+  ],
+  "model_inference": false,
+  "passed": true,
+  "runner_sha256": "5497b418962579b00153e592b4291c1699a44a5a83b6d05a06de9164b3751157",
+  "scientific_packet_read": false
+}

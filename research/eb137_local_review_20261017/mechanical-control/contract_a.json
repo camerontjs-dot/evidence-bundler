@@ -1,0 +1,28 @@
+{
+  "decomposition": {
+    "state": "not_decomposed"
+  },
+  "handoff_id": "independent-portable-path-probe",
+  "handoff_sha256": "sha256:66d105e95ff6a15f013e55049f39cea71ad8fd87347a9cba002c0ef211525763",
+  "producer": {
+    "producer_id": "independent-engineering-probe",
+    "producer_version": "1"
+  },
+  "root_proposition": {
+    "proposition_id": "claim-safe",
+    "text": "cobalt orchard protocol",
+    "text_sha256": "sha256:85e2a5744845d845c5309b75149b5484cab4ac7e5e5ba8b380114872b48dbae4"
+  },
+  "schema": "contract-a-wire-candidate-rc2",
+  "sources": [
+    {
+      "content": "cobalt orchard protocol appears in this synthetic engineering record.",
+      "content_sha256": "sha256:50eb692491a372bb37a998179ba077a1503a86b12d86ab39ecfcaf31b0a471c1",
+      "media_type": "text/plain; charset=utf-8",
+      "source_id": "source-safe"
+    }
+  ],
+  "work": {
+    "work_id": "path-containment-only"
+  }
+}

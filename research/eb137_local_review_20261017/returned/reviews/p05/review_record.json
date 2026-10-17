@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+    "input_sha256": "sha256:23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe",
+    "package_version": "0.3.0.dev0",
+    "profile_id": "eb-v1-integration-10x3-rc0",
+    "unreviewed_native_package_sha256": "sha256:9dfa9c0d5a156182511632a86e4897b36a9cd822d09edf18da72bcdba0900ed0"
+  },
+  "decisions": [
+    {
+      "decision": "rejected",
+      "passage_id": "passage:bfcaa9a2108d56a1c1c78f021bbf7620",
+      "proposition_id": "clm-p05",
+      "reason": "The passage text explicitly states it is a 'fictional' and 'invented' index fragment that lacks the procedure body, unit definitions, and logical connections required to support or refute the claim. It admits the absence of the specific relationships (unit attached to 48, clock-start rule, lot population) necessary for assessment, rendering it materially inadequate for evidence bundling."
+    }
+  ],
+  "schema": "evidence-bundler-v1-review-record-v1"
+}

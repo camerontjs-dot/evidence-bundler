@@ -1,0 +1,137 @@
+{
+  "format": {
+    "additionalProperties": false,
+    "properties": {
+      "review_record": {
+        "additionalProperties": false,
+        "properties": {
+          "bindings": {
+            "additionalProperties": false,
+            "properties": {
+              "config_sha256": {
+                "const": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+                "type": "string"
+              },
+              "input_sha256": {
+                "const": "sha256:40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf",
+                "type": "string"
+              },
+              "package_version": {
+                "const": "0.3.0.dev0",
+                "type": "string"
+              },
+              "profile_id": {
+                "const": "eb-v1-integration-10x3-rc0",
+                "type": "string"
+              },
+              "unreviewed_native_package_sha256": {
+                "const": "sha256:3d200a63726190781a5f65bc8698edd3605a14d58d67e362a89b5fa340867502",
+                "type": "string"
+              }
+            },
+            "required": [
+              "config_sha256",
+              "input_sha256",
+              "package_version",
+              "profile_id",
+              "unreviewed_native_package_sha256"
+            ],
+            "type": "object"
+          },
+          "decisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "decision": {
+                  "enum": [
+                    "accepted",
+                    "rejected",
+                    "needs-review"
+                  ],
+                  "type": "string"
+                },
+                "passage_id": {
+                  "enum": [
+                    "passage:0422ce28897c2733e3723d3f7175478a"
+                  ],
+                  "type": "string"
+                },
+                "proposition_id": {
+                  "enum": [
+                    "clm-p01"
+                  ],
+                  "type": "string"
+                },
+                "reason": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "proposition_id",
+                "passage_id",
+                "decision",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "type": "array"
+          },
+          "schema": {
+            "const": "evidence-bundler-v1-review-record-v1",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "bindings",
+          "decisions"
+        ],
+        "type": "object"
+      },
+      "target_notes": {
+        "additionalProperties": false,
+        "properties": {
+          "clm-p01": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "clm-p01"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "review_record",
+      "target_notes"
+    ],
+    "type": "object"
+  },
+  "keep_alive": 0,
+  "messages": [
+    {
+      "content": "# Reviewer rule\n\nFor each retained proposition/passage pair, choose `accepted`, `rejected` or `needs-review`, with a nonblank reason.\n\n**Accept only when the admitted passage text itself is materially on-target and locally adequate for subsequent assessment.** Display context may orient the reviewer to the source, but it is explicitly not admitted downstream and therefore may not supply a fact, qualifier, subject, unit, scope or relation that is missing from the passage text. A passage can be accepted when it contradicts the claim; acceptance is evidence suitability, not support.\n\nFor a target with no retained passage, record the displayed gap state without inventing evidence.\n\nRead p01 through p08 in that order. Permitted inputs are this rule and each corresponding review_context.md and review_record.json only. No prior conversation, implementation, tests, oracle, old decisions, raw sources or external lookup is permitted.\nChange only decision and reason values in the generated review records. Preserve each first decision. Return a separate receipt with actual actor identity/model, input files opened, start/end and elapsed effort per target, actions, gap notes, external lookups (including zero), and any prior exposure or contamination. Do not claim human identity or human throughput for an agent. Stop on prohibited exposure and preserve the receipt. The execution custodian must supply the actual launch, identity and access evidence; self-description alone does not establish independence.\n",
+      "role": "system"
+    },
+    {
+      "content": "{\"files\": {\"p01/review_context.md\": \"# Review context\\n\\nDisplay context is reconstructed for reading. It is not admitted text, and it does not change passage spans or identifiers.\\n\\nThis file is the unreviewed run. Fill review_record.json and pass it with --review. The record binds the input file bytes and the unreviewed package hash.\\n\\n## Target `clm-p01`\\n\\nClaim:\\n\\nFictional Procedure Sable-17 revision 4 became effective on 3 March 2031.\\n\\n### Passage `passage:0422ce28897c2733e3723d3f7175478a`\\n\\n- Source: `src-p01-sable-record`\\n- Offsets: 37:474\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nTraining example only. All names, identifiers and dates in this record are invented.\\n\\nDocument: Procedure Sable-17\\nRevision: 4\\nApproval date: 1 March 2031\\nEffective date: 3 March 2031\\nStatus: current in this fictional register.\\n\\nThe approval date records when the quality lead signed revision 4. The effective date records when that revision became the working procedure. Revision 3 ceased to be current when revision 4 became effective.\\n```\\n\\nDisplay context (not admitted text):\\n\\n```\\n# Fictional Sable document register\\n```\\n\", \"p01/review_record.json\": \"{\\n  \\\"bindings\\\": {\\n    \\\"config_sha256\\\": \\\"sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc\\\",\\n    \\\"input_sha256\\\": \\\"sha256:40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf\\\",\\n    \\\"package_version\\\": \\\"0.3.0.dev0\\\",\\n    \\\"profile_id\\\": \\\"eb-v1-integration-10x3-rc0\\\",\\n    \\\"unreviewed_native_package_sha256\\\": \\\"sha256:3d200a63726190781a5f65bc8698edd3605a14d58d67e362a89b5fa340867502\\\"\\n  },\\n  \\\"decisions\\\": [\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:0422ce28897c2733e3723d3f7175478a\\\",\\n      \\\"proposition_id\\\": \\\"clm-p01\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    }\\n  ],\\n  \\\"schema\\\": \\\"evidence-bundler-v1-review-record-v1\\\"\\n}\\n\"}}",
+      "role": "user"
+    }
+  ],
+  "model": "qwen3.5:9b",
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "num_thread": 4,
+    "presence_penalty": 0,
+    "seed": 137,
+    "temperature": 0
+  },
+  "stream": false,
+  "think": false,
+  "tools": []
+}

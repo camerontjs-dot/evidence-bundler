@@ -1,0 +1,11 @@
+{
+  "bindings": {
+    "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+    "input_sha256": "sha256:dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f",
+    "package_version": "0.3.0.dev0",
+    "profile_id": "eb-v1-integration-10x3-rc0",
+    "unreviewed_native_package_sha256": "sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6"
+  },
+  "decisions": [],
+  "schema": "evidence-bundler-v1-review-record-v1"
+}

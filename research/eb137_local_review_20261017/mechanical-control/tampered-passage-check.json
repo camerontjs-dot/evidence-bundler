@@ -1,0 +1,14 @@
+{
+  "cal_error": "SHA256SUMS mismatch for evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+  "cal_error_type": "BundleIntegrityError",
+  "cal_intake_returned": false,
+  "cal_rejected": true,
+  "canonical_errors": [
+    "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml: hash mismatch (expected f4b6ac466eeb0ba8b788d6ff6cc794390c943d5b19ed3e5176e2517d0bedfc75, got b746365dd51ac47f15026a96dcbda9f9c74f40ddc411bb5a0a039bfd896d91c6)"
+  ],
+  "canonical_rejected": true,
+  "original_file_sha256": "f4b6ac466eeb0ba8b788d6ff6cc794390c943d5b19ed3e5176e2517d0bedfc75",
+  "tampered_file_sha256": "b746365dd51ac47f15026a96dcbda9f9c74f40ddc411bb5a0a039bfd896d91c6",
+  "tampered_path": "evidence/source-safe/passages/passage:559fef79b50c7d8968b28e999164d214.yaml",
+  "valid_bundle_preserved": true
+}

@@ -1,0 +1,143 @@
+{
+  "format": {
+    "additionalProperties": false,
+    "properties": {
+      "review_record": {
+        "additionalProperties": false,
+        "properties": {
+          "bindings": {
+            "additionalProperties": false,
+            "properties": {
+              "config_sha256": {
+                "const": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+                "type": "string"
+              },
+              "input_sha256": {
+                "const": "sha256:53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376",
+                "type": "string"
+              },
+              "package_version": {
+                "const": "0.3.0.dev0",
+                "type": "string"
+              },
+              "profile_id": {
+                "const": "eb-v1-integration-10x3-rc0",
+                "type": "string"
+              },
+              "unreviewed_native_package_sha256": {
+                "const": "sha256:0d2a421aef382df4cc63d476d1a48c5c82893bf977e3a507cacb22f98e104fef",
+                "type": "string"
+              }
+            },
+            "required": [
+              "config_sha256",
+              "input_sha256",
+              "package_version",
+              "profile_id",
+              "unreviewed_native_package_sha256"
+            ],
+            "type": "object"
+          },
+          "decisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "decision": {
+                  "enum": [
+                    "accepted",
+                    "rejected",
+                    "needs-review"
+                  ],
+                  "type": "string"
+                },
+                "passage_id": {
+                  "enum": [
+                    "passage:836fbe641896a4af00cb4226e5061c3f"
+                  ],
+                  "type": "string"
+                },
+                "proposition_id": {
+                  "enum": [
+                    "clm-p06-1",
+                    "clm-p06-2"
+                  ],
+                  "type": "string"
+                },
+                "reason": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "proposition_id",
+                "passage_id",
+                "decision",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "schema": {
+            "const": "evidence-bundler-v1-review-record-v1",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "bindings",
+          "decisions"
+        ],
+        "type": "object"
+      },
+      "target_notes": {
+        "additionalProperties": false,
+        "properties": {
+          "clm-p06-1": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "clm-p06-2": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "clm-p06-1",
+          "clm-p06-2"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "review_record",
+      "target_notes"
+    ],
+    "type": "object"
+  },
+  "keep_alive": 0,
+  "messages": [
+    {
+      "content": "# Reviewer rule\n\nFor each retained proposition/passage pair, choose `accepted`, `rejected` or `needs-review`, with a nonblank reason.\n\n**Accept only when the admitted passage text itself is materially on-target and locally adequate for subsequent assessment.** Display context may orient the reviewer to the source, but it is explicitly not admitted downstream and therefore may not supply a fact, qualifier, subject, unit, scope or relation that is missing from the passage text. A passage can be accepted when it contradicts the claim; acceptance is evidence suitability, not support.\n\nFor a target with no retained passage, record the displayed gap state without inventing evidence.\n\nRead p01 through p08 in that order. Permitted inputs are this rule and each corresponding review_context.md and review_record.json only. No prior conversation, implementation, tests, oracle, old decisions, raw sources or external lookup is permitted.\nChange only decision and reason values in the generated review records. Preserve each first decision. Return a separate receipt with actual actor identity/model, input files opened, start/end and elapsed effort per target, actions, gap notes, external lookups (including zero), and any prior exposure or contamination. Do not claim human identity or human throughput for an agent. Stop on prohibited exposure and preserve the receipt. The execution custodian must supply the actual launch, identity and access evidence; self-description alone does not establish independence.\n",
+      "role": "system"
+    },
+    {
+      "content": "{\"files\": {\"p06/review_context.md\": \"# Review context\\n\\nDisplay context is reconstructed for reading. It is not admitted text, and it does not change passage spans or identifiers.\\n\\nThis file is the unreviewed run. Fill review_record.json and pass it with --review. The record binds the input file bytes and the unreviewed package hash.\\n\\n## Target `clm-p06-1`\\n\\nClaim:\\n\\nFictional Study Halcyon-2 requires a signed sampling log.\\n\\n### Passage `passage:836fbe641896a4af00cb4226e5061c3f`\\n\\n- Source: `src-p06-halcyon-log`\\n- Offsets: 0:465\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nFictional Study Halcyon-2: sampling-log requirement\\n\\nThis is an invented research-administration excerpt.\\n\\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\\n\\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source.\\n```\\n\\n## Target `clm-p06-2`\\n\\nClaim:\\n\\nFictional Study Halcyon-2 records a planned 24-month archive retention period.\\n\\n### Passage `passage:836fbe641896a4af00cb4226e5061c3f`\\n\\n- Source: `src-p06-halcyon-log`\\n- Offsets: 0:465\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nFictional Study Halcyon-2: sampling-log requirement\\n\\nThis is an invented research-administration excerpt.\\n\\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\\n\\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source.\\n```\\n\", \"p06/review_record.json\": \"{\\n  \\\"bindings\\\": {\\n    \\\"config_sha256\\\": \\\"sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc\\\",\\n    \\\"input_sha256\\\": \\\"sha256:53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376\\\",\\n    \\\"package_version\\\": \\\"0.3.0.dev0\\\",\\n    \\\"profile_id\\\": \\\"eb-v1-integration-10x3-rc0\\\",\\n    \\\"unreviewed_native_package_sha256\\\": \\\"sha256:0d2a421aef382df4cc63d476d1a48c5c82893bf977e3a507cacb22f98e104fef\\\"\\n  },\\n  \\\"decisions\\\": [\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:836fbe641896a4af00cb4226e5061c3f\\\",\\n      \\\"proposition_id\\\": \\\"clm-p06-1\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    },\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:836fbe641896a4af00cb4226e5061c3f\\\",\\n      \\\"proposition_id\\\": \\\"clm-p06-2\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    }\\n  ],\\n  \\\"schema\\\": \\\"evidence-bundler-v1-review-record-v1\\\"\\n}\\n\"}}",
+      "role": "user"
+    }
+  ],
+  "model": "qwen3.5:9b",
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "num_thread": 4,
+    "presence_penalty": 0,
+    "seed": 137,
+    "temperature": 0
+  },
+  "stream": false,
+  "think": false,
+  "tools": []
+}

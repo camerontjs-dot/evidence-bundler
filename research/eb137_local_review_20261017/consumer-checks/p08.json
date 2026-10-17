@@ -1,0 +1,33 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p08.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p08",
+  "errors": [],
+  "expected_admitted_pairs": [],
+  "first_decision_counts": {
+    "accepted": 0,
+    "needs-review": 0,
+    "rejected": 0
+  },
+  "native_file_sha256": "sha256:04e2a2d142b6fb823fe5783325b1dde53f5a26b2821d4d5b90584bda9058105f",
+  "native_package_sha256": "sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6",
+  "passed": true,
+  "receipt_file_sha256": "sha256:76e7971a3a5ffbf9770a31ee214ea5166ab57a748a4d7b8f4e987c880b4a65de",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:7b2a4121f25c996b3d6c95560e4f20e0617bb2609c8002cf09b2cd0557d13fa0",
+  "review_to_native_pairs_equal": true
+}

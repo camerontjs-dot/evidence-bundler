@@ -1,0 +1,139 @@
+{
+  "format": {
+    "additionalProperties": false,
+    "properties": {
+      "review_record": {
+        "additionalProperties": false,
+        "properties": {
+          "bindings": {
+            "additionalProperties": false,
+            "properties": {
+              "config_sha256": {
+                "const": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+                "type": "string"
+              },
+              "input_sha256": {
+                "const": "sha256:e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c",
+                "type": "string"
+              },
+              "package_version": {
+                "const": "0.3.0.dev0",
+                "type": "string"
+              },
+              "profile_id": {
+                "const": "eb-v1-integration-10x3-rc0",
+                "type": "string"
+              },
+              "unreviewed_native_package_sha256": {
+                "const": "sha256:aee44a41d037985b0e4a65ecd98538899e80f33e708baf844db6a67e56a5f7ac",
+                "type": "string"
+              }
+            },
+            "required": [
+              "config_sha256",
+              "input_sha256",
+              "package_version",
+              "profile_id",
+              "unreviewed_native_package_sha256"
+            ],
+            "type": "object"
+          },
+          "decisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "decision": {
+                  "enum": [
+                    "accepted",
+                    "rejected",
+                    "needs-review"
+                  ],
+                  "type": "string"
+                },
+                "passage_id": {
+                  "enum": [
+                    "passage:01417dd7eefe43b980adc51ab74a4533",
+                    "passage:30c70607c2a17efa80e5359a93928099",
+                    "passage:6adcbccf2a04d9c75689ed2f09c7af0a"
+                  ],
+                  "type": "string"
+                },
+                "proposition_id": {
+                  "enum": [
+                    "clm-p07"
+                  ],
+                  "type": "string"
+                },
+                "reason": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "proposition_id",
+                "passage_id",
+                "decision",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "type": "array"
+          },
+          "schema": {
+            "const": "evidence-bundler-v1-review-record-v1",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "bindings",
+          "decisions"
+        ],
+        "type": "object"
+      },
+      "target_notes": {
+        "additionalProperties": false,
+        "properties": {
+          "clm-p07": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "clm-p07"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "review_record",
+      "target_notes"
+    ],
+    "type": "object"
+  },
+  "keep_alive": 0,
+  "messages": [
+    {
+      "content": "# Reviewer rule\n\nFor each retained proposition/passage pair, choose `accepted`, `rejected` or `needs-review`, with a nonblank reason.\n\n**Accept only when the admitted passage text itself is materially on-target and locally adequate for subsequent assessment.** Display context may orient the reviewer to the source, but it is explicitly not admitted downstream and therefore may not supply a fact, qualifier, subject, unit, scope or relation that is missing from the passage text. A passage can be accepted when it contradicts the claim; acceptance is evidence suitability, not support.\n\nFor a target with no retained passage, record the displayed gap state without inventing evidence.\n\nRead p01 through p08 in that order. Permitted inputs are this rule and each corresponding review_context.md and review_record.json only. No prior conversation, implementation, tests, oracle, old decisions, raw sources or external lookup is permitted.\nChange only decision and reason values in the generated review records. Preserve each first decision. Return a separate receipt with actual actor identity/model, input files opened, start/end and elapsed effort per target, actions, gap notes, external lookups (including zero), and any prior exposure or contamination. Do not claim human identity or human throughput for an agent. Stop on prohibited exposure and preserve the receipt. The execution custodian must supply the actual launch, identity and access evidence; self-description alone does not establish independence.\n",
+      "role": "system"
+    },
+    {
+      "content": "{\"files\": {\"p07/review_context.md\": \"# Review context\\n\\nDisplay context is reconstructed for reading. It is not admitted text, and it does not change passage spans or identifiers.\\n\\nThis file is the unreviewed run. Fill review_record.json and pass it with --review. The record binds the input file bytes and the unreviewed package hash.\\n\\n## Target `clm-p07`\\n\\nClaim:\\n\\nFor the fictional Ilex-9 solvent check, the acceptance ceiling is 0.08 mg/L.\\n\\n### Passage `passage:30c70607c2a17efa80e5359a93928099`\\n\\n- Source: `src-p07-archive-7q`\\n- Offsets: 0:305\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nFictional archive note 7Q: Ilex-9 check\\n\\nThis is an invented laboratory-record layout used for a software exercise.\\n\\nArchive note 7Q concerns the Ilex-9 solvent check. Its acceptance-ceiling field is expressed in mg/L. The recorded ceiling value appears in the decision table at the end of this same note.\\n```\\n\\n### Passage `passage:6adcbccf2a04d9c75689ed2f09c7af0a`\\n\\n- Source: `src-p07-archive-7q`\\n- Offsets: 6484:6706\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nDecision table for archive note 7Q\\n\\nAcceptance ceiling: 0.08.\\nThe subject key and measurement unit for this field are defined in the opening header of archive note 7Q. The intermediate entries record custody handling only.\\n```\\n\\n### Passage `passage:01417dd7eefe43b980adc51ab74a4533`\\n\\n- Source: `src-p07-archive-7q`\\n- Offsets: 307:2066\\n- Admission: `needs-review`\\n\\nPassage text:\\n\\n```\\nChain-of-record entries follow.\\nEntry 01: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 02: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 03: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 04: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 05: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 06: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 07: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 08: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\nEntry 09: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\\n```\\n\", \"p07/review_record.json\": \"{\\n  \\\"bindings\\\": {\\n    \\\"config_sha256\\\": \\\"sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc\\\",\\n    \\\"input_sha256\\\": \\\"sha256:e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c\\\",\\n    \\\"package_version\\\": \\\"0.3.0.dev0\\\",\\n    \\\"profile_id\\\": \\\"eb-v1-integration-10x3-rc0\\\",\\n    \\\"unreviewed_native_package_sha256\\\": \\\"sha256:aee44a41d037985b0e4a65ecd98538899e80f33e708baf844db6a67e56a5f7ac\\\"\\n  },\\n  \\\"decisions\\\": [\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:30c70607c2a17efa80e5359a93928099\\\",\\n      \\\"proposition_id\\\": \\\"clm-p07\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    },\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:6adcbccf2a04d9c75689ed2f09c7af0a\\\",\\n      \\\"proposition_id\\\": \\\"clm-p07\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    },\\n    {\\n      \\\"decision\\\": \\\"needs-review\\\",\\n      \\\"passage_id\\\": \\\"passage:01417dd7eefe43b980adc51ab74a4533\\\",\\n      \\\"proposition_id\\\": \\\"clm-p07\\\",\\n      \\\"reason\\\": \\\"\\\"\\n    }\\n  ],\\n  \\\"schema\\\": \\\"evidence-bundler-v1-review-record-v1\\\"\\n}\\n\"}}",
+      "role": "user"
+    }
+  ],
+  "model": "qwen3.5:9b",
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "num_thread": 4,
+    "presence_penalty": 0,
+    "seed": 137,
+    "temperature": 0
+  },
+  "stream": false,
+  "think": false,
+  "tools": []
+}

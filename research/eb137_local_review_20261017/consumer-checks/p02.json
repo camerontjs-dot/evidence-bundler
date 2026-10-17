@@ -1,0 +1,44 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [
+      [
+        "clm-p02",
+        "passage:2d032bfab20acc5b49eb331ad9db2153"
+      ]
+    ],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p02.yaml",
+      "evidence/src-p02-lumen-report/passages/passage:2d032bfab20acc5b49eb331ad9db2153.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p02",
+  "errors": [],
+  "expected_admitted_pairs": [
+    [
+      "clm-p02",
+      "passage:2d032bfab20acc5b49eb331ad9db2153"
+    ]
+  ],
+  "first_decision_counts": {
+    "accepted": 1,
+    "needs-review": 0,
+    "rejected": 0
+  },
+  "native_file_sha256": "sha256:a7373d667b678e091dc8ffd5ab5411360eaa425c0fb4a965174c5229a17ba86b",
+  "native_package_sha256": "sha256:45035284e7ab01bd945f2fdcad78a00866d0963930872bca62cc3b1c9888560b",
+  "passed": true,
+  "receipt_file_sha256": "sha256:0c4d12744b09e4e8bf9adccb067405c8701a3fcd06da08f990c6c3165e33ecd5",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:e0ce8b93b4778bfed2ae2e04c27f0aea4f8c752cba3270cda35e84390b76f8d8",
+  "review_to_native_pairs_equal": true
+}

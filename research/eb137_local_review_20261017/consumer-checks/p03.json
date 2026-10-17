@@ -1,0 +1,55 @@
+{
+  "cal": {
+    "actual_admitted_pairs": [
+      [
+        "clm-p03-1",
+        "passage:c310360a9e1800af86c01fd2cc9a461c"
+      ],
+      [
+        "clm-p03-2",
+        "passage:db558da33b045594e1b564285d081a54"
+      ]
+    ],
+    "exact_pair_match": true,
+    "extension_state": "present"
+  },
+  "canonical": {
+    "checked_files": [
+      "bundle_manifest.yaml",
+      "audit_config.yaml",
+      "claims/clm-p03-1.yaml",
+      "claims/clm-p03-2.yaml",
+      "claims/clm-p03.yaml",
+      "evidence/src-p03-wren-reconcile/passages/passage:db558da33b045594e1b564285d081a54.yaml",
+      "evidence/src-p03-wren-review/passages/passage:c310360a9e1800af86c01fd2cc9a461c.yaml",
+      "extensions/contract-b-factual-context-v1.json"
+    ],
+    "errors": [],
+    "extension_checked": true,
+    "passed": true
+  },
+  "case_id": "p03",
+  "errors": [],
+  "expected_admitted_pairs": [
+    [
+      "clm-p03-1",
+      "passage:c310360a9e1800af86c01fd2cc9a461c"
+    ],
+    [
+      "clm-p03-2",
+      "passage:db558da33b045594e1b564285d081a54"
+    ]
+  ],
+  "first_decision_counts": {
+    "accepted": 2,
+    "needs-review": 0,
+    "rejected": 2
+  },
+  "native_file_sha256": "sha256:e836019e1b06a09b4c88c381ca48ef617a311b9c9f64e8d69ced1f570f72a49d",
+  "native_package_sha256": "sha256:739b33c6fc37f6c6197745d937793718c41bf5d8cee33e81f5178e302ec9866f",
+  "passed": true,
+  "receipt_file_sha256": "sha256:635c3388c1430336f7f6994c40090e607334e1d4cd69c9baf5082787a7c918ce",
+  "receipt_native_binding": true,
+  "receipt_sha256": "sha256:bff6ddb35f90031e8134af5ba0d14692ea22d5958756190370518bc2af77fa7a",
+  "review_to_native_pairs_equal": true
+}

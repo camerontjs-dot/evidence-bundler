@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-17T15:18:39.010277+00:00",
+  "files_delivered": [
+    "REVIEWER-RULE.md",
+    "p01/review_context.md",
+    "p01/review_record.json"
+  ],
+  "history": [],
+  "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+  "request_sha256": "31fc0b1f506f135e2a8b2fe09447173997c75441b7d84a26f561f54c1de9bdce",
+  "tools": []
+}
