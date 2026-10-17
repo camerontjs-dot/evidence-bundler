@@ -1,0 +1,62 @@
+{
+  "at_utc": "2026-10-17T15:14:11.422276+00:00",
+  "attempts_per_case": 1,
+  "case_order": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ],
+  "execution_admitted": false,
+  "external_tools": [],
+  "history_messages": 0,
+  "member_sha256": {
+    "REVIEWER-RULE.md": "e036ec12028d4ca57b260000a51b4547ba9eae8f5a713a6de746facf364871e7",
+    "p01/review_context.md": "0164fb2715c38d44eb391fd66bf6e1076d7f51c99f733a75860c620cbd23ca2b",
+    "p01/review_record.json": "496d319203fc5fef22b3ab053664c7dc55b965e8ae15525370a513c55c25929c",
+    "p02/review_context.md": "433186da7e64f09a33237ac10c56d75b4b3c3950662c7b0b44b6b4867678ad23",
+    "p02/review_record.json": "6d8dd2b8584ab8c16c319be8a8ab2f9a044a96e0704f6d4d3cba5d474a634abc",
+    "p03/review_context.md": "aa4dd427814e8fb4d9a992c6d3df8ef4e8e642878408fd9bf3fd9c49d56f2744",
+    "p03/review_record.json": "e3db38eac44d8f268db40c7476e6d7db7a4c2b55a8b48875a936162738638627",
+    "p04/review_context.md": "25879729847f7675951692ba1172e69345c0c8bf119e29f345adc44783168cc9",
+    "p04/review_record.json": "7f07567799f6260aa6ae507fd4837f7f9a68225de0919804e625f2d845c0a1ab",
+    "p05/review_context.md": "970a98b2f4daee7d555454fa3af9b5458d1029c14714bc50f1fd35a841373e3c",
+    "p05/review_record.json": "cfe01553ea843973c4c7101172e22d4242494bc2982951fadc6c0c66964f27c4",
+    "p06/review_context.md": "e037ceff9db1c0d82e8cbe4437b71ca2c634446138c42209f5853f02a38df513",
+    "p06/review_record.json": "cbfbfc1e1b7d6f911fe0d35a2f08cde32b472057ebb3d28e2a6d7f9530cb27d1",
+    "p07/review_context.md": "7805eed1746b0593e96fcaf030469b5dee7e9ffc39be46d49f8358eb9e1e43e2",
+    "p07/review_record.json": "e6858b98cf89c2126a2e755ee862c1cfed66dc56ca4362c4957860f57cd02d53",
+    "p08/review_context.md": "7cc9f8685f72ed8a54fa137a7c612fd45ac5efdf4340f5ec2d3722f8ca6376f4",
+    "p08/review_record.json": "559970c027d9bec4f310a4f91e5573884e559399258d8f4829554fa1e344c52a"
+  },
+  "model": "qwen3.5:9b",
+  "model_digest": "c97eb11d70b1acdc88af01eef566c1fe4f7fbe93eb1afc06871132f293ff425a",
+  "model_show_sha256": "04abb2c89760d02edfde50a0499ec559f8964eb79c344ca077a74058f92cc73a",
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "num_thread": 4,
+    "presence_penalty": 0,
+    "seed": 137,
+    "temperature": 0
+  },
+  "provider_version": "0.40.5",
+  "request_sha256": {
+    "p01": "31fc0b1f506f135e2a8b2fe09447173997c75441b7d84a26f561f54c1de9bdce",
+    "p02": "40a1419919f614a17c5893b457306d442f245120e5792e1ab65038e0ae53537b",
+    "p03": "3a15b2bc72204fd08da375cc8600e729b5e6f620d6739846cdad2a0a34806f45",
+    "p04": "3d189451aceadd84da818db6e989e3d50201690f7c198346bb8adcc6437511d5",
+    "p05": "2fc082df2c0ebd774e11f3cb3d092e573ce783ca6b8e049c2278c94f57501673",
+    "p06": "cf254550142b07191b588f267ee9d360f7b76dc59e23ee5a717d3b0518a3645e",
+    "p07": "c974f070ee1ed56d9e8906592262f04796c97a6097f440bc39d2192dba023af6",
+    "p08": "b2c468d27e3ed61b86fe3336497d11ab6fba4f7aa2afdb3f356ea7ae65c20bbd"
+  },
+  "runner_sha256": "5497b418962579b00153e592b4291c1699a44a5a83b6d05a06de9164b3751157",
+  "schema": "eb137-local-review-transport-v1",
+  "transport_schema_basis": "Template keys/bindings/IDs and all three decisions only",
+  "zip_sha256": "efe9148bd46a211fa6139bdd9ceb5959e0971b87d82d397dc63b2101c88bdf0d"
+}
