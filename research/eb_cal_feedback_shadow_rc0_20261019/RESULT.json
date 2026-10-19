@@ -1,0 +1,1031 @@
+{
+  "cal_consumer_boundary": {
+    "actual_component": "pinned CAL Contract B intake / semantic FailureCode vocabulary",
+    "full_semantic_CAL_audit_executed": false,
+    "intake_extension_state": "present",
+    "intake_ledger_keys": [
+      "aperture",
+      "claims",
+      "history",
+      "history_complete",
+      "history_count_checks",
+      "passages",
+      "schema",
+      "sources"
+    ],
+    "known_failure_codes": [
+      "UPSTREAM_APERTURE_INSUFFICIENT",
+      "EVIDENCE_NOT_ADMITTED"
+    ],
+    "semantic_claims": [
+      {
+        "admitted_count": 0,
+        "id": "clm-p07"
+      }
+    ],
+    "semantic_context_keys": [
+      "claims",
+      "schema"
+    ],
+    "status": "CAL-facing missing-context producer still needs separate qualification",
+    "typed_need_request_observed": false
+  },
+  "cases": {
+    "p01": {
+      "1800": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p01",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:3d200a63726190781a5f65bc8698edd3605a14d58d67e362a89b5fa340867502",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p01-sable-record": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98"
+        },
+        "targets": {
+          "clm-p01": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:0422ce28897c2733e3723d3f7175478a"
+            ],
+            "retained": 1,
+            "retained_chars": 437,
+            "retained_rows": [
+              {
+                "end": 474,
+                "passage_id": "passage:0422ce28897c2733e3723d3f7175478a",
+                "rank": 1,
+                "source_id": "src-p01-sable-record",
+                "start": 37,
+                "text": "Training example only. All names, identifiers and dates in this record are invented.\n\nDocument: Procedure Sable-17\nRevision: 4\nApproval date: 1 March 2031\nEffective date: 3 March 2031\nStatus: current in this fictional register.\n\nThe approval date records when the quality lead signed revision 4. The effective date records when that revision became the working procedure. Revision 3 ceased to be current when revision 4 became effective."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:49e24f3531a3a9b7c99e0e361194a8ace84e1c70e8f71cb0a2af2f9c6f8a73d7"
+      },
+      "2400": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p01",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:a02496439026b5b618b4ecc88cdec474b0879f4b6323733a3bdd97ba63e7d15b",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p01-sable-record": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98"
+        },
+        "targets": {
+          "clm-p01": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:0422ce28897c2733e3723d3f7175478a"
+            ],
+            "retained": 1,
+            "retained_chars": 437,
+            "retained_rows": [
+              {
+                "end": 474,
+                "passage_id": "passage:0422ce28897c2733e3723d3f7175478a",
+                "rank": 1,
+                "source_id": "src-p01-sable-record",
+                "start": 37,
+                "text": "Training example only. All names, identifiers and dates in this record are invented.\n\nDocument: Procedure Sable-17\nRevision: 4\nApproval date: 1 March 2031\nEffective date: 3 March 2031\nStatus: current in this fictional register.\n\nThe approval date records when the quality lead signed revision 4. The effective date records when that revision became the working procedure. Revision 3 ceased to be current when revision 4 became effective."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:49e24f3531a3a9b7c99e0e361194a8ace84e1c70e8f71cb0a2af2f9c6f8a73d7"
+      },
+      "8000": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p01",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:7f173dcd7d664870686069d562cc2e812a3d74a076a3608fe9baac6018d306ed",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p01-sable-record": "sha256:18aed8a7b9bcdc59aafe9570351ab0c742a58635085bc56791c9b7dcb77b0a98"
+        },
+        "targets": {
+          "clm-p01": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:0422ce28897c2733e3723d3f7175478a"
+            ],
+            "retained": 1,
+            "retained_chars": 437,
+            "retained_rows": [
+              {
+                "end": 474,
+                "passage_id": "passage:0422ce28897c2733e3723d3f7175478a",
+                "rank": 1,
+                "source_id": "src-p01-sable-record",
+                "start": 37,
+                "text": "Training example only. All names, identifiers and dates in this record are invented.\n\nDocument: Procedure Sable-17\nRevision: 4\nApproval date: 1 March 2031\nEffective date: 3 March 2031\nStatus: current in this fictional register.\n\nThe approval date records when the quality lead signed revision 4. The effective date records when that revision became the working procedure. Revision 3 ceased to be current when revision 4 became effective."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:49e24f3531a3a9b7c99e0e361194a8ace84e1c70e8f71cb0a2af2f9c6f8a73d7"
+      }
+    },
+    "p02": {
+      "1800": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p02",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:a69d09f78d5410f9b4823eb5d9fdab80d6ccd6220486933c8709537cfbccade4",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p02-lumen-report": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5"
+        },
+        "targets": {
+          "clm-p02": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:2d032bfab20acc5b49eb331ad9db2153"
+            ],
+            "retained": 1,
+            "retained_chars": 496,
+            "retained_rows": [
+              {
+                "end": 496,
+                "passage_id": "passage:2d032bfab20acc5b49eb331ad9db2153",
+                "rank": 1,
+                "source_id": "src-p02-lumen-report",
+                "start": 0,
+                "text": "Fictional Lumen pilot: final sample-accountability note\n\nThis is an invented research record for a software exercise.\n\nThe final Lumen pilot report states that archived samples came from nine sites. Twelve sites were invited, but three provided no samples. These counts refer to contributing sites rather than individual samples. The pilot used only archived material and enrolled no new participants.\n\nThe invitation count and the contributing-site count are separate fields in the final record."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:88a7be94cbfd8f540a9b836047c987ebf7548bc0c8901b27c199f5d965b886a2"
+      },
+      "2400": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p02",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:2a18de718324ae81ec600ff0b82f1241deb81f23cc0b287e00680711bbe57079",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p02-lumen-report": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5"
+        },
+        "targets": {
+          "clm-p02": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:2d032bfab20acc5b49eb331ad9db2153"
+            ],
+            "retained": 1,
+            "retained_chars": 496,
+            "retained_rows": [
+              {
+                "end": 496,
+                "passage_id": "passage:2d032bfab20acc5b49eb331ad9db2153",
+                "rank": 1,
+                "source_id": "src-p02-lumen-report",
+                "start": 0,
+                "text": "Fictional Lumen pilot: final sample-accountability note\n\nThis is an invented research record for a software exercise.\n\nThe final Lumen pilot report states that archived samples came from nine sites. Twelve sites were invited, but three provided no samples. These counts refer to contributing sites rather than individual samples. The pilot used only archived material and enrolled no new participants.\n\nThe invitation count and the contributing-site count are separate fields in the final record."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:88a7be94cbfd8f540a9b836047c987ebf7548bc0c8901b27c199f5d965b886a2"
+      },
+      "8000": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p02",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:cafe15b72bd0ced18f8b92b8ecab658e92a516046e22cda4f7ae66aa0435c208",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p02-lumen-report": "sha256:9fad3225ec073cd1c969ed34119a19f2919b8781eafad8e0c489f7827d5c4af5"
+        },
+        "targets": {
+          "clm-p02": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:2d032bfab20acc5b49eb331ad9db2153"
+            ],
+            "retained": 1,
+            "retained_chars": 496,
+            "retained_rows": [
+              {
+                "end": 496,
+                "passage_id": "passage:2d032bfab20acc5b49eb331ad9db2153",
+                "rank": 1,
+                "source_id": "src-p02-lumen-report",
+                "start": 0,
+                "text": "Fictional Lumen pilot: final sample-accountability note\n\nThis is an invented research record for a software exercise.\n\nThe final Lumen pilot report states that archived samples came from nine sites. Twelve sites were invited, but three provided no samples. These counts refer to contributing sites rather than individual samples. The pilot used only archived material and enrolled no new participants.\n\nThe invitation count and the contributing-site count are separate fields in the final record."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:88a7be94cbfd8f540a9b836047c987ebf7548bc0c8901b27c199f5d965b886a2"
+      }
+    },
+    "p03": {
+      "1800": {
+        "candidate_count": 4,
+        "candidate_depth": 10,
+        "case": "p03",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:cf36068d29814510e39225c37d9eae3352716e11fecc3841ded2ed8d5d447d0a",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p03-wren-reconcile": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+          "src-p03-wren-review": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada"
+        },
+        "targets": {
+          "clm-p03-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:c310360a9e1800af86c01fd2cc9a461c"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 1,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              },
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 2,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p03-2": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:db558da33b045594e1b564285d081a54"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 1,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              },
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 2,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:02a84d58fb4a03461cb1245df0f5e3766250654ed82d1e8bad869fa25d911edc"
+      },
+      "2400": {
+        "candidate_count": 4,
+        "candidate_depth": 10,
+        "case": "p03",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:1af11b2bc6a1c76e096398169bdf5d9ae8e7aa2dbb15bd2950a74610bcb41e1b",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p03-wren-reconcile": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+          "src-p03-wren-review": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada"
+        },
+        "targets": {
+          "clm-p03-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:c310360a9e1800af86c01fd2cc9a461c"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 1,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              },
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 2,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p03-2": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:db558da33b045594e1b564285d081a54"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 1,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              },
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 2,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:02a84d58fb4a03461cb1245df0f5e3766250654ed82d1e8bad869fa25d911edc"
+      },
+      "8000": {
+        "candidate_count": 4,
+        "candidate_depth": 10,
+        "case": "p03",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:2be15d352ef8090606eb97a69be477c57b00c24f5eb25285e37a6a57942b792a",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p03-wren-reconcile": "sha256:4b79a86ea6c5ee2b5f66f69308ea6eb1cbe872d1481e52b026bd0de3ebc4346f",
+          "src-p03-wren-review": "sha256:32794e9c27fbe2a8f81874360a4e7f9a495ff497a26bdf037b85f593afa34ada"
+        },
+        "targets": {
+          "clm-p03-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:c310360a9e1800af86c01fd2cc9a461c"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 1,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              },
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 2,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p03-2": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:db558da33b045594e1b564285d081a54"
+            ],
+            "retained": 2,
+            "retained_chars": 855,
+            "retained_rows": [
+              {
+                "end": 482,
+                "passage_id": "passage:db558da33b045594e1b564285d081a54",
+                "rank": 1,
+                "source_id": "src-p03-wren-reconcile",
+                "start": 51,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, a reconciliation record must be completed. It records how review comments were resolved and identifies the final document revision. A release with no reconciliation record remains incomplete under this procedure.\n\nThis section describes the required record; it does not certify any actual release."
+              },
+              {
+                "end": 467,
+                "passage_id": "passage:c310360a9e1800af86c01fd2cc9a461c",
+                "rank": 2,
+                "source_id": "src-p03-wren-review",
+                "start": 43,
+                "text": "This invented training procedure applies to document release in the Wren-4 workflow.\n\nBefore document release under Procedure Wren-4, two different reviewers must complete their reviews. One person may not occupy both reviewer positions for the same release. The release checklist records both reviewer names.\n\nThis section describes the required review arrangement; it does not record whether a particular release complied."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:02a84d58fb4a03461cb1245df0f5e3766250654ed82d1e8bad869fa25d911edc"
+      }
+    },
+    "p04": {
+      "1800": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p04",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:62da06a27095fcd495e163da5d2b77086ae6dfadffaf12043b2a9ef4fa76540a",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p04-alder-triage": "sha256:a51b98900835c994d02c20c6fe7a67e37346018ea4d0fb658838eb16b2867235"
+        },
+        "targets": {
+          "clm-p04": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 391,
+            "retained_rows": [
+              {
+                "end": 391,
+                "passage_id": "passage:b40c68f3b906c744d45ee38384f9fc86",
+                "rank": 1,
+                "source_id": "src-p04-alder-triage",
+                "start": 0,
+                "text": "Fictional Project Alder: deviation-triage instruction\n\nThis invented instruction governs Project Alder only.\n\nProject Alder uses a 48-hour deadline to triage a newly opened deviation. The deadline begins at the creation timestamp in Alder's deviation register. The triage owner records the initial classification and responsible team.\n\nThis source contains no policy for a different project."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:cefff5c47c6814d88a45941a6f7320fdf662fce5fc19230d00f8aae4dc2170c0"
+      },
+      "2400": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p04",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:10db465b4341e1348de6ddd29ed65f1a9a247cfa7e2d84210e849163420cf37c",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p04-alder-triage": "sha256:a51b98900835c994d02c20c6fe7a67e37346018ea4d0fb658838eb16b2867235"
+        },
+        "targets": {
+          "clm-p04": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 391,
+            "retained_rows": [
+              {
+                "end": 391,
+                "passage_id": "passage:b40c68f3b906c744d45ee38384f9fc86",
+                "rank": 1,
+                "source_id": "src-p04-alder-triage",
+                "start": 0,
+                "text": "Fictional Project Alder: deviation-triage instruction\n\nThis invented instruction governs Project Alder only.\n\nProject Alder uses a 48-hour deadline to triage a newly opened deviation. The deadline begins at the creation timestamp in Alder's deviation register. The triage owner records the initial classification and responsible team.\n\nThis source contains no policy for a different project."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:cefff5c47c6814d88a45941a6f7320fdf662fce5fc19230d00f8aae4dc2170c0"
+      },
+      "8000": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p04",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:137e466e844b85f4e0ee6db32c27917e9b8947c89fb83805013d4d6159247530",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p04-alder-triage": "sha256:a51b98900835c994d02c20c6fe7a67e37346018ea4d0fb658838eb16b2867235"
+        },
+        "targets": {
+          "clm-p04": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 391,
+            "retained_rows": [
+              {
+                "end": 391,
+                "passage_id": "passage:b40c68f3b906c744d45ee38384f9fc86",
+                "rank": 1,
+                "source_id": "src-p04-alder-triage",
+                "start": 0,
+                "text": "Fictional Project Alder: deviation-triage instruction\n\nThis invented instruction governs Project Alder only.\n\nProject Alder uses a 48-hour deadline to triage a newly opened deviation. The deadline begins at the creation timestamp in Alder's deviation register. The triage owner records the initial classification and responsible team.\n\nThis source contains no policy for a different project."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:cefff5c47c6814d88a45941a6f7320fdf662fce5fc19230d00f8aae4dc2170c0"
+      }
+    },
+    "p05": {
+      "1800": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p05",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:9dfa9c0d5a156182511632a86e4897b36a9cd822d09edf18da72bcdba0900ed0",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p05-juniper-index": "sha256:b8eb135107f0f9dab9966c9e68c72cc30dac0038421eb3866dbcf5d0a4420363"
+        },
+        "targets": {
+          "clm-p05": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 469,
+            "retained_rows": [
+              {
+                "end": 469,
+                "passage_id": "passage:bfcaa9a2108d56a1c1c78f021bbf7620",
+                "rank": 1,
+                "source_id": "src-p05-juniper-index",
+                "start": 0,
+                "text": "Fictional Juniper archive: surviving index fragment\n\nThis invented index card preserves search labels, not a procedure statement.\n\nLabels: Juniper; external lots; hold review; 48; receipt.\n\nThe procedure body and the index column headings are absent. The fragment does not identify the unit attached to 48, does not connect receipt to a clock-start rule, and does not define the applicable lot population. A reader cannot reconstruct those relationships from this card."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:76d0f09403110ffefe3efda1a9fc660c4e2fd3b2df2ad698b529fe2a7864c0c0"
+      },
+      "2400": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p05",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:e4609348111250a73c7e9b77ea731fed13638f85c4c43f2759e4b6bbc1877b3b",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p05-juniper-index": "sha256:b8eb135107f0f9dab9966c9e68c72cc30dac0038421eb3866dbcf5d0a4420363"
+        },
+        "targets": {
+          "clm-p05": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 469,
+            "retained_rows": [
+              {
+                "end": 469,
+                "passage_id": "passage:bfcaa9a2108d56a1c1c78f021bbf7620",
+                "rank": 1,
+                "source_id": "src-p05-juniper-index",
+                "start": 0,
+                "text": "Fictional Juniper archive: surviving index fragment\n\nThis invented index card preserves search labels, not a procedure statement.\n\nLabels: Juniper; external lots; hold review; 48; receipt.\n\nThe procedure body and the index column headings are absent. The fragment does not identify the unit attached to 48, does not connect receipt to a clock-start rule, and does not define the applicable lot population. A reader cannot reconstruct those relationships from this card."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:76d0f09403110ffefe3efda1a9fc660c4e2fd3b2df2ad698b529fe2a7864c0c0"
+      },
+      "8000": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p05",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:02603e1b698f2e333c508c1d5cec80f39d5c9786f440ec17bf817c8a47ff3b01",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p05-juniper-index": "sha256:b8eb135107f0f9dab9966c9e68c72cc30dac0038421eb3866dbcf5d0a4420363"
+        },
+        "targets": {
+          "clm-p05": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 469,
+            "retained_rows": [
+              {
+                "end": 469,
+                "passage_id": "passage:bfcaa9a2108d56a1c1c78f021bbf7620",
+                "rank": 1,
+                "source_id": "src-p05-juniper-index",
+                "start": 0,
+                "text": "Fictional Juniper archive: surviving index fragment\n\nThis invented index card preserves search labels, not a procedure statement.\n\nLabels: Juniper; external lots; hold review; 48; receipt.\n\nThe procedure body and the index column headings are absent. The fragment does not identify the unit attached to 48, does not connect receipt to a clock-start rule, and does not define the applicable lot population. A reader cannot reconstruct those relationships from this card."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:76d0f09403110ffefe3efda1a9fc660c4e2fd3b2df2ad698b529fe2a7864c0c0"
+      }
+    },
+    "p06": {
+      "1800": {
+        "candidate_count": 2,
+        "candidate_depth": 10,
+        "case": "p06",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:0d2a421aef382df4cc63d476d1a48c5c82893bf977e3a507cacb22f98e104fef",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p06-halcyon-log": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272"
+        },
+        "targets": {
+          "clm-p06-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:836fbe641896a4af00cb4226e5061c3f"
+            ],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p06-2": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:fd5360f91d570471ec9fe72143309fbf10e1eaedcfa0bf7cdaa666fdb4003c5d"
+      },
+      "2400": {
+        "candidate_count": 2,
+        "candidate_depth": 10,
+        "case": "p06",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:4cdeb5e2c912bf4bfa100ecc98de0c2a5b53332760f43017302307c6286c9b60",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p06-halcyon-log": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272"
+        },
+        "targets": {
+          "clm-p06-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:836fbe641896a4af00cb4226e5061c3f"
+            ],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p06-2": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:fd5360f91d570471ec9fe72143309fbf10e1eaedcfa0bf7cdaa666fdb4003c5d"
+      },
+      "8000": {
+        "candidate_count": 2,
+        "candidate_depth": 10,
+        "case": "p06",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:fecae42f066f3abdf50ff6965ad220ba0f43d7f2151e70993de67b125dc9c29a",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p06-halcyon-log": "sha256:100a95faf81dd8ebd93d9cdeceb1f09fec6cc92f1a9d47b86a64e6e4379ed272"
+        },
+        "targets": {
+          "clm-p06-1": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:836fbe641896a4af00cb4226e5061c3f"
+            ],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          },
+          "clm-p06-2": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 1,
+            "retained_chars": 465,
+            "retained_rows": [
+              {
+                "end": 465,
+                "passage_id": "passage:836fbe641896a4af00cb4226e5061c3f",
+                "rank": 1,
+                "source_id": "src-p06-halcyon-log",
+                "start": 0,
+                "text": "Fictional Study Halcyon-2: sampling-log requirement\n\nThis is an invented research-administration excerpt.\n\nThe Halcyon-2 protocol requires the sampling log to be signed by the collector after each sampling session. The signature binds the collector to the session identifier and collection date. The blank log template has a required signature field.\n\nThe excerpt describes sampling-log completion. No archive-retention schedule is included in this supplied source."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:fd5360f91d570471ec9fe72143309fbf10e1eaedcfa0bf7cdaa666fdb4003c5d"
+      }
+    },
+    "p07": {
+      "1800": {
+        "candidate_count": 6,
+        "candidate_depth": 10,
+        "case": "p07",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:aee44a41d037985b0e4a65ecd98538899e80f33e708baf844db6a67e56a5f7ac",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p07-archive-7q": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3"
+        },
+        "targets": {
+          "clm-p07": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [],
+            "retained": 3,
+            "retained_chars": 2286,
+            "retained_rows": [
+              {
+                "end": 305,
+                "passage_id": "passage:30c70607c2a17efa80e5359a93928099",
+                "rank": 1,
+                "source_id": "src-p07-archive-7q",
+                "start": 0,
+                "text": "Fictional archive note 7Q: Ilex-9 check\n\nThis is an invented laboratory-record layout used for a software exercise.\n\nArchive note 7Q concerns the Ilex-9 solvent check. Its acceptance-ceiling field is expressed in mg/L. The recorded ceiling value appears in the decision table at the end of this same note."
+              },
+              {
+                "end": 6706,
+                "passage_id": "passage:6adcbccf2a04d9c75689ed2f09c7af0a",
+                "rank": 2,
+                "source_id": "src-p07-archive-7q",
+                "start": 6484,
+                "text": "Decision table for archive note 7Q\n\nAcceptance ceiling: 0.08.\nThe subject key and measurement unit for this field are defined in the opening header of archive note 7Q. The intermediate entries record custody handling only."
+              },
+              {
+                "end": 2066,
+                "passage_id": "passage:01417dd7eefe43b980adc51ab74a4533",
+                "rank": 3,
+                "source_id": "src-p07-archive-7q",
+                "start": 307,
+                "text": "Chain-of-record entries follow.\nEntry 01: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 02: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 03: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 04: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 05: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 06: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 07: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 08: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 09: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:0681e83b349dc81eff03f0ce647bdc41e616097a447427fce7588e20eabfab84"
+      },
+      "2400": {
+        "candidate_count": 5,
+        "candidate_depth": 10,
+        "case": "p07",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:dba0ae651df1d1d8a6b1d5c67ded965fd202b11f05e00ad8ace399b65042bc15",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p07-archive-7q": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3"
+        },
+        "targets": {
+          "clm-p07": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [],
+            "retained": 3,
+            "retained_chars": 2862,
+            "retained_rows": [
+              {
+                "end": 305,
+                "passage_id": "passage:30c70607c2a17efa80e5359a93928099",
+                "rank": 1,
+                "source_id": "src-p07-archive-7q",
+                "start": 0,
+                "text": "Fictional archive note 7Q: Ilex-9 check\n\nThis is an invented laboratory-record layout used for a software exercise.\n\nArchive note 7Q concerns the Ilex-9 solvent check. Its acceptance-ceiling field is expressed in mg/L. The recorded ceiling value appears in the decision table at the end of this same note."
+              },
+              {
+                "end": 6706,
+                "passage_id": "passage:6adcbccf2a04d9c75689ed2f09c7af0a",
+                "rank": 2,
+                "source_id": "src-p07-archive-7q",
+                "start": 6484,
+                "text": "Decision table for archive note 7Q\n\nAcceptance ceiling: 0.08.\nThe subject key and measurement unit for this field are defined in the opening header of archive note 7Q. The intermediate entries record custody handling only."
+              },
+              {
+                "end": 2642,
+                "passage_id": "passage:348374f854a88316429a0c8ef4f4173e",
+                "rank": 3,
+                "source_id": "src-p07-archive-7q",
+                "start": 307,
+                "text": "Chain-of-record entries follow.\nEntry 01: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 02: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 03: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 04: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 05: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 06: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 07: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 08: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 09: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 10: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 11: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 12: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result."
+              }
+            ],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:0681e83b349dc81eff03f0ce647bdc41e616097a447427fce7588e20eabfab84"
+      },
+      "8000": {
+        "candidate_count": 1,
+        "candidate_depth": 10,
+        "case": "p07",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:e12acadbb526280dc3fc3f31e848f3702ef0000acbd6d74b947d8e7eab2e2419",
+        "retained_k": 3,
+        "source_hashes": {
+          "src-p07-archive-7q": "sha256:2dae812350873a43a53ccff9b0af46ee4e52385b0bf560e7bccecaec45f338a3"
+        },
+        "targets": {
+          "clm-p07": {
+            "expected_no_witness_control": false,
+            "marker_satisfying_ids": [
+              "passage:d7fd90fb32c6f0865e94d4ea5ec43935"
+            ],
+            "retained": 1,
+            "retained_chars": 6706,
+            "retained_rows": [
+              {
+                "end": 6706,
+                "passage_id": "passage:d7fd90fb32c6f0865e94d4ea5ec43935",
+                "rank": 1,
+                "source_id": "src-p07-archive-7q",
+                "start": 0,
+                "text": "Fictional archive note 7Q: Ilex-9 check\n\nThis is an invented laboratory-record layout used for a software exercise.\n\nArchive note 7Q concerns the Ilex-9 solvent check. Its acceptance-ceiling field is expressed in mg/L. The recorded ceiling value appears in the decision table at the end of this same note.\n\nChain-of-record entries follow.\nEntry 01: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 02: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 03: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 04: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 05: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 06: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 07: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 08: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 09: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 10: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 11: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 12: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 13: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 14: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 15: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 16: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 17: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 18: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 19: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 20: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 21: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 22: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 23: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 24: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 25: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 26: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 27: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 28: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 29: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 30: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 31: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\nEntry 32: the archive clerk logged an envelope transfer, checked the page count against the register, and recorded the shelf position. This administrative entry contains no analytical result.\n\nDecision table for archive note 7Q\n\nAcceptance ceiling: 0.08.\nThe subject key and measurement unit for this field are defined in the opening header of archive note 7Q. The intermediate entries record custody handling only."
+              }
+            ],
+            "witness_marker_in_one_span": true
+          }
+        },
+        "upstream_handoff_sha256": "sha256:0681e83b349dc81eff03f0ce647bdc41e616097a447427fce7588e20eabfab84"
+      },
+      "shadow_request": {
+        "need": "missing_relationship_context",
+        "producer": "experiment_fixture_not_CAL",
+        "schema": "cal-eb-shadow-evidence-need-v0",
+        "target_id": "clm-p07",
+        "unreviewed_package_sha256": "sha256:aee44a41d037985b0e4a65ecd98538899e80f33e708baf844db6a67e56a5f7ac",
+        "upstream_contract_a_sha256": "sha256:0681e83b349dc81eff03f0ce647bdc41e616097a447427fce7588e20eabfab84"
+      }
+    },
+    "p08": {
+      "1800": {
+        "candidate_count": 0,
+        "candidate_depth": 10,
+        "case": "p08",
+        "chunk_max_chars": 1800,
+        "config_sha256": "sha256:5b10d0c29794e80d6876a99e26bcf6ec6a27a4c5165aee78054a6bc32759f4bc",
+        "package_sha256": "sha256:8d8fc65e9be1438718469fa15bda81e474af7a0f81fcb88ebcf36cebea2da4a6",
+        "retained_k": 3,
+        "source_hashes": {},
+        "targets": {
+          "clm-p08": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 0,
+            "retained_chars": 0,
+            "retained_rows": [],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:b3b1e70a8f1fb748565d6466e9169ddf0dfb160e6dcd8f611ab40e9fdbff6bb7"
+      },
+      "2400": {
+        "candidate_count": 0,
+        "candidate_depth": 10,
+        "case": "p08",
+        "chunk_max_chars": 2400,
+        "config_sha256": "sha256:e67225c23ccabee671a74aec9d66ca5a41dadb5a86cb99546c141553b727c298",
+        "package_sha256": "sha256:c8dbb794dc57dc8946337277faca222dd8f675a4018da05818978584cc4dac17",
+        "retained_k": 3,
+        "source_hashes": {},
+        "targets": {
+          "clm-p08": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 0,
+            "retained_chars": 0,
+            "retained_rows": [],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:b3b1e70a8f1fb748565d6466e9169ddf0dfb160e6dcd8f611ab40e9fdbff6bb7"
+      },
+      "8000": {
+        "candidate_count": 0,
+        "candidate_depth": 10,
+        "case": "p08",
+        "chunk_max_chars": 8000,
+        "config_sha256": "sha256:d72595b5efeffa3cbbb27585fba9d8621a52d331c5210daf9ed2190253b18d92",
+        "package_sha256": "sha256:36ba2e4dbc42bf2eba66e4b6be7eeaa37bbf7954b3519e40145c1ceaf4f36d62",
+        "retained_k": 3,
+        "source_hashes": {},
+        "targets": {
+          "clm-p08": {
+            "expected_no_witness_control": true,
+            "marker_satisfying_ids": [],
+            "retained": 0,
+            "retained_chars": 0,
+            "retained_rows": [],
+            "witness_marker_in_one_span": false
+          }
+        },
+        "upstream_handoff_sha256": "sha256:b3b1e70a8f1fb748565d6466e9169ddf0dfb160e6dcd8f611ab40e9fdbff6bb7"
+      }
+    }
+  },
+  "limits": {
+    "actual_CAL_generated_request": false,
+    "canonical_B_from_rewindowed_candidate": false,
+    "changed_V1_config_is_installed_CLI": false,
+    "is_blinded": false,
+    "marker_check_is_semantic_oracle": false,
+    "representative_workload": false,
+    "source_world": "synthetic public acceptance kit"
+  },
+  "schema": "eb-cal-feedback-shadow-rc0-results-v1",
+  "source_input_sha256": {
+    "p01": "40aab0e9bf0be1422234df00ce1f33e48c85a3a9a35cf3d440a907251f7c61bf",
+    "p02": "b65637cd5e24501c4b1c94132742122a4f3faee26a1dc4b8250f8c45f06bb8b8",
+    "p03": "514e4c20b4a59e219bf58d2cf684458dc4c878aa595cf857d0e7395b531b3a14",
+    "p04": "253cfd1de8675bd61ff670060d721082c75b2d5df2242a536c4a68e5d99d6d62",
+    "p05": "23397764eda9a65755a2f87d42064eb8c388b952f5ff87fddf3ce52d5a1e24fe",
+    "p06": "53190ea17c447701509a65c5aaa4b79f7487ab2b2e6c361aa2130234f7569376",
+    "p07": "e1f779c849c1bbb1c252b79d7c42b7d0a3e07ed6f5fee3b8da929e36ba11a16c",
+    "p08": "dcf94d4e63ece8bbaad9477fd50a888de35af2b9f373c84c8e26185481eb278f"
+  }
+}

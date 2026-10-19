@@ -1,0 +1,50 @@
+{
+  "baseline_config_package_sha256": "sha256:aee44a41d037985b0e4a65ecd98538899e80f33e708baf844db6a67e56a5f7ac",
+  "baseline_projection_profile_passed": true,
+  "date_utc": "2026-10-19T18:50:40.844029+00:00",
+  "marker_proxy_adversarial_control": {
+    "conclusion": "The marker check is NOT a semantic adequacy evaluator.",
+    "contains_all_required_strings": true,
+    "relation_is_misleading": true
+  },
+  "rewindow_config_package_sha256": "sha256:e12acadbb526280dc3fc3f31e848f3702ef0000acbd6d74b947d8e7eab2e2419",
+  "rewindow_projection_profile_rejected": true,
+  "rewindow_projection_refusal": "native package config is not the frozen eb-v1-integration-10x3-rc0 profile",
+  "schema": "eb-cal-shadow-supplemental-seam-v1",
+  "subject": "same candidate, original public sources; supplementary conformance check, not rerun of the frozen first-result gate",
+  "typed_CAL_retrieval_request_executed": false,
+  "unreviewed_pinned_CAL_intake": {
+    "p01": {
+      "nominated_ledger_rows": 1,
+      "semantic_admitted_count": 0
+    },
+    "p02": {
+      "nominated_ledger_rows": 1,
+      "semantic_admitted_count": 0
+    },
+    "p03": {
+      "nominated_ledger_rows": 4,
+      "semantic_admitted_count": 0
+    },
+    "p04": {
+      "nominated_ledger_rows": 1,
+      "semantic_admitted_count": 0
+    },
+    "p05": {
+      "nominated_ledger_rows": 1,
+      "semantic_admitted_count": 0
+    },
+    "p06": {
+      "nominated_ledger_rows": 2,
+      "semantic_admitted_count": 0
+    },
+    "p07": {
+      "nominated_ledger_rows": 6,
+      "semantic_admitted_count": 0
+    },
+    "p08": {
+      "nominated_ledger_rows": 0,
+      "semantic_admitted_count": 0
+    }
+  }
+}
