@@ -1,0 +1,31 @@
+{
+  "first_result_sha256": "a829cf3ebfd1a423faa03643aa6009fa9e9d8c7b41c8b643b6544d613c5ed145",
+  "first_run_exit": 0,
+  "limits": [
+    "not-a-CAL-produced-feedback-loop",
+    "not-semantic-evaluator",
+    "not-B-projection-conformant-widened-config",
+    "not-representative-workload",
+    "no-production-mutations"
+  ],
+  "mechanical_checks_passed": true,
+  "pre_exposure_script_sha256": "20ac0391adbf441d2433ae708b14993aef5bb1d83d8f24f93d4c74851544af16",
+  "preregistered_chunk_caps": [
+    1800,
+    2400,
+    8000
+  ],
+  "preregistration_commit": "cd9395fba0a552bf952150eb191252706131b6e2",
+  "schema": "eb-cal-feedback-shadow-rc0-verification-v1",
+  "source_kit_cases": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ],
+  "supplemental_seam_sha256": "82f455e333269167f0f9a924e0b13de681a7773988274f79980efb43954a8ce1"
+}

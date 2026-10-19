@@ -1,0 +1,30 @@
+{
+  "attempt_budget": 1,
+  "cal_need_producer": "synthetic shadow, not actual CAL",
+  "candidate_head": "b09d25828d269a226a7d57a9c3b6d3b11a597b24",
+  "case_order": [
+    "p01",
+    "p02",
+    "p03",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ],
+  "code_frozen_before_observation": true,
+  "exact_wheel_sha256": "cf22a25c74dce2b46e6562caeb67df69168fa026ab085a0d234198e501876405",
+  "failures_permitted": true,
+  "kit_closure": "sha256:01cac06293afdb4fd145c3f7b64464799620eac2fcce80ffc2d5bc677553878c",
+  "kit_commit": "a622fd70c5c48e826b5f2ec9907754e3a35f2d67",
+  "pinned_cal": "64b6c7702696c851057c1cf0b2c105b1c81db543",
+  "preregistration_commit": "cd9395fba0a552bf952150eb191252706131b6e2",
+  "schema": "eb-cal-feedback-shadow-rc0-pre-exposure-v1",
+  "script_sha256": "20ac0391adbf441d2433ae708b14993aef5bb1d83d8f24f93d4c74851544af16",
+  "semantic_judge": "absent; original public kit markers used as proxy",
+  "test_arms": [
+    1800,
+    2400,
+    8000
+  ]
+}
